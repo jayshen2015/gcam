@@ -63,6 +63,8 @@ EXIT /B %ERRORLEVEL%
 set pkg=%~1
 
 echo -------------------[Start Build %pkg%]--------------------
+del /F /Q %ROOT%lib\arm64-v8a\libagc.so
+if "%pkg%"=="mtk" (copy %BASE%\dxml\libagc_mtk.so %ROOT%lib\arm64-v8a\libagc.so) else (copy %BASE%\dxml\libagc.so %ROOT%lib\arm64-v8a\libagc.so)
 del /F /Q %ROOT%AndroidManifest.xml
 echo %BASE%\dxml\AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
 copy %BASE%\dxml\AndroidManifest_%pkg%.xml %ROOT%AndroidManifest.xml
@@ -76,7 +78,7 @@ rmdir /S /Q %BP%
 java.exe -jar "apktool-cli.jar" b -f  %ROOT% -o  "%BP%\%apkname%.R.apk"
 zipalign.exe -f -v 4 "%BP%\%apkname%.R.apk" "%BP%\%apkname%.RO.apk"
 del /F /Q  "%BP%\%apkname%.R.apk"
-java -jar  signapk.jar %pkg%.x509.pem %pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
+java -jar  signapk.jar sign\%pkg%.x509.pem sign\%pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
 del /F /Q  "%BP%\%apkname%.RO.apk"
 echo -------------------[End Build %pkg%]--------------------
 call d:\un\unload.bat
