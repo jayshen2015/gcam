@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/LibButton;
 
-    .line 121
+    .line 123
     iput-object p1, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 124
+    .line 126
     iget-object v0, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     invoke-virtual {v0}, Lnan/ren/button/LibButton;->getSelect()Landroid/widget/TextView;
 
     move-result-object v0
 
-    .line 125
+    .line 127
     .local v0, "view":Landroid/widget/TextView;
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    .line 126
+    .line 128
     .local v1, "libName":Ljava/lang/String;
     iget-object v2, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
@@ -68,7 +68,7 @@
 
     if-nez v2, :cond_0
 
-    .line 127
+    .line 129
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -117,22 +117,22 @@
 
     invoke-static {v2, v3}, Lnan/ren/util/FileUtil;->fileCopy(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 129
+    .line 131
     :cond_0
     iget-object v2, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     invoke-virtual {v2, v1}, Lnan/ren/button/LibButton;->loadLibrary(Ljava/lang/String;)V
 
-    .line 130
+    .line 132
     iget-object v2, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Lnan/ren/button/LibButton;->checked(Z)V
 
-    .line 131
+    .line 133
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 132
+    .line 134
     return-void
 .end method

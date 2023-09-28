@@ -22,6 +22,7 @@ import com.agc.widget.OptionButton;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import nan.ren.G;
 import nan.ren.util.FileUtil;
@@ -31,7 +32,7 @@ public class LibButton extends OptionButton implements View.OnClickListener {
     AlertDialog dialog;
     GridLayout gridLayout;
 
-    File[] myLibs;
+   static File[] myLibs;
 
 
     public LibButton(Context context) {
@@ -62,7 +63,7 @@ public class LibButton extends OptionButton implements View.OnClickListener {
             return;
         }
         this.iconPadding = 10;
-        initMyLibs();
+
         String libKey= Pref.getStringValue("custom_lib_open_key","gcastartup");
         this.items = new ArrayList(
                 Arrays.asList(
@@ -85,11 +86,19 @@ public class LibButton extends OptionButton implements View.OnClickListener {
 
     }
 
-    void initMyLibs(){
-        File libDir=new File(G.LIB_PATH);
-        if(libDir.exists()&&libDir.listFiles().length>0) {
-            myLibs = libDir.listFiles();
+    static  File[] getMyLibs(){
+        if(myLibs==null) {
+            try {
+                File libDir = new File(G.LIB_PATH);
+                if (libDir.exists()) {
+                    File[] fls = libDir.listFiles();
+                    if (fls != null) myLibs = libDir.listFiles();
+                    else myLibs = new File[0];
+                }
+            } catch (Exception ex) {
+            }
         }
+        return myLibs;
     }
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
@@ -107,13 +116,6 @@ public class LibButton extends OptionButton implements View.OnClickListener {
     void showLibsDialog(){
 
         if(dialog==null) {
-            if(myLibs==null||myLibs.length<1){
-                initMyLibs();
-            }
-            if(myLibs==null||myLibs.length<1) {
-                checked(false);
-                return ;
-            }
             dialog = new AlertDialog.Builder(getContext())
                     .setTitle("选择LIB库文件(*.so)")//标题
                    // .setMessage("选择so文件,点击确认后设置库生效")
@@ -166,13 +168,23 @@ public class LibButton extends OptionButton implements View.OnClickListener {
         gridLayout.setLayoutParams(lp);
         gridLayout.setColumnCount(1);
         gridLayout.setPadding(20,20,20,20);
-        for(File lib : myLibs){
-            if(lib==null || !lib.getName().toLowerCase().endsWith(".so"))continue;;
-            TextView tv=new TextView(getContext());
-            tv.setText(lib.getName());
+        File[] fs=getMyLibs();
+        if(fs!=null) {
+            for (File lib : fs) {
+                if (lib == null || !lib.getName().toLowerCase().endsWith(".so")) continue;
+                TextView tv = new TextView(getContext());
+                tv.setText(lib.getName());
+                tv.setMinHeight(150);
+                tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150));
+                tv.setOnClickListener(this);
+                tv.setGravity(Gravity.CENTER_VERTICAL);
+                gridLayout.addView(tv);
+            }
+        }else{
+            TextView tv = new TextView(getContext());
+            tv.setText("===未找lib文件===");
             tv.setMinHeight(150);
-            tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,150));
-            tv.setOnClickListener(this);
+            tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150));
             tv.setGravity(Gravity.CENTER_VERTICAL);
             gridLayout.addView(tv);
         }

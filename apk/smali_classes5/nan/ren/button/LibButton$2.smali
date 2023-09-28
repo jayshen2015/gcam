@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/LibButton;
 
-    .line 134
+    .line 136
     iput-object p1, p0, Lnan/ren/button/LibButton$2;->this$0:Lnan/ren/button/LibButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 137
+    .line 139
     const-string v0, "custom_lib_open_key"
 
     const-string v1, "gcastartup"
@@ -56,7 +56,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lnan/ren/button/LibButton$2;->this$0:Lnan/ren/button/LibButton;
 
     const/4 v1, 0x0
@@ -65,7 +65,7 @@
 
     goto :goto_0
 
-    .line 140
+    .line 142
     :cond_0
     iget-object v0, p0, Lnan/ren/button/LibButton$2;->this$0:Lnan/ren/button/LibButton;
 
@@ -73,10 +73,10 @@
 
     invoke-virtual {v0, v1}, Lnan/ren/button/LibButton;->checked(Z)V
 
-    .line 142
+    .line 144
     :goto_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 143
+    .line 145
     return-void
 .end method

@@ -104,7 +104,7 @@ public class G {
         return  CameraUtil.reSetCameras(list);
     }
     public static int getShutterColor() {
-        String colorStr = Pref.getStringValue("camera_mode_idle_color","#ff808080");
+        String colorStr = Pref.getStringValue("camera_mode_idle_color","#fff37727");
         return Color.parseColor(colorStr.trim());
     }
 

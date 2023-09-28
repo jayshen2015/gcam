@@ -340,7 +340,7 @@
     .line 107
     const-string v0, "camera_mode_idle_color"
 
-    const-string v1, "#ff808080"
+    const-string v1, "#fff37727"
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

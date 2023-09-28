@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/LibButton;
 
-    .line 77
+    .line 78
     iput-object p1, p0, Lnan/ren/button/LibButton$1;->this$0:Lnan/ren/button/LibButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 80
+    .line 81
     iget-object v0, p0, Lnan/ren/button/LibButton$1;->this$0:Lnan/ren/button/LibButton;
 
     invoke-virtual {v0}, Lnan/ren/button/LibButton;->showLibsDialog()V
 
-    .line 81
+    .line 82
     const/4 v0, 0x1
 
     return v0
