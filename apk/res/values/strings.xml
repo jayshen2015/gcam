@@ -2143,34 +2143,38 @@ The format used to store the color when encoding."</string>
 	
 	
 	
-    <string name="my_watermark_dateformat_enable_title">是否显示日期</string>
+    <string name="c2a_auto">Auto</string>
+    <string name="gcam_lens_logic_auto">Auto</string>
+    <string name="shortcut_nightsight_long_label">Take night</string>
+    <string name="shortcut_nightsight_short_label">Night</string>
+	<string name="my_watermark_dateformat_enable_title">是否显示日期</string>
 
-    <string name="my_watermark_dateformat_summary">yyyy|MM|dd|HH|mm|ss分别会替换成年|月|日|时|分|秒的数字,\n其余内容不会被替换但要用英文下的单引号引用，例如：yyyy-MM-dd HH:mm:ss \'by nan_ren\'\n更多高级格式可以百度"JAVA 日期格式"</string>
-    <string name="my_watermark_dateformat_title">水印日期格式</string>
+	<string name="my_watermark_dateformat_summary">yyyy|MM|dd|HH|mm|ss分别会替换成年|月|日|时|分|秒的数字,\n其余内容不会被替换但要用英文下的单引号引用，例如：yyyy-MM-dd HH:mm:ss \'by nan_ren\'\n更多高级格式可以百度"JAVA 日期格式"</string>
+	<string name="my_watermark_dateformat_title">水印日期格式</string>
 	
 	<string name="my_watermark_location_summary">使用经纬度信息而不是时间，开启后水印将不显示时间信息</string>
-    <string name="my_watermark_location_title">水印显示经纬度</string>
+	<string name="my_watermark_location_title">水印显示经纬度</string>
 
 	
 	<string name="my_patch_profile_title">配置设置</string>
-    <string name="my_patch_profile_summary">更换配置图标, 数量</string>
+	<string name="my_patch_profile_summary">更换配置图标, 数量</string>
 		
 	<string name="my_hidden_kaka_items_summary">隐藏配置中顶部的3个配置项</string>
-    <string name="my_hidden_kaka_items_title">是否隐藏顶部3个配置</string>
+	<string name="my_hidden_kaka_items_title">是否隐藏顶部3个配置</string>
 	
 	<string name="camera_mode_idle_color_summary">前两位代表透明度，后6位代表红黄蓝</string>
-    <string name="camera_mode_idle_color_title">快门颜色</string>
+	<string name="camera_mode_idle_color_title">快门颜色</string>
 	
 	
 	<string name="my_watermark_height_title">水印高度</string>
-    <string name="my_watermark_height_summary">水印高度，默认是460，负数时，水印将显示在图片里面</string>
+	<string name="my_watermark_height_summary">水印高度，默认是460，负数时，水印将显示在图片里面</string>
 
 		
 	<string name="my_watermark_asnew_title">保留原图</string>
-    <string name="my_watermark_asnew_summary">选中后，会同时保留原图和带水印的图</string>
+	<string name="my_watermark_asnew_summary">选中后，会同时保留原图和带水印的图</string>
 	
 	<string name="my_preview_luts_title">预览LUT</string>
-    <string name="my_preview_luts_summary">拍完后，预览所有LUT文件效果</string>
+	<string name="my_preview_luts_summary">拍完后，预览所有LUT文件效果</string>
 	
 	<string name="my_add_watermark_title">添加水印</string>
 	
@@ -2181,16 +2185,16 @@ The format used to store the color when encoding."</string>
 	<string name="my_hide_ajbtn_title">隐藏暗角按钮</string>
 		
 	<string name="my_watermark_fontsize_title">水印字体大小</string>
-    <string name="my_watermark_fontsize_summary">即标题以及图片信息的字体大小，默认80</string>
+	<string name="my_watermark_fontsize_summary">即标题以及图片信息的字体大小，默认80</string>
 	
 	<string name="my_watermark_secfontsize_title">副文本字体大小</string>
-    <string name="my_watermark_secfontsize_summary">时间和位置的字体大小</string>
+	<string name="my_watermark_secfontsize_summary">时间和位置的字体大小</string>
 
 	<string name="my_watermark_txtcolor_title">主文本字体颜色</string>
-    <string name="my_watermark_txtcolor_summary">即标题以及图片信息的字体颜色，为空时,根据背景自动调整</string>
+	<string name="my_watermark_txtcolor_summary">即标题以及图片信息的字体颜色，为空时,根据背景自动调整</string>
 
 	<string name="my_watermark_sectxtcolor_title">副文本字体颜色</string>
-    <string name="my_watermark_sectxtcolor_summary">时间和位置的字体颜色，为空时,根据背景自动调整</string>	
+	<string name="my_watermark_sectxtcolor_summary">时间和位置的字体颜色，为空时,根据背景自动调整</string>	
 	
 	<string name="my_hide_libbtn_title">隐藏选库按钮</string>
 	
@@ -2199,5 +2203,6 @@ The format used to store the color when encoding."</string>
 	<string name="my_hebing_config_title">合并配置</string>
 	
 	<string name="my_lut_grid_column_cnt_title">LUT预览每行图数</string>
+
 	
 </resources>
