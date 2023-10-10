@@ -9500,6 +9500,11 @@
 	<public type="string" name="my_watermark_hide_altitude_title" id="0x7f140f4c" />
 	<public type="string" name="my_hebing_config_title" id="0x7f140f4d" />
 	<public type="string" name="my_lut_grid_column_cnt_title" id="0x7f140f4e" />
+	<public type="string" name="my_watermark_padding_left_title" id="0x7f140f4f" />
+	<public type="string" name="my_watermark_padding_top_title" id="0x7f140f50" />
+	<public type="string" name="my_watermark_line_width_title" id="0x7f140f51" />
+	<public type="string" name="my_bottom_bar_btn1_change_title" id="0x7f140f52" />
 	
+	<public type="layout" name="bottom_bar_layout2" id="0x7f0e0900" />
 	
 </resources>

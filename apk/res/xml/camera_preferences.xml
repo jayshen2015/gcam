@@ -588,6 +588,10 @@
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_watermark_location_title" android:key="my_watermark_location" android:summary="@string/my_watermark_location_summary"/>
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_watermark_hide_altitude_title" android:key="my_watermark_hide_altitude" android:summary=""/>
 
+			<EditTextPreference android:icon="@drawable/agc_watermark" android:layout="@layout/preference_with_margin" android:selectAllOnFocus="true" android:title="@string/my_watermark_padding_left_title" android:key="my_watermark_padding_left" android:summary="" android:defaultValue="80" android:dialogMessage=""/>
+			<EditTextPreference android:icon="@drawable/agc_watermark" android:layout="@layout/preference_with_margin" android:selectAllOnFocus="true" android:title="@string/my_watermark_padding_top_title" android:key="my_watermark_padding_top" android:summary="" android:defaultValue="10" android:dialogMessage=""/>
+			<EditTextPreference android:icon="@drawable/agc_watermark" android:layout="@layout/preference_with_margin" android:selectAllOnFocus="true" android:title="@string/my_watermark_line_width_title" android:key="my_watermark_line_width" android:summary="" android:defaultValue="3" android:dialogMessage=""/>
+	
 			<!--com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_watermark_asnew_title" android:key="my_watermark_asnew" android:summary="@string/my_watermark_asnew_summary"/-->
 		</PreferenceScreen>
 	    <PreferenceScreen android:icon="@drawable/agc_mod" android:layout="@layout/preference_with_margin" android:title="@string/my_patch_profile_title" android:key="my_patch_profile_key" android:summary="@string/my_patch_profile_summary">
@@ -599,6 +603,8 @@
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_hide_ajbtn_title" android:key="my_hide_ajbtn" android:summary=""/>
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_hide_lutbtn_title" android:key="my_hide_lutbtn" android:summary=""/>
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_hide_libbtn_title" android:key="my_hide_libbtn" android:summary=""/>
+			
+			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_bottom_bar_btn1_change_title" android:key="my_bottom_bar_btn1_change" android:summary=""/>
 
         <!--  nan_ren add end  -->
 		</PreferenceScreen>

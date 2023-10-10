@@ -1,8 +1,6 @@
 package nan.ren.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -13,7 +11,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.util.Size;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -28,15 +25,18 @@ import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.Globals;
 import com.Utils.Pref;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
-import agc.Agc;
 import nan.ren.G;
-import nan.ren.util.FileUtil;
+import nan.ren.bean.LUT;
+import nan.ren.bean.LUTCube;
+import nan.ren.bean.LUTPng;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.LutUtil;
 import nan.ren.util.NUtil;
@@ -48,7 +48,8 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
     GridLayout gridLayout;
     ScrollView scrollView;
 
-    static String tempFilePath=G.TMP_PATH+System.currentTimeMillis()+".jpg";
+  //  static String tempFilePath=G.TMP_PATH+System.currentTimeMillis()+".jpg";
+    static Bitmap tempPicBigMap=null;
     static String srcImagePath=null;
     static float lut_intensit = Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f);
 
@@ -66,6 +67,8 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
     static ViewGroup.LayoutParams txtlp;
     static ViewGroup.LayoutParams btnlp;
     static  Size picSize;
+
+    static  int pageSize=10;
     static  ViewGroup.LayoutParams imgLp,llLp;
     List<File> lutsFile= null;
 
@@ -73,6 +76,8 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
 
     SeekBar rateSeekBar;
     int index=0;
+
+    Map<String,LUT> lutMap=new HashMap<>();
 
     static {
         GRID_COLUMN_COUNT=Pref.MenuValue("my_lut_grid_column_cnt",2);
@@ -97,6 +102,8 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
     void changeColumn(int c){
         if(GRID_COLUMN_COUNT==c)return;
         GRID_COLUMN_COUNT=c;
+        if(GRID_COLUMN_COUNT==3)pageSize=15;
+        else pageSize=10;
         Pref.setMenuValue("my_lut_grid_column_cnt",c);
         int widthPixels=G.RESOURCES.getDisplayMetrics().widthPixels;
         int heightPixels=G.RESOURCES.getDisplayMetrics().heightPixels;
@@ -125,10 +132,10 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
         if(scrollView!=null)scrollView.scrollTo(0,0);
         G.log(srcImagePath);
         ThreadPoolManager.getInstance().stopThreadPool();
-        Bitmap pic=ImageUtil.compressImage(srcImagePath,picSize,true);
-        ImageUtil.saveBitmapFile(pic,tempFilePath);
+        tempPicBigMap=ImageUtil.compressImage(srcImagePath,picSize,true);
+       // ImageUtil.saveBitmapFile(tempPicBigMap,tempFilePath);
 
-        imgLp=new ViewGroup.LayoutParams(picSize.getWidth(), (picSize.getWidth() * pic.getHeight())/pic.getWidth() );
+        imgLp=new ViewGroup.LayoutParams(picSize.getWidth(), (picSize.getWidth() * tempPicBigMap.getHeight())/tempPicBigMap.getWidth() );
      //   llLp=new ViewGroup.LayoutParams(picSize.getWidth(), pic.getHeight()+image_title_height*2+30);
         llLp=new ViewGroup.LayoutParams(picSize.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT);
         index=0;
@@ -137,7 +144,7 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
 
     void addPage(){
         int i=index;
-        for(;i<lutsFile.size()&&i<index+10;i++){
+        for(;i<lutsFile.size()&&i<index+pageSize;i++){
             File lut=lutsFile.get(i);
             LinearLayout rl=new LinearLayout(this);
             rl.setId(View.generateViewId());
@@ -145,12 +152,12 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
             ImageView iv=new ImageView(this);
             iv.setBackgroundColor(Color.parseColor("#55707070"));
             String lutFileName=lut.getName();
-            iv.setTag(lutFileName);
+            iv.setTag(lut.getAbsolutePath());
             iv.setLayoutParams(imgLp);
             iv.setOnTouchListener(this);
             rl.setPadding(20,0,0,0);
             rl.addView(iv);
-            rl.addView(getBottomView(lutFileName,lut_intensit));
+            rl.addView(getBottomView(lut,lut_intensit));
             rl.setLayoutParams(llLp);
             rl.setTag(lut_intensit);
             gridLayout.addView(rl);
@@ -162,59 +169,95 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
         String lutfile=iv.getTag().toString();
         LinearLayout rl=(LinearLayout)  iv.getParent();
         float rate=Float.parseFloat(rl.getTag().toString());
-        PreviewActivity that=this;
         ThreadPoolManager.add(new Runnable() {
             @Override
             public void run() {
-                String newFileWithLutImage = G.TMP_PATH + lutfile + ".jpg";
-                try {
-                    NUtil.deleteFile(newFileWithLutImage);
-                    Agc.processImageWithLUT(tempFilePath, newFileWithLutImage, lutfile, rate, "");
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                Drawable d = ImageUtil.getOuterDrawable(newFileWithLutImage);
-                                if (d != null) {
-                                    try { iv.setImageDrawable(d);  } catch (Throwable ex) { }
-                                    try{
-                                        Button btn=(Button)(((ViewGroup)rl.getChildAt(1)).getChildAt(1));
-                                        btn.setText("保存");
-                                        btn.setOnClickListener(that);
-                                    }catch (Exception ex){
-
-                                    }
-                                } else {
-                                    doErr();
-                                }
-                            }catch (Exception ex){
-                                G.log(newFileWithLutImage+":"+ex.getMessage());
-                                doErr();
-                            }
+                LUT lut=null;
+                if(lutfile.toLowerCase().endsWith(".png"))lut=new LUTPng(lutfile);
+                else lut=new LUTCube(lutfile);
+                lutMap.put(lutfile,lut);
+                lut.setIntensity(rate);
+                Bitmap filterBit=lut.filter(tempPicBigMap);
+                Drawable d=ImageUtil.bitmap2Drawable(filterBit);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            iv.setImageDrawable(d);
+                        }catch (Exception ex){
+                            G.log("GpuImage filter Error:"+ex.getMessage());
+                            doErr();
                         }
-                        void doErr(){
-                           // LinearLayout rl=(LinearLayout)  iv.getParent();
-                            LinearLayout btmRl=(LinearLayout)rl.getChildAt(1);
-                            Button btn=(Button) btmRl.getChildAt(1);
-                            btn.setText("LUT文件错误");
-                            //gridLayout.removeView(rl);
-                            //gridLayout.addView(rl,gridLayout.getChildCount());
-                        }
-                    });
-                }catch (Exception ex){
-                    G.log(newFileWithLutImage+":"+ex.getMessage());
-                    NUtil.dumpExceptionToSDCard(ex);
-                }
+                    }
+                });
+            }
+            void doErr(){
+                // LinearLayout rl=(LinearLayout)  iv.getParent();
+                LinearLayout btmRl=(LinearLayout)rl.getChildAt(1);
+                Button btn=(Button) btmRl.getChildAt(1);
+                btn.setText("LUT文件错误");
+                //gridLayout.removeView(rl);
+                //gridLayout.addView(rl,gridLayout.getChildCount());
             }
         });
     }
+//    void genImage2(ImageView iv){
+//        String lutfile=iv.getTag().toString();
+//        LinearLayout rl=(LinearLayout)  iv.getParent();
+//        float rate=Float.parseFloat(rl.getTag().toString());
+//        PreviewActivity that=this;
+//        ThreadPoolManager.add(new Runnable() {
+//            @Override
+//            public void run() {
+//                String newFileWithLutImage = G.TMP_PATH + lutfile + ".jpg";
+//                try {
+//                    NUtil.deleteFile(newFileWithLutImage);
+//                    Agc.processImageWithLUT(tempFilePath, newFileWithLutImage, lutfile, rate, "");
+//                    runOnUiThread(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            try {
+//                                Drawable d = ImageUtil.getOuterDrawable(newFileWithLutImage);
+//                                if (d != null) {
+//                                    try { iv.setImageDrawable(d);  } catch (Throwable ex) { }
+//                                    try{
+//                                        Button btn=(Button)(((ViewGroup)rl.getChildAt(1)).getChildAt(1));
+//                                        btn.setText("保存");
+//                                        btn.setOnClickListener(that);
+//                                    }catch (Exception ex){
+//
+//                                    }
+//                                } else {
+//                                    doErr();
+//                                }
+//                            }catch (Exception ex){
+//                                G.log(newFileWithLutImage+":"+ex.getMessage());
+//                                doErr();
+//                            }
+//                        }
+//                        void doErr(){
+//                           // LinearLayout rl=(LinearLayout)  iv.getParent();
+//                            LinearLayout btmRl=(LinearLayout)rl.getChildAt(1);
+//                            Button btn=(Button) btmRl.getChildAt(1);
+//                            btn.setText("LUT文件错误");
+//                            //gridLayout.removeView(rl);
+//                            //gridLayout.addView(rl,gridLayout.getChildCount());
+//                        }
+//                    });
+//                }catch (Exception ex){
+//                    G.log(newFileWithLutImage+":"+ex.getMessage());
+//                    NUtil.dumpExceptionToSDCard(ex);
+//                }
+//            }
+//        });
+//    }
 
 
-    View getBottomView(String lutFIle,float rate){
+    View getBottomView(File lutFIle,float rate){
         LinearLayout rl=new LinearLayout(this);
         rl.setOrientation(LinearLayout.VERTICAL);
-        rl.addView(getTextLabel(lutFIle,rate));
-        rl.addView(getSaveButton(lutFIle));
+        rl.addView(getTextLabel(lutFIle.getName(),rate));
+        rl.addView(getSaveButton(lutFIle.getAbsolutePath()));
         return rl;
     }
     TextView getTextLabel(String title,float rate){
@@ -288,6 +331,13 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
             linearLayout.addView(getSplit(5));
             linearLayout.addView(getButton("选择图片","select",w));
         }
+        if(GRID_COLUMN_COUNT==1){
+            b1c.setBackgroundColor(Color.parseColor("#c7402379"));
+        }else if(GRID_COLUMN_COUNT==2){
+            b2c.setBackgroundColor(Color.parseColor("#c7402379"));
+        }else if(GRID_COLUMN_COUNT==3){
+            b3c.setBackgroundColor(Color.parseColor("#c7402379"));
+        }
 
         return linearLayout;
     }
@@ -344,7 +394,7 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
             Button btn=(Button)view;
             if(btn.getText().equals("关闭")) {
                 ThreadPoolManager.getInstance().stopThreadPool();
-                finishAndRemoveTask();
+                doFinish();
                 return;
             }
             if(btn.getText().equals("选择图片")) {
@@ -367,7 +417,7 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
                 }else if (tag.toString().equals("3c")) {
                     changeColumn(3);
                 }
-                btn.setBackgroundColor( Color.parseColor("#c7402379"));
+                btn.setBackgroundColor(Color.parseColor("#c7402379"));
             }
 
 
@@ -475,7 +525,7 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
                     public void run() {
                         if(lw==0&&lh<30&&lastImg!=null){
                             try {
-                                Drawable d = ImageUtil.getOuterDrawable(tempFilePath);
+                                Drawable d = ImageUtil.bitmap2Drawable(tempPicBigMap);
                                 if (d != null) {
                                    runOnUiThread(new Runnable() {
                                        @Override
@@ -527,10 +577,14 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
     void resetLutImage(){
         if(isOld && lastImg!=null){
             try {
-                String newFileWithLutImage = G.TMP_PATH + lastImg.getTag().toString() + ".jpg";
-                Drawable d = ImageUtil.getOuterDrawable(newFileWithLutImage);
+               // String newFileWithLutImage = G.TMP_PATH + lastImg.getTag().toString() + ".jpg";
+                //Drawable d = ImageUtil.getOuterDrawable(newFileWithLutImage);
+                LinearLayout rl=(LinearLayout) lastImg.getParent();
+                float rate=Float.parseFloat(rl.getTag().toString());
+                LUT lut=lutMap.get(lastImg.getTag().toString());
+                Bitmap d=lut.filter(tempPicBigMap,rate);
                 if (d != null) {
-                    lastImg.setImageDrawable(d);
+                    lastImg.setImageDrawable(ImageUtil.bitmap2Drawable(d));
                     isOld=false;
                 }
             } catch (Exception ex) {
@@ -604,6 +658,8 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
         float rate=Float.parseFloat(rl.getTag().toString())+addRate;
         rate= rate>1?1:(rate<0?0:rate);
         showRate(iv,rate);
+        LUT lut=lutMap.get(iv.getTag().toString());
+        if(lut!=null)lut.setIntensity(rate);
     }
 
     void showRate(ImageView iv){
@@ -620,4 +676,30 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
         tv.setText("lut强度:"+(Math.round(rate*100f)/100f)+"\n"+tv.getTag());
 
     }
+
+    void doFinish(){
+        if(lutMap!=null) {
+            try {
+                Iterator<LUT> it = lutMap.values().iterator();
+                while (it.hasNext()) {
+                    LUT lut = it.next();
+                    lutMap.remove(lut);
+                    lut.destroy();
+                    lut = null;
+                }
+                lutMap=null;
+                System.gc();
+            }catch (Exception ex){}
+        }
+        try {
+            File tmpFile = new File(G.TMP_PATH);
+            if (tmpFile != null && tmpFile.exists() && tmpFile.listFiles().length > 0) {
+                for (File tmp : tmpFile.listFiles()) {
+                    tmp.delete();
+                }
+            }
+        }catch (Exception ex){}
+        this.finishAndRemoveTask();
+    }
+
 }

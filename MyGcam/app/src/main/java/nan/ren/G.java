@@ -3,6 +3,7 @@ package nan.ren;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.Globals;
 import com.Utils.Pref;
 import com.agc.Camera;
+import com.agc.Res;
 import com.agc.widget.OptionButton;
 
 import java.io.File;
@@ -22,6 +24,9 @@ import java.util.List;
 
 import agc.Agc;
 import nan.ren.activity.PreviewActivity;
+import nan.ren.bean.LUT;
+import nan.ren.bean.LUTCube;
+import nan.ren.bean.LUTPng;
 import nan.ren.util.CameraUtil;
 import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.util.FileUtil;
@@ -189,7 +194,7 @@ public class G {
         return saveImageByLUT(srcImage,lutFileName,auxProfilePrefFloatValue);
     }
 
-    public static String saveImageByLUT(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
+    public static String saveImageByLUT2(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
         if(lutFileName==null || lutFileName.trim().length()<=0)return srcImage;
         String  newFile=srcImage.substring(0,srcImage.length()-4)+"_"+lutFileName.substring(0,lutFileName.lastIndexOf("."))+"_"+auxProfilePrefFloatValue+".jpg";
         Agc.processImageWithLUT(srcImage, newFile, lutFileName, auxProfilePrefFloatValue, "");
@@ -203,4 +208,34 @@ public class G {
         return newFile;
     }
 
+    public static String saveImageByLUT(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
+        if(lutFileName==null || lutFileName.trim().length()<=0)return srcImage;
+        if(lutFileName.split("/").length<2)lutFileName=G.LUT_PATH+"/"+lutFileName;
+        File lutFile=new File(lutFileName);
+        String  newFile=srcImage.substring(0,srcImage.length()-4)+"_"+lutFile.getName().substring(0,lutFile.getName().lastIndexOf("."))+"_"+auxProfilePrefFloatValue+".jpg";
+        LUT lut=null;
+        if(lutFileName.toLowerCase().endsWith(".png"))lut=new LUTPng(lutFileName);
+        else lut=new LUTCube(lutFileName);
+
+        Bitmap result=lut.filter(ImageUtil.getBitMap(srcImage),auxProfilePrefFloatValue);
+        ImageUtil.saveBitmapFile(result,newFile,Pref.MenuValue("pref_qjpg_key",97));
+        File f=new File(newFile);
+        if(f.exists()&&f.length()>1000) {
+            ExifInterfaceUtil.copyExifInterface(newFile, srcImage);
+            WaterMarkUtil.noticSysPhoto(new File(newFile));
+        }else{
+            newFile=srcImage;
+        }
+        return newFile;
+    }
+
+
+    public static int getBottomBarLayout(){
+        //R.layout.bottom_bar_layout
+        if(Pref.MenuValue("my_bottom_bar_btn1_change",0)==0){
+            return Res.getLayoutID("bottom_bar_layout");
+        }else{
+            return Res.getLayoutID("bottom_bar_layout2");
+        }
+    }
 }

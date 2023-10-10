@@ -823,7 +823,11 @@
 
     check-cast p1, Landroid/view/LayoutInflater;
 
-    sget v0, Lcom/google/android/apps/camera/bottombar/R$layout;->bottom_bar_layout:I
+    # sget v0, Lcom/google/android/apps/camera/bottombar/R$layout;->bottom_bar_layout:I
+	
+	invoke-static {}, Lnan/ren/G;->getBottomBarLayout()I
+	
+	move-result v0
 
     invoke-virtual {p1, v0, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 

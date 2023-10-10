@@ -198,17 +198,21 @@ public class ImageUtil {
         return new BitmapDrawable(G.RESOURCES,bitmap);
     }
 
-    public static void saveBitmapFile(Bitmap bitmap,String savePath){
+    public static void saveBitmapFile(Bitmap bitmap,String savePath,int quality){
         File file=new File(savePath);//将要保存图片的路径
         BufferedOutputStream bos=null;
         try {
             bos = new BufferedOutputStream(new FileOutputStream(file));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, bos);
             bos.flush();
             bos.close();
         } catch (Exception e) {
             if(bos!=null)try{bos.close();}catch (Exception e2){}
         }
+    }
+
+    public static void saveBitmapFile(Bitmap bitmap,String savePath){
+        saveBitmapFile(bitmap,savePath,100);
     }
 
     public static Bitmap getBitMap(String path){

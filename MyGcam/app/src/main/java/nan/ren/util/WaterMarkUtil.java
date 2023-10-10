@@ -33,6 +33,7 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Map;
 
 import nan.ren.G;
 
@@ -106,8 +107,8 @@ public class WaterMarkUtil {
         Paint bgPaint = new Paint();
         Paint txtPaint = new Paint(1);
         Paint secTxtPaint = new Paint(1);
-        float qianhou=80;
-        float shangxia=10;
+        float qianhou=Pref.MenuValue("my_watermark_padding_left",80);
+        float shangxia=Pref.MenuValue("my_watermark_padding_top",10) ;
         txtPaint.setColor(txtColor);
         txtPaint.setTextSize(fontSize);
         txtPaint.setDither(true);
@@ -177,8 +178,11 @@ public class WaterMarkUtil {
         if(logo!=null) {
             canvas.drawBitmap(logo, lf - qianhou * 2 - logo.getWidth(), (sxyStart - fontSize + sxyEnd) / 2 - logo.getHeight() / 2+shangxia, null);
             if(!isInner){
-                secTxtPaint.setStrokeWidth(Pref.MenuValue("my_watermark_line_width",3));//画笔粗细为9像素点
-                canvas.drawLine(lf-qianhou ,   sxyStart-fontSize+shangxia*2, lf-qianhou   , sxyEnd, secTxtPaint);
+                int lineWidth=Pref.MenuValue("my_watermark_line_width",3);
+                if(lineWidth>0) {
+                    secTxtPaint.setStrokeWidth(lineWidth);//画笔粗细为9像素点
+                    canvas.drawLine(lf - qianhou, sxyStart - fontSize + shangxia * 2, lf - qianhou, sxyEnd, secTxtPaint);
+                }
             }
         }
         return createBitmap;
