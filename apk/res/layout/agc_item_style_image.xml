@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:gravity="center" android:layout_width="45.0dip" android:layout_height="45.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:tag="agc_iv" android:background="@drawable/agc_multiple_text_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="3.0dip" android:src="@drawable/agc_multiple_flip" android:scaleType="centerCrop" />
-</RelativeLayout>
