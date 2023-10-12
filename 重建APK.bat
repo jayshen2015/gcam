@@ -46,7 +46,7 @@ if "%num%"=="5" (
 
 
 if "%num%"=="0" (
-	for %%i in (mtk;kaka;onep;samsung) do CALL :BuildApk  %%i
+	for %%i in (kaka;mtk;onep;samsung;dy) do CALL :BuildApk  %%i
 ) 
 
 if "%num%"=="" (

@@ -3,12 +3,12 @@
 .source "PreviewActivity.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/PreviewActivity;->onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    value = Lnan/ren/activity/PreviewActivity;->getRateView()Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lnan/ren/activity/PreviewActivity;
 
+.field final synthetic val$textView:Landroid/widget/TextView;
+
 
 # direct methods
-.method constructor <init>(Lnan/ren/activity/PreviewActivity;)V
+.method constructor <init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/TextView;)V
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 523
+    .line 448
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$4;->this$0:Lnan/ren/activity/PreviewActivity;
+
+    iput-object p2, p0, Lnan/ren/activity/PreviewActivity$4;->val$textView:Landroid/widget/TextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,71 +40,95 @@
 
 
 # virtual methods
-.method public run()V
-    .locals 3
+.method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
+    .locals 6
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+    .param p2, "i"    # I
+    .param p3, "b"    # Z
 
-    .line 526
+    .line 451
+    iget-object v0, p0, Lnan/ren/activity/PreviewActivity$4;->val$textView:Landroid/widget/TextView;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "LUT\u5f3a\u5ea6:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
+
+    move-result v2
+
+    mul-int/lit8 v2, v2, 0x64
+
+    int-to-float v2, v2
+
+    invoke-static {v2}, Ljava/lang/Math;->round(F)I
+
+    move-result v2
+
+    int-to-double v2, v2
+
+    const-wide v4, 0x40c3880000000000L    # 10000.0
+
+    div-double/2addr v2, v4
+
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 452
+    return-void
+.end method
+
+.method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 0
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+
+    .line 454
+    return-void
+.end method
+
+.method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    .locals 2
+    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+
+    .line 457
+    invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
+
+    move-result v0
+
+    mul-int/lit8 v0, v0, 0x64
+
+    int-to-float v0, v0
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const v1, 0x461c4000    # 10000.0f
+
+    div-float/2addr v0, v1
+
+    sput v0, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
+
+    .line 458
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$4;->this$0:Lnan/ren/activity/PreviewActivity;
 
-    iget v0, v0, Lnan/ren/activity/PreviewActivity;->lw:F
+    invoke-virtual {v0}, Lnan/ren/activity/PreviewActivity;->show()V
 
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-nez v0, :cond_1
-
-    iget-object v0, p0, Lnan/ren/activity/PreviewActivity$4;->this$0:Lnan/ren/activity/PreviewActivity;
-
-    iget v0, v0, Lnan/ren/activity/PreviewActivity;->lh:F
-
-    const/high16 v1, 0x41f00000    # 30.0f
-
-    cmpg-float v0, v0, v1
-
-    if-gez v0, :cond_1
-
-    iget-object v0, p0, Lnan/ren/activity/PreviewActivity$4;->this$0:Lnan/ren/activity/PreviewActivity;
-
-    iget-object v0, v0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
-
-    if-eqz v0, :cond_1
-
-    .line 528
-    :try_start_0
-    sget-object v0, Lnan/ren/activity/PreviewActivity;->tempPicBigMap:Landroid/graphics/Bitmap;
-
-    invoke-static {v0}, Lnan/ren/util/ImageUtil;->bitmap2Drawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 529
-    .local v0, "d":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_0
-
-    .line 530
-    iget-object v1, p0, Lnan/ren/activity/PreviewActivity$4;->this$0:Lnan/ren/activity/PreviewActivity;
-
-    new-instance v2, Lnan/ren/activity/PreviewActivity$4$1;
-
-    invoke-direct {v2, p0, v0}, Lnan/ren/activity/PreviewActivity$4$1;-><init>(Lnan/ren/activity/PreviewActivity$4;Landroid/graphics/drawable/Drawable;)V
-
-    invoke-virtual {v1, v2}, Lnan/ren/activity/PreviewActivity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 534
-    .end local v0    # "d":Landroid/graphics/drawable/Drawable;
-    :catch_0
-    move-exception v0
-
-    :cond_0
-    :goto_0
-    nop
-
-    .line 536
-    :cond_1
+    .line 459
     return-void
 .end method

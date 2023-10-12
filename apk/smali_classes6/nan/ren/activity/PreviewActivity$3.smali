@@ -3,12 +3,12 @@
 .source "PreviewActivity.java"
 
 # interfaces
-.implements Landroid/widget/SeekBar$OnSeekBarChangeListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/PreviewActivity;->getRateView()Landroid/view/View;
+    value = Lnan/ren/activity/PreviewActivity;->savePic(Landroid/widget/Button;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,22 @@
 # instance fields
 .field final synthetic this$0:Lnan/ren/activity/PreviewActivity;
 
-.field final synthetic val$textView:Landroid/widget/TextView;
+.field final synthetic val$btn:Landroid/widget/Button;
+
+.field final synthetic val$rate:F
 
 
 # direct methods
-.method constructor <init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/TextView;)V
+.method constructor <init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/Button;F)V
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 439
+    .line 385
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$3;->this$0:Lnan/ren/activity/PreviewActivity;
 
-    iput-object p2, p0, Lnan/ren/activity/PreviewActivity$3;->val$textView:Landroid/widget/TextView;
+    iput-object p2, p0, Lnan/ren/activity/PreviewActivity$3;->val$btn:Landroid/widget/Button;
+
+    iput p3, p0, Lnan/ren/activity/PreviewActivity$3;->val$rate:F
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,95 +44,33 @@
 
 
 # virtual methods
-.method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .locals 6
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
-    .param p2, "i"    # I
-    .param p3, "b"    # Z
+.method public run()V
+    .locals 3
 
-    .line 442
-    iget-object v0, p0, Lnan/ren/activity/PreviewActivity$3;->val$textView:Landroid/widget/TextView;
+    .line 388
+    sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lnan/ren/activity/PreviewActivity$3;->val$btn:Landroid/widget/Button;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "LUT\u5f3a\u5ea6:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Landroid/widget/Button;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
-
-    move-result v2
-
-    mul-int/lit8 v2, v2, 0x64
-
-    int-to-float v2, v2
-
-    invoke-static {v2}, Ljava/lang/Math;->round(F)I
-
-    move-result v2
-
-    int-to-double v2, v2
-
-    const-wide v4, 0x40c3880000000000L    # 10000.0
-
-    div-double/2addr v2, v4
-
-    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v2, p0, Lnan/ren/activity/PreviewActivity$3;->val$rate:F
 
-    move-result-object v1
+    invoke-static {v0, v1, v2}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;F)Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    .line 389
+    iget-object v0, p0, Lnan/ren/activity/PreviewActivity$3;->val$btn:Landroid/widget/Button;
 
-    .line 443
-    return-void
-.end method
+    const-string v1, "\u5df2\u4fdd\u5b58"
 
-.method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 0
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
+    invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 445
-    return-void
-.end method
-
-.method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
-    .locals 2
-    .param p1, "seekBar"    # Landroid/widget/SeekBar;
-
-    .line 448
-    invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
-
-    move-result v0
-
-    mul-int/lit8 v0, v0, 0x64
-
-    int-to-float v0, v0
-
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    move-result v0
-
-    int-to-float v0, v0
-
-    const v1, 0x461c4000    # 10000.0f
-
-    div-float/2addr v0, v1
-
-    sput v0, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
-
-    .line 449
-    iget-object v0, p0, Lnan/ren/activity/PreviewActivity$3;->this$0:Lnan/ren/activity/PreviewActivity;
-
-    invoke-virtual {v0}, Lnan/ren/activity/PreviewActivity;->show()V
-
-    .line 450
+    .line 390
     return-void
 .end method

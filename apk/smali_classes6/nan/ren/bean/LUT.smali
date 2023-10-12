@@ -44,9 +44,12 @@
     :try_start_0
     iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
 
+    if-eqz v0, :cond_0
+
     invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->destroy()V
 
     .line 41
+    :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
@@ -54,23 +57,29 @@
     .line 42
     iget-object v1, p0, Lnan/ren/bean/LUT;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
+    if-eqz v1, :cond_1
+
     invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->deleteImage()V
 
     .line 43
+    :cond_1
     iput-object v0, p0, Lnan/ren/bean/LUT;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+
+    .line 44
+    invoke-static {}, Ljava/lang/System;->gc()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 44
+    .line 45
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 45
+    .line 46
     return-void
 .end method
 
