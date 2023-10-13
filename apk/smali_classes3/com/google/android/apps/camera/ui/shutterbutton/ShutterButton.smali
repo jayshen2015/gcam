@@ -2598,7 +2598,6 @@
 
     #invoke-virtual {v2, v3, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I 
     invoke-static {v2}, Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
-
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
