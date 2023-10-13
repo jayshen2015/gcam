@@ -2210,6 +2210,9 @@ The format used to store the color when encoding."</string>
 	
 	<string name="my_bottom_bar_btn1_change_title">调换预览和镜头切换按钮的位置</string>
 	
+	<string name="my_prop_item_cnt_title">每行配置数</string>
+    	<string name="my_watermark_logo_point_ft_title">水印中LOGO位置微调(x,y)</string>
+
 	
 	
 </resources>
