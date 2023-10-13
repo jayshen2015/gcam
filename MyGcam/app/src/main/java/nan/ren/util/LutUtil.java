@@ -1,12 +1,18 @@
 package nan.ren.util;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import jp.co.cyberagent.android.gpuimage.GPUImage;
+import jp.co.cyberagent.android.gpuimage.GPUImageLookupFilter;
 import nan.ren.G;
+import nan.ren.bean.LUT;
+import nan.ren.bean.LUTCube;
 
 public class LutUtil {
     public static List<File> getLuts1(String path){
@@ -37,7 +43,7 @@ public class LutUtil {
 
     public static List<File> getLuts(){
         List<File> list=getLuts1(G.LUT_PATH);
-        if(list==null){
+        if(list==null||list.isEmpty()){
             list=getLuts2();
         }
         if(list==null) return new ArrayList<>();
@@ -58,5 +64,35 @@ public class LutUtil {
             }
         });
         return list;
+    }
+    public static Bitmap filterToBitmap(Bitmap src,String lut,float intensity){
+       return filterToBitmap(src,lut,intensity,100);
+    }
+    public static Bitmap filterToBitmap(Bitmap src,String lut,float intensity,int quality){
+        try {
+            GPUImage gpuImage = new GPUImage(G.CONTEXT);
+            GPUImageLookupFilter lutFilter = new GPUImageLookupFilter();
+            lutFilter.setBitmap(getLutBitMap(lut));
+            lutFilter.setIntensity(intensity);
+            gpuImage.setFilter(lutFilter);
+            Bitmap resultBit = gpuImage.getBitmapWithFilterApplied(src);
+            if (quality < 100) resultBit = ImageUtil.compressImageByQuality(resultBit, quality);
+            gpuImage = null;
+            lutFilter.destroy();
+            lutFilter = null;
+            System.gc();
+            return resultBit;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+    }
+
+    public static Drawable filterToDrawable(Bitmap src, String lut, float intensity, int quality){
+       return  ImageUtil.bitmap2Drawable(filterToBitmap(src,lut,intensity,quality));
+    }
+    public static Bitmap getLutBitMap(String lut){
+        if(lut.toLowerCase().endsWith(".png"))return ImageUtil.getBitMap(lut);
+        return LUTCube.getLutBitMap(lut);
     }
 }

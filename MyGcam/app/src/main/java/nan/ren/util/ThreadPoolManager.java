@@ -32,7 +32,7 @@ public class ThreadPoolManager {
     private ThreadPoolExecutor mThreadPoolExecutor;
     //创建线程池
     private ThreadPoolManager(){
-        mThreadPoolExecutor=new ThreadPoolExecutor(1, 100, 6, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(100), new RejectedExecutionHandler() {
+        mThreadPoolExecutor=new ThreadPoolExecutor(4, 100, 6, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(100), new RejectedExecutionHandler() {
             @Override
             public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
                 addTask(r);
@@ -70,7 +70,8 @@ public class ThreadPoolManager {
             while (true) {
                 try {
                     runn = mQueue.take();
-                    synchronized(this){try {
+                    synchronized(this){
+                        try {
                             if (mThreadPoolExecutor != null) mThreadPoolExecutor.execute(runn);//执行线程
                         }catch (Exception ex){
                             NUtil.dumpExceptionToSDCard(ex);

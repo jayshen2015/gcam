@@ -195,6 +195,7 @@ public class ImageUtil {
     // Bitmap → Drawable
     public static Drawable bitmap2Drawable(Bitmap bitmap) {
         // 因为BtimapDrawable是Drawable的子类，最终直接使用bd对象即可。
+        if(bitmap==null)return null;
         return new BitmapDrawable(G.RESOURCES,bitmap);
     }
 

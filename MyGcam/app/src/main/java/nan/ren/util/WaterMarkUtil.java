@@ -108,7 +108,7 @@ public class WaterMarkUtil {
         Paint txtPaint = new Paint(1);
         Paint secTxtPaint = new Paint(1);
         float qianhou=Pref.MenuValue("my_watermark_padding_left",80);
-        float shangxia=Pref.MenuValue("my_watermark_padding_top",10) ;
+        float shangxia=10;
         txtPaint.setColor(txtColor);
         txtPaint.setTextSize(fontSize);
         txtPaint.setDither(true);
@@ -170,13 +170,28 @@ public class WaterMarkUtil {
         float lf=C.x;
         if(D!=null)lf=Math.min(lf,D.x)-10;
         if(sxyEnd==0)sxyEnd=middleY + shangxia/2;
+        if(B!=null || D!=null) {
+            int paddingTop=Pref.MenuValue("my_watermark_padding_top");
+            sxyEnd += paddingTop;
+            sxyStart -= paddingTop;
+        }
 
         if(A!=null)canvas.drawText(title, A.x,B==null?A.y:sxyStart, txtPaint);
         if(B!=null)canvas.drawText(dateFormat,B.x , sxyEnd, secTxtPaint);
         if(C!=null)canvas.drawText(picInfo,lf ,sxyStart, txtPaint);
         if(D!=null)canvas.drawText(lastText,lf ,sxyEnd, secTxtPaint);
         if(logo!=null) {
-            canvas.drawBitmap(logo, lf - qianhou * 2 - logo.getWidth(), (sxyStart - fontSize + sxyEnd) / 2 - logo.getHeight() / 2+shangxia, null);
+            float logoX=lf - qianhou * 2 - logo.getWidth();
+            float logoY=(sxyStart - fontSize + sxyEnd) / 2 - logo.getHeight() / 2+shangxia;
+            String logoFt=Pref.getStringValue("my_watermark_logo_point_ft","");
+            if(logoFt!=null&& logoFt.trim().length()>1){
+               String[] xy= logoFt.split(",");
+               try{
+                   logoX+=Integer.parseInt(xy[0]);
+                   logoY+=Integer.parseInt(xy[1]);
+               }catch (Exception ex){}
+            }
+            canvas.drawBitmap(logo,logoX,logoY, null);
             if(!isInner){
                 int lineWidth=Pref.MenuValue("my_watermark_line_width",3);
                 if(lineWidth>0) {
@@ -282,7 +297,6 @@ public class WaterMarkUtil {
             if(Pref.MenuValue("my_watermark_dateformat_enable") != 0 ){
                 return new SimpleDateFormat(Pref.getStringValue("my_watermark_dateformat","yyyy-MM-dd")).format(Long.valueOf(new Date().getTime()));
             }
-
             return "";
         } catch (Exception e) {
             e.printStackTrace();

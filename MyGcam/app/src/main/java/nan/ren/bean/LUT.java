@@ -37,10 +37,11 @@ public class LUT {
     }
     public void destroy(){
         try {
-            lutFilter.destroy();
+            if(lutFilter!=null)lutFilter.destroy();
             lutFilter = null;
-            gpuImage.deleteImage();
+            if(gpuImage!=null)gpuImage.deleteImage();
             gpuImage = null;
+            System.gc();
         }catch (Exception ex){}
     }
 }

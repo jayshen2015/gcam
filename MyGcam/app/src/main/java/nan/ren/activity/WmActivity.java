@@ -189,19 +189,22 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         locationInfo=  LocationUtil.getExifInterfaceLocalInfo(exb);
         if(edPicInfo!=null)edPicInfo.setText(picinfo);
         if(edLocalInfo!=null)edLocalInfo.setText(locationInfo);
+
+
+       Long ldt=0l;
+       try{
+           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+               ldt=exb.getDateTime();
+           }
+           if(ldt==null || ldt<100000){
+               ldt=Long.valueOf(new Date().getTime());
+           }
+       }catch (Exception ex){
+           ldt=Long.valueOf(new Date().getTime());
+       }
+       dateformat=new SimpleDateFormat(Pref.getStringValue("my_watermark_dateformat","yyyy-MM-dd")).format(ldt);
         if(edDateFormt!=null) {
-            Long ldt=0l;
-            try{
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                    ldt=exb.getDateTime();
-                }
-                if(ldt==null || ldt<100000){
-                    ldt=Long.valueOf(new Date().getTime());
-                }
-            }catch (Exception ex){
-                ldt=Long.valueOf(new Date().getTime());
-            }
-            edDateFormt.setText(new SimpleDateFormat(Pref.getStringValue("my_watermark_dateformat","yyyy-MM-dd")).format(ldt));
+            edDateFormt.setText(dateformat);
         }
       // locationInfo= WaterMarkUtil.getLocationInfo(exb);
 //       if(locationInfo==null||locationInfo.length()<10)locationInfo=LocationUtil.getGpsLocalInfo();
@@ -534,19 +537,7 @@ public class WmActivity extends Activity  implements View.OnClickListener {
 
         ViewGroup f8=getEditField("日期文本：",dateformat);
         edDateFormt=(EditText) f8.getChildAt(1);
-        try{
-            if(exb!=null){
-                Long ldt= null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-                    ldt = exb.getDateTime();
-                }
-                if(ldt>100000){
-                  edDateFormt.setText(new SimpleDateFormat(Pref.getStringValue("my_watermark_dateformat","yyyy-MM-dd")).format(ldt));
-                }
-            }
-        }catch (Exception ex){
-
-        }
+        edDateFormt.setText(dateformat);
         Button btn2=new Button(this);
         btn2.setText("当前时间");
         btn2.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
