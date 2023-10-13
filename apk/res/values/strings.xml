@@ -2204,15 +2204,12 @@ The format used to store the color when encoding."</string>
 	
 	<string name="my_lut_grid_column_cnt_title">LUT预览每行图数</string>
 	
-	<string name="my_watermark_padding_left_title">水印前后间隔-默认80</string>
-	<string name="my_watermark_padding_top_title">水印上下间隔-默认10</string>
-	<string name="my_watermark_line_width_title">水印竖线宽度-默认3</string>
+	<string name="my_watermark_padding_left_title">水印前后间隔</string>
+	<string name="my_watermark_padding_top_title">水印上下间隔</string>
+	<string name="my_watermark_line_width_title">水印竖线宽度</string>
 	
 	<string name="my_bottom_bar_btn1_change_title">调换预览和镜头切换按钮的位置</string>
 	
 	<string name="my_prop_item_cnt_title">每行配置数</string>
     	<string name="my_watermark_logo_point_ft_title">水印中LOGO位置微调(x,y)</string>
-
-	
-	
 </resources>

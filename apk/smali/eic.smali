@@ -15,7 +15,7 @@
     const/4 p1, 0x0
 
     iput-object p1, p0, Leic;->a:Leib;
-
+	
     return-void
 .end method
 

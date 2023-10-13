@@ -9507,6 +9507,9 @@
 	<public type="string" name="my_prop_item_cnt_title" id="0x7f140f53" />
 	<public type="string" name="my_watermark_logo_point_ft_title" id="0x7f140f54" />
 	
+	<public type="string" name="my_prop_item_cnt_title" id="0x7f140f53" />
+	<public type="string" name="my_watermark_logo_point_ft_title" id="0x7f140f54" />
+	
 	<public type="layout" name="bottom_bar_layout2" id="0x7f0e0900" />
 	
 </resources>
