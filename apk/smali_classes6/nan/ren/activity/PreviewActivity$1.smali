@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/PreviewActivity;->addPage()V
+    value = Lnan/ren/activity/PreviewActivity;->addPage(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 160
+    .line 159
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$1;->val$iv:Landroid/widget/ImageView;
@@ -43,13 +43,13 @@
 .method public run()V
     .locals 2
 
-    .line 163
+    .line 162
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$1;->val$iv:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Lnan/ren/activity/PreviewActivity;->genImage(Landroid/widget/ImageView;)V
 
-    .line 164
+    .line 163
     return-void
 .end method

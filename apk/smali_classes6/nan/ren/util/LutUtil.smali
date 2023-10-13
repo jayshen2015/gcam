@@ -135,7 +135,7 @@
     return-object v0
 .end method
 
-.method private static getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
+.method public static getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
     .locals 2
     .param p0, "lut"    # Ljava/lang/String;
 

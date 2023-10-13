@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 561
+    .line 560
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$6;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$6;->val$todoImg:Landroid/widget/ImageView;
@@ -43,13 +43,13 @@
 .method public run()V
     .locals 2
 
-    .line 564
+    .line 563
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$6;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$6;->val$todoImg:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Lnan/ren/activity/PreviewActivity;->genImage(Landroid/widget/ImageView;)V
 
-    .line 565
+    .line 564
     return-void
 .end method

@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$1"    # Lnan/ren/activity/PreviewActivity$5;
 
-    .line 541
+    .line 540
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$5$1;->this$1:Lnan/ren/activity/PreviewActivity$5;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$5$1;->val$d:Landroid/graphics/drawable/Drawable;
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 2
 
-    .line 543
+    .line 542
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$5$1;->this$1:Lnan/ren/activity/PreviewActivity$5;
 
     iget-object v0, v0, Lnan/ren/activity/PreviewActivity$5;->this$0:Lnan/ren/activity/PreviewActivity;
