@@ -109,8 +109,7 @@ public class NUtil {
                     r = o.toString();
                 }
             }
-            try {
-                CrashHandler.writeLog(">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>:", r);}catch (Exception ex){}
+            try {CrashHandler.writeLog(">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>:", r);}catch (Exception ex){}
             try { android.util.Log.e(">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>",r);}catch (Exception ex){}
         }catch (Exception ex){
             ex.printStackTrace();

@@ -40,6 +40,7 @@
         <activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>
         <activity android:exported="true" android:name=".bak.TActivity"></activity>
         <activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>
+        <activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
 
     </application>
 

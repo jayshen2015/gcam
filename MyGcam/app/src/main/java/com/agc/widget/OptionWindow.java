@@ -1,4 +1,6 @@
 package com.agc.widget;
 
-public class OptionWindow {
+import android.widget.PopupWindow;
+
+public class OptionWindow extends PopupWindow {
 }

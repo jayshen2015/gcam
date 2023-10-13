@@ -195,20 +195,25 @@ public class ImageUtil {
     // Bitmap → Drawable
     public static Drawable bitmap2Drawable(Bitmap bitmap) {
         // 因为BtimapDrawable是Drawable的子类，最终直接使用bd对象即可。
+        if(bitmap==null)return null;
         return new BitmapDrawable(G.RESOURCES,bitmap);
     }
 
-    public static void saveBitmapFile(Bitmap bitmap,String savePath){
+    public static void saveBitmapFile(Bitmap bitmap,String savePath,int quality){
         File file=new File(savePath);//将要保存图片的路径
         BufferedOutputStream bos=null;
         try {
             bos = new BufferedOutputStream(new FileOutputStream(file));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, bos);
             bos.flush();
             bos.close();
         } catch (Exception e) {
             if(bos!=null)try{bos.close();}catch (Exception e2){}
         }
+    }
+
+    public static void saveBitmapFile(Bitmap bitmap,String savePath){
+        saveBitmapFile(bitmap,savePath,100);
     }
 
     public static Bitmap getBitMap(String path){

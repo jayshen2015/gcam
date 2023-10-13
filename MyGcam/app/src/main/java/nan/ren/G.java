@@ -3,30 +3,46 @@ package nan.ren;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.opengl.GLSurfaceView;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.Globals;
 import com.Utils.Pref;
 import com.agc.Camera;
+import com.agc.Res;
 import com.agc.widget.OptionButton;
+import com.agc.widget.OptionWindow;
+import com.google.android.apps.camera.ui.views.ViewfinderCover;
+
+import org.opencv.android.CameraGLSurfaceView;
 
 import java.io.File;
 import java.util.List;
 
 import agc.Agc;
+import jp.co.cyberagent.android.gpuimage.GPUImage;
+import jp.co.cyberagent.android.gpuimage.GPUImageGrayscaleFilter;
+import nan.ren.activity.ConfigActivity;
 import nan.ren.activity.PreviewActivity;
+import nan.ren.bean.LUT;
+import nan.ren.bean.LUTCube;
+import nan.ren.bean.LUTPng;
 import nan.ren.util.CameraUtil;
 import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.JsonUtil;
+import nan.ren.util.LutUtil;
 import nan.ren.util.NUtil;
 import nan.ren.util.OsUtil;
 import nan.ren.util.ThreadPoolManager;
@@ -105,12 +121,14 @@ public class G {
     }
     public static int getShutterColor() {
         String colorStr = Pref.getStringValue("camera_mode_idle_color","#fff37727");
+        if(colorStr==null||colorStr.trim().isEmpty())colorStr="#fff37727";
         return Color.parseColor(colorStr.trim());
     }
 
     public static int getShutterColor(Resources res) {
         return getShutterColor();
     }
+
 
 
 
@@ -153,11 +171,15 @@ public class G {
                                 }
                                 String picPath=absolutePath;
                                 boolean isPreviewLut=(Pref.MenuValue("my_preview_luts") == 1);
+                                String lut=Pref.getAuxProfilePrefStringValue("lib_lut_key");
+                                if(!isPreviewLut&&lut!=null&&lut.trim().length()>1){
+                                    picPath = G.saveImageByLUT(picPath,lut);
+                                    if(!picPath.equals(absolutePath)) {
+                                        try{new File(absolutePath).deleteOnExit();}catch (Exception ex){}
+                                    }
+                                }
                                 if (Pref.MenuValue("pref_photo_watermark_key") == 1 &&
                                     Pref.MenuValue("my_hide_wmbtn") == 0){
-                                    if(!isPreviewLut){
-                                        picPath = G.saveImageByLUT(picPath,Pref.getAuxProfilePrefStringValue("lib_lut_key"));
-                                    }
                                     if (Pref.MenuValue("pref_watermark_type_key") == 0) {
                                         picPath= WaterMarkUtil.addWaterMark(picPath);
                                     }else{
@@ -166,9 +188,7 @@ public class G {
                                     if(picPath.equals(absolutePath)) ExifInterfaceUtil.copyExifInterface(picPath,exifInterface);
                                 }
 
-
-
-                                    if (isPreviewLut) {
+                                if (isPreviewLut) {
                                     Intent intent = new Intent(CONTEXT, PreviewActivity.class);
                                     intent.putExtra("imagePath",picPath);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
@@ -189,7 +209,7 @@ public class G {
         return saveImageByLUT(srcImage,lutFileName,auxProfilePrefFloatValue);
     }
 
-    public static String saveImageByLUT(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
+    public static String saveImageByLUT2(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
         if(lutFileName==null || lutFileName.trim().length()<=0)return srcImage;
         String  newFile=srcImage.substring(0,srcImage.length()-4)+"_"+lutFileName.substring(0,lutFileName.lastIndexOf("."))+"_"+auxProfilePrefFloatValue+".jpg";
         Agc.processImageWithLUT(srcImage, newFile, lutFileName, auxProfilePrefFloatValue, "");
@@ -201,6 +221,60 @@ public class G {
             newFile=srcImage;
         }
         return newFile;
+    }
+
+    public static String saveImageByLUT(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
+        if(lutFileName==null || lutFileName.trim().length()<1)return srcImage;
+        if(lutFileName.split("/").length<2)lutFileName=G.LUT_PATH+lutFileName;
+        File lutFile=new File(lutFileName);
+        String  newFile=srcImage.substring(0,srcImage.length()-4)+"_"+lutFile.getName().substring(0,lutFile.getName().lastIndexOf("."))+"_"+auxProfilePrefFloatValue+".jpg";
+        Bitmap result= LutUtil.filterToBitmap(ImageUtil.getBitMap(srcImage),lutFileName,auxProfilePrefFloatValue);
+        ImageUtil.saveBitmapFile(result,newFile,Pref.MenuValue("pref_qjpg_key",97));
+        File f=new File(newFile);
+        if(f.exists()&&f.length()>1000) {
+            ExifInterfaceUtil.copyExifInterface(newFile, srcImage);
+            WaterMarkUtil.noticSysPhoto(new File(newFile));
+        }else{
+            newFile=srcImage;
+        }
+        return newFile;
+    }
+
+    public static void popWinFilter(OptionWindow c){
+        int columnCnt=Pref.MenuValue("my_prop_item_cnt");
+        if(columnCnt<1)return;
+        GridView gridView = c.getContentView().findViewWithTag("agc_list_view");
+        gridView.setNumColumns(columnCnt);
+    }
+    public static int getBottomBarLayout(){
+        if(Pref.MenuValue("my_bottom_bar_btn1_change",0)==0){
+            return Res.getLayoutID("bottom_bar_layout");
+        }else{
+            return Res.getLayoutID("bottom_bar_layout2");
+        }
+    }
+    public static void initCameraDraw(ViewfinderCover v){
+       G.log("========GLSurfaceView init =============");
+        viewfinderCover=v;
+    }
+    public static void initCameraBit(Bitmap bit){
+        G.log("========initCameraBit bit =============");
+        if(bit!=null){
+            filterByG(bit);
+        }
+    }
+
+
+    public static ViewfinderCover viewfinderCover;
+    static  GPUImage gpuImage;
+    private  static Bitmap filterByG(Bitmap b){
+        if(gpuImage==null){
+            gpuImage = new GPUImage(CONTEXT);
+            GPUImageGrayscaleFilter ggf=new GPUImageGrayscaleFilter();
+            gpuImage.setFilter(ggf);
+            ImageUtil.saveBitmapFile(b,G.TMP_PATH+"Camera.jpg");
+        }
+        return gpuImage.getBitmapWithFilterApplied(b);
     }
 
 }

@@ -34,7 +34,6 @@ import nan.ren.util.JsonUtil;
 import nan.ren.util.NUtil;
 
 public class ConfigActivity extends Activity implements View.OnClickListener {
-
     static float dsp=1;
     static float fontSize=30;
     static int screen_width;
@@ -188,7 +187,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
             return ;
         }
         StringBuffer result=new StringBuffer("<?xml version='1.0' encoding='utf-8' standalone='yes' ?>\n<map>\n");
-        result.append("<string name=\"patch_profile_count\">"+(((mainIndexs.size()+secIndexs.size())/3)*3)+"</string>\n");
+        result.append("<string name=\"pref_patch_profile_count_key\">"+(((mainIndexs.size()+secIndexs.size())/3)*3)+"</string>\n");
         result.append(getBaseConfig()).append("\n");
         result.append(getConfigTxt(0,mainIndexs,mainConfigTxt));
         result.append(getConfigTxt(mainIndexs.size(),secIndexs,secConfigTxt));

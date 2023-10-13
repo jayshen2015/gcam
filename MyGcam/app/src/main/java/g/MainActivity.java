@@ -2,29 +2,45 @@ package g;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.Globals;
 
 import agc.Agc;
 import g.bak.TActivity;
+import jp.co.cyberagent.android.gpuimage.GPUImage;
+import jp.co.cyberagent.android.gpuimage.GPUImageGrayscaleFilter;
+import jp.co.cyberagent.android.gpuimage.GPUImageLookupFilter;
 import nan.ren.activity.ConfigActivity;
 import nan.ren.activity.WmActivity;
+import nan.ren.bean.LUT;
+import nan.ren.bean.LUTCube;
+import nan.ren.bean.LUTPng;
+import nan.ren.util.ImageUtil;
+import nan.ren.util.LutUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    ImageView imageView;
+    ImageView imageView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Globals.context=getApplicationContext();
         setContentView(R.layout.activity_main);
+        imageView=findViewById(R.id.imageView);
+        imageView.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
+        imageView2=findViewById(R.id.imageView2);
+        imageView2.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
         bind();
-        Intent intent=new Intent(this, ConfigActivity.class);
-        // Intent intent=new Intent(this, WmActivity.class);
-        startActivity(intent);
+//        Intent intent=new Intent(this, ConfigActivity.class);
+//        // Intent intent=new Intent(this, WmActivity.class);
+//        startActivity(intent);
     }
 
 
@@ -35,6 +51,37 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        GPUImage gpuImage = new GPUImage(this);
+        GPUImageGrayscaleFilter ggf=new GPUImageGrayscaleFilter();
+        gpuImage.setFilter(ggf);
+        gpuImage.setImage(ImageUtil.getBitMap("/sdcard/download/x.png"));
+        imageView.setImageDrawable(ImageUtil.bitmap2Drawable(gpuImage.getBitmapWithFilterApplied()));
+      //  LUT lut=new LUTPng("/sdcard/download/Lut12.png");
+        //LUT lut=new LUTCube("/sdcard/download/luts/02_S_Log2 LUTs_Landscape.cube");
+//        String lut="/sdcard/download/luts/2. FLOG to EARTH Portra.cube";
+//        Bitmap bitMap=ImageUtil.getBitMap("/sdcard/download/x.png");
+//        lut.setIntensity(100f);
+//        imageView.setImageDrawable(LutUtil.filterToDrawable(bitMap,lut,1f,100));
+
+//        LUT lut2=new LUTPng("/sdcard/download/Lut32.png");
+//        Bitmap bitMap2=lut2.filter(ImageUtil.getBitMap("/sdcard/download/x.png"));
+//        lut.setIntensity(100f);
+//        imageView2.setImageDrawable(ImageUtil.bitmap2Drawable(bitMap2));
+
+
+//        GPUImage gpuImage = new GPUImage(this);
+//        //gpuImage.setImage(ImageUtil.getBitMap("/sdcard/download/x.png"));
+//        GPUImageLookupFilter lutFilter=new GPUImageLookupFilter();
+//        lutFilter.setBitmap(ImageUtil.getBitMap("/sdcard/download/Lut1.png"));
+//        lutFilter.setIntensity(1f);
+//        //设置灰度的滤镜
+//        gpuImage.setFilter(lutFilter);
+//        Bitmap bitmap = gpuImage.getBitmapWithFilterApplied(ImageUtil.getBitMap("/sdcard/download/x.png"));
+
+
+
+    //    imageView.setImageDrawable(ImageUtil.bitmap2Drawable(bitmap));
+        if(true)return;
         Log.i("xxxxxxxxxxxxxxxx","xxxxxxxxxxxxxxxxxxxxx");
         try {
             Intent intent=new Intent(this, WmActivity.class);
