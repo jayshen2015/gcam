@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 355
+    .line 372
     iput-object p1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 358
+    .line 375
     const-string v0, "#"
 
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -58,7 +58,7 @@
 
     sput-object v1, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
 
-    .line 359
+    .line 376
     :try_start_0
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -85,7 +85,7 @@
     :catch_0
     move-exception v1
 
-    .line 360
+    .line 377
     :goto_0
     :try_start_1
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -113,7 +113,7 @@
     :catch_1
     move-exception v1
 
-    .line 362
+    .line 379
     :goto_1
     :try_start_2
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -128,7 +128,7 @@
 
     move-result-object v1
 
-    .line 363
+    .line 380
     .local v1, "txtbgcolor":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -156,7 +156,7 @@
 
     move-object v1, v2
 
-    .line 364
+    .line 381
     :cond_0
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -172,7 +172,7 @@
     :catch_2
     move-exception v1
 
-    .line 367
+    .line 384
     :goto_2
     :try_start_3
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -187,7 +187,7 @@
 
     move-result-object v1
 
-    .line 368
+    .line 385
     .local v1, "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_1
 
@@ -215,7 +215,7 @@
 
     move-object v1, v2
 
-    .line 369
+    .line 386
     :cond_1
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -231,7 +231,7 @@
     :catch_3
     move-exception v1
 
-    .line 372
+    .line 389
     :goto_3
     :try_start_4
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -246,7 +246,7 @@
 
     move-result-object v1
 
-    .line 373
+    .line 390
     .restart local v1    # "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_2
 
@@ -274,7 +274,7 @@
 
     move-object v1, v0
 
-    .line 374
+    .line 391
     :cond_2
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -290,7 +290,7 @@
     :catch_4
     move-exception v0
 
-    .line 376
+    .line 393
     :goto_4
     :try_start_5
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -318,7 +318,7 @@
     :catch_5
     move-exception v0
 
-    .line 378
+    .line 395
     :goto_5
     :try_start_6
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -342,7 +342,7 @@
     :catch_6
     move-exception v0
 
-    .line 379
+    .line 396
     :goto_6
     :try_start_7
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -366,7 +366,7 @@
     :catch_7
     move-exception v0
 
-    .line 380
+    .line 397
     :goto_7
     :try_start_8
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
@@ -390,7 +390,7 @@
     :catch_8
     move-exception v0
 
-    .line 381
+    .line 398
     :goto_8
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -402,14 +402,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 382
+    .line 399
     const/4 v0, 0x0
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
     goto :goto_9
 
-    .line 384
+    .line 401
     :cond_3
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -423,7 +423,7 @@
 
     move-result-object v0
 
-    .line 385
+    .line 402
     .local v0, "logoPath":Ljava/lang/String;
     if-eqz v0, :cond_4
 
@@ -443,17 +443,17 @@
 
     sput-object v1, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
-    .line 387
+    .line 404
     .end local v0    # "logoPath":Ljava/lang/String;
     :cond_4
     :goto_9
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 388
+    .line 405
     iget-object v0, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->show()V
 
-    .line 389
+    .line 406
     return-void
 .end method

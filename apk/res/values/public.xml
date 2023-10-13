@@ -13739,47 +13739,55 @@
     <public type="xml" name="APKTOOL_DUMMY_2" id="0x7f17000b" />
     
     
-    <public type="drawable" name="agc_watermark_shortcuts" id="0x7f089424" />
-    <public type="drawable" name="my_lut" id="0x7f089425" />
-    <public type="drawable" name="my_lib" id="0x7f089426" />
+	<public type="drawable" name="agc_watermark_shortcuts" id="0x7f089424" />
+	<public type="drawable" name="my_lut" id="0x7f089425" />
+	<public type="drawable" name="my_lib" id="0x7f089426" />
 
-    <public type="string" name="my_watermark_dateformat_enable_title" id="0x7f140f2f" />
-    <public type="string" name="my_patch_profile_title" id="0x7f140f30" />
-    <public type="string" name="my_watermark_dateformat_title" id="0x7f140f31" />
-    <public type="string" name="my_watermark_dateformat_summary" id="0x7f140f32" />
-    <public type="string" name="my_watermark_location_title" id="0x7f140f33" />
-    <public type="string" name="my_watermark_location_summary" id="0x7f140f34" />
-    <public type="string" name="camera_mode_idle_color_title" id="0x7f140f35" />
-    <public type="string" name="camera_mode_idle_color_summary" id="0x7f140f36" />
-    <public type="string" name="my_hidden_kaka_items_title" id="0x7f140f37" />
-    <public type="string" name="my_hidden_kaka_items_summary" id="0x7f140f38" />
-    <public type="string" name="my_watermark_height_title" id="0x7f140f39" />
-    <public type="string" name="my_watermark_height_summary" id="0x7f140f3a" />
-    <public type="string" name="my_watermark_fontsize_title" id="0x7f140f3b" />
-    <public type="string" name="my_watermark_fontsize_summary" id="0x7f140f3c" />
-    <public type="string" name="my_watermark_asnew_title" id="0x7f140f3d" />
-    <public type="string" name="my_watermark_asnew_summary" id="0x7f140f3e" />
-    <public type="string" name="my_preview_luts_title" id="0x7f140f3f" />
-    <public type="string" name="my_preview_luts_summary" id="0x7f140f40" />
-    <public type="string" name="my_add_watermark_title" id="0x7f140f41" />
-    <public type="string" name="my_hide_wmbtn_title" id="0x7f140f42" />
-    <public type="string" name="my_hide_lutbtn_title" id="0x7f140f43" />
-    <public type="string" name="my_hide_ajbtn_title" id="0x7f140f44" />
+	<public type="string" name="my_watermark_dateformat_enable_title" id="0x7f140f2f" />
+	<public type="string" name="my_patch_profile_title" id="0x7f140f30" />
+	<public type="string" name="my_watermark_dateformat_title" id="0x7f140f31" />
+	<public type="string" name="my_watermark_dateformat_summary" id="0x7f140f32" />
+	<public type="string" name="my_watermark_location_title" id="0x7f140f33" />
+	<public type="string" name="my_watermark_location_summary" id="0x7f140f34" />
+	<public type="string" name="camera_mode_idle_color_title" id="0x7f140f35" />
+	<public type="string" name="camera_mode_idle_color_summary" id="0x7f140f36" />
+	<public type="string" name="my_hidden_kaka_items_title" id="0x7f140f37" />
+	<public type="string" name="my_hidden_kaka_items_summary" id="0x7f140f38" />
+	<public type="string" name="my_watermark_height_title" id="0x7f140f39" />
+	<public type="string" name="my_watermark_height_summary" id="0x7f140f3a" />
+	<public type="string" name="my_watermark_fontsize_title" id="0x7f140f3b" />
+	<public type="string" name="my_watermark_fontsize_summary" id="0x7f140f3c" />
+	<public type="string" name="my_watermark_asnew_title" id="0x7f140f3d" />
+	<public type="string" name="my_watermark_asnew_summary" id="0x7f140f3e" />
+	<public type="string" name="my_preview_luts_title" id="0x7f140f3f" />
+	<public type="string" name="my_preview_luts_summary" id="0x7f140f40" />
+	<public type="string" name="my_add_watermark_title" id="0x7f140f41" />
+	<public type="string" name="my_hide_wmbtn_title" id="0x7f140f42" />
+	<public type="string" name="my_hide_lutbtn_title" id="0x7f140f43" />
+	<public type="string" name="my_hide_ajbtn_title" id="0x7f140f44" />
 	
 	
-    <public type="string" name="my_watermark_secfontsize_title" id="0x7f140f45" />	
-    <public type="string" name="my_watermark_secfontsize_summary" id="0x7f140f46" />
+	<public type="string" name="my_watermark_secfontsize_title" id="0x7f140f45" />	
+	<public type="string" name="my_watermark_secfontsize_summary" id="0x7f140f46" />
 	
-    <public type="string" name="my_watermark_txtcolor_title" id="0x7f140f47" />	
-    <public type="string" name="my_watermark_txtcolor_summary" id="0x7f140f48" />
+	<public type="string" name="my_watermark_txtcolor_title" id="0x7f140f47" />	
+	<public type="string" name="my_watermark_txtcolor_summary" id="0x7f140f48" />
 	
-    <public type="string" name="my_watermark_sectxtcolor_title" id="0x7f140f49" />	
-    <public type="string" name="my_watermark_sectxtcolor_summary" id="0x7f140f4a" />
+	<public type="string" name="my_watermark_sectxtcolor_title" id="0x7f140f49" />	
+	<public type="string" name="my_watermark_sectxtcolor_summary" id="0x7f140f4a" />
 	
-    <public type="string" name="my_hide_libbtn_title" id="0x7f140f4b" />
+	<public type="string" name="my_hide_libbtn_title" id="0x7f140f4b" />
 	
 	<public type="string" name="my_watermark_hide_altitude_title" id="0x7f140f4c" />
 	<public type="string" name="my_hebing_config_title" id="0x7f140f4d" />
 	<public type="string" name="my_lut_grid_column_cnt_title" id="0x7f140f4e" />
+	
+	<public type="string" name="my_watermark_padding_left_title" id="0x7f140f4f" />
+	<public type="string" name="my_watermark_padding_top_title" id="0x7f140f50" />
+	<public type="string" name="my_watermark_line_width_title" id="0x7f140f51" />
+	<public type="string" name="my_bottom_bar_btn1_change_title" id="0x7f140f52" />
+	<public type="string" name="my_prop_item_cnt_title" id="0x7f140f53" />
+	<public type="string" name="my_watermark_logo_point_ft_title" id="0x7f140f54" />
+	<public type="layout" name="bottom_bar_layout2" id="0x7f0e0900" />
 	
 </resources>

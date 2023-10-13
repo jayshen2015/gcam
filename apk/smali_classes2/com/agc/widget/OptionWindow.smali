@@ -134,6 +134,8 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    invoke-static {p0}, Lnan/ren/G;->popWinFilter(Lcom/agc/widget/OptionWindow;)V
+    
     return-void
 .end method
 

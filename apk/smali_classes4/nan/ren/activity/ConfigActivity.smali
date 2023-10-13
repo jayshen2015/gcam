@@ -58,17 +58,17 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 38
+    .line 37
     const/high16 v0, 0x3f800000    # 1.0f
 
     sput v0, Lnan/ren/activity/ConfigActivity;->dsp:F
 
-    .line 39
+    .line 38
     const/high16 v0, 0x41f00000    # 30.0f
 
     sput v0, Lnan/ren/activity/ConfigActivity;->fontSize:F
 
-    .line 42
+    .line 41
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -79,10 +79,10 @@
 
     sput v1, Lnan/ren/activity/ConfigActivity;->dsp:F
 
-    .line 43
+    .line 42
     sput v0, Lnan/ren/activity/ConfigActivity;->fontSize:F
 
-    .line 44
+    .line 43
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -93,7 +93,7 @@
 
     sput v0, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
-    .line 45
+    .line 44
     return-void
 .end method
 
@@ -103,21 +103,21 @@
     .line 36
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 49
+    .line 48
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lnan/ren/activity/ConfigActivity;->mainConfigNameMap:Ljava/util/Map;
 
-    .line 50
+    .line 49
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lnan/ren/activity/ConfigActivity;->secConfigNameMap:Ljava/util/Map;
 
-    .line 94
+    .line 93
     const-string v0, "#88728284"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -142,12 +142,12 @@
 .method getBaseConfig()Ljava/lang/String;
     .locals 7
 
-    .line 237
+    .line 236
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 238
+    .line 237
     .local v0, "baseConfigTxt":Ljava/lang/StringBuffer;
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->mainConfigTxt:Ljava/lang/String;
 
@@ -157,7 +157,7 @@
 
     move-result-object v1
 
-    .line 239
+    .line 238
     .local v1, "lines":[Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -167,14 +167,14 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 240
+    .line 239
     aget-object v4, v1, v3
 
     invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 241
+    .line 240
     .local v4, "tmp":Ljava/lang/String;
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
@@ -200,7 +200,7 @@
 
     if-nez v5, :cond_2
 
-    .line 242
+    .line 241
     invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v5
@@ -213,7 +213,7 @@
 
     if-nez v5, :cond_2
 
-    .line 243
+    .line 242
     invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v5
@@ -226,7 +226,7 @@
 
     if-nez v5, :cond_2
 
-    .line 244
+    .line 243
     invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v5
@@ -241,7 +241,7 @@
 
     goto :goto_1
 
-    .line 245
+    .line 244
     :cond_0
     invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -257,7 +257,7 @@
 
     goto :goto_1
 
-    .line 246
+    .line 245
     :cond_1
     invoke-virtual {v0, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -265,7 +265,7 @@
 
     invoke-virtual {v5, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 239
+    .line 238
     .end local v4    # "tmp":Ljava/lang/String;
     :cond_2
     :goto_1
@@ -273,7 +273,7 @@
 
     goto :goto_0
 
-    .line 248
+    .line 247
     .end local v3    # "i":I
     :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -293,19 +293,19 @@
     .param p2, "tag"    # Ljava/lang/Object;
     .param p3, "width"    # I
 
-    .line 151
+    .line 150
     new-instance v0, Landroid/widget/Button;
 
     invoke-direct {v0, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 152
+    .line 151
     .local v0, "button":Landroid/widget/Button;
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 153
+    .line 152
     invoke-virtual {v0, p2}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 154
+    .line 153
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v2, -0x1
@@ -314,7 +314,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 155
+    .line 154
     const-string v1, "#aaab88f0"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -323,30 +323,30 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 156
+    .line 155
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 157
+    .line 156
     invoke-virtual {p0, v0}, Lnan/ren/activity/ConfigActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 158
+    .line 157
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 159
+    .line 158
     return-object v0
 .end method
 
 .method getCameraIdList()[Ljava/lang/String;
     .locals 2
 
-    .line 424
+    .line 423
     invoke-static {}, Lcom/Utils/Lens;->getCameraIdList()[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 425
+    .line 424
     .local v0, "ids":[Ljava/lang/String;
     invoke-static {v0}, Lnan/ren/util/JsonUtil;->toJSONString(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -354,7 +354,7 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 426
+    .line 425
     return-object v0
 .end method
 
@@ -363,18 +363,18 @@
     .param p1, "configTxt"    # Ljava/lang/String;
     .param p2, "index"    # I
 
-    .line 223
+    .line 222
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 224
+    .line 223
     .local v0, "configBf":Ljava/lang/StringBuffer;
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->isFoceShow()Z
 
     move-result v1
 
-    .line 225
+    .line 224
     .local v1, "isFoceShow":Z
     const-string v2, "\n"
 
@@ -382,7 +382,7 @@
 
     move-result-object v3
 
-    .line 226
+    .line 225
     .local v3, "lines":[Ljava/lang/String;
     const/4 v4, 0x0
 
@@ -392,14 +392,14 @@
 
     if-ge v4, v5, :cond_2
 
-    .line 227
+    .line 226
     aget-object v5, v3, v4
 
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v5
 
-    .line 228
+    .line 227
     .local v5, "tmp":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -413,7 +413,7 @@
 
     goto :goto_1
 
-    .line 229
+    .line 228
     :cond_0
     invoke-virtual {v5}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -449,14 +449,14 @@
 
     if-lez v6, :cond_1
 
-    .line 230
+    .line 229
     invoke-virtual {v0, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
     move-result-object v6
 
     invoke-virtual {v6, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 226
+    .line 225
     .end local v5    # "tmp":Ljava/lang/String;
     :cond_1
     :goto_1
@@ -464,7 +464,7 @@
 
     goto :goto_0
 
-    .line 233
+    .line 232
     .end local v4    # "i":I
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -494,13 +494,13 @@
         }
     .end annotation
 
-    .line 209
+    .line 208
     .local p2, "mainIndexs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     new-instance v0, Ljava/lang/StringBuffer;
 
     invoke-direct {v0}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 210
+    .line 209
     .local v0, "configBf":Ljava/lang/StringBuffer;
     invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -523,13 +523,13 @@
 
     move-result v2
 
-    .line 211
+    .line 210
     .local v2, "i":I
     invoke-virtual {p0, p3, v2}, Lnan/ren/activity/ConfigActivity;->getConfigByIndex(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 212
+    .line 211
     .local v3, "tmp":Ljava/lang/String;
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -579,7 +579,7 @@
 
     move-result-object v4
 
-    .line 213
+    .line 212
     const-string v5, "><"
 
     const-string v6, ">\n<"
@@ -594,7 +594,7 @@
 
     move-result-object v3
 
-    .line 214
+    .line 213
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -631,17 +631,17 @@
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 215
+    .line 214
     nop
 
     .end local v2    # "i":I
     .end local v3    # "tmp":Ljava/lang/String;
     add-int/lit8 p1, p1, 0x1
 
-    .line 216
+    .line 215
     goto :goto_0
 
-    .line 217
+    .line 216
     :cond_0
     invoke-virtual {v0}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -655,12 +655,12 @@
     .param p1, "index"    # Ljava/lang/Object;
     .param p2, "cfgname"    # Ljava/lang/String;
 
-    .line 96
+    .line 95
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 97
+    .line 96
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -670,67 +670,67 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 98
+    .line 97
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 99
+    .line 98
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 100
+    .line 99
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 101
+    .line 100
     .local v2, "stv":Landroid/widget/TextView;
     const-string v3, "\u261b "
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 102
+    .line 101
     const/high16 v3, -0x10000
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 104
+    .line 103
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 105
+    .line 104
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 106
+    .line 105
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 107
+    .line 106
     .local v3, "tv":Landroid/widget/TextView;
     invoke-virtual {v3, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 108
+    .line 107
     invoke-virtual {v3, p1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 109
+    .line 108
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 111
+    .line 110
     const/16 v1, 0x46
 
     invoke-virtual {v3, v1}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 112
+    .line 111
     invoke-virtual {v3, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 113
+    .line 112
     invoke-virtual {p0, v3}, Lnan/ren/activity/ConfigActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 114
+    .line 113
     invoke-virtual {v3}, Landroid/widget/TextView;->getTextSize()F
 
     move-result v1
@@ -747,23 +747,23 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 115
+    .line 114
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 116
+    .line 115
     const-string v1, "U"
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 117
+    .line 116
     invoke-virtual {v0, p0}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 118
+    .line 117
     iget v1, p0, Lnan/ren/activity/ConfigActivity;->unSelectColor:I
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 119
+    .line 118
     return-object v0
 .end method
 
@@ -778,7 +778,7 @@
         }
     .end annotation
 
-    .line 202
+    .line 201
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v0}, Lnan/ren/activity/ConfigActivity;->getSelectConfigIndexs(Landroid/widget/LinearLayout;)Ljava/util/List;
@@ -799,7 +799,7 @@
         }
     .end annotation
 
-    .line 206
+    .line 205
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v0}, Lnan/ren/activity/ConfigActivity;->getSelectConfigIndexs(Landroid/widget/LinearLayout;)Ljava/util/List;
@@ -823,18 +823,18 @@
         }
     .end annotation
 
-    .line 278
+    .line 277
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 279
+    .line 278
     .local v0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     if-nez p1, :cond_0
 
     return-object v0
 
-    .line 280
+    .line 279
     :cond_0
     const/4 v1, 0x0
 
@@ -846,14 +846,14 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 281
+    .line 280
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 282
+    .line 281
     .local v2, "gv":Landroid/view/ViewGroup;
     const-string v3, "S"
 
@@ -867,7 +867,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 283
+    .line 282
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -892,14 +892,14 @@
 
     invoke-interface {v0, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 280
+    .line 279
     .end local v2    # "gv":Landroid/view/ViewGroup;
     :cond_1
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 286
+    .line 285
     .end local v1    # "i":I
     :cond_2
     return-object v0
@@ -909,16 +909,16 @@
     .locals 3
     .param p1, "w"    # I
 
-    .line 145
+    .line 144
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 146
+    .line 145
     .local v0, "tv":Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setMinWidth(I)V
 
-    .line 147
+    .line 146
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v2, -0x1
@@ -927,23 +927,23 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 148
+    .line 147
     return-object v0
 .end method
 
 .method getToolBarView()Landroid/view/View;
     .locals 7
 
-    .line 123
+    .line 122
     const/4 v0, 0x5
 
-    .line 124
+    .line 123
     .local v0, "btnCount":I
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 125
+    .line 124
     .local v1, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
@@ -955,12 +955,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 126
+    .line 125
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 127
+    .line 126
     sget v3, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
     div-int/2addr v3, v0
@@ -981,14 +981,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 128
+    .line 127
     invoke-virtual {p0, v4}, Lnan/ren/activity/ConfigActivity;->getSplitView(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 129
+    .line 128
     sget v3, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
     div-int/2addr v3, v0
@@ -1005,14 +1005,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 130
+    .line 129
     invoke-virtual {p0, v4}, Lnan/ren/activity/ConfigActivity;->getSplitView(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 131
+    .line 130
     sget v3, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
     div-int/2addr v3, v0
@@ -1029,14 +1029,14 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 132
+    .line 131
     invoke-virtual {p0, v4}, Lnan/ren/activity/ConfigActivity;->getSplitView(I)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 133
+    .line 132
     sget v3, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
     div-int/2addr v3, v0
@@ -1053,22 +1053,22 @@
 
     iput-object v3, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
-    .line 134
+    .line 133
     invoke-virtual {p0, v2}, Lnan/ren/activity/ConfigActivity;->setFoceShow(Z)V
 
-    .line 135
+    .line 134
     iget-object v2, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 136
+    .line 135
     invoke-virtual {p0, v4}, Lnan/ren/activity/ConfigActivity;->getSplitView(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 137
+    .line 136
     sget v2, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
     div-int/2addr v2, v0
@@ -1087,14 +1087,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 139
+    .line 138
     invoke-virtual {p0, v4}, Lnan/ren/activity/ConfigActivity;->getSplitView(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 140
+    .line 139
     sget v2, Lnan/ren/activity/ConfigActivity;->screen_width:I
 
     div-int/2addr v2, v0
@@ -1109,25 +1109,25 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 142
+    .line 141
     return-object v1
 .end method
 
 .method hebing()V
     .locals 7
 
-    .line 184
+    .line 183
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->getMainConfigIndexs()Ljava/util/List;
 
     move-result-object v0
 
-    .line 185
+    .line 184
     .local v0, "mainIndexs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->getSecConfigIndexs()Ljava/util/List;
 
     move-result-object v1
 
-    .line 186
+    .line 185
     .local v1, "secIndexs":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1143,15 +1143,15 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 187
+    .line 186
     const-string v2, "\u8bf7\u81f3\u5c11\u9009\u62e9\u4e00\u9879\u914d\u7f6e"
 
     invoke-static {v2}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 188
+    .line 187
     return-void
 
-    .line 190
+    .line 189
     :cond_0
     new-instance v2, Ljava/lang/StringBuffer;
 
@@ -1159,13 +1159,13 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 
-    .line 191
+    .line 190
     .local v2, "result":Ljava/lang/StringBuffer;
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "<string name=\"patch_profile_count\">"
+    const-string v4, "<string name=\"pref_patch_profile_count_key\">"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1201,7 +1201,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 192
+    .line 191
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->getBaseConfig()Ljava/lang/String;
 
     move-result-object v3
@@ -1214,7 +1214,7 @@
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 193
+    .line 192
     const/4 v3, 0x0
 
     iget-object v4, p0, Lnan/ren/activity/ConfigActivity;->mainConfigTxt:Ljava/lang/String;
@@ -1225,7 +1225,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 194
+    .line 193
     invoke-interface {v0}, Ljava/util/List;->size()I
 
     move-result v3
@@ -1238,12 +1238,12 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 195
+    .line 194
     const-string v3, "</map>"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 196
+    .line 195
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1290,7 +1290,7 @@
 
     move-result-object v3
 
-    .line 197
+    .line 196
     .local v3, "filepath":Ljava/lang/String;
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -1298,7 +1298,7 @@
 
     invoke-static {v3, v4}, Lnan/ren/util/FileUtil;->writeFile(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 198
+    .line 197
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -1319,7 +1319,7 @@
 
     invoke-static {v4}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 199
+    .line 198
     return-void
 .end method
 
@@ -1328,7 +1328,7 @@
     .param p1, "configTxt"    # Ljava/lang/String;
     .param p2, "isMain"    # Z
 
-    .line 393
+    .line 392
     const-string v0, ">"
 
     const-string v1, "\n"
@@ -1337,7 +1337,7 @@
 
     move-result-object v1
 
-    .line 394
+    .line 393
     .local v1, "lines":[Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -1347,14 +1347,14 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 395
+    .line 394
     aget-object v3, v1, v2
 
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 396
+    .line 395
     .local v3, "tmp":Ljava/lang/String;
     const-string v4, "lib_profile_title_key_p"
 
@@ -1364,7 +1364,7 @@
 
     if-ltz v4, :cond_1
 
-    .line 398
+    .line 397
     :try_start_0
     const-string v4, "lib"
 
@@ -1382,7 +1382,7 @@
 
     move-result-object v4
 
-    .line 399
+    .line 398
     .local v4, "name":Ljava/lang/String;
     invoke-virtual {v3, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -1400,7 +1400,7 @@
 
     move-result-object v5
 
-    .line 400
+    .line 399
     .local v5, "txt":Ljava/lang/String;
     const-string v6, "_"
 
@@ -1414,7 +1414,7 @@
 
     move-result-object v6
 
-    .line 401
+    .line 400
     .local v6, "key":Ljava/lang/String;
     if-eqz p2, :cond_0
 
@@ -1424,7 +1424,7 @@
 
     goto :goto_1
 
-    .line 402
+    .line 401
     :cond_0
     iget-object v7, p0, Lnan/ren/activity/ConfigActivity;->secConfigNameMap:Ljava/util/Map;
 
@@ -1432,18 +1432,18 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 405
+    .line 404
     .end local v4    # "name":Ljava/lang/String;
     .end local v5    # "txt":Ljava/lang/String;
     .end local v6    # "key":Ljava/lang/String;
     :goto_1
     goto :goto_2
 
-    .line 403
+    .line 402
     :catch_0
     move-exception v4
 
-    .line 404
+    .line 403
     .local v4, "ex":Ljava/lang/Exception;
     new-instance v5, Ljava/lang/StringBuilder;
 
@@ -1465,7 +1465,7 @@
 
     invoke-static {v5}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 394
+    .line 393
     .end local v3    # "tmp":Ljava/lang/String;
     .end local v4    # "ex":Ljava/lang/Exception;
     :cond_1
@@ -1474,7 +1474,7 @@
 
     goto :goto_0
 
-    .line 408
+    .line 407
     .end local v2    # "i":I
     :cond_2
     return-void
@@ -1483,7 +1483,7 @@
 .method isFoceShow()Z
     .locals 2
 
-    .line 412
+    .line 411
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
     if-eqz v0, :cond_0
@@ -1519,7 +1519,7 @@
     .locals 8
     .param p1, "isMain"    # Z
 
-    .line 380
+    .line 379
     if-eqz p1, :cond_0
 
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->mainConfigNameMap:Ljava/util/Map;
@@ -1529,7 +1529,7 @@
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->secConfigNameMap:Ljava/util/Map;
 
-    .line 381
+    .line 380
     .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
     :goto_0
     if-eqz p1, :cond_1
@@ -1541,14 +1541,14 @@
     :cond_1
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
-    .line 382
+    .line 381
     .local v1, "view":Landroid/widget/LinearLayout;
     :goto_1
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 383
+    .line 382
     .local v2, "keyList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Integer;>;"
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -1573,7 +1573,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 384
+    .line 383
     .local v4, "key":Ljava/lang/String;
     const-string v6, ""
 
@@ -1585,7 +1585,7 @@
 
     move-result-object v5
 
-    .line 385
+    .line 384
     .local v5, "num":Ljava/lang/String;
     invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -1597,16 +1597,16 @@
 
     invoke-interface {v2, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 386
+    .line 385
     .end local v4    # "key":Ljava/lang/String;
     .end local v5    # "num":Ljava/lang/String;
     goto :goto_2
 
-    .line 387
+    .line 386
     :cond_2
     invoke-static {v2}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
-    .line 388
+    .line 387
     const/4 v3, 0x0
 
     .local v3, "i":I
@@ -1617,7 +1617,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 389
+    .line 388
     invoke-interface {v2, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1672,12 +1672,12 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 388
+    .line 387
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_3
 
-    .line 391
+    .line 390
     .end local v3    # "i":I
     :cond_3
     return-void
@@ -1689,22 +1689,22 @@
     .param p2, "resultCode"    # I
     .param p3, "data"    # Landroid/content/Intent;
 
-    .line 349
+    .line 348
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 350
+    .line 349
     if-eqz p3, :cond_3
 
-    .line 352
+    .line 351
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 354
+    .line 353
     .local v0, "uri":Landroid/net/Uri;
     if-eqz v0, :cond_3
 
-    .line 355
+    .line 354
     const-string v1, "</string>"
 
     const-string v2, "\n</string>"
@@ -1719,91 +1719,91 @@
 
     if-ne p1, v5, :cond_0
 
-    .line 356
+    .line 355
     invoke-static {p0, v0}, Lnan/ren/util/FileUtil;->getFileText(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v7
 
     iput-object v7, p0, Lnan/ren/activity/ConfigActivity;->mainConfigTxt:Ljava/lang/String;
 
-    .line 357
+    .line 356
     invoke-virtual {v7, v4, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 358
+    .line 357
     invoke-virtual {v4, v3, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 359
+    .line 358
     invoke-virtual {v3, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lnan/ren/activity/ConfigActivity;->mainConfigTxt:Ljava/lang/String;
 
-    .line 360
+    .line 359
     invoke-virtual {p0, v1, v5}, Lnan/ren/activity/ConfigActivity;->initConfigNameMap(Ljava/lang/String;Z)V
 
-    .line 361
+    .line 360
     invoke-virtual {p0, v5}, Lnan/ren/activity/ConfigActivity;->loadConfig(Z)V
 
     goto :goto_0
 
-    .line 362
+    .line 361
     :cond_0
     const/4 v5, 0x2
 
     if-ne p1, v5, :cond_1
 
-    .line 363
+    .line 362
     invoke-static {p0, v0}, Lnan/ren/util/FileUtil;->getFileText(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Lnan/ren/activity/ConfigActivity;->secConfigTxt:Ljava/lang/String;
 
-    .line 364
+    .line 363
     invoke-virtual {v5, v4, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 365
+    .line 364
     invoke-virtual {v4, v3, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 366
+    .line 365
     invoke-virtual {v3, v2, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lnan/ren/activity/ConfigActivity;->secConfigTxt:Ljava/lang/String;
 
-    .line 367
+    .line 366
     const/4 v2, 0x0
 
     invoke-virtual {p0, v1, v2}, Lnan/ren/activity/ConfigActivity;->initConfigNameMap(Ljava/lang/String;Z)V
 
-    .line 368
+    .line 367
     invoke-virtual {p0, v2}, Lnan/ren/activity/ConfigActivity;->loadConfig(Z)V
 
     goto :goto_0
 
-    .line 370
+    .line 369
     :cond_1
     invoke-static {p0, v0}, Lnan/ren/util/FileUtil;->getFileText(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 371
+    .line 370
     .local v1, "cfgTxt":Ljava/lang/String;
     invoke-static {p0}, Lcom/agc/pref/ConfigLoader;->getFileSharedPreferences(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v2
 
-    .line 372
+    .line 371
     .local v2, "configFile":Ljava/io/File;
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
@@ -1813,7 +1813,7 @@
 
     invoke-virtual {v2}, Ljava/io/File;->delete()Z
 
-    .line 373
+    .line 372
     :cond_2
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -1821,12 +1821,12 @@
 
     invoke-static {v3, v1}, Lnan/ren/util/FileUtil;->writeFile(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 374
+    .line 373
     const-string v3, "\u5bfc\u5165\u914d\u7f6e\u6210\u529f\uff01\uff01"
 
     invoke-static {v3}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 378
+    .line 377
     .end local v0    # "uri":Landroid/net/Uri;
     .end local v1    # "cfgTxt":Ljava/lang/String;
     .end local v2    # "configFile":Ljava/io/File;
@@ -1839,7 +1839,7 @@
     .locals 6
     .param p1, "view"    # Landroid/view/View;
 
-    .line 293
+    .line 292
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -1848,13 +1848,13 @@
 
     move-result-object v0
 
-    .line 294
+    .line 293
     .local v0, "tag":Ljava/lang/String;
     instance-of v1, p1, Landroid/widget/Button;
 
     if-eqz v1, :cond_6
 
-    .line 295
+    .line 294
     const-string v1, "close"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1863,13 +1863,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 296
+    .line 295
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->finishAndRemoveTask()V
 
-    .line 297
+    .line 296
     return-void
 
-    .line 298
+    .line 297
     :cond_0
     const-string v1, "hebing"
 
@@ -1879,13 +1879,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 299
+    .line 298
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->hebing()V
 
-    .line 300
+    .line 299
     return-void
 
-    .line 301
+    .line 300
     :cond_1
     const-string v1, "mainCfg"
 
@@ -1897,13 +1897,13 @@
 
     if-eqz v1, :cond_2
 
-    .line 302
+    .line 301
     invoke-virtual {p0, v2}, Lnan/ren/activity/ConfigActivity;->selectFile(I)V
 
-    .line 303
+    .line 302
     return-void
 
-    .line 304
+    .line 303
     :cond_2
     const-string v1, "secCfg"
 
@@ -1913,15 +1913,15 @@
 
     if-eqz v1, :cond_3
 
-    .line 305
+    .line 304
     const/4 v1, 0x2
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/ConfigActivity;->selectFile(I)V
 
-    .line 306
+    .line 305
     return-void
 
-    .line 307
+    .line 306
     :cond_3
     const-string v1, "import"
 
@@ -1931,17 +1931,17 @@
 
     if-eqz v1, :cond_4
 
-    .line 309
+    .line 308
     new-instance v1, Lcom/agc/pref/ConfigLoader;
 
     invoke-direct {v1, p0}, Lcom/agc/pref/ConfigLoader;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {v1, p1}, Lcom/agc/pref/ConfigLoader;->onClick(Landroid/view/View;)V
 
-    .line 310
+    .line 309
     return-void
 
-    .line 311
+    .line 310
     :cond_4
     move-object v1, p1
 
@@ -1963,7 +1963,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 312
+    .line 311
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->isFoceShow()Z
 
     move-result v1
@@ -1972,24 +1972,24 @@
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/ConfigActivity;->setFoceShow(Z)V
 
-    .line 313
+    .line 312
     return-void
 
-    .line 316
+    .line 315
     :cond_5
     return-void
 
-    .line 319
+    .line 318
     :cond_6
     const/4 v1, 0x0
 
-    .line 320
+    .line 319
     .local v1, "l":Landroid/view/ViewGroup;
     instance-of v2, p1, Landroid/widget/TextView;
 
     if-eqz v2, :cond_7
 
-    .line 321
+    .line 320
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
@@ -1998,7 +1998,7 @@
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 322
+    .line 321
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
 
     move-result-object v2
@@ -2009,25 +2009,25 @@
 
     goto :goto_0
 
-    .line 323
+    .line 322
     :cond_7
     instance-of v2, p1, Landroid/widget/LinearLayout;
 
     if-eqz v2, :cond_8
 
-    .line 324
+    .line 323
     move-object v1, p1
 
     check-cast v1, Landroid/view/ViewGroup;
 
-    .line 326
+    .line 325
     :cond_8
     :goto_0
     if-nez v1, :cond_9
 
     return-void
 
-    .line 327
+    .line 326
     :cond_9
     const-string v2, "U"
 
@@ -2041,15 +2041,15 @@
 
     if-eqz v3, :cond_a
 
-    .line 328
+    .line 327
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    .line 329
+    .line 328
     iget v2, p0, Lnan/ren/activity/ConfigActivity;->selectColor:I
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 330
+    .line 329
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -2058,7 +2058,7 @@
 
     goto :goto_1
 
-    .line 331
+    .line 330
     :cond_a
     invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2066,15 +2066,15 @@
 
     if-eqz v3, :cond_b
 
-    .line 332
+    .line 331
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    .line 333
+    .line 332
     iget v2, p0, Lnan/ren/activity/ConfigActivity;->unSelectColor:I
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 334
+    .line 333
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -2083,7 +2083,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 336
+    .line 335
     :cond_b
     :goto_1
     return-void
@@ -2093,13 +2093,13 @@
     .locals 0
     .param p1, "bundle"    # Landroid/os/Bundle;
 
-    .line 53
+    .line 52
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 54
+    .line 53
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->setContentViewBySelf()V
 
-    .line 55
+    .line 54
     return-void
 .end method
 
@@ -2107,7 +2107,7 @@
     .locals 13
     .param p1, "t"    # Ljava/lang/String;
 
-    .line 252
+    .line 251
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -2130,7 +2130,7 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 253
+    .line 252
     new-instance v3, Ljava/lang/StringBuffer;
 
     invoke-direct {v3, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
@@ -2139,7 +2139,7 @@
 
     move-result-object v2
 
-    .line 254
+    .line 253
     .local v2, "sb":Ljava/lang/StringBuffer;
     new-instance v3, Ljava/lang/StringBuffer;
 
@@ -2149,7 +2149,7 @@
 
     move-result-object v1
 
-    .line 255
+    .line 254
     .local v1, "sb2":Ljava/lang/StringBuffer;
     const/4 v3, 0x0
 
@@ -2157,7 +2157,7 @@
     :goto_1
     if-ge v3, v0, :cond_0
 
-    .line 256
+    .line 255
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2184,7 +2184,7 @@
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 257
+    .line 256
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -2211,20 +2211,20 @@
 
     invoke-virtual {v9, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 255
+    .line 254
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 259
+    .line 258
     .end local v3    # "j":I
     :cond_0
     invoke-virtual {v2, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 260
+    .line 259
     invoke-virtual {v1, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 261
+    .line 260
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v3
@@ -2241,14 +2241,14 @@
 
     move-result-object p1
 
-    .line 252
+    .line 251
     .end local v1    # "sb2":Ljava/lang/StringBuffer;
     .end local v2    # "sb":Ljava/lang/StringBuffer;
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 263
+    .line 262
     .end local v0    # "i":I
     :cond_1
     const/4 v0, 0x1
@@ -2257,7 +2257,7 @@
     :goto_2
     if-ge v0, v3, :cond_3
 
-    .line 264
+    .line 263
     new-instance v9, Ljava/lang/StringBuffer;
 
     invoke-direct {v9, v2}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
@@ -2266,7 +2266,7 @@
 
     move-result-object v9
 
-    .line 265
+    .line 264
     .local v9, "sb":Ljava/lang/StringBuffer;
     new-instance v10, Ljava/lang/StringBuffer;
 
@@ -2276,7 +2276,7 @@
 
     move-result-object v10
 
-    .line 266
+    .line 265
     .local v10, "sb2":Ljava/lang/StringBuffer;
     const/4 v11, 0x1
 
@@ -2284,7 +2284,7 @@
     :goto_3
     if-ge v11, v0, :cond_2
 
-    .line 267
+    .line 266
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -2311,7 +2311,7 @@
 
     invoke-virtual {v12, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 268
+    .line 267
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -2338,20 +2338,20 @@
 
     invoke-virtual {v12, v8}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 266
+    .line 265
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_3
 
-    .line 270
+    .line 269
     .end local v11    # "j":I
     :cond_2
     invoke-virtual {v9, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 271
+    .line 270
     invoke-virtual {v10, v7}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 272
+    .line 271
     invoke-virtual {v9}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
     move-result-object v11
@@ -2368,14 +2368,14 @@
 
     move-result-object p1
 
-    .line 263
+    .line 262
     .end local v9    # "sb":Ljava/lang/StringBuffer;
     .end local v10    # "sb2":Ljava/lang/StringBuffer;
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 274
+    .line 273
     .end local v0    # "i":I
     :cond_3
     return-object p1
@@ -2385,25 +2385,25 @@
     .locals 2
     .param p1, "code"    # I
 
-    .line 341
+    .line 340
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.GET_CONTENT"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 342
+    .line 341
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "*/*"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 343
+    .line 342
     const-string v1, "android.intent.category.OPENABLE"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 344
+    .line 343
     const-string v1, "\u8bf7\u9009\u62e9\u914d\u7f6e\u6587\u4ef6"
 
     invoke-static {v0, v1}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
@@ -2412,19 +2412,19 @@
 
     invoke-virtual {p0, v1, p1}, Lnan/ren/activity/ConfigActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 345
+    .line 344
     return-void
 .end method
 
 .method setContentViewBySelf()V
     .locals 12
 
-    .line 60
+    .line 59
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 61
+    .line 60
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -2434,24 +2434,24 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 62
+    .line 61
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 63
+    .line 62
     invoke-virtual {p0}, Lnan/ren/activity/ConfigActivity;->getToolBarView()Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 64
+    .line 63
     new-instance v3, Landroid/widget/ScrollView;
 
     invoke-direct {v3, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 65
+    .line 64
     .local v3, "scrollView":Landroid/widget/ScrollView;
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
@@ -2459,14 +2459,14 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 66
+    .line 65
     new-instance v4, Landroid/widget/GridLayout;
 
     invoke-direct {v4, p0}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v4, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
-    .line 67
+    .line 66
     new-instance v4, Landroid/widget/GridLayout$LayoutParams;
 
     new-instance v5, Landroid/view/ViewGroup$LayoutParams;
@@ -2475,30 +2475,30 @@
 
     invoke-direct {v4, v5}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 68
+    .line 67
     .local v4, "lp":Landroid/widget/GridLayout$LayoutParams;
     invoke-virtual {v4, v1}, Landroid/widget/GridLayout$LayoutParams;->setGravity(I)V
 
-    .line 69
+    .line 68
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v5, v4}, Landroid/widget/GridLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 70
+    .line 69
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     const/4 v6, 0x2
 
     invoke-virtual {v5, v6}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 71
+    .line 70
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     const/16 v7, 0xc8
 
     invoke-virtual {v5, v7}, Landroid/widget/GridLayout;->setMinimumHeight(I)V
 
-    .line 72
+    .line 71
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     const/4 v8, 0x0
@@ -2507,14 +2507,14 @@
 
     invoke-virtual {v5, v8, v9, v8, v8}, Landroid/widget/GridLayout;->setPadding(IIII)V
 
-    .line 73
+    .line 72
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-direct {v5, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v5, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
-    .line 74
+    .line 73
     new-instance v10, Landroid/view/ViewGroup$LayoutParams;
 
     sget v11, Lnan/ren/activity/ConfigActivity;->screen_width:I
@@ -2527,12 +2527,12 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 75
+    .line 74
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 76
+    .line 75
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
     const-string v10, "#aa998877"
@@ -2543,31 +2543,31 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 77
+    .line 76
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v7}, Landroid/widget/LinearLayout;->setMinimumHeight(I)V
 
-    .line 78
+    .line 77
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v8, v8, v9, v8}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 79
+    .line 78
     iget-object v5, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     iget-object v10, p0, Lnan/ren/activity/ConfigActivity;->mainConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v10}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 81
+    .line 80
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-direct {v5, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v5, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
-    .line 82
+    .line 81
     new-instance v10, Landroid/view/ViewGroup$LayoutParams;
 
     sget v11, Lnan/ren/activity/ConfigActivity;->screen_width:I
@@ -2580,12 +2580,12 @@
 
     invoke-virtual {v5, v10}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 83
+    .line 82
     iget-object v2, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 84
+    .line 83
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
     const-string v2, "#99776655"
@@ -2596,35 +2596,35 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 85
+    .line 84
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setMinimumHeight(I)V
 
-    .line 86
+    .line 85
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v9, v8, v8, v8}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 87
+    .line 86
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     iget-object v2, p0, Lnan/ren/activity/ConfigActivity;->secConfigView:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 89
+    .line 88
     iget-object v1, p0, Lnan/ren/activity/ConfigActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v3, v1}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 90
+    .line 89
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 91
+    .line 90
     invoke-virtual {p0, v0}, Lnan/ren/activity/ConfigActivity;->setContentView(Landroid/view/View;)V
 
-    .line 92
+    .line 91
     return-void
 .end method
 
@@ -2632,17 +2632,17 @@
     .locals 2
     .param p1, "check"    # Z
 
-    .line 415
+    .line 414
     if-eqz p1, :cond_0
 
-    .line 416
+    .line 415
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
     const-string v1, "1"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 417
+    .line 416
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
     const-string v1, "\u5f3a\u5236\u663e\u793a\u2714"
@@ -2651,7 +2651,7 @@
 
     goto :goto_0
 
-    .line 419
+    .line 418
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
@@ -2659,14 +2659,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 420
+    .line 419
     iget-object v0, p0, Lnan/ren/activity/ConfigActivity;->foceShow:Landroid/widget/Button;
 
     const-string v1, "\u5f3a\u5236\u663e\u793a\u274c"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 422
+    .line 421
     :goto_0
     return-void
 .end method
@@ -2675,12 +2675,12 @@
     .locals 5
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 162
+    .line 161
     if-nez p1, :cond_0
 
     return-void
 
-    .line 163
+    .line 162
     :cond_0
     const-string v0, "my_dsp"
 
@@ -2688,13 +2688,13 @@
 
     move-result v0
 
-    .line 164
+    .line 163
     .local v0, "dsp_flag":I
     move-object v1, p1
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 165
+    .line 164
     .local v1, "tv":Landroid/widget/TextView;
     const/4 v2, 0x1
 
@@ -2710,7 +2710,7 @@
 
     goto :goto_0
 
-    .line 166
+    .line 165
     :cond_1
     if-ne v0, v2, :cond_2
 
@@ -2720,7 +2720,7 @@
 
     goto :goto_0
 
-    .line 167
+    .line 166
     :cond_2
     const/4 v3, 0x2
 
@@ -2736,7 +2736,7 @@
 
     goto :goto_0
 
-    .line 169
+    .line 168
     :cond_3
     instance-of v3, p1, Landroid/widget/Button;
 
@@ -2744,7 +2744,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 171
     :cond_4
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2752,28 +2752,28 @@
 
     if-lt v3, v4, :cond_5
 
-    .line 173
+    .line 172
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V
 
-    .line 177
+    .line 176
     :cond_5
     :goto_0
     instance-of v3, p1, Landroid/widget/Button;
 
     if-eqz v3, :cond_6
 
-    .line 178
+    .line 177
     move-object v3, p1
 
     check-cast v3, Landroid/widget/Button;
 
-    .line 179
+    .line 178
     .local v3, "btn":Landroid/widget/Button;
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4, v2, v4, v2}, Landroid/widget/Button;->setPadding(IIII)V
 
-    .line 182
+    .line 181
     .end local v3    # "btn":Landroid/widget/Button;
     :cond_6
     return-void

@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 207
+    .line 224
     iput-object p1, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iput-object p2, p0, Lnan/ren/activity/WmActivity$1;->val$btn:Landroid/widget/Button;
@@ -43,20 +43,20 @@
 .method public run()V
     .locals 3
 
-    .line 210
+    .line 227
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->getWaterMarkFile()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 211
+    .line 228
     .local v0, "newFile":Ljava/lang/String;
     sget-object v1, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
     invoke-static {v0, v1}, Lnan/ren/util/WaterMarkUtil;->WriteBitmapFile(Ljava/lang/String;Landroid/graphics/Bitmap;)V
 
-    .line 213
+    .line 230
     :try_start_0
     new-instance v1, Landroid/media/ExifInterface;
 
@@ -68,7 +68,7 @@
 
     invoke-static {v0, v1}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;)V
 
-    .line 214
+    .line 231
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -79,20 +79,20 @@
 
     goto :goto_0
 
-    .line 215
+    .line 232
     :catch_0
     move-exception v1
 
     :goto_0
     nop
 
-    .line 216
+    .line 233
     iget-object v1, p0, Lnan/ren/activity/WmActivity$1;->val$btn:Landroid/widget/Button;
 
     const-string v2, "\u5df2\u4fdd\u5b58"
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 217
+    .line 234
     return-void
 .end method

@@ -144,19 +144,19 @@
     .param p0, "title"    # Ljava/lang/String;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 213
+    .line 212
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 214
+    .line 213
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 215
+    .line 214
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
@@ -167,7 +167,7 @@
 
     sput-object v0, Lnan/ren/util/NUtil;->dialog:Landroid/app/AlertDialog;
 
-    .line 216
+    .line 215
     return-object v0
 .end method
 
@@ -175,7 +175,7 @@
     .locals 1
     .param p0, "file"    # Ljava/io/File;
 
-    .line 126
+    .line 125
     invoke-virtual {p0}, Ljava/io/File;->exists()Z
 
     move-result v0
@@ -184,7 +184,7 @@
 
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
-    .line 127
+    .line 126
     :cond_0
     return-void
 .end method
@@ -193,14 +193,14 @@
     .locals 1
     .param p0, "fileName"    # Ljava/lang/String;
 
-    .line 123
+    .line 122
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-static {v0}, Lnan/ren/util/NUtil;->deleteFile(Ljava/io/File;)V
 
-    .line 124
+    .line 123
     return-void
 .end method
 
@@ -223,7 +223,7 @@
     .locals 1
     .param p0, "file"    # Ljava/lang/String;
 
-    .line 130
+    .line 129
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -460,7 +460,7 @@
 
     move-object v0, v2
 
-    .line 113
+    .line 112
     .end local v1    # "ex":Ljava/lang/Exception;
     :goto_0
     :try_start_3
@@ -476,7 +476,7 @@
     :catch_1
     move-exception v1
 
-    .line 114
+    .line 113
     :goto_1
     :try_start_4
     const-string v1, ">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>"
@@ -493,32 +493,32 @@
 
     goto :goto_2
 
-    .line 117
+    .line 116
     .end local v0    # "r":Ljava/lang/String;
     :catchall_0
     move-exception v0
 
-    .line 118
+    .line 117
     .local v0, "ex":Ljava/lang/Throwable;
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     goto :goto_3
 
-    .line 115
+    .line 114
     .end local v0    # "ex":Ljava/lang/Throwable;
     :catch_3
     move-exception v0
 
-    .line 116
+    .line 115
     .local v0, "ex":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 119
+    .line 118
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
     nop
 
-    .line 120
+    .line 119
     :goto_3
     return-void
 .end method
@@ -527,18 +527,18 @@
     .locals 11
     .param p0, "cmd"    # Ljava/lang/String;
 
-    .line 140
+    .line 139
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v0
 
-    .line 142
+    .line 141
     .local v0, "mRuntime":Ljava/lang/Runtime;
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 145
+    .line 144
     .local v1, "mRespBuff":Ljava/lang/StringBuffer;
     :try_start_0
     invoke-virtual {v0, p0}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
@@ -547,11 +547,11 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_4
 
-    .line 146
+    .line 145
     .local v2, "mProcess":Ljava/lang/Process;
     const/4 v3, 0x0
 
-    .line 151
+    .line 150
     .local v3, "mReader":Ljava/io/BufferedReader;
     const/4 v4, 0x0
 
@@ -574,14 +574,14 @@
 
     move-object v3, v7
 
-    .line 153
+    .line 152
     new-array v7, v6, [C
 
-    .line 154
+    .line 153
     .local v7, "buff":[C
     const/4 v8, 0x0
 
-    .line 157
+    .line 156
     .local v8, "ch":I
     :goto_0
     invoke-virtual {v3, v7}, Ljava/io/BufferedReader;->read([C)I
@@ -592,31 +592,31 @@
 
     if-eq v9, v5, :cond_0
 
-    .line 159
+    .line 158
     invoke-virtual {v1, v7, v4, v8}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
 
     goto :goto_0
 
-    .line 162
+    .line 161
     :cond_0
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 167
+    .line 166
     .end local v7    # "buff":[C
     .end local v8    # "ch":I
     goto :goto_1
 
-    .line 163
+    .line 162
     :catch_0
     move-exception v7
 
-    .line 164
+    .line 163
     .local v7, "ex":Ljava/lang/Exception;
     if-eqz v3, :cond_1
 
-    .line 165
+    .line 164
     :try_start_2
     invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
     :try_end_2
@@ -627,13 +627,13 @@
     :catch_1
     move-exception v8
 
-    .line 168
+    .line 167
     .end local v7    # "ex":Ljava/lang/Exception;
     :cond_1
     :goto_1
     const/4 v7, 0x0
 
-    .line 170
+    .line 169
     .local v7, "errReader":Ljava/io/BufferedReader;
     :try_start_3
     new-instance v8, Ljava/io/BufferedReader;
@@ -650,14 +650,14 @@
 
     move-object v7, v8
 
-    .line 172
+    .line 171
     new-array v6, v6, [C
 
-    .line 173
+    .line 172
     .local v6, "buff":[C
     const/4 v8, 0x0
 
-    .line 176
+    .line 175
     .restart local v8    # "ch":I
     :goto_2
     invoke-virtual {v7, v6}, Ljava/io/BufferedReader;->read([C)I
@@ -668,31 +668,31 @@
 
     if-eq v9, v5, :cond_2
 
-    .line 178
+    .line 177
     invoke-virtual {v1, v6, v4, v8}, Ljava/lang/StringBuffer;->append([CII)Ljava/lang/StringBuffer;
 
     goto :goto_2
 
-    .line 181
+    .line 180
     :cond_2
     invoke-virtual {v7}, Ljava/io/BufferedReader;->close()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 186
+    .line 185
     .end local v6    # "buff":[C
     .end local v8    # "ch":I
     goto :goto_3
 
-    .line 182
+    .line 181
     :catch_2
     move-exception v4
 
-    .line 183
+    .line 182
     .local v4, "ex":Ljava/lang/Exception;
     if-eqz v7, :cond_3
 
-    .line 184
+    .line 183
     :try_start_4
     invoke-virtual {v7}, Ljava/io/BufferedReader;->close()V
     :try_end_4
@@ -703,7 +703,7 @@
     :catch_3
     move-exception v5
 
-    .line 187
+    .line 186
     .end local v4    # "ex":Ljava/lang/Exception;
     :cond_3
     :goto_3
@@ -730,29 +730,29 @@
 
     invoke-static {v4, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 188
+    .line 187
     invoke-virtual {v2}, Ljava/lang/Process;->waitFor()I
 
-    .line 189
+    .line 188
     invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_4
 
-    .line 190
+    .line 189
     return-object v1
 
-    .line 192
+    .line 191
     .end local v2    # "mProcess":Ljava/lang/Process;
     .end local v3    # "mReader":Ljava/io/BufferedReader;
     .end local v7    # "errReader":Ljava/io/BufferedReader;
     :catch_4
     move-exception v2
 
-    .line 194
+    .line 193
     .local v2, "e":Ljava/lang/Exception;
     invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 196
+    .line 195
     .end local v2    # "e":Ljava/lang/Exception;
     return-object v1
 .end method
@@ -762,19 +762,19 @@
     .param p0, "title"    # Ljava/lang/String;
     .param p1, "msg"    # Ljava/lang/String;
 
-    .line 200
+    .line 199
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 201
+    .line 200
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 202
+    .line 201
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
@@ -783,24 +783,24 @@
 
     invoke-direct {v1}, Lnan/ren/util/NUtil$2;-><init>()V
 
-    .line 203
+    .line 202
     const-string v2, "\u786e\u8ba4"
 
     invoke-virtual {v0, v2, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 208
+    .line 207
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/util/NUtil;->dialog:Landroid/app/AlertDialog;
 
-    .line 209
+    .line 208
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 210
+    .line 209
     return-void
 .end method
 
@@ -808,7 +808,7 @@
     .locals 2
     .param p0, "msg"    # Ljava/lang/String;
 
-    .line 133
+    .line 132
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     const/4 v1, 0x1
@@ -819,7 +819,7 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 134
+    .line 133
     return-void
 .end method
 
@@ -827,7 +827,7 @@
     .locals 2
     .param p0, "msg"    # Ljava/lang/String;
 
-    .line 136
+    .line 135
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -838,6 +838,6 @@
 
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 137
+    .line 136
     return-void
 .end method

@@ -58,7 +58,7 @@
     .line 35
     new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
 
-    const/4 v2, 0x1
+    const/4 v2, 0x4
 
     const/16 v3, 0x64
 
@@ -223,28 +223,28 @@
 .method public stopThreadPool()V
     .locals 1
 
-    .line 90
+    .line 91
     iget-object v0, p0, Lnan/ren/util/ThreadPoolManager;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
     if-eqz v0, :cond_0
 
-    .line 91
+    .line 92
     invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lnan/ren/util/ThreadPoolManager;->mQueue:Ljava/util/concurrent/LinkedBlockingDeque;
 
     invoke-virtual {v0}, Ljava/util/concurrent/LinkedBlockingDeque;->clear()V
 
-    .line 93
+    .line 94
     const/4 v0, 0x0
 
     iput-object v0, p0, Lnan/ren/util/ThreadPoolManager;->mThreadPoolExecutor:Ljava/util/concurrent/ThreadPoolExecutor;
 
-    .line 94
+    .line 95
     sput-object v0, Lnan/ren/util/ThreadPoolManager;->threadPoolManager:Lnan/ren/util/ThreadPoolManager;
 
-    .line 96
+    .line 97
     :cond_0
     return-void
 .end method
