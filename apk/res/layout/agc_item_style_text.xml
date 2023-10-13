@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:gravity="center" android:background="@android:color/transparent" android:layout_width="45.0dip" android:layout_height="45.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="14.0sp" android:textColor="@color/agc_multiple_text_color" android:gravity="center" android:tag="agc_tv" android:background="@drawable/agc_multiple_text_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="3.0dip" />
-</RelativeLayout>
