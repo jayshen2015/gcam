@@ -11,6 +11,9 @@ import android.opengl.GLSurfaceView;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.preference.ListPreference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -19,6 +22,8 @@ import android.widget.Toast;
 import com.Globals;
 import com.Utils.Pref;
 import com.agc.Camera;
+import com.agc.Library;
+import com.agc.Patch;
 import com.agc.Res;
 import com.agc.widget.OptionButton;
 import com.agc.widget.OptionWindow;
@@ -27,7 +32,10 @@ import com.google.android.apps.camera.ui.views.ViewfinderCover;
 import org.opencv.android.CameraGLSurfaceView;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import agc.Agc;
 import jp.co.cyberagent.android.gpuimage.GPUImage;
@@ -41,6 +49,8 @@ import nan.ren.util.CameraUtil;
 import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
+import nan.ren.util.JSONArray;
+import nan.ren.util.JSONObject;
 import nan.ren.util.JsonUtil;
 import nan.ren.util.LutUtil;
 import nan.ren.util.NUtil;
@@ -174,18 +184,18 @@ public class G {
                                 String lut=Pref.getAuxProfilePrefStringValue("lib_lut_key");
                                 if(!isPreviewLut&&lut!=null&&lut.trim().length()>1){
                                     picPath = G.saveImageByLUT(picPath,lut);
-                                    if(!picPath.equals(absolutePath)) {
-                                        try{new File(absolutePath).deleteOnExit();}catch (Exception ex){}
-                                    }
                                 }
                                 if (Pref.MenuValue("pref_photo_watermark_key") == 1 &&
                                     Pref.MenuValue("my_hide_wmbtn") == 0){
-                                    if (Pref.MenuValue("pref_watermark_type_key") == 0) {
+                                    int wmTypeKey=Pref.MenuValue("pref_watermark_type_key");
+                                    if (wmTypeKey == 0) {
                                         picPath= WaterMarkUtil.addWaterMark(picPath);
-                                    }else{
+                                    }else if (wmTypeKey == 1) {
                                         Agc.drawTimeWaterMark(picPath);
+                                    }else{
+                                        picPath= WaterMarkUtil.addWaterMark(picPath,true);
                                     }
-                                    if(picPath.equals(absolutePath)) ExifInterfaceUtil.copyExifInterface(picPath,exifInterface);
+                                    ExifInterfaceUtil.copyExifInterface(picPath,exifInterface);
                                 }
 
                                 if (isPreviewLut) {
@@ -206,7 +216,8 @@ public class G {
 
     public static String saveImageByLUT(String srcImage,String lutFileName){
         float auxProfilePrefFloatValue = Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f);
-        return saveImageByLUT(srcImage,lutFileName,auxProfilePrefFloatValue);
+        boolean newFileWithLutName= Pref.MenuValue("my_delete_picture_ifuselut") != 1;
+        return saveImageByLUT(srcImage,lutFileName,auxProfilePrefFloatValue,newFileWithLutName);
     }
 
     public static String saveImageByLUT2(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
@@ -223,15 +234,16 @@ public class G {
         return newFile;
     }
 
-    public static String saveImageByLUT(String srcImage,String lutFileName,float auxProfilePrefFloatValue){
+    public static String saveImageByLUT(String srcImage,String lutFileName,float auxProfilePrefFloatValue,boolean newFileWithLutName){
         if(lutFileName==null || lutFileName.trim().length()<1)return srcImage;
         if(lutFileName.split("/").length<2)lutFileName=G.LUT_PATH+lutFileName;
         File lutFile=new File(lutFileName);
-        String  newFile=srcImage.substring(0,srcImage.length()-4)+"_"+lutFile.getName().substring(0,lutFile.getName().lastIndexOf("."))+"_"+auxProfilePrefFloatValue+".jpg";
+        String newFile=srcImage;
+        if(newFileWithLutName)  newFile=srcImage.substring(0,srcImage.length()-4)+"_"+lutFile.getName().substring(0,lutFile.getName().lastIndexOf("."))+"_"+auxProfilePrefFloatValue+".jpg";
         Bitmap result= LutUtil.filterToBitmap(ImageUtil.getBitMap(srcImage),lutFileName,auxProfilePrefFloatValue);
         ImageUtil.saveBitmapFile(result,newFile,Pref.MenuValue("pref_qjpg_key",97));
         File f=new File(newFile);
-        if(f.exists()&&f.length()>1000) {
+        if(f.exists()&&f.length()>1000&&newFileWithLutName) {
             ExifInterfaceUtil.copyExifInterface(newFile, srcImage);
             WaterMarkUtil.noticSysPhoto(new File(newFile));
         }else{
@@ -276,5 +288,70 @@ public class G {
         }
         return gpuImage.getBitmapWithFilterApplied(b);
     }
+
+    public static void loadLibrary(String str){
+        try {
+            String str2;
+            log("loadLibrary:" + str);
+            if (!str.equals("gcastartup")) {
+                System.loadLibrary(str);
+                return;
+            }
+            Library.GlolibFullname = str;
+            String auxCustomLib = Pref.getAuxProfilePrefStringValue("lib_custom_lib_open_key");
+            if (auxCustomLib == null || auxCustomLib.trim().equals("")) {
+                auxCustomLib = Pref.getStringValue("custom_lib_open_key", "gcastartup");
+            }
+            log("load gcam library:" + auxCustomLib);
+            if (auxCustomLib.toLowerCase().endsWith(".so")) {
+                File file  = new File(Globals.libFolder, auxCustomLib);
+                String path = file.getPath();
+                if (file.exists()) {
+                    str2 = path;
+                    System.load(path);
+                } else {
+                    str2 = "libgcastartup.so";
+                    System.loadLibrary("gcastartup");
+                }
+            } else {
+                System.loadLibrary(auxCustomLib);
+                str2 = "lib" + auxCustomLib + ".so";
+            }
+            Agc.ramPatcher(str2);
+            Patch.patchAll();
+        }catch (Exception ex){
+            log("loadLibrary("+str+") error:"+ex.getMessage());
+            ex.printStackTrace();
+        }
+    }
+    public static void updatePreference(PreferenceFragment preferenceFragment) {
+        PreferenceScreen preferenceScreen = preferenceFragment.getPreferenceScreen();
+        if(preferenceScreen==null)return;
+        if (preferenceScreen.getKey().equals("pref_watermark_key")) {
+            ListPreference listPreference = (ListPreference) preferenceFragment.getPreferenceScreen().findPreference("pref_watermark_type_key");
+            if (listPreference != null) {
+                JSONArray allConfList=WaterMarkUtil.getAllWmConfList();
+                if(allConfList!=null&& !allConfList.isEmpty()) {
+                    List<CharSequence> EntriesList=new ArrayList<>( Arrays.asList(listPreference.getEntries()));
+                    List<CharSequence> EntryValuesList=new ArrayList<>(Arrays.asList(listPreference.getEntryValues()));
+                    int indexUnName=EntriesList.size();
+                    for(int i=0;i<allConfList.size();i++){
+                        JSONObject conf=allConfList.getJSONObject(i);
+                        String name=conf.getString("name","文件配置"+indexUnName);
+                        EntriesList.add(name);
+                        EntryValuesList.add(indexUnName+"");
+                        indexUnName++;
+                    }
+                    CharSequence[] Entries=new CharSequence[EntriesList.size()];
+                    CharSequence[] EntryValues=new CharSequence[EntryValuesList.size()];
+                    listPreference.setEntries(EntriesList.toArray(Entries));
+                    listPreference.setEntryValues(EntryValuesList.toArray(EntryValues));
+                }
+
+            }
+        }
+
+    }
+
 
 }

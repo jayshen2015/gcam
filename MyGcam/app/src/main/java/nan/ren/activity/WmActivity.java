@@ -18,6 +18,7 @@ import android.util.Size;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -26,7 +27,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.Globals;
 import com.Utils.Pref;
@@ -34,11 +39,16 @@ import com.agc.util.AssetsUtil;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.G;
 import nan.ren.util.ImageUtil;
+import nan.ren.util.JSONArray;
+import nan.ren.util.JSONObject;
 import nan.ren.util.LocationUtil;
 import nan.ren.util.NUtil;
 import nan.ren.util.ThreadPoolManager;
@@ -125,7 +135,6 @@ public class WmActivity extends Activity  implements View.OnClickListener {
             iv = new ImageView(this);
             iv.setId(View.generateViewId());
             iv.setBackgroundColor(Color.parseColor("#11223344"));
-           // iv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT));
             rl.setPadding(20,0,0,0);
             rl.addView(iv);
             rl.addView(getBottomView());
@@ -133,13 +142,28 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         }
         iv.setLayoutParams(new LinearLayout.LayoutParams(width,Math.max(100,height)));
         iv.setImageDrawable(ImageUtil.bitmap2Drawable(wmBitmap));
+        saveButton.setOnClickListener(this);
+        saveButton.setText("保存");
     }
 
     Bitmap getWaterMark(String absolutePath){
         Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath);
         if(decodeFile==null)return null;
-        Bitmap waterMark=WaterMarkUtil.getWaterMarkBitMap(title,logoBt,picinfo,locationInfo,dateformat,wmBgColor,wmTextColor,wmSecTextColor,decodeFile.getWidth(),waterMarkHeight,wmFontSize,wmSecFontSize);
-        return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,waterMarkHeight<0);
+        Bitmap waterMark=null;
+        if(configSelect!=null&&configSelect.getSelectedItemPosition()>1){
+            JSONObject mainWmConfJson = WaterMarkUtil.getWmConfJson(Math.max(configSelect.getSelectedItemPosition()-2,0));
+            JSONObject wmConfJson=WaterMarkUtil.getWmConfByBitMap(decodeFile,mainWmConfJson);
+            waterMark=  WaterMarkUtil.getWaterMarkBitMapByWmConf(decodeFile,ExifInterfaceUtil.get(absolutePath),wmConfJson);
+            boolean onlyWaterMark=wmConfJson.getInt("onlyWaterMark",wmConfJson.getInt("onlywatermark",0))==1;
+            if(onlyWaterMark)return waterMark;
+            boolean isInner=wmConfJson.getInt("isInner",wmConfJson.getInt("isinner",0))==1;
+            int paddingBottom=wmConfJson.getInt("paddingBottom",wmConfJson.getInt("paddingbottom",0));
+            return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,isInner,paddingBottom);
+        }else{
+            waterMark=WaterMarkUtil.getWaterMarkBitMap(title,logoBt,picinfo,locationInfo,dateformat,wmBgColor,wmTextColor,wmSecTextColor,decodeFile.getWidth(),waterMarkHeight,wmFontSize,wmSecFontSize);
+            return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,waterMarkHeight<0);
+        }
+
     }
 
 
@@ -151,17 +175,17 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         return rl;
     }
 
-
+    Button saveButton=null;
     Button getSaveButton(){
-        Button button=new Button(this);
-        button.setOnClickListener(this);
-        button.setLayoutParams(btnlp);
-        button.setBackgroundColor(btn_bg_color);
-        button.setTextColor(text_color);
-        button.setGravity(Gravity.CENTER);
-        setTextSize(button);
-        button.setText("保存");
-        return button;
+        saveButton=new Button(this);
+       // saveButton.setOnClickListener(this);
+        saveButton.setLayoutParams(btnlp);
+        saveButton.setBackgroundColor(btn_bg_color);
+        saveButton.setTextColor(text_color);
+        saveButton.setGravity(Gravity.CENTER);
+        setTextSize(saveButton);
+        saveButton.setText("保存");
+        return saveButton;
     }
    void setContentViewBySelf(boolean showSelect){
        LinearLayout linearLayout=new LinearLayout(this);
@@ -423,6 +447,8 @@ public class WmActivity extends Activity  implements View.OnClickListener {
     CheckBox cbHideLogo;
     ImageButton selectLogoBtn;
 
+    Spinner configSelect;
+
     View getWmParamerView(){
         LinearLayout linearLayout=new LinearLayout(this);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -559,7 +585,16 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         selectLogoBtn=(ImageButton) f9.getChildAt(1);
 
         linearLayout.addView(f9);
-        return linearLayout;
+
+
+        ViewGroup f10=getUseCfgView("选择配置：",false);
+        configSelect=(Spinner) f10.getChildAt(1);
+        linearLayout.addView(f10);
+
+        ScrollView scrollView =new ScrollView(this);
+        scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        scrollView.addView(linearLayout); ;
+        return scrollView;
     }
     ViewGroup getEditField(String label,Object value){
         LinearLayout linearLayout=new LinearLayout(this);
@@ -614,6 +649,51 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         cb.setChecked(checked);
         setTextSize(cb);
         linearLayout.addView(cb);
+        return linearLayout;
+    }
+
+    ViewGroup getUseCfgView(String label,boolean checked){
+        LinearLayout linearLayout=new LinearLayout(this);
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+        TextView tv=new TextView(this);
+        tv.setText(label);
+        setTextSize(tv);
+        linearLayout.addView(tv);
+//        CheckBox cb=new CheckBox(this);
+//        cb.setText("");
+//        cb.setChecked(checked);
+//        setTextSize(cb);
+
+        JSONArray allConfList=WaterMarkUtil.getAllWmConfList();
+        List<String> dataList=new ArrayList<>();
+        dataList.add("徕卡水印");
+        dataList.add("时间水印");
+        if(allConfList!=null&& !allConfList.isEmpty()) {
+            int indexUnName=2;
+            for(int i=0;i<allConfList.size();i++){
+                JSONObject conf=allConfList.getJSONObject(i);
+                String name=conf.getString("name","文件配置"+indexUnName);
+                dataList.add(name);
+                indexUnName++;
+            }
+        }
+        String[] data=new String[dataList.size()];
+        data=dataList.toArray(data);
+        Spinner spinner = new Spinner(this);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, data){
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                TextView textView = (TextView) super.getView(position, convertView, parent);
+                setTextSize(textView);
+                return textView;
+            }
+        };
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(spinnerAdapter);
+        //
+
+        linearLayout.addView(spinner);
         return linearLayout;
     }
     String getColorString(int c){

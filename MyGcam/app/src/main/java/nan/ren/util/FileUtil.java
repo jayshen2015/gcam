@@ -14,10 +14,22 @@ import java.io.InputStreamReader;
 import nan.ren.G;
 
 public class FileUtil {
+    public static boolean delete(File file){
+        try {
+            return file.delete();
+        }catch (Exception ex){
+            return false;
+        }
+    }
+    public static boolean delete(String file){
+        return delete(new File(file));
+    }
     public static boolean fileCopy(File oldf,File newf){
         try {
+            G.log("file copy ："+oldf.getName()+" old exists:"+oldf.exists()+" to "+newf.getName()+" new exists:"+newf.exists());
             //如果原文件不存在
             if (!oldf.exists()) return false;
+            if(!newf.getParentFile().exists())newf.getParentFile().mkdirs();
             //获得原文件流
             FileInputStream inputStream = new FileInputStream(oldf);
             byte[] data = new byte[1024];

@@ -36,5 +36,7 @@ public class Agc {
 
     }
 
+    public static void ramPatcher(String a){};
+
 
 }

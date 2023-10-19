@@ -3,7 +3,17 @@ package g;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BlurMaskFilter;
+import android.graphics.Color;
+import android.graphics.LightingColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import android.icu.text.SimpleDateFormat;
+import android.media.ExifInterface;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -11,18 +21,26 @@ import android.widget.ImageView;
 
 import com.Globals;
 
+import java.text.ParseException;
+import java.util.Date;
+
 import agc.Agc;
 import g.bak.TActivity;
 import jp.co.cyberagent.android.gpuimage.GPUImage;
 import jp.co.cyberagent.android.gpuimage.GPUImageGrayscaleFilter;
 import jp.co.cyberagent.android.gpuimage.GPUImageLookupFilter;
+import nan.ren.G;
 import nan.ren.activity.ConfigActivity;
 import nan.ren.activity.WmActivity;
 import nan.ren.bean.LUT;
 import nan.ren.bean.LUTCube;
 import nan.ren.bean.LUTPng;
+import nan.ren.util.ExifInterfaceUtil;
+import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
+import nan.ren.util.JsonUtil;
 import nan.ren.util.LutUtil;
+import nan.ren.util.WaterMarkUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -34,13 +52,27 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Globals.context=getApplicationContext();
         setContentView(R.layout.activity_main);
         imageView=findViewById(R.id.imageView);
-        imageView.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
-        imageView2=findViewById(R.id.imageView2);
-        imageView2.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
+        Bitmap bit=  WaterMarkUtil.getWaterMarkBitMapByWmConf("/sdcard/DCIM/b.jpg");
+        imageView.setImageDrawable(ImageUtil.bitmap2Drawable(bit));
+
+
+//        imageView2=findViewById(R.id.imageView2);
+//        imageView2.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
         bind();
+
+//        ExifInterface exi= ExifInterfaceUtil.get("/sdcard/download/c.jpg");
+//        String a=exi.getAttribute("DateTime");
+//        G.log(a);
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy:MM:dd HH:mm:ss");
+//        try {
+//            G.log(sdf.parse(a).toString());
+//        } catch (ParseException e) {
+//            throw new RuntimeException(e);
+//        }
+        // savePainConf();
 //        Intent intent=new Intent(this, ConfigActivity.class);
-//        // Intent intent=new Intent(this, WmActivity.class);
-//        startActivity(intent);
+        Intent intent=new Intent(this, WmActivity.class);
+        startActivity(intent);
     }
 
 
@@ -48,9 +80,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button buttonAdd = findViewById(R.id.btn001);
         buttonAdd.setOnClickListener(this);
     }
-
     @Override
     public void onClick(View view) {
+        Intent intent = new Intent(this, WmActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClick1(View view) {
         GPUImage gpuImage = new GPUImage(this);
         GPUImageGrayscaleFilter ggf=new GPUImageGrayscaleFilter();
         gpuImage.setFilter(ggf);
@@ -158,5 +194,46 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //            e.printStackTrace();
 //            Log.e("ExifInterface error xxxxxxxxxxxxxxxx:",e.getMessage());
 //        }
+    }
+
+    void savePainConf(){
+        Paint mPaint = new Paint(); // 创建paint对象
+        mPaint.setColor(Color.RED);//设置颜色
+        mPaint.setARGB(255, 255, 255, 0); //设置Paint对象颜色，范围0~255
+        mPaint.setAlpha(200); // 设置alpha不透明度，范围0~255
+        mPaint.setAntiAlias(true); //抗锯齿
+//        mPaint.setBlendMode();
+        mPaint.setColorFilter(new LightingColorFilter(0x00ffff, 0x000000)); // 设置颜色过滤器
+//        mPaint.setDither();
+//        mPaint.setElegantTextHeight();
+//        mPaint.setEndHyphenEdit();
+        mPaint.setFilterBitmap(true); // 设置双线性过滤
+//        mPaint.setFlags();
+//        mPaint.setFakeBoldText();
+//        mPaint.setHinting();
+//        mPaint.setLetterSpacing();
+//        mPaint.setLinearText();
+        mPaint.setMaskFilter(new BlurMaskFilter(10, BlurMaskFilter.Blur.NORMAL)); //设置画笔遮罩滤镜，传入度数和样式
+//        mPaint.setPathEffect();
+        mPaint.setStyle(Paint.Style.STROKE); //描边效果
+        mPaint.setStrokeWidth(4); // 描边宽度，在 STROKE 和 FILL_AND_STROKE 下，可设置线条的宽度
+        mPaint.setStrokeCap(Paint.Cap.ROUND); // 圆角效果
+        mPaint.setStrokeJoin(Paint.Join.MITER); // 拐角风格
+//        mPaint.setStrikeThruText();
+ //       mPaint.setShader(Shader.TileMode);
+ //       mPaint.setShadowLayer();
+//        mPaint.setStrokeMiter();
+//        mPaint.setSubpixelText();
+        mPaint.setTextScaleX(2); // 设置文本缩放倍数
+        mPaint.setTextSize(30); // 设置字体大小
+        mPaint.setTextAlign(Paint.Align.LEFT); // 对齐方式
+//        mPaint.setTextLocale();
+//        mPaint.setTypeface();
+        mPaint.setUnderlineText(true); // 设置下划线
+//        mPaint.setWordSpacing();
+        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DARKEN)); //设置图层混合模式
+        String cfgStr=JsonUtil.toJSONString(mPaint);
+        G.log(cfgStr);
+       FileUtil.writeFile("/sdcard/download/wm.conf",cfgStr);
     }
 }

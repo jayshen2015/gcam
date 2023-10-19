@@ -1,13 +1,8 @@
 package nan.ren.util;
 import android.media.ExifInterface;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
@@ -42,18 +37,34 @@ public class JsonUtil {
      * <p>对list转为JSONArray,对对象转为JSONObject</p>
      */
     @SuppressWarnings("rawtypes")
-    private static Object toJSONObject(Object object)
-            throws JSONException, IllegalAccessException, IllegalArgumentException,
-            InvocationTargetException, NoSuchMethodException, SecurityException {
+    public static Object toJSONObject(Object object) throws Exception {
         if (object == null) {
             return null;
         }
         if (object instanceof JSONObject || object instanceof JSONArray) {
-            return object;
+            return  object;
+        }
+        if (object instanceof org.json.JSONObject) {
+            org.json.JSONObject ojj=(org.json.JSONObject)object;
+            JSONObject result= new JSONObject();
+            Iterator<String> it=ojj.keys();
+            while (it.hasNext()){
+                String key=it.next();
+                result.put(key,ojj.opt(key));
+            }
+            return  result;
+        }
+        if (object instanceof org.json.JSONArray) {
+            org.json.JSONArray oja=(org.json.JSONArray)object;
+            JSONArray result=new JSONArray();
+            for(int i=0;i<oja.length();i++){
+                result.add(oja.opt(i));
+            }
+            return result;
         }
         // 基本数据类型非数组
         if (isBaseType(object.getClass()) && !object.getClass().isArray()) {
-            return object;
+            return  object;
         } else if (object instanceof Map) { //如果为Map
             Map map = (Map) object;
             JSONObject jsonObject = new JSONObject();
@@ -61,34 +72,32 @@ public class JsonUtil {
                 Object value = map.get(key);
                 jsonObject.put(String.valueOf(key), toJSONObject(value));
             }
-            return jsonObject;
+            return  jsonObject;
         } else if (object instanceof List) {// 为List
             List list = (List) object;
             JSONArray jsonArray = new JSONArray();
-            for (Object obj : list) {
-                jsonArray.put(toJSONObject(obj));
+            for (int i=0;i<list.size();i++) {
+                jsonArray.add(toJSONObject(list.get(i)));
             }
-            return jsonArray;
+            return  jsonArray;
         } else if (object.getClass().isArray()) { // 为数组
             int length = Array.getLength(object);
             JSONArray jsonArray = new JSONArray();
             for (int i = 0; i < length; i++) {
-                jsonArray.put(toJSONObject(Array.get(object, i)));
+                jsonArray.add(toJSONObject(Array.get(object, i)));
             }
-            return jsonArray;
+            return  jsonArray;
         } else if(object.getClass().getName().equals(ExifInterface.class.getName())){
                 return  ExifInterfaceToMap((ExifInterface)object);
         }else {
             JSONObject jsonObject = new JSONObject();
             Class<?> clazz = object.getClass();
             parseObject(clazz, jsonObject, object);
-            return jsonObject;
+            return  jsonObject;
         }
     }
 
-    private static void parseObject(Class<?> clazz, JSONObject jsonObject, Object object)
-            throws IllegalAccessException, IllegalArgumentException,
-            InvocationTargetException, NoSuchMethodException, SecurityException, JSONException {
+    private static void parseObject(Class<?> clazz, JSONObject jsonObject, Object object) throws  Exception {
         if (clazz == null) {
             return;
         }
@@ -170,9 +179,9 @@ public class JsonUtil {
         JSONObject jsonObject = null;
         JSONArray jsonArray = null;
         if (json.startsWith("{")) {
-            jsonObject = new JSONObject(json);
+            jsonObject = toJson(new org.json.JSONObject(json)) ;
         } else if (json.startsWith("[")) {
-            jsonArray = new JSONArray(json);
+            jsonArray = (JSONArray)toJSONObject(new org.json.JSONArray(json));
         } else {
             throw new Exception("json数据非标准格式，请检查");
         }
@@ -254,7 +263,7 @@ public class JsonUtil {
         }
         if (Map.class.isAssignableFrom(tClazz)) {
             Map<String, Object> map = new HashMap<>();
-            Iterator<String> iterator = jsonObject.keys();
+            Iterator<String> iterator = jsonObject.keySet().iterator();
             while (iterator.hasNext()) {
                 String key = iterator.next();
                 map.put(key, jsonObject.get(key));
@@ -318,7 +327,7 @@ public class JsonUtil {
                 continue;
             }
             // 获取字段fieldName对应的值value
-            Object value = jsonObject.opt(fieldName);
+            Object value = jsonObject.get(fieldName);
             if (isBaseType(filedClazz) || JSONObject.class.isAssignableFrom(filedClazz)
                     || JSONArray.class.isAssignableFrom(filedClazz)) {
                 setterObject(tClazz, fieldName, filedClazz, t, value);
@@ -378,13 +387,13 @@ public class JsonUtil {
         Type nextType = parameterizedType.getActualTypeArguments()[1];
         Class<?> itemKlacc = getTclazz(nextType);
         boolean flag = isBaseType(itemKlacc);
-        Iterator<String> iterator = jsonObject.keys();
+        Iterator<String> iterator = jsonObject.keySet().iterator();
         while (iterator.hasNext()) {
             String key = iterator.next();
             if (flag) {
-                map.put(key, jsonObject.opt(key));
+                map.put(key, jsonObject.get(key));
             } else {
-                Object obj = jsonObject.opt(key);
+                Object obj = jsonObject.get(key);
                 if (obj instanceof JSONObject) {
                     if (JSONObject.class.isAssignableFrom(itemKlacc)) {
                         map.put(key, obj);
@@ -485,11 +494,9 @@ public class JsonUtil {
             return null;
         }
     }
-    public static JSONObject toJson(String jsonStr) throws JSONException {
-        return   new JSONObject(jsonStr);
-    }
+
     public static Map jsonToMap(JSONObject jo){
-        Iterator<String> it=jo.keys();
+        Iterator<String> it=jo.keySet().iterator();
         Map map=new HashMap<>();
         while (it.hasNext()){
             String key=it.next();

@@ -115,7 +115,7 @@ public class ImageUtil {
     }
 
     public static Bitmap compressImage(String srcPath,Size size) {
-        return compressImage(srcPath,size,true,100);
+        return compressImage(srcPath,size,size.getHeight()<=0,100);
     }
     public static Bitmap compressImage(String srcPath,Size size,boolean isMixWidth) {
        return compressImage(srcPath,size,isMixWidth,100);
@@ -218,6 +218,7 @@ public class ImageUtil {
 
     public static Bitmap getBitMap(String path){
         try {
+            if(!FileUtil.exists(path))return null;
             Bitmap decodeFile = BitmapFactory.decodeFile(path);
             decodeFile.copy(Bitmap.Config.ARGB_8888, true);
             return decodeFile;

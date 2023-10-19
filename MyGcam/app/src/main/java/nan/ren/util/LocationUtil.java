@@ -97,7 +97,8 @@ public class LocationUtil {
         DecimalFormat decimalFormat = new DecimalFormat("00");
         return degree + "°" + decimalFormat.format(minute) + "'" + decimalFormat.format(second) + "\"";
     }
-    private static String toDmsString(String str) {
+    public static String toDmsString(String str) {
+        if(str==null||str.isEmpty())return "";
         String[] split = str.split("/", -1);
         String[] split2 = split[1].split(",", -1);
         String[] split3 = split[2].split(",", -1);
@@ -107,6 +108,20 @@ public class LocationUtil {
         String str2 = split4[0];
         String str3 = split4[1];
         return  parseInt + "°" + parseInt2 + "'" + Integer.parseInt(str2)  + "\"";//+ "." + Integer.parseInt(str3)
+    }
+
+
+
+    public static Integer[] toDmsIntArr(String str) {
+        String[] split = str.split("/", -1);
+        String[] split2 = split[1].split(",", -1);
+        String[] split3 = split[2].split(",", -1);
+        int parseInt = Integer.parseInt(split[0]);
+        int parseInt2 = Integer.parseInt(split2[1]);
+        String[] split4 = Double.toString(Double.parseDouble(split3[1]) / Double.parseDouble(split[3])).split("\\.", -1);
+        String str2 = split4[0];
+        String str3 = split4[1];
+        return new Integer[]{parseInt ,parseInt2 , Integer.parseInt(str2)};
     }
     /**
      * 将gps的经纬度变成度分秒

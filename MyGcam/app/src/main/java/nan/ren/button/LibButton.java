@@ -125,9 +125,6 @@ public class LibButton extends OptionButton implements View.OnClickListener {
                         public void onClick(DialogInterface dialog, int i) {
                            TextView view=getSelect();
                             String libName=view.getText().toString();
-                            if(!hadLib(libName)){
-                                FileUtil.fileCopy(G.LIB_PATH+libName,Globals.libFolder.getAbsolutePath()+"/"+libName);
-                            }
                             loadLibrary(libName);
                             checked(true);
                             dialog.dismiss();
@@ -194,7 +191,7 @@ public class LibButton extends OptionButton implements View.OnClickListener {
     }
 
     public void setSelect(){
-        String nowKey=Pref.getStringValue("custom_lib_open_key","gcastartup");
+        String nowKey=Pref.getStringValue("my_custom_lib_open_last_key","gcastartup");
         for(int i=0;i<gridLayout.getChildCount();i++){
             TextView  v= (TextView)gridLayout.getChildAt(i);
             if(nowKey.equals(v.getText().toString())){
@@ -253,10 +250,18 @@ public class LibButton extends OptionButton implements View.OnClickListener {
     }
 
     void loadLibrary(String filename){
-        Pref.setMenuValue("custom_lib_open_key",filename);
-        Library.loadLibrary("gcastartup");
-        if(!"gcastartup".equalsIgnoreCase(filename)){
-            Pref.setMenuValue("my_custom_lib_open_last_key",filename);
+        if("gcastartup".equals(filename)){
+            Pref.setMenuValue("custom_lib_open_key","gcastartup");
+            Library.loadLibrary("gcastartup");
+            FileUtil.delete(Globals.libFolder.getAbsolutePath()+"/mygcamlib.so");
+        }else {
+            String myLibKey=Pref.getStringValue("my_custom_lib_open_last_key", "gcastartup");
+            if (!filename.equals(myLibKey)) {
+                FileUtil.fileCopy(G.LIB_PATH + filename, Globals.libFolder.getAbsolutePath() + "/mygcamlib.so");
+            }
+            Pref.setMenuValue("custom_lib_open_key", "mygcamlib.so");
+            Library.loadLibrary("gcastartup");
+            Pref.setMenuValue("my_custom_lib_open_last_key", filename);
         }
         Globals.onRestart();
     }

@@ -384,7 +384,7 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
             handler.post(new Runnable() {
                 @Override
                 public void run() {
-                    G.saveImageByLUT(srcImagePath,btn.getTag().toString(),rate);
+                    G.saveImageByLUT(srcImagePath,btn.getTag().toString(),rate,true);
                     btn.setText("已保存");
                 }
             });
