@@ -155,13 +155,13 @@
     .locals 0
     .param p1, "c"    # Z
 
-    .line 238
+    .line 235
     iput p1, p0, Lnan/ren/button/LibButton;->selectedIndex:I
 
-    .line 239
+    .line 236
     invoke-virtual {p0, p1}, Lnan/ren/button/LibButton;->setChecked(Z)V
 
-    .line 240
+    .line 237
     return-void
 .end method
 
@@ -169,7 +169,7 @@
     .locals 4
     .param p1, "checked"    # Z
 
-    .line 242
+    .line 239
     const-string v0, "my_custom_lib_open_last_key"
 
     const-string v1, "gcastartup"
@@ -178,7 +178,7 @@
 
     move-result-object v0
 
-    .line 243
+    .line 240
     .local v0, "ckKey":Ljava/lang/String;
     if-eqz p1, :cond_0
 
@@ -188,17 +188,17 @@
 
     if-nez v2, :cond_0
 
-    .line 244
+    .line 241
     invoke-virtual {p0, v0}, Lnan/ren/button/LibButton;->loadLibrary(Ljava/lang/String;)V
 
-    .line 245
+    .line 242
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lnan/ren/button/LibButton;->checked(Z)V
 
     goto :goto_0
 
-    .line 246
+    .line 243
     :cond_0
     const/4 v2, 0x0
 
@@ -210,22 +210,22 @@
 
     if-eqz v3, :cond_1
 
-    .line 247
+    .line 244
     invoke-virtual {p0, v2}, Lnan/ren/button/LibButton;->checked(Z)V
 
-    .line 248
+    .line 245
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->showLibsDialog()V
 
     goto :goto_0
 
-    .line 250
+    .line 247
     :cond_1
     invoke-virtual {p0, v1}, Lnan/ren/button/LibButton;->loadLibrary(Ljava/lang/String;)V
 
-    .line 251
+    .line 248
     invoke-virtual {p0, v2}, Lnan/ren/button/LibButton;->checked(Z)V
 
-    .line 253
+    .line 250
     :goto_0
     return-void
 .end method
@@ -233,7 +233,7 @@
 .method getLibListView()Landroid/view/View;
     .locals 12
 
-    .line 159
+    .line 156
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->getContext()Landroid/content/Context;
@@ -242,7 +242,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 160
+    .line 157
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -270,7 +270,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 161
+    .line 158
     const-string v1, "#cc212527"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -279,12 +279,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 162
+    .line 159
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 163
+    .line 160
     new-instance v2, Landroid/widget/ScrollView;
 
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->getContext()Landroid/content/Context;
@@ -293,7 +293,7 @@
 
     invoke-direct {v2, v4}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 164
+    .line 161
     .local v2, "scrollView":Landroid/widget/ScrollView;
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
@@ -301,7 +301,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 165
+    .line 162
     new-instance v4, Landroid/widget/GridLayout;
 
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->getContext()Landroid/content/Context;
@@ -312,7 +312,7 @@
 
     iput-object v4, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
-    .line 166
+    .line 163
     new-instance v4, Landroid/widget/GridLayout$LayoutParams;
 
     new-instance v5, Landroid/view/ViewGroup$LayoutParams;
@@ -321,33 +321,33 @@
 
     invoke-direct {v4, v5}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 167
+    .line 164
     .local v4, "lp":Landroid/widget/GridLayout$LayoutParams;
     invoke-virtual {v4, v1}, Landroid/widget/GridLayout$LayoutParams;->setGravity(I)V
 
-    .line 168
+    .line 165
     iget-object v5, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v5, v4}, Landroid/widget/GridLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 169
+    .line 166
     iget-object v5, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v5, v1}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 170
+    .line 167
     iget-object v1, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     const/16 v5, 0x14
 
     invoke-virtual {v1, v5, v5, v5, v5}, Landroid/widget/GridLayout;->setPadding(IIII)V
 
-    .line 171
+    .line 168
     invoke-static {}, Lnan/ren/button/LibButton;->getMyLibs()[Ljava/io/File;
 
     move-result-object v1
 
-    .line 172
+    .line 169
     .local v1, "fs":[Ljava/io/File;
     const/16 v5, 0x10
 
@@ -355,7 +355,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 173
+    .line 170
     array-length v7, v1
 
     const/4 v8, 0x0
@@ -365,7 +365,7 @@
 
     aget-object v9, v1, v8
 
-    .line 174
+    .line 171
     .local v9, "lib":Ljava/io/File;
     if-eqz v9, :cond_1
 
@@ -387,7 +387,7 @@
 
     goto :goto_1
 
-    .line 175
+    .line 172
     :cond_0
     new-instance v10, Landroid/widget/TextView;
 
@@ -397,7 +397,7 @@
 
     invoke-direct {v10, v11}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 176
+    .line 173
     .local v10, "tv":Landroid/widget/TextView;
     invoke-virtual {v9}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -405,28 +405,28 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 177
+    .line 174
     invoke-virtual {v10, v6}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 178
+    .line 175
     new-instance v11, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v11, v3, v6}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 179
+    .line 176
     invoke-virtual {v10, p0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 180
+    .line 177
     invoke-virtual {v10, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 181
+    .line 178
     iget-object v11, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v11, v10}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 173
+    .line 170
     .end local v9    # "lib":Ljava/io/File;
     .end local v10    # "tv":Landroid/widget/TextView;
     :cond_1
@@ -435,7 +435,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 181
     :cond_2
     new-instance v7, Landroid/widget/TextView;
 
@@ -445,48 +445,48 @@
 
     invoke-direct {v7, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 185
+    .line 182
     .local v7, "tv":Landroid/widget/TextView;
     const-string v8, "===\u672a\u627elib\u6587\u4ef6==="
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 186
+    .line 183
     invoke-virtual {v7, v6}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 187
+    .line 184
     new-instance v8, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v8, v3, v6}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 188
+    .line 185
     invoke-virtual {v7, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 189
+    .line 186
     iget-object v3, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v3, v7}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 191
+    .line 188
     .end local v7    # "tv":Landroid/widget/TextView;
     :cond_3
     iget-object v3, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v2, v3}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 192
+    .line 189
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 193
+    .line 190
     return-object v0
 .end method
 
 .method public getSelect()Landroid/widget/TextView;
     .locals 4
 
-    .line 216
+    .line 213
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -499,14 +499,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 217
+    .line 214
     iget-object v1, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 218
+    .line 215
     .local v1, "v":Landroid/view/View;
     invoke-virtual {v1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -530,14 +530,14 @@
 
     return-object v2
 
-    .line 216
+    .line 213
     .end local v1    # "v":Landroid/view/View;
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 220
+    .line 217
     .end local v0    # "i":I
     :cond_1
     const/4 v0, 0x0
@@ -549,7 +549,7 @@
     .locals 6
     .param p1, "libName"    # Ljava/lang/String;
 
-    .line 230
+    .line 227
     sget-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
@@ -562,7 +562,7 @@
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 231
+    .line 228
     :cond_0
     sget-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
 
@@ -576,7 +576,7 @@
 
     return v1
 
-    .line 232
+    .line 229
     :cond_1
     sget-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
 
@@ -593,7 +593,7 @@
 
     aget-object v4, v0, v3
 
-    .line 233
+    .line 230
     .local v4, "lib":Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->getName()Ljava/lang/String;
 
@@ -609,14 +609,14 @@
 
     return v0
 
-    .line 232
+    .line 229
     .end local v4    # "lib":Ljava/io/File;
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 235
+    .line 232
     :cond_3
     return v1
 .end method
@@ -758,7 +758,7 @@
 .method public initSelect()V
     .locals 3
 
-    .line 208
+    .line 205
     const/4 v0, 0x0
 
     .local v0, "i":I
@@ -771,14 +771,14 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 209
+    .line 206
     iget-object v1, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 210
+    .line 207
     .local v1, "v":Landroid/view/View;
     const-string v2, "#11000001"
 
@@ -788,7 +788,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 211
+    .line 208
     const/4 v2, 0x0
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -797,49 +797,145 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 208
+    .line 205
     .end local v1    # "v":Landroid/view/View;
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 213
+    .line 210
     .end local v0    # "i":I
     :cond_0
     return-void
 .end method
 
 .method loadLibrary(Ljava/lang/String;)V
-    .locals 1
+    .locals 8
     .param p1, "filename"    # Ljava/lang/String;
 
-    .line 256
-    const-string v0, "custom_lib_open_key"
-
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 257
+    .line 253
     const-string v0, "gcastartup"
 
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    const-string v2, "/mygcamlib.so"
+
+    const-string v3, "custom_lib_open_key"
+
+    if-eqz v1, :cond_0
+
+    .line 254
+    invoke-static {v3, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 255
     invoke-static {v0}, Lcom/agc/Library;->loadLibrary(Ljava/lang/String;)V
 
+    .line 256
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lcom/Globals;->libFolder:Ljava/io/File;
+
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lnan/ren/util/FileUtil;->delete(Ljava/lang/String;)Z
+
+    goto :goto_0
+
     .line 258
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    :cond_0
+    const-string v1, "my_custom_lib_open_last_key"
 
-    move-result v0
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    if-nez v0, :cond_0
+    move-result-object v4
 
     .line 259
-    const-string v0, "my_custom_lib_open_last_key"
+    .local v4, "myLibKey":Ljava/lang/String;
+    invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    move-result v5
 
-    .line 261
-    :cond_0
-    invoke-static {}, Lcom/Globals;->onRestart()V
+    if-nez v5, :cond_1
+
+    .line 260
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v6, Lnan/ren/G;->LIB_PATH:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v7, Lcom/Globals;->libFolder:Ljava/io/File;
+
+    invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v5, v2}, Lnan/ren/util/FileUtil;->fileCopy(Ljava/lang/String;Ljava/lang/String;)Z
 
     .line 262
+    :cond_1
+    const-string v2, "mygcamlib.so"
+
+    invoke-static {v3, v2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 263
+    invoke-static {v0}, Lcom/agc/Library;->loadLibrary(Ljava/lang/String;)V
+
+    .line 264
+    invoke-static {v1, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 266
+    .end local v4    # "myLibKey":Ljava/lang/String;
+    :goto_0
+    invoke-static {}, Lcom/Globals;->onRestart()V
+
+    .line 267
     return-void
 .end method
 
@@ -859,10 +955,10 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 224
+    .line 221
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->initSelect()V
 
-    .line 225
+    .line 222
     const/4 v0, 0x1
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -871,7 +967,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 226
+    .line 223
     const-string v0, "#aa969593"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -880,7 +976,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 227
+    .line 224
     return-void
 .end method
 
@@ -932,8 +1028,8 @@
 .method public setSelect()V
     .locals 4
 
-    .line 197
-    const-string v0, "custom_lib_open_key"
+    .line 194
+    const-string v0, "my_custom_lib_open_last_key"
 
     const-string v1, "gcastartup"
 
@@ -941,7 +1037,7 @@
 
     move-result-object v0
 
-    .line 198
+    .line 195
     .local v0, "nowKey":Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -955,7 +1051,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 199
+    .line 196
     iget-object v2, p0, Lnan/ren/button/LibButton;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/GridLayout;->getChildAt(I)Landroid/view/View;
@@ -964,7 +1060,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 200
+    .line 197
     .local v2, "v":Landroid/widget/TextView;
     invoke-virtual {v2}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -980,7 +1076,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 201
+    .line 198
     const-string v3, "#aa969593"
 
     invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -989,7 +1085,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
-    .line 202
+    .line 199
     const/4 v3, 0x1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -998,17 +1094,17 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 203
+    .line 200
     return-void
 
-    .line 198
+    .line 195
     .end local v2    # "v":Landroid/widget/TextView;
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 206
+    .line 203
     .end local v1    # "i":I
     :cond_1
     return-void
@@ -1064,33 +1160,33 @@
 
     invoke-direct {v2, p0}, Lnan/ren/button/LibButton$2;-><init>(Lnan/ren/button/LibButton;)V
 
-    .line 136
+    .line 133
     const-string v3, "\u53d6\u6d88"
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 146
+    .line 143
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
     iput-object v1, p0, Lnan/ren/button/LibButton;->dialog:Landroid/app/AlertDialog;
 
-    .line 148
+    .line 145
     :cond_0
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->initSelect()V
 
-    .line 149
+    .line 146
     invoke-virtual {p0}, Lnan/ren/button/LibButton;->setSelect()V
 
-    .line 150
+    .line 147
     iget-object v1, p0, Lnan/ren/button/LibButton;->dialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
-    .line 152
+    .line 149
     :try_start_0
     iget-object v1, p0, Lnan/ren/button/LibButton;->dialog:Landroid/app/AlertDialog;
 
@@ -1106,7 +1202,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 153
+    .line 150
     iget-object v1, p0, Lnan/ren/button/LibButton;->dialog:Landroid/app/AlertDialog;
 
     const/4 v2, -0x2
@@ -1125,13 +1221,13 @@
 
     goto :goto_0
 
-    .line 154
+    .line 151
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 156
+    .line 153
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/SsljButton;
 
-    .line 134
+    .line 149
     iput-object p1, p0, Lnan/ren/button/SsljButton$1;->this$0:Lnan/ren/button/SsljButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,9 +41,9 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 137
+    .line 152
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 138
+    .line 153
     return-void
 .end method

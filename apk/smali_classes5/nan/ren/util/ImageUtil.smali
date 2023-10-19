@@ -41,8 +41,20 @@
     .param p1, "size"    # Landroid/util/Size;
 
     .line 118
+    invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
+
+    move-result v0
+
+    if-gtz v0, :cond_0
+
     const/4 v0, 0x1
 
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
     const/16 v1, 0x64
 
     invoke-static {p0, p1, v0, v1}, Lnan/ren/util/ImageUtil;->compressImage(Ljava/lang/String;Landroid/util/Size;ZI)Landroid/graphics/Bitmap;
@@ -403,38 +415,48 @@
 .end method
 
 .method public static getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 3
+    .locals 4
     .param p0, "path"    # Ljava/lang/String;
 
     .line 221
-    :try_start_0
-    invoke-static {p0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    const/4 v0, 0x0
 
-    move-result-object v0
+    :try_start_0
+    invoke-static {p0}, Lnan/ren/util/FileUtil;->exists(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    return-object v0
 
     .line 222
-    .local v0, "decodeFile":Landroid/graphics/Bitmap;
-    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    :cond_0
+    invoke-static {p0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
-    const/4 v2, 0x1
+    move-result-object v1
 
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+    .line 223
+    .local v1, "decodeFile":Landroid/graphics/Bitmap;
+    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v1, v2, v3}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 223
-    return-object v0
-
     .line 224
-    .end local v0    # "decodeFile":Landroid/graphics/Bitmap;
-    :catch_0
-    move-exception v0
+    return-object v1
 
     .line 225
-    .local v0, "ex":Ljava/lang/Exception;
-    const/4 v1, 0x0
+    .end local v1    # "decodeFile":Landroid/graphics/Bitmap;
+    :catch_0
+    move-exception v1
 
-    return-object v1
+    .line 226
+    .local v1, "ex":Ljava/lang/Exception;
+    return-object v0
 .end method
 
 .method public static getInnerDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
