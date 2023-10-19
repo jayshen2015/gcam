@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/G$1;
 
-    .line 162
+    .line 172
     iput-object p1, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 8
 
-    .line 166
+    .line 176
     const-string v0, ""
 
     :try_start_0
@@ -51,7 +51,7 @@
 
     invoke-direct {v1, v2}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 167
+    .line 177
     .local v1, "exifInterface":Landroid/media/ExifInterface;
     iget-object v2, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
 
@@ -59,31 +59,31 @@
 
     invoke-static {v2, v0, v0, v0, v0}, Lagc/Agc;->getImageExif(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 168
+    .line 178
     const-string v0, "pref_dotfix_key"
 
     invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 169
+    .line 179
     .local v0, "auxPrefIntValue":I
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 180
     iget-object v2, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
 
     iget-object v2, v2, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
 
     invoke-static {v2, v0}, Lagc/Agc;->medianFilter(Ljava/lang/String;I)V
 
-    .line 172
+    .line 182
     :cond_0
     iget-object v2, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
 
     iget-object v2, v2, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
 
-    .line 173
+    .line 183
     .local v2, "picPath":Ljava/lang/String;
     const-string v3, "my_preview_luts"
 
@@ -102,7 +102,7 @@
     :cond_1
     const/4 v3, 0x0
 
-    .line 174
+    .line 184
     .local v3, "isPreviewLut":Z
     :goto_0
     const-string v5, "lib_lut_key"
@@ -111,7 +111,7 @@
 
     move-result-object v5
 
-    .line 175
+    .line 185
     .local v5, "lut":Ljava/lang/String;
     if-nez v3, :cond_2
 
@@ -127,107 +127,79 @@
 
     if-le v6, v4, :cond_2
 
-    .line 176
+    .line 186
     invoke-static {v2, v5}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     move-object v2, v6
 
-    .line 177
-    iget-object v6, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
-
-    iget-object v6, v6, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
-
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-
-    if-nez v6, :cond_2
-
-    .line 178
-    :try_start_1
-    new-instance v6, Ljava/io/File;
-
-    iget-object v7, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
-
-    iget-object v7, v7, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
-
-    invoke-direct {v6, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v6}, Ljava/io/File;->deleteOnExit()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
-
-    goto :goto_1
-
-    :catch_0
-    move-exception v6
-
-    .line 181
+    .line 188
     :cond_2
-    :goto_1
-    :try_start_2
     const-string v6, "pref_photo_watermark_key"
 
     invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result v6
 
-    if-ne v6, v4, :cond_4
+    if-ne v6, v4, :cond_5
 
-    const-string v4, "my_hide_wmbtn"
+    const-string v6, "my_hide_wmbtn"
 
-    .line 182
-    invoke-static {v4}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    .line 189
+    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_4
+    if-nez v6, :cond_5
 
-    .line 183
-    const-string v4, "pref_watermark_type_key"
+    .line 190
+    const-string v6, "pref_watermark_type_key"
 
-    invoke-static {v4}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v4
+    move-result v6
 
-    if-nez v4, :cond_3
+    .line 191
+    .local v6, "wmTypeKey":I
+    if-nez v6, :cond_3
 
-    .line 184
+    .line 192
     invoke-static {v2}, Lnan/ren/util/WaterMarkUtil;->addWaterMark(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     move-object v2, v4
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 186
+    .line 193
     :cond_3
+    if-ne v6, v4, :cond_4
+
+    .line 194
     invoke-static {v2}, Lagc/Agc;->drawTimeWaterMark(Ljava/lang/String;)V
 
-    .line 188
-    :goto_2
-    iget-object v4, p0, Lnan/ren/G$1$1;->this$0:Lnan/ren/G$1;
+    goto :goto_1
 
-    iget-object v4, v4, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
+    .line 196
+    :cond_4
+    invoke-static {v2, v4}, Lnan/ren/util/WaterMarkUtil;->addWaterMark(Ljava/lang/String;Z)Ljava/lang/String;
 
-    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v4
 
-    move-result v4
+    move-object v2, v4
 
-    if-eqz v4, :cond_4
-
+    .line 198
+    :goto_1
     invoke-static {v2, v1}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;)V
 
-    .line 191
-    :cond_4
-    if-eqz v3, :cond_5
+    .line 201
+    .end local v6    # "wmTypeKey":I
+    :cond_5
+    if-eqz v3, :cond_6
 
-    .line 192
+    .line 202
     new-instance v4, Landroid/content/Intent;
 
     sget-object v6, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
@@ -236,44 +208,44 @@
 
     invoke-direct {v4, v6, v7}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 193
+    .line 203
     .local v4, "intent":Landroid/content/Intent;
     const-string v6, "imagePath"
 
     invoke-virtual {v4, v6, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 194
+    .line 204
     const/high16 v6, 0x10000000
 
     invoke-virtual {v4, v6}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 195
+    .line 205
     sget-object v6, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-virtual {v6, v4}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 199
+    .line 209
     .end local v0    # "auxPrefIntValue":I
     .end local v1    # "exifInterface":Landroid/media/ExifInterface;
     .end local v2    # "picPath":Ljava/lang/String;
     .end local v3    # "isPreviewLut":Z
     .end local v4    # "intent":Landroid/content/Intent;
     .end local v5    # "lut":Ljava/lang/String;
-    :cond_5
-    goto :goto_3
+    :cond_6
+    goto :goto_2
 
-    .line 197
-    :catch_1
+    .line 207
+    :catch_0
     move-exception v0
 
-    .line 198
+    .line 208
     .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 200
+    .line 210
     .end local v0    # "e":Ljava/lang/Exception;
-    :goto_3
+    :goto_2
     return-void
 .end method

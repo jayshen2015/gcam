@@ -113,14 +113,14 @@
     .locals 10
     .param p0, "digitalDegree"    # D
 
-    .line 115
+    .line 130
     const-wide/high16 v0, 0x404e000000000000L    # 60.0
 
-    .line 116
+    .line 131
     .local v0, "num":D
     double-to-int v2, p0
 
-    .line 117
+    .line 132
     .local v2, "degree":I
     int-to-double v3, v2
 
@@ -128,11 +128,11 @@
 
     mul-double/2addr v3, v0
 
-    .line 118
+    .line 133
     .local v3, "tmp":D
     double-to-int v5, v3
 
-    .line 119
+    .line 134
     .local v5, "minute":I
     int-to-double v6, v5
 
@@ -146,7 +146,7 @@
 
     double-to-int v6, v6
 
-    .line 120
+    .line 135
     .local v6, "second":I
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -686,11 +686,11 @@
     return-object v0
 .end method
 
-.method private static toDmsString(Ljava/lang/String;)Ljava/lang/String;
-    .locals 12
+.method public static toDmsIntArr(Ljava/lang/String;)[Ljava/lang/Integer;
+    .locals 14
     .param p0, "str"    # Ljava/lang/String;
 
-    .line 101
+    .line 116
     const-string v0, "/"
 
     const/4 v1, -0x1
@@ -699,7 +699,7 @@
 
     move-result-object v0
 
-    .line 102
+    .line 117
     .local v0, "split":[Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -711,7 +711,137 @@
 
     move-result-object v3
 
+    .line 118
+    .local v3, "split2":[Ljava/lang/String;
+    const/4 v5, 0x2
+
+    aget-object v6, v0, v5
+
+    invoke-virtual {v6, v4, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 119
+    .local v4, "split3":[Ljava/lang/String;
+    const/4 v6, 0x0
+
+    aget-object v7, v0, v6
+
+    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v7
+
+    .line 120
+    .local v7, "parseInt":I
+    aget-object v8, v3, v2
+
+    invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v8
+
+    .line 121
+    .local v8, "parseInt2":I
+    aget-object v9, v4, v2
+
+    invoke-static {v9}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v9
+
+    const/4 v11, 0x3
+
+    aget-object v12, v0, v11
+
+    invoke-static {v12}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v12
+
+    div-double/2addr v9, v12
+
+    invoke-static {v9, v10}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v9
+
+    const-string v10, "\\."
+
+    invoke-virtual {v9, v10, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 122
+    .local v1, "split4":[Ljava/lang/String;
+    aget-object v9, v1, v6
+
+    .line 123
+    .local v9, "str2":Ljava/lang/String;
+    aget-object v10, v1, v2
+
+    .line 124
+    .local v10, "str3":Ljava/lang/String;
+    new-array v11, v11, [Ljava/lang/Integer;
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    aput-object v12, v11, v6
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    aput-object v6, v11, v2
+
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    aput-object v2, v11, v5
+
+    return-object v11
+.end method
+
+.method public static toDmsString(Ljava/lang/String;)Ljava/lang/String;
+    .locals 12
+    .param p0, "str"    # Ljava/lang/String;
+
+    .line 101
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    .line 102
+    :cond_0
+    const-string v0, "/"
+
+    const/4 v1, -0x1
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v0
+
     .line 103
+    .local v0, "split":[Ljava/lang/String;
+    const/4 v2, 0x1
+
+    aget-object v3, v0, v2
+
+    const-string v4, ","
+
+    invoke-virtual {v3, v4, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 104
     .local v3, "split2":[Ljava/lang/String;
     const/4 v5, 0x2
 
@@ -721,7 +851,7 @@
 
     move-result-object v4
 
-    .line 104
+    .line 105
     .local v4, "split3":[Ljava/lang/String;
     const/4 v5, 0x0
 
@@ -731,7 +861,7 @@
 
     move-result v6
 
-    .line 105
+    .line 106
     .local v6, "parseInt":I
     aget-object v7, v3, v2
 
@@ -739,7 +869,7 @@
 
     move-result v7
 
-    .line 106
+    .line 107
     .local v7, "parseInt2":I
     aget-object v8, v4, v2
 
@@ -767,15 +897,15 @@
 
     move-result-object v1
 
-    .line 107
+    .line 108
     .local v1, "split4":[Ljava/lang/String;
     aget-object v5, v1, v5
 
-    .line 108
+    .line 109
     .local v5, "str2":Ljava/lang/String;
     aget-object v2, v1, v2
 
-    .line 109
+    .line 110
     .local v2, "str3":Ljava/lang/String;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -820,4 +950,19 @@
     move-result-object v8
 
     return-object v8
+
+    .line 101
+    .end local v0    # "split":[Ljava/lang/String;
+    .end local v1    # "split4":[Ljava/lang/String;
+    .end local v2    # "str3":Ljava/lang/String;
+    .end local v3    # "split2":[Ljava/lang/String;
+    .end local v4    # "split3":[Ljava/lang/String;
+    .end local v5    # "str2":Ljava/lang/String;
+    .end local v6    # "parseInt":I
+    .end local v7    # "parseInt2":I
+    :cond_1
+    :goto_0
+    const-string v0, ""
+
+    return-object v0
 .end method

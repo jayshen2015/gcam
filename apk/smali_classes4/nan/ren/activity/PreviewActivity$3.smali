@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
     .line 387
     sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
@@ -62,7 +62,9 @@
 
     iget v2, p0, Lnan/ren/activity/PreviewActivity$3;->val$rate:F
 
-    invoke-static {v0, v1, v2}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;F)Ljava/lang/String;
+    const/4 v3, 0x1
+
+    invoke-static {v0, v1, v2, v3}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;FZ)Ljava/lang/String;
 
     .line 388
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$3;->val$btn:Landroid/widget/Button;

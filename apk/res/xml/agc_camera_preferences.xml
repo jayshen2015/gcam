@@ -555,7 +555,8 @@
         </PreferenceScreen -->
 	
 	<PreferenceScreen android:icon="@drawable/agc_watermark" android:layout="@layout/preference_with_margin" android:title="@string/pref_watermark_title" android:key="pref_watermark_key" android:summary="@string/pref_watermark_summary">
-            <ListPreference android:icon="@drawable/agc_watermark" android:entries="@array/pref_watermark_type_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_watermark_type_setting" android:key="pref_watermark_type_key" android:summary="%s" android:defaultValue="0" android:entryValues="@array/pref_watermark_type_entryvalues" />
+
+			<ListPreference android:icon="@drawable/agc_watermark" android:entries="@array/pref_watermark_type_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_watermark_type_setting" android:key="pref_watermark_type_key" android:summary="%s" android:defaultValue="0" android:entryValues="@array/pref_watermark_type_entryvalues" />
             <ListPreference android:icon="@drawable/agc_watermark" android:entries="@array/pref_watermark_logo_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_watermark_logo_setting" android:key="pref_watermark_logo_key" android:summary="%s" android:defaultValue="agc88.png" android:entryValues="@array/pref_watermark_logo_entryvalues" />
             <ListPreference android:icon="@drawable/agc_watermark" android:entries="@array/pref_watermark_bg_entries" android:layout="@layout/preference_with_margin" android:title="@string/pref_card_background" android:key="pref_watermark_bg_key" android:summary="%s" android:defaultValue="0" android:entryValues="@array/pref_watermark_bg_entryvalues" />
             <EditTextPreference android:icon="@drawable/agc_watermark" android:layout="@layout/preference_with_margin" android:singleLine="true" android:selectAllOnFocus="true" android:title="@string/pref_watermark_title_setting" android:key="pref_watermark_title_key" android:summary="%s" android:defaultValue="无" android:dialogTitle="@string/pref_watermark_title_setting" android:dialogMessage="" />
@@ -592,7 +593,9 @@
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_hide_lutbtn_title" android:key="my_hide_lutbtn" android:summary=""/>
 			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_hide_libbtn_title" android:key="my_hide_libbtn" android:summary=""/>
 			
-			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_bottom_bar_btn1_change_title" android:key="my_bottom_bar_btn1_change" android:summary=""/>
+			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_bottom_bar_btn1_change_title" android:key="my_bottom_bar_btn1_change" android:summary=""/>	
+			<com.google.android.apps.camera.ui.preference.ManagedSwitchPreference android:icon="@drawable/agc_gallery" android:layout="@layout/preference_with_margin" android:title="@string/my_delete_picture_ifuselut_title" android:key="my_delete_picture_ifuselut" android:summary=""/>
+
         <!--  nan_ren add end  -->
 		</PreferenceScreen>
 	

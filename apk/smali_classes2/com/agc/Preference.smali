@@ -1638,6 +1638,7 @@
     invoke-static {p0}, Lcom/agc/Preference;->updatePatchConfigrPref(Landroid/preference/PreferenceFragment;)V
 
     :cond_3
+	invoke-static {p0}, Lnan/ren/G;->updatePreference(Landroid/preference/PreferenceFragment;)V
     invoke-static {v0}, Lcom/agc/Preference;->updatePreferenceSummary(Landroid/preference/PreferenceGroup;)V
 
     :cond_4

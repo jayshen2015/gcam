@@ -2079,5 +2079,8 @@ The format used to store the color when encoding."</string>
 	<string name="my_bottom_bar_btn1_change_title">调换预览和镜头切换按钮的位置</string>
 	
 	<string name="my_prop_item_cnt_title">每行配置数</string>
-    	<string name="my_watermark_logo_point_ft_title">水印中LOGO位置微调(x,y)</string>
+    <string name="my_watermark_logo_point_ft_title">水印中LOGO位置微调(x,y)</string>
+		
+	<string name="my_watermark_usecfg_title">使用水印配置文件打印</string>
+	<string name="my_delete_picture_ifuselut_title">配置使用lut时不保留原图</string>
 </resources>

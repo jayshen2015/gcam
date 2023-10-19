@@ -61,6 +61,8 @@
 # instance fields
 .field cbHideLogo:Landroid/widget/CheckBox;
 
+.field configSelect:Landroid/widget/Spinner;
+
 .field dialog:Landroid/app/AlertDialog;
 
 .field edBgColor:Landroid/widget/EditText;
@@ -87,6 +89,8 @@
 
 .field iv:Landroid/widget/ImageView;
 
+.field saveButton:Landroid/widget/Button;
+
 .field selectLogoBtn:Landroid/widget/ImageButton;
 
 .field srcImagePath:Ljava/lang/String;
@@ -96,7 +100,7 @@
 .method static constructor <clinit>()V
     .locals 6
 
-    .line 51
+    .line 61
     const-string v0, "pref_watermark_bg_key"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
@@ -115,7 +119,7 @@
     :goto_0
     sput-boolean v1, Lnan/ren/activity/WmActivity;->z3:Z
 
-    .line 52
+    .line 62
     const-string v0, "pref_watermark_title_key"
 
     const-string v1, ""
@@ -126,7 +130,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
 
-    .line 53
+    .line 63
     const-string v0, "my_watermark_height"
 
     const/16 v1, 0x1c2
@@ -137,7 +141,7 @@
 
     sput v0, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
 
-    .line 54
+    .line 64
     const-string v0, "my_watermark_fontsize"
 
     const/16 v1, 0x50
@@ -148,7 +152,7 @@
 
     sput v0, Lnan/ren/activity/WmActivity;->wmFontSize:I
 
-    .line 56
+    .line 66
     int-to-float v0, v0
 
     const v1, 0x3f733333    # 0.95f
@@ -165,24 +169,24 @@
 
     sput v0, Lnan/ren/activity/WmActivity;->wmSecFontSize:I
 
-    .line 59
+    .line 69
     invoke-static {}, Lnan/ren/util/WaterMarkUtil;->getDateFormatInfo()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
 
-    .line 61
+    .line 71
     const-string v0, "agc88.png"
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoFileName:Ljava/lang/String;
 
-    .line 63
+    .line 73
     const/4 v1, 0x0
 
     sput-object v1, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
-    .line 65
+    .line 75
     sget-boolean v1, Lnan/ren/activity/WmActivity;->z3:Z
 
     const/high16 v2, -0x1000000
@@ -201,7 +205,7 @@
     :goto_1
     sput v4, Lnan/ren/activity/WmActivity;->wmBgColor:I
 
-    .line 67
+    .line 77
     if-eqz v1, :cond_2
 
     move v2, v3
@@ -209,7 +213,7 @@
     :cond_2
     sput v2, Lnan/ren/activity/WmActivity;->wmTextColor:I
 
-    .line 69
+    .line 79
     sget v1, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
 
     if-lez v1, :cond_3
@@ -228,7 +232,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
 
-    .line 73
+    .line 83
     const-string v1, "#ffffffff"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -237,7 +241,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->text_color:I
 
-    .line 75
+    .line 85
     const-string v1, "#aaab88f0"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -246,27 +250,27 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->btn_bg_color:I
 
-    .line 77
+    .line 87
     const/16 v1, 0x46
 
     sput v1, Lnan/ren/activity/WmActivity;->close_btn_height:I
 
-    .line 78
+    .line 88
     const/16 v1, 0x3c
 
     sput v1, Lnan/ren/activity/WmActivity;->image_title_height:I
 
-    .line 80
+    .line 90
     const/high16 v1, 0x3f800000    # 1.0f
 
     sput v1, Lnan/ren/activity/WmActivity;->dsp:F
 
-    .line 87
+    .line 97
     const/16 v1, 0x1e
 
     sput v1, Lnan/ren/activity/WmActivity;->fontSize:I
 
-    .line 90
+    .line 100
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -277,7 +281,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->dsp:F
 
-    .line 91
+    .line 101
     const-string v1, "my_lut_preview_fontsize"
 
     sget v2, Lnan/ren/activity/WmActivity;->fontSize:I
@@ -288,7 +292,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->fontSize:I
 
-    .line 92
+    .line 102
     const-string v1, "my_lut_preview_close_btn_height"
 
     sget v2, Lnan/ren/activity/WmActivity;->close_btn_height:I
@@ -307,7 +311,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->close_btn_height:I
 
-    .line 93
+    .line 103
     const-string v1, "my_lut_preview_image_title_height"
 
     sget v2, Lnan/ren/activity/WmActivity;->image_title_height:I
@@ -324,7 +328,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->image_title_height:I
 
-    .line 94
+    .line 104
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     sget v2, Lnan/ren/activity/WmActivity;->image_title_height:I
@@ -333,7 +337,7 @@
 
     sput-object v1, Lnan/ren/activity/WmActivity;->btnlp:Landroid/view/ViewGroup$LayoutParams;
 
-    .line 95
+    .line 105
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -344,7 +348,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->widthPixels:I
 
-    .line 96
+    .line 106
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -355,7 +359,7 @@
 
     sput v1, Lnan/ren/activity/WmActivity;->heightPixels:I
 
-    .line 97
+    .line 107
     const-string v1, "pref_watermark_logo_key"
 
     invoke-static {v1, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -364,7 +368,7 @@
 
     sput-object v2, Lnan/ren/activity/WmActivity;->logoFileName:Ljava/lang/String;
 
-    .line 98
+    .line 108
     invoke-static {v1, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -375,27 +379,30 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
 
-    .line 99
+    .line 109
     invoke-static {v0}, Lnan/ren/util/ImageUtil;->getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
-    .line 100
+    .line 110
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 1
 
-    .line 48
+    .line 58
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 72
+    .line 82
     const/4 v0, 0x0
 
     iput-object v0, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
+
+    .line 178
+    iput-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
 
     return-void
 .end method
@@ -406,12 +413,12 @@
     .locals 4
     .param p1, "v"    # Landroid/view/ViewGroup;
 
-    .line 650
+    .line 730
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 651
+    .line 731
     .local v0, "l2":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -423,35 +430,35 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 652
+    .line 732
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 653
+    .line 733
     return-void
 .end method
 
 .method getBottomView()Landroid/view/View;
     .locals 2
 
-    .line 148
+    .line 172
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 149
+    .line 173
     .local v0, "rl":Landroid/widget/LinearLayout;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 150
+    .line 174
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->getSaveButton()Landroid/widget/Button;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 151
+    .line 175
     return-object v0
 .end method
 
@@ -459,14 +466,14 @@
     .locals 2
     .param p1, "c"    # I
 
-    .line 620
+    .line 700
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1a
 
     if-lt v0, v1, :cond_0
 
-    .line 621
+    .line 701
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -499,7 +506,7 @@
 
     return-object v0
 
-    .line 623
+    .line 703
     :cond_0
     const-string v0, "#00000000"
 
@@ -511,12 +518,12 @@
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "value"    # Ljava/lang/Object;
 
-    .line 565
+    .line 600
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 566
+    .line 601
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -526,26 +533,26 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 567
+    .line 602
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 568
+    .line 603
     invoke-virtual {p0, p1}, Lnan/ren/activity/WmActivity;->getTextView(Ljava/lang/String;)Landroid/widget/TextView;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 569
+    .line 604
     invoke-virtual {p0, p2}, Lnan/ren/activity/WmActivity;->getTextEdit(Ljava/lang/Object;)Landroid/widget/EditText;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 570
+    .line 605
     return-object v0
 .end method
 
@@ -554,12 +561,12 @@
     .param p1, "label"    # Ljava/lang/String;
     .param p2, "checked"    # Z
 
-    .line 587
+    .line 622
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 588
+    .line 623
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -569,32 +576,32 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 589
+    .line 624
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 590
+    .line 625
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 591
+    .line 626
     .local v1, "tv":Landroid/widget/TextView;
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 592
+    .line 627
     invoke-virtual {p0, v1}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 593
+    .line 628
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 595
+    .line 630
     new-instance v3, Landroid/widget/ImageButton;
 
     invoke-direct {v3, p0}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;)V
 
-    .line 596
+    .line 631
     .local v3, "ib":Landroid/widget/ImageButton;
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
@@ -604,31 +611,31 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 597
+    .line 632
     const/16 v2, 0x96
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageButton;->setMinimumWidth(I)V
 
-    .line 598
+    .line 633
     sget-object v2, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
     if-eqz v2, :cond_0
 
-    .line 599
+    .line 634
     invoke-static {v2}, Lnan/ren/util/ImageUtil;->bitmap2Drawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 600
+    .line 635
     sget-object v2, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageButton;->setTag(Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 602
+    .line 637
     :cond_0
     const-string v2, "#aa9c9fab"
 
@@ -638,7 +645,7 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageButton;->setBackgroundColor(I)V
 
-    .line 604
+    .line 639
     :goto_0
     new-instance v2, Lnan/ren/activity/WmActivity$10;
 
@@ -646,74 +653,84 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 610
+    .line 645
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 612
+    .line 647
     new-instance v2, Landroid/widget/CheckBox;
 
     invoke-direct {v2, p0}, Landroid/widget/CheckBox;-><init>(Landroid/content/Context;)V
 
-    .line 613
+    .line 648
     .local v2, "cb":Landroid/widget/CheckBox;
     const-string v4, "\u9690\u85cf\u56fe\u6807"
 
     invoke-virtual {v2, v4}, Landroid/widget/CheckBox;->setText(Ljava/lang/CharSequence;)V
 
-    .line 614
+    .line 649
     invoke-virtual {v2, p2}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    .line 615
+    .line 650
     invoke-virtual {p0, v2}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 616
+    .line 651
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 617
+    .line 652
     return-object v0
 .end method
 
 .method getSaveButton()Landroid/widget/Button;
     .locals 2
 
-    .line 156
+    .line 180
     new-instance v0, Landroid/widget/Button;
 
     invoke-direct {v0, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 157
-    .local v0, "button":Landroid/widget/Button;
-    invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iput-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
 
-    .line 158
+    .line 182
     sget-object v1, Lnan/ren/activity/WmActivity;->btnlp:Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 159
+    .line 183
+    iget-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
     sget v1, Lnan/ren/activity/WmActivity;->btn_bg_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 160
+    .line 184
+    iget-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
     sget v1, Lnan/ren/activity/WmActivity;->text_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 161
+    .line 185
+    iget-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 162
+    .line 186
+    iget-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 163
+    .line 187
+    iget-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
     const-string v1, "\u4fdd\u5b58"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 164
+    .line 188
+    iget-object v0, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
     return-object v0
 .end method
 
@@ -721,12 +738,12 @@
     .locals 2
     .param p1, "value"    # Ljava/lang/Object;
 
-    .line 579
+    .line 614
     new-instance v0, Landroid/widget/EditText;
 
     invoke-direct {v0, p0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    .line 580
+    .line 615
     .local v0, "field":Landroid/widget/EditText;
     if-nez p1, :cond_0
 
@@ -742,15 +759,15 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 581
+    .line 616
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 582
+    .line 617
     const/16 v1, 0xe6
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setMinWidth(I)V
 
-    .line 583
+    .line 618
     return-object v0
 .end method
 
@@ -758,19 +775,19 @@
     .locals 1
     .param p1, "label"    # Ljava/lang/String;
 
-    .line 573
+    .line 608
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 574
+    .line 609
     .local v0, "tv":Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 575
+    .line 610
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 576
+    .line 611
     return-object v0
 .end method
 
@@ -778,14 +795,14 @@
     .locals 7
     .param p1, "showSelect"    # Z
 
-    .line 254
+    .line 278
     const/16 v0, 0xc8
 
-    .line 255
+    .line 279
     .local v0, "w":I
     if-eqz p1, :cond_0
 
-    .line 256
+    .line 280
     sget v1, Lnan/ren/activity/WmActivity;->widthPixels:I
 
     div-int/lit8 v1, v1, 0x3
@@ -794,7 +811,7 @@
     .local v1, "w":I
     goto :goto_0
 
-    .line 258
+    .line 282
     .end local v1    # "w":I
     .restart local v0    # "w":I
     :cond_0
@@ -802,7 +819,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 260
+    .line 284
     .end local v0    # "w":I
     .restart local v1    # "w":I
     :goto_0
@@ -810,7 +827,7 @@
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 261
+    .line 285
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
@@ -822,26 +839,26 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 262
+    .line 286
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 263
+    .line 287
     new-instance v2, Landroid/widget/Button;
 
     invoke-direct {v2, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 264
+    .line 288
     .local v2, "button":Landroid/widget/Button;
     invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 265
+    .line 289
     const-string v3, "close"
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 266
+    .line 290
     new-instance v3, Landroid/view/ViewGroup$LayoutParams;
 
     sget v4, Lnan/ren/activity/WmActivity;->close_btn_height:I
@@ -850,53 +867,53 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 267
+    .line 291
     sget v3, Lnan/ren/activity/WmActivity;->btn_bg_color:I
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 268
+    .line 292
     sget v3, Lnan/ren/activity/WmActivity;->text_color:I
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 269
+    .line 293
     const/16 v3, 0x11
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 270
+    .line 294
     invoke-virtual {p0, v2}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 271
+    .line 295
     const-string v4, "\u5173\u95ed"
 
     invoke-virtual {v2, v4}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 272
+    .line 296
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 273
+    .line 297
     if-eqz p1, :cond_1
 
-    .line 274
+    .line 298
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->addSplit(Landroid/view/ViewGroup;)V
 
-    .line 275
+    .line 299
     new-instance v4, Landroid/widget/Button;
 
     invoke-direct {v4, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 276
+    .line 300
     .local v4, "selectBtn":Landroid/widget/Button;
     invoke-virtual {v4, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 277
+    .line 301
     const-string v5, "select"
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 278
+    .line 302
     new-instance v5, Landroid/view/ViewGroup$LayoutParams;
 
     sget v6, Lnan/ren/activity/WmActivity;->close_btn_height:I
@@ -905,50 +922,50 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 279
+    .line 303
     sget v5, Lnan/ren/activity/WmActivity;->btn_bg_color:I
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 280
+    .line 304
     sget v5, Lnan/ren/activity/WmActivity;->text_color:I
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 281
+    .line 305
     invoke-virtual {v4, v3}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 282
+    .line 306
     const-string v5, "\u9009\u62e9\u56fe\u7247"
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 283
+    .line 307
     invoke-virtual {p0, v4}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 284
+    .line 308
     invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 287
+    .line 311
     .end local v4    # "selectBtn":Landroid/widget/Button;
     :cond_1
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->addSplit(Landroid/view/ViewGroup;)V
 
-    .line 288
+    .line 312
     new-instance v4, Landroid/widget/Button;
 
     invoke-direct {v4, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 289
+    .line 313
     .local v4, "paramBtn":Landroid/widget/Button;
     invoke-virtual {v4, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 290
+    .line 314
     const-string v5, "config"
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 291
+    .line 315
     new-instance v5, Landroid/view/ViewGroup$LayoutParams;
 
     sget v6, Lnan/ren/activity/WmActivity;->close_btn_height:I
@@ -957,112 +974,452 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 292
+    .line 316
     sget v5, Lnan/ren/activity/WmActivity;->btn_bg_color:I
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 293
+    .line 317
     sget v5, Lnan/ren/activity/WmActivity;->text_color:I
 
     invoke-virtual {v4, v5}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 294
+    .line 318
     invoke-virtual {v4, v3}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 295
+    .line 319
     const-string v3, "\u8bbe\u7f6e\u53c2\u6570"
 
     invoke-virtual {v4, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 296
+    .line 320
     invoke-virtual {p0, v4}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 297
+    .line 321
     invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 298
+    .line 322
+    return-object v0
+.end method
+
+.method getUseCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
+    .locals 9
+    .param p1, "label"    # Ljava/lang/String;
+    .param p2, "checked"    # Z
+
+    .line 656
+    new-instance v0, Landroid/widget/LinearLayout;
+
+    invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    .line 657
+    .local v0, "linearLayout":Landroid/widget/LinearLayout;
+    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+
+    const/4 v2, -0x1
+
+    invoke-direct {v1, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 658
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    .line 659
+    new-instance v1, Landroid/widget/TextView;
+
+    invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+    .line 660
+    .local v1, "tv":Landroid/widget/TextView;
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 661
+    invoke-virtual {p0, v1}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
+
+    .line 662
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 668
+    invoke-static {}, Lnan/ren/util/WaterMarkUtil;->getAllWmConfList()Lnan/ren/util/JSONArray;
+
+    move-result-object v2
+
+    .line 669
+    .local v2, "allConfList":Lnan/ren/util/JSONArray;
+    new-instance v3, Ljava/util/ArrayList;
+
+    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+
+    .line 670
+    .local v3, "dataList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
+    const-string v4, "\u5f95\u5361\u6c34\u5370"
+
+    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 671
+    const-string v4, "\u65f6\u95f4\u6c34\u5370"
+
+    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 672
+    if-eqz v2, :cond_0
+
+    invoke-virtual {v2}, Lnan/ren/util/JSONArray;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    .line 673
+    const/4 v4, 0x2
+
+    .line 674
+    .local v4, "indexUnName":I
+    const/4 v5, 0x0
+
+    .local v5, "i":I
+    :goto_0
+    invoke-virtual {v2}, Lnan/ren/util/JSONArray;->size()I
+
+    move-result v6
+
+    if-ge v5, v6, :cond_0
+
+    .line 675
+    invoke-virtual {v2, v5}, Lnan/ren/util/JSONArray;->getJSONObject(I)Lnan/ren/util/JSONObject;
+
+    move-result-object v6
+
+    .line 676
+    .local v6, "conf":Lnan/ren/util/JSONObject;
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "\u6587\u4ef6\u914d\u7f6e"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string v8, "name"
+
+    invoke-virtual {v6, v8, v7}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 677
+    .local v7, "name":Ljava/lang/String;
+    invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    .line 678
+    nop
+
+    .end local v6    # "conf":Lnan/ren/util/JSONObject;
+    .end local v7    # "name":Ljava/lang/String;
+    add-int/lit8 v4, v4, 0x1
+
+    .line 674
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    .line 681
+    .end local v4    # "indexUnName":I
+    .end local v5    # "i":I
+    :cond_0
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    new-array v4, v4, [Ljava/lang/String;
+
+    .line 682
+    .local v4, "data":[Ljava/lang/String;
+    invoke-interface {v3, v4}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v5
+
+    move-object v4, v5
+
+    check-cast v4, [Ljava/lang/String;
+
+    .line 683
+    new-instance v5, Landroid/widget/Spinner;
+
+    invoke-direct {v5, p0}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;)V
+
+    .line 684
+    .local v5, "spinner":Landroid/widget/Spinner;
+    new-instance v6, Lnan/ren/activity/WmActivity$11;
+
+    const v7, 0x1090008
+
+    invoke-direct {v6, p0, p0, v7, v4}, Lnan/ren/activity/WmActivity$11;-><init>(Lnan/ren/activity/WmActivity;Landroid/content/Context;I[Ljava/lang/Object;)V
+
+    .line 692
+    .local v6, "spinnerAdapter":Landroid/widget/ArrayAdapter;
+    const v7, 0x1090009
+
+    invoke-virtual {v6, v7}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
+
+    .line 693
+    invoke-virtual {v5, v6}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
+
+    .line 696
+    invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 697
     return-object v0
 .end method
 
 .method getWaterMark(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 14
+    .locals 21
     .param p1, "absolutePath"    # Ljava/lang/String;
 
-    .line 139
-    invoke-static {p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    .line 150
+    move-object/from16 v0, p0
 
-    move-result-object v0
-
-    .line 140
-    .local v0, "decodeFile":Landroid/graphics/Bitmap;
-    if-nez v0, :cond_0
-
-    const/4 v1, 0x0
-
-    return-object v1
-
-    .line 141
-    :cond_0
-    sget-object v2, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
-
-    sget-object v3, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
-
-    sget-object v4, Lnan/ren/activity/WmActivity;->picinfo:Ljava/lang/String;
-
-    sget-object v5, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
-
-    sget-object v6, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
-
-    sget v7, Lnan/ren/activity/WmActivity;->wmBgColor:I
-
-    sget v8, Lnan/ren/activity/WmActivity;->wmTextColor:I
-
-    sget v9, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
-
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v10
-
-    sget v11, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
-
-    sget v1, Lnan/ren/activity/WmActivity;->wmFontSize:I
-
-    int-to-float v12, v1
-
-    sget v1, Lnan/ren/activity/WmActivity;->wmSecFontSize:I
-
-    int-to-float v13, v1
-
-    invoke-static/range {v2 .. v13}, Lnan/ren/util/WaterMarkUtil;->getWaterMarkBitMap(Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIIFF)Landroid/graphics/Bitmap;
+    invoke-static/range {p1 .. p1}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 142
-    .local v1, "waterMark":Landroid/graphics/Bitmap;
-    sget v2, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
+    .line 151
+    .local v1, "decodeFile":Landroid/graphics/Bitmap;
+    if-nez v1, :cond_0
 
-    if-gez v2, :cond_1
+    const/4 v2, 0x0
 
-    const/4 v2, 0x1
+    return-object v2
+
+    .line 152
+    :cond_0
+    const/4 v2, 0x0
+
+    .line 153
+    .local v2, "waterMark":Landroid/graphics/Bitmap;
+    iget-object v3, v0, Lnan/ren/activity/WmActivity;->configSelect:Landroid/widget/Spinner;
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    if-eqz v3, :cond_4
+
+    invoke-virtual {v3}, Landroid/widget/Spinner;->getSelectedItemPosition()I
+
+    move-result v3
+
+    if-le v3, v4, :cond_4
+
+    .line 154
+    iget-object v3, v0, Lnan/ren/activity/WmActivity;->configSelect:Landroid/widget/Spinner;
+
+    invoke-virtual {v3}, Landroid/widget/Spinner;->getSelectedItemPosition()I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, -0x2
+
+    invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I
+
+    move-result v3
+
+    invoke-static {v3}, Lnan/ren/util/WaterMarkUtil;->getWmConfJson(I)Lnan/ren/util/JSONObject;
+
+    move-result-object v3
+
+    .line 155
+    .local v3, "mainWmConfJson":Lnan/ren/util/JSONObject;
+    invoke-static {v1, v3}, Lnan/ren/util/WaterMarkUtil;->getWmConfByBitMap(Landroid/graphics/Bitmap;Lnan/ren/util/JSONObject;)Lnan/ren/util/JSONObject;
+
+    move-result-object v6
+
+    .line 156
+    .local v6, "wmConfJson":Lnan/ren/util/JSONObject;
+    invoke-static/range {p1 .. p1}, Lnan/ren/util/ExifInterfaceUtil;->get(Ljava/lang/String;)Landroid/media/ExifInterface;
+
+    move-result-object v7
+
+    invoke-static {v1, v7, v6}, Lnan/ren/util/WaterMarkUtil;->getWaterMarkBitMapByWmConf(Landroid/graphics/Bitmap;Landroid/media/ExifInterface;Lnan/ren/util/JSONObject;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    .line 157
+    const-string v7, "onlywatermark"
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v6, v7, v8}, Lnan/ren/util/JSONObject;->getInt(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    const-string v8, "onlyWaterMark"
+
+    invoke-virtual {v6, v8, v7}, Lnan/ren/util/JSONObject;->getInt(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    if-ne v7, v4, :cond_1
+
+    move v7, v4
 
     goto :goto_0
 
     :cond_1
-    const/4 v2, 0x0
+    move v7, v5
 
+    .line 158
+    .local v7, "onlyWaterMark":Z
     :goto_0
-    invoke-static {v0, v1, v2}, Lnan/ren/util/WaterMarkUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
+    if-eqz v7, :cond_2
+
+    return-object v2
+
+    .line 159
+    :cond_2
+    const-string v8, "isinner"
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    invoke-virtual {v6, v8, v9}, Lnan/ren/util/JSONObject;->getInt(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    const-string v9, "isInner"
+
+    invoke-virtual {v6, v9, v8}, Lnan/ren/util/JSONObject;->getInt(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+
+    move-result v8
+
+    if-ne v8, v4, :cond_3
+
+    goto :goto_1
+
+    :cond_3
+    move v4, v5
+
+    .line 160
+    .local v4, "isInner":Z
+    :goto_1
+    const-string v8, "paddingbottom"
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v6, v8, v5}, Lnan/ren/util/JSONObject;->getInt(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    const-string v8, "paddingBottom"
+
+    invoke-virtual {v6, v8, v5}, Lnan/ren/util/JSONObject;->getInt(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
+    .line 161
+    .local v5, "paddingBottom":I
+    invoke-static {v1, v2, v4, v5}, Lnan/ren/util/WaterMarkUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ZI)Landroid/graphics/Bitmap;
+
+    move-result-object v8
+
+    return-object v8
+
+    .line 163
+    .end local v3    # "mainWmConfJson":Lnan/ren/util/JSONObject;
+    .end local v4    # "isInner":Z
+    .end local v5    # "paddingBottom":I
+    .end local v6    # "wmConfJson":Lnan/ren/util/JSONObject;
+    .end local v7    # "onlyWaterMark":Z
+    :cond_4
+    sget-object v9, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
+
+    sget-object v10, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
+
+    sget-object v11, Lnan/ren/activity/WmActivity;->picinfo:Ljava/lang/String;
+
+    sget-object v12, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
+
+    sget-object v13, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
+
+    sget v14, Lnan/ren/activity/WmActivity;->wmBgColor:I
+
+    sget v15, Lnan/ren/activity/WmActivity;->wmTextColor:I
+
+    sget v16, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v17
+
+    sget v18, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
+
+    sget v3, Lnan/ren/activity/WmActivity;->wmFontSize:I
+
+    int-to-float v3, v3
+
+    sget v6, Lnan/ren/activity/WmActivity;->wmSecFontSize:I
+
+    int-to-float v6, v6
+
+    move/from16 v19, v3
+
+    move/from16 v20, v6
+
+    invoke-static/range {v9 .. v20}, Lnan/ren/util/WaterMarkUtil;->getWaterMarkBitMap(Ljava/lang/String;Landroid/graphics/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IIIIIFF)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    return-object v2
+    .line 164
+    sget v3, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
+
+    if-gez v3, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    move v4, v5
+
+    :goto_2
+    invoke-static {v1, v2, v4}, Lnan/ren/util/WaterMarkUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    return-object v3
 .end method
 
 .method getWaterMarkFile()Ljava/lang/String;
     .locals 5
 
-    .line 243
+    .line 267
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1095,7 +1452,7 @@
 
     move-result-object v0
 
-    .line 244
+    .line 268
     .local v0, "savePath":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1121,7 +1478,7 @@
 
     if-nez v1, :cond_0
 
-    .line 245
+    .line 269
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1140,11 +1497,11 @@
 
     return-object v1
 
-    .line 247
+    .line 271
     :cond_0
     const/4 v1, 0x1
 
-    .line 248
+    .line 272
     .local v1, "i":I
     :goto_0
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1179,12 +1536,12 @@
 
     if-eqz v3, :cond_1
 
-    .line 249
+    .line 273
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 251
+    .line 275
     :cond_1
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -1214,16 +1571,16 @@
 .end method
 
 .method getWmParamerView()Landroid/view/View;
-    .locals 16
+    .locals 17
 
-    .line 427
+    .line 453
     move-object/from16 v0, p0
 
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 428
+    .line 454
     .local v1, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
@@ -1233,185 +1590,129 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 429
+    .line 455
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 430
-    const-string v3, "\u6c34\u5370\u6807\u9898\uff1a"
-
-    sget-object v4, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
-
-    invoke-virtual {v0, v3, v4}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
-
-    move-result-object v3
-
-    .line 431
-    .local v3, "f1":Landroid/view/ViewGroup;
-    invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/EditText;
-
-    iput-object v4, v0, Lnan/ren/activity/WmActivity;->edTitle:Landroid/widget/EditText;
-
-    .line 432
-    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 434
-    sget v4, Lnan/ren/activity/WmActivity;->wmBgColor:I
-
-    invoke-virtual {v0, v4}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    .local v4, "v":Ljava/lang/String;
-    const-string v5, "#"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_0
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 435
-    :cond_0
-    const-string v6, "\u80cc\u666f\u989c\u8272\uff1a"
-
-    invoke-virtual {v0, v6, v4}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
-
-    move-result-object v6
-
-    .line 436
-    .local v6, "f3":Landroid/view/ViewGroup;
-    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/widget/EditText;
-
-    iput-object v7, v0, Lnan/ren/activity/WmActivity;->edBgColor:Landroid/widget/EditText;
-
-    .line 437
-    invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v8
-
-    invoke-virtual {v7, v8}, Landroid/widget/EditText;->setBackgroundColor(I)V
-
-    .line 438
-    iget-object v7, v0, Lnan/ren/activity/WmActivity;->edBgColor:Landroid/widget/EditText;
-
-    new-instance v8, Lnan/ren/activity/WmActivity$5;
-
-    invoke-direct {v8, v0}, Lnan/ren/activity/WmActivity$5;-><init>(Lnan/ren/activity/WmActivity;)V
-
-    invoke-virtual {v7, v8}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    .line 453
-    invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 455
-    sget v7, Lnan/ren/activity/WmActivity;->wmFontSize:I
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    const-string v8, "\u4e3b\u526f\u5b57\u4f53\uff1a"
-
-    invoke-virtual {v0, v8, v7}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
-
-    move-result-object v7
-
     .line 456
-    .local v7, "f2":Landroid/view/ViewGroup;
+    const-string v4, "\u6c34\u5370\u6807\u9898\uff1a"
+
+    sget-object v5, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
+
+    invoke-virtual {v0, v4, v5}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
+
+    move-result-object v4
+
+    .line 457
+    .local v4, "f1":Landroid/view/ViewGroup;
+    invoke-virtual {v4, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v5
+
+    check-cast v5, Landroid/widget/EditText;
+
+    iput-object v5, v0, Lnan/ren/activity/WmActivity;->edTitle:Landroid/widget/EditText;
+
+    .line 458
+    invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 460
+    sget v5, Lnan/ren/activity/WmActivity;->wmBgColor:I
+
+    invoke-virtual {v0, v5}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .local v5, "v":Ljava/lang/String;
+    const-string v6, "#"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_0
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 461
+    :cond_0
+    const-string v7, "\u80cc\u666f\u989c\u8272\uff1a"
+
+    invoke-virtual {v0, v7, v5}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
+
+    move-result-object v7
+
+    .line 462
+    .local v7, "f3":Landroid/view/ViewGroup;
     invoke-virtual {v7, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
     check-cast v8, Landroid/widget/EditText;
 
-    iput-object v8, v0, Lnan/ren/activity/WmActivity;->edFontSize:Landroid/widget/EditText;
+    iput-object v8, v0, Lnan/ren/activity/WmActivity;->edBgColor:Landroid/widget/EditText;
 
-    .line 457
-    sget v8, Lnan/ren/activity/WmActivity;->wmSecFontSize:I
+    .line 463
+    invoke-static {v5}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setBackgroundColor(I)V
+
+    .line 464
+    iget-object v8, v0, Lnan/ren/activity/WmActivity;->edBgColor:Landroid/widget/EditText;
+
+    new-instance v9, Lnan/ren/activity/WmActivity$5;
+
+    invoke-direct {v9, v0}, Lnan/ren/activity/WmActivity$5;-><init>(Lnan/ren/activity/WmActivity;)V
+
+    invoke-virtual {v8, v9}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 479
+    invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 481
+    sget v8, Lnan/ren/activity/WmActivity;->wmFontSize:I
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
-    invoke-virtual {v0, v8}, Lnan/ren/activity/WmActivity;->getTextEdit(Ljava/lang/Object;)Landroid/widget/EditText;
-
-    move-result-object v8
-
-    iput-object v8, v0, Lnan/ren/activity/WmActivity;->edSecTextSize:Landroid/widget/EditText;
-
-    .line 458
-    iget-object v8, v0, Lnan/ren/activity/WmActivity;->edFontSize:Landroid/widget/EditText;
-
-    const/16 v9, 0x78
-
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setMinWidth(I)V
-
-    .line 459
-    iget-object v8, v0, Lnan/ren/activity/WmActivity;->edSecTextSize:Landroid/widget/EditText;
-
-    invoke-virtual {v8, v9}, Landroid/widget/EditText;->setMinWidth(I)V
-
-    .line 460
-    iget-object v8, v0, Lnan/ren/activity/WmActivity;->edSecTextSize:Landroid/widget/EditText;
-
-    invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    .line 461
-    invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 464
-    sget v8, Lnan/ren/activity/WmActivity;->wmTextColor:I
-
-    invoke-virtual {v0, v8}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    const-string v9, "\u4e3b\u526f\u5b57\u8272\uff1a"
+    const-string v9, "\u4e3b\u526f\u5b57\u4f53\uff1a"
 
     invoke-virtual {v0, v9, v8}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
 
     move-result-object v8
 
-    .line 465
-    .local v8, "f4":Landroid/view/ViewGroup;
+    .line 482
+    .local v8, "f2":Landroid/view/ViewGroup;
     invoke-virtual {v8, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v9
 
     check-cast v9, Landroid/widget/EditText;
 
-    iput-object v9, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
+    iput-object v9, v0, Lnan/ren/activity/WmActivity;->edFontSize:Landroid/widget/EditText;
 
-    .line 466
-    sget v9, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
+    .line 483
+    sget v9, Lnan/ren/activity/WmActivity;->wmSecFontSize:I
 
-    invoke-virtual {v0, v9}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
@@ -1419,244 +1720,300 @@
 
     move-result-object v9
 
-    iput-object v9, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+    iput-object v9, v0, Lnan/ren/activity/WmActivity;->edSecTextSize:Landroid/widget/EditText;
 
-    .line 467
-    iget-object v9, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
+    .line 484
+    iget-object v9, v0, Lnan/ren/activity/WmActivity;->edFontSize:Landroid/widget/EditText;
 
-    const/16 v10, 0xa0
-
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setMinWidth(I)V
-
-    .line 468
-    iget-object v9, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+    const/16 v10, 0x78
 
     invoke-virtual {v9, v10}, Landroid/widget/EditText;->setMinWidth(I)V
 
-    .line 469
+    .line 485
+    iget-object v9, v0, Lnan/ren/activity/WmActivity;->edSecTextSize:Landroid/widget/EditText;
+
+    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setMinWidth(I)V
+
+    .line 486
+    iget-object v9, v0, Lnan/ren/activity/WmActivity;->edSecTextSize:Landroid/widget/EditText;
+
+    invoke-virtual {v8, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 487
+    invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 490
     sget v9, Lnan/ren/activity/WmActivity;->wmTextColor:I
 
     invoke-virtual {v0, v9}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v9
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    const-string v10, "\u4e3b\u526f\u5b57\u8272\uff1a"
 
-    move-result v9
-
-    if-nez v9, :cond_1
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v10, v9}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
 
     move-result-object v9
 
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 470
-    :cond_1
-    iget-object v9, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
-
-    invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v10
-
-    invoke-virtual {v9, v10}, Landroid/widget/EditText;->setTextColor(I)V
-
-    .line 471
-    sget v9, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
-
-    invoke-virtual {v0, v9}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-nez v9, :cond_2
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 472
-    :cond_2
-    iget-object v5, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
-
-    invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v9
-
-    invoke-virtual {v5, v9}, Landroid/widget/EditText;->setTextColor(I)V
-
-    .line 474
-    iget-object v5, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
-
-    new-instance v9, Lnan/ren/activity/WmActivity$6;
-
-    invoke-direct {v9, v0}, Lnan/ren/activity/WmActivity$6;-><init>(Lnan/ren/activity/WmActivity;)V
-
-    invoke-virtual {v5, v9}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    .line 490
-    iget-object v5, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
-
-    new-instance v9, Lnan/ren/activity/WmActivity$7;
-
-    invoke-direct {v9, v0}, Lnan/ren/activity/WmActivity$7;-><init>(Lnan/ren/activity/WmActivity;)V
-
-    invoke-virtual {v5, v9}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
-
-    .line 505
-    iget-object v5, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
-
-    invoke-virtual {v8, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    .line 506
-    invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 512
-    sget v5, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
-
-    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    const-string v9, "\u6c34\u5370\u9ad8\u5ea6\uff1a"
-
-    invoke-virtual {v0, v9, v5}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
-
-    move-result-object v5
-
-    .line 513
-    .local v5, "f5":Landroid/view/ViewGroup;
-    invoke-virtual {v5, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v9
-
-    check-cast v9, Landroid/widget/EditText;
-
-    iput-object v9, v0, Lnan/ren/activity/WmActivity;->edHeight:Landroid/widget/EditText;
-
-    .line 514
-    invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 516
-    const-string v9, "\u76f8\u7247\u8d44\u6599\uff1a"
-
-    sget-object v10, Lnan/ren/activity/WmActivity;->picinfo:Ljava/lang/String;
-
-    invoke-virtual {v0, v9, v10}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
-
-    move-result-object v9
-
-    .line 517
-    .local v9, "f6":Landroid/view/ViewGroup;
+    .line 491
+    .local v9, "f4":Landroid/view/ViewGroup;
     invoke-virtual {v9, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v10
 
     check-cast v10, Landroid/widget/EditText;
 
-    iput-object v10, v0, Lnan/ren/activity/WmActivity;->edPicInfo:Landroid/widget/EditText;
+    iput-object v10, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
 
-    .line 518
+    .line 492
+    sget v10, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
+
+    invoke-virtual {v0, v10}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-virtual {v0, v10}, Lnan/ren/activity/WmActivity;->getTextEdit(Ljava/lang/Object;)Landroid/widget/EditText;
+
+    move-result-object v10
+
+    iput-object v10, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+
+    .line 493
+    iget-object v10, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
+
+    const/16 v11, 0xa0
+
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setMinWidth(I)V
+
+    .line 494
+    iget-object v10, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setMinWidth(I)V
+
+    .line 495
+    sget v10, Lnan/ren/activity/WmActivity;->wmTextColor:I
+
+    invoke-virtual {v0, v10}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_1
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 496
+    :cond_1
+    iget-object v10, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
+
+    invoke-static {v5}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v11
+
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setTextColor(I)V
+
+    .line 497
+    sget v10, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
+
+    invoke-virtual {v0, v10}, Lnan/ren/activity/WmActivity;->getColorString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_2
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 498
+    :cond_2
+    iget-object v6, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+
+    invoke-static {v5}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v10
+
+    invoke-virtual {v6, v10}, Landroid/widget/EditText;->setTextColor(I)V
+
+    .line 500
+    iget-object v6, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
+
+    new-instance v10, Lnan/ren/activity/WmActivity$6;
+
+    invoke-direct {v10, v0}, Lnan/ren/activity/WmActivity$6;-><init>(Lnan/ren/activity/WmActivity;)V
+
+    invoke-virtual {v6, v10}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 516
+    iget-object v6, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+
+    new-instance v10, Lnan/ren/activity/WmActivity$7;
+
+    invoke-direct {v10, v0}, Lnan/ren/activity/WmActivity$7;-><init>(Lnan/ren/activity/WmActivity;)V
+
+    invoke-virtual {v6, v10}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+    .line 531
+    iget-object v6, v0, Lnan/ren/activity/WmActivity;->edSecTextColor:Landroid/widget/EditText;
+
+    invoke-virtual {v9, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 532
     invoke-virtual {v1, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 520
-    const-string v10, "\u4f4d\u7f6e\u4fe1\u606f\uff1a"
+    .line 538
+    sget v6, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
 
-    sget-object v11, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    const-string v10, "\u6c34\u5370\u9ad8\u5ea6\uff1a"
+
+    invoke-virtual {v0, v10, v6}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
+
+    move-result-object v6
+
+    .line 539
+    .local v6, "f5":Landroid/view/ViewGroup;
+    invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v10
+
+    check-cast v10, Landroid/widget/EditText;
+
+    iput-object v10, v0, Lnan/ren/activity/WmActivity;->edHeight:Landroid/widget/EditText;
+
+    .line 540
+    invoke-virtual {v1, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 542
+    const-string v10, "\u76f8\u7247\u8d44\u6599\uff1a"
+
+    sget-object v11, Lnan/ren/activity/WmActivity;->picinfo:Ljava/lang/String;
 
     invoke-virtual {v0, v10, v11}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
 
     move-result-object v10
 
-    .line 521
-    .local v10, "f7":Landroid/view/ViewGroup;
+    .line 543
+    .local v10, "f6":Landroid/view/ViewGroup;
     invoke-virtual {v10, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
     check-cast v11, Landroid/widget/EditText;
 
-    iput-object v11, v0, Lnan/ren/activity/WmActivity;->edLocalInfo:Landroid/widget/EditText;
+    iput-object v11, v0, Lnan/ren/activity/WmActivity;->edPicInfo:Landroid/widget/EditText;
 
-    .line 522
-    new-instance v11, Landroid/widget/Button;
-
-    invoke-direct {v11, v0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
-
-    .line 523
-    .local v11, "btn":Landroid/widget/Button;
-    const-string v12, "\u5f53\u524d\u4f4d\u7f6e"
-
-    invoke-virtual {v11, v12}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
-
-    .line 524
-    new-instance v12, Landroid/view/ViewGroup$LayoutParams;
-
-    const/4 v13, -0x2
-
-    invoke-direct {v12, v13, v13}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {v11, v12}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 525
-    new-instance v12, Lnan/ren/activity/WmActivity$8;
-
-    invoke-direct {v12, v0}, Lnan/ren/activity/WmActivity$8;-><init>(Lnan/ren/activity/WmActivity;)V
-
-    invoke-virtual {v11, v12}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 532
-    invoke-virtual {v0, v11}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
-
-    .line 533
-    const/16 v12, 0x3c
-
-    invoke-virtual {v11, v12}, Landroid/widget/Button;->setMaxHeight(I)V
-
-    .line 534
-    invoke-virtual {v10, v11}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
-
-    .line 535
+    .line 544
     invoke-virtual {v1, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 538
-    const-string v14, "\u65e5\u671f\u6587\u672c\uff1a"
+    .line 546
+    const-string v11, "\u4f4d\u7f6e\u4fe1\u606f\uff1a"
 
-    sget-object v15, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
+    sget-object v12, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
 
-    invoke-virtual {v0, v14, v15}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
+    invoke-virtual {v0, v11, v12}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
 
-    move-result-object v14
+    move-result-object v11
 
-    .line 539
-    .local v14, "f8":Landroid/view/ViewGroup;
-    invoke-virtual {v14, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    .line 547
+    .local v11, "f7":Landroid/view/ViewGroup;
+    invoke-virtual {v11, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v12
+
+    check-cast v12, Landroid/widget/EditText;
+
+    iput-object v12, v0, Lnan/ren/activity/WmActivity;->edLocalInfo:Landroid/widget/EditText;
+
+    .line 548
+    new-instance v12, Landroid/widget/Button;
+
+    invoke-direct {v12, v0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
+
+    .line 549
+    .local v12, "btn":Landroid/widget/Button;
+    const-string v13, "\u5f53\u524d\u4f4d\u7f6e"
+
+    invoke-virtual {v12, v13}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    .line 550
+    new-instance v13, Landroid/view/ViewGroup$LayoutParams;
+
+    const/4 v14, -0x2
+
+    invoke-direct {v13, v14, v14}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v12, v13}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 551
+    new-instance v13, Lnan/ren/activity/WmActivity$8;
+
+    invoke-direct {v13, v0}, Lnan/ren/activity/WmActivity$8;-><init>(Lnan/ren/activity/WmActivity;)V
+
+    invoke-virtual {v12, v13}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 558
+    invoke-virtual {v0, v12}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
+
+    .line 559
+    const/16 v13, 0x3c
+
+    invoke-virtual {v12, v13}, Landroid/widget/Button;->setMaxHeight(I)V
+
+    .line 560
+    invoke-virtual {v11, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 561
+    invoke-virtual {v1, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 564
+    const-string v15, "\u65e5\u671f\u6587\u672c\uff1a"
+
+    sget-object v3, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
+
+    invoke-virtual {v0, v15, v3}, Lnan/ren/activity/WmActivity;->getEditField(Ljava/lang/String;Ljava/lang/Object;)Landroid/view/ViewGroup;
+
+    move-result-object v3
+
+    .line 565
+    .local v3, "f8":Landroid/view/ViewGroup;
+    invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v15
 
@@ -1664,101 +2021,149 @@
 
     iput-object v15, v0, Lnan/ren/activity/WmActivity;->edDateFormt:Landroid/widget/EditText;
 
-    .line 540
+    .line 566
     sget-object v2, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
 
     invoke-virtual {v15, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 541
+    .line 567
     new-instance v2, Landroid/widget/Button;
 
     invoke-direct {v2, v0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 542
+    .line 568
     .local v2, "btn2":Landroid/widget/Button;
     const-string v15, "\u5f53\u524d\u65f6\u95f4"
 
     invoke-virtual {v2, v15}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 543
+    .line 569
     new-instance v15, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-direct {v15, v13, v13}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    invoke-direct {v15, v14, v14}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v2, v15}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 544
-    new-instance v13, Lnan/ren/activity/WmActivity$9;
+    .line 570
+    new-instance v14, Lnan/ren/activity/WmActivity$9;
 
-    invoke-direct {v13, v0}, Lnan/ren/activity/WmActivity$9;-><init>(Lnan/ren/activity/WmActivity;)V
+    invoke-direct {v14, v0}, Lnan/ren/activity/WmActivity$9;-><init>(Lnan/ren/activity/WmActivity;)V
 
-    invoke-virtual {v2, v13}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v14}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 552
+    .line 578
     invoke-virtual {v0, v2}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 553
-    invoke-virtual {v2, v12}, Landroid/widget/Button;->setMaxHeight(I)V
+    .line 579
+    invoke-virtual {v2, v13}, Landroid/widget/Button;->setMaxHeight(I)V
 
-    .line 554
-    invoke-virtual {v14, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    .line 580
+    invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 555
-    invoke-virtual {v1, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    .line 581
+    invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 557
-    sget-object v12, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
+    .line 583
+    sget-object v13, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
-    if-nez v12, :cond_3
+    const/4 v14, 0x0
 
-    const/4 v12, 0x1
+    if-nez v13, :cond_3
+
+    const/4 v13, 0x1
 
     goto :goto_0
 
     :cond_3
-    const/4 v12, 0x0
+    move v13, v14
 
     :goto_0
-    const-string v13, "\u9009\u62e9\u56fe\u6807\uff1a"
+    const-string v15, "\u9009\u62e9\u56fe\u6807\uff1a"
 
-    invoke-virtual {v0, v13, v12}, Lnan/ren/activity/WmActivity;->getLogoCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
-
-    move-result-object v12
-
-    .line 558
-    .local v12, "f9":Landroid/view/ViewGroup;
-    const/4 v13, 0x2
-
-    invoke-virtual {v12, v13}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v15, v13}, Lnan/ren/activity/WmActivity;->getLogoCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
 
     move-result-object v13
 
-    check-cast v13, Landroid/widget/CheckBox;
+    .line 584
+    .local v13, "f9":Landroid/view/ViewGroup;
+    const/4 v15, 0x2
 
-    iput-object v13, v0, Lnan/ren/activity/WmActivity;->cbHideLogo:Landroid/widget/CheckBox;
+    invoke-virtual {v13, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    .line 559
-    const/4 v13, 0x1
+    move-result-object v15
 
-    invoke-virtual {v12, v13}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    check-cast v15, Landroid/widget/CheckBox;
 
-    move-result-object v13
+    iput-object v15, v0, Lnan/ren/activity/WmActivity;->cbHideLogo:Landroid/widget/CheckBox;
 
-    check-cast v13, Landroid/widget/ImageButton;
+    .line 585
+    const/4 v15, 0x1
 
-    iput-object v13, v0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
+    invoke-virtual {v13, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
-    .line 561
-    invoke-virtual {v1, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    move-result-object v16
 
-    .line 562
-    return-object v1
+    move-object/from16 v15, v16
+
+    check-cast v15, Landroid/widget/ImageButton;
+
+    iput-object v15, v0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
+
+    .line 587
+    invoke-virtual {v1, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 590
+    const-string v15, "\u9009\u62e9\u914d\u7f6e\uff1a"
+
+    invoke-virtual {v0, v15, v14}, Lnan/ren/activity/WmActivity;->getUseCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
+
+    move-result-object v14
+
+    .line 591
+    .local v14, "f10":Landroid/view/ViewGroup;
+    const/4 v15, 0x1
+
+    invoke-virtual {v14, v15}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v15
+
+    check-cast v15, Landroid/widget/Spinner;
+
+    iput-object v15, v0, Lnan/ren/activity/WmActivity;->configSelect:Landroid/widget/Spinner;
+
+    .line 592
+    invoke-virtual {v1, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 594
+    new-instance v15, Landroid/widget/ScrollView;
+
+    invoke-direct {v15, v0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
+
+    .line 595
+    .local v15, "scrollView":Landroid/widget/ScrollView;
+    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
+
+    move-object/from16 v16, v2
+
+    const/4 v2, -0x1
+
+    .end local v2    # "btn2":Landroid/widget/Button;
+    .local v16, "btn2":Landroid/widget/Button;
+    invoke-direct {v0, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v15, v0}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 596
+    invoke-virtual {v15, v1}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
+
+    .line 597
+    return-object v15
 .end method
 
 .method initParamters()V
     .locals 5
 
-    .line 185
+    .line 209
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
     if-eqz v0, :cond_7
@@ -1775,7 +2180,7 @@
 
     goto/16 :goto_1
 
-    .line 186
+    .line 210
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
@@ -1785,14 +2190,14 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->exb:Landroid/media/ExifInterface;
 
-    .line 188
+    .line 212
     invoke-static {v0}, Lnan/ren/util/WaterMarkUtil;->getPicInfo(Landroid/media/ExifInterface;)Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/activity/WmActivity;->picinfo:Ljava/lang/String;
 
-    .line 189
+    .line 213
     sget-object v0, Lnan/ren/activity/WmActivity;->exb:Landroid/media/ExifInterface;
 
     invoke-static {v0}, Lnan/ren/util/LocationUtil;->getExifInterfaceLocalInfo(Landroid/media/ExifInterface;)Ljava/lang/String;
@@ -1801,7 +2206,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
 
-    .line 190
+    .line 214
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->edPicInfo:Landroid/widget/EditText;
 
     if-eqz v0, :cond_1
@@ -1810,7 +2215,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 191
+    .line 215
     :cond_1
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->edLocalInfo:Landroid/widget/EditText;
 
@@ -1820,7 +2225,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 194
+    .line 218
     :cond_2
     const-wide/16 v0, 0x0
 
@@ -1828,7 +2233,7 @@
 
     move-result-object v0
 
-    .line 196
+    .line 220
     .local v0, "ldt":Ljava/lang/Long;
     :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -1837,7 +2242,7 @@
 
     if-lt v1, v2, :cond_3
 
-    .line 197
+    .line 221
     sget-object v1, Lnan/ren/activity/WmActivity;->exb:Landroid/media/ExifInterface;
 
     invoke-virtual {v1}, Landroid/media/ExifInterface;->getDateTime()J
@@ -1850,7 +2255,7 @@
 
     move-object v0, v1
 
-    .line 199
+    .line 223
     :cond_3
     if-eqz v0, :cond_4
 
@@ -1864,7 +2269,7 @@
 
     if-gez v1, :cond_5
 
-    .line 200
+    .line 224
     :cond_4
     new-instance v1, Ljava/util/Date;
 
@@ -1882,15 +2287,15 @@
 
     move-object v0, v1
 
-    .line 204
+    .line 228
     :cond_5
     goto :goto_0
 
-    .line 202
+    .line 226
     :catch_0
     move-exception v1
 
-    .line 203
+    .line 227
     .local v1, "ex":Ljava/lang/Exception;
     new-instance v2, Ljava/util/Date;
 
@@ -1904,7 +2309,7 @@
 
     move-result-object v0
 
-    .line 205
+    .line 229
     .end local v1    # "ex":Ljava/lang/Exception;
     :goto_0
     new-instance v1, Ljava/text/SimpleDateFormat;
@@ -1925,19 +2330,19 @@
 
     sput-object v1, Lnan/ren/activity/WmActivity;->dateformat:Ljava/lang/String;
 
-    .line 206
+    .line 230
     iget-object v2, p0, Lnan/ren/activity/WmActivity;->edDateFormt:Landroid/widget/EditText;
 
     if-eqz v2, :cond_6
 
-    .line 207
+    .line 231
     invoke-virtual {v2, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 211
+    .line 235
     :cond_6
     return-void
 
-    .line 185
+    .line 209
     .end local v0    # "ldt":Ljava/lang/Long;
     :cond_7
     :goto_1
@@ -1950,32 +2355,32 @@
     .param p2, "resultCode"    # I
     .param p3, "data"    # Landroid/content/Intent;
 
-    .line 332
+    .line 356
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 333
+    .line 357
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_1
 
-    .line 335
+    .line 359
     if-eqz p3, :cond_2
 
-    .line 337
+    .line 361
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 338
+    .line 362
     .local v0, "uri":Landroid/net/Uri;
     if-eqz v0, :cond_0
 
-    .line 339
+    .line 363
     invoke-static {v0}, Lnan/ren/util/UriUtil;->Uri2Path(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 340
+    .line 364
     .local v1, "url":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -1989,45 +2394,45 @@
 
     if-nez v2, :cond_0
 
-    .line 341
+    .line 365
     iput-object v1, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
-    .line 342
+    .line 366
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->initParamters()V
 
-    .line 343
+    .line 367
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->show()V
 
-    .line 346
+    .line 370
     .end local v0    # "uri":Landroid/net/Uri;
     .end local v1    # "url":Ljava/lang/String;
     :cond_0
     goto :goto_0
 
-    .line 347
+    .line 371
     :cond_1
     const/4 v0, 0x3
 
     if-ne p1, v0, :cond_2
 
-    .line 349
+    .line 373
     if-eqz p3, :cond_2
 
-    .line 351
+    .line 375
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 352
+    .line 376
     .restart local v0    # "uri":Landroid/net/Uri;
     if-eqz v0, :cond_2
 
-    .line 353
+    .line 377
     invoke-static {v0}, Lnan/ren/util/UriUtil;->Uri2Path(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 354
+    .line 378
     .restart local v1    # "url":Ljava/lang/String;
     if-eqz v1, :cond_2
 
@@ -2041,7 +2446,7 @@
 
     if-nez v2, :cond_2
 
-    .line 355
+    .line 379
     if-eqz v1, :cond_2
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -2054,7 +2459,7 @@
 
     if-nez v2, :cond_2
 
-    .line 356
+    .line 380
     new-instance v2, Landroid/util/Size;
 
     iget-object v3, p0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
@@ -2077,7 +2482,7 @@
 
     move-result-object v2
 
-    .line 357
+    .line 381
     .local v2, "logtbt":Landroid/graphics/Bitmap;
     iget-object v3, p0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
 
@@ -2087,12 +2492,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 358
+    .line 382
     iget-object v3, p0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
 
     invoke-virtual {v3, v1}, Landroid/widget/ImageButton;->setTag(Ljava/lang/Object;)V
 
-    .line 364
+    .line 388
     .end local v0    # "uri":Landroid/net/Uri;
     .end local v1    # "url":Ljava/lang/String;
     .end local v2    # "logtbt":Landroid/graphics/Bitmap;
@@ -2105,17 +2510,17 @@
     .locals 3
     .param p1, "view"    # Landroid/view/View;
 
-    .line 303
+    .line 327
     instance-of v0, p1, Landroid/widget/Button;
 
     if-eqz v0, :cond_4
 
-    .line 304
+    .line 328
     move-object v0, p1
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 305
+    .line 329
     .local v0, "btn":Landroid/widget/Button;
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -2129,13 +2534,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 306
+    .line 330
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->finishAndRemoveTask()V
 
-    .line 307
+    .line 331
     return-void
 
-    .line 309
+    .line 333
     :cond_0
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -2149,15 +2554,15 @@
 
     if-eqz v1, :cond_1
 
-    .line 310
+    .line 334
     const/4 v1, 0x2
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/WmActivity;->selectPic(I)V
 
-    .line 311
+    .line 335
     return-void
 
-    .line 313
+    .line 337
     :cond_1
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -2185,7 +2590,7 @@
 
     goto :goto_0
 
-    .line 317
+    .line 341
     :cond_2
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -2199,25 +2604,25 @@
 
     if-eqz v1, :cond_4
 
-    .line 319
+    .line 343
     new-instance v1, Lnan/ren/activity/WmActivity$2;
 
     invoke-direct {v1, p0}, Lnan/ren/activity/WmActivity$2;-><init>(Lnan/ren/activity/WmActivity;)V
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/WmActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 325
+    .line 349
     return-void
 
-    .line 314
+    .line 338
     :cond_3
     :goto_0
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->savePic(Landroid/widget/Button;)V
 
-    .line 315
+    .line 339
     return-void
 
-    .line 328
+    .line 352
     .end local v0    # "btn":Landroid/widget/Button;
     :cond_4
     return-void
@@ -2227,15 +2632,15 @@
     .locals 3
     .param p1, "bundle"    # Landroid/os/Bundle;
 
-    .line 103
+    .line 113
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 104
+    .line 114
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 105
+    .line 115
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "imagePath"
 
@@ -2245,7 +2650,7 @@
 
     iput-object v1, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
-    .line 106
+    .line 116
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -2270,26 +2675,26 @@
 
     if-eqz v1, :cond_0
 
-    .line 107
+    .line 117
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/WmActivity;->setContentViewBySelf(Z)V
 
-    .line 108
+    .line 118
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->initParamters()V
 
-    .line 109
+    .line 119
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->show()V
 
     goto :goto_0
 
-    .line 111
+    .line 121
     :cond_0
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/WmActivity;->setContentViewBySelf(Z)V
 
-    .line 114
+    .line 124
     :goto_0
     return-void
 .end method
@@ -2298,7 +2703,7 @@
     .locals 2
     .param p1, "btn"    # Landroid/widget/Button;
 
-    .line 220
+    .line 244
     sget-object v0, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_1
@@ -2319,18 +2724,18 @@
 
     goto :goto_1
 
-    .line 221
+    .line 245
     :cond_0
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 222
+    .line 246
     const-string v0, "\u4fdd\u5b58\u4e2d"
 
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 224
+    .line 248
     :try_start_0
     new-instance v0, Lnan/ren/activity/WmActivity$1;
 
@@ -2340,33 +2745,33 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 240
+    .line 264
     goto :goto_0
 
-    .line 236
+    .line 260
     :catch_0
     move-exception v0
 
-    .line 237
+    .line 261
     .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "\u4fdd\u5b58\u5931\u8d25\u4e86\u3002\u3002"
 
     invoke-static {v1}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 238
+    .line 262
     const-string v1, "\u4fdd\u5b58\u5931\u8d25"
 
     invoke-virtual {p1, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 239
+    .line 263
     invoke-virtual {p1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 241
+    .line 265
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
 
-    .line 220
+    .line 244
     :cond_1
     :goto_1
     return-void
@@ -2376,7 +2781,7 @@
     .locals 3
     .param p1, "code"    # I
 
-    .line 214
+    .line 238
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.PICK"
@@ -2385,7 +2790,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 215
+    .line 239
     .local v0, "intent":Landroid/content/Intent;
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
@@ -2393,10 +2798,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 216
+    .line 240
     invoke-virtual {p0, v0, p1}, Lnan/ren/activity/WmActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 217
+    .line 241
     return-void
 .end method
 
@@ -2404,12 +2809,12 @@
     .locals 6
     .param p1, "showSelect"    # Z
 
-    .line 167
+    .line 191
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 168
+    .line 192
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -2419,24 +2824,24 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 169
+    .line 193
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 170
+    .line 194
     invoke-virtual {p0, p1}, Lnan/ren/activity/WmActivity;->getToolBarView(Z)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 171
+    .line 195
     new-instance v3, Landroid/widget/ScrollView;
 
     invoke-direct {v3, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 172
+    .line 196
     .local v3, "scrollView":Landroid/widget/ScrollView;
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
@@ -2444,14 +2849,14 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 173
+    .line 197
     new-instance v4, Landroid/widget/GridLayout;
 
     invoke-direct {v4, p0}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v4, p0, Lnan/ren/activity/WmActivity;->gridLayout:Landroid/widget/GridLayout;
 
-    .line 174
+    .line 198
     new-instance v4, Landroid/widget/GridLayout$LayoutParams;
 
     new-instance v5, Landroid/view/ViewGroup$LayoutParams;
@@ -2462,32 +2867,32 @@
 
     move-object v2, v4
 
-    .line 175
+    .line 199
     .local v2, "lp":Landroid/widget/GridLayout$LayoutParams;
     invoke-virtual {v2, v1}, Landroid/widget/GridLayout$LayoutParams;->setGravity(I)V
 
-    .line 176
+    .line 200
     iget-object v4, p0, Lnan/ren/activity/WmActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v4, v2}, Landroid/widget/GridLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 177
+    .line 201
     iget-object v4, p0, Lnan/ren/activity/WmActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v4, v1}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 179
+    .line 203
     iget-object v1, p0, Lnan/ren/activity/WmActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v3, v1}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 180
+    .line 204
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 181
+    .line 205
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->setContentView(Landroid/view/View;)V
 
-    .line 182
+    .line 206
     return-void
 .end method
 
@@ -2495,12 +2900,12 @@
     .locals 5
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 627
+    .line 707
     if-nez p1, :cond_0
 
     return-void
 
-    .line 628
+    .line 708
     :cond_0
     const-string v0, "my_dsp"
 
@@ -2508,13 +2913,13 @@
 
     move-result v0
 
-    .line 629
+    .line 709
     .local v0, "dsp_flag":I
     move-object v1, p1
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 630
+    .line 710
     .local v1, "tv":Landroid/widget/TextView;
     const/4 v2, 0x1
 
@@ -2532,7 +2937,7 @@
 
     goto :goto_0
 
-    .line 631
+    .line 711
     :cond_1
     if-ne v0, v2, :cond_2
 
@@ -2544,7 +2949,7 @@
 
     goto :goto_0
 
-    .line 632
+    .line 712
     :cond_2
     const/4 v3, 0x2
 
@@ -2562,7 +2967,7 @@
 
     goto :goto_0
 
-    .line 634
+    .line 714
     :cond_3
     instance-of v3, p1, Landroid/widget/Button;
 
@@ -2570,7 +2975,7 @@
 
     goto :goto_0
 
-    .line 637
+    .line 717
     :cond_4
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2578,28 +2983,28 @@
 
     if-lt v3, v4, :cond_5
 
-    .line 638
+    .line 718
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V
 
-    .line 642
+    .line 722
     :cond_5
     :goto_0
     instance-of v3, p1, Landroid/widget/Button;
 
     if-eqz v3, :cond_6
 
-    .line 643
+    .line 723
     move-object v3, p1
 
     check-cast v3, Landroid/widget/Button;
 
-    .line 644
+    .line 724
     .local v3, "btn":Landroid/widget/Button;
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4, v2, v4, v2}, Landroid/widget/Button;->setPadding(IIII)V
 
-    .line 647
+    .line 727
     .end local v3    # "btn":Landroid/widget/Button;
     :cond_6
     return-void
@@ -2608,7 +3013,7 @@
 .method show()V
     .locals 5
 
-    .line 117
+    .line 127
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
     if-eqz v0, :cond_2
@@ -2625,13 +3030,13 @@
 
     goto/16 :goto_0
 
-    .line 118
+    .line 128
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
     invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 119
+    .line 129
     iget-object v0, p0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
 
     invoke-virtual {p0, v0}, Lnan/ren/activity/WmActivity;->getWaterMark(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -2640,7 +3045,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
-    .line 120
+    .line 130
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -2649,7 +3054,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 121
+    .line 131
     .local v0, "width":I
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
@@ -2675,38 +3080,38 @@
 
     div-int/2addr v1, v2
 
-    .line 122
+    .line 132
     .local v1, "height":I
     iget-object v2, p0, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
     if-nez v2, :cond_1
 
-    .line 123
+    .line 133
     new-instance v2, Landroid/widget/LinearLayout;
 
     invoke-direct {v2, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 124
+    .line 134
     .local v2, "rl":Landroid/widget/LinearLayout;
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 125
+    .line 135
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
-    .line 126
+    .line 136
     invoke-static {}, Landroid/view/View;->generateViewId()I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setId(I)V
 
-    .line 127
+    .line 137
     iget-object v3, p0, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
     const-string v4, "#11223344"
@@ -2717,31 +3122,31 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 129
+    .line 138
     const/16 v3, 0x14
 
     const/4 v4, 0x0
 
     invoke-virtual {v2, v3, v4, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 130
+    .line 139
     iget-object v3, p0, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 131
+    .line 140
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->getBottomView()Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 132
+    .line 141
     iget-object v3, p0, Lnan/ren/activity/WmActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v3, v2}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 134
+    .line 143
     .end local v2    # "rl":Landroid/widget/LinearLayout;
     :cond_1
     iget-object v2, p0, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
@@ -2758,7 +3163,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 135
+    .line 144
     iget-object v2, p0, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
     sget-object v3, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
@@ -2769,10 +3174,22 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 136
+    .line 145
+    iget-object v2, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
+    invoke-virtual {v2, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 146
+    iget-object v2, p0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
+
+    const-string v3, "\u4fdd\u5b58"
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
+
+    .line 147
     return-void
 
-    .line 117
+    .line 127
     .end local v0    # "width":I
     .end local v1    # "height":I
     :cond_2
@@ -2783,33 +3200,33 @@
 .method showParamDialog()V
     .locals 4
 
-    .line 367
+    .line 391
     const-string v0, "#ffacc8fa"
 
     iget-object v1, p0, Lnan/ren/activity/WmActivity;->dialog:Landroid/app/AlertDialog;
 
     if-nez v1, :cond_0
 
-    .line 368
+    .line 392
     new-instance v1, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 369
+    .line 393
     const-string v2, "\u6c34\u5370\u8bbe\u7f6e"
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 370
+    .line 394
     const-string v2, "\u8bbe\u7f6e\u53c2\u6570"
 
     invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 371
+    .line 395
     invoke-virtual {p0}, Lnan/ren/activity/WmActivity;->getWmParamerView()Landroid/view/View;
 
     move-result-object v2
@@ -2822,7 +3239,7 @@
 
     invoke-direct {v2, p0}, Lnan/ren/activity/WmActivity$4;-><init>(Lnan/ren/activity/WmActivity;)V
 
-    .line 372
+    .line 396
     const-string v3, "\u786e\u5b9a"
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
@@ -2833,27 +3250,27 @@
 
     invoke-direct {v2, p0}, Lnan/ren/activity/WmActivity$3;-><init>(Lnan/ren/activity/WmActivity;)V
 
-    .line 408
+    .line 432
     const-string v3, "\u53d6\u6d88"
 
     invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
-    .line 413
+    .line 437
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v1
 
     iput-object v1, p0, Lnan/ren/activity/WmActivity;->dialog:Landroid/app/AlertDialog;
 
-    .line 415
+    .line 439
     :cond_0
     iget-object v1, p0, Lnan/ren/activity/WmActivity;->dialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
 
-    .line 417
+    .line 441
     :try_start_0
     iget-object v1, p0, Lnan/ren/activity/WmActivity;->dialog:Landroid/app/AlertDialog;
 
@@ -2869,7 +3286,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 418
+    .line 442
     iget-object v1, p0, Lnan/ren/activity/WmActivity;->dialog:Landroid/app/AlertDialog;
 
     const/4 v2, -0x2
@@ -2888,13 +3305,13 @@
 
     goto :goto_0
 
-    .line 419
+    .line 443
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 420
+    .line 444
     return-void
 .end method

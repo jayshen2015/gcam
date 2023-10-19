@@ -4,7 +4,7 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC8.4.300_V9.9.3
+set apkname=AGC8.4.300_V9.9.4
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 :startA
