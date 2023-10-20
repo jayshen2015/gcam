@@ -39,22 +39,22 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 63
+    .line 61
     const-string v0, ""
 
     sput-object v0, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
 
-    .line 64
+    .line 62
     const/4 v0, 0x0
 
     sput-boolean v0, Lnan/ren/G;->SHOW_TASK_LOG:Z
 
-    .line 68
+    .line 66
     const-string v1, "/sdcard/Download/AGC.8.8"
 
     sput-object v1, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
 
-    .line 79
+    .line 77
     new-instance v1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
@@ -65,7 +65,7 @@
 
     sput-object v1, Lnan/ren/G;->handler:Landroid/os/Handler;
 
-    .line 83
+    .line 81
     const-string v1, "show_task_log"
 
     invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
@@ -81,21 +81,21 @@
     :cond_0
     sput-boolean v0, Lnan/ren/G;->SHOW_TASK_LOG:Z
 
-    .line 84
+    .line 82
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
-    .line 85
+    .line 83
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
-    .line 86
+    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -128,7 +128,7 @@
 
     sput-object v0, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
 
-    .line 87
+    .line 85
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -137,7 +137,7 @@
 
     sput-object v0, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
 
-    .line 88
+    .line 86
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -160,7 +160,7 @@
 
     sput-object v0, Lnan/ren/G;->ICON_PATH:Ljava/lang/String;
 
-    .line 89
+    .line 87
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -183,7 +183,7 @@
 
     sput-object v0, Lnan/ren/G;->LOGO_PATH:Ljava/lang/String;
 
-    .line 90
+    .line 88
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -206,7 +206,7 @@
 
     sput-object v0, Lnan/ren/G;->TMP_PATH:Ljava/lang/String;
 
-    .line 91
+    .line 89
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -229,7 +229,7 @@
 
     sput-object v0, Lnan/ren/G;->LUT_PATH:Ljava/lang/String;
 
-    .line 92
+    .line 90
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -252,7 +252,7 @@
 
     sput-object v0, Lnan/ren/G;->LIB_PATH:Ljava/lang/String;
 
-    .line 93
+    .line 91
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -275,7 +275,7 @@
 
     sput-object v0, Lnan/ren/G;->CONFIG_PATH:Ljava/lang/String;
 
-    .line 94
+    .line 92
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -302,14 +302,14 @@
 
     sput-object v0, Lnan/ren/G;->CAMERA_PATH:Ljava/lang/String;
 
-    .line 95
+    .line 93
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 61
+    .line 59
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -319,12 +319,12 @@
     .locals 3
     .param p0, "b"    # Landroid/graphics/Bitmap;
 
-    .line 283
+    .line 281
     sget-object v0, Lnan/ren/G;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     if-nez v0, :cond_0
 
-    .line 284
+    .line 282
     new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
@@ -333,18 +333,18 @@
 
     sput-object v0, Lnan/ren/G;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    .line 285
+    .line 283
     new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageGrayscaleFilter;
 
     invoke-direct {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageGrayscaleFilter;-><init>()V
 
-    .line 286
+    .line 284
     .local v0, "ggf":Ljp/co/cyberagent/android/gpuimage/GPUImageGrayscaleFilter;
     sget-object v1, Lnan/ren/G;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     invoke-virtual {v1, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
 
-    .line 287
+    .line 285
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -367,7 +367,7 @@
 
     invoke-static {p0, v1}, Lnan/ren/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;)V
 
-    .line 289
+    .line 287
     .end local v0    # "ggf":Ljp/co/cyberagent/android/gpuimage/GPUImageGrayscaleFilter;
     :cond_0
     sget-object v0, Lnan/ren/G;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
@@ -393,7 +393,7 @@
         }
     .end annotation
 
-    .line 127
+    .line 125
     .local p0, "llist":Ljava/util/List;, "Ljava/util/List<Lcom/agc/Camera;>;"
     invoke-static {p0}, Lnan/ren/util/CameraUtil;->getAllCameras(Ljava/util/List;)Ljava/util/List;
 
@@ -405,7 +405,7 @@
 .method public static getBottomBarLayout()I
     .locals 2
 
-    .line 262
+    .line 260
     const-string v0, "my_bottom_bar_btn1_change"
 
     const/4 v1, 0x0
@@ -416,7 +416,7 @@
 
     if-nez v0, :cond_0
 
-    .line 263
+    .line 261
     const-string v0, "bottom_bar_layout"
 
     invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
@@ -425,7 +425,7 @@
 
     return v0
 
-    .line 265
+    .line 263
     :cond_0
     const-string v0, "bottom_bar_layout2"
 
@@ -439,7 +439,7 @@
 .method public static getShutterColor()I
     .locals 2
 
-    .line 133
+    .line 131
     const-string v0, "camera_mode_idle_color"
 
     const-string v1, "#fff37727"
@@ -448,7 +448,7 @@
 
     move-result-object v0
 
-    .line 134
+    .line 132
     .local v0, "colorStr":Ljava/lang/String;
     if-eqz v0, :cond_0
 
@@ -465,7 +465,7 @@
     :cond_0
     const-string v0, "#fff37727"
 
-    .line 135
+    .line 133
     :cond_1
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -482,7 +482,7 @@
     .locals 1
     .param p0, "res"    # Landroid/content/res/Resources;
 
-    .line 139
+    .line 137
     invoke-static {}, Lnan/ren/G;->getShutterColor()I
 
     move-result v0
@@ -494,18 +494,18 @@
     .locals 1
     .param p0, "bit"    # Landroid/graphics/Bitmap;
 
-    .line 273
+    .line 271
     const-string v0, "========initCameraBit bit ============="
 
     invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 274
+    .line 272
     if-eqz p0, :cond_0
 
-    .line 275
+    .line 273
     invoke-static {p0}, Lnan/ren/G;->filterByG(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    .line 277
+    .line 275
     :cond_0
     return-void
 .end method
@@ -514,15 +514,15 @@
     .locals 1
     .param p0, "v"    # Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    .line 269
+    .line 267
     const-string v0, "========GLSurfaceView init ============="
 
     invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 270
+    .line 268
     sput-object p0, Lnan/ren/G;->viewfinderCover:Lcom/google/android/apps/camera/ui/views/ViewfinderCover;
 
-    .line 271
+    .line 269
     return-void
 .end method
 
@@ -540,7 +540,7 @@
         }
     .end annotation
 
-    .line 130
+    .line 128
     .local p0, "list":Ljava/util/List;, "Ljava/util/List<Lcom/agc/Camera;>;"
     invoke-static {p0}, Lnan/ren/util/CameraUtil;->reSetCameras(Ljava/util/List;)Ljava/util/List;
 
@@ -554,7 +554,7 @@
     .param p0, "iv"    # Landroid/widget/ImageView;
     .param p1, "fileName"    # Ljava/lang/String;
 
-    .line 103
+    .line 101
     const-string v0, "drawable"
 
     const-string v1, "agc_patch_profile_"
@@ -586,7 +586,7 @@
 
     move-result-object v3
 
-    .line 104
+    .line 102
     .local v3, "extDrawable":Landroid/graphics/drawable/Drawable;
     if-nez v3, :cond_0
 
@@ -596,7 +596,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 105
+    .line 103
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -627,11 +627,11 @@
 
     move-object v3, v1
 
-    .line 107
+    .line 105
     :cond_0
     if-nez v3, :cond_2
 
-    .line 108
+    .line 106
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     sget-object v4, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
@@ -640,11 +640,11 @@
 
     move-result v1
 
-    .line 109
+    .line 107
     .local v1, "identifier":I
     if-nez v1, :cond_1
 
-    .line 110
+    .line 108
     sget-object v4, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     const-string v5, "agc_lib_patcher"
@@ -657,15 +657,15 @@
 
     move v1, v0
 
-    .line 112
+    .line 110
     :cond_1
     invoke-virtual {p0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 113
+    .line 111
     .end local v1    # "identifier":I
     goto :goto_0
 
-    .line 114
+    .line 112
     :cond_2
     invoke-virtual {p0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
     :try_end_0
@@ -674,12 +674,12 @@
 
     goto :goto_0
 
-    .line 119
+    .line 117
     .end local v3    # "extDrawable":Landroid/graphics/drawable/Drawable;
     :catchall_0
     move-exception v0
 
-    .line 120
+    .line 118
     .local v0, "ex":Ljava/lang/Throwable;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -699,17 +699,17 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 121
+    .line 119
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
     goto :goto_1
 
-    .line 116
+    .line 114
     .end local v0    # "ex":Ljava/lang/Throwable;
     :catch_0
     move-exception v0
 
-    .line 117
+    .line 115
     .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -729,15 +729,15 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 118
+    .line 116
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 122
+    .line 120
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     nop
 
-    .line 124
+    .line 122
     :goto_1
     return-void
 .end method
@@ -747,14 +747,14 @@
     .param p0, "op"    # Lcom/agc/widget/OptionButton;
     .param p1, "fileName"    # Ljava/lang/String;
 
-    .line 98
+    .line 96
     move-object v0, p0
 
-    .line 99
+    .line 97
     .local v0, "iv":Landroid/widget/ImageView;
     invoke-static {v0, p1}, Lnan/ren/G;->initIcon(Landroid/widget/ImageView;Ljava/lang/String;)V
 
-    .line 100
+    .line 98
     return-void
 .end method
 
@@ -769,7 +769,7 @@
         }
     .end annotation
 
-    .line 146
+    .line 144
     .local p0, "items":Ljava/util/List;, "Ljava/util/List<Lcom/agc/widget/OptionButton$OptionButtonItem;>;"
     const-string v0, "my_hidden_kaka_items"
 
@@ -781,10 +781,10 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 147
+    .line 145
     invoke-interface {p0}, Ljava/util/List;->clear()V
 
-    .line 149
+    .line 147
     :cond_0
     return-void
 .end method
@@ -793,7 +793,7 @@
     .locals 5
     .param p0, "str"    # Ljava/lang/String;
 
-    .line 295
+    .line 293
     const-string v0, ".so"
 
     const-string v1, "gcastartup"
@@ -819,31 +819,31 @@
 
     invoke-static {v2}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 296
+    .line 294
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 297
+    .line 295
     invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 298
+    .line 296
     return-void
 
-    .line 300
+    .line 298
     :cond_0
     sput-object p0, Lcom/agc/Library;->GlolibFullname:Ljava/lang/String;
 
-    .line 301
+    .line 299
     const-string v2, "lib_custom_lib_open_key"
 
     invoke-static {v2}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 302
+    .line 300
     .local v2, "auxCustomLib":Ljava/lang/String;
     if-eqz v2, :cond_1
 
@@ -859,7 +859,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 303
+    .line 301
     :cond_1
     const-string v3, "custom_lib_open_key"
 
@@ -869,7 +869,7 @@
 
     move-object v2, v3
 
-    .line 305
+    .line 303
     :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -891,7 +891,7 @@
 
     invoke-static {v3}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 306
+    .line 304
     invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
@@ -902,20 +902,20 @@
 
     if-eqz v3, :cond_4
 
-    .line 307
+    .line 305
     new-instance v0, Ljava/io/File;
 
     sget-object v3, Lcom/Globals;->libFolder:Ljava/io/File;
 
     invoke-direct {v0, v3, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 308
+    .line 306
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 309
+    .line 307
     .local v3, "path":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -923,27 +923,27 @@
 
     if-eqz v4, :cond_3
 
-    .line 310
+    .line 308
     move-object v1, v3
 
-    .line 311
+    .line 309
     .local v1, "str2":Ljava/lang/String;
     invoke-static {v3}, Ljava/lang/System;->load(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 313
+    .line 311
     .end local v1    # "str2":Ljava/lang/String;
     :cond_3
     const-string v4, "libgcastartup.so"
 
-    .line 314
+    .line 312
     .local v4, "str2":Ljava/lang/String;
     invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
     move-object v1, v4
 
-    .line 316
+    .line 314
     .end local v0    # "file":Ljava/io/File;
     .end local v3    # "path":Ljava/lang/String;
     .end local v4    # "str2":Ljava/lang/String;
@@ -951,12 +951,12 @@
     :goto_0
     goto :goto_1
 
-    .line 317
+    .line 315
     .end local v1    # "str2":Ljava/lang/String;
     :cond_4
     invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 318
+    .line 316
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -981,26 +981,26 @@
 
     move-object v1, v0
 
-    .line 320
+    .line 318
     .restart local v1    # "str2":Ljava/lang/String;
     :goto_1
     invoke-static {v1}, Lagc/Agc;->ramPatcher(Ljava/lang/String;)V
 
-    .line 321
+    .line 319
     invoke-static {}, Lcom/agc/Patch;->patchAll()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 325
+    .line 323
     .end local v1    # "str2":Ljava/lang/String;
     .end local v2    # "auxCustomLib":Ljava/lang/String;
     goto :goto_2
 
-    .line 322
+    .line 320
     :catch_0
     move-exception v0
 
-    .line 323
+    .line 321
     .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1036,10 +1036,10 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 324
+    .line 322
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 326
+    .line 324
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
     return-void
@@ -1049,22 +1049,22 @@
     .locals 3
     .param p0, "o"    # Ljava/lang/Object;
 
-    .line 154
+    .line 152
     :try_start_0
     invoke-static {p0}, Lnan/ren/util/JsonUtil;->toJSONString(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 155
+    .line 153
     .local v0, "msg":Ljava/lang/String;
     invoke-static {v0}, Lnan/ren/util/NUtil;->log(Ljava/lang/Object;)V
 
-    .line 156
+    .line 154
     sget-boolean v1, Lnan/ren/G;->SHOW_TASK_LOG:Z
 
     if-eqz v1, :cond_0
 
-    .line 157
+    .line 155
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     const/4 v2, 0x0
@@ -1080,23 +1080,23 @@
 
     goto :goto_0
 
-    .line 159
+    .line 157
     .end local v0    # "msg":Ljava/lang/String;
     :catchall_0
     move-exception v0
 
     goto :goto_0
 
-    .line 158
+    .line 156
     :catch_0
     move-exception v0
 
-    .line 159
+    .line 157
     :cond_0
     :goto_0
     nop
 
-    .line 160
+    .line 158
     return-void
 .end method
 
@@ -1104,12 +1104,12 @@
     .locals 5
     .param p0, "file"    # Ljava/io/File;
 
-    .line 164
+    .line 162
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 165
+    .line 163
     .local v0, "absolutePath":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -1125,7 +1125,7 @@
 
     return-void
 
-    .line 166
+    .line 164
     :cond_0
     sget-object v1, Lnan/ren/G;->handler:Landroid/os/Handler;
 
@@ -1137,7 +1137,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 215
+    .line 213
     return-void
 .end method
 
@@ -1145,14 +1145,14 @@
     .locals 3
     .param p0, "c"    # Lcom/agc/widget/OptionWindow;
 
-    .line 256
+    .line 254
     const-string v0, "my_prop_item_cnt"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 257
+    .line 255
     .local v0, "columnCnt":I
     const/4 v1, 0x1
 
@@ -1160,7 +1160,7 @@
 
     return-void
 
-    .line 258
+    .line 256
     :cond_0
     invoke-virtual {p0}, Lcom/agc/widget/OptionWindow;->getContentView()Landroid/view/View;
 
@@ -1174,11 +1174,11 @@
 
     check-cast v1, Landroid/widget/GridView;
 
-    .line 259
+    .line 257
     .local v1, "gridView":Landroid/widget/GridView;
     invoke-virtual {v1, v0}, Landroid/widget/GridView;->setNumColumns(I)V
 
-    .line 260
+    .line 258
     return-void
 .end method
 
@@ -1187,7 +1187,7 @@
     .param p0, "srcImage"    # Ljava/lang/String;
     .param p1, "lutFileName"    # Ljava/lang/String;
 
-    .line 218
+    .line 216
     const-string v0, "lib_lut_intensity_key"
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1196,7 +1196,7 @@
 
     move-result v0
 
-    .line 219
+    .line 217
     .local v0, "auxProfilePrefFloatValue":F
     const-string v1, "my_delete_picture_ifuselut"
 
@@ -1216,7 +1216,7 @@
     :goto_0
     move v1, v2
 
-    .line 220
+    .line 218
     .local v1, "newFileWithLutName":Z
     invoke-static {p0, p1, v0, v1}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;FZ)Ljava/lang/String;
 
@@ -1232,7 +1232,7 @@
     .param p2, "auxProfilePrefFloatValue"    # F
     .param p3, "newFileWithLutName"    # Z
 
-    .line 238
+    .line 236
     if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1249,7 +1249,7 @@
 
     goto/16 :goto_1
 
-    .line 239
+    .line 237
     :cond_0
     const-string v0, "/"
 
@@ -1281,17 +1281,17 @@
 
     move-result-object p1
 
-    .line 240
+    .line 238
     :cond_1
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 241
+    .line 239
     .local v0, "lutFile":Ljava/io/File;
     move-object v1, p0
 
-    .line 242
+    .line 240
     .local v1, "newFile":Ljava/lang/String;
     if-eqz p3, :cond_2
 
@@ -1361,7 +1361,7 @@
 
     move-result-object v1
 
-    .line 243
+    .line 241
     :cond_2
     invoke-static {p0}, Lnan/ren/util/ImageUtil;->getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
@@ -1371,7 +1371,7 @@
 
     move-result-object v2
 
-    .line 244
+    .line 242
     .local v2, "result":Landroid/graphics/Bitmap;
     const-string v3, "pref_qjpg_key"
 
@@ -1383,12 +1383,12 @@
 
     invoke-static {v2, v1, v3}, Lnan/ren/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
 
-    .line 245
+    .line 243
     new-instance v3, Ljava/io/File;
 
     invoke-direct {v3, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 246
+    .line 244
     .local v3, "f":Ljava/io/File;
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
@@ -1408,10 +1408,10 @@
 
     if-eqz p3, :cond_3
 
-    .line 247
+    .line 245
     invoke-static {v1, p0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 248
+    .line 246
     new-instance v4, Ljava/io/File;
 
     invoke-direct {v4, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -1420,15 +1420,15 @@
 
     goto :goto_0
 
-    .line 250
+    .line 248
     :cond_3
     move-object v1, p0
 
-    .line 252
+    .line 250
     :goto_0
     return-object v1
 
-    .line 238
+    .line 236
     .end local v0    # "lutFile":Ljava/io/File;
     .end local v1    # "newFile":Ljava/lang/String;
     .end local v2    # "result":Landroid/graphics/Bitmap;
@@ -1444,7 +1444,7 @@
     .param p1, "lutFileName"    # Ljava/lang/String;
     .param p2, "auxProfilePrefFloatValue"    # F
 
-    .line 224
+    .line 222
     if-eqz p1, :cond_2
 
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -1459,7 +1459,7 @@
 
     goto :goto_1
 
-    .line 225
+    .line 223
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1519,18 +1519,18 @@
 
     move-result-object v0
 
-    .line 226
+    .line 224
     .local v0, "newFile":Ljava/lang/String;
     const-string v1, ""
 
     invoke-static {p0, v0, p1, p2, v1}, Lagc/Agc;->processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
 
-    .line 227
+    .line 225
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 228
+    .line 226
     .local v1, "f":Ljava/io/File;
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
@@ -1548,10 +1548,10 @@
 
     if-lez v2, :cond_1
 
-    .line 229
+    .line 227
     invoke-static {v0, p0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 230
+    .line 228
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -1560,15 +1560,15 @@
 
     goto :goto_0
 
-    .line 232
+    .line 230
     :cond_1
     move-object v0, p0
 
-    .line 234
+    .line 232
     :goto_0
     return-object v0
 
-    .line 224
+    .line 222
     .end local v0    # "newFile":Ljava/lang/String;
     .end local v1    # "f":Ljava/io/File;
     :cond_2
@@ -1580,18 +1580,18 @@
     .locals 11
     .param p0, "preferenceFragment"    # Landroid/preference/PreferenceFragment;
 
-    .line 328
+    .line 326
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
 
-    .line 329
+    .line 327
     .local v0, "preferenceScreen":Landroid/preference/PreferenceScreen;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 330
+    .line 328
     :cond_0
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getKey()Ljava/lang/String;
 
@@ -1605,7 +1605,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 331
+    .line 329
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
@@ -1618,16 +1618,16 @@
 
     check-cast v1, Landroid/preference/ListPreference;
 
-    .line 332
+    .line 330
     .local v1, "listPreference":Landroid/preference/ListPreference;
     if-eqz v1, :cond_2
 
-    .line 333
+    .line 331
     invoke-static {}, Lnan/ren/util/WaterMarkUtil;->getAllWmConfList()Lnan/ren/util/JSONArray;
 
     move-result-object v2
 
-    .line 334
+    .line 332
     .local v2, "allConfList":Lnan/ren/util/JSONArray;
     if-eqz v2, :cond_2
 
@@ -1637,7 +1637,7 @@
 
     if-nez v3, :cond_2
 
-    .line 335
+    .line 333
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -1650,7 +1650,7 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 336
+    .line 334
     .local v3, "EntriesList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     new-instance v4, Ljava/util/ArrayList;
 
@@ -1664,13 +1664,13 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 337
+    .line 335
     .local v4, "EntryValuesList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 338
+    .line 336
     .local v5, "indexUnName":I
     const/4 v6, 0x0
 
@@ -1682,12 +1682,12 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 339
+    .line 337
     invoke-virtual {v2, v6}, Lnan/ren/util/JSONArray;->getJSONObject(I)Lnan/ren/util/JSONObject;
 
     move-result-object v7
 
-    .line 340
+    .line 338
     .local v7, "conf":Lnan/ren/util/JSONObject;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -1713,11 +1713,11 @@
 
     move-result-object v8
 
-    .line 341
+    .line 339
     .local v8, "name":Ljava/lang/String;
     invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 342
+    .line 340
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -1738,19 +1738,19 @@
 
     invoke-interface {v4, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 343
+    .line 341
     nop
 
     .end local v7    # "conf":Lnan/ren/util/JSONObject;
     .end local v8    # "name":Ljava/lang/String;
     add-int/lit8 v5, v5, 0x1
 
-    .line 338
+    .line 336
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 345
+    .line 343
     .end local v6    # "i":I
     :cond_1
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -1759,7 +1759,7 @@
 
     new-array v6, v6, [Ljava/lang/CharSequence;
 
-    .line 346
+    .line 344
     .local v6, "Entries":[Ljava/lang/CharSequence;
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -1767,7 +1767,7 @@
 
     new-array v7, v7, [Ljava/lang/CharSequence;
 
-    .line 347
+    .line 345
     .local v7, "EntryValues":[Ljava/lang/CharSequence;
     invoke-interface {v3, v6}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -1777,7 +1777,7 @@
 
     invoke-virtual {v1, v8}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 348
+    .line 346
     invoke-interface {v4, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v8
@@ -1786,7 +1786,7 @@
 
     invoke-virtual {v1, v8}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 354
+    .line 352
     .end local v1    # "listPreference":Landroid/preference/ListPreference;
     .end local v2    # "allConfList":Lnan/ren/util/JSONArray;
     .end local v3    # "EntriesList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"

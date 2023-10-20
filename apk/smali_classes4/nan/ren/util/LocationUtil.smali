@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 15
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -17,10 +17,10 @@
     .locals 9
     .param p0, "coordinate"    # D
 
-    .line 94
+    .line 95
     double-to-int v0, p0
 
-    .line 95
+    .line 96
     .local v0, "degree":I
     int-to-double v1, v0
 
@@ -32,7 +32,7 @@
 
     double-to-int v1, v1
 
-    .line 96
+    .line 97
     .local v1, "minute":I
     int-to-double v5, v0
 
@@ -48,7 +48,7 @@
 
     mul-double/2addr v5, v2
 
-    .line 97
+    .line 98
     .local v5, "second":D
     new-instance v2, Ljava/text/DecimalFormat;
 
@@ -56,7 +56,7 @@
 
     invoke-direct {v2, v3}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 98
+    .line 99
     .local v2, "decimalFormat":Ljava/text/DecimalFormat;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -113,14 +113,14 @@
     .locals 10
     .param p0, "digitalDegree"    # D
 
-    .line 130
+    .line 135
     const-wide/high16 v0, 0x404e000000000000L    # 60.0
 
-    .line 131
+    .line 136
     .local v0, "num":D
     double-to-int v2, p0
 
-    .line 132
+    .line 137
     .local v2, "degree":I
     int-to-double v3, v2
 
@@ -128,11 +128,11 @@
 
     mul-double/2addr v3, v0
 
-    .line 133
+    .line 138
     .local v3, "tmp":D
     double-to-int v5, v3
 
-    .line 134
+    .line 139
     .local v5, "minute":I
     int-to-double v6, v5
 
@@ -146,7 +146,7 @@
 
     double-to-int v6, v6
 
-    .line 135
+    .line 140
     .local v6, "second":I
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -191,30 +191,30 @@
     .locals 12
     .param p0, "l"    # Landroid/location/Location;
 
-    .line 82
+    .line 83
     invoke-virtual {p0}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v0
 
-    .line 83
+    .line 84
     .local v0, "latitude":D
     invoke-virtual {p0}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v2
 
-    .line 84
+    .line 85
     .local v2, "longitude":D
     invoke-static {v0, v1}, Lnan/ren/util/LocationUtil;->convertToDMS(D)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 85
+    .line 86
     .local v4, "latString":Ljava/lang/String;
     invoke-static {v2, v3}, Lnan/ren/util/LocationUtil;->convertToDMS(D)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 86
+    .line 87
     .local v5, "lonString":Ljava/lang/String;
     new-instance v6, Ljava/text/DecimalFormat;
 
@@ -222,7 +222,7 @@
 
     invoke-direct {v6, v7}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 87
+    .line 88
     .local v6, "decimalFormat":Ljava/text/DecimalFormat;
     invoke-virtual {p0}, Landroid/location/Location;->getAltitude()D
 
@@ -232,7 +232,7 @@
 
     move-result-object v7
 
-    .line 88
+    .line 89
     .local v7, "altitudeString":Ljava/lang/String;
     const-wide/16 v8, 0x0
 
@@ -247,7 +247,7 @@
     :cond_0
     const-string v10, "S"
 
-    .line 89
+    .line 90
     .local v10, "latDirection":Ljava/lang/String;
     :goto_0
     cmpl-double v8, v2, v8
@@ -261,7 +261,7 @@
     :cond_1
     const-string v8, "W"
 
-    .line 90
+    .line 91
     .local v8, "lonDirection":Ljava/lang/String;
     :goto_1
     new-instance v9, Ljava/lang/StringBuilder;
@@ -315,12 +315,12 @@
     .locals 7
     .param p0, "exifInterface"    # Landroid/media/ExifInterface;
 
-    .line 61
+    .line 62
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 62
+    .line 63
     .local v0, "sb":Ljava/lang/StringBuilder;
     const-string v1, ""
 
@@ -333,39 +333,39 @@
     .local v3, "latRef":Ljava/lang/String;
     const-string v4, "E"
 
-    .line 63
+    .line 64
     .local v4, "logRef":Ljava/lang/String;
     if-eqz p0, :cond_0
 
-    .line 64
+    .line 65
     const-string v5, "GPSLatitude"
 
     invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 65
+    .line 66
     const-string v5, "GPSLongitude"
 
     invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 66
+    .line 67
     const-string v5, "GPSLatitudeRef"
 
     invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 67
+    .line 68
     const-string v5, "GPSLongitudeRef"
 
     invoke-virtual {p0, v5}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 69
+    .line 70
     :cond_0
     if-eqz v1, :cond_1
 
@@ -385,7 +385,7 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 70
+    .line 71
     :cond_1
     if-eqz v3, :cond_2
 
@@ -401,7 +401,7 @@
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 71
+    .line 72
     :cond_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
@@ -415,7 +415,7 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 72
+    .line 73
     :cond_3
     if-eqz v2, :cond_4
 
@@ -435,7 +435,7 @@
 
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 73
+    .line 74
     :cond_4
     if-eqz v4, :cond_5
 
@@ -451,7 +451,7 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 74
+    .line 75
     :cond_5
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -463,12 +463,12 @@
 .method public static getGpsLocalInfo()Ljava/lang/String;
     .locals 2
 
-    .line 77
+    .line 78
     invoke-static {}, Lnan/ren/util/LocationUtil;->getLocation()Landroid/location/Location;
 
     move-result-object v0
 
-    .line 78
+    .line 79
     .local v0, "l":Landroid/location/Location;
     if-nez v0, :cond_0
 
@@ -476,7 +476,7 @@
 
     return-object v1
 
-    .line 79
+    .line 80
     :cond_0
     invoke-static {v0}, Lnan/ren/util/LocationUtil;->formatGPSData(Landroid/location/Location;)Ljava/lang/String;
 
@@ -488,7 +488,7 @@
 .method public static getLocation()Landroid/location/Location;
     .locals 3
 
-    .line 32
+    .line 33
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     const-string v1, "location"
@@ -499,7 +499,7 @@
 
     check-cast v0, Landroid/location/LocationManager;
 
-    .line 34
+    .line 35
     .local v0, "locationManager":Landroid/location/LocationManager;
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
@@ -513,7 +513,7 @@
 
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
-    .line 35
+    .line 36
     const-string v2, "android.permission.ACCESS_COARSE_LOCATION"
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
@@ -522,19 +522,19 @@
 
     if-eqz v1, :cond_0
 
-    .line 36
+    .line 37
     const-string v1, "===========getLocation has no permission==========="
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 37
+    .line 38
     invoke-static {}, Lnan/ren/util/LocationUtil;->newLocation()Landroid/location/Location;
 
     move-result-object v1
 
     return-object v1
 
-    .line 39
+    .line 40
     :cond_0
     const-string v1, "gps"
 
@@ -542,7 +542,7 @@
 
     move-result-object v1
 
-    .line 40
+    .line 41
     .local v1, "location":Landroid/location/Location;
     if-nez v1, :cond_1
 
@@ -552,7 +552,7 @@
 
     move-result-object v1
 
-    .line 41
+    .line 42
     :cond_1
     return-object v1
 .end method
@@ -560,27 +560,27 @@
 .method public static getLocationInfo()Ljava/lang/String;
     .locals 5
 
-    .line 46
+    .line 47
     invoke-static {}, Lnan/ren/util/LocationUtil;->getLocation()Landroid/location/Location;
 
     move-result-object v0
 
-    .line 47
+    .line 48
     .local v0, "location":Landroid/location/Location;
     new-instance v1, Ljava/lang/StringBuffer;
 
     invoke-direct {v1}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 48
+    .line 49
     .local v1, "editText":Ljava/lang/StringBuffer;
     if-eqz v0, :cond_0
 
-    .line 49
+    .line 50
     const-string v2, "\u8bbe\u5907\u4f4d\u7f6e\u4fe1\u606f\n\n\u65f6\u95f4\uff1a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 50
+    .line 51
     new-instance v2, Ljava/text/SimpleDateFormat;
 
     const-string v3, "yyyy/MM/dd HH:mm:ss"
@@ -601,43 +601,43 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 51
+    .line 52
     const-string v2, "\n\u7ecf\u5ea6\uff1a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 52
+    .line 53
     invoke-virtual {v0}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v2
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuffer;->append(D)Ljava/lang/StringBuffer;
 
-    .line 53
+    .line 54
     const-string v2, "\n\u7eac\u5ea6\uff1a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 54
+    .line 55
     invoke-virtual {v0}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v2
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuffer;->append(D)Ljava/lang/StringBuffer;
 
-    .line 55
+    .line 56
     const-string v2, "\n\u6d77\u62d4\uff1a"
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 56
+    .line 57
     invoke-virtual {v0}, Landroid/location/Location;->getAltitude()D
 
     move-result-wide v2
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuffer;->append(D)Ljava/lang/StringBuffer;
 
-    .line 58
+    .line 59
     :cond_0
     invoke-virtual {v1}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
 
@@ -646,17 +646,371 @@
     return-object v2
 .end method
 
+.method public static getRegeo(Landroid/media/ExifInterface;)Lnan/ren/util/JSONObject;
+    .locals 5
+    .param p0, "exi"    # Landroid/media/ExifInterface;
+
+    .line 146
+    const/4 v0, 0x2
+
+    new-array v0, v0, [F
+
+    .line 147
+    .local v0, "latLon":[F
+    invoke-virtual {p0, v0}, Landroid/media/ExifInterface;->getLatLong([F)Z
+
+    .line 148
+    const/4 v1, 0x0
+
+    aget v2, v0, v1
+
+    const/4 v3, 0x0
+
+    cmpl-float v2, v2, v3
+
+    if-eqz v2, :cond_1
+
+    const/4 v2, 0x1
+
+    aget v4, v0, v2
+
+    cmpl-float v3, v4, v3
+
+    if-nez v3, :cond_0
+
+    goto :goto_0
+
+    .line 150
+    :cond_0
+    :try_start_0
+    aget v2, v0, v2
+
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v2
+
+    aget v1, v0, v1
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-static {v2, v1}, Lnan/ren/util/LocationUtil;->getRegeo(Ljava/lang/Float;Ljava/lang/Float;)Lnan/ren/util/JSONObject;
+
+    move-result-object v1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v1
+
+    .line 151
+    :catch_0
+    move-exception v1
+
+    .line 154
+    new-instance v1, Lnan/ren/util/JSONObject;
+
+    invoke-direct {v1}, Lnan/ren/util/JSONObject;-><init>()V
+
+    return-object v1
+
+    .line 148
+    :cond_1
+    :goto_0
+    new-instance v1, Lnan/ren/util/JSONObject;
+
+    invoke-direct {v1}, Lnan/ren/util/JSONObject;-><init>()V
+
+    return-object v1
+.end method
+
+.method public static getRegeo(Ljava/lang/Float;Ljava/lang/Float;)Lnan/ren/util/JSONObject;
+    .locals 14
+    .param p0, "lon"    # Ljava/lang/Float;
+    .param p1, "lat"    # Ljava/lang/Float;
+
+    .line 179
+    const-string v0, "citycode"
+
+    const-string v1, "district"
+
+    const-string v2, "city"
+
+    const-string v3, "province"
+
+    const-string v4, "country"
+
+    const-string v5, "regeocode"
+
+    const-string v6, ""
+
+    if-eqz p0, :cond_0
+
+    if-eqz p0, :cond_0
+
+    .line 180
+    :try_start_0
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v8, "https://restapi.amap.com/v3/geocode/regeo?location="
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, ","
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, "&key=027d61517500da8cea7476dbc06721af"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 181
+    .local v7, "url":Ljava/lang/String;
+    invoke-static {v7}, Lcom/agc/net/NetworkUtil;->doGet(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 182
+    .local v8, "json":Ljava/lang/String;
+    new-instance v9, Lnan/ren/util/JSONObject;
+
+    invoke-direct {v9, v8}, Lnan/ren/util/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 183
+    .local v9, "jsonObj":Lnan/ren/util/JSONObject;
+    const-string v10, "1"
+
+    const-string v11, "status"
+
+    const-string v12, "0"
+
+    invoke-virtual {v9, v11, v12}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_0
+
+    invoke-virtual {v9, v5}, Lnan/ren/util/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-eqz v10, :cond_0
+
+    .line 184
+    invoke-virtual {v9, v5}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
+
+    move-result-object v5
+
+    .line 185
+    .local v5, "regeocode":Lnan/ren/util/JSONObject;
+    const-string v10, "addressComponent"
+
+    invoke-virtual {v5, v10}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
+
+    move-result-object v10
+
+    .line 186
+    .local v10, "component":Lnan/ren/util/JSONObject;
+    new-instance v11, Lnan/ren/util/JSONObject;
+
+    invoke-direct {v11}, Lnan/ren/util/JSONObject;-><init>()V
+
+    .line 187
+    .local v11, "result":Lnan/ren/util/JSONObject;
+    const-string v12, "address"
+
+    const-string v13, "formatted_address"
+
+    invoke-virtual {v5, v13, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v13
+
+    invoke-virtual {v11, v12, v13}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 188
+    invoke-virtual {v10, v4, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v4, v12}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 189
+    invoke-virtual {v10, v3, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v11, v3, v4}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 190
+    invoke-virtual {v10, v2, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v11, v2, v3}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 191
+    invoke-virtual {v10, v1, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 192
+    const-string v1, "street"
+
+    const-string v2, "township"
+
+    invoke-virtual {v10, v2, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 193
+    const-string v1, "areas"
+
+    const-string v2, "businessAreas"
+
+    invoke-virtual {v10, v2}, Lnan/ren/util/JSONObject;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 194
+    const-string v1, "zipcode"
+
+    const-string v2, "adcode"
+
+    invoke-virtual {v10, v2, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+
+    .line 195
+    invoke-virtual {v10, v0, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v11, v0, v1}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 196
+    return-object v11
+
+    .line 199
+    .end local v5    # "regeocode":Lnan/ren/util/JSONObject;
+    .end local v7    # "url":Ljava/lang/String;
+    .end local v8    # "json":Ljava/lang/String;
+    .end local v9    # "jsonObj":Lnan/ren/util/JSONObject;
+    .end local v10    # "component":Lnan/ren/util/JSONObject;
+    .end local v11    # "result":Lnan/ren/util/JSONObject;
+    :catch_0
+    move-exception v0
+
+    :cond_0
+    nop
+
+    .line 200
+    new-instance v0, Lnan/ren/util/JSONObject;
+
+    invoke-direct {v0}, Lnan/ren/util/JSONObject;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static main([Ljava/lang/String;)V
+    .locals 5
+    .param p0, "args"    # [Ljava/lang/String;
+
+    .line 205
+    const-wide v0, 0x405e0b7ff36ac648L    # 120.17968450000001
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v0
+
+    .line 206
+    .local v0, "lon":Ljava/lang/Double;
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v1
+
+    invoke-static {v1, v2}, Lnan/ren/util/LocationUtil;->convertToDMS(D)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 207
+    .local v1, "dms":Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Lnan/ren/util/LocationUtil;->degressToString(D)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 208
+    .local v2, "d2":Ljava/lang/String;
+    sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    invoke-virtual {v3, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 209
+    sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    invoke-virtual {v3, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 210
+    sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
+
+    invoke-static {v2}, Lnan/ren/util/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+
+    .line 211
+    return-void
+.end method
+
 .method public static newLocation()Landroid/location/Location;
     .locals 3
 
-    .line 17
+    .line 19
     new-instance v0, Landroid/location/Location;
 
     const-string v1, "xxx"
 
     invoke-direct {v0, v1}, Landroid/location/Location;-><init>(Ljava/lang/String;)V
 
-    .line 18
+    .line 20
     .local v0, "l":Landroid/location/Location;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -664,25 +1018,25 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setTime(J)V
 
-    .line 19
+    .line 21
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/location/Location;->setAccuracy(F)V
 
-    .line 20
+    .line 22
     const-wide/high16 v1, 0x3ff0000000000000L    # 1.0
 
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setAltitude(D)V
 
-    .line 21
+    .line 23
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setLatitude(D)V
 
-    .line 22
+    .line 24
     invoke-virtual {v0, v1, v2}, Landroid/location/Location;->setLongitude(D)V
 
-    .line 29
+    .line 30
     return-object v0
 .end method
 
@@ -690,7 +1044,7 @@
     .locals 14
     .param p0, "str"    # Ljava/lang/String;
 
-    .line 116
+    .line 121
     const-string v0, "/"
 
     const/4 v1, -0x1
@@ -699,7 +1053,7 @@
 
     move-result-object v0
 
-    .line 117
+    .line 122
     .local v0, "split":[Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -711,7 +1065,7 @@
 
     move-result-object v3
 
-    .line 118
+    .line 123
     .local v3, "split2":[Ljava/lang/String;
     const/4 v5, 0x2
 
@@ -721,7 +1075,7 @@
 
     move-result-object v4
 
-    .line 119
+    .line 124
     .local v4, "split3":[Ljava/lang/String;
     const/4 v6, 0x0
 
@@ -731,7 +1085,7 @@
 
     move-result v7
 
-    .line 120
+    .line 125
     .local v7, "parseInt":I
     aget-object v8, v3, v2
 
@@ -739,7 +1093,7 @@
 
     move-result v8
 
-    .line 121
+    .line 126
     .local v8, "parseInt2":I
     aget-object v9, v4, v2
 
@@ -767,15 +1121,15 @@
 
     move-result-object v1
 
-    .line 122
+    .line 127
     .local v1, "split4":[Ljava/lang/String;
     aget-object v9, v1, v6
 
-    .line 123
+    .line 128
     .local v9, "str2":Ljava/lang/String;
     aget-object v10, v1, v2
 
-    .line 124
+    .line 129
     .local v10, "str3":Ljava/lang/String;
     new-array v11, v11, [Ljava/lang/Integer;
 
@@ -808,8 +1162,8 @@
     .locals 12
     .param p0, "str"    # Ljava/lang/String;
 
-    .line 101
-    if-eqz p0, :cond_1
+    .line 102
+    if-eqz p0, :cond_2
 
     invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
@@ -817,9 +1171,9 @@
 
     if-eqz v0, :cond_0
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 102
+    .line 103
     :cond_0
     const-string v0, "/"
 
@@ -829,7 +1183,7 @@
 
     move-result-object v0
 
-    .line 103
+    .line 104
     .local v0, "split":[Ljava/lang/String;
     const/4 v2, 0x1
 
@@ -841,7 +1195,7 @@
 
     move-result-object v3
 
-    .line 104
+    .line 105
     .local v3, "split2":[Ljava/lang/String;
     const/4 v5, 0x2
 
@@ -851,7 +1205,7 @@
 
     move-result-object v4
 
-    .line 105
+    .line 106
     .local v4, "split3":[Ljava/lang/String;
     const/4 v5, 0x0
 
@@ -861,7 +1215,7 @@
 
     move-result v6
 
-    .line 106
+    .line 107
     .local v6, "parseInt":I
     aget-object v7, v3, v2
 
@@ -869,7 +1223,7 @@
 
     move-result v7
 
-    .line 107
+    .line 108
     .local v7, "parseInt2":I
     aget-object v8, v4, v2
 
@@ -897,61 +1251,82 @@
 
     move-result-object v1
 
-    .line 108
+    .line 109
     .local v1, "split4":[Ljava/lang/String;
     aget-object v5, v1, v5
 
-    .line 109
+    .line 110
     .local v5, "str2":Ljava/lang/String;
     aget-object v2, v1, v2
 
-    .line 110
+    .line 111
     .local v2, "str3":Ljava/lang/String;
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, "\u00b0"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, "\'"
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
     invoke-static {v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result v8
+
+    .line 112
+    .local v8, "parseInt3":I
+    if-eqz v2, :cond_1
+
+    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v9
+
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v9
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/16 v10, 0x1388
 
-    move-result-object v8
+    if-lt v9, v10, :cond_1
 
-    const-string v9, "\""
+    .line 113
+    add-int/lit8 v8, v8, 0x1
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 115
+    :cond_1
+    new-instance v9, Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v9
 
-    return-object v8
+    const-string v10, "\u00b0"
 
-    .line 101
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, "\'"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, "\""
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v9
+
+    return-object v9
+
+    .line 102
     .end local v0    # "split":[Ljava/lang/String;
     .end local v1    # "split4":[Ljava/lang/String;
     .end local v2    # "str3":Ljava/lang/String;
@@ -960,7 +1335,8 @@
     .end local v5    # "str2":Ljava/lang/String;
     .end local v6    # "parseInt":I
     .end local v7    # "parseInt2":I
-    :cond_1
+    .end local v8    # "parseInt3":I
+    :cond_2
     :goto_0
     const-string v0, ""
 

@@ -3,12 +3,12 @@
 .source "WmActivity.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/WmActivity;->showParamDialog()V
+    value = Lnan/ren/activity/WmActivity;->onClick(Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 432
+    .line 356
     iput-object p1, p0, Lnan/ren/activity/WmActivity$3;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,14 +36,14 @@
 
 
 # virtual methods
-.method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "i"    # I
+.method public run()V
+    .locals 1
 
-    .line 435
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+    .line 359
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$3;->this$0:Lnan/ren/activity/WmActivity;
 
-    .line 436
+    invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->showParamDialog()V
+
+    .line 360
     return-void
 .end method
