@@ -1,11 +1,14 @@
 .class Lnan/ren/activity/WmActivity$11;
-.super Landroid/widget/ArrayAdapter;
+.super Ljava/lang/Object;
 .source "WmActivity.java"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/WmActivity;->getUseCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
+    value = Lnan/ren/activity/WmActivity;->getLogoCfgView(Ljava/lang/String;Z)Landroid/view/ViewGroup;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,42 +22,31 @@
 
 
 # direct methods
-.method constructor <init>(Lnan/ren/activity/WmActivity;Landroid/content/Context;I[Ljava/lang/Object;)V
+.method constructor <init>(Lnan/ren/activity/WmActivity;)V
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
-    .param p2, "arg0"    # Landroid/content/Context;
-    .param p3, "arg1"    # I
-    .param p4, "arg2"    # [Ljava/lang/Object;
 
-    .line 684
+    .line 663
     iput-object p1, p0, Lnan/ren/activity/WmActivity$11;->this$0:Lnan/ren/activity/WmActivity;
 
-    invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+.method public onClick(Landroid/view/View;)V
     .locals 2
-    .param p1, "position"    # I
-    .param p2, "convertView"    # Landroid/view/View;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
+    .param p1, "view"    # Landroid/view/View;
 
-    .line 687
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .line 666
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$11;->this$0:Lnan/ren/activity/WmActivity;
 
-    move-result-object v0
+    const/4 v1, 0x3
 
-    check-cast v0, Landroid/widget/TextView;
+    invoke-virtual {v0, v1}, Lnan/ren/activity/WmActivity;->selectPic(I)V
 
-    .line 688
-    .local v0, "textView":Landroid/widget/TextView;
-    iget-object v1, p0, Lnan/ren/activity/WmActivity$11;->this$0:Lnan/ren/activity/WmActivity;
-
-    invoke-virtual {v1, v0}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
-
-    .line 689
-    return-object v0
+    .line 667
+    return-void
 .end method
