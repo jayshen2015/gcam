@@ -19,6 +19,8 @@ public class FileUtil {
             return file.delete();
         }catch (Exception ex){
             return false;
+        }catch (Throwable ex){
+            return false;
         }
     }
     public static boolean delete(String file){
@@ -26,7 +28,6 @@ public class FileUtil {
     }
     public static boolean fileCopy(File oldf,File newf){
         try {
-            G.log("file copy ："+oldf.getName()+" old exists:"+oldf.exists()+" to "+newf.getName()+" new exists:"+newf.exists());
             //如果原文件不存在
             if (!oldf.exists()) return false;
             if(!newf.getParentFile().exists())newf.getParentFile().mkdirs();

@@ -51,14 +51,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         Globals.context=getApplicationContext();
         setContentView(R.layout.activity_main);
-        imageView=findViewById(R.id.imageView);
-        Bitmap bit=  WaterMarkUtil.getWaterMarkBitMapByWmConf("/sdcard/DCIM/b.jpg");
-        imageView.setImageDrawable(ImageUtil.bitmap2Drawable(bit));
+//        imageView=findViewById(R.id.imageView);
+//        Bitmap bit=  WaterMarkUtil.getWaterMarkBitMapByWmConf("/sdcard/DCIM/b.jpg");
+//        imageView.setImageDrawable(ImageUtil.bitmap2Drawable(bit));
 
 
 //        imageView2=findViewById(R.id.imageView2);
 //        imageView2.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
-        bind();
+   //    bind();
 
 //        ExifInterface exi= ExifInterfaceUtil.get("/sdcard/download/c.jpg");
 //        String a=exi.getAttribute("DateTime");

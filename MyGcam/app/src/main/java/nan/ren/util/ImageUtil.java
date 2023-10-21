@@ -42,6 +42,7 @@ public class ImageUtil {
     {
         try {
             if(fileName==null||fileName.trim().length()<1)return null;
+            if(fileName.startsWith("/"))return fileName;
             String logoPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + fileName;
             if (!new File(logoPath).exists()) {
                 try {

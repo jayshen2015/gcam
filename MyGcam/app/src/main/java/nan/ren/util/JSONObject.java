@@ -27,6 +27,20 @@ public class JSONObject extends HashMap<String,Object> {
         super.put(key,o);
         return this;
     }
+    public JSONObject addAll(JSONObject addObj){
+        return addAll(addObj,true);
+    }
+    public JSONObject addAll(JSONObject addObj,boolean overFlow){
+            if(addObj==null||addObj.isEmpty())return this;
+            Iterator<String> keyIt=addObj.keySet().iterator();
+            while (keyIt.hasNext()){
+                String k=keyIt.next();
+                if(!overFlow && hasIgnoreCase(k))continue;
+                this.put(k,addObj.get(k));
+            }
+            return this;
+    }
+
     public boolean isNull(String key){
         return (!this.containsKey(key))||(this.get(key)==null);
     }
@@ -82,6 +96,14 @@ public class JSONObject extends HashMap<String,Object> {
 
     public boolean has(String key){
         return this.containsKey(key);
+    }
+    public boolean hasIgnoreCase(String key){
+        if(has(key))return true;
+        Iterator<String> keyIt= keySet().iterator();
+        while (keyIt.hasNext()){
+            if(keyIt.next().equalsIgnoreCase(key))return true;
+        }
+        return false;
     }
 
     public String toString(){

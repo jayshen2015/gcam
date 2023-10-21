@@ -74,7 +74,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
        mainConfigView.setOrientation(LinearLayout.VERTICAL);
        mainConfigView.setBackgroundColor(Color.parseColor("#aa998877"));
        mainConfigView.setMinimumHeight(200);
-       mainConfigView.setPadding(0,0,10,0);
+       mainConfigView.setPadding(0,20,10,0);
        gridLayout.addView(mainConfigView);
 
        secConfigView=new LinearLayout(this);
@@ -82,11 +82,23 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
        secConfigView.setOrientation(LinearLayout.VERTICAL);
        secConfigView.setBackgroundColor(Color.parseColor("#99776655"));
        secConfigView.setMinimumHeight(200);
-       secConfigView.setPadding(10,0,0,0);
+       secConfigView.setPadding(10,20,0,0);
        gridLayout.addView(secConfigView);
 
        scrollView.addView(gridLayout);
        linearLayout.addView(scrollView);
+       TextView mtv=new TextView(this);
+       mtv.setText("点击选择主配文件");
+       mainConfigView.addView(mtv);
+
+       TextView stv=new TextView(this);
+       stv.setText("点击选择副配文件");
+       secConfigView.addView(stv);
+       mainConfigView.setTag("mainCfg");
+       secConfigView.setTag("secCfg");
+       mainConfigView.setOnClickListener(this);
+       secConfigView.setOnClickListener(this);
+
        setContentView(linearLayout);
    }
 
@@ -106,8 +118,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
         tv.setText(cfgname);
         tv.setTag(index);
         tv.setGravity(Gravity.CENTER);
-   //     tv.setPadding(0,20,0,0);
-        tv.setMinHeight(70);
+        tv.setMinHeight(80);
         tv.setOnClickListener(this);
         setTextSize(tv);
         stv.setTextSize((int)(tv.getTextSize()*0.7));
@@ -119,24 +130,28 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
    }
 
     View getToolBarView(){
-        int btnCount=5;
+        int btnCount=4;
         LinearLayout linearLayout=new LinearLayout(this);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,70));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         linearLayout.addView(getButton("关闭","close",(screen_width/btnCount)/2-10));
         linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("选择主配置","mainCfg",screen_width/btnCount-10));
-        linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("选择副配置","secCfg",screen_width/btnCount-10));
-        linearLayout.addView(getSplitView(10));
-        foceShow=getButton("强制显示","0",screen_width/btnCount-10);
-        setFoceShow(false);
+        foceShow=getButton("包含隐藏(❌)","0",screen_width/btnCount-10);
         linearLayout.addView(foceShow);
-        linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("合并","hebing",(screen_width/btnCount)/2-10));
 
         linearLayout.addView(getSplitView(10));
+        igMobile=getButton("忽略机型(❌)","0",screen_width/btnCount-10);
+        linearLayout.addView(igMobile);
+        linearLayout.addView(getSplitView(10));
+        linearLayout.addView(getButton("合并","hebing",(screen_width/btnCount)/2-10));
+        linearLayout.addView(getSplitView(10));
         linearLayout.addView(getButton("导入配置","import",screen_width/btnCount));
+
+//
+//        linearLayout.addView(getButton("选择主配置","mainCfg",screen_width/btnCount-10));
+//        linearLayout.addView(getSplitView(10));
+//        linearLayout.addView(getButton("选择副配置","secCfg",screen_width/btnCount-10));
+//        linearLayout.addView(getSplitView(10));
 
         return linearLayout;
     }
@@ -187,7 +202,8 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
             return ;
         }
         StringBuffer result=new StringBuffer("<?xml version='1.0' encoding='utf-8' standalone='yes' ?>\n<map>\n");
-        result.append("<string name=\"pref_patch_profile_count_key\">"+(((mainIndexs.size()+secIndexs.size())/3)*3)+"</string>\n");
+        result.append("<string name=\"pref_patch_profile_count_key\">"+((((mainIndexs.size()+secIndexs.size())/3)+1)*3)+"</string>\n");
+
         result.append(getBaseConfig()).append("\n");
         result.append(getConfigTxt(0,mainIndexs,mainConfigTxt));
         result.append(getConfigTxt(mainIndexs.size(),secIndexs,secConfigTxt));
@@ -240,37 +256,38 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
             if(tmp.length()<1 || "<map>".equalsIgnoreCase(tmp) || "</map>".equalsIgnoreCase(tmp)
                     || tmp.toLowerCase().startsWith("<?xml version")
                     || tmp.toLowerCase().startsWith("<!--======no.")
-                    || tmp.toLowerCase().indexOf("patch_profile_count")>0)continue;
+                    || tmp.toLowerCase().indexOf("pref_patch_profile_count_key")>0)continue;
             if(tmp.toLowerCase().indexOf("_key_p")>0)continue;
-            baseConfigTxt.append(tmp).append("\n");
+            if(isIgMobile()){
+                if(  tmp.toLowerCase().startsWith("my_")
+                    ||tmp.toLowerCase().startsWith("pref_watermark")
+                    ||tmp.equalsIgnoreCase("pref_qjpg_key")
+                    ||tmp.equalsIgnoreCase("pref_camera_recordlocation_key")
+                    ||tmp.equalsIgnoreCase("pref_camera_sounds_key")
+                )  baseConfigTxt.append(tmp).append("\n");
+            }else {
+                baseConfigTxt.append(tmp).append("\n");
+            }
         }
         return replaceCameraIdListKey(baseConfigTxt.toString());
 
     }
     String replaceCameraIdListKey(String t){
-        for(int i =0;i<8;i++) {//name="pref_camera_id_list_key">
-            StringBuffer sb=new StringBuffer("<set name=\"pref_all_camera_id_list_key\">").append("\n");
-            StringBuffer sb2=new StringBuffer("<set name=\"pref_camera_id_list_key\">").append("\n");
-            for(int j=0;j<i;j++){
-                sb.append("<string>"+j+"</string>").append("\n");
-                sb2.append("<string>"+j+"</string>").append("\n");
+        if(t==null)return "";
+        String[] confStrArr=t.split("\n");
+        StringBuffer sb=new StringBuffer();
+        boolean add=true;
+    //过滤以下两个标签
+    //        <set name="pref_all_camera_id_list_key">
+    //        <set name="pref_camera_id_list_key">
+        for(String s : confStrArr){
+            if(s.toLowerCase().startsWith("<set ") && s.toLowerCase().indexOf("_camera_id_list_key")>0){
+                add=false;
             }
-            sb.append("</set>");
-            sb2.append("</set>");
-            t=t.replace(sb.toString(),"").replace(sb2.toString(),"");
+            if(add)sb.append(s).append("\n");
+            if("</set>".equalsIgnoreCase(s))add=true;
         }
-        for(int i =1;i<8;i++) {//name="pref_camera_id_list_key">
-            StringBuffer sb=new StringBuffer("<set name=\"pref_all_camera_id_list_key\">").append("\n");
-            StringBuffer sb2=new StringBuffer("<set name=\"pref_camera_id_list_key\">").append("\n");
-            for(int j=1;j<i;j++){
-                sb.append("<string>"+j+"</string>").append("\n");
-                sb2.append("<string>"+j+"</string>").append("\n");
-            }
-            sb.append("</set>");
-            sb2.append("</set>");
-            t=t.replace(sb.toString(),"").replace(sb2.toString(),"");
-        }
-        return t;
+        return sb.toString();
     }
 
     List<Integer> getSelectConfigIndexs(LinearLayout configView){
@@ -307,8 +324,11 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
               // selectFile(3);
                new ConfigLoader(this).onClick(view);
                return;
-           } else if ((((Button) view).getText().toString()).startsWith("强制显示")) {
+           } else if ((((Button) view).getText().toString()).startsWith("包含隐藏")) {
                setFoceShow(!isFoceShow());
+               return;
+           }else if ((((Button) view).getText().toString()).startsWith("忽略机型")) {
+               setIgMobile(!isIgMobile());
                return;
            }
 
@@ -331,6 +351,12 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
             l.setTag("U");
             l.setBackgroundColor(unSelectColor);
             l.getChildAt(0).setVisibility(View.GONE);
+        } else if ("mainCfg".equals(tag)) {
+            selectFile(1);
+            return;
+        } else if ("secCfg".equals(tag)) {
+            selectFile(2);
+            return;
         }
         return;
     }
@@ -384,11 +410,13 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
             keyList.add(Integer.parseInt(num));
         }
         Collections.sort(keyList);
+        view.removeAllViews();
         for(int i=0;i<keyList.size();i++){
             view.addView(getConfigView(keyList.get(i),i+"-"+map.get("lib_profile_title_key_p"+i)));
         }
     }
     void initConfigNameMap(String configTxt,boolean isMain){
+        mainConfigNameMap.clear();
         String[] lines=configTxt.split("\n");
         for(int i=0;i<lines.length;i++){
             String tmp=lines[i].trim();
@@ -406,17 +434,29 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    Button foceShow;
+    Button foceShow,igMobile;
     boolean isFoceShow(){
         return foceShow!=null&&foceShow.getTag().toString().equals("1");
     }
     void setFoceShow(boolean check){
         if(check){
             foceShow.setTag("1");
-            foceShow.setText("强制显示✔");
+            foceShow.setText("包含隐藏(✔)");
         }else{
             foceShow.setTag("0");
-            foceShow.setText("强制显示❌");
+            foceShow.setText("包含隐藏(❌)");
+        }
+    }
+    boolean isIgMobile(){
+        return igMobile!=null&&igMobile.getTag().toString().equals("1");
+    }
+    void setIgMobile(boolean check){
+        if(check){
+            igMobile.setTag("1");
+            igMobile.setText("忽略机型(✔)");
+        }else{
+            igMobile.setTag("0");
+            igMobile.setText("忽略机型(❌)");
         }
     }
     String[] getCameraIdList(){

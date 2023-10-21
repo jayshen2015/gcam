@@ -18,7 +18,6 @@ import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Size;
-
 import com.Utils.Pref;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -32,17 +31,19 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
-
 import nan.ren.G;
-
 public class WaterMarkUtil {
 
     private static Typeface DEFAULT_TYPEFACE=null;
 
     public static Typeface getDefaultTypeFace(){
-        if(DEFAULT_TYPEFACE==null)
-            DEFAULT_TYPEFACE=Typeface.createFromAsset(G.CONTEXT.getAssets(),"fonts/MiSans-Demibold.ttf");
-        return DEFAULT_TYPEFACE;
+        try {
+            if (DEFAULT_TYPEFACE == null)
+                DEFAULT_TYPEFACE = Typeface.createFromAsset(G.CONTEXT.getAssets(), "fonts/MiSans-Demibold.ttf");
+            return DEFAULT_TYPEFACE;
+        }catch (Exception ex){
+           return Typeface.DEFAULT;
+        }
     }
 
     public static String addWaterMark(String absolutePath){
@@ -79,6 +80,7 @@ public class WaterMarkUtil {
                 exb = new ExifInterface(absolutePath);
                 picinfo = getPicInfo(exb);
             } catch (IOException e) {
+
             }
             int waterMarkHeight = Pref.MenuValue("my_watermark_height", 450);
             int fontSize = Pref.MenuValue("my_watermark_fontsize", 80);
@@ -465,7 +467,7 @@ public class WaterMarkUtil {
             if (wmConfJson == null) wmConfJson= getVerticalWmConfJson(conf);
             if (wmConfJson == null) wmConfJson =conf;
         }
-        return wmConfJson;
+        return  getParamInitedConf(wmConfJson);
     }
 
     static Map<String,Integer[]> JIHEXXMAP=new HashMap<>();
@@ -475,8 +477,10 @@ public class WaterMarkUtil {
         JSONObject wmConfJson=WaterMarkUtil.getWmConfByBitMap(picBit);
         return getWaterMarkBitMapByWmConf(picBit,picExi,wmConfJson);
     }
+    static  JSONObject GPSLOCAL=null;
     public static Bitmap  getWaterMarkBitMapByWmConf(Bitmap picBit,ExifInterface picExi,JSONObject wmConfJson){
         try {
+            GPSLOCAL=null;
             JIHEXXMAP.clear();
             int width =picBit.getWidth();
             int height=450;
@@ -511,50 +515,24 @@ public class WaterMarkUtil {
             canvas.drawRect(rect,bgpaint);
             JSONArray list=wmConfJson.getJSONArray("list");
             if(list!=null&&list.length()>0){
+               list=initTextAndImages(list,wmConfJson,picExi,picBit);
+               list=initVisibles(list);
                 for(int i=0;i<list.length();i++){
-                    JSONObject conf=null;
-                    try{conf=list.getJSONObject(i);}catch (Exception ex){}
-                    if(conf==null)continue;
+                    JSONObject conf=list.getJSONObject(i);
+                    if(conf==null||conf.isEmpty() || conf.getInt("visible",1)==0)continue;
                     String id=conf.getString("id",conf.getString("ID","")).trim();
                     String drawType=conf.getString("drawType",conf.getString("drawtype","text"));//image , text ,line ,rect,circle
                     Paint paint=getPaintByConf(conf);
                     Integer[] jihexx=null;
                     if("text".equalsIgnoreCase(drawType)){
-                        String txt=conf.getString("text");
-                        String format=conf.getString("format");
-                        String txtFormat=getTextByFormat(txt,format,picExi);
+                        String text=conf.getString("text");
                         Rect txtRect=new Rect();
-                        paint.getTextBounds(txtFormat,0,txtFormat.length(),txtRect);
+                        paint.getTextBounds(text,0,text.length(),txtRect);
                         Point p=getPoint(conf,width,height,picBit.getWidth(),picBit.getHeight(),txtRect.width(),txtRect.height(),"x","y",paint);
-                        canvas.drawText(txtFormat,p.x+zx,p.y+zy,paint);
+                        canvas.drawText(text,p.x+zx,p.y+zy,paint);
                         jihexx=new Integer[]{p.x,p.y,txtRect.width(),txtRect.height()};
-                    }else if("image".equalsIgnoreCase(drawType)){
-                        String image=conf.getString("image");
-                        if(image==null||image.trim().isEmpty())continue;
-                        Bitmap bitmap=null;
-                        image=image.trim();
-                        if(image.equals("$")) {
-                            bitmap=picBit;
-                        }else{
-                            if (!image.startsWith("/")) image = G.BASE_AGC_PATH + "/" + image;
-                            bitmap = ImageUtil.getBitMap(image);
-                        }
-                        if(bitmap==null)continue;
-                        String sizeStr=conf.has("size")?conf.getString("size"):conf.getString("SIZE");
-                        if(sizeStr!=null&&!sizeStr.trim().isEmpty()){
-                            String[] sizeArr=sizeStr.indexOf("x")>-1?sizeStr.split("x"):sizeStr.split("X");
-                            if(sizeArr.length==2 &&(Integer.parseInt(sizeArr[0])>0||Integer.parseInt(sizeArr[1])>0)) {
-                                Size size = new Size(Integer.parseInt(sizeArr[0]), Integer.parseInt(sizeArr[1]));
-                                int w = size.getWidth(), h = size.getHeight();
-                                if (w < 1) {
-                                    w = (bitmap.getWidth() * size.getHeight()) / bitmap.getHeight();
-                                } else if (h < 1) {
-                                    h = (bitmap.getHeight() * size.getWidth()) / bitmap.getWidth();
-                                }
-                                bitmap = Bitmap.createScaledBitmap(bitmap, w, h, false);
-                            }
-                        }
-                        if(bitmap==null)continue;
+                    }else if("image".equalsIgnoreCase(drawType)) {
+                        Bitmap bitmap = (Bitmap)conf.get("bitmap");
                         Point p=getPoint(conf,width,height,picBit.getWidth(),picBit.getHeight(),bitmap.getWidth(),bitmap.getHeight(),"x","y",paint);
                         canvas.drawBitmap(bitmap,p.x+zx,p.y+zy,paint);
                         jihexx=new Integer[]{p.x,p.y,bitmap.getWidth(),bitmap.getHeight()};
@@ -589,6 +567,87 @@ public class WaterMarkUtil {
 
         return null;
     }
+
+
+    static JSONArray initVisibles(JSONArray list){
+        Map<String,Boolean> vsMap=new HashMap();
+        for(int i=0;i<list.size();i++) {
+            JSONObject oneConf=list.getJSONObject(i);
+            if(oneConf==null)continue;
+            //初始化visible属性
+            if (!oneConf.has("visible")) oneConf.put("visible", 1);
+            else {
+                String visb = oneConf.getString("visible", "0").trim();
+                boolean bv = false;
+                boolean not = visb.startsWith("!");
+                if (not) visb = visb.substring(1);
+                if ("true".equalsIgnoreCase(visb) || "1".equals(visb)) bv = true;
+                else bv = (vsMap.get(visb)==null?false:vsMap.get(visb));
+                if (not) oneConf.put("visible", bv ? 0 : 1);
+                else oneConf.put("visible", bv ? 1 : 0);
+            }
+            if(oneConf.has("id")){
+                vsMap.put(oneConf.getString("id"),oneConf.getInt("visible",1)==1);
+            }
+           list.set(i,oneConf);
+        }
+        return list;
+    }
+    static JSONArray initTextAndImages(JSONArray list,JSONObject wmConfJson,ExifInterface picExi,Bitmap picBit){
+        for(int i=0;i<list.length();i++) {
+            JSONObject conf=list.getJSONObject(i);
+            if (conf == null ) continue;
+            String drawType = conf.getString("drawType", conf.getString("drawtype", "text"));//image , text ,line ,rect,circle
+            if ("text".equalsIgnoreCase(drawType)) {
+                String txt = conf.getString("text");
+                String format = conf.getString("format");
+                String txtFormat = getTextByFormat(txt, format, picExi);
+                if(txtFormat==null||txtFormat.trim().isEmpty())conf.put("visible",0);
+                else conf.put("text",txtFormat.trim());
+            }else if("image".equalsIgnoreCase(drawType)) {
+                String image = conf.getString("image");
+                if (image == null || image.trim().isEmpty()) {
+                    conf.put("visible",0);
+                    continue;
+                }
+                Bitmap bitmap = null;
+                image = image.trim();
+                if (image.equals("$")) {
+                    bitmap = picBit;
+                } else {
+                    image=getTextByFormat(image,null,picExi);
+                    if (image.indexOf("/") < 0) {
+                        bitmap = ImageUtil.getMyLogo(image);
+                    } else {
+                        if (!image.startsWith("/")) image = G.BASE_AGC_PATH + "/" + image;
+                        bitmap = ImageUtil.getBitMap(image);
+                    }
+                }
+                String sizeStr=conf.has("size")?conf.getString("size"):conf.getString("SIZE");
+                if(bitmap!=null && sizeStr!=null&&!sizeStr.trim().isEmpty()){
+                    String[] sizeArr=sizeStr.indexOf("x")>-1?sizeStr.split("x"):sizeStr.split("X");
+                    if(sizeArr.length==2 &&(Integer.parseInt(sizeArr[0])>0||Integer.parseInt(sizeArr[1])>0)) {
+                        Size size = new Size(Integer.parseInt(sizeArr[0]), Integer.parseInt(sizeArr[1]));
+                        int w = size.getWidth(), h = size.getHeight();
+                        if (w < 1) {
+                            w = (bitmap.getWidth() * size.getHeight()) / bitmap.getHeight();
+                        } else if (h < 1) {
+                            h = (bitmap.getHeight() * size.getWidth()) / bitmap.getWidth();
+                        }
+                        bitmap = Bitmap.createScaledBitmap(bitmap, w, h, false);
+                    }
+                }
+                if(bitmap==null) {
+                    conf.put("visible",0);
+                }else{
+                    conf.put("bitmap",bitmap);
+                }
+            }
+            list.set(i,conf);
+        }
+        return list;
+    }
+
 
     static Point getPoint(JSONObject conf,int W,int H,int pw,int ph,int w,int h,String kx,String ky,Paint paint){
         String x=conf.getString(kx.toLowerCase(),conf.getString(kx.toUpperCase(),"0"));
@@ -644,7 +703,6 @@ public class WaterMarkUtil {
 
     static Integer getNumberByExpressionStr(String expres,int W,int H,int pw,int ph,int w,int h){
         if(expres==null||expres.trim().isEmpty())return 0;
-       // expres = expres.replace("%", "*"+H+"/100 ");
         if(JIHEXXMAP!=null && !JIHEXXMAP.isEmpty()){
             Iterator<String> keys=JIHEXXMAP.keySet().iterator();
             while(keys.hasNext()){
@@ -671,82 +729,127 @@ public class WaterMarkUtil {
         return CalcUtil.executeExpression(expres).intValue();
     }
     static String getTextByFormat(String text,String format,ExifInterface exi){
-        if(format==null||format.trim().isEmpty())return text;
-        if(text==null||format.trim().isEmpty())return format;
+        if(text==null||text.trim().isEmpty())return format==null?"":format.trim();
         Object[] os=getTextArray(text,exi);
+        if(format==null||format.trim().isEmpty()){
+            StringBuffer sb=new StringBuffer();
+            for(int i=0;i<os.length;i++){
+                sb.append(os[i]);
+                if(i<os.length-1)sb.append(",");
+            }
+            return sb.toString();
+        }
         return String.format(format,os);
     }
     static Object[] getTextArray(String text,ExifInterface exi){
         String[] textArr=text.replace(" ","").split(",");
         Object[] valueArr=new Object[textArr.length];
         for(int i=0;i<textArr.length;i++){
+            String attr = textArr[i];
+            attr=(attr==null?"":attr.trim());
+            Object v=attr;
             try {
-                String attr = textArr[i];
-                String v = exi.getAttribute(attr);
-                if (attr.startsWith("DateTime")) {
-                    valueArr[i] = new android.icu.text.SimpleDateFormat("yyyy:MM:dd HH:mm:ss").parse(v);
-                }else if(attr.equals("ExposureTime")){
-                    if(v!=null&&!v.isEmpty()) {
-                        double d = Double.parseDouble(v);
-                        StringBuilder sb=new StringBuilder();
-                        if (d > 1.0d) {
-                            sb.append(String.format(Locale.ROOT, "%.2f", d));
-                        } else if (d >= 0.1d) {
-                            sb.append("1/").append(new DecimalFormat("#").format(1.0d / d));
+                if(ExifInterfaceUtil.ExifInterface_Field_List.contains(attr)){
+                    attr="$"+attr;
+                }
+                if(attr.startsWith("$")) {
+                    v = exi.getAttribute(attr.substring(1));
+                    if (attr.startsWith("$DateTime")) {
+                        if(v==null||v.toString().trim().isEmpty())v=new Date();
+                        else v = new android.icu.text.SimpleDateFormat("yyyy:MM:dd HH:mm:ss").parse(v.toString());
+                    } else if (attr.equals("$ExposureTime")) {
+                        if (v != null&& !v.toString().trim().isEmpty()) {
+                            double d = Double.parseDouble(v.toString());
+                            StringBuilder sb = new StringBuilder();
+                            if (d > 1.0d) {
+                                sb.append(String.format(Locale.ROOT, "%.2f", d));
+                            } else if (d >= 0.1d) {
+                                sb.append("1/").append(new DecimalFormat("#").format(1.0d / d));
+                            } else {
+                                sb.append("1/").append(((int) (1.0d / d)));
+                            }
+                            v = sb.toString();
+                        }else{
+                            v=0;
+                        }
+                    } else if (attr.equals("$GPSAltitude")) {
+                        v = exi.getAltitude(0);
+                    }else if (attr.startsWith("$GPSLatitude") || attr.startsWith("$GPSLongitude")) {
+                        if (attr.startsWith("$GPSLatitudeRef") || attr.startsWith("$GPSLongitudeRef")) {
+                            if (attr.toLowerCase().endsWith("refcn")) {
+                                v = exi.getAttribute(attr.substring(0, attr.length() - 2));
+                                if ("N".equals(v)) v = "北纬";
+                                else if ("S".equals(v)) v = "南纬";
+                                else if ("E".equals(v)) v = "东经";
+                                else if ("W".equals(v)) v = "西经";
+                            }
                         } else {
-                            sb.append("1/").append(((int) (1.0d / d)));
+                            v = exi.getAttribute(attr.substring(0, attr.length() - 1));
+                            Integer[] dfm = LocationUtil.toDmsIntArr(v);
+                            if (attr.toLowerCase().endsWith("d")) v = dfm[0];
+                            else if (attr.toLowerCase().endsWith("f")) v = dfm[1];
+                            else if (attr.toLowerCase().endsWith("m")) v = dfm[2];
+                            else v = 0;
                         }
-                        valueArr[i]=sb.toString();
-                    }else{
-                        valueArr[i] = v;
-                    }
-                }else if(attr.equals("GPSAltitude")){
-                    valueArr[i] = exi.getAltitude(0);
-                }else if(attr.equals("GPSLatitude")||attr.equals("GPSLongitude")){
-                    valueArr[i] = v;//LocationUtil.toDmsString();
-                }else if(attr.startsWith("GPSLatitude")||attr.startsWith("GPSLongitude")){
-                    if(attr.startsWith("GPSLatitudeRef")||attr.startsWith("GPSLongitudeRef")){
-                        if(attr.toLowerCase().endsWith("refcn")){
-                            v = exi.getAttribute(attr.substring(0,attr.length()-2));
-                            if("N".equals(v))v="北纬";
-                            else if("S".equals(v))v="南纬";
-                            else if("E".equals(v))v="东经";
-                            else if("W".equals(v))v="西经";
+                    } else if (attr.toLowerCase().startsWith("$gpslong")) {
+                        String gpslong = LocationUtil.toDmsString(exi.getAttribute("GPSLongitude"));
+                        if (attr.toLowerCase().endsWith("cn")) {
+                            gpslong = gpslong.replace("°", "度").replace("′", "分").replace("″", "秒");
                         }
-                        valueArr[i] = v;
-                    }else {
-                        v = exi.getAttribute(attr.substring(0,attr.length()-1));
-                        Integer[] dfm = LocationUtil.toDmsIntArr(v);
-                        if (attr.toLowerCase().endsWith("d")) valueArr[i] = dfm[0];
-                        else if (attr.toLowerCase().endsWith("f")) valueArr[i] = dfm[1];
-                        else if (attr.toLowerCase().endsWith("m")) valueArr[i] = dfm[2];
-                        else valueArr[i]=0;
+                        v = gpslong;
+                    } else if (attr.toLowerCase().startsWith("$gpslat")) {
+                        String lat = LocationUtil.toDmsString(exi.getAttribute("GPSLatitude"));
+                        if (attr.toLowerCase().endsWith("cn")) {
+                            lat = lat.replace("°", "度").replace("′", "分").replace("″", "秒");
+                        }
+                        v = lat;
+                    } else if (attr.equalsIgnoreCase("$gpsaddress")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("address", "");
+                    } else if (attr.equalsIgnoreCase("$gpscountry")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("country", "");
+                    } else if (attr.equalsIgnoreCase("$gpsprovince")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("province", "");
+                    } else if (attr.equalsIgnoreCase("$gpsdistrict")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("district", "");
+                    } else if (attr.equalsIgnoreCase("$gpsstreet")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("street", "");
+                    } else if (attr.equalsIgnoreCase("$gpsareas")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("areas", "");
+                    } else if (attr.equalsIgnoreCase("$gpszipcode")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("zipcode", "");
+                    } else if (attr.equalsIgnoreCase("$gpscitycode")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("citycode", "");
+                    } else if (attr.equalsIgnoreCase("$gpscity")) {
+                        if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
+                        v = GPSLOCAL.getString("city", "");
+                    } else if (attr.toLowerCase().startsWith("$gpsalt")) {
+                        Double alt = exi.getAltitude(0);
+                        if (attr.toLowerCase().endsWith("cn")) {
+                            v = alt.intValue() + "米";
+                        } else {
+                            v = alt.intValue();
+                        }
+                    } else if (attr.toLowerCase().startsWith("$picinfo")) {
+                        v = getPicInfo(exi);
+                    } else if (attr.toLowerCase().startsWith("$os.")) {
+                        v = NUtil.getProp(attr.substring(6), "");
+                    } else if (attr.toLowerCase().startsWith("$") && (v==null||v.toString().trim().isEmpty())) {
+                        v = Pref.getStringValue(attr.substring(1), attr);
                     }
-                }else if (attr.toLowerCase().startsWith("$gpslong")) {
-                    String  gpslong =LocationUtil.toDmsString(exi.getAttribute("GPSLongitude"));
-                    if (attr.toLowerCase().endsWith("cn")){
-                        gpslong=gpslong.replace("°","度").replace("′","分").replace("″","秒");
+                    if(v==null){
+                        v="";
                     }
-                    valueArr[i] =gpslong;
-                }else if (attr.toLowerCase().startsWith("$gpslat")) {
-                    String lat=LocationUtil.toDmsString(exi.getAttribute("GPSLatitude"));
-                    if (attr.toLowerCase().endsWith("cn")){
-                        lat=lat.replace("°","度").replace("′","分").replace("″","秒");
-                    }
-                    valueArr[i] =lat;
-                }else if (attr.toLowerCase().startsWith("$gpsalt")) {
-                    Double alt=exi.getAltitude(0);
-                    if (attr.toLowerCase().endsWith("cn")){
-                        valueArr[i] = alt.intValue()+"米";
-                    }else{
-                        valueArr[i] = alt.intValue();
-                    }
-                }else if (attr.toLowerCase().startsWith("$")){
-                    valueArr[i] = Pref.getStringValue(attr.substring(1),attr);
-                }else {
-                    valueArr[i] = v;
                 }
             }catch (Exception ex){}
+            valueArr[i]=v;
         }
         return  valueArr;
     }
@@ -770,7 +873,13 @@ public class WaterMarkUtil {
             if(m.getName().equals("setColor")){
                 p.setColor(Color.parseColor(v));
             }else if(m.getName().equals("setARGB")){
-                m.invoke(p, vToIntArr(v));
+                String[] vs=v.trim().split(",");
+                Integer[] is=new Integer[]{0,0,0,0};
+                if(vs.length>0)is[0]=Integer.parseInt(vs[0].trim());
+                if(vs.length>1)is[1]=Integer.parseInt(vs[1].trim());
+                if(vs.length>2)is[2]=Integer.parseInt(vs[2].trim());
+                if(vs.length>3)is[3]=Integer.parseInt(vs[3].trim());
+                p.setARGB(is[0],is[1],is[2],is[3]);
             }else if(m.getName().equals("setAlpha")||m.getName().equals("setBlendMode")
                     ||m.getName().equals("setEndHyphenEdit")||m.getName().equals("setFlags")
                     ||m.getName().equals("setHinting")||m.getName().equals("setStrokeWidth")
@@ -876,14 +985,6 @@ public class WaterMarkUtil {
         }catch (Exception ex){ ex.printStackTrace();G.log("设置画笔出错:"+m.getName()+" 参数："+v.trim()); }
         return p;
     }
-    static Integer[] vToIntArr(String v){
-        String[] vs=v.trim().split(",");
-        Integer[] is=new Integer[vs.length];
-        for(int i=0;i<vs.length;i++){
-            is[i]=Integer.parseInt(vs[i].trim());
-        }
-        return is;
-    }
 
     static float[] vToFloatArr(String v){
         String[] vs=v.trim().split(",");
@@ -908,15 +1009,64 @@ public class WaterMarkUtil {
 
      static JSONObject getVerticalWmConfJson(JSONObject conf){
         if(conf==null)return null;
-        if(conf.has("Vertical"))return conf.getJSONObject("Vertical");
-        if(conf.has("vertical"))return conf.getJSONObject("vertical");
+        JSONObject result=null;
+        if(conf.has("Vertical"))result= conf.getJSONObject("Vertical");
+        else if(conf.has("vertical"))result= conf.getJSONObject("vertical");
+        if(result!=null){
+            if(conf.has("param")) {
+                try {
+                    if (result.has("param")) {
+                        JSONObject paramObj = result.getJSONObject("param");
+                        paramObj.addAll(conf.getJSONObject("param"), false);
+                        result.put("param", paramObj);
+                    } else {
+                        result.put("param", conf.get("param"));
+                    }
+                } catch (Exception ex) {
+
+                }
+            }
+            return result;
+        }
         return conf;
     }
      static JSONObject getHorizontalWmConfJson(JSONObject conf){//水平
         if(conf==null)return null;
-        if(conf.has("Horizontal"))return conf.getJSONObject("Horizontal");
-        if(conf.has("horizontal"))return conf.getJSONObject("horizontal");
-        return conf;
+         JSONObject result=null;
+        if(conf.has("Horizontal"))result= conf.getJSONObject("Horizontal");
+        if(conf.has("horizontal"))result= conf.getJSONObject("horizontal");
+        if(result!=null){
+             if(conf.has("param")) {
+                 try {
+                     if (result.has("param")) {
+                         JSONObject paramObj = result.getJSONObject("param");
+                         paramObj.addAll(conf.getJSONObject("param"), false);
+                         result.put("param", paramObj);
+                     } else {
+                         result.put("param", conf.get("param"));
+                     }
+                 } catch (Exception ex) {
+
+                 }
+             }
+
+             return result;
+         }
+         return conf;
     }
+
+    static JSONObject getParamInitedConf(JSONObject mainConf){
+        if(mainConf==null||!mainConf.has("param"))return mainConf;
+        JSONObject paramObj=mainConf.getJSONObject("param");
+        mainConf.remove("param");
+        String  oneCfgStr=mainConf.toString();
+        Iterator<String> keyIt=paramObj.keySet().iterator();
+        while (keyIt.hasNext()){
+            String key=keyIt.next();
+            oneCfgStr=oneCfgStr.replace("{"+key+"}",paramObj.getString(key));
+        }
+        return new JSONObject(oneCfgStr);
+    }
+
 
 }

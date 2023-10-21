@@ -532,7 +532,7 @@ public class JsonUtil {
     private static JSONObject ExifInterfaceToMap(ExifInterface ex) {
         try {
             JSONObject result = new JSONObject();
-            for (String f : ExifInterfaceUtil.ExifInterface_Field_Arr) {
+            for (String f : ExifInterfaceUtil.ExifInterface_Field_List) {
                 result.put(f, ex.getAttribute(f));
             }
             return result;

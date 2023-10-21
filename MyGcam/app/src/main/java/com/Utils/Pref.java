@@ -14,7 +14,8 @@ public class Pref {
         return getStringValue(a,"");
     }
     public static String getStringValue(String a,String b){
-        if("pref_watermark_title_key".equals(a))return "AAAAAAAA";
+        if("pref_watermark_title_key".equals(a))return "OPPO Find X6 Pro1";
+        if("pref_watermark_logo_key".equals(a))return "leica.png";
         return b;
     }
     public  static  int MenuValue(String a){

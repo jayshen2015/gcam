@@ -7,6 +7,8 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.media.ExifInterface;
 
+import com.agc.net.NetworkUtil;
+
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 
@@ -21,7 +23,6 @@ public class LocationUtil {
         l.setLatitude(0f);
         l.setLongitude(0f);
 //       设备位置信息
-//
 //        时间：2023/09/06 12:15:06
 //        经度：120.17968450000001
 //        纬度：30.193588
@@ -107,13 +108,18 @@ public class LocationUtil {
         String[] split4 = Double.toString(Double.parseDouble(split3[1]) / Double.parseDouble(split[3])).split("\\.", -1);
         String str2 = split4[0];
         String str3 = split4[1];
-        return  parseInt + "°" + parseInt2 + "'" + Integer.parseInt(str2)  + "\"";//+ "." + Integer.parseInt(str3)
+        int parseInt3=Integer.parseInt(str2);
+        if(str3!=null&&Integer.parseInt(str3.trim())>=5000){
+            parseInt3+=1;
+        }
+        return  parseInt + "°" + parseInt2 + "'" +  parseInt3 + "\"";//+ "." + Integer.parseInt(str3)
     }
 
 
 
-    public static Integer[] toDmsIntArr(String str) {
-        String[] split = str.split("/", -1);
+    public static Integer[] toDmsIntArr(Object data) {
+        if(data==null)return new Integer[]{0 ,0 , 0};;
+        String[] split = data.toString().split("/", -1);
         String[] split2 = split[1].split(",", -1);
         String[] split3 = split[2].split(",", -1);
         int parseInt = Integer.parseInt(split[0]);
@@ -134,4 +140,75 @@ public class LocationUtil {
         int second = (int) (10000 * (tmp - minute) * num);
         return degree + "/1," + minute + "/1," + second + "/10000";
     }
+
+    public static JSONObject getRegeo(ExifInterface exi){
+//        String lat = exi.getAttribute("GPSLatitude");
+//        String  lon = exi.getAttribute("GPSLongitude");
+        float[] latLon=new float[2];
+        exi.getLatLong(latLon);
+        if(latLon[0]==0||latLon[1]==0)return  new JSONObject();
+        try{
+            return getRegeo(latLon[1],latLon[0]);
+        }catch (Exception ex){
+
+        }
+        return  new JSONObject();
+    }
+    public static JSONObject getRegeo(Float lon,Float lat){
+        //lat = 22.55329;  lon = 113.88308;
+    //    {
+        //    "status":"1",
+        //    "regeocode":{
+            //    "addressComponent":{
+                //    "city":"贵阳市",
+                //    "province":"贵州省",
+                //    "adcode":"520103",
+                //    "district":"云岩区",
+                //    "towncode":"520103009000",
+                //    "streetNumber":{"number":"201号","location":"106.693824,26.575675","direction":"东","distance":"3.11092","street":"金顶路"},
+                //    "country":"中国",
+                //    "township":"头桥街道",
+                //    "businessAreas":[{"location":"106.696295,26.569959","name":"花果园","id":"520102"},{"location":"106.703909,26.569274","name":"河滨","id":"520102"}],
+                //    "building":{"name":[],"type":[]},
+                //    "neighborhood":{"name":[],"type":[]},
+                //    "citycode":"0851"
+            //     },
+        //    "formatted_address":"贵州省贵阳市云岩区头桥街道金顶路201号贵阳市第三实验小学"
+        //    },"info":"OK","infocode":"10000"
+        //}
+        try {
+            if (lon != null && lon != null) {
+                String url = "https://restapi.amap.com/v3/geocode/regeo?location=" + lon + "," + lat + "&key=027d61517500da8cea7476dbc06721af";
+                String json = NetworkUtil.doGet(url);
+                JSONObject jsonObj= new JSONObject(json);
+                if("1".equals(jsonObj.getString("status","0"))&&jsonObj.has("regeocode")){
+                    JSONObject regeocode=jsonObj.getJSONObject("regeocode");
+                    JSONObject component=regeocode.getJSONObject("addressComponent");
+                    JSONObject result=new JSONObject();
+                    result.put("address",regeocode.getString("formatted_address",""));
+                    result.put("country",component.getString("country",""));
+                    result.put("province",component.getString("province",""));
+                    result.put("city",component.getString("city",""));
+                    result.put("district",component.getString("district",""));
+                    result.put("street",component.getString("township",""));
+                    result.put("areas",component.get("businessAreas"));
+                    result.put("zipcode",component.getString("adcode",""));
+                    result.put("citycode",component.getString("citycode",""));
+                    return result;
+                }
+            }
+        }catch (Exception ex){}
+        return new JSONObject();
+    }
+
+
+    public static void main(String[] args) {
+        Double lon=120.17968450000001;
+        String dms=convertToDMS(lon);
+        String d2=degressToString(lon);
+        System.out.println(dms);
+        System.out.println(d2);
+        System.out.println(toDmsString(d2));
+    }
+
 }

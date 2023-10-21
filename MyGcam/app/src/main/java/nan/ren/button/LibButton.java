@@ -71,7 +71,7 @@ public class LibButton extends OptionButton implements View.OnClickListener {
                 new OptionButtonItem("my_lib", "LIB", 1, -1063570)
                 )
         );
-        if("gcastartup".equalsIgnoreCase(libKey))this.selectedIndex = 0;
+        if(libKey.trim().isEmpty() || "gcastartup".equalsIgnoreCase(libKey))this.selectedIndex = 0;
         else this.selectedIndex = 1;
 
         setChecked(this.selectedIndex > 0);
@@ -103,15 +103,11 @@ public class LibButton extends OptionButton implements View.OnClickListener {
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
         super.onCheckedChanged(compoundButton, z);
-//        boolean checked=this.selectedIndex > 0;
-//        setChecked(checked);
-//        G.log("onCheckedChanged:"+checked);
     }
     @Override
     public void onClickPopItem(int i) {
-        super.onClickPopItem(i);
+        super.onClickPopItem(0);
         doChecked(i>0);
-        G.log("onClickPopItem:"+i);
     }
     void showLibsDialog(){
 
@@ -133,11 +129,11 @@ public class LibButton extends OptionButton implements View.OnClickListener {
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
-                           if("gcastartup".equals(Pref.getStringValue("custom_lib_open_key","gcastartup"))){
-                               checked(false);
-                           }else{
-                               checked(true);
-                           }
+//                           if("gcastartup".equals(Pref.getStringValue("custom_lib_open_key","gcastartup"))){
+//                               checked(false);
+//                           }else{
+//                               checked(true);
+//                           }
                            dialog.dismiss();
                         }
                     }).create();
@@ -223,46 +219,37 @@ public class LibButton extends OptionButton implements View.OnClickListener {
         view.setBackgroundColor(Color.parseColor("#aa969593"));
     }
 
-    boolean hadLib(String libName){
-        if(!Globals.libFolder.exists())Globals.libFolder.mkdirs();
-        if(Globals.libFolder.listFiles()==null)return false;
-        for(File lib :Globals.libFolder.listFiles()){
-            if(libName.equals(lib.getName()))return true;
-        }
-        return false;
-    }
     void checked(boolean c){
         this.selectedIndex=c?1:0;
-        setChecked(c);
+        super.setChecked(c);
     }
     void doChecked(boolean checked){
         String ckKey=Pref.getStringValue("my_custom_lib_open_last_key","gcastartup");
         if(checked && !"gcastartup".equals(ckKey)){
             loadLibrary(ckKey);
-            checked(true);
         }else if(checked && "gcastartup".equals(ckKey)){
             checked(false);
             showLibsDialog();
         }else{
             loadLibrary("gcastartup");
-            checked(false);
         }
     }
 
     void loadLibrary(String filename){
+        deleteMyGcamLib();
         if("gcastartup".equals(filename)){
             Pref.setMenuValue("custom_lib_open_key","gcastartup");
             Library.loadLibrary("gcastartup");
-            FileUtil.delete(Globals.libFolder.getAbsolutePath()+"/mygcamlib.so");
         }else {
-            String myLibKey=Pref.getStringValue("my_custom_lib_open_last_key", "gcastartup");
-            if (!filename.equals(myLibKey)) {
-                FileUtil.fileCopy(G.LIB_PATH + filename, Globals.libFolder.getAbsolutePath() + "/mygcamlib.so");
-            }
+            String libFile=Globals.libFolder.getAbsolutePath() + "/mygcamlib.so";
+            FileUtil.fileCopy(G.LIB_PATH + filename, libFile);
             Pref.setMenuValue("custom_lib_open_key", "mygcamlib.so");
             Library.loadLibrary("gcastartup");
             Pref.setMenuValue("my_custom_lib_open_last_key", filename);
         }
         Globals.onRestart();
+    }
+    void deleteMyGcamLib(){
+        FileUtil.delete(Globals.libFolder.getAbsolutePath()+"/mygcamlib.so");
     }
 }

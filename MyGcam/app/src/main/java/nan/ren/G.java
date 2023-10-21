@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
-import android.opengl.GLSurfaceView;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
@@ -16,7 +15,6 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.Globals;
@@ -322,6 +320,9 @@ public class G {
         }catch (Exception ex){
             log("loadLibrary("+str+") error:"+ex.getMessage());
             ex.printStackTrace();
+        }catch (Throwable re){
+            Pref.setMenuValue("custom_lib_open_key", "gcastartup");
+            loadLibrary("gcastartup");
         }
     }
     public static void updatePreference(PreferenceFragment preferenceFragment) {

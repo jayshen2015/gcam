@@ -11,6 +11,8 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -108,6 +110,8 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         logoPath=ImageUtil.getMyLogoPath(Pref.getStringValue("pref_watermark_logo_key", "agc88.png"));
         logoBt=ImageUtil.getBitMap(logoPath);
     }
+
+    final static Handler handler = new Handler(Looper.getMainLooper());
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -124,34 +128,50 @@ public class WmActivity extends Activity  implements View.OnClickListener {
     }
 
     void show(){
-        if(srcImagePath==null||srcImagePath.trim().isEmpty())return ;
-        G.log(srcImagePath);
-        wmBitmap=getWaterMark(srcImagePath);
-        int width=G.RESOURCES.getDisplayMetrics().widthPixels;
-        int height=(G.RESOURCES.getDisplayMetrics().widthPixels* wmBitmap.getHeight())/wmBitmap.getWidth();
-        if(iv==null) {
-            LinearLayout rl=new LinearLayout(this);
-            rl.setOrientation(LinearLayout.VERTICAL);
-            iv = new ImageView(this);
-            iv.setId(View.generateViewId());
-            iv.setBackgroundColor(Color.parseColor("#11223344"));
-            rl.setPadding(20,0,0,0);
-            rl.addView(iv);
-            rl.addView(getBottomView());
-            gridLayout.addView(rl);
-        }
-        iv.setLayoutParams(new LinearLayout.LayoutParams(width,Math.max(100,height)));
-        iv.setImageDrawable(ImageUtil.bitmap2Drawable(wmBitmap));
-        saveButton.setOnClickListener(this);
-        saveButton.setText("保存");
+        WmActivity that=this;
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(srcImagePath==null||srcImagePath.trim().isEmpty())return ;
+                G.log(srcImagePath);
+                wmBitmap=getWaterMark(srcImagePath);
+                int width=G.RESOURCES.getDisplayMetrics().widthPixels;
+                int height=(G.RESOURCES.getDisplayMetrics().widthPixels* wmBitmap.getHeight())/wmBitmap.getWidth();
+                if(iv==null) {
+                    LinearLayout rl=new LinearLayout(that);
+                    rl.setOrientation(LinearLayout.VERTICAL);
+                    iv = new ImageView(that);
+                    iv.setId(View.generateViewId());
+                    iv.setBackgroundColor(Color.parseColor("#11223344"));
+                    rl.setPadding(20,0,0,0);
+                    rl.addView(iv);
+                    rl.addView(getBottomView());
+                    gridLayout.addView(rl);
+                    iv.setOnLongClickListener(new View.OnLongClickListener() {
+                        @Override
+                        public boolean onLongClick(View view) {
+                             show();
+                            return false;
+                        }
+                    });
+                }
+                iv.setLayoutParams(new LinearLayout.LayoutParams(width,Math.max(100,height)));
+                wmBitmap=ImageUtil.compressImageWidthLength(wmBitmap,1024*2);
+                iv.setImageDrawable(ImageUtil.bitmap2Drawable(wmBitmap));
+                saveButton.setOnClickListener(that);
+                saveButton.setText("保存");
+            }
+        },50);
+
     }
 
     Bitmap getWaterMark(String absolutePath){
         Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath);
         if(decodeFile==null)return null;
         Bitmap waterMark=null;
-        if(configSelect!=null&&configSelect.getSelectedItemPosition()>1){
-            JSONObject mainWmConfJson = WaterMarkUtil.getWmConfJson(Math.max(configSelect.getSelectedItemPosition()-2,0));
+        int type=Pref.MenuValue("pref_watermark_type_key",0);
+        if(type>1){
+            JSONObject mainWmConfJson = WaterMarkUtil.getWmConfJson(Math.max(type-2,0));
             JSONObject wmConfJson=WaterMarkUtil.getWmConfByBitMap(decodeFile,mainWmConfJson);
             waterMark=  WaterMarkUtil.getWaterMarkBitMapByWmConf(decodeFile,ExifInterfaceUtil.get(absolutePath),wmConfJson);
             boolean onlyWaterMark=wmConfJson.getInt("onlyWaterMark",wmConfJson.getInt("onlywatermark",0))==1;
@@ -244,10 +264,11 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         if(wmBitmap==null||srcImagePath==null||srcImagePath.trim().isEmpty())return ;
        btn.setOnClickListener(null);
        btn.setText("保存中");
-       try{
-           ThreadPoolManager.add(new Runnable() {
-               @Override
-               public void run() {
+       WmActivity that=this;
+       handler.postDelayed(new Runnable() {
+           @Override
+           public void run() {
+               try{
                    String newFile=getWaterMarkFile();
                    WaterMarkUtil.WriteBitmapFile(newFile,wmBitmap);
                    try {
@@ -255,13 +276,13 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                        WaterMarkUtil.noticSysPhoto(new File(newFile));
                    }catch (Exception exception){}
                    btn.setText("已保存");
+               }catch (Exception ex){
+                   NUtil.toastL("保存失败了。。");
+                   btn.setText("保存失败");
+                   btn.setOnClickListener(that);
                }
-           });
-       }catch (Exception ex){
-           NUtil.toastL("保存失败了。。");
-           btn.setText("保存失败");
-           btn.setOnClickListener(this);
-       }
+           }
+       },50);
    }
    String getWaterMarkFile(){
         String savePath=srcImagePath.substring(0,srcImagePath.length()-4)+"_WM";
@@ -422,9 +443,24 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                             if(cbHideLogo.isChecked()){
                                 logoBt=null;
                             }else{
-                                String logoPath=selectLogoBtn.getTag().toString();
+                                logoPath=selectLogoBtn.getTag().toString();
                                 if(logoPath!=null&&!logoPath.trim().isEmpty())logoBt=ImageUtil.getBitMap(logoPath);
                             }
+
+                            Pref.setMenuValue("pref_watermark_title_key",title);
+                            Pref.setMenuValue("pref_watermark_logo_key",selectLogoBtn.getTag().toString());
+                            Pref.setMenuValue("my_watermark_height",waterMarkHeight);
+                            Pref.setMenuValue("my_watermark_secfontsize",wmSecFontSize);
+                            Pref.setMenuValue("my_watermark_fontsize",wmFontSize);
+
+                            Pref.setMenuValue("my_watermark_bgcolor",wmBgColor);
+                            Pref.setMenuValue("my_watermark_sectxtcolor",wmSecTextColor);
+                            Pref.setMenuValue("my_watermark_txtcolor",wmTextColor);
+
+                            int index=configSelect.getSelectedItemPosition();
+                            if(index!=0)index=index+1;
+                            Pref.setMenuValue("pref_watermark_type_key",index);
+
                             dialog.dismiss();
                             show();
                         }
@@ -668,7 +704,7 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         JSONArray allConfList=WaterMarkUtil.getAllWmConfList();
         List<String> dataList=new ArrayList<>();
         dataList.add("徕卡水印");
-        dataList.add("时间水印");
+   //     dataList.add("时间水印");
         if(allConfList!=null&& !allConfList.isEmpty()) {
             int indexUnName=2;
             for(int i=0;i<allConfList.size();i++){
@@ -691,8 +727,9 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         };
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(spinnerAdapter);
-        //
-
+        int index=Pref.MenuValue("pref_watermark_type_key",0);
+        if(index!=0)index=index-1;
+        spinner.setSelection(index);
         linearLayout.addView(spinner);
         return linearLayout;
     }
