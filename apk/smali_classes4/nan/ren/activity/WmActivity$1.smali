@@ -206,7 +206,18 @@
 
     invoke-virtual {v3, v2}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 151
+    .line 150
+    iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
+
+    iget-object v3, v3, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
+
+    new-instance v4, Lnan/ren/activity/WmActivity$1$1;
+
+    invoke-direct {v4, p0}, Lnan/ren/activity/WmActivity$1$1;-><init>(Lnan/ren/activity/WmActivity$1;)V
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+
+    .line 158
     .end local v2    # "rl":Landroid/widget/LinearLayout;
     :cond_1
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
@@ -225,7 +236,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 152
+    .line 159
     sget-object v2, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
     const/16 v3, 0x800
@@ -236,7 +247,7 @@
 
     sput-object v2, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
-    .line 153
+    .line 160
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v2, v2, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
@@ -249,7 +260,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 154
+    .line 161
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v2, v2, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
@@ -258,7 +269,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 155
+    .line 162
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v2, v2, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
@@ -267,7 +278,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 156
+    .line 163
     return-void
 
     .line 135

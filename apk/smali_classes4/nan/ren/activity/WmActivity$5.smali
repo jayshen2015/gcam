@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 409
+    .line 417
     iput-object p1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 412
+    .line 420
     const-string v0, "#"
 
     iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -58,7 +58,7 @@
 
     sput-object v1, Lnan/ren/activity/WmActivity;->title:Ljava/lang/String;
 
-    .line 413
+    .line 421
     :try_start_0
     iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -85,7 +85,7 @@
     :catch_0
     move-exception v1
 
-    .line 414
+    .line 422
     :goto_0
     :try_start_1
     iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -113,7 +113,7 @@
     :catch_1
     move-exception v1
 
-    .line 416
+    .line 424
     :goto_1
     :try_start_2
     iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -128,7 +128,7 @@
 
     move-result-object v1
 
-    .line 417
+    .line 425
     .local v1, "txtbgcolor":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -156,7 +156,7 @@
 
     move-object v1, v2
 
-    .line 418
+    .line 426
     :cond_0
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -172,7 +172,7 @@
     :catch_2
     move-exception v1
 
-    .line 421
+    .line 429
     :goto_2
     :try_start_3
     iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -187,7 +187,7 @@
 
     move-result-object v1
 
-    .line 422
+    .line 430
     .local v1, "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_1
 
@@ -215,7 +215,7 @@
 
     move-object v1, v2
 
-    .line 423
+    .line 431
     :cond_1
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -231,7 +231,7 @@
     :catch_3
     move-exception v1
 
-    .line 426
+    .line 434
     :goto_3
     :try_start_4
     iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -246,7 +246,7 @@
 
     move-result-object v1
 
-    .line 427
+    .line 435
     .restart local v1    # "txtTxtcolor":Ljava/lang/String;
     if-eqz v1, :cond_2
 
@@ -274,7 +274,7 @@
 
     move-object v1, v0
 
-    .line 428
+    .line 436
     :cond_2
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
@@ -290,7 +290,7 @@
     :catch_4
     move-exception v0
 
-    .line 430
+    .line 438
     :goto_4
     :try_start_5
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -318,7 +318,7 @@
     :catch_5
     move-exception v0
 
-    .line 432
+    .line 440
     :goto_5
     :try_start_6
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -342,7 +342,7 @@
     :catch_6
     move-exception v0
 
-    .line 433
+    .line 441
     :goto_6
     :try_start_7
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -366,7 +366,7 @@
     :catch_7
     move-exception v0
 
-    .line 434
+    .line 442
     :goto_7
     :try_start_8
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
@@ -390,7 +390,7 @@
     :catch_8
     move-exception v0
 
-    .line 435
+    .line 443
     :goto_8
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -402,14 +402,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 436
+    .line 444
     const/4 v0, 0x0
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
     goto :goto_9
 
-    .line 438
+    .line 446
     :cond_3
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -425,7 +425,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
 
-    .line 439
+    .line 447
     sget-object v0, Lnan/ren/activity/WmActivity;->logoPath:Ljava/lang/String;
 
     if-eqz v0, :cond_4
@@ -450,7 +450,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->logoBt:Landroid/graphics/Bitmap;
 
-    .line 442
+    .line 450
     :cond_4
     :goto_9
     const-string v0, "pref_watermark_title_key"
@@ -459,7 +459,7 @@
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 443
+    .line 451
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v0, v0, Lnan/ren/activity/WmActivity;->selectLogoBtn:Landroid/widget/ImageButton;
@@ -476,56 +476,77 @@
 
     invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 444
+    .line 452
     const-string v0, "my_watermark_height"
 
     sget v1, Lnan/ren/activity/WmActivity;->waterMarkHeight:I
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 445
+    .line 453
     const-string v0, "my_watermark_secfontsize"
 
     sget v1, Lnan/ren/activity/WmActivity;->wmSecFontSize:I
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 446
+    .line 454
     const-string v0, "my_watermark_fontsize"
 
     sget v1, Lnan/ren/activity/WmActivity;->wmFontSize:I
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 448
+    .line 456
     const-string v0, "my_watermark_bgcolor"
 
     sget v1, Lnan/ren/activity/WmActivity;->wmBgColor:I
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 449
+    .line 457
     const-string v0, "my_watermark_sectxtcolor"
 
     sget v1, Lnan/ren/activity/WmActivity;->wmSecTextColor:I
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 450
+    .line 458
     const-string v0, "my_watermark_txtcolor"
 
     sget v1, Lnan/ren/activity/WmActivity;->wmTextColor:I
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 452
-    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
-
-    .line 453
+    .line 460
     iget-object v0, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
 
-    invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->show()V
+    iget-object v0, v0, Lnan/ren/activity/WmActivity;->configSelect:Landroid/widget/Spinner;
 
-    .line 454
+    invoke-virtual {v0}, Landroid/widget/Spinner;->getSelectedItemPosition()I
+
+    move-result v0
+
+    .line 461
+    .local v0, "index":I
+    if-eqz v0, :cond_5
+
+    add-int/lit8 v0, v0, 0x1
+
+    .line 462
+    :cond_5
+    const-string v1, "pref_watermark_type_key"
+
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
+
+    .line 464
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
+
+    .line 465
+    iget-object v1, p0, Lnan/ren/activity/WmActivity$5;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-virtual {v1}, Lnan/ren/activity/WmActivity;->show()V
+
+    .line 466
     return-void
 .end method

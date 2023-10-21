@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 356
+    .line 364
     iput-object p1, p0, Lnan/ren/activity/WmActivity$3;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,11 +39,11 @@
 .method public run()V
     .locals 1
 
-    .line 359
+    .line 367
     iget-object v0, p0, Lnan/ren/activity/WmActivity$3;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v0}, Lnan/ren/activity/WmActivity;->showParamDialog()V
 
-    .line 360
+    .line 368
     return-void
 .end method

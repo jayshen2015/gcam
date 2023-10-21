@@ -790,41 +790,43 @@
 .end method
 
 .method public static loadLibrary(Ljava/lang/String;)V
-    .locals 5
+    .locals 6
     .param p0, "str"    # Ljava/lang/String;
 
     .line 293
     const-string v0, ".so"
 
-    const-string v1, "gcastartup"
+    const-string v1, "custom_lib_open_key"
+
+    const-string v2, "gcastartup"
 
     :try_start_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "loadLibrary:"
+    const-string v4, "loadLibrary:"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Lnan/ren/G;->log(Ljava/lang/Object;)V
+    invoke-static {v3}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
     .line 294
-    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_0
+    if-nez v3, :cond_0
 
     .line 295
     invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
@@ -837,141 +839,135 @@
     sput-object p0, Lcom/agc/Library;->GlolibFullname:Ljava/lang/String;
 
     .line 299
-    const-string v2, "lib_custom_lib_open_key"
+    const-string v3, "lib_custom_lib_open_key"
 
-    invoke-static {v2}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 300
-    .local v2, "auxCustomLib":Ljava/lang/String;
-    if-eqz v2, :cond_1
-
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-static {v3}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v4, ""
+    .line 300
+    .local v3, "auxCustomLib":Ljava/lang/String;
+    if-eqz v3, :cond_1
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result v3
+    move-result-object v4
 
-    if-eqz v3, :cond_2
+    const-string v5, ""
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
 
     .line 301
     :cond_1
-    const-string v3, "custom_lib_open_key"
+    invoke-static {v1, v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {v3, v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v4
 
-    move-result-object v3
-
-    move-object v2, v3
+    move-object v3, v4
 
     .line 303
     :cond_2
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "load gcam library:"
+    const-string v5, "load gcam library:"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {v3}, Lnan/ren/G;->log(Ljava/lang/Object;)V
+    invoke-static {v4}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
     .line 304
-    invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v3, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_4
+    if-eqz v4, :cond_4
 
     .line 305
     new-instance v0, Ljava/io/File;
 
-    sget-object v3, Lcom/Globals;->libFolder:Ljava/io/File;
+    sget-object v4, Lcom/Globals;->libFolder:Ljava/io/File;
 
-    invoke-direct {v0, v3, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v0, v4, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 306
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 307
-    .local v3, "path":Ljava/lang/String;
+    .local v4, "path":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_3
 
     .line 308
-    move-object v1, v3
+    move-object v5, v4
 
     .line 309
-    .local v1, "str2":Ljava/lang/String;
-    invoke-static {v3}, Ljava/lang/System;->load(Ljava/lang/String;)V
+    .local v5, "str2":Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/System;->load(Ljava/lang/String;)V
 
     goto :goto_0
 
     .line 311
-    .end local v1    # "str2":Ljava/lang/String;
+    .end local v5    # "str2":Ljava/lang/String;
     :cond_3
-    const-string v4, "libgcastartup.so"
+    const-string v5, "libgcastartup.so"
 
     .line 312
-    .local v4, "str2":Ljava/lang/String;
-    invoke-static {v1}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
-
-    move-object v1, v4
+    .restart local v5    # "str2":Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
     .line 314
     .end local v0    # "file":Ljava/io/File;
-    .end local v3    # "path":Ljava/lang/String;
-    .end local v4    # "str2":Ljava/lang/String;
-    .restart local v1    # "str2":Ljava/lang/String;
+    .end local v4    # "path":Ljava/lang/String;
     :goto_0
     goto :goto_1
 
     .line 315
-    .end local v1    # "str2":Ljava/lang/String;
+    .end local v5    # "str2":Ljava/lang/String;
     :cond_4
-    invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
+    invoke-static {v3}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
     .line 316
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "lib"
+    const-string v5, "lib"
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v4
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -979,24 +975,38 @@
 
     move-result-object v0
 
-    move-object v1, v0
+    move-object v5, v0
 
     .line 318
-    .restart local v1    # "str2":Ljava/lang/String;
+    .restart local v5    # "str2":Ljava/lang/String;
     :goto_1
-    invoke-static {v1}, Lagc/Agc;->ramPatcher(Ljava/lang/String;)V
+    invoke-static {v5}, Lagc/Agc;->ramPatcher(Ljava/lang/String;)V
 
     .line 319
     invoke-static {}, Lcom/agc/Patch;->patchAll()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 323
-    .end local v1    # "str2":Ljava/lang/String;
-    .end local v2    # "auxCustomLib":Ljava/lang/String;
+    .end local v3    # "auxCustomLib":Ljava/lang/String;
+    .end local v5    # "str2":Ljava/lang/String;
     goto :goto_2
 
+    .line 323
+    :catchall_0
+    move-exception v0
+
+    .line 324
+    .local v0, "re":Ljava/lang/Throwable;
+    invoke-static {v1, v2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 325
+    invoke-static {v2}, Lnan/ren/G;->loadLibrary(Ljava/lang/String;)V
+
+    goto :goto_3
+
     .line 320
+    .end local v0    # "re":Ljava/lang/Throwable;
     :catch_0
     move-exception v0
 
@@ -1039,9 +1049,13 @@
     .line 322
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 324
+    .line 326
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
+    nop
+
+    .line 327
+    :goto_3
     return-void
 .end method
 
@@ -1580,18 +1594,18 @@
     .locals 11
     .param p0, "preferenceFragment"    # Landroid/preference/PreferenceFragment;
 
-    .line 326
+    .line 329
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v0
 
-    .line 327
+    .line 330
     .local v0, "preferenceScreen":Landroid/preference/PreferenceScreen;
     if-nez v0, :cond_0
 
     return-void
 
-    .line 328
+    .line 331
     :cond_0
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getKey()Ljava/lang/String;
 
@@ -1605,7 +1619,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 329
+    .line 332
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
 
     move-result-object v1
@@ -1618,16 +1632,16 @@
 
     check-cast v1, Landroid/preference/ListPreference;
 
-    .line 330
+    .line 333
     .local v1, "listPreference":Landroid/preference/ListPreference;
     if-eqz v1, :cond_2
 
-    .line 331
+    .line 334
     invoke-static {}, Lnan/ren/util/WaterMarkUtil;->getAllWmConfList()Lnan/ren/util/JSONArray;
 
     move-result-object v2
 
-    .line 332
+    .line 335
     .local v2, "allConfList":Lnan/ren/util/JSONArray;
     if-eqz v2, :cond_2
 
@@ -1637,7 +1651,7 @@
 
     if-nez v3, :cond_2
 
-    .line 333
+    .line 336
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
@@ -1650,7 +1664,7 @@
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 334
+    .line 337
     .local v3, "EntriesList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     new-instance v4, Ljava/util/ArrayList;
 
@@ -1664,13 +1678,13 @@
 
     invoke-direct {v4, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 335
+    .line 338
     .local v4, "EntryValuesList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 336
+    .line 339
     .local v5, "indexUnName":I
     const/4 v6, 0x0
 
@@ -1682,12 +1696,12 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 337
+    .line 340
     invoke-virtual {v2, v6}, Lnan/ren/util/JSONArray;->getJSONObject(I)Lnan/ren/util/JSONObject;
 
     move-result-object v7
 
-    .line 338
+    .line 341
     .local v7, "conf":Lnan/ren/util/JSONObject;
     new-instance v8, Ljava/lang/StringBuilder;
 
@@ -1713,11 +1727,11 @@
 
     move-result-object v8
 
-    .line 339
+    .line 342
     .local v8, "name":Ljava/lang/String;
     invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 340
+    .line 343
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -1738,19 +1752,19 @@
 
     invoke-interface {v4, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 341
+    .line 344
     nop
 
     .end local v7    # "conf":Lnan/ren/util/JSONObject;
     .end local v8    # "name":Ljava/lang/String;
     add-int/lit8 v5, v5, 0x1
 
-    .line 336
+    .line 339
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 343
+    .line 346
     .end local v6    # "i":I
     :cond_1
     invoke-interface {v3}, Ljava/util/List;->size()I
@@ -1759,7 +1773,7 @@
 
     new-array v6, v6, [Ljava/lang/CharSequence;
 
-    .line 344
+    .line 347
     .local v6, "Entries":[Ljava/lang/CharSequence;
     invoke-interface {v4}, Ljava/util/List;->size()I
 
@@ -1767,7 +1781,7 @@
 
     new-array v7, v7, [Ljava/lang/CharSequence;
 
-    .line 345
+    .line 348
     .local v7, "EntryValues":[Ljava/lang/CharSequence;
     invoke-interface {v3, v6}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
@@ -1777,7 +1791,7 @@
 
     invoke-virtual {v1, v8}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    .line 346
+    .line 349
     invoke-interface {v4, v7}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v8
@@ -1786,7 +1800,7 @@
 
     invoke-virtual {v1, v8}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    .line 352
+    .line 355
     .end local v1    # "listPreference":Landroid/preference/ListPreference;
     .end local v2    # "allConfList":Lnan/ren/util/JSONArray;
     .end local v3    # "EntriesList":Ljava/util/List;, "Ljava/util/List<Ljava/lang/CharSequence;>;"
