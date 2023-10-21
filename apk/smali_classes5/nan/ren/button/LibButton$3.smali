@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/LibButton;
 
-    .line 123
+    .line 119
     iput-object p1, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,14 +41,14 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 126
+    .line 122
     iget-object v0, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     invoke-virtual {v0}, Lnan/ren/button/LibButton;->getSelect()Landroid/widget/TextView;
 
     move-result-object v0
 
-    .line 127
+    .line 123
     .local v0, "view":Landroid/widget/TextView;
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -58,22 +58,22 @@
 
     move-result-object v1
 
-    .line 128
+    .line 124
     .local v1, "libName":Ljava/lang/String;
     iget-object v2, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     invoke-virtual {v2, v1}, Lnan/ren/button/LibButton;->loadLibrary(Ljava/lang/String;)V
 
-    .line 129
+    .line 125
     iget-object v2, p0, Lnan/ren/button/LibButton$3;->this$0:Lnan/ren/button/LibButton;
 
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Lnan/ren/button/LibButton;->checked(Z)V
 
-    .line 130
+    .line 126
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 131
+    .line 127
     return-void
 .end method

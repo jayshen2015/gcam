@@ -22,7 +22,7 @@
 .end method
 
 .method private static ExifInterfaceToMap(Landroid/media/ExifInterface;)Lnan/ren/util/JSONObject;
-    .locals 6
+    .locals 4
     .param p0, "ex"    # Landroid/media/ExifInterface;
 
     .line 534
@@ -33,33 +33,39 @@
 
     .line 535
     .local v0, "result":Lnan/ren/util/JSONObject;
-    sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
+    sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
 
-    array-length v2, v1
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    const/4 v3, 0x0
+    move-result-object v1
 
     :goto_0
-    if-ge v3, v2, :cond_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    aget-object v4, v1, v3
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
 
     .line 536
-    .local v4, "f":Ljava/lang/String;
-    invoke-virtual {p0, v4}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+    .local v2, "f":Ljava/lang/String;
+    invoke-virtual {p0, v2}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v0, v4, v5}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
+    invoke-virtual {v0, v2, v3}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 535
+    .line 537
     nop
 
-    .end local v4    # "f":Ljava/lang/String;
-    add-int/lit8 v3, v3, 0x1
-
+    .end local v2    # "f":Ljava/lang/String;
     goto :goto_0
 
     .line 538

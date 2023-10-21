@@ -113,14 +113,14 @@
     .locals 10
     .param p0, "digitalDegree"    # D
 
-    .line 135
+    .line 136
     const-wide/high16 v0, 0x404e000000000000L    # 60.0
 
-    .line 136
+    .line 137
     .local v0, "num":D
     double-to-int v2, p0
 
-    .line 137
+    .line 138
     .local v2, "degree":I
     int-to-double v3, v2
 
@@ -128,11 +128,11 @@
 
     mul-double/2addr v3, v0
 
-    .line 138
+    .line 139
     .local v3, "tmp":D
     double-to-int v5, v3
 
-    .line 139
+    .line 140
     .local v5, "minute":I
     int-to-double v6, v5
 
@@ -146,7 +146,7 @@
 
     double-to-int v6, v6
 
-    .line 140
+    .line 141
     .local v6, "second":I
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -650,16 +650,16 @@
     .locals 5
     .param p0, "exi"    # Landroid/media/ExifInterface;
 
-    .line 146
+    .line 147
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 147
+    .line 148
     .local v0, "latLon":[F
     invoke-virtual {p0, v0}, Landroid/media/ExifInterface;->getLatLong([F)Z
 
-    .line 148
+    .line 149
     const/4 v1, 0x0
 
     aget v2, v0, v1
@@ -680,7 +680,7 @@
 
     goto :goto_0
 
-    .line 150
+    .line 151
     :cond_0
     :try_start_0
     aget v2, v0, v2
@@ -703,18 +703,18 @@
 
     return-object v1
 
-    .line 151
+    .line 152
     :catch_0
     move-exception v1
 
-    .line 154
+    .line 155
     new-instance v1, Lnan/ren/util/JSONObject;
 
     invoke-direct {v1}, Lnan/ren/util/JSONObject;-><init>()V
 
     return-object v1
 
-    .line 148
+    .line 149
     :cond_1
     :goto_0
     new-instance v1, Lnan/ren/util/JSONObject;
@@ -729,7 +729,7 @@
     .param p0, "lon"    # Ljava/lang/Float;
     .param p1, "lat"    # Ljava/lang/Float;
 
-    .line 179
+    .line 180
     const-string v0, "citycode"
 
     const-string v1, "district"
@@ -748,7 +748,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 180
+    .line 181
     :try_start_0
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -784,19 +784,19 @@
 
     move-result-object v7
 
-    .line 181
+    .line 182
     .local v7, "url":Ljava/lang/String;
     invoke-static {v7}, Lcom/agc/net/NetworkUtil;->doGet(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v8
 
-    .line 182
+    .line 183
     .local v8, "json":Ljava/lang/String;
     new-instance v9, Lnan/ren/util/JSONObject;
 
     invoke-direct {v9, v8}, Lnan/ren/util/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 183
+    .line 184
     .local v9, "jsonObj":Lnan/ren/util/JSONObject;
     const-string v10, "1"
 
@@ -820,12 +820,12 @@
 
     if-eqz v10, :cond_0
 
-    .line 184
+    .line 185
     invoke-virtual {v9, v5}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
 
     move-result-object v5
 
-    .line 185
+    .line 186
     .local v5, "regeocode":Lnan/ren/util/JSONObject;
     const-string v10, "addressComponent"
 
@@ -833,13 +833,13 @@
 
     move-result-object v10
 
-    .line 186
+    .line 187
     .local v10, "component":Lnan/ren/util/JSONObject;
     new-instance v11, Lnan/ren/util/JSONObject;
 
     invoke-direct {v11}, Lnan/ren/util/JSONObject;-><init>()V
 
-    .line 187
+    .line 188
     .local v11, "result":Lnan/ren/util/JSONObject;
     const-string v12, "address"
 
@@ -851,35 +851,35 @@
 
     invoke-virtual {v11, v12, v13}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 188
+    .line 189
     invoke-virtual {v10, v4, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
 
     invoke-virtual {v11, v4, v12}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 189
+    .line 190
     invoke-virtual {v10, v3, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v11, v3, v4}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 190
+    .line 191
     invoke-virtual {v10, v2, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v11, v2, v3}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 191
+    .line 192
     invoke-virtual {v10, v1, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 192
+    .line 193
     const-string v1, "street"
 
     const-string v2, "township"
@@ -890,7 +890,7 @@
 
     invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 193
+    .line 194
     const-string v1, "areas"
 
     const-string v2, "businessAreas"
@@ -901,7 +901,7 @@
 
     invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 194
+    .line 195
     const-string v1, "zipcode"
 
     const-string v2, "adcode"
@@ -912,7 +912,7 @@
 
     invoke-virtual {v11, v1, v2}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 195
+    .line 196
     invoke-virtual {v10, v0, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
@@ -921,10 +921,10 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 196
+    .line 197
     return-object v11
 
-    .line 199
+    .line 200
     .end local v5    # "regeocode":Lnan/ren/util/JSONObject;
     .end local v7    # "url":Ljava/lang/String;
     .end local v8    # "json":Ljava/lang/String;
@@ -937,7 +937,7 @@
     :cond_0
     nop
 
-    .line 200
+    .line 201
     new-instance v0, Lnan/ren/util/JSONObject;
 
     invoke-direct {v0}, Lnan/ren/util/JSONObject;-><init>()V
@@ -949,14 +949,14 @@
     .locals 5
     .param p0, "args"    # [Ljava/lang/String;
 
-    .line 205
+    .line 206
     const-wide v0, 0x405e0b7ff36ac648L    # 120.17968450000001
 
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v0
 
-    .line 206
+    .line 207
     .local v0, "lon":Ljava/lang/Double;
     invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
@@ -966,7 +966,7 @@
 
     move-result-object v1
 
-    .line 207
+    .line 208
     .local v1, "dms":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/Double;->doubleValue()D
 
@@ -976,18 +976,18 @@
 
     move-result-object v2
 
-    .line 208
+    .line 209
     .local v2, "d2":Ljava/lang/String;
     sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v3, v1}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 209
+    .line 210
     sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     invoke-virtual {v3, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 210
+    .line 211
     sget-object v3, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
     invoke-static {v2}, Lnan/ren/util/LocationUtil;->toDmsString(Ljava/lang/String;)Ljava/lang/String;
@@ -996,7 +996,7 @@
 
     invoke-virtual {v3, v4}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
-    .line 211
+    .line 212
     return-void
 .end method
 
@@ -1040,112 +1040,134 @@
     return-object v0
 .end method
 
-.method public static toDmsIntArr(Ljava/lang/String;)[Ljava/lang/Integer;
+.method public static toDmsIntArr(Ljava/lang/Object;)[Ljava/lang/Integer;
     .locals 14
-    .param p0, "str"    # Ljava/lang/String;
+    .param p0, "data"    # Ljava/lang/Object;
 
     .line 121
-    const-string v0, "/"
+    const/4 v0, 0x3
 
-    const/4 v1, -0x1
+    const/4 v1, 0x2
 
-    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 122
-    .local v0, "split":[Ljava/lang/String;
     const/4 v2, 0x1
 
-    aget-object v3, v0, v2
+    const/4 v3, 0x0
 
-    const-string v4, ","
-
-    invoke-virtual {v3, v4, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 123
-    .local v3, "split2":[Ljava/lang/String;
-    const/4 v5, 0x2
-
-    aget-object v6, v0, v5
-
-    invoke-virtual {v6, v4, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
+    if-nez p0, :cond_0
+
+    new-array v0, v0, [Ljava/lang/Integer;
+
+    aput-object v4, v0, v3
+
+    aput-object v4, v0, v2
+
+    aput-object v4, v0, v1
+
+    return-object v0
+
+    .line 122
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "/"
+
+    const/4 v6, -0x1
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 123
+    .local v4, "split":[Ljava/lang/String;
+    aget-object v5, v4, v2
+
+    const-string v7, ","
+
+    invoke-virtual {v5, v7, v6}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v5
+
     .line 124
-    .local v4, "split3":[Ljava/lang/String;
-    const/4 v6, 0x0
+    .local v5, "split2":[Ljava/lang/String;
+    aget-object v8, v4, v1
 
-    aget-object v7, v0, v6
+    invoke-virtual {v8, v7, v6}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
-    invoke-static {v7}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    move-result v7
+    move-result-object v7
 
     .line 125
-    .local v7, "parseInt":I
-    aget-object v8, v3, v2
+    .local v7, "split3":[Ljava/lang/String;
+    aget-object v8, v4, v3
 
     invoke-static {v8}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v8
 
     .line 126
-    .local v8, "parseInt2":I
-    aget-object v9, v4, v2
+    .local v8, "parseInt":I
+    aget-object v9, v5, v2
 
-    invoke-static {v9}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result-wide v9
+    move-result v9
 
-    const/4 v11, 0x3
+    .line 127
+    .local v9, "parseInt2":I
+    aget-object v10, v7, v2
 
-    aget-object v12, v0, v11
+    invoke-static {v10}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    move-result-wide v10
+
+    aget-object v12, v4, v0
 
     invoke-static {v12}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v12
 
-    div-double/2addr v9, v12
+    div-double/2addr v10, v12
 
-    invoke-static {v9, v10}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+    invoke-static {v10, v11}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v10
 
-    const-string v10, "\\."
+    const-string v11, "\\."
 
-    invoke-virtual {v9, v10, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 127
-    .local v1, "split4":[Ljava/lang/String;
-    aget-object v9, v1, v6
-
-    .line 128
-    .local v9, "str2":Ljava/lang/String;
-    aget-object v10, v1, v2
-
-    .line 129
-    .local v10, "str3":Ljava/lang/String;
-    new-array v11, v11, [Ljava/lang/Integer;
-
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v12
-
-    aput-object v12, v11, v6
-
-    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {v10, v11, v6}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v6
 
-    aput-object v6, v11, v2
+    .line 128
+    .local v6, "split4":[Ljava/lang/String;
+    aget-object v10, v6, v3
 
-    invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    .line 129
+    .local v10, "str2":Ljava/lang/String;
+    aget-object v11, v6, v2
+
+    .line 130
+    .local v11, "str3":Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/Integer;
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v12
+
+    aput-object v12, v0, v3
+
+    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v0, v2
+
+    invoke-static {v10}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v2
 
@@ -1153,9 +1175,9 @@
 
     move-result-object v2
 
-    aput-object v2, v11, v5
+    aput-object v2, v0, v1
 
-    return-object v11
+    return-object v0
 .end method
 
 .method public static toDmsString(Ljava/lang/String;)Ljava/lang/String;

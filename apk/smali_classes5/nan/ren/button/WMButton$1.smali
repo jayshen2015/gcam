@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/WMButton;
 
-    .line 34
+    .line 55
     iput-object p1, p0, Lnan/ren/button/WMButton$1;->this$0:Lnan/ren/button/WMButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 3
     .param p1, "view"    # Landroid/view/View;
 
-    .line 37
+    .line 58
     iget-object v0, p0, Lnan/ren/button/WMButton$1;->this$0:Lnan/ren/button/WMButton;
 
     invoke-virtual {v0}, Lnan/ren/button/WMButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 38
+    .line 59
     .local v0, "c":Landroid/content/Context;
     new-instance v1, Landroid/content/Intent;
 
@@ -55,16 +55,16 @@
 
     invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 39
+    .line 60
     .local v1, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 40
+    .line 61
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 41
+    .line 62
     const/4 v2, 0x1
 
     return v2

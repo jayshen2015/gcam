@@ -4,110 +4,136 @@
 
 
 # static fields
-.field public static ExifInterface_Field_Arr:[Ljava/lang/String;
+.field static ExifInterface_Field_List:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 3
 
-    .line 6
+    .line 11
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sput-object v0, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
+
+    .line 14
     nop
 
-    .line 148
-    const-string v0, "FNumber\nApertureValue\nArtist\nBitsPerSample\nBrightnessValue\nCFAPattern\nColorSpace\nComponentsConfiguration\nCompressedBitsPerPixel\nCompression\nContrast\nCopyright\nCustomRendered\nDateTime\nDateTimeDigitized\nDateTimeOriginal\nDefaultCropSize\nDeviceSettingDescription\nDigitalZoomRatio\nDNGVersion\nExifVersion\nExposureBiasValue\nExposureIndex\nExposureMode\nExposureProgram\nExposureTime\nFileSource\nFlash\nFlashpixVersion\nFlashEnergy\nFocalLength\nFocalLengthIn35mmFilm\nFocalPlaneResolutionUnit\nFocalPlaneXResolution\nFocalPlaneYResolution\nFNumber\nGainControl\nGPSAltitude\nGPSAltitudeRef\nGPSAreaInformation\nGPSDateStamp\nGPSDestBearing\nGPSDestBearingRef\nGPSDestDistance\nGPSDestDistanceRef\nGPSDestLatitude\nGPSDestLatitudeRef\nGPSDestLongitude\nGPSDestLongitudeRef\nGPSDifferential\nGPSDOP\nGPSImgDirection\nGPSImgDirectionRef\nGPSLatitude\nGPSLatitudeRef\nGPSLongitude\nGPSLongitudeRef\nGPSMapDatum\nGPSMeasureMode\nGPSProcessingMethod\nGPSSatellites\nGPSSpeed\nGPSSpeedRef\nGPSStatus\nGPSTimeStamp\nGPSTrack\nGPSTrackRef\nGPSVersionID\nImageDescription\nImageLength\nImageUniqueID\nImageWidth\nInteroperabilityIndex\nISOSpeedRatings\nISOSpeedRatings\nJPEGInterchangeFormat\nJPEGInterchangeFormatLength\nLightSource\nMake\nMakerNote\nMaxApertureValue\nMeteringMode\nModel\nNewSubfileType\nOECF\nOffsetTime\nOffsetTimeDigitized\nOffsetTimeOriginal\nAspectFrame\nPreviewImageLength\nPreviewImageStart\nThumbnailImage\nOrientation\nPhotometricInterpretation\nPixelXDimension\nPixelYDimension\nPlanarConfiguration\nPrimaryChromaticities\nReferenceBlackWhite\nRelatedSoundFile\nResolutionUnit\nRowsPerStrip\nISO\nJpgFromRaw\nSensorBottomBorder\nSensorLeftBorder\nSensorRightBorder\nSensorTopBorder\nSamplesPerPixel\nSaturation\nSceneCaptureType\nSceneType\nSensingMethod\nSharpness\nShutterSpeedValue\nSoftware\nSpatialFrequencyResponse\nSpectralSensitivity\nStripByteCounts\nStripOffsets\nSubfileType\nSubjectArea\nSubjectDistance\nSubjectDistanceRange\nSubjectLocation\nSubSecTime\nSubSecTimeDigitized\nSubSecTimeDigitized\nSubSecTimeOriginal\nSubSecTimeOriginal\nThumbnailImageLength\nThumbnailImageWidth\nThumbnailOrientation\nTransferFunction\nUserComment\nWhiteBalance\nWhitePoint\nXmp\nXResolution\nYCbCrCoefficients\nYCbCrPositioning\nYCbCrSubSampling\nYResolution"
+    .line 156
+    const-string v1, "FNumber\nApertureValue\nArtist\nBitsPerSample\nBrightnessValue\nCFAPattern\nColorSpace\nComponentsConfiguration\nCompressedBitsPerPixel\nCompression\nContrast\nCopyright\nCustomRendered\nDateTime\nDateTimeDigitized\nDateTimeOriginal\nDefaultCropSize\nDeviceSettingDescription\nDigitalZoomRatio\nDNGVersion\nExifVersion\nExposureBiasValue\nExposureIndex\nExposureMode\nExposureProgram\nExposureTime\nFileSource\nFlash\nFlashpixVersion\nFlashEnergy\nFocalLength\nFocalLengthIn35mmFilm\nFocalPlaneResolutionUnit\nFocalPlaneXResolution\nFocalPlaneYResolution\nFNumber\nGainControl\nGPSAltitude\nGPSAltitudeRef\nGPSAreaInformation\nGPSDateStamp\nGPSDestBearing\nGPSDestBearingRef\nGPSDestDistance\nGPSDestDistanceRef\nGPSDestLatitude\nGPSDestLatitudeRef\nGPSDestLongitude\nGPSDestLongitudeRef\nGPSDifferential\nGPSDOP\nGPSImgDirection\nGPSImgDirectionRef\nGPSLatitude\nGPSLatitudeRef\nGPSLongitude\nGPSLongitudeRef\nGPSMapDatum\nGPSMeasureMode\nGPSProcessingMethod\nGPSSatellites\nGPSSpeed\nGPSSpeedRef\nGPSStatus\nGPSTimeStamp\nGPSTrack\nGPSTrackRef\nGPSVersionID\nImageDescription\nImageLength\nImageUniqueID\nImageWidth\nInteroperabilityIndex\nISOSpeedRatings\nISOSpeedRatings\nJPEGInterchangeFormat\nJPEGInterchangeFormatLength\nLightSource\nMake\nMakerNote\nMaxApertureValue\nMeteringMode\nModel\nNewSubfileType\nOECF\nOffsetTime\nOffsetTimeDigitized\nOffsetTimeOriginal\nAspectFrame\nPreviewImageLength\nPreviewImageStart\nThumbnailImage\nOrientation\nPhotometricInterpretation\nPixelXDimension\nPixelYDimension\nPlanarConfiguration\nPrimaryChromaticities\nReferenceBlackWhite\nRelatedSoundFile\nResolutionUnit\nRowsPerStrip\nISO\nJpgFromRaw\nSensorBottomBorder\nSensorLeftBorder\nSensorRightBorder\nSensorTopBorder\nSamplesPerPixel\nSaturation\nSceneCaptureType\nSceneType\nSensingMethod\nSharpness\nShutterSpeedValue\nSoftware\nSpatialFrequencyResponse\nSpectralSensitivity\nStripByteCounts\nStripOffsets\nSubfileType\nSubjectArea\nSubjectDistance\nSubjectDistanceRange\nSubjectLocation\nSubSecTime\nSubSecTimeDigitized\nSubSecTimeDigitized\nSubSecTimeOriginal\nSubSecTimeOriginal\nThumbnailImageLength\nThumbnailImageWidth\nThumbnailOrientation\nTransferFunction\nUserComment\nWhiteBalance\nWhitePoint\nXmp\nXResolution\nYCbCrCoefficients\nYCbCrPositioning\nYCbCrSubSampling\nYResolution"
 
-    const-string v1, "\n"
+    const-string v2, "\n"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    sput-object v0, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
+    .line 14
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    .line 6
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+
+    .line 157
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 5
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;)V
-    .locals 7
+    .locals 5
     .param p0, "filePath"    # Ljava/lang/String;
     .param p1, "exif"    # Landroid/media/ExifInterface;
 
-    .line 189
+    .line 197
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
 
     invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 190
+    .line 198
     .local v0, "exnew":Landroid/media/ExifInterface;
-    sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_Arr:[Ljava/lang/String;
+    sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
 
-    array-length v2, v1
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    const/4 v3, 0x0
+    move-result-object v1
 
     :goto_0
-    if-ge v3, v2, :cond_1
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    aget-object v4, v1, v3
+    move-result v2
 
-    .line 191
-    .local v4, "f":Ljava/lang/String;
-    invoke-virtual {p1, v4}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
+    if-eqz v2, :cond_1
 
-    move-result-object v5
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 192
-    .local v5, "tmpV":Ljava/lang/String;
-    if-eqz v5, :cond_0
+    move-result-object v2
 
-    invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    move-result-object v6
+    .line 199
+    .local v2, "f":Ljava/lang/String;
+    invoke-virtual {p1, v2}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {v6}, Ljava/lang/String;->isEmpty()Z
+    move-result-object v3
 
-    move-result v6
+    .line 200
+    .local v3, "tmpV":Ljava/lang/String;
+    if-eqz v3, :cond_0
 
-    if-nez v6, :cond_0
+    invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    .line 193
-    invoke-virtual {v0, v4, v5}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v4
 
-    .line 190
-    .end local v4    # "f":Ljava/lang/String;
-    .end local v5    # "tmpV":Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    .line 201
+    invoke-virtual {v0, v2, v3}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 203
+    .end local v2    # "f":Ljava/lang/String;
+    .end local v3    # "tmpV":Ljava/lang/String;
     :cond_0
-    add-int/lit8 v3, v3, 0x1
-
     goto :goto_0
 
-    .line 196
+    .line 204
     :cond_1
     invoke-static {v0}, Lnan/ren/util/ExifInterfaceUtil;->saveExifInterface(Landroid/media/ExifInterface;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 199
+    .line 207
     .end local v0    # "exnew":Landroid/media/ExifInterface;
     goto :goto_1
 
-    .line 197
+    .line 205
     :catch_0
     move-exception v0
 
-    .line 200
+    .line 208
     :goto_1
     return-void
 .end method
@@ -117,7 +143,7 @@
     .param p0, "filePath"    # Ljava/lang/String;
     .param p1, "srcfile"    # Ljava/lang/String;
 
-    .line 184
+    .line 192
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
 
@@ -129,14 +155,14 @@
 
     goto :goto_0
 
-    .line 185
+    .line 193
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 186
+    .line 194
     return-void
 .end method
 
@@ -144,7 +170,7 @@
     .locals 2
     .param p0, "absolutePath"    # Ljava/lang/String;
 
-    .line 152
+    .line 160
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
 
@@ -154,11 +180,11 @@
 
     return-object v0
 
-    .line 153
+    .line 161
     :catch_0
     move-exception v0
 
-    .line 154
+    .line 162
     .local v0, "ex":Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -169,7 +195,7 @@
     .locals 2
     .param p0, "exif"    # Landroid/media/ExifInterface;
 
-    .line 165
+    .line 173
     sget-object v0, Landroid/os/Build;->BRAND:Ljava/lang/String;
 
     const-string v1, "OPPO"
@@ -190,7 +216,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 167
+    .line 175
     :cond_0
     const-string v0, "ro.vendor.oplus.market.name"
 
@@ -204,22 +230,22 @@
 
     invoke-virtual {p0, v1, v0}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 171
+    .line 179
     :cond_1
     invoke-static {}, Lnan/ren/util/NUtil;->getProfileTitle()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 172
+    .line 180
     .local v0, "pztitle":Ljava/lang/String;
     if-eqz v0, :cond_2
 
-    .line 175
+    .line 183
     const-string v1, "UserComment"
 
     invoke-virtual {p0, v1, v0}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 180
+    .line 188
     :cond_2
     :try_start_0
     invoke-virtual {p0}, Landroid/media/ExifInterface;->saveAttributes()V
@@ -231,7 +257,7 @@
     :catch_0
     move-exception v1
 
-    .line 181
+    .line 189
     :goto_0
     return-void
 .end method
@@ -240,7 +266,7 @@
     .locals 2
     .param p0, "imgfile"    # Ljava/lang/String;
 
-    .line 160
+    .line 168
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -256,7 +282,7 @@
 
     return-void
 
-    .line 161
+    .line 169
     :cond_0
     new-instance v0, Landroid/media/ExifInterface;
 
@@ -268,13 +294,13 @@
 
     goto :goto_0
 
-    .line 162
+    .line 170
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 163
+    .line 171
     return-void
 .end method

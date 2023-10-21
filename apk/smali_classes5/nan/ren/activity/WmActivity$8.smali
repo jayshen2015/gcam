@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 540
+    .line 552
     iput-object p1, p0, Lnan/ren/activity/WmActivity$8;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 0
     .param p1, "editable"    # Landroid/text/Editable;
 
-    .line 553
+    .line 565
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .param p3, "i1"    # I
     .param p4, "i2"    # I
 
-    .line 542
+    .line 554
     return-void
 .end method
 
@@ -62,7 +62,7 @@
     .param p3, "i1"    # I
     .param p4, "i2"    # I
 
-    .line 546
+    .line 558
     const-string v0, "#"
 
     :try_start_0
@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    .line 547
+    .line 559
     .local v1, "v":Ljava/lang/String;
     invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -104,7 +104,7 @@
 
     move-object v1, v0
 
-    .line 548
+    .line 560
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$8;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -121,13 +121,13 @@
     .end local v1    # "v":Ljava/lang/String;
     goto :goto_0
 
-    .line 549
+    .line 561
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 550
+    .line 562
     return-void
 .end method
