@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 587
+    .line 588
     iput-object p1, p0, Lnan/ren/activity/WmActivity$9;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 2
     .param p1, "view"    # Landroid/view/View;
 
-    .line 590
+    .line 591
     invoke-static {}, Lnan/ren/util/LocationUtil;->getGpsLocalInfo()Ljava/lang/String;
 
     move-result-object v0
 
     sput-object v0, Lnan/ren/activity/WmActivity;->locationInfo:Ljava/lang/String;
 
-    .line 591
+    .line 592
     iget-object v0, p0, Lnan/ren/activity/WmActivity$9;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v0, v0, Lnan/ren/activity/WmActivity;->edLocalInfo:Landroid/widget/EditText;
@@ -56,6 +56,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 592
+    .line 593
     return-void
 .end method

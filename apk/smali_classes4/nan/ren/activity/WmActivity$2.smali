@@ -30,7 +30,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 268
+    .line 269
     iput-object p1, p0, Lnan/ren/activity/WmActivity$2;->this$0:Lnan/ren/activity/WmActivity;
 
     iput-object p2, p0, Lnan/ren/activity/WmActivity$2;->val$btn:Landroid/widget/Button;
@@ -47,7 +47,7 @@
 .method public run()V
     .locals 3
 
-    .line 272
+    .line 273
     :try_start_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$2;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -55,7 +55,7 @@
 
     move-result-object v0
 
-    .line 273
+    .line 274
     .local v0, "newFile":Ljava/lang/String;
     sget-object v1, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
@@ -63,7 +63,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 275
+    .line 276
     :try_start_1
     new-instance v1, Landroid/media/ExifInterface;
 
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;)V
 
-    .line 276
+    .line 277
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -86,14 +86,14 @@
 
     goto :goto_0
 
-    .line 277
+    .line 278
     :catch_0
     move-exception v1
 
     :goto_0
     nop
 
-    .line 278
+    .line 279
     :try_start_2
     iget-object v1, p0, Lnan/ren/activity/WmActivity$2;->val$btn:Landroid/widget/Button;
 
@@ -103,35 +103,35 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
-    .line 283
+    .line 284
     .end local v0    # "newFile":Ljava/lang/String;
     goto :goto_1
 
-    .line 279
+    .line 280
     :catch_1
     move-exception v0
 
-    .line 280
+    .line 281
     .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "\u4fdd\u5b58\u5931\u8d25\u4e86\u3002\u3002"
 
     invoke-static {v1}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 281
+    .line 282
     iget-object v1, p0, Lnan/ren/activity/WmActivity$2;->val$btn:Landroid/widget/Button;
 
     const-string v2, "\u4fdd\u5b58\u5931\u8d25"
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 282
+    .line 283
     iget-object v1, p0, Lnan/ren/activity/WmActivity$2;->val$btn:Landroid/widget/Button;
 
     iget-object v2, p0, Lnan/ren/activity/WmActivity$2;->val$that:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 284
+    .line 285
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_1
     return-void

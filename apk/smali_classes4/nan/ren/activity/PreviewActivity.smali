@@ -360,7 +360,7 @@
 
 # virtual methods
 .method addPage(I)V
-    .locals 6
+    .locals 5
     .param p1, "ps"    # I
 
     .line 141
@@ -442,11 +442,9 @@
     invoke-virtual {v3, p0}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 153
-    const/16 v4, 0x14
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
-
-    invoke-virtual {v2, v4, v5, v5, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    invoke-virtual {v2, v4, v4, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
     .line 154
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V

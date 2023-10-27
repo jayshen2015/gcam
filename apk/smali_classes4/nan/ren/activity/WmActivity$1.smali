@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 132
+    .line 133
     iput-object p1, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iput-object p2, p0, Lnan/ren/activity/WmActivity$1;->val$that:Lnan/ren/activity/WmActivity;
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 6
 
-    .line 135
+    .line 136
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v0, v0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
@@ -66,7 +66,7 @@
 
     goto/16 :goto_0
 
-    .line 136
+    .line 137
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -74,7 +74,7 @@
 
     invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v1, v0, Lnan/ren/activity/WmActivity;->srcImagePath:Ljava/lang/String;
@@ -85,7 +85,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
-    .line 138
+    .line 139
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -94,7 +94,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 139
+    .line 140
     .local v0, "width":I
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
@@ -120,7 +120,7 @@
 
     div-int/2addr v1, v2
 
-    .line 140
+    .line 141
     .local v1, "height":I
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -128,20 +128,20 @@
 
     if-nez v2, :cond_1
 
-    .line 141
+    .line 142
     new-instance v2, Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->val$that:Lnan/ren/activity/WmActivity;
 
     invoke-direct {v2, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 142
+    .line 143
     .local v2, "rl":Landroid/widget/LinearLayout;
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 143
+    .line 144
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     new-instance v4, Landroid/widget/ImageView;
@@ -152,7 +152,7 @@
 
     iput-object v4, v3, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
-    .line 144
+    .line 145
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v3, v3, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
@@ -163,7 +163,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setId(I)V
 
-    .line 145
+    .line 146
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v3, v3, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
@@ -176,21 +176,19 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 146
-    const/16 v3, 0x14
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v3, v4, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
-
     .line 147
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3, v3, v3, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 148
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v3, v3, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 148
+    .line 149
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v3}, Lnan/ren/activity/WmActivity;->getBottomView()Landroid/view/View;
@@ -199,14 +197,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 149
+    .line 150
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v3, v3, Lnan/ren/activity/WmActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v3, v2}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 150
+    .line 151
     iget-object v3, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v3, v3, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
@@ -217,7 +215,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 158
+    .line 159
     .end local v2    # "rl":Landroid/widget/LinearLayout;
     :cond_1
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
@@ -236,7 +234,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 159
+    .line 160
     sget-object v2, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
     const/16 v3, 0x800
@@ -247,7 +245,7 @@
 
     sput-object v2, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
-    .line 160
+    .line 161
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v2, v2, Lnan/ren/activity/WmActivity;->iv:Landroid/widget/ImageView;
@@ -260,7 +258,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 161
+    .line 162
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v2, v2, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
@@ -269,7 +267,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 162
+    .line 163
     iget-object v2, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v2, v2, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
@@ -278,10 +276,10 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 163
+    .line 164
     return-void
 
-    .line 135
+    .line 136
     .end local v0    # "width":I
     .end local v1    # "height":I
     :cond_2
