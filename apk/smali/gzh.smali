@@ -121,18 +121,9 @@
     goto :goto_0
 
     :cond_0
-    sget-object v0, Ljmt;->a:Ljmt;
+    invoke-static {p1}, LAGC;->getFocusDistance(Ljmt;)F
 
-    invoke-virtual {p1}, Ljmt;->ordinal()I
-
-    move-result p1
-
-    packed-switch p1, :pswitch_data_2
-
-    goto :goto_0
-
-    :pswitch_5
-    const v2, 0x3f553f7d    # 0.833f
+    move-result v2
 
     :goto_0
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -141,7 +132,7 @@
 
     return-object p1
 
-    :pswitch_6
+    :pswitch_5
     check-cast p1, Ljava/lang/Byte;
 
     invoke-virtual {p1}, Ljava/lang/Byte;->byteValue()B
@@ -200,7 +191,7 @@
 
     return-object p1
 
-    :pswitch_7
+    :pswitch_6
     check-cast p1, Ljava/lang/Boolean;
 
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -241,7 +232,7 @@
 
     return-object p1
 
-    :pswitch_8
+    :pswitch_7
     check-cast p1, Ljava/lang/Boolean;
 
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
@@ -284,7 +275,7 @@
 
     return-object p1
 
-    :pswitch_9
+    :pswitch_8
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
 
     check-cast p1, Lmuj;
@@ -297,7 +288,7 @@
 
     return-object p1
 
-    :pswitch_a
+    :pswitch_9
     check-cast p1, Ligi;
 
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
@@ -323,7 +314,7 @@
     :cond_3
     return-object p1
 
-    :pswitch_b
+    :pswitch_a
     check-cast p1, Ljava/util/List;
 
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -376,7 +367,7 @@
 
     return-object p1
 
-    :pswitch_c
+    :pswitch_b
     check-cast p1, Ljava/lang/Boolean;
 
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
@@ -387,7 +378,7 @@
 
     return-object p1
 
-    :pswitch_d
+    :pswitch_c
     check-cast p1, Lfvr;
 
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
@@ -419,7 +410,7 @@
 
     return-object p1
 
-    :pswitch_e
+    :pswitch_d
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
 
     check-cast v0, Landroid/hardware/camera2/CaptureRequest$Key;
@@ -430,7 +421,7 @@
 
     return-object p1
 
-    :pswitch_f
+    :pswitch_e
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-static {p1}, Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;
@@ -447,7 +438,7 @@
 
     return-object p1
 
-    :pswitch_10
+    :pswitch_f
     check-cast p1, Lmuj;
 
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
@@ -460,7 +451,7 @@
 
     return-object p1
 
-    :pswitch_11
+    :pswitch_10
     check-cast p1, Ljava/util/List;
 
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
@@ -525,7 +516,7 @@
 
     return-object p1
 
-    :pswitch_12
+    :pswitch_11
     check-cast p1, Ljava/util/List;
 
     iget-object v0, p0, Lgzh;->a:Ljava/lang/Object;
@@ -590,7 +581,7 @@
 
     return-object p1
 
-    :pswitch_13
+    :pswitch_12
     check-cast p1, Ljava/lang/String;
 
     sget v0, Lhdv;->c:I
@@ -603,7 +594,7 @@
 
     return-object p1
 
-    :pswitch_14
+    :pswitch_13
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -688,7 +679,7 @@
 
     return-object p1
 
-    :pswitch_15
+    :pswitch_14
     check-cast p1, Ljava/lang/Integer;
 
     sget-object p1, Lfma;->a:Lfln;
@@ -701,7 +692,7 @@
 
     return-object p1
 
-    :pswitch_16
+    :pswitch_15
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -740,11 +731,8 @@
     :goto_9
     return-object v0
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_16
         :pswitch_15
         :pswitch_14
         :pswitch_13
@@ -761,6 +749,7 @@
         :pswitch_8
         :pswitch_7
         :pswitch_6
+        :pswitch_5
         :pswitch_2
         :pswitch_1
         :pswitch_0
@@ -771,10 +760,5 @@
         :pswitch_4
         :pswitch_4
         :pswitch_3
-    .end packed-switch
-
-    :pswitch_data_2
-    .packed-switch 0x2
-        :pswitch_5
     .end packed-switch
 .end method

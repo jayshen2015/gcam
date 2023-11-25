@@ -2285,6 +2285,12 @@
 .method public final k(Llai;Z)V
     .locals 5
 
+    invoke-virtual {p1}, Llai;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/Globals;->setSMode(Ljava/lang/String;)V
+
     iget-object v0, p0, Lkpz;->g:Llai;
 
     if-eq v0, p1, :cond_8

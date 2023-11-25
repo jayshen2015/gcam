@@ -24,6 +24,8 @@
 
 .field private final isLogical:Z
 
+.field private final isRaw10Supported:Z
+
 .field private final minimumFocusDistance:F
 
 .field private mm35FocalLength:F
@@ -71,7 +73,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;ZFLjava/lang/Float;FLandroid/util/Size;FLjava/lang/Float;Landroid/util/SizeF;D[IZZ[Landroid/util/Size;ILjava/util/Set;Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V
-    .locals 17
+    .locals 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -214,17 +216,29 @@
 
     iput-object v3, v0, Lcom/agc/Camera;->formats:Ljava/lang/String;
 
+    invoke-virtual/range {p19 .. p19}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "RAW10"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    iput-boolean v3, v0, Lcom/agc/Camera;->isRaw10Supported:Z
+
     move-object/from16 v3, p20
 
     iput-object v3, v0, Lcom/agc/Camera;->sizes:Ljava/util/Map;
 
     invoke-interface/range {p17 .. p17}, Ljava/util/Set;->isEmpty()Z
 
-    move-result v16
+    move-result v4
 
     const/4 v3, 0x1
 
-    xor-int/lit8 v4, v16, 0x1
+    xor-int/2addr v4, v3
 
     iput-boolean v4, v0, Lcom/agc/Camera;->isLogical:Z
 
@@ -889,6 +903,14 @@
     .locals 1
 
     iget-boolean v0, p0, Lcom/agc/Camera;->oisSupported:Z
+
+    return v0
+.end method
+
+.method public isRaw10Supported()Z
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/agc/Camera;->isRaw10Supported:Z
 
     return v0
 .end method

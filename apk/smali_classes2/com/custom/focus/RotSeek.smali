@@ -430,6 +430,92 @@
     return-void
 .end method
 
+.method public getLensInfoFocusDistance()F
+    .locals 4
+
+    const-string v0, "pref_minimum_focus_distance_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-eqz v1, :cond_0
+
+    return v0
+
+    :cond_0
+    invoke-static {}, Lcom/Utils/Lens;->getCurrentCamera()Lcom/agc/Camera;
+
+    move-result-object v1
+
+    invoke-static {}, Lagc/Agc;->isXiaomi13Pro()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "3"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    const v2, 0x413a0be8
+
+    return v2
+
+    :cond_1
+    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "2"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    const v2, 0x41eb4b4a
+
+    return v2
+
+    :cond_2
+    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "7"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    const v2, 0x4112c9fc
+
+    return v2
+
+    :cond_3
+    invoke-virtual {v1}, Lcom/agc/Camera;->getMinimumFocusDistance()F
+
+    move-result v2
+
+    return v2
+.end method
+
 .method public getProgress()I
     .locals 1
 
@@ -724,7 +810,7 @@
 
     const/4 v0, 0x0
 
-    goto/16 :goto_1
+    goto/16 :goto_0
 
     :pswitch_0
     iget-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
@@ -810,7 +896,7 @@
     :cond_2
     iget-boolean v0, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
 
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_1
     iget-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
@@ -826,6 +912,8 @@
     invoke-interface {v1, v2}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStopTrackingTouch(Landroid/widget/SeekBar;)V
 
     :cond_3
+    const/4 v0, 0x0
+
     iget v1, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
 
     if-lez v1, :cond_4
@@ -851,15 +939,13 @@
 
     invoke-virtual {p0, v1, v4}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
 
-    const-string v1, "manualfocus_restart"
+    const-string v1, "pref_focus_toggle_mode_key"
 
     invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result v1
 
     if-nez v1, :cond_7
-
-    invoke-static {}, Lcom/Globals;->onReInit()V
 
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->getContext()Landroid/content/Context;
 
@@ -870,21 +956,9 @@
     goto :goto_0
 
     :cond_7
-    const-string v1, "pref_af_mode_back"
+    invoke-static {}, Lcom/Globals;->onReInit()V
 
-    const-string v2, "2"
-
-    invoke-static {v1, v2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
-
-    :goto_0
-    const/4 v0, 0x0
-
-    goto :goto_1
-
-    :cond_8
-    const/4 v0, 0x0
-
-    goto :goto_1
+    goto :goto_0
 
     :pswitch_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
@@ -899,12 +973,11 @@
 
     nop
 
-    :goto_1
+    :cond_8
+    :goto_0
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->redraw()V
 
     return v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -925,40 +998,17 @@
 .method public setFocusString()V
     .locals 12
 
-    const-string v0, "pref_max_focus_value_key"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
+    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->getLensInfoFocusDistance()F
 
     move-result v0
 
-    cmpg-float v2, v0, v1
+    const-string v1, "pref_focus_values_number_key"
 
-    if-gtz v2, :cond_0
+    const/16 v2, 0xa
 
-    invoke-static {}, Lagc/Agc;->getCameraMinimumFocusDistance()F
-
-    move-result v0
-
-    cmpg-float v1, v0, v1
-
-    if-gtz v1, :cond_0
-
-    const/high16 v0, 0x41a00000    # 20.0f
-
-    :cond_0
-    const/16 v1, 0xa
-
-    const-string v2, "pref_focus_value_key"
-
-    invoke-static {v2, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+    invoke-static {v1, v2}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
 
     move-result v1
-
-    const-string v2, "focusValue:"
-
-    invoke-static {v2, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
 
     int-to-float v2, v1
 
@@ -983,7 +1033,7 @@
 
     const-string v8, ","
 
-    if-ge v6, v1, :cond_2
+    if-ge v6, v1, :cond_1
 
     add-float/2addr v4, v2
 
@@ -1017,16 +1067,16 @@
 
     add-int/lit8 v6, v6, 0x1
 
-    if-lt v6, v1, :cond_1
+    if-lt v6, v1, :cond_0
 
     goto :goto_1
 
-    :cond_1
+    :cond_0
     invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
-    :cond_2
+    :cond_1
     :goto_1
     iput-object v5, p0, Lcom/custom/focus/RotSeek;->FocusValue:[F
 

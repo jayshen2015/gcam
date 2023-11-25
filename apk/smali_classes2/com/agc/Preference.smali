@@ -1149,78 +1149,6 @@
     return-void
 .end method
 
-.method private static updateNoiseModelPref(Landroid/preference/PreferenceFragment;)V
-    .locals 9
-
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
-
-    move-result-object v0
-
-    const-string v1, "0"
-
-    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getArguments()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_0
-
-    const-string v3, "pref_lens_id"
-
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_0
-
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    :cond_0
-    const-string v3, "pref_noise_model_key"
-
-    invoke-virtual {v0, v3}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/preference/ListPreference;
-
-    if-eqz v4, :cond_1
-
-    invoke-virtual {v4}, Landroid/preference/ListPreference;->getEntries()[Ljava/lang/CharSequence;
-
-    move-result-object v5
-
-    invoke-virtual {v4}, Landroid/preference/ListPreference;->getEntryValues()[Ljava/lang/CharSequence;
-
-    move-result-object v6
-
-    sget-object v7, Lcom/Globals;->noiseFolder:Ljava/io/File;
-
-    invoke-static {v7}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7, v5}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, [Ljava/lang/CharSequence;
-
-    invoke-virtual {v4, v8}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
-
-    invoke-static {v7, v6}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, [Ljava/lang/CharSequence;
-
-    invoke-virtual {v4, v8}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
-
-    :cond_1
-    return-void
-.end method
-
 .method private static updatePatchConfigrPref(Landroid/preference/PreferenceFragment;)V
     .locals 12
 
@@ -1650,7 +1578,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     const/4 v1, 0x0
 
@@ -1690,7 +1618,7 @@
 
     move-result-object v1
 
-    const-string v2, "noise_model_screen"
+    const-string v2, "lib_group_key"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -1698,24 +1626,9 @@
 
     if-eqz v1, :cond_2
 
-    invoke-static {p0}, Lcom/agc/Preference;->updateNoiseModelPref(Landroid/preference/PreferenceFragment;)V
-
-    :cond_2
-    invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getKey()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "lib_group_key"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
     invoke-static {p0}, Lcom/agc/Preference;->updatePatchConfigrPref(Landroid/preference/PreferenceFragment;)V
 
-    :cond_3
+    :cond_2
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getKey()Ljava/lang/String;
 
     move-result-object v1
@@ -1726,18 +1639,17 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    if-eqz v1, :cond_3
 
     invoke-static {p0}, Lcom/agc/Preference;->updatePatchCustomPref(Landroid/preference/PreferenceFragment;)V
 
-    :cond_4
+    :cond_3
     invoke-static {p0}, Lcom/agc/Preference;->updateLensAndConfigKey(Landroid/preference/PreferenceFragment;)V
 
-    invoke-static {p0}, Lnan/ren/G;->updatePreference(Landroid/preference/PreferenceFragment;)V
-    
+invoke-static {p0}, Lnan/ren/G;->updatePreference(Landroid/preference/PreferenceFragment;)V
     invoke-static {v0}, Lcom/agc/Preference;->updatePreferenceSummary(Landroid/preference/PreferenceGroup;)V
 
-    :cond_5
+    :cond_4
     const-string v1, "prefscreen_top"
 
     invoke-virtual {p0, v1}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;

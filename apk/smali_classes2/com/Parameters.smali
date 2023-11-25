@@ -197,7 +197,7 @@
 
     move-result-object v0
 
-    const-string v1, "\n Sat="
+    const-string v1, "\n Saturation="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -237,7 +237,7 @@
 
     move-result-object v0
 
-    const-string v1, "\n Sharp="
+    const-string v1, "\n Sharpness="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -264,26 +264,6 @@
     move-result-object v0
 
     iget v1, p0, Lcom/Parameters;->denoise:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/Parameters;->FltFormat(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n FocalL="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/Parameters;->focalLength:F
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 

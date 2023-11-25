@@ -3883,6 +3883,12 @@
 .method public final a(I)F
     .locals 3
 
+    invoke-static {p1}, Lcom/agc/LensSettings;->getExpcomp(I)I
+
+    move-result v0
+
+    add-int/2addr p1, v0
+
     iget-object v0, p0, Lqeh;->c:Lnah;
 
     sget-object v1, Landroid/hardware/camera2/CameraCharacteristics;->CONTROL_AE_COMPENSATION_STEP:Landroid/hardware/camera2/CameraCharacteristics$Key;

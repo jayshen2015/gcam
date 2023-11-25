@@ -34,7 +34,7 @@
 .end method
 
 .method public constructor <init>(Lmmf;Lmmg;ILmme;IIIFLpcd;Lpcd;)V
-    .locals 0
+    .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,6 +45,10 @@
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     iput-object p2, p0, Lmmm;->b:Lmmg;
+
+    invoke-static {p3}, Lcom/agc/LensSettings;->getBitrate(I)I
+
+    move-result p3
 
     iput p3, p0, Lmmm;->c:I
 

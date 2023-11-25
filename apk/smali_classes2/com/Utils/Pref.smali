@@ -1731,6 +1731,33 @@
     return-void
 .end method
 
+.method private static handleFocus(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "pref_af_mode_back"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    invoke-static {}, Lcom/Globals;->onReInit()V
+
+    :cond_0
+    return-void
+.end method
+
 .method private static handleLog(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 1
 

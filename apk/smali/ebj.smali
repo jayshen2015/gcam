@@ -81,8 +81,6 @@
 
     move-object/from16 v2, p1
 
-    invoke-static {v2}, LAGC;->metadataValue(Lndu;)V
-
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 
     invoke-interface {v2, v0}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -1431,6 +1429,8 @@
 
     :goto_19
     goto :goto_18
+
+    nop
 
     :array_0
     .array-data 4

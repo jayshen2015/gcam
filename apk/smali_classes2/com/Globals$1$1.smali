@@ -85,82 +85,221 @@
 
     move-result-object v5
 
+    const/high16 v6, 0x3f800000    # 1.0f
+
     if-eqz v5, :cond_1
 
     invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_1
+    if-nez v7, :cond_1
 
-    const-string v6, "0"
+    const-string v7, "0"
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    sget-object v7, Lcom/Globals;->lutPath:Ljava/lang/String;
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    new-instance v7, Ljava/io/File;
-
-    invoke-direct {v7, v6}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v7}, Ljava/io/File;->exists()Z
+    invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v7
 
-    if-eqz v7, :cond_1
+    if-nez v7, :cond_1
 
-    const-string v7, "lib_lut_intensity_key"
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    const/high16 v8, 0x3f800000    # 1.0f
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+
+    move-result-object v8
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    sget-object v8, Lcom/Globals;->lutPath:Ljava/lang/String;
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    new-instance v8, Ljava/io/File;
+
+    invoke-direct {v8, v7}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v8}, Ljava/io/File;->exists()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_1
+
+    const-string v8, "lib_lut_intensity_key"
+
+    invoke-static {v8, v6}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v8
+
+    invoke-virtual {v4, v7, v8}, Lcom/agc/util/ImageProcessing;->setLutParamters(Ljava/lang/String;F)V
+
+    :cond_1
+    const-string v7, "lib_gpu_unsharp_intensity_key"
+
+    const/4 v8, 0x0
 
     invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
 
     move-result v7
 
-    invoke-virtual {v4, v6, v7}, Lcom/agc/util/ImageProcessing;->setLutParamters(Ljava/lang/String;F)V
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setUnsharpIntensity(F)V
 
-    :cond_1
-    const-string v6, "lib_vignette_start_key"
+    const-string v7, "lib_gpu_sharpness_key"
 
-    const/4 v7, 0x0
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
 
-    invoke-static {v6, v7}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setSharpness(F)V
+
+    const-string v7, "lib_gpu_brightness_key"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setBrightness(F)V
+
+    const-string v7, "lib_gpu_luminance_threshold_key"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setLuminanceThreshold(F)V
+
+    const-string v7, "lib_gpu_exposure_key"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setExposure(F)V
+
+    const-string v7, "lib_gpu_contrast_key"
+
+    invoke-static {v7, v6}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setContrast(F)V
+
+    const-string v7, "lib_gpu_gamma_key"
+
+    invoke-static {v7, v6}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setGamma(F)V
+
+    const-string v7, "lib_gpu_saturation_key"
+
+    invoke-static {v7, v6}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setSaturation(F)V
+
+    const-string v7, "lib_patch_profile_key"
+
+    invoke-static {v7}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result v7
+
+    const/4 v9, 0x2
+
+    if-ne v7, v9, :cond_2
+
+    const/high16 v7, 0x3fa00000    # 1.25f
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setSaturation(F)V
+
+    :cond_2
+    const-string v7, "lib_gpu_vibrance_key"
+
+    const v9, 0x3f99999a    # 1.2f
+
+    invoke-static {v7, v9}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setVibrance(F)V
+
+    const-string v7, "lib_gpu_rgb_red_key"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setRgbRed(F)V
+
+    const-string v7, "lib_gpu_rgb_green_key"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setRgbGreen(F)V
+
+    const-string v7, "lib_gpu_rgb_blue_key"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setRgbBlue(F)V
+
+    const-string v7, "lib_gpu_hue_key"
+
+    const/high16 v9, 0x42b40000    # 90.0f
+
+    invoke-static {v7, v9}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lcom/agc/util/ImageProcessing;->setHue(F)V
+
+    const-string v7, "lib_gpu_highlights_key"
+
+    invoke-static {v7, v6}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v6
+
+    invoke-virtual {v4, v6}, Lcom/agc/util/ImageProcessing;->setHighlights(F)V
+
+    const-string v6, "lib_gpu_shadows_key"
+
+    invoke-static {v6, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v6
+
+    invoke-virtual {v4, v6}, Lcom/agc/util/ImageProcessing;->setShadows(F)V
+
+    const-string v6, "lib_gpu_vignette_start_key"
+
+    invoke-static {v6, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
 
     move-result v6
 
     invoke-virtual {v4, v6}, Lcom/agc/util/ImageProcessing;->setVignetteStart(F)V
 
-    const-string v6, "lib_vignette_end_key"
+    const-string v6, "lib_gpu_vignette_end_key"
 
-    invoke-static {v6, v7}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+    invoke-static {v6, v8}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
 
     move-result v6
 
@@ -182,7 +321,7 @@
 
     const/4 v8, 0x1
 
-    if-ne v7, v8, :cond_7
+    if-ne v7, v8, :cond_8
 
     const-string v7, "pref_watermark_bg_key"
 
@@ -190,11 +329,11 @@
 
     move-result v7
 
-    if-ne v7, v8, :cond_2
+    if-ne v7, v8, :cond_3
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     move v8, v6
 
     :goto_0
@@ -206,7 +345,7 @@
 
     move-result v6
 
-    if-nez v6, :cond_6
+    if-nez v6, :cond_7
 
     const-string v6, "pref_watermark_title_key"
 
@@ -220,20 +359,20 @@
 
     move-result-object v8
 
-    if-eqz v8, :cond_3
+    if-eqz v8, :cond_4
 
     invoke-virtual {v8, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
-    :cond_3
+    :cond_4
     const-string v0, "agc88.png"
 
     move-object v8, v0
 
-    :cond_4
+    :cond_5
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -282,7 +421,7 @@
 
     move-result v10
 
-    if-nez v10, :cond_5
+    if-nez v10, :cond_6
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
@@ -316,7 +455,7 @@
 
     move-object v0, v10
 
-    :cond_5
+    :cond_6
     iget-object v10, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
 
     iget-object v10, v10, Lcom/Globals$1;->val$absolutePath:Ljava/lang/String;
@@ -325,14 +464,14 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_7
     iget-object v0, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
 
     iget-object v0, v0, Lcom/Globals$1;->val$absolutePath:Ljava/lang/String;
 
     invoke-static {v0}, Lagc/Agc;->drawTimeWaterMark(Ljava/lang/String;)V
 
-    :cond_7
+    :cond_8
     :goto_1
     iget-object v0, p0, Lcom/Globals$1$1;->this$0:Lcom/Globals$1;
 
@@ -342,7 +481,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_9
 
     sget-object v0, Lcom/Globals;->mParameters:Lcom/Parameters;
 
@@ -354,7 +493,7 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_8
+    :cond_9
     goto :goto_2
 
     :catch_0

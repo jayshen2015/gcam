@@ -2963,6 +2963,8 @@
 .method public final onSharedPreferenceChanged(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 8
 
+    invoke-static {p0, p1, p2}, Lcom/agc/Preference;->onSharedPreferenceChanged(Landroid/preference/PreferenceFragment;Landroid/content/SharedPreferences;Ljava/lang/String;)V
+
     iget-object p1, p0, Lhdv;->h:Lkwq;
 
     iget-object p1, p1, Lkwq;->j:Ljava/lang/Object;

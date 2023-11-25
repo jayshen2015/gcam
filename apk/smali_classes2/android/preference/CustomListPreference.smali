@@ -78,6 +78,19 @@
     goto :goto_0
 
     :sswitch_0
+    const-string v1, "noise"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x4
+
+    goto :goto_1
+
+    :sswitch_1
     const-string v1, "xml"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -90,7 +103,7 @@
 
     goto :goto_1
 
-    :sswitch_1
+    :sswitch_2
     const-string v1, "lut"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -103,7 +116,7 @@
 
     goto :goto_1
 
-    :sswitch_2
+    :sswitch_3
     const-string v1, "lib"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -116,7 +129,7 @@
 
     goto :goto_1
 
-    :sswitch_3
+    :sswitch_4
     const-string v1, "awb"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -138,21 +151,26 @@
     goto :goto_2
 
     :pswitch_0
-    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomAwb(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomNoise(Landroid/content/Context;)V
 
     goto :goto_2
 
     :pswitch_1
-    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomLut(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomAwb(Landroid/content/Context;)V
 
     goto :goto_2
 
     :pswitch_2
-    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomLib(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomLut(Landroid/content/Context;)V
 
     goto :goto_2
 
     :pswitch_3
+    invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomLib(Landroid/content/Context;)V
+
+    goto :goto_2
+
+    :pswitch_4
     invoke-virtual {p0, p1}, Landroid/preference/CustomListPreference;->initCustomXml(Landroid/content/Context;)V
 
     :goto_2
@@ -162,14 +180,16 @@
 
     :sswitch_data_0
     .sparse-switch
-        0x17aec -> :sswitch_3
-        0x1a285 -> :sswitch_2
-        0x1a40b -> :sswitch_1
-        0x1d017 -> :sswitch_0
+        0x17aec -> :sswitch_4
+        0x1a285 -> :sswitch_3
+        0x1a40b -> :sswitch_2
+        0x1d017 -> :sswitch_1
+        0x642271a -> :sswitch_0
     .end sparse-switch
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
@@ -281,6 +301,38 @@
     iget-object v1, p0, Landroid/preference/CustomListPreference;->defaultEntryValues:[Ljava/lang/CharSequence;
 
     invoke-static {v1, v0}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Ljava/lang/CharSequence;
+
+    invoke-virtual {p0, v1}, Landroid/preference/CustomListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
+
+    return-void
+.end method
+
+.method initCustomNoise(Landroid/content/Context;)V
+    .locals 2
+
+    sget-object v0, Lcom/Globals;->noiseFolder:Ljava/io/File;
+
+    invoke-static {v0}, Lcom/agc/pref/FileLoader;->customFiles(Ljava/io/File;)[Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v1, p0, Landroid/preference/CustomListPreference;->defaultEntries:[Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Ljava/lang/CharSequence;
+
+    invoke-virtual {p0, v1}, Landroid/preference/CustomListPreference;->setEntries([Ljava/lang/CharSequence;)V
+
+    iget-object v1, p0, Landroid/preference/CustomListPreference;->defaultEntryValues:[Ljava/lang/CharSequence;
+
+    invoke-static {v0, v1}, Lcom/agc/util/AgcUtil;->concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1
 

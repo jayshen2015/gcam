@@ -111,158 +111,165 @@
     return-object v0
 .end method
 
-.method public static getBitrate()I
+.method public static getBitrate(I)I
     .locals 2
 
     const-string v0, "pref_bitrate_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
 
     move-result v0
 
-    const/4 v1, 0x0
+    if-nez v0, :cond_0
 
+    return p0
+
+    :cond_0
     packed-switch v0, :pswitch_data_0
 
     return v1
 
     :pswitch_0
-    const v0, 0x2faf0800
+    const v1, 0x2faf0800
 
-    return v0
+    return v1
 
     :pswitch_1
-    const v0, 0x2aea5400
+    const v1, 0x2aea5400
 
-    return v0
+    return v1
 
     :pswitch_2
-    const v0, 0x2625a000
+    const v1, 0x2625a000
 
-    return v0
+    return v1
 
     :pswitch_3
-    const v0, 0x2160ec00
+    const v1, 0x2160ec00
 
-    return v0
+    return v1
 
     :pswitch_4
-    const v0, 0x1c9c3800
+    const v1, 0x1c9c3800
 
-    return v0
+    return v1
 
     :pswitch_5
-    const v0, 0x17d78400
+    const v1, 0x17d78400
 
-    return v0
+    return v1
 
     :pswitch_6
-    const v0, 0x1312d000
+    const v1, 0x1312d000
 
-    return v0
+    return v1
 
     :pswitch_7
-    const v0, 0xe4e1c00
+    const v1, 0xe4e1c00
 
-    return v0
+    return v1
 
     :pswitch_8
-    const v0, 0x9896800
+    const v1, 0x9896800
 
-    return v0
+    return v1
 
     :pswitch_9
-    const v0, 0x7270e00
+    const v1, 0x7270e00
 
-    return v0
+    return v1
 
     :pswitch_a
-    const v0, 0x5b8d800
+    const v1, 0x5b8d800
 
-    return v0
+    return v1
 
     :pswitch_b
-    const v0, 0x4c4b400
+    const v1, 0x4c4b400
 
-    return v0
+    return v1
 
     :pswitch_c
-    const v0, 0x44aa200
+    const v1, 0x44aa200
 
-    return v0
+    return v1
 
     :pswitch_d
-    const v0, 0x3d09000
+    const v1, 0x3d09000
 
-    return v0
+    return v1
 
     :pswitch_e
-    const v0, 0x3567e00
+    const v1, 0x3567e00
 
-    return v0
+    return v1
 
     :pswitch_f
-    const v0, 0x2dc6c00
+    const v1, 0x2dc6c00
 
-    return v0
+    return v1
 
     :pswitch_10
-    const v0, 0x2625a00
+    const v1, 0x2625a00
 
-    return v0
+    return v1
 
     :pswitch_11
-    const v0, 0x2255100
+    const v1, 0x2255100
 
-    return v0
+    return v1
 
     :pswitch_12
-    const v0, 0x1e84800
+    const v1, 0x1e84800
 
-    return v0
+    return v1
 
     :pswitch_13
-    const v0, 0x1ab3f00
+    const v1, 0x1ab3f00
 
-    return v0
+    return v1
 
     :pswitch_14
-    const v0, 0x16e3600
+    const v1, 0x16e3600
 
-    return v0
+    return v1
 
     :pswitch_15
-    const v0, 0x1312d00
+    const v1, 0x1312d00
 
-    return v0
+    return v1
 
     :pswitch_16
-    const v0, 0xf42400
+    const v1, 0xf42400
 
-    return v0
+    return v1
 
     :pswitch_17
-    const v0, 0xb71b00
+    const v1, 0xb71b00
 
-    return v0
+    return v1
 
     :pswitch_18
-    const v0, 0x7a1200
+    const v1, 0x7a1200
 
-    return v0
+    return v1
 
     :pswitch_19
-    const v0, 0x3d0900
+    const v1, 0x3d0900
 
-    return v0
+    return v1
 
     :pswitch_1a
-    const v0, 0xc3500
+    const v1, 0xc3500
 
-    return v0
+    return v1
 
     :pswitch_1b
     return v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

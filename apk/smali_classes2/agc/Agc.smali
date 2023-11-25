@@ -105,6 +105,9 @@
 .method public static native forceSingleExposure(Z)Z
 .end method
 
+.method public static native formatCube2Png(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.end method
+
 .method public static native getAWBEntryLen()I
 .end method
 
@@ -409,6 +412,9 @@
 .end method
 
 .method public static native setGcamCameraId(I)V
+.end method
+
+.method public static native setLeicaMode(Z)V
 .end method
 
 .method public static native setSMode(Ljava/lang/String;)V
