@@ -75,11 +75,11 @@ public class NUtil {
     public static String getProfileTitle() {
         try {
             int i = Pref.MenuValue("lib_patch_profile_key", 1);
-            if (i < 1) return null;
+            if (i < 1) return "";
             String ccid = Lens.getCurrentCameraID();
             return Pref.getStringValue("lib_profile_title_key_p" + i + "_" + ccid, "配置" + i);
         }catch (Exception ex){
-            return null;
+            return "";
         }
     }
 
@@ -109,8 +109,8 @@ public class NUtil {
                     r = o.toString();
                 }
             }
-            try {CrashHandler.writeLog(">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>:", r);}catch (Exception ex){}
-            try { android.util.Log.e(">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>",r);}catch (Exception ex){}
+            try {CrashHandler.writeLog(">>>>BY SJS >>>>:", r);}catch (Exception ex){}
+            try { android.util.Log.e(">>>>BY SJS >>>>:",r);}catch (Exception ex){}
         }catch (Exception ex){
             ex.printStackTrace();
         }catch (Throwable ex){

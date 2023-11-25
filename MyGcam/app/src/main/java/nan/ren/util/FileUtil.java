@@ -10,6 +10,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import nan.ren.G;
 
@@ -37,6 +43,27 @@ public class FileUtil {
             //输出流
             FileOutputStream outputStream = new FileOutputStream(newf);
 
+            //开始处理流
+            while (inputStream.read(data) != -1) {
+                outputStream.write(data);
+            }
+            inputStream.close();
+            outputStream.close();
+            return true;
+        }catch (Exception ex){
+            return false;
+        }
+    }
+
+    public static boolean streamToFile(InputStream inputStream,File newf){
+        try {
+            //如果原文件不存在
+            if (inputStream==null) return false;
+            if(!newf.getParentFile().exists())newf.getParentFile().mkdirs();
+            //获得原文件流
+            byte[] data = new byte[1024];
+            //输出流
+            FileOutputStream outputStream = new FileOutputStream(newf);
             //开始处理流
             while (inputStream.read(data) != -1) {
                 outputStream.write(data);
@@ -112,6 +139,33 @@ public class FileUtil {
             }catch (Exception ex){}
         }
         return false;
+    }
+
+    public static List<File> getChildList(String fileName){
+        return getChildList(new File(fileName));
+    }
+    public static List<File> getChildList(File file){
+        if (file==null||!file.exists()||!file.canRead())return null;
+        File[] files= file.listFiles();
+        if(files==null||files.length<1)return null;
+        List fileList=new ArrayList(Arrays.asList(files));
+        fileList.sort(new Comparator<File>() {
+            @Override
+            public int compare(File f1, File f2) {
+                try {
+                    String fn1 = f1.getName();
+                    String fn2 = f2.getName();
+                    for (int i = 0; i < fn1.length(); i++) {
+                        if (fn2.length() <= i) return 1;
+                        if (fn1.charAt(i) != fn2.charAt(i)) return fn1.charAt(i) - fn2.charAt(i);
+                    }
+                    return -1;
+                }catch (Exception ex){
+                    return 1;
+                }
+            }
+        });
+        return fileList;
     }
 
 }

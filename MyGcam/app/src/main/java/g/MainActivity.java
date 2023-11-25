@@ -1,46 +1,42 @@
 package g;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BlurMaskFilter;
 import android.graphics.Color;
 import android.graphics.LightingColorFilter;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
-import android.graphics.Shader;
-import android.icu.text.SimpleDateFormat;
 import android.media.ExifInterface;
 import android.os.Bundle;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.Globals;
 
-import java.text.ParseException;
-import java.util.Date;
+import java.io.IOException;
 
 import agc.Agc;
-import g.bak.TActivity;
 import jp.co.cyberagent.android.gpuimage.GPUImage;
-import jp.co.cyberagent.android.gpuimage.GPUImageGrayscaleFilter;
-import jp.co.cyberagent.android.gpuimage.GPUImageLookupFilter;
+import jp.co.cyberagent.android.gpuimage.filter.GPUImageGrayscaleFilter;
 import nan.ren.G;
-import nan.ren.activity.ConfigActivity;
+import nan.ren.activity.PreviewActivity;
 import nan.ren.activity.WmActivity;
-import nan.ren.bean.LUT;
-import nan.ren.bean.LUTCube;
-import nan.ren.bean.LUTPng;
-import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.JsonUtil;
-import nan.ren.util.LutUtil;
-import nan.ren.util.WaterMarkUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.PopDialog;
+import nan.ren.util.ViewUtil;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -50,15 +46,36 @@ public class MainActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Globals.context=getApplicationContext();
-        setContentView(R.layout.activity_main);
 //        imageView=findViewById(R.id.imageView);
 //        Bitmap bit=  WaterMarkUtil.getWaterMarkBitMapByWmConf("/sdcard/DCIM/b.jpg");
 //        imageView.setImageDrawable(ImageUtil.bitmap2Drawable(bit));
 
 
+        setContentView(R.layout.activity_main);
 //        imageView2=findViewById(R.id.imageView2);
 //        imageView2.setImageDrawable(ImageUtil.getOuterDrawable("/sdcard/download/x.png"));
-   //    bind();
+        bind();
+
+        try {
+            ExifInterface exifInterface = new ExifInterface("/sdcard/download/c.jpg");
+            float[] ll=new float[2];
+            exifInterface.getLatLong(ll);
+            double hb=exifInterface.getAltitude(0);
+            System.out.println(hb);
+            System.out.println(ll[0]);
+            System.out.println(ll[1]);
+            exifInterface.setAttribute(ExifInterface.TAG_GPS_LATITUDE,"120.1111");
+            exifInterface.setAttribute(ExifInterface.TAG_GPS_LONGITUDE,"30.1111");
+
+
+            exifInterface.getLatLong(ll);
+            System.out.println(ll[0]);
+            System.out.println(ll[1]);
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 //        ExifInterface exi= ExifInterfaceUtil.get("/sdcard/download/c.jpg");
 //        String a=exi.getAttribute("DateTime");
@@ -70,10 +87,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //            throw new RuntimeException(e);
 //        }
         // savePainConf();
+        //       Intent intent=new Intent(this, PreviewActivity.class);
 //        Intent intent=new Intent(this, ConfigActivity.class);
         Intent intent=new Intent(this, WmActivity.class);
+       intent.putExtra("imagePath","/sdcard/download/c.jpg");
         startActivity(intent);
+
+
     }
+
 
 
     void bind(){
@@ -82,8 +104,26 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this, WmActivity.class);
-        startActivity(intent);
+
+        PopDialog.show(MainActivity.this, ImageUtil.getBitMap("/sdcard/download/c.jpg"));
+//        String url="http://10.254.10.150/test.html";
+//        WebView web= ViewUtil.getWebView(this,-2,-2);
+//        web.clearCache(true);
+//
+//        web.loadUrl(url);
+//        web.addJavascriptInterface(new Object(){
+//            @JavascriptInterface
+//            public void cmd(String k,String msg) {
+//                NUtil.toastL(k+""+msg);
+//                //TODO 这里做相应的逻辑操作。
+//            }
+//        }, "AZ");
+//
+//        ViewGroup gv=findViewById(R.id.rootLayout);
+//        gv.addView(web);
+//        if(true)return;
+//        Intent intent = new Intent(this, WmActivity.class);
+//        startActivity(intent);
     }
 
     public void onClick1(View view) {

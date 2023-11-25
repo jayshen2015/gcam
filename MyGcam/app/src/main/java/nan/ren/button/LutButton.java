@@ -63,7 +63,6 @@ public class LutButton extends OptionButton {
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
         super.onCheckedChanged(compoundButton, z);
-        setChecked(this.selectedIndex > 0);
     }
     @Override
     public void onClickPopItem(int i) {

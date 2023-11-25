@@ -5,12 +5,11 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -19,17 +18,17 @@ import android.widget.TextView;
 import com.Utils.Pref;
 import com.agc.widget.WatermarkButton;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Map;
 
 import nan.ren.G;
 import nan.ren.activity.WmActivity;
+import nan.ren.util.DialogUtil;
 import nan.ren.util.JSONArray;
 import nan.ren.util.JSONObject;
+import nan.ren.util.JsonUtil;
+import nan.ren.util.NUtil;
+import nan.ren.util.ViewUtil;
 import nan.ren.util.WaterMarkUtil;
 
 public class WMButton extends WatermarkButton implements View.OnClickListener{
@@ -71,7 +70,7 @@ public class WMButton extends WatermarkButton implements View.OnClickListener{
     @Override
     public void onClickPopItem(int i) {
         super.onClickPopItem(i);
-        if(System.currentTimeMillis()-lastClickTime<=150){
+        if(System.currentTimeMillis()-lastClickTime<=500){
             showSelect();
         }else {
             lastClickTime = System.currentTimeMillis();
@@ -81,21 +80,17 @@ public class WMButton extends WatermarkButton implements View.OnClickListener{
 
     AlertDialog dialog;
     void showSelect(){
-
+        WMButton that=this;
         if(dialog==null) {
             dialog = new AlertDialog.Builder(getContext())
-                    .setTitle("选择水印配置文件(watermark.conf)")//标题
+                    .setTitle("选择水印配置")//标题
                     .setView(getListView())
                     .setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
                             TextView view=getSelect();
                             if(view!=null) {
-                                Integer index=idKeyMap.get(view.getId()+"");
-                                if (index == null)
-                                    Pref.setMenuValue("pref_watermark_type_key", "0");
-                                else
-                                    Pref.setMenuValue("pref_watermark_type_key", index);
+                                Pref.setMenuValue("pref_watermark_type_key", view.getText().toString());
                             }else{
                                 G.log("getSelect view is null ");
                             }
@@ -117,7 +112,6 @@ public class WMButton extends WatermarkButton implements View.OnClickListener{
     }
 
     GridLayout gridLayout;
-    Map<String,Integer> idKeyMap=new HashMap<>();
     View getListView(){
         LinearLayout linearLayout=new LinearLayout(getContext());
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int)(getResources().getDisplayMetrics().heightPixels*0.5)));
@@ -131,30 +125,27 @@ public class WMButton extends WatermarkButton implements View.OnClickListener{
         gridLayout.setLayoutParams(lp);
         gridLayout.setColumnCount(1);
         gridLayout.setPadding(20,20,20,20);
-        JSONArray allConfList=WaterMarkUtil.getAllWmConfList();
-        if(allConfList!=null&& !allConfList.isEmpty()) {
-            int type=Pref.MenuValue("pref_watermark_type_key", 0);
-            int indexUnName=2;
-            idKeyMap.clear();
-            for (int i = 0; i < allConfList.size(); i++) {
-                JSONObject conf = allConfList.getJSONObject(i);
-                String name = conf.getString("name", "水印配置" + indexUnName);
+
+        Map  allConfMap=WaterMarkUtil.getAllWmConfMap();
+        if(allConfMap!=null&& !allConfMap.isEmpty()) {
+            String type=Pref.getStringValue("pref_watermark_type_key", "0");
+            Iterator<String> nameIt=allConfMap.keySet().iterator();
+            while(nameIt.hasNext()){
+                String name=nameIt.next().toString();
                 TextView tv = new TextView(getContext());
                 tv.setId(generateViewId());
                 tv.setText(name);
                 tv.setTag(0);
-                tv.setTooltipText(indexUnName+"");
+                tv.setTooltipText(name);
                 tv.setMinHeight(150);
                 tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150));
                 tv.setOnClickListener(this);
                 tv.setGravity(Gravity.CENTER_VERTICAL);
-                if(type==indexUnName) {
+                if(type.equals(name)) {
                     tv.setTag(1);
                     tv.setBackgroundColor(Color.parseColor("#aa969593"));
                 }
-                idKeyMap.put(tv.getId()+"",indexUnName);
                 gridLayout.addView(tv);
-                indexUnName++;
             }
         }else{
             TextView tv = new TextView(getContext());

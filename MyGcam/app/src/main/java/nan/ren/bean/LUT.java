@@ -2,7 +2,7 @@ package nan.ren.bean;
 
 import android.graphics.Bitmap;
 import jp.co.cyberagent.android.gpuimage.GPUImage;
-import jp.co.cyberagent.android.gpuimage.GPUImageLookupFilter;
+import jp.co.cyberagent.android.gpuimage.filter.GPUImageLookupFilter;
 import nan.ren.G;
 
 public class LUT {

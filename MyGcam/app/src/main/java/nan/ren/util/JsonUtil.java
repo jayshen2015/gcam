@@ -58,7 +58,8 @@ public class JsonUtil {
             org.json.JSONArray oja=(org.json.JSONArray)object;
             JSONArray result=new JSONArray();
             for(int i=0;i<oja.length();i++){
-                result.add(oja.opt(i));
+                Object o=oja.opt(i);
+                if(o!=null)result.add(o);
             }
             return result;
         }

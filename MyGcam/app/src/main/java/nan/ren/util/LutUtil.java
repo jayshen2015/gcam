@@ -9,7 +9,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import jp.co.cyberagent.android.gpuimage.GPUImage;
-import jp.co.cyberagent.android.gpuimage.GPUImageLookupFilter;
+import jp.co.cyberagent.android.gpuimage.filter.GPUImageLookupFilter;
 import nan.ren.G;
 import nan.ren.bean.LUT;
 import nan.ren.bean.LUTCube;

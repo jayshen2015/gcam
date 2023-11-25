@@ -26,15 +26,22 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import nan.ren.G;
 public class WaterMarkUtil {
 
     private static Typeface DEFAULT_TYPEFACE=null;
+    static  int agc_wm_type_size=2;
+    public static int getWmTypeIndexByType(int type){
+        return Math.max(type-agc_wm_type_size,0);
+    }
 
     public static Typeface getDefaultTypeFace(){
         try {
@@ -235,7 +242,7 @@ public class WaterMarkUtil {
 
             File file=new File(str);
             BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 99, bufferedOutputStream);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, Pref.MenuValue("pref_qjpg_key",97), bufferedOutputStream);
             bufferedOutputStream.flush();
             bufferedOutputStream.close();
         } catch (IOException e) {
@@ -396,56 +403,107 @@ public class WaterMarkUtil {
 //    private  static float dp2px(float f){
 //        return AgcUtil.dp2px(CONTEXT,f);
 //    }
+    public static Map getAllWmConfMap(){
+        JSONArray configList= getAllWmConfList2();
+        Map<String,JSONObject> configMap=new LinkedHashMap<>();
+        if(configList==null||configList.isEmpty())return configMap;
+        for (int i=0;i<configList.length();i++){
+            JSONObject jo=configList.getJSONObject(i);
+            String name=jo.getString("name",jo.getString("NAME",""));
+            if(ObjectUtil.isEmpty(name))continue;
+            configMap.put(name,jo);
+        }
+        return configMap;
+    }
 
-
-    public static JSONObject getWmConfJson(String confName){
-        JSONArray confList=getAllWmConfList();
-        G.log("getAllWmConfList by cfgName:"+(confList==null?"null":confList.toString())+" wmConfName:"+confName);
-        if(confList==null||confList.isEmpty())return null;
-        for(int i=0;i<confList.size();i++){
-            JSONObject conf=confList.getJSONObject(i);
-            if(confName.equals(conf.getString("name","文件配置"+(i+2)))){
-              return conf;
+    /**
+     * 将watermark.conf转换为JSON
+     * @return
+     */
+    public static JSONArray getAllWmConfList2(){
+        JSONArray result=new JSONArray();
+        JSONArray cfgArr1=getWmConfigByFile(new File(G.BASE_AGC_PATH+"/watermark.conf"));
+        if(cfgArr1!=null) result.addAll(cfgArr1);
+        List<File> configListInDir =FileUtil.getChildList(G.WATERMARK_PATH);
+        if(configListInDir!=null){
+            for (File cfgFile:configListInDir){
+                if(cfgFile!=null && cfgFile.getName().toLowerCase().endsWith(".conf")) {
+                    JSONArray tmpCfg = getWmConfigByFile(cfgFile);
+                    if(tmpCfg!=null) result.addAll(tmpCfg);
+                }
             }
+        }
+       return result;
+    }
+
+    static JSONArray getWmConfigByFile(File file){
+        if(file==null||!file.exists())return null;
+        String wmconf=FileUtil.getFileText(file.getAbsolutePath());
+        if(ObjectUtil.isEmpty(wmconf))return null;
+        try{
+            String fileName=file.getName();
+            if(fileName.lastIndexOf(".")>0){
+                fileName=fileName.substring(0,fileName.lastIndexOf("."));
+            }
+            if(wmconf.trim().startsWith("{")){
+                JSONArray result=new JSONArray();
+                JSONObject cfg=new JSONObject(wmconf);
+                if(!cfg.hasIgnoreCase("name"))cfg.put("name",fileName);
+                result.add(cfg);
+                return result;
+            }
+            JSONArray cfgArr= new JSONArray(wmconf);
+            for(int i=0;i<cfgArr.length();i++){
+                try {
+                    JSONObject cfg = cfgArr.getJSONObject(i);
+                    if(!cfg.hasIgnoreCase("name"))cfg.put("name",fileName+"-"+i);
+                    cfgArr.set(i,cfg);
+                }catch (Exception ex){
+                    NUtil.toastL("水印文件["+file.getName()+":第"+(i+1)+"个配置]格式错误");
+                }
+            }
+            return cfgArr;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            NUtil.toastL("水印文件["+file.getName()+"]格式错误");
         }
         return null;
     }
 
-    public static JSONObject getWmConfJson(int wmTypeKeyIndex){
-        JSONArray confList=getAllWmConfList();
-        G.log("getAllWmConfList:"+(confList==null?"null":confList.toString())+" wmTypeKeyIndex:"+wmTypeKeyIndex);
-        if(confList==null||confList.isEmpty())return null;
-        if(wmTypeKeyIndex<0)wmTypeKeyIndex=0;
-        JSONObject conf=confList.getJSONObject(wmTypeKeyIndex);
-        return conf;
-    }
-     static JSONObject getWmConfJson(){
-         int wmTypeKeyIndex=Pref.MenuValue("pref_watermark_type_key",0)-2;
-        return getWmConfJson(wmTypeKeyIndex);
-    }
-    public static JSONArray getAllWmConfList(){
-       String wmconf= FileUtil.getFileText(G.BASE_AGC_PATH+"/watermark.conf");
-        if(wmconf==null || wmconf.trim().isEmpty()){
-            wmconf= FileUtil.getFileText(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+"/watermark.conf");
-        }
-       if(wmconf==null || wmconf.trim().isEmpty()){
-           NUtil.toastL("未找到水印自定义配置文件或者配置文件内容为空");
-           return null;
-       }
-       try{
-           if(wmconf.trim().startsWith("{")){
-               JSONArray result=new JSONArray();
-               result.add(new JSONObject(wmconf));
-               return result;
-           }
-           return new JSONArray(wmconf);
-       }catch (Exception ex){
-           ex.printStackTrace();
-           NUtil.toastL("水印配置内容格式错误");
-       }
-       return null;
+
+    /**
+     *
+     * @param confName
+     * @return
+     */
+    public static JSONObject getWmConfJson(String confName){
+        Map<String,JSONObject> configMap= getAllWmConfMap();
+        if(configMap.containsKey(confName))return configMap.get(confName);
+        return null;
     }
 
+//    public static JSONObject getWmConfJson(int wmTypeKeyIndex){
+//        JSONArray confList=getAllWmConfList();
+//        if(confList==null||confList.isEmpty())return null;
+//        if(wmTypeKeyIndex<0)wmTypeKeyIndex=0;
+//        JSONObject conf=confList.getJSONObject(wmTypeKeyIndex);
+//        return conf;
+//    }
+
+    /**
+     * 根据当前水印设置获取配置
+     * @return
+     */
+   public static JSONObject getWmConfJson(){
+        return getWmConfJson(Pref.getStringValue("pref_watermark_type_key","0"));
+    }
+
+
+    /**
+     * 根据图片确定最终方向的配置内容
+     * @param img
+     * @return
+     */
     public static JSONObject getWmConfByBitMap(Bitmap img){
         JSONObject conf=getWmConfJson();
         if(conf==null)return null;
@@ -467,7 +525,8 @@ public class WaterMarkUtil {
             if (wmConfJson == null) wmConfJson= getVerticalWmConfJson(conf);
             if (wmConfJson == null) wmConfJson =conf;
         }
-        return  getParamInitedConf(wmConfJson);
+        wmConfJson.put("name",conf.getString("name",conf.getString("NAME")));
+        return  initConfigCustomAndParams(wmConfJson,conf);
     }
 
     static Map<String,Integer[]> JIHEXXMAP=new HashMap<>();
@@ -493,9 +552,14 @@ public class WaterMarkUtil {
                 String wh=wmConfJson.getString("height",picBit.getHeight()+"");
                 height= getNumberByExpressionStr(wh,0,0,picBit.getWidth(),picBit.getHeight(),0,0);
             }
-            if(wmConfJson.has("isInner")){
-                isInner=wmConfJson.getInt("isInner",0)==1;
+            if(height<0 && !wmConfJson.hasIgnoreCase("isInner")){
+                wmConfJson.put("isInner",1);
             }
+            height=Math.abs(height);
+            if(wmConfJson.hasIgnoreCase("isInner")){
+                isInner=wmConfJson.getInt("isInner",wmConfJson.getInt("isinner",0))==1;
+            }
+
             Bitmap createBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(createBitmap);
             Rect rect=new Rect(0,height,width,0);
@@ -571,25 +635,44 @@ public class WaterMarkUtil {
 
     static JSONArray initVisibles(JSONArray list){
         Map<String,Boolean> vsMap=new HashMap();
-        for(int i=0;i<list.size();i++) {
-            JSONObject oneConf=list.getJSONObject(i);
-            if(oneConf==null)continue;
-            //初始化visible属性
-            if (!oneConf.has("visible")) oneConf.put("visible", 1);
-            else {
-                String visb = oneConf.getString("visible", "0").trim();
-                boolean bv = false;
-                boolean not = visb.startsWith("!");
-                if (not) visb = visb.substring(1);
-                if ("true".equalsIgnoreCase(visb) || "1".equals(visb)) bv = true;
-                else bv = (vsMap.get(visb)==null?false:vsMap.get(visb));
-                if (not) oneConf.put("visible", bv ? 0 : 1);
-                else oneConf.put("visible", bv ? 1 : 0);
+        List<Integer> reDoIndexList=new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            reDoIndexList.add(i);
+        }
+        for(int r=0;r<6;r++) {//重复处理6次
+            if (reDoIndexList.size() > 0) {
+                Integer[] reDoIndexArr = new Integer[reDoIndexList.size()];
+                reDoIndexArr = reDoIndexList.toArray(reDoIndexArr);
+                reDoIndexList.clear();
+                //设置常量
+                for (int i :reDoIndexArr) {
+                    JSONObject oneConf = list.getJSONObject(i);
+                    if (oneConf == null) continue;
+                    //初始化visible属性
+                    if (!oneConf.has("visible")) oneConf.put("visible", 1);
+                    else {
+                        String visb = oneConf.getString("visible", "0").trim();
+                        boolean bv = false;
+                        boolean not = visb.startsWith("!");
+                        if (not) visb = visb.substring(1);
+                        if ("true".equalsIgnoreCase(visb) || "1".equals(visb)) bv = true;
+                        else if ("false".equalsIgnoreCase(visb) || "0".equals(visb)) bv = false;
+                        else if (vsMap.containsKey(visb)) bv = vsMap.get(visb);
+                        else {
+                            reDoIndexList.add(i);
+                            continue;
+                        }
+                        if (not) oneConf.put("visible", bv ? 0 : 1);
+                        else oneConf.put("visible", bv ? 1 : 0);
+                    }
+                    if (oneConf.has("id")) {
+                        vsMap.put(oneConf.getString("id"), oneConf.getInt("visible", 1) == 1);
+                    }
+                    list.set(i, oneConf);
+                }
+            }else{
+                break;
             }
-            if(oneConf.has("id")){
-                vsMap.put(oneConf.getString("id"),oneConf.getInt("visible",1)==1);
-            }
-           list.set(i,oneConf);
         }
         return list;
     }
@@ -597,7 +680,7 @@ public class WaterMarkUtil {
         for(int i=0;i<list.length();i++) {
             JSONObject conf=list.getJSONObject(i);
             if (conf == null ) continue;
-            String drawType = conf.getString("drawType", conf.getString("drawtype", "text"));//image , text ,line ,rect,circle
+            String drawType = conf.getString("drawType", conf.getString("drawtype", "text"));
             if ("text".equalsIgnoreCase(drawType)) {
                 String txt = conf.getString("text");
                 String format = conf.getString("format");
@@ -742,7 +825,7 @@ public class WaterMarkUtil {
         return String.format(format,os);
     }
     static Object[] getTextArray(String text,ExifInterface exi){
-        String[] textArr=text.replace(" ","").split(",");
+        String[] textArr=text.trim().split(",");
         Object[] valueArr=new Object[textArr.length];
         for(int i=0;i<textArr.length;i++){
             String attr = textArr[i];
@@ -843,6 +926,7 @@ public class WaterMarkUtil {
                         v = NUtil.getProp(attr.substring(6), "");
                     } else if (attr.toLowerCase().startsWith("$") && (v==null||v.toString().trim().isEmpty())) {
                         v = Pref.getStringValue(attr.substring(1), attr);
+
                     }
                     if(v==null){
                         v="";
@@ -862,7 +946,11 @@ public class WaterMarkUtil {
             try{
                 String name=nameIt.next();
                 if(methodMap.containsKey(name.toLowerCase())){
-                    paint=invoke(paint,methodMap.get(name.toLowerCase()),conf.getString(name));
+                    String v=conf.getString(name,"");
+                    if(v.startsWith("$")){
+                        v=Pref.getStringValue(v.substring(1));
+                    }
+                    paint=invoke(paint,methodMap.get(name.toLowerCase()),v);
                 }
             }catch (Exception ex){}
         }
@@ -961,7 +1049,18 @@ public class WaterMarkUtil {
                 else if(v.trim().equals("2")||v.trim().trim().equalsIgnoreCase("BEVEL"))p.setStrokeJoin(Paint.Join.BEVEL);
             }else if(m.getName().equals("setShadowLayer")){
                 String[] vs=v.split(",");
-                p.setShadowLayer(Float.parseFloat(vs[0].trim()),Float.parseFloat(vs[1].trim()),Float.parseFloat(vs[2].trim()),Integer.parseInt(vs[3].trim()));
+                if(vs!=null&&vs.length==4) {
+                    int colorInt=-1;
+                    try {
+                        String color = vs[3].trim();
+                        if (color.startsWith("#")) {
+                            colorInt = Color.parseColor(color);
+                        } else {
+                            colorInt = Integer.parseInt(color);
+                        }
+                    }catch (Exception ex){}
+                    p.setShadowLayer(Float.parseFloat(vs[0].trim()), Float.parseFloat(vs[1].trim()), Float.parseFloat(vs[2].trim()), colorInt);
+                }
             }else if(m.getName().equals("setTextAlign")){
                 if(v.trim().equals("0")||v.trim().trim().equalsIgnoreCase("LEFT"))p.setTextAlign(Paint.Align.LEFT);
                 else  if(v.trim().equals("1")||v.trim().trim().equalsIgnoreCase("CENTER"))p.setTextAlign(Paint.Align.CENTER);
@@ -969,16 +1068,22 @@ public class WaterMarkUtil {
             } else if(m.getName().equals("setTypeface")){
                 int type=Typeface.NORMAL;
                 String[] vs=v.trim().split(",");
-                if(vs[1].trim().equals("0")||v.trim().trim().equalsIgnoreCase("NORMAL"))type=Typeface.NORMAL;
-                else if(vs[1].trim().equals("1")||v.trim().trim().equalsIgnoreCase("BOLD"))type=Typeface.BOLD;
-                else if(vs[1].trim().equals("2")||v.trim().trim().equalsIgnoreCase("ITALIC"))type=Typeface.ITALIC;
-                else if(vs[1].trim().equals("3")||v.trim().trim().equalsIgnoreCase("BOLD_ITALIC"))type=Typeface.BOLD_ITALIC;
+                if(vs.length>1) {
+                    if (vs[1].trim().equals("0") || v.trim().trim().equalsIgnoreCase("NORMAL"))
+                        type = Typeface.NORMAL;
+                    else if (vs[1].trim().equals("1") || v.trim().trim().equalsIgnoreCase("BOLD"))
+                        type = Typeface.BOLD;
+                    else if (vs[1].trim().equals("2") || v.trim().trim().equalsIgnoreCase("ITALIC"))
+                        type = Typeface.ITALIC;
+                    else if (vs[1].trim().equals("3") || v.trim().trim().equalsIgnoreCase("BOLD_ITALIC"))
+                        type = Typeface.BOLD_ITALIC;
+                }
                 Typeface tf=null;
                 if(vs[0].trim().equals("0")||v.trim().trim().equalsIgnoreCase("DEFAULT"))tf=Typeface.create(getDefaultTypeFace(),type);
                 else if(vs[0].trim().equals("1")||v.trim().trim().equalsIgnoreCase("MONOSPACE"))tf=Typeface.create(Typeface.MONOSPACE,type);
                 else if(vs[0].trim().equals("2")||v.trim().trim().equalsIgnoreCase("SANS_SERIF"))tf=Typeface.create(Typeface.SANS_SERIF,type);
                 else if(vs[0].trim().equals("3")||v.trim().trim().equalsIgnoreCase("SERIF"))tf=Typeface.create(Typeface.SERIF,type);
-                else if(vs[0].trim().toLowerCase().endsWith(".ttf"))tf=Typeface.create(Typeface.createFromFile(G.BASE_AGC_PATH+"/"+vs[0].trim()),type);
+                else if(vs[0].trim().toLowerCase().endsWith(".ttf"))tf=Typeface.create(Typeface.createFromFile(G.FONT_PATH+"/"+vs[0].trim()),type);
                 if(tf==null)tf=Typeface.create(getDefaultTypeFace(),Typeface.NORMAL);
                 if(tf!=null)p.setTypeface(tf);
             }
@@ -1012,60 +1117,82 @@ public class WaterMarkUtil {
         JSONObject result=null;
         if(conf.has("Vertical"))result= conf.getJSONObject("Vertical");
         else if(conf.has("vertical"))result= conf.getJSONObject("vertical");
-        if(result!=null){
-            if(conf.has("param")) {
-                try {
-                    if (result.has("param")) {
-                        JSONObject paramObj = result.getJSONObject("param");
-                        paramObj.addAll(conf.getJSONObject("param"), false);
-                        result.put("param", paramObj);
-                    } else {
-                        result.put("param", conf.get("param"));
-                    }
-                } catch (Exception ex) {
-
-                }
-            }
-            return result;
-        }
-        return conf;
+//        if(result!=null){
+//            if(conf.has("param")) {
+//                try {
+//                    if (result.has("param")) {
+//                        JSONObject paramObj = result.getJSONObject("param");
+//                        paramObj.addAll(conf.getJSONObject("param"), false);
+//                        result.put("param", paramObj);
+//                    } else {
+//                        result.put("param", conf.get("param"));
+//                    }
+//                } catch (Exception ex) {
+//
+//                }
+//            }
+//            return result;
+//        }
+        return result==null?conf:result;
     }
      static JSONObject getHorizontalWmConfJson(JSONObject conf){//水平
         if(conf==null)return null;
          JSONObject result=null;
         if(conf.has("Horizontal"))result= conf.getJSONObject("Horizontal");
         if(conf.has("horizontal"))result= conf.getJSONObject("horizontal");
-        if(result!=null){
-             if(conf.has("param")) {
-                 try {
-                     if (result.has("param")) {
-                         JSONObject paramObj = result.getJSONObject("param");
-                         paramObj.addAll(conf.getJSONObject("param"), false);
-                         result.put("param", paramObj);
-                     } else {
-                         result.put("param", conf.get("param"));
-                     }
-                 } catch (Exception ex) {
-
-                 }
-             }
-
-             return result;
-         }
-         return conf;
+//        if(result!=null){
+//             if(conf.has("param")) {
+//                 try {
+//                     if (result.has("param")) {
+//                         JSONObject paramObj = result.getJSONObject("param");
+//                         paramObj.addAll(conf.getJSONObject("param"), false);
+//                         result.put("param", paramObj);
+//                     } else {
+//                         result.put("param", conf.get("param"));
+//                     }
+//                 } catch (Exception ex) {
+//
+//                 }
+//             }
+//
+//             return result;
+//         }
+         return result==null?conf:result;
     }
 
-    static JSONObject getParamInitedConf(JSONObject mainConf){
-        if(mainConf==null||!mainConf.has("param"))return mainConf;
-        JSONObject paramObj=mainConf.getJSONObject("param");
-        mainConf.remove("param");
-        String  oneCfgStr=mainConf.toString();
-        Iterator<String> keyIt=paramObj.keySet().iterator();
-        while (keyIt.hasNext()){
-            String key=keyIt.next();
-            oneCfgStr=oneCfgStr.replace("{"+key+"}",paramObj.getString(key));
+    static JSONObject initConfigCustomAndParams(JSONObject mainConf,JSONObject parentConf){
+        if(mainConf==null||mainConf.isEmpty())return mainConf;
+        String wmConfigStr = mainConf.toString();
+        String configName=parentConf.getString("name");
+        if(parentConf.containsKey("custom")) {
+            try {
+                JSONArray customArr = parentConf.getJSONArray("custom");
+                for(int i=0;i<customArr.length();i++){
+                    JSONObject customObj=customArr.getJSONObject(i);
+                    String key=customObj.getString("key");
+                    if(ObjectUtil.isEmpty(key))continue;
+                    String value=Pref.getStringValue(configName+":"+key,customObj.getString("def",""));
+                    wmConfigStr=wmConfigStr.replace("{" + key + "}",value);
+                }
+            } catch (Exception ex) {   }
         }
-        return new JSONObject(oneCfgStr);
+
+        JSONObject paramObj = null;
+        if (parentConf.has("param")) {
+            paramObj = parentConf.getJSONObject("param");
+         }
+        if (mainConf.has("param")) {
+              if(paramObj==null)paramObj=mainConf.getJSONObject("param");
+              else paramObj.addAll(paramObj,true);
+        }
+        if(paramObj!=null&&!paramObj.isEmpty()) {
+            Iterator<String> keyIt = paramObj.keySet().iterator();
+            while (keyIt.hasNext()) {
+                String key = keyIt.next();
+                wmConfigStr = wmConfigStr.replace("{" + key + "}", paramObj.getString(key));
+            }
+        }
+        return new JSONObject(wmConfigStr);
     }
 
 

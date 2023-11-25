@@ -43,7 +43,7 @@ public class ImageUtil {
         try {
             if(fileName==null||fileName.trim().length()<1)return null;
             if(fileName.startsWith("/"))return fileName;
-            String logoPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + fileName;
+            String logoPath = G.LOGO_PATH + fileName;
             if (!new File(logoPath).exists()) {
                 try {
                     logoPath = AssetsUtil.getAssetsFile(G.CONTEXT, "logos/" + fileName).getAbsolutePath();

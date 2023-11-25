@@ -7,6 +7,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.media.ExifInterface;
 
+import com.Utils.Pref;
 import com.agc.net.NetworkUtil;
 
 import java.text.DecimalFormat;
@@ -72,6 +73,7 @@ public class LocationUtil {
         if(sb.length()>1)sb.append(" ");
         if(lon!=null &&!lon.trim().isEmpty() )sb.append(toDmsString(lon));
         if(logRef!=null &&!logRef.trim().isEmpty() )sb.append(logRef);
+        sb.append(exifInterface.getAltitude(0)).append("M");
         return sb.toString();
     }
     public static String getGpsLocalInfo() {

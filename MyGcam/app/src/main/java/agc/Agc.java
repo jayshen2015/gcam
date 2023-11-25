@@ -36,6 +36,11 @@ public class Agc {
 
     }
 
+    public static  void drawWatermark(String imagepath, String logopath, String title, boolean bg){
+
+    }
+
+
     public static void ramPatcher(String a){};
 
 

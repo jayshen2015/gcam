@@ -294,9 +294,12 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
         List<Integer> list=new ArrayList<>();
         if(configView==null)return list;
         for(int i=0;i<configView.getChildCount();i++){
-            ViewGroup gv=(ViewGroup) (configView.getChildAt(i));
-            if("S".equals(gv.getTag())){
-                list.add(Integer.parseInt(gv.getChildAt(1).getTag().toString()));
+            View view=configView.getChildAt(i);
+            if(view instanceof ViewGroup) {
+                ViewGroup gv = (ViewGroup) (view);
+                if ("S".equals(gv.getTag())) {
+                    list.add(Integer.parseInt(gv.getChildAt(1).getTag().toString()));
+                }
             }
         }
         return list;

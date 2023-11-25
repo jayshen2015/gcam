@@ -14,6 +14,7 @@ public class Lens {
         }
         return null;
     }
+    public static String getAuxKeyString() {return "0";}
 
     public static String[] getCameraIdList() {
         return new String[0];

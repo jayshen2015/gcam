@@ -1,12 +1,11 @@
 package nan.ren.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
@@ -14,15 +13,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.MediaStore;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Size;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
@@ -35,68 +32,44 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.Globals;
 import com.Utils.Pref;
-import com.agc.util.AssetsUtil;
+import com.agc.Res;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
-import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.G;
+import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.JSONArray;
 import nan.ren.util.JSONObject;
-import nan.ren.util.LocationUtil;
+import nan.ren.util.MyWeb;
 import nan.ren.util.NUtil;
-import nan.ren.util.ThreadPoolManager;
+import nan.ren.util.ObjectUtil;
+import nan.ren.util.PopDialog;
 import nan.ren.util.UriUtil;
+import nan.ren.util.ViewUtil;
 import nan.ren.util.WaterMarkUtil;
 
-public class WmActivity extends Activity  implements View.OnClickListener {
-    static ExifInterface exb;
-
-    static boolean z3= Pref.MenuValue("pref_watermark_bg_key") == 1;
-    static String title=Pref.getStringValue("pref_watermark_title_key", "");
-    static int waterMarkHeight = Pref.MenuValue("my_watermark_height", 450);
-    static int wmFontSize = Pref.MenuValue("my_watermark_fontsize", 80);
-
-    static int wmSecFontSize = Pref.MenuValue("my_watermark_secfontsize", (int)(wmFontSize*0.95f));
-    static String picinfo;
-    static String locationInfo;
-    static String dateformat= WaterMarkUtil.getDateFormatInfo();
-
-    static  String logoFileName ="agc88.png";
-    static String logoPath ;
-    static Bitmap logoBt=null;
-
-    static int wmBgColor=z3?Color.BLACK:Color.WHITE;
-
-    static int wmTextColor=z3?Color.WHITE:Color.BLACK;
-
-    static int wmSecTextColor=waterMarkHeight>0?Color.parseColor("#ffb7b7b7"):Color.parseColor("#ffff9535");
-
+public class WmActivity extends Activity implements View.OnClickListener {
     GridLayout gridLayout;
+    LinearLayout topLayout;
     String srcImagePath=null;
+    ImageView iv;
+    String configName;
     static int text_color= Color.parseColor("#ffffffff");
-  //  static int bg_color= Color.parseColor("#aa000000");
     static int btn_bg_color= Color.parseColor("#aaab88f0");
-
     static int close_btn_height=70;
     static int image_title_height=60;
-
     static float dsp=1;
     static ViewGroup.LayoutParams btnlp;
-    ImageView iv;
     static Bitmap wmBitmap;
-
     static int widthPixels,heightPixels;
-
     static int fontSize=30;
+    static  String DEF_TYPE_TXT="==点此选择水印==";
 
     static {
         dsp=G.RESOURCES.getDisplayMetrics().scaledDensity;
@@ -106,9 +79,6 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         btnlp=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,image_title_height);
         widthPixels=G.RESOURCES.getDisplayMetrics().widthPixels;
         heightPixels=G.RESOURCES.getDisplayMetrics().heightPixels;
-        logoFileName = Pref.getStringValue("pref_watermark_logo_key", "agc88.png");
-        logoPath=ImageUtil.getMyLogoPath(Pref.getStringValue("pref_watermark_logo_key", "agc88.png"));
-        logoBt=ImageUtil.getBitMap(logoPath);
     }
 
     final static Handler handler = new Handler(Looper.getMainLooper());
@@ -117,61 +87,83 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         super.onCreate(bundle);
         Intent intent=getIntent();
         srcImagePath=intent.getStringExtra("imagePath");
+        configName=Pref.getStringValue("pref_watermark_type_key",DEF_TYPE_TXT);
         if(srcImagePath!=null && !srcImagePath.trim().isEmpty() && new File(srcImagePath).exists()){
-            setContentViewBySelf(false);
-            initParamters();
+            setContentViewBySelf(true);
             show();
         }else{
             setContentViewBySelf(true);
+            drawImage(G.RESOURCES.getDrawable(Res.getDrawableID("agc_recover"),null));
         }
-
+        NUtil.toastL("长按图片可更换图片！！");
     }
-
     void show(){
+        if(srcImagePath==null||srcImagePath.trim().isEmpty()) {
+            drawImage(G.RESOURCES.getDrawable(Res.getDrawableID("agc_recover"),null));
+            return;
+        }
+        if(ObjectUtil.isEmpty(configName)||DEF_TYPE_TXT.equals(configName)) {
+            NUtil.toastL("请选择水印配置");
+            return;
+        }
         WmActivity that=this;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(srcImagePath==null||srcImagePath.trim().isEmpty())return ;
-                G.log(srcImagePath);
-                wmBitmap=getWaterMark(srcImagePath);
-                int width=G.RESOURCES.getDisplayMetrics().widthPixels;
-                int height=(G.RESOURCES.getDisplayMetrics().widthPixels* wmBitmap.getHeight())/wmBitmap.getWidth();
-                if(iv==null) {
-                    LinearLayout rl=new LinearLayout(that);
-                    rl.setOrientation(LinearLayout.VERTICAL);
-                    iv = new ImageView(that);
-                    iv.setId(View.generateViewId());
-                    iv.setBackgroundColor(Color.parseColor("#11223344"));
-                    rl.setPadding(20,0,0,0);
-                    rl.addView(iv);
-                    rl.addView(getBottomView());
-                    gridLayout.addView(rl);
-                    iv.setOnLongClickListener(new View.OnLongClickListener() {
-                        @Override
-                        public boolean onLongClick(View view) {
-                             show();
-                            return false;
-                        }
-                    });
+                try {
+                    wmBitmap = getWaterMark(srcImagePath);
+                }catch (Exception ex){
+                    ex.printStackTrace();
+                    wmBitmap=null;
                 }
-                iv.setLayoutParams(new LinearLayout.LayoutParams(width,Math.max(100,height)));
+                if(wmBitmap==null){
+                    NUtil.toastL("水印设置失败！！");
+                    return ;
+                }
                 wmBitmap=ImageUtil.compressImageWidthLength(wmBitmap,1024*2);
-                iv.setImageDrawable(ImageUtil.bitmap2Drawable(wmBitmap));
+              //  int height=(widthPixels* wmBitmap.getHeight())/wmBitmap.getWidth();
+              //  iv.setLayoutParams(new LinearLayout.LayoutParams( widthPixels,height));
+               // iv.setImageDrawable(ImageUtil.bitmap2Drawable(bitmap));
+                drawImage(ImageUtil.bitmap2Drawable(wmBitmap));
                 saveButton.setOnClickListener(that);
-                saveButton.setText("保存");
+                saveButton.setText("保存图片");
             }
         },50);
 
+    }
+
+    void drawImage(Drawable drawable){
+        if(iv==null) {
+            LinearLayout rl=new LinearLayout(WmActivity.this);
+            rl.setOrientation(LinearLayout.VERTICAL);
+            iv = new ImageView(WmActivity.this);
+            iv.setId(View.generateViewId());
+            iv.setBackgroundColor(Color.parseColor("#11223344"));
+            rl.setPadding(0,0,0,0);
+            rl.addView(iv);
+            //  rl.addView(getBottomView());
+            gridLayout.addView(rl,0);
+            iv.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    selectPic(2);
+                    return false;
+                }
+            });
+        }
+        int height=(widthPixels* drawable.getIntrinsicHeight())/drawable.getIntrinsicWidth();
+        iv.setLayoutParams(new LinearLayout.LayoutParams( widthPixels,height));
+        iv.setImageDrawable(drawable);
+        //scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,  heightPixels-iv.getHeight()-close_btn_height));
+        initBottomView(height);
     }
 
     Bitmap getWaterMark(String absolutePath){
         Bitmap decodeFile = BitmapFactory.decodeFile(absolutePath);
         if(decodeFile==null)return null;
         Bitmap waterMark=null;
-        int type=Pref.MenuValue("pref_watermark_type_key",0);
-        if(type>1){
-            JSONObject mainWmConfJson = WaterMarkUtil.getWmConfJson(Math.max(type-2,0));
+        JSONObject mainWmConfJson = WaterMarkUtil.getWmConfJson(configName);
+        if(mainWmConfJson!=null && !mainWmConfJson.isEmpty()){
             JSONObject wmConfJson=WaterMarkUtil.getWmConfByBitMap(decodeFile,mainWmConfJson);
             waterMark=  WaterMarkUtil.getWaterMarkBitMapByWmConf(decodeFile,ExifInterfaceUtil.get(absolutePath),wmConfJson);
             boolean onlyWaterMark=wmConfJson.getInt("onlyWaterMark",wmConfJson.getInt("onlywatermark",0))==1;
@@ -179,79 +171,42 @@ public class WmActivity extends Activity  implements View.OnClickListener {
             boolean isInner=wmConfJson.getInt("isInner",wmConfJson.getInt("isinner",0))==1;
             int paddingBottom=wmConfJson.getInt("paddingBottom",wmConfJson.getInt("paddingbottom",0));
             return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,isInner,paddingBottom);
-        }else{
-            waterMark=WaterMarkUtil.getWaterMarkBitMap(title,logoBt,picinfo,locationInfo,dateformat,wmBgColor,wmTextColor,wmSecTextColor,decodeFile.getWidth(),waterMarkHeight,wmFontSize,wmSecFontSize);
-            return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,waterMarkHeight<0);
         }
-
+        return null;
     }
 
 
-
-    View getBottomView(){
-        LinearLayout rl=new LinearLayout(this);
-        rl.setOrientation(LinearLayout.VERTICAL);
-        rl.addView(getSaveButton());
-        return rl;
-    }
 
     Button saveButton=null;
     Button getSaveButton(){
-        saveButton=new Button(this);
-       // saveButton.setOnClickListener(this);
-        saveButton.setLayoutParams(btnlp);
-        saveButton.setBackgroundColor(btn_bg_color);
-        saveButton.setTextColor(text_color);
-        saveButton.setGravity(Gravity.CENTER);
-        setTextSize(saveButton);
-        saveButton.setText("保存");
+        if(saveButton==null) {
+            saveButton = new Button(this);
+            saveButton.setOnClickListener(this);
+          //  saveButton.setLayoutParams(btnlp);
+            saveButton.setBackgroundColor(btn_bg_color);
+            saveButton.setTextColor(text_color);
+            saveButton.setGravity(Gravity.CENTER);
+            setTextSize(saveButton);
+            saveButton.setText("保存图片");
+        }
         return saveButton;
     }
    void setContentViewBySelf(boolean showSelect){
-       LinearLayout linearLayout=new LinearLayout(this);
-       linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-       linearLayout.setOrientation(LinearLayout.VERTICAL);
-       linearLayout.addView(getToolBarView(showSelect));
+       topLayout=new LinearLayout(this);
+       topLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+       topLayout.setOrientation(LinearLayout.VERTICAL);
+       topLayout.addView(getToolBarView(showSelect));
        ScrollView scrollView=new ScrollView(this);
-       scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+       scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
        gridLayout=new GridLayout(this);
-       GridLayout.LayoutParams lp= new GridLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+       GridLayout.LayoutParams lp= new GridLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
        lp.setGravity(Gravity.CENTER_HORIZONTAL);
        gridLayout.setLayoutParams(lp);
        gridLayout.setColumnCount(1);
-      // gridLayout.setBackgroundColor(Color.parseColor("#aabbccdd"));
+       gridLayout.setBackgroundColor(Color.parseColor("#aabbccdd"));
        scrollView.addView(gridLayout);
-       linearLayout.addView(scrollView);
-       setContentView(linearLayout);
-   }
-
-   void initParamters(){
-        if(srcImagePath==null||srcImagePath.trim().isEmpty())return;
-        exb= ExifInterfaceUtil.get(srcImagePath);
-       // logoBt=ImageUtil.getMyLogo(logoFileName);
-        picinfo= WaterMarkUtil.getPicInfo(exb);
-        locationInfo=  LocationUtil.getExifInterfaceLocalInfo(exb);
-        if(edPicInfo!=null)edPicInfo.setText(picinfo);
-        if(edLocalInfo!=null)edLocalInfo.setText(locationInfo);
-
-
-       Long ldt=0l;
-       try{
-           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-               ldt=exb.getDateTime();
-           }
-           if(ldt==null || ldt<100000){
-               ldt=Long.valueOf(new Date().getTime());
-           }
-       }catch (Exception ex){
-           ldt=Long.valueOf(new Date().getTime());
-       }
-       dateformat=new SimpleDateFormat(Pref.getStringValue("my_watermark_dateformat","yyyy-MM-dd")).format(ldt);
-        if(edDateFormt!=null) {
-            edDateFormt.setText(dateformat);
-        }
-      // locationInfo= WaterMarkUtil.getLocationInfo(exb);
-//       if(locationInfo==null||locationInfo.length()<10)locationInfo=LocationUtil.getGpsLocalInfo();
+       topLayout.addView(scrollView);
+       setContentView(topLayout);
    }
 
    void selectPic(int code){
@@ -271,10 +226,8 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                try{
                    String newFile=getWaterMarkFile();
                    WaterMarkUtil.WriteBitmapFile(newFile,wmBitmap);
-                   try {
-                       ExifInterfaceUtil.copyExifInterface(newFile, new ExifInterface(srcImagePath));
-                       WaterMarkUtil.noticSysPhoto(new File(newFile));
-                   }catch (Exception exception){}
+                   try {WaterMarkUtil.noticSysPhoto(new File(newFile));}catch (Exception exception){}
+                   try {ExifInterfaceUtil.copyExifInterface(newFile, new ExifInterface(srcImagePath));}catch (Exception exception){}
                    btn.setText("已保存");
                }catch (Exception ex){
                    NUtil.toastL("保存失败了。。");
@@ -285,7 +238,7 @@ public class WmActivity extends Activity  implements View.OnClickListener {
        },50);
    }
    String getWaterMarkFile(){
-        String savePath=srcImagePath.substring(0,srcImagePath.length()-4)+"_WM";
+        String savePath=srcImagePath.substring(0,srcImagePath.length()-4)+"_"+configName+"_WM";
         if(!NUtil.fileExists(savePath+".jpg")){
             return savePath+".jpg";
         }
@@ -295,13 +248,10 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         }
        return savePath+"_"+i+".jpg";
    }
+    Spinner configSelect=null;
     View getToolBarView(boolean showSelect){
         int w=200;
-        if(showSelect){
-            w=widthPixels/3;
-        }else{
-            w=widthPixels/2;
-        }
+        w=widthPixels/4;
         LinearLayout linearLayout=new LinearLayout(this);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,close_btn_height));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -315,31 +265,27 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         setTextSize(button);
         button.setText("关闭");
         linearLayout.addView(button);
-        if(showSelect){
-            addSplit(linearLayout);
-            Button selectBtn=new Button(this);
-            selectBtn.setOnClickListener(this);
-            selectBtn.setTag("select");
-            selectBtn.setLayoutParams(new ViewGroup.LayoutParams(w,close_btn_height));
-            selectBtn.setBackgroundColor(btn_bg_color);
-            selectBtn.setTextColor(text_color);
-            selectBtn.setGravity(Gravity.CENTER);
-            selectBtn.setText("选择图片");
-            setTextSize(selectBtn);
-            linearLayout.addView(selectBtn);
-        }
-
         addSplit(linearLayout);
-        Button paramBtn=new Button(this);
-        paramBtn.setOnClickListener(this);
-        paramBtn.setTag("config");
-        paramBtn.setLayoutParams(new ViewGroup.LayoutParams(w,close_btn_height));
-        paramBtn.setBackgroundColor(btn_bg_color);
-        paramBtn.setTextColor(text_color);
-        paramBtn.setGravity(Gravity.CENTER);
-        paramBtn.setText("设置参数");
-        setTextSize(paramBtn);
-        linearLayout.addView(paramBtn);
+        saveButton=ViewUtil.getButton(this,"保存图片","",w);
+        saveButton.setBackgroundColor(btn_bg_color);
+        saveButton.setTextColor(text_color);
+        saveButton.setGravity(Gravity.CENTER);
+        saveButton.setMinimumHeight(close_btn_height);
+        linearLayout.addView(saveButton);
+        addSplit(linearLayout);
+        Button saveCustomBtn=new Button(this);
+        saveCustomBtn.setOnClickListener(this);
+        saveCustomBtn.setTag("saveCustom");
+        saveCustomBtn.setLayoutParams(new ViewGroup.LayoutParams(w,close_btn_height));
+        saveCustomBtn.setBackgroundColor(btn_bg_color);
+        saveCustomBtn.setTextColor(text_color);
+        saveCustomBtn.setGravity(Gravity.CENTER);
+        saveCustomBtn.setText("保存参数&刷新");
+        setTextSize(saveCustomBtn);
+        linearLayout.addView(saveCustomBtn);
+        addSplit(linearLayout);
+        configSelect=getUseCfgSpinner();
+        linearLayout.addView(configSelect);
         return linearLayout;
     }
 
@@ -350,24 +296,11 @@ public class WmActivity extends Activity  implements View.OnClickListener {
             if(btn.getText().equals("关闭")) {
                 finishAndRemoveTask();
                 return;
-            }
-            if(btn.getText().equals("选择图片")) {
-                selectPic(2);
-                return;
-            }
-            if(btn.getText().equals("保存")||btn.getText().equals("保存失败")) {
+            }else if(btn.getText().equals("保存图片")||btn.getText().equals("保存失败")) {
                 savePic(btn);
                 return;
-            }
-            if(btn.getText().equals("设置参数")) {
-
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            showParamDialog();
-                        }
-                    });
-                return;
+            }else if("saveCustom".equals(btn.getTag())){
+                saveCustom();
             }
         }
     }
@@ -384,12 +317,12 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                     String url= UriUtil.Uri2Path(uri);
                     if(url!=null && !url.trim().isEmpty()) {
                         srcImagePath = url;
-                        initParamters();
                         show();
                     }
                 }
             }
-        }else if (requestCode == 3) {
+        }else if (requestCode >= 1000) {
+            ImageButton img=findViewById(requestCode);
             // 从相册返回的数据
             if (data != null) {
                 // 得到图片的全路径
@@ -398,240 +331,17 @@ public class WmActivity extends Activity  implements View.OnClickListener {
                     String url= UriUtil.Uri2Path(uri);
                     if(url!=null && !url.trim().isEmpty()) {
                         if(url!=null && !url.trim().isEmpty()) {
-                            Bitmap logtbt=ImageUtil.compressImage(url,new Size(selectLogoBtn.getWidth(),selectLogoBtn.getHeight()),false);
-                            selectLogoBtn.setImageDrawable(ImageUtil.bitmap2Drawable(logtbt));
-                            selectLogoBtn.setTag(url);
+                            Bitmap logtbt=ImageUtil.compressImage(url,new Size(-1,80),false);
+                            img.setImageDrawable(ImageUtil.bitmap2Drawable(logtbt));
+                            img.setTag(url);
                         }
                     }
                 }
             }
         }
     }
-    AlertDialog dialog;
-    void showParamDialog(){
-        if(dialog==null) {
-            dialog = new AlertDialog.Builder(this)
-                    .setTitle("水印设置")//标题
-                    .setMessage("设置参数")
-                    .setView(getWmParamerView())
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int i) {
-                            title=edTitle.getText().toString();
-                            try { wmFontSize = Integer.parseInt(edFontSize.getText().toString()); }catch (Exception ex){ }
-                            try { wmSecFontSize = Integer.parseInt(edSecTextSize.getText().toString()); }catch (Exception ex){ }
-                            try {
-                                String txtbgcolor=edBgColor.getText().toString();
-                                if(txtbgcolor!=null&&!txtbgcolor.startsWith("#"))txtbgcolor="#"+txtbgcolor;
-                                wmBgColor=Color.parseColor(txtbgcolor); }catch (Exception ex){ }
-
-                            try {
-                                String txtTxtcolor=edTextColor.getText().toString();
-                                if(txtTxtcolor!=null&&!txtTxtcolor.startsWith("#"))txtTxtcolor="#"+txtTxtcolor;
-                                wmTextColor=Color.parseColor(txtTxtcolor); }catch (Exception ex){ }
-
-                            try {
-                                String txtTxtcolor=edSecTextColor.getText().toString();
-                                if(txtTxtcolor!=null&&!txtTxtcolor.startsWith("#"))txtTxtcolor="#"+txtTxtcolor;
-                                wmSecTextColor=Color.parseColor(txtTxtcolor); }catch (Exception ex){ }
-
-                            try { waterMarkHeight = Integer.parseInt(edHeight.getText().toString()); }catch (Exception ex){ }
-
-                            try { picinfo =edPicInfo.getText().toString(); }catch (Exception ex){ }
-                            try { locationInfo =edLocalInfo.getText().toString(); }catch (Exception ex){ }
-                            try { dateformat =edDateFormt.getText().toString(); }catch (Exception ex){ }
-                            if(cbHideLogo.isChecked()){
-                                logoBt=null;
-                            }else{
-                                logoPath=selectLogoBtn.getTag().toString();
-                                if(logoPath!=null&&!logoPath.trim().isEmpty())logoBt=ImageUtil.getBitMap(logoPath);
-                            }
-
-                            Pref.setMenuValue("pref_watermark_title_key",title);
-                            Pref.setMenuValue("pref_watermark_logo_key",selectLogoBtn.getTag().toString());
-                            Pref.setMenuValue("my_watermark_height",waterMarkHeight);
-                            Pref.setMenuValue("my_watermark_secfontsize",wmSecFontSize);
-                            Pref.setMenuValue("my_watermark_fontsize",wmFontSize);
-
-                            Pref.setMenuValue("my_watermark_bgcolor",wmBgColor);
-                            Pref.setMenuValue("my_watermark_sectxtcolor",wmSecTextColor);
-                            Pref.setMenuValue("my_watermark_txtcolor",wmTextColor);
-
-                            int index=configSelect.getSelectedItemPosition();
-                            if(index!=0)index=index+1;
-                            Pref.setMenuValue("pref_watermark_type_key",index);
-
-                            dialog.dismiss();
-                            show();
-                        }
-                    })
-                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int i) {
-                            dialog.dismiss();
-                        }
-                    }).create();
-        }
-        dialog.show();
-        try {
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#ffacc8fa"));
-            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.parseColor("#ffacc8fa"));
-        }catch (Exception ex){}
-    }
-
-    EditText edTitle,edFontSize,edBgColor,edTextColor,edHeight,edPicInfo,edLocalInfo,edDateFormt,edSecTextColor,edSecTextSize;
-    CheckBox cbHideLogo;
-    ImageButton selectLogoBtn;
-
-    Spinner configSelect;
-
-    View getWmParamerView(){
-        LinearLayout linearLayout=new LinearLayout(this);
-        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        ViewGroup f1=getEditField("水印标题：",title);
-        edTitle=(EditText) f1.getChildAt(1);
-        linearLayout.addView(f1);
-
-        String v=getColorString(wmBgColor);if (!v.startsWith("#")) v = "#" + v;
-        ViewGroup f3=getEditField("背景颜色：",v);
-        edBgColor=(EditText) f3.getChildAt(1);
-        edBgColor.setBackgroundColor(Color.parseColor(v));
-        edBgColor.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                try {
-                    String v = edBgColor.getText().toString();
-                    if (!v.startsWith("#")) v = "#" + v;
-                    edBgColor.setBackgroundColor(Color.parseColor(v));
-                }catch (Exception ex){}
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) { }
-        });
-        linearLayout.addView(f3);
-
-        ViewGroup f2=getEditField("主副字体：",wmFontSize);
-        edFontSize=(EditText) f2.getChildAt(1);
-        edSecTextSize=getTextEdit(wmSecFontSize);
-        edFontSize.setMinWidth(120);
-        edSecTextSize.setMinWidth(120);
-        f2.addView(edSecTextSize);
-        linearLayout.addView(f2);
 
 
-        ViewGroup f4=getEditField("主副字色：",getColorString(wmTextColor));
-        edTextColor=(EditText) f4.getChildAt(1);
-        edSecTextColor=getTextEdit(getColorString(wmSecTextColor));
-        edTextColor.setMinWidth(160);
-        edSecTextColor.setMinWidth(160);
-        v=getColorString(wmTextColor);if (!v.startsWith("#")) v = "#" + v;
-        edTextColor.setTextColor(Color.parseColor(v));
-        v=getColorString(wmSecTextColor);if (!v.startsWith("#")) v = "#" + v;
-        edSecTextColor.setTextColor(Color.parseColor(v));
-
-        edTextColor.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                try {
-                    String v = edTextColor.getText().toString();
-                    if (!v.startsWith("#")) v = "#" + v;
-                    edTextColor.setTextColor(Color.parseColor(v));
-                }catch (Exception ex){}
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) { }
-        });
-
-        edSecTextColor.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                try {
-                    String v = edSecTextColor.getText().toString();
-                    if (!v.startsWith("#")) v = "#" + v;
-                    edSecTextColor.setTextColor(Color.parseColor(v));
-                }catch (Exception ex){}
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) { }
-        });
-        f4.addView(edSecTextColor);
-        linearLayout.addView(f4);
-
-//        ViewGroup f4_1=getEditField("副文字颜色：",getColorString(wmSecTextColor));
-//        edSecTextColor=(EditText) f4_1.getChildAt(1);
-//        linearLayout.addView(f4_1);
-
-        ViewGroup f5=getEditField("水印高度：",waterMarkHeight);
-        edHeight=(EditText) f5.getChildAt(1);
-        linearLayout.addView(f5);
-
-        ViewGroup f6=getEditField("相片资料：",picinfo);
-        edPicInfo=(EditText) f6.getChildAt(1);
-        linearLayout.addView(f6);
-
-        ViewGroup f7=getEditField("位置信息：",locationInfo);
-        edLocalInfo=(EditText) f7.getChildAt(1);
-        Button btn=new Button(this);
-        btn.setText("当前位置");
-        btn.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                locationInfo=LocationUtil.getGpsLocalInfo();
-                edLocalInfo.setText(locationInfo);
-            }
-        });
-        setTextSize(btn);
-        btn.setMaxHeight(60);
-        f7.addView(btn);
-        linearLayout.addView(f7);
-
-
-        ViewGroup f8=getEditField("日期文本：",dateformat);
-        edDateFormt=(EditText) f8.getChildAt(1);
-        edDateFormt.setText(dateformat);
-        Button btn2=new Button(this);
-        btn2.setText("当前时间");
-        btn2.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try{edDateFormt.setText(new SimpleDateFormat(Pref.getStringValue("my_watermark_dateformat","yyyy-MM-dd")).format(Long.valueOf(new Date().getTime())));}catch (Exception ex){
-                    edDateFormt.setText("时间格式错误");
-                }
-            }
-        });
-        setTextSize(btn2);
-        btn2.setMaxHeight(60);
-        f8.addView(btn2);
-        linearLayout.addView(f8);
-
-        ViewGroup f9=getLogoCfgView("选择图标：",logoBt==null);
-        cbHideLogo=(CheckBox) f9.getChildAt(2);
-        selectLogoBtn=(ImageButton) f9.getChildAt(1);
-
-        linearLayout.addView(f9);
-
-
-        ViewGroup f10=getUseCfgView("选择配置：",false);
-        configSelect=(Spinner) f10.getChildAt(1);
-        linearLayout.addView(f10);
-
-        ScrollView scrollView =new ScrollView(this);
-        scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        scrollView.addView(linearLayout); ;
-        return scrollView;
-    }
     ViewGroup getEditField(String label,Object value){
         LinearLayout linearLayout=new LinearLayout(this);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -654,91 +364,63 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         return field;
     }
 
-    ViewGroup getLogoCfgView(String label,boolean checked){
-        LinearLayout linearLayout=new LinearLayout(this);
-        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        TextView tv=new TextView(this);
-        tv.setText(label);
-        setTextSize(tv);
-        linearLayout.addView(tv);
-
-        ImageButton ib=new ImageButton(this);
-        ib.setLayoutParams(new ViewGroup.LayoutParams(200, ViewGroup.LayoutParams.MATCH_PARENT));
-        ib.setMinimumWidth(150);
-        if(logoBt!=null){
-            ib.setImageDrawable(ImageUtil.bitmap2Drawable(logoBt));
-            ib.setTag(logoPath);
-        }else{
-            ib.setBackgroundColor(Color.parseColor("#aa9c9fab"));
-        }
-        ib.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selectPic(3);
-            }
-        });
-        linearLayout.addView(ib);
-
-        CheckBox cb=new CheckBox(this);
-        cb.setText("隐藏图标");
-        cb.setChecked(checked);
-        setTextSize(cb);
-        linearLayout.addView(cb);
-        return linearLayout;
-    }
-
-    ViewGroup getUseCfgView(String label,boolean checked){
-        LinearLayout linearLayout=new LinearLayout(this);
-        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        TextView tv=new TextView(this);
-        tv.setText(label);
-        setTextSize(tv);
-        linearLayout.addView(tv);
-//        CheckBox cb=new CheckBox(this);
-//        cb.setText("");
-//        cb.setChecked(checked);
-//        setTextSize(cb);
-
-        JSONArray allConfList=WaterMarkUtil.getAllWmConfList();
-        List<String> dataList=new ArrayList<>();
-        dataList.add("徕卡水印");
-   //     dataList.add("时间水印");
-        if(allConfList!=null&& !allConfList.isEmpty()) {
-            int indexUnName=2;
-            for(int i=0;i<allConfList.size();i++){
-                JSONObject conf=allConfList.getJSONObject(i);
-                String name=conf.getString("name","文件配置"+indexUnName);
-                dataList.add(name);
-                indexUnName++;
+    Spinner getUseCfgSpinner(){
+        List<String> WaterMarkDataList=new ArrayList<>();
+        WaterMarkDataList.add(DEF_TYPE_TXT);
+        Map allConfMap=WaterMarkUtil.getAllWmConfMap();
+        if(allConfMap!=null&& !allConfMap.isEmpty()) {
+            Iterator<String> nameIt=allConfMap.keySet().iterator();
+            while (nameIt.hasNext()){
+                String name=nameIt.next().trim();
+                WaterMarkDataList.add(name);
             }
         }
-        String[] data=new String[dataList.size()];
-        data=dataList.toArray(data);
+        WaterMarkDataList.add("=在线水印=");
         Spinner spinner = new Spinner(this);
-        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, data){
+        spinner.setMinimumHeight(close_btn_height);
+        ArrayAdapter spinnerAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, WaterMarkDataList){
             @Override
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 TextView textView = (TextView) super.getView(position, convertView, parent);
+                textView.setTextColor(text_color);
                 setTextSize(textView);
                 return textView;
             }
+            @Override
+            public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                TextView textView = (TextView) super.getDropDownView(position, convertView, parent);
+                setTextSize(textView);
+                return textView;
+            }
+
         };
+
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         spinner.setAdapter(spinnerAdapter);
-        int index=Pref.MenuValue("pref_watermark_type_key",0);
-        if(index!=0)index=index-1;
-        spinner.setSelection(index);
-        linearLayout.addView(spinner);
-        return linearLayout;
+        configName=Pref.getStringValue("pref_watermark_type_key",DEF_TYPE_TXT);
+        spinner.setSelection(WaterMarkDataList.indexOf(configName));
+        spinner.setBackgroundColor(btn_bg_color);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+               Object o=  adapterView.getItemAtPosition(i);
+               if("=在线水印=".equals(ObjectUtil.stringOf(o))){
+                   PopDialog.showView(WmActivity.this, MyWeb.popWaterMark(spinner), 300);
+               }else {
+                   configName = ObjectUtil.stringOf(o);
+                   show();
+               }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        return spinner;
     }
-    String getColorString(int c){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            return "#"+Integer.toHexString( Color.valueOf(c).toArgb());
-        }
-        return "#00000000";
-    }
+
 
     void setTextSize(Object o){
         if(o==null)return;
@@ -767,5 +449,166 @@ public class WmActivity extends Activity  implements View.OnClickListener {
         LinearLayout l2=new LinearLayout(this);
         l2.setLayoutParams(new ViewGroup.LayoutParams(5, close_btn_height));
         v.addView(l2);
+    }
+
+    ViewGroup custConfigView=null;
+    void initBottomView(int ivHeight){
+        if(custConfigView!=null){
+            custConfigView.setVisibility(View.GONE);
+            gridLayout.removeView(custConfigView);
+            custConfigView=null;
+        }
+        JSONObject wmConfig=WaterMarkUtil.getWmConfJson(configName);
+        if(wmConfig!=null&&wmConfig.containsKey("custom")) {
+            JSONArray customs = wmConfig.getJSONArray("custom");
+            for (int k = 0; k < customs.length(); k++) {
+                JSONObject o = customs.getJSONObject(k);
+                if (o.containsKey("key"))
+                    o.put("value", Pref.getStringValue(configName + ":" + o.getString("key"), o.getString("def", "")));
+                customs.set(k, o);
+            }
+            custConfigView = getListEditView(customs, "该水印无需设置参数",2,ivHeight);
+            custConfigView.setBackgroundColor(Color.parseColor("#99a0a0a0"));
+            custConfigView.setMinimumWidth(widthPixels);
+            gridLayout.addView(custConfigView);
+        }
+        return ;
+    }
+
+    public  ViewGroup getListEditView(JSONArray customs, String emptyText, int columnCount,int ivHeight){
+//        LinearLayout linearLayout=new LinearLayout(this);
+//        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//        linearLayout.setBackgroundColor(Color.parseColor("#cc212527"));
+//        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+//        ScrollView scrollView=new ScrollView(this);
+//        scrollView.setBackgroundColor(Color.parseColor("#cc212527"));
+ //       NUtil.toastL((heightPixels)+":"+gridLayout.getBottom()+":"+gridLayout.getChildAt(gridLayout.getChildCount()-1).getBottom());
+//        scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, heightPixels-ivHeight-close_btn_height));
+        GridLayout gridLayout=new GridLayout(this);
+        GridLayout.LayoutParams lp= new GridLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        lp.setGravity(Gravity.CENTER_VERTICAL);
+        gridLayout.setLayoutParams(lp);
+        gridLayout.setColumnCount(columnCount);
+        if(customs!=null && !customs.isEmpty()) {
+            for(int i=0;i<customs.length();i++) {
+                JSONObject v=customs.getJSONObject(i);
+                ViewGroup view=getViewByCustom(v);
+                view.setTag(v.getString("key"));
+                view.setMinimumWidth((G.RESOURCES.getDisplayMetrics().widthPixels/columnCount));
+                gridLayout.addView(view);
+            }
+        }else{
+            TextView tv = new TextView(this);
+            tv.setText(emptyText);
+            tv.setMinHeight(150);
+            tv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 150));
+            tv.setGravity(Gravity.CENTER_VERTICAL);
+            gridLayout.addView(tv);
+        }
+//        scrollView.addView(gridLayout);
+       // linearLayout.addView(scrollView);
+        return gridLayout;
+    }
+
+    ViewGroup getViewByCustom(JSONObject custom){
+        LinearLayout linearLayout=new LinearLayout(this);
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT ));
+        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+        linearLayout.addView(ViewUtil.getTextView(custom.getString("title"),this));
+        String type=custom.getString("type","text");
+        String v=Pref.getStringValue(configName + ":" + custom.getString("key"), custom.getString("def", ""));
+        Object tag=null;
+        if(type.equalsIgnoreCase("image")){
+            ImageButton selectLogoBtn=new ImageButton(this);
+            selectLogoBtn.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+            selectLogoBtn.setMinimumHeight(100);
+            selectLogoBtn.setMinimumWidth(100);
+            selectLogoBtn.setImageDrawable(ImageUtil.bitmap2Drawable(ImageUtil.getMyLogo(v)));
+            selectLogoBtn.setTag(v);
+            selectLogoBtn.setId(1000+View.generateViewId());
+            selectLogoBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    NUtil.toastL(view.getId()+"");
+                    selectPic(view.getId());
+                }
+            });
+            linearLayout.addView(selectLogoBtn);
+            tag=selectLogoBtn;
+        }else  if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")){
+            EditText editText=ViewUtil.getTextEdit(v,this);
+            linearLayout.addView(editText);
+            tag=editText;
+        }else{
+            linearLayout.addView(ViewUtil.getTextEdit(v,this));
+        }
+
+        if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")||type.equalsIgnoreCase("image")) {
+            Button onLineBtn = new Button(this);
+            onLineBtn.setLayoutParams(new LinearLayout.LayoutParams(100,100));
+            onLineBtn.setMaxHeight(100);
+            onLineBtn.setMaxWidth(100);
+            onLineBtn.setGravity(Gravity.CENTER);
+            setTextSize(onLineBtn);
+            onLineBtn.setTag(tag);
+            onLineBtn.setPadding(0,0,0,0);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                onLineBtn.setTooltipText(type);
+            }
+            onLineBtn.setText("在线");
+            onLineBtn.setTextSize(10);
+            onLineBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if("color".equals(getTooltipText(view))){
+                        PopDialog.showView(WmActivity.this, MyWeb.popColor((EditText)view.getTag()), 300);
+                    }else if("font".equals(getTooltipText(view))){
+                        PopDialog.showView(WmActivity.this, MyWeb.popFont((EditText)view.getTag()), 300);
+                    }else if("image".equals(getTooltipText(view))){
+                        PopDialog.showView(WmActivity.this, MyWeb.popLogo((ImageButton)view.getTag()), 300);
+                    }
+
+                }
+            });
+            linearLayout.addView(onLineBtn);
+        }
+
+
+        return linearLayout;
+    }
+
+    String getTooltipText(View view){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return ObjectUtil.stringOf(view.getTooltipText());
+        }else{
+            return "";
+        }
+
+    }
+
+    void saveCustom(){
+        JSONObject wmConfig=WaterMarkUtil.getWmConfJson(configName);
+        if(wmConfig!=null&&wmConfig.containsKey("custom")) {
+            JSONArray customs = wmConfig.getJSONArray("custom");
+            for (int k = 0; k < customs.length(); k++) {
+                JSONObject o = customs.getJSONObject(k);
+                if(o.containsKey("key")){
+                    String key=o.getString("key");
+                    ViewGroup vg=gridLayout.findViewWithTag(key);
+                    View v=vg.getChildAt(1);
+                    if(v instanceof  ImageButton){
+                        Pref.setMenuValue(configName+":"+key,v.getTag().toString());
+                    }else {
+                        Pref.setMenuValue(configName+":"+key,((EditText)v).getText().toString());
+                    }
+                }
+            }
+            show();
+        }else{
+            NUtil.toastL("当前配置【"+configName+"】不存在自定义参数！！");
+        }
+    }
+    public void hideDialog(){
+        PopDialog.close();
     }
 }
