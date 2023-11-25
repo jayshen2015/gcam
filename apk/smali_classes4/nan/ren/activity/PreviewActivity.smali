@@ -59,6 +59,10 @@
 
 .field isOld:Z
 
+.field lastClickTime:J
+
+.field lastClickView:Landroid/view/View;
+
 .field lastImg:Landroid/widget/ImageView;
 
 .field lastImgDrawable:Landroid/graphics/drawable/Drawable;
@@ -90,15 +94,15 @@
 .method static constructor <clinit>()V
     .locals 7
 
-    .line 49
+    .line 51
     const/4 v0, 0x0
 
     sput-object v0, Lnan/ren/activity/PreviewActivity;->tempPicBigMap:Landroid/graphics/Bitmap;
 
-    .line 50
+    .line 52
     sput-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
-    .line 51
+    .line 53
     const-string v0, "lib_lut_intensity_key"
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -109,7 +113,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
 
-    .line 53
+    .line 55
     const-string v0, "#ffffffff"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -118,7 +122,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->text_color:I
 
-    .line 54
+    .line 56
     const-string v0, "#aa000000"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -127,7 +131,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->title_bg_color:I
 
-    .line 55
+    .line 57
     const-string v0, "#aaab88f0"
 
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -136,35 +140,35 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->btn_bg_color:I
 
-    .line 57
+    .line 59
     const/4 v0, 0x3
 
     sput v0, Lnan/ren/activity/PreviewActivity;->GRID_COLUMN_COUNT:I
 
-    .line 59
+    .line 61
     const/16 v0, 0x50
 
     sput v0, Lnan/ren/activity/PreviewActivity;->close_btn_height:I
 
-    .line 60
+    .line 62
     const/16 v0, 0x3c
 
     sput v0, Lnan/ren/activity/PreviewActivity;->image_title_height:I
 
-    .line 61
+    .line 63
     const/16 v0, 0x1e
 
     sput v0, Lnan/ren/activity/PreviewActivity;->fontSize:I
 
-    .line 63
+    .line 65
     sput v1, Lnan/ren/activity/PreviewActivity;->dsp:F
 
-    .line 68
+    .line 70
     const/16 v1, 0xc
 
     sput v1, Lnan/ren/activity/PreviewActivity;->pageSize:I
 
-    .line 77
+    .line 79
     const-string v1, "my_lut_grid_column_cnt"
 
     const/4 v2, 0x2
@@ -175,7 +179,7 @@
 
     sput v1, Lnan/ren/activity/PreviewActivity;->GRID_COLUMN_COUNT:I
 
-    .line 78
+    .line 80
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -184,7 +188,7 @@
 
     iget v1, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 79
+    .line 81
     .local v1, "widthPixels":I
     sget-object v2, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
@@ -194,7 +198,7 @@
 
     iget v2, v2, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 80
+    .line 82
     .local v2, "heightPixels":I
     new-instance v3, Landroid/util/Size;
 
@@ -220,7 +224,7 @@
 
     sput-object v3, Lnan/ren/activity/PreviewActivity;->picSize:Landroid/util/Size;
 
-    .line 82
+    .line 84
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -231,7 +235,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->dsp:F
 
-    .line 83
+    .line 85
     const-string v0, "my_lut_preview_fontsize"
 
     sget v3, Lnan/ren/activity/PreviewActivity;->fontSize:I
@@ -242,7 +246,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->fontSize:I
 
-    .line 84
+    .line 86
     const-string v0, "my_lut_preview_close_btn_height"
 
     sget v3, Lnan/ren/activity/PreviewActivity;->close_btn_height:I
@@ -261,7 +265,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->close_btn_height:I
 
-    .line 85
+    .line 87
     const-string v0, "my_lut_preview_image_title_height"
 
     sget v3, Lnan/ren/activity/PreviewActivity;->image_title_height:I
@@ -278,7 +282,7 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->image_title_height:I
 
-    .line 86
+    .line 88
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     sget v3, Lnan/ren/activity/PreviewActivity;->image_title_height:I
@@ -291,7 +295,7 @@
 
     sput-object v0, Lnan/ren/activity/PreviewActivity;->txtlp:Landroid/view/ViewGroup$LayoutParams;
 
-    .line 87
+    .line 89
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     sget v3, Lnan/ren/activity/PreviewActivity;->image_title_height:I
@@ -300,14 +304,14 @@
 
     sput-object v0, Lnan/ren/activity/PreviewActivity;->btnlp:Landroid/view/ViewGroup$LayoutParams;
 
-    .line 92
+    .line 94
     new-instance v0, Ljava/io/File;
 
     sget-object v3, Lnan/ren/G;->TMP_PATH:Ljava/lang/String;
 
     invoke-direct {v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 93
+    .line 95
     .local v0, "tempFile":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -317,7 +321,7 @@
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 518
+    .line 491
     .end local v0    # "tempFile":Ljava/io/File;
     .end local v1    # "widthPixels":I
     .end local v2    # "heightPixels":I
@@ -336,23 +340,31 @@
 .end method
 
 .method public constructor <init>()V
-    .locals 1
+    .locals 4
 
-    .line 43
+    .line 45
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
-    .line 70
+    .line 72
     const/4 v0, 0x0
 
     iput-object v0, p0, Lnan/ren/activity/PreviewActivity;->lutsFile:Ljava/util/List;
 
-    .line 75
-    const/4 v0, 0x0
+    .line 77
+    const/4 v1, 0x0
 
-    iput v0, p0, Lnan/ren/activity/PreviewActivity;->index:I
+    iput v1, p0, Lnan/ren/activity/PreviewActivity;->index:I
 
-    .line 520
-    iput-boolean v0, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
+    .line 142
+    const-wide/16 v2, 0x0
+
+    iput-wide v2, p0, Lnan/ren/activity/PreviewActivity;->lastClickTime:J
+
+    .line 143
+    iput-object v0, p0, Lnan/ren/activity/PreviewActivity;->lastClickView:Landroid/view/View;
+
+    .line 493
+    iput-boolean v1, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
 
     return-void
 .end method
@@ -363,10 +375,10 @@
     .locals 5
     .param p1, "ps"    # I
 
-    .line 141
+    .line 145
     iget v0, p0, Lnan/ren/activity/PreviewActivity;->index:I
 
-    .line 142
+    .line 146
     .local v0, "i":I
     :goto_0
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->lutsFile:Ljava/util/List;
@@ -383,7 +395,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 143
+    .line 147
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->lutsFile:Ljava/util/List;
 
     invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -392,13 +404,13 @@
 
     check-cast v1, Ljava/io/File;
 
-    .line 144
+    .line 148
     .local v1, "lut":Ljava/io/File;
     new-instance v2, Landroid/widget/LinearLayout;
 
     invoke-direct {v2, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 145
+    .line 149
     .local v2, "rl":Landroid/widget/LinearLayout;
     invoke-static {}, Landroid/view/View;->generateViewId()I
 
@@ -406,17 +418,17 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setId(I)V
 
-    .line 146
+    .line 150
     const/4 v3, 0x1
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 147
+    .line 151
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 148
+    .line 152
     .local v3, "iv":Landroid/widget/ImageView;
     const-string v4, "#55707070"
 
@@ -426,30 +438,37 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackgroundColor(I)V
 
-    .line 150
+    .line 153
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
-    .line 151
+    .line 154
     sget-object v4, Lnan/ren/activity/PreviewActivity;->imgLp:Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 152
+    .line 155
     invoke-virtual {v3, p0}, Landroid/widget/ImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 153
+    .line 156
+    new-instance v4, Lnan/ren/activity/PreviewActivity$1;
+
+    invoke-direct {v4, p0}, Lnan/ren/activity/PreviewActivity$1;-><init>(Lnan/ren/activity/PreviewActivity;)V
+
+    invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 178
     const/4 v4, 0x0
 
     invoke-virtual {v2, v4, v4, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 154
+    .line 179
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 155
+    .line 180
     sget v4, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
 
     invoke-virtual {p0, v1, v4}, Lnan/ren/activity/PreviewActivity;->getBottomView(Ljava/io/File;F)Landroid/view/View;
@@ -458,12 +477,12 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 156
+    .line 181
     sget-object v4, Lnan/ren/activity/PreviewActivity;->llLp:Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v2, v4}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 157
+    .line 182
     sget v4, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
 
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -472,19 +491,19 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 158
+    .line 183
     iget-object v4, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v4, v2}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 159
-    new-instance v4, Lnan/ren/activity/PreviewActivity$1;
+    .line 184
+    new-instance v4, Lnan/ren/activity/PreviewActivity$2;
 
-    invoke-direct {v4, p0, v3}, Lnan/ren/activity/PreviewActivity$1;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/ImageView;)V
+    invoke-direct {v4, p0, v3}, Lnan/ren/activity/PreviewActivity$2;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/ImageView;)V
 
     invoke-static {v4}, Lnan/ren/util/ThreadPoolManager;->add(Ljava/lang/Runnable;)V
 
-    .line 142
+    .line 146
     .end local v1    # "lut":Ljava/io/File;
     .end local v2    # "rl":Landroid/widget/LinearLayout;
     .end local v3    # "iv":Landroid/widget/ImageView;
@@ -492,11 +511,11 @@
 
     goto :goto_0
 
-    .line 166
+    .line 191
     :cond_0
     iput v0, p0, Lnan/ren/activity/PreviewActivity;->index:I
 
-    .line 167
+    .line 192
     return-void
 .end method
 
@@ -505,14 +524,14 @@
     .param p1, "iv"    # Landroid/widget/ImageView;
     .param p2, "addRate"    # F
 
-    .line 616
+    .line 589
     invoke-virtual {p1}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 617
+    .line 590
     .local v0, "rl":Landroid/widget/LinearLayout;
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getTag()Ljava/lang/Object;
 
@@ -528,7 +547,7 @@
 
     add-float/2addr v1, p2
 
-    .line 618
+    .line 591
     .local v1, "rate":F
     const/high16 v2, 0x3f800000    # 1.0f
 
@@ -554,10 +573,10 @@
     :goto_1
     move v1, v2
 
-    .line 619
+    .line 592
     invoke-virtual {p0, p1, v1}, Lnan/ren/activity/PreviewActivity;->showRate(Landroid/widget/ImageView;F)V
 
-    .line 620
+    .line 593
     return-void
 .end method
 
@@ -565,28 +584,28 @@
     .locals 7
     .param p1, "c"    # I
 
-    .line 97
+    .line 99
     sget v0, Lnan/ren/activity/PreviewActivity;->GRID_COLUMN_COUNT:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 98
+    .line 100
     :cond_0
     sput p1, Lnan/ren/activity/PreviewActivity;->GRID_COLUMN_COUNT:I
 
-    .line 99
+    .line 101
     mul-int/lit8 v0, p1, 0x4
 
     sput v0, Lnan/ren/activity/PreviewActivity;->pageSize:I
 
-    .line 100
+    .line 102
     const-string v0, "my_lut_grid_column_cnt"
 
     invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 101
+    .line 103
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -595,7 +614,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 102
+    .line 104
     .local v0, "widthPixels":I
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
@@ -605,7 +624,7 @@
 
     iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 103
+    .line 105
     .local v1, "heightPixels":I
     new-instance v2, Landroid/util/Size;
 
@@ -631,20 +650,20 @@
 
     sput-object v2, Lnan/ren/activity/PreviewActivity;->picSize:Landroid/util/Size;
 
-    .line 104
+    .line 106
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v2}, Landroid/widget/GridLayout;->removeAllViews()V
 
-    .line 105
+    .line 107
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v2, p1}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 106
+    .line 108
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->show()V
 
-    .line 107
+    .line 109
     return-void
 .end method
 
@@ -652,7 +671,7 @@
     .locals 3
     .param p1, "rl"    # Landroid/widget/LinearLayout;
 
-    .line 208
+    .line 233
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -661,7 +680,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 209
+    .line 234
     .local v1, "btmRl":Landroid/widget/LinearLayout;
     invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
@@ -669,20 +688,20 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 210
+    .line 235
     .local v0, "btn":Landroid/widget/Button;
     const-string v2, "LUT\u6587\u4ef6\u9519\u8bef"
 
     invoke-virtual {v0, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 211
+    .line 236
     return-void
 .end method
 
 .method doFinish()V
     .locals 5
 
-    .line 639
+    .line 612
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -690,7 +709,7 @@
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 640
+    .line 613
     .local v0, "tmpFile":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -706,7 +725,7 @@
 
     if-lez v1, :cond_0
 
-    .line 641
+    .line 614
     invoke-virtual {v0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v1
@@ -720,13 +739,13 @@
 
     aget-object v4, v1, v3
 
-    .line 642
+    .line 615
     .local v4, "tmp":Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 641
+    .line 614
     nop
 
     .end local v4    # "tmp":Ljava/io/File;
@@ -734,34 +753,34 @@
 
     goto :goto_0
 
-    .line 646
+    .line 619
     .end local v0    # "tmpFile":Ljava/io/File;
     :cond_0
     goto :goto_1
 
-    .line 645
+    .line 618
     :catch_0
     move-exception v0
 
-    .line 647
+    .line 620
     :goto_1
     :try_start_1
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->finishAndRemoveTask()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 650
+    .line 623
     goto :goto_2
 
-    .line 648
+    .line 621
     :catch_1
     move-exception v0
 
-    .line 649
+    .line 622
     .local v0, "ex":Ljava/lang/Exception;
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->finishAndRemoveTask()V
 
-    .line 651
+    .line 624
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
     return-void
@@ -771,7 +790,7 @@
     .locals 11
     .param p1, "iv"    # Landroid/widget/ImageView;
 
-    .line 169
+    .line 194
     invoke-virtual {p1}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -780,7 +799,7 @@
 
     move-result-object v0
 
-    .line 170
+    .line 195
     .local v0, "lutfile":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
 
@@ -788,7 +807,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 171
+    .line 196
     .local v1, "rl":Landroid/widget/LinearLayout;
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getTag()Ljava/lang/Object;
 
@@ -802,11 +821,11 @@
 
     move-result v8
 
-    .line 172
+    .line 197
     .local v8, "rate":F
     move-object v7, p0
 
-    .line 187
+    .line 212
     .local v7, "that":Lnan/ren/activity/PreviewActivity;
     sget-object v2, Lnan/ren/activity/PreviewActivity;->tempPicBigMap:Landroid/graphics/Bitmap;
 
@@ -816,18 +835,18 @@
 
     move-result-object v9
 
-    .line 188
+    .line 213
     .local v9, "d":Landroid/graphics/drawable/Drawable;
     if-nez v9, :cond_0
 
-    .line 189
+    .line 214
     invoke-virtual {p0, v1}, Lnan/ren/activity/PreviewActivity;->doErr(Landroid/widget/LinearLayout;)V
 
     goto :goto_0
 
-    .line 191
+    .line 216
     :cond_0
-    new-instance v10, Lnan/ren/activity/PreviewActivity$2;
+    new-instance v10, Lnan/ren/activity/PreviewActivity$3;
 
     move-object v2, v10
 
@@ -839,11 +858,11 @@
 
     move-object v6, v1
 
-    invoke-direct/range {v2 .. v7}, Lnan/ren/activity/PreviewActivity$2;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;Landroid/widget/LinearLayout;Lnan/ren/activity/PreviewActivity;)V
+    invoke-direct/range {v2 .. v7}, Lnan/ren/activity/PreviewActivity$3;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;Landroid/widget/LinearLayout;Lnan/ren/activity/PreviewActivity;)V
 
     invoke-virtual {p0, v10}, Lnan/ren/activity/PreviewActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 206
+    .line 231
     :goto_0
     return-void
 .end method
@@ -853,18 +872,18 @@
     .param p1, "lutFIle"    # Ljava/io/File;
     .param p2, "rate"    # F
 
-    .line 265
+    .line 238
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 266
+    .line 239
     .local v0, "rl":Landroid/widget/LinearLayout;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 267
+    .line 240
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -875,7 +894,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 268
+    .line 241
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v1
@@ -886,7 +905,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 269
+    .line 242
     return-object v0
 .end method
 
@@ -896,19 +915,19 @@
     .param p2, "tag"    # Ljava/lang/String;
     .param p3, "w"    # I
 
-    .line 359
+    .line 332
     new-instance v0, Landroid/widget/Button;
 
     invoke-direct {v0, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 360
+    .line 333
     .local v0, "button":Landroid/widget/Button;
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 361
+    .line 334
     invoke-virtual {v0, p2}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 362
+    .line 335
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     sget v2, Lnan/ren/activity/PreviewActivity;->close_btn_height:I
@@ -917,46 +936,46 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 363
+    .line 336
     sget v1, Lnan/ren/activity/PreviewActivity;->btn_bg_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 364
+    .line 337
     sget v1, Lnan/ren/activity/PreviewActivity;->text_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 365
+    .line 338
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 366
+    .line 339
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 367
+    .line 340
     invoke-virtual {p0, v0}, Lnan/ren/activity/PreviewActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 368
+    .line 341
     return-object v0
 .end method
 
 .method getRateView()Landroid/view/View;
     .locals 7
 
-    .line 435
+    .line 408
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 436
+    .line 409
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 437
+    .line 410
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     const/16 v2, 0x78
@@ -967,12 +986,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 438
+    .line 411
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 439
+    .line 412
     .local v1, "textView":Landroid/widget/TextView;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
@@ -982,7 +1001,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 440
+    .line 413
     const-string v2, "#88888888"
 
     invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -991,27 +1010,27 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 441
+    .line 414
     const/16 v2, 0x11
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 442
+    .line 415
     invoke-virtual {p0, v1}, Lnan/ren/activity/PreviewActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 443
+    .line 416
     new-instance v2, Landroid/widget/SeekBar;
 
     invoke-direct {v2, p0}, Landroid/widget/SeekBar;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Lnan/ren/activity/PreviewActivity;->rateSeekBar:Landroid/widget/SeekBar;
 
-    .line 444
+    .line 417
     const/16 v4, 0x64
 
     invoke-virtual {v2, v4}, Landroid/widget/SeekBar;->setMax(I)V
 
-    .line 445
+    .line 418
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->rateSeekBar:Landroid/widget/SeekBar;
 
     new-instance v5, Landroid/view/ViewGroup$LayoutParams;
@@ -1022,7 +1041,7 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/SeekBar;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 446
+    .line 419
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->rateSeekBar:Landroid/widget/SeekBar;
 
     sget v3, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
@@ -1033,16 +1052,16 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 447
+    .line 420
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->rateSeekBar:Landroid/widget/SeekBar;
 
-    new-instance v3, Lnan/ren/activity/PreviewActivity$4;
+    new-instance v3, Lnan/ren/activity/PreviewActivity$5;
 
-    invoke-direct {v3, p0, v1}, Lnan/ren/activity/PreviewActivity$4;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/TextView;)V
+    invoke-direct {v3, p0, v1}, Lnan/ren/activity/PreviewActivity$5;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/TextView;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/SeekBar;->setOnSeekBarChangeListener(Landroid/widget/SeekBar$OnSeekBarChangeListener;)V
 
-    .line 460
+    .line 433
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1083,22 +1102,22 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 461
+    .line 434
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->rateSeekBar:Landroid/widget/SeekBar;
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 462
+    .line 435
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 463
+    .line 436
     const/4 v2, 0x0
 
     const/16 v3, 0xa
 
     invoke-virtual {v0, v2, v3, v2, v2}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 464
+    .line 437
     return-object v0
 .end method
 
@@ -1106,47 +1125,47 @@
     .locals 2
     .param p1, "lutFileName"    # Ljava/lang/String;
 
-    .line 285
+    .line 258
     new-instance v0, Landroid/widget/Button;
 
     invoke-direct {v0, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 286
+    .line 259
     .local v0, "button":Landroid/widget/Button;
     invoke-virtual {v0, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 287
+    .line 260
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 288
+    .line 261
     sget-object v1, Lnan/ren/activity/PreviewActivity;->btnlp:Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 289
+    .line 262
     sget v1, Lnan/ren/activity/PreviewActivity;->btn_bg_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 290
+    .line 263
     sget v1, Lnan/ren/activity/PreviewActivity;->text_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setTextColor(I)V
 
-    .line 291
+    .line 264
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 292
+    .line 265
     invoke-virtual {p0, v0}, Lnan/ren/activity/PreviewActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 293
+    .line 266
     const-string v1, "\u4fdd\u5b58"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 294
+    .line 267
     return-object v0
 .end method
 
@@ -1154,12 +1173,12 @@
     .locals 3
     .param p1, "w"    # I
 
-    .line 354
+    .line 327
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 355
+    .line 328
     .local v0, "l2":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -1169,7 +1188,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 356
+    .line 329
     return-object v0
 .end method
 
@@ -1178,41 +1197,41 @@
     .param p1, "title"    # Ljava/lang/String;
     .param p2, "rate"    # F
 
-    .line 272
+    .line 245
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 273
+    .line 246
     .local v0, "textView":Landroid/widget/TextView;
     sget-object v1, Lnan/ren/activity/PreviewActivity;->txtlp:Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 274
+    .line 247
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBottom(I)V
 
-    .line 275
+    .line 248
     sget v1, Lnan/ren/activity/PreviewActivity;->text_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 276
+    .line 249
     sget v1, Lnan/ren/activity/PreviewActivity;->title_bg_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
-    .line 277
+    .line 250
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 278
+    .line 251
     invoke-virtual {p0, v0}, Lnan/ren/activity/PreviewActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 279
+    .line 252
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1243,10 +1262,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 280
+    .line 253
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 281
+    .line 254
     return-object v0
 .end method
 
@@ -1254,7 +1273,7 @@
     .locals 5
     .param p1, "showSelect"    # Z
 
-    .line 321
+    .line 294
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -1267,28 +1286,28 @@
 
     add-int/lit16 v0, v0, -0x190
 
-    .line 322
+    .line 295
     .local v0, "w":I
     if-eqz p1, :cond_0
 
-    .line 323
+    .line 296
     div-int/lit8 v1, v0, 0x2
 
     add-int/lit8 v0, v1, -0xa
 
     goto :goto_0
 
-    .line 325
+    .line 298
     :cond_0
     nop
 
-    .line 327
+    .line 300
     :goto_0
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 328
+    .line 301
     .local v1, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v2, Landroid/view/ViewGroup$LayoutParams;
 
@@ -1300,12 +1319,12 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 329
+    .line 302
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 330
+    .line 303
     const/16 v2, 0x14
 
     invoke-virtual {p0, v2}, Lnan/ren/activity/PreviewActivity;->getSplit(I)Landroid/view/View;
@@ -1314,7 +1333,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 331
+    .line 304
     const-string v2, "1\u5217"
 
     const-string v3, "1c"
@@ -1327,7 +1346,7 @@
 
     iput-object v2, p0, Lnan/ren/activity/PreviewActivity;->b1c:Landroid/widget/Button;
 
-    .line 332
+    .line 305
     const-string v2, "2\u5217"
 
     const-string v3, "2c"
@@ -1338,7 +1357,7 @@
 
     iput-object v2, p0, Lnan/ren/activity/PreviewActivity;->b2c:Landroid/widget/Button;
 
-    .line 333
+    .line 306
     const-string v2, "3\u5217"
 
     const-string v3, "3c"
@@ -1349,7 +1368,7 @@
 
     iput-object v2, p0, Lnan/ren/activity/PreviewActivity;->b3c:Landroid/widget/Button;
 
-    .line 334
+    .line 307
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b1c:Landroid/widget/Button;
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -1362,7 +1381,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 335
+    .line 308
     iget-object v3, p0, Lnan/ren/activity/PreviewActivity;->b2c:Landroid/widget/Button;
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -1373,7 +1392,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 336
+    .line 309
     iget-object v3, p0, Lnan/ren/activity/PreviewActivity;->b3c:Landroid/widget/Button;
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -1384,7 +1403,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 337
+    .line 310
     const-string v3, "\u5173\u95ed"
 
     const-string v4, "close"
@@ -1395,17 +1414,17 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 338
+    .line 311
     if-eqz p1, :cond_1
 
-    .line 339
+    .line 312
     invoke-virtual {p0, v2}, Lnan/ren/activity/PreviewActivity;->getSplit(I)Landroid/view/View;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 340
+    .line 313
     const-string v2, "\u9009\u62e9\u56fe\u7247"
 
     const-string v3, "select"
@@ -1416,7 +1435,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 342
+    .line 315
     :cond_1
     sget v2, Lnan/ren/activity/PreviewActivity;->GRID_COLUMN_COUNT:I
 
@@ -1426,7 +1445,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 343
+    .line 316
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b1c:Landroid/widget/Button;
 
     invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1437,13 +1456,13 @@
 
     goto :goto_1
 
-    .line 344
+    .line 317
     :cond_2
     const/4 v3, 0x2
 
     if-ne v2, v3, :cond_3
 
-    .line 345
+    .line 318
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b2c:Landroid/widget/Button;
 
     invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1454,13 +1473,13 @@
 
     goto :goto_1
 
-    .line 346
+    .line 319
     :cond_3
     const/4 v3, 0x3
 
     if-ne v2, v3, :cond_4
 
-    .line 347
+    .line 320
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b3c:Landroid/widget/Button;
 
     invoke-static {v4}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -1469,7 +1488,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 350
+    .line 323
     :cond_4
     :goto_1
     return-object v1
@@ -1481,32 +1500,32 @@
     .param p2, "resultCode"    # I
     .param p3, "data"    # Landroid/content/Intent;
 
-    .line 468
+    .line 441
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 469
+    .line 442
     const/4 v0, 0x2
 
     if-ne p1, v0, :cond_0
 
-    .line 471
+    .line 444
     if-eqz p3, :cond_0
 
-    .line 473
+    .line 446
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 474
+    .line 447
     .local v0, "uri":Landroid/net/Uri;
     if-eqz v0, :cond_0
 
-    .line 475
+    .line 448
     invoke-static {v0}, Lnan/ren/util/UriUtil;->Uri2Path(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 476
+    .line 449
     .local v1, "url":Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -1520,10 +1539,10 @@
 
     if-nez v2, :cond_0
 
-    .line 477
+    .line 450
     sput-object v1, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
-    .line 478
+    .line 451
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->rateSeekBar:Landroid/widget/SeekBar;
 
     const-string v3, "lib_lut_intensity_key"
@@ -1542,10 +1561,10 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/SeekBar;->setProgress(I)V
 
-    .line 479
+    .line 452
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->show()V
 
-    .line 484
+    .line 457
     .end local v0    # "uri":Landroid/net/Uri;
     .end local v1    # "url":Ljava/lang/String;
     :cond_0
@@ -1556,17 +1575,17 @@
     .locals 4
     .param p1, "view"    # Landroid/view/View;
 
-    .line 401
+    .line 374
     instance-of v0, p1, Landroid/widget/Button;
 
     if-eqz v0, :cond_a
 
-    .line 402
+    .line 375
     move-object v0, p1
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 403
+    .line 376
     .local v0, "btn":Landroid/widget/Button;
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -1580,20 +1599,20 @@
 
     if-eqz v1, :cond_0
 
-    .line 404
+    .line 377
     invoke-static {}, Lnan/ren/util/ThreadPoolManager;->getInstance()Lnan/ren/util/ThreadPoolManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lnan/ren/util/ThreadPoolManager;->stopThreadPool()V
 
-    .line 405
+    .line 378
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->doFinish()V
 
-    .line 406
+    .line 379
     return-void
 
-    .line 408
+    .line 381
     :cond_0
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -1607,13 +1626,13 @@
 
     if-eqz v1, :cond_1
 
-    .line 409
+    .line 382
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->selectPic()V
 
-    .line 410
+    .line 383
     return-void
 
-    .line 412
+    .line 385
     :cond_1
     invoke-virtual {v0}, Landroid/widget/Button;->getText()Ljava/lang/CharSequence;
 
@@ -1641,13 +1660,13 @@
 
     goto :goto_1
 
-    .line 416
+    .line 389
     :cond_2
     invoke-virtual {v0}, Landroid/widget/Button;->getTag()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 417
+    .line 390
     .local v1, "tag":Ljava/lang/Object;
     if-eqz v1, :cond_a
 
@@ -1663,7 +1682,7 @@
 
     if-eqz v2, :cond_a
 
-    .line 418
+    .line 391
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b1c:Landroid/widget/Button;
 
     if-eqz v2, :cond_3
@@ -1672,7 +1691,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 419
+    .line 392
     :cond_3
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b2c:Landroid/widget/Button;
 
@@ -1682,7 +1701,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 420
+    .line 393
     :cond_4
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->b3c:Landroid/widget/Button;
 
@@ -1692,7 +1711,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setBackgroundColor(I)V
 
-    .line 421
+    .line 394
     :cond_5
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1706,14 +1725,14 @@
 
     if-eqz v2, :cond_6
 
-    .line 422
+    .line 395
     const/4 v2, 0x1
 
     invoke-virtual {p0, v2}, Lnan/ren/activity/PreviewActivity;->changeColumn(I)V
 
     goto :goto_0
 
-    .line 423
+    .line 396
     :cond_6
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1727,14 +1746,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 424
+    .line 397
     const/4 v2, 0x2
 
     invoke-virtual {p0, v2}, Lnan/ren/activity/PreviewActivity;->changeColumn(I)V
 
     goto :goto_0
 
-    .line 425
+    .line 398
     :cond_7
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1748,12 +1767,12 @@
 
     if-eqz v2, :cond_8
 
-    .line 426
+    .line 399
     const/4 v2, 0x3
 
     invoke-virtual {p0, v2}, Lnan/ren/activity/PreviewActivity;->changeColumn(I)V
 
-    .line 428
+    .line 401
     :cond_8
     :goto_0
     const-string v2, "#c7402379"
@@ -1766,16 +1785,16 @@
 
     goto :goto_2
 
-    .line 413
+    .line 386
     .end local v1    # "tag":Ljava/lang/Object;
     :cond_9
     :goto_1
     invoke-virtual {p0, v0}, Lnan/ren/activity/PreviewActivity;->savePic(Landroid/widget/Button;)V
 
-    .line 414
+    .line 387
     return-void
 
-    .line 433
+    .line 406
     .end local v0    # "btn":Landroid/widget/Button;
     :cond_a
     :goto_2
@@ -1786,15 +1805,15 @@
     .locals 3
     .param p1, "bundle"    # Landroid/os/Bundle;
 
-    .line 110
+    .line 112
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 111
+    .line 113
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
 
-    .line 112
+    .line 114
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "imagePath"
 
@@ -1804,14 +1823,14 @@
 
     sput-object v1, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
-    .line 113
+    .line 115
     invoke-static {}, Lnan/ren/util/LutUtil;->getLuts()Ljava/util/List;
 
     move-result-object v1
 
     iput-object v1, p0, Lnan/ren/activity/PreviewActivity;->lutsFile:Ljava/util/List;
 
-    .line 114
+    .line 116
     sget-object v1, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -1838,23 +1857,23 @@
 
     if-eqz v1, :cond_0
 
-    .line 115
+    .line 117
     const/4 v1, 0x0
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/PreviewActivity;->setContentViewBySelf(Z)V
 
-    .line 116
+    .line 118
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->show()V
 
     goto :goto_0
 
-    .line 118
+    .line 120
     :cond_0
     const/4 v1, 0x1
 
     invoke-virtual {p0, v1}, Lnan/ren/activity/PreviewActivity;->setContentViewBySelf(Z)V
 
-    .line 120
+    .line 122
     :goto_0
     return-void
 .end method
@@ -1862,14 +1881,14 @@
 .method public onScrollChanged()V
     .locals 4
 
-    .line 511
+    .line 484
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v0}, Landroid/widget/ScrollView;->getHeight()I
 
     move-result v0
 
-    .line 512
+    .line 485
     .local v0, "rootHeight":I
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
@@ -1883,7 +1902,7 @@
 
     move-result v1
 
-    .line 513
+    .line 486
     .local v1, "childHeight":I
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
@@ -1891,18 +1910,18 @@
 
     move-result v2
 
-    .line 514
+    .line 487
     .local v2, "scrollY":I
     sub-int v3, v1, v0
 
     if-ne v3, v2, :cond_0
 
-    .line 515
+    .line 488
     sget v3, Lnan/ren/activity/PreviewActivity;->pageSize:I
 
     invoke-virtual {p0, v3}, Lnan/ren/activity/PreviewActivity;->addPage(I)V
 
-    .line 517
+    .line 490
     :cond_0
     return-void
 .end method
@@ -1912,7 +1931,7 @@
     .param p1, "view"    # Landroid/view/View;
     .param p2, "motionEvent"    # Landroid/view/MotionEvent;
 
-    .line 525
+    .line 498
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -1923,51 +1942,51 @@
 
     if-nez v0, :cond_0
 
-    .line 526
+    .line 499
     instance-of v0, p1, Landroid/widget/ImageView;
 
     if-eqz v0, :cond_7
 
-    .line 527
+    .line 500
     move-object v0, p1
 
     check-cast v0, Landroid/widget/ImageView;
 
     iput-object v0, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
-    .line 528
+    .line 501
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iput-object v0, p0, Lnan/ren/activity/PreviewActivity;->lastImgDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 529
+    .line 502
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
 
     iput v0, p0, Lnan/ren/activity/PreviewActivity;->x:F
 
-    .line 530
+    .line 503
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
 
     iput v0, p0, Lnan/ren/activity/PreviewActivity;->y:F
 
-    .line 531
+    .line 504
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->lw:F
 
-    .line 532
+    .line 505
     iput-boolean v1, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
 
-    .line 533
+    .line 506
     sget-object v0, Lnan/ren/activity/PreviewActivity;->handler:Landroid/os/Handler;
 
-    new-instance v2, Lnan/ren/activity/PreviewActivity$5;
+    new-instance v2, Lnan/ren/activity/PreviewActivity$6;
 
-    invoke-direct {v2, p0}, Lnan/ren/activity/PreviewActivity$5;-><init>(Lnan/ren/activity/PreviewActivity;)V
+    invoke-direct {v2, p0}, Lnan/ren/activity/PreviewActivity$6;-><init>(Lnan/ren/activity/PreviewActivity;)V
 
     const-wide/16 v3, 0x64
 
@@ -1975,7 +1994,7 @@
 
     goto/16 :goto_2
 
-    .line 549
+    .line 522
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
@@ -1993,15 +2012,15 @@
 
     if-eqz v0, :cond_4
 
-    .line 550
+    .line 523
     const/high16 v0, 0x4f000000
 
     iput v0, p0, Lnan/ren/activity/PreviewActivity;->lw:F
 
-    .line 551
+    .line 524
     iput v0, p0, Lnan/ren/activity/PreviewActivity;->lh:F
 
-    .line 552
+    .line 525
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
@@ -2010,7 +2029,7 @@
 
     sub-float/2addr v0, v3
 
-    .line 553
+    .line 526
     .local v0, "w":F
     iget-object v3, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
@@ -2062,7 +2081,7 @@
 
     if-gez v3, :cond_3
 
-    .line 554
+    .line 527
     iget-object v3, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
     invoke-virtual {v3}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
@@ -2071,7 +2090,7 @@
 
     check-cast v3, Landroid/widget/LinearLayout;
 
-    .line 555
+    .line 528
     .local v3, "rl":Landroid/widget/LinearLayout;
     invoke-virtual {v3}, Landroid/widget/LinearLayout;->getTag()Ljava/lang/Object;
 
@@ -2085,7 +2104,7 @@
 
     move-result v6
 
-    .line 556
+    .line 529
     .local v6, "rate":F
     iget-object v7, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
@@ -2099,7 +2118,7 @@
 
     add-float/2addr v6, v7
 
-    .line 557
+    .line 530
     cmpl-float v7, v6, v5
 
     if-lez v7, :cond_1
@@ -2118,7 +2137,7 @@
     :cond_2
     move v5, v6
 
-    .line 558
+    .line 531
     .end local v6    # "rate":F
     .local v5, "rate":F
     :goto_0
@@ -2128,54 +2147,54 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 559
+    .line 532
     iget-object v6, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
-    .line 560
+    .line 533
     .local v6, "todoImg":Landroid/widget/ImageView;
     sget-object v7, Lnan/ren/activity/PreviewActivity;->handler:Landroid/os/Handler;
 
-    new-instance v8, Lnan/ren/activity/PreviewActivity$6;
+    new-instance v8, Lnan/ren/activity/PreviewActivity$7;
 
-    invoke-direct {v8, p0, v6}, Lnan/ren/activity/PreviewActivity$6;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/ImageView;)V
+    invoke-direct {v8, p0, v6}, Lnan/ren/activity/PreviewActivity$7;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/ImageView;)V
 
     invoke-virtual {v7, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 566
+    .line 539
     .end local v3    # "rl":Landroid/widget/LinearLayout;
     .end local v5    # "rate":F
     .end local v6    # "todoImg":Landroid/widget/ImageView;
     goto :goto_1
 
-    .line 567
+    .line 540
     :cond_3
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->resetLutImage()V
 
-    .line 569
+    .line 542
     :goto_1
     iget-object v3, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
     invoke-virtual {p0, v3}, Lnan/ren/activity/PreviewActivity;->showRate(Landroid/widget/ImageView;)V
 
-    .line 570
+    .line 543
     iput-object v4, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
-    .line 571
+    .line 544
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->lw:F
 
-    .line 572
+    .line 545
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->lh:F
 
-    .line 573
+    .line 546
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->x:F
 
-    .line 574
+    .line 547
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->y:F
 
-    .line 575
+    .line 548
     iput-boolean v1, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
 
-    .line 576
+    .line 549
     .end local v0    # "w":F
     goto :goto_2
 
@@ -2192,7 +2211,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 577
+    .line 550
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
@@ -2201,7 +2220,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 578
+    .line 551
     .restart local v0    # "w":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getRawY()F
 
@@ -2213,7 +2232,7 @@
 
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->lh:F
 
-    .line 579
+    .line 552
     iget v2, p0, Lnan/ren/activity/PreviewActivity;->lw:F
 
     sub-float v2, v0, v2
@@ -2240,10 +2259,10 @@
 
     if-ltz v2, :cond_5
 
-    .line 580
+    .line 553
     iput v0, p0, Lnan/ren/activity/PreviewActivity;->lw:F
 
-    .line 581
+    .line 554
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
     invoke-virtual {v2}, Landroid/widget/ImageView;->getWidth()I
@@ -2256,31 +2275,31 @@
 
     invoke-virtual {p0, v2, v3}, Lnan/ren/activity/PreviewActivity;->addRate(Landroid/widget/ImageView;F)V
 
-    .line 583
+    .line 556
     .end local v0    # "w":F
     :cond_5
     goto :goto_2
 
-    .line 584
+    .line 557
     :cond_6
     iput-object v4, p0, Lnan/ren/activity/PreviewActivity;->lastImg:Landroid/widget/ImageView;
 
-    .line 585
+    .line 558
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->lw:F
 
-    .line 586
+    .line 559
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->lh:F
 
-    .line 587
+    .line 560
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->x:F
 
-    .line 588
+    .line 561
     iput v2, p0, Lnan/ren/activity/PreviewActivity;->y:F
 
-    .line 589
+    .line 562
     iput-boolean v1, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
 
-    .line 591
+    .line 564
     :cond_7
     :goto_2
     return v1
@@ -2289,7 +2308,7 @@
 .method resetLutImage()V
     .locals 2
 
-    .line 594
+    .line 567
     iget-boolean v0, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
 
     if-eqz v0, :cond_1
@@ -2298,31 +2317,31 @@
 
     if-eqz v0, :cond_1
 
-    .line 606
+    .line 579
     :try_start_0
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->lastImgDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz v1, :cond_0
 
-    .line 607
+    .line 580
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 608
+    .line 581
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lnan/ren/activity/PreviewActivity;->isOld:Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 611
+    .line 584
     :cond_0
     goto :goto_0
 
-    .line 610
+    .line 583
     :catch_0
     move-exception v0
 
-    .line 613
+    .line 586
     :cond_1
     :goto_0
     return-void
@@ -2332,24 +2351,24 @@
     .locals 5
     .param p1, "btn"    # Landroid/widget/Button;
 
-    .line 378
+    .line 351
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 379
+    .line 352
     const-string v0, "\u4fdd\u5b58\u4e2d"
 
     invoke-virtual {p1, v0}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 380
+    .line 353
     invoke-virtual {p1}, Landroid/widget/Button;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 381
+    .line 354
     .local v0, "l2":Landroid/widget/LinearLayout;
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getParent()Landroid/view/ViewParent;
 
@@ -2357,7 +2376,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 382
+    .line 355
     .local v1, "ll":Landroid/widget/LinearLayout;
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getTag()Ljava/lang/Object;
 
@@ -2383,41 +2402,41 @@
 
     div-float/2addr v2, v3
 
-    .line 384
+    .line 357
     .local v2, "rate":F
     :try_start_0
     sget-object v3, Lnan/ren/activity/PreviewActivity;->handler:Landroid/os/Handler;
 
-    new-instance v4, Lnan/ren/activity/PreviewActivity$3;
+    new-instance v4, Lnan/ren/activity/PreviewActivity$4;
 
-    invoke-direct {v4, p0, p1, v2}, Lnan/ren/activity/PreviewActivity$3;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/Button;F)V
+    invoke-direct {v4, p0, p1, v2}, Lnan/ren/activity/PreviewActivity$4;-><init>(Lnan/ren/activity/PreviewActivity;Landroid/widget/Button;F)V
 
     invoke-virtual {v3, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 395
+    .line 368
     goto :goto_0
 
-    .line 391
+    .line 364
     :catch_0
     move-exception v3
 
-    .line 392
+    .line 365
     .local v3, "ex":Ljava/lang/Exception;
     const-string v4, "\u4fdd\u5b58\u5931\u8d25\u4e86\u3002\u3002"
 
     invoke-static {v4}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 393
+    .line 366
     const-string v4, "\u4fdd\u5b58\u5931\u8d25"
 
     invoke-virtual {p1, v4}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 394
+    .line 367
     invoke-virtual {p1, p0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 396
+    .line 369
     .end local v3    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void
@@ -2426,7 +2445,7 @@
 .method selectPic()V
     .locals 3
 
-    .line 372
+    .line 345
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.intent.action.PICK"
@@ -2435,7 +2454,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 373
+    .line 346
     .local v0, "intent":Landroid/content/Intent;
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
@@ -2443,12 +2462,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->setDataAndType(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 374
+    .line 347
     const/4 v1, 0x2
 
     invoke-virtual {p0, v0, v1}, Lnan/ren/activity/PreviewActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 375
+    .line 348
     return-void
 .end method
 
@@ -2456,12 +2475,12 @@
     .locals 5
     .param p1, "showSelect"    # Z
 
-    .line 297
+    .line 270
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 298
+    .line 271
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -2471,47 +2490,47 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 299
+    .line 272
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 301
+    .line 274
     invoke-virtual {p0, p1}, Lnan/ren/activity/PreviewActivity;->getToolBarView(Z)Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 303
+    .line 276
     invoke-virtual {p0}, Lnan/ren/activity/PreviewActivity;->getRateView()Landroid/view/View;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 305
+    .line 278
     new-instance v3, Landroid/widget/ScrollView;
 
     invoke-direct {v3, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
-    .line 306
+    .line 279
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v4, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v3, v4}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 307
+    .line 280
     new-instance v2, Landroid/widget/GridLayout;
 
     invoke-direct {v2, p0}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v2, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
-    .line 308
+    .line 281
     new-instance v2, Landroid/widget/GridLayout$LayoutParams;
 
     new-instance v3, Landroid/view/ViewGroup$LayoutParams;
@@ -2522,30 +2541,30 @@
 
     invoke-direct {v2, v3}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 309
+    .line 282
     .local v2, "lp":Landroid/widget/GridLayout$LayoutParams;
     invoke-virtual {v2, v1}, Landroid/widget/GridLayout$LayoutParams;->setGravity(I)V
 
-    .line 310
+    .line 283
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v1, v2}, Landroid/widget/GridLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 311
+    .line 284
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
     sget v3, Lnan/ren/activity/PreviewActivity;->GRID_COLUMN_COUNT:I
 
     invoke-virtual {v1, v3}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 312
+    .line 285
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
     iget-object v3, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
     invoke-virtual {v1, v3}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 313
+    .line 286
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v1}, Landroid/widget/ScrollView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -2554,20 +2573,20 @@
 
     invoke-virtual {v1, p0}, Landroid/view/ViewTreeObserver;->addOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    .line 314
+    .line 287
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v1, p0}, Landroid/widget/ScrollView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 315
+    .line 288
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 316
+    .line 289
     invoke-virtual {p0, v0}, Lnan/ren/activity/PreviewActivity;->setContentView(Landroid/view/View;)V
 
-    .line 317
+    .line 290
     return-void
 .end method
 
@@ -2575,12 +2594,12 @@
     .locals 5
     .param p1, "o"    # Ljava/lang/Object;
 
-    .line 486
+    .line 459
     if-nez p1, :cond_0
 
     return-void
 
-    .line 487
+    .line 460
     :cond_0
     const-string v0, "my_dsp"
 
@@ -2588,13 +2607,13 @@
 
     move-result v0
 
-    .line 488
+    .line 461
     .local v0, "dsp_flag":I
     move-object v1, p1
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 489
+    .line 462
     .local v1, "tv":Landroid/widget/TextView;
     const/4 v2, 0x1
 
@@ -2612,7 +2631,7 @@
 
     goto :goto_0
 
-    .line 490
+    .line 463
     :cond_1
     if-ne v0, v2, :cond_2
 
@@ -2624,7 +2643,7 @@
 
     goto :goto_0
 
-    .line 491
+    .line 464
     :cond_2
     const/4 v3, 0x2
 
@@ -2642,7 +2661,7 @@
 
     goto :goto_0
 
-    .line 493
+    .line 466
     :cond_3
     instance-of v3, p1, Landroid/widget/Button;
 
@@ -2650,7 +2669,7 @@
 
     goto :goto_0
 
-    .line 496
+    .line 469
     :cond_4
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2658,28 +2677,28 @@
 
     if-lt v3, v4, :cond_5
 
-    .line 497
+    .line 470
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V
 
-    .line 501
+    .line 474
     :cond_5
     :goto_0
     instance-of v3, p1, Landroid/widget/Button;
 
     if-eqz v3, :cond_6
 
-    .line 502
+    .line 475
     move-object v3, p1
 
     check-cast v3, Landroid/widget/Button;
 
-    .line 503
+    .line 476
     .local v3, "btn":Landroid/widget/Button;
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4, v2, v4, v2}, Landroid/widget/Button;->setPadding(IIII)V
 
-    .line 506
+    .line 479
     .end local v3    # "btn":Landroid/widget/Button;
     :cond_6
     return-void
@@ -2688,7 +2707,7 @@
 .method show()V
     .locals 5
 
-    .line 123
+    .line 125
     sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
     if-eqz v0, :cond_3
@@ -2705,7 +2724,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 126
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity;->gridLayout:Landroid/widget/GridLayout;
 
@@ -2713,7 +2732,7 @@
 
     invoke-virtual {v0}, Landroid/widget/GridLayout;->removeAllViews()V
 
-    .line 125
+    .line 127
     :cond_1
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity;->scrollView:Landroid/widget/ScrollView;
 
@@ -2723,20 +2742,20 @@
 
     invoke-virtual {v0, v1, v1}, Landroid/widget/ScrollView;->scrollTo(II)V
 
-    .line 126
+    .line 128
     :cond_2
     sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
     invoke-static {v0}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 127
+    .line 129
     invoke-static {}, Lnan/ren/util/ThreadPoolManager;->getInstance()Lnan/ren/util/ThreadPoolManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lnan/ren/util/ThreadPoolManager;->stopThreadPool()V
 
-    .line 128
+    .line 130
     sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
     sget-object v2, Lnan/ren/activity/PreviewActivity;->picSize:Landroid/util/Size;
@@ -2749,7 +2768,7 @@
 
     sput-object v0, Lnan/ren/activity/PreviewActivity;->tempPicBigMap:Landroid/graphics/Bitmap;
 
-    .line 131
+    .line 133
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     sget-object v2, Lnan/ren/activity/PreviewActivity;->picSize:Landroid/util/Size;
@@ -2784,7 +2803,7 @@
 
     sput-object v0, Lnan/ren/activity/PreviewActivity;->imgLp:Landroid/view/ViewGroup$LayoutParams;
 
-    .line 133
+    .line 135
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     sget-object v2, Lnan/ren/activity/PreviewActivity;->picSize:Landroid/util/Size;
@@ -2799,10 +2818,10 @@
 
     sput-object v0, Lnan/ren/activity/PreviewActivity;->llLp:Landroid/view/ViewGroup$LayoutParams;
 
-    .line 134
+    .line 136
     iput v1, p0, Lnan/ren/activity/PreviewActivity;->index:I
 
-    .line 135
+    .line 137
     sget v0, Lnan/ren/activity/PreviewActivity;->pageSize:I
 
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
@@ -2827,14 +2846,14 @@
 
     move-result v0
 
-    .line 136
+    .line 138
     .local v0, "ps":I
     invoke-virtual {p0, v0}, Lnan/ren/activity/PreviewActivity;->addPage(I)V
 
-    .line 138
+    .line 140
     return-void
 
-    .line 123
+    .line 125
     .end local v0    # "ps":I
     :cond_3
     :goto_0
@@ -2845,14 +2864,14 @@
     .locals 2
     .param p1, "iv"    # Landroid/widget/ImageView;
 
-    .line 623
+    .line 596
     invoke-virtual {p1}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 624
+    .line 597
     .local v0, "rl":Landroid/widget/LinearLayout;
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getTag()Ljava/lang/Object;
 
@@ -2866,11 +2885,11 @@
 
     move-result v1
 
-    .line 625
+    .line 598
     .local v1, "rate":F
     invoke-virtual {p0, p1, v1}, Lnan/ren/activity/PreviewActivity;->showRate(Landroid/widget/ImageView;F)V
 
-    .line 626
+    .line 599
     return-void
 .end method
 
@@ -2879,14 +2898,14 @@
     .param p1, "iv"    # Landroid/widget/ImageView;
     .param p2, "rate"    # F
 
-    .line 628
+    .line 601
     invoke-virtual {p1}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/LinearLayout;
 
-    .line 629
+    .line 602
     .local v0, "rl":Landroid/widget/LinearLayout;
     const/high16 v1, 0x3f800000    # 1.0f
 
@@ -2896,7 +2915,7 @@
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 630
+    .line 603
     :cond_0
     const/4 v1, 0x0
 
@@ -2906,7 +2925,7 @@
 
     const/4 p2, 0x0
 
-    .line 631
+    .line 604
     :cond_1
     const/4 v1, 0x1
 
@@ -2916,7 +2935,7 @@
 
     check-cast v1, Landroid/widget/LinearLayout;
 
-    .line 632
+    .line 605
     .local v1, "rl2":Landroid/widget/LinearLayout;
     const/4 v2, 0x0
 
@@ -2926,7 +2945,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 633
+    .line 606
     .local v2, "tv":Landroid/widget/TextView;
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -2974,6 +2993,6 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 634
+    .line 607
     return-void
 .end method

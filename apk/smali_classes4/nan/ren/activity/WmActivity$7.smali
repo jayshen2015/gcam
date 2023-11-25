@@ -3,12 +3,12 @@
 .source "WmActivity.java"
 
 # interfaces
-.implements Landroid/text/TextWatcher;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/WmActivity;->getWmParamerView()Landroid/view/View;
+    value = Lnan/ren/activity/WmActivity;->getViewByCustom(Lnan/ren/util/JSONObject;)Landroid/view/ViewGroup;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 537
+    .line 560
     iput-object p1, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,98 +36,110 @@
 
 
 # virtual methods
-.method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 0
-    .param p1, "editable"    # Landroid/text/Editable;
-
-    .line 550
-    return-void
-.end method
-
-.method public beforeTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 0
-    .param p1, "charSequence"    # Ljava/lang/CharSequence;
-    .param p2, "i"    # I
-    .param p3, "i1"    # I
-    .param p4, "i2"    # I
-
-    .line 539
-    return-void
-.end method
-
-.method public onTextChanged(Ljava/lang/CharSequence;III)V
+.method public onClick(Landroid/view/View;)V
     .locals 3
-    .param p1, "charSequence"    # Ljava/lang/CharSequence;
-    .param p2, "i"    # I
-    .param p3, "i1"    # I
-    .param p4, "i2"    # I
+    .param p1, "view"    # Landroid/view/View;
 
-    .line 543
-    const-string v0, "#"
+    .line 563
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
-    :try_start_0
-    iget-object v1, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
-
-    iget-object v1, v1, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 544
-    .local v1, "v":Ljava/lang/String;
-    invoke-virtual {v1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Lnan/ren/activity/WmActivity;->getTooltipText(Landroid/view/View;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, "color"
 
-    move-result-object v0
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v0
 
-    move-result-object v0
+    const/16 v1, 0x12c
 
-    move-object v1, v0
+    if-eqz v0, :cond_0
 
-    .line 545
+    .line 564
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/EditText;
+
+    invoke-static {v2}, Lnan/ren/util/MyWeb;->popColor(Landroid/widget/EditText;)Landroid/webkit/WebView;
+
+    move-result-object v2
+
+    invoke-static {v0, v2, v1}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
+
+    goto :goto_0
+
+    .line 565
     :cond_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
-    iget-object v0, v0, Lnan/ren/activity/WmActivity;->edTextColor:Landroid/widget/EditText;
+    invoke-virtual {v0, p1}, Lnan/ren/activity/WmActivity;->getTooltipText(Landroid/view/View;)Ljava/lang/String;
 
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    move-result-object v0
 
-    move-result v2
+    const-string v2, "font"
 
-    invoke-virtual {v0, v2}, Landroid/widget/EditText;->setTextColor(I)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .end local v1    # "v":Ljava/lang/String;
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 566
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/EditText;
+
+    invoke-static {v2}, Lnan/ren/util/MyWeb;->popFont(Landroid/widget/EditText;)Landroid/webkit/WebView;
+
+    move-result-object v2
+
+    invoke-static {v0, v2, v1}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
+
     goto :goto_0
 
-    .line 546
-    :catch_0
-    move-exception v0
+    .line 567
+    :cond_1
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
+    invoke-virtual {v0, p1}, Lnan/ren/activity/WmActivity;->getTooltipText(Landroid/view/View;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "image"
+
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 568
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/ImageButton;
+
+    invoke-static {v2}, Lnan/ren/util/MyWeb;->popLogo(Landroid/widget/ImageButton;)Landroid/webkit/WebView;
+
+    move-result-object v2
+
+    invoke-static {v0, v2, v1}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
+
+    .line 571
+    :cond_2
     :goto_0
-    nop
-
-    .line 547
     return-void
 .end method

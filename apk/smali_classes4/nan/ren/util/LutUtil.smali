@@ -46,23 +46,23 @@
 
     .line 74
     .local v0, "gpuImage":Ljp/co/cyberagent/android/gpuimage/GPUImage;
-    new-instance v1, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    new-instance v1, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
-    invoke-direct {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;-><init>()V
+    invoke-direct {v1}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;-><init>()V
 
     .line 75
-    .local v1, "lutFilter":Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    .local v1, "lutFilter":Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
     invoke-static {p1}, Lnan/ren/util/LutUtil;->getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
 
     .line 76
-    invoke-virtual {v1, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->setIntensity(F)V
+    invoke-virtual {v1, p2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setIntensity(F)V
 
     .line 77
-    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
     .line 78
     invoke-virtual {v0, p0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
@@ -86,7 +86,7 @@
     const/4 v0, 0x0
 
     .line 81
-    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->destroy()V
+    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->destroy()V
 
     .line 82
     const/4 v1, 0x0
@@ -101,7 +101,7 @@
 
     .line 85
     .end local v0    # "gpuImage":Ljp/co/cyberagent/android/gpuimage/GPUImage;
-    .end local v1    # "lutFilter":Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    .end local v1    # "lutFilter":Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
     .end local v2    # "resultBit":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v0

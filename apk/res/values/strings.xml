@@ -2083,4 +2083,6 @@ The format used to store the color when encoding."</string>
 		
 	<string name="my_watermark_usecfg_title">使用水印配置文件打印</string>
 	<string name="my_delete_picture_ifuselut_title">配置使用lut时不保留原图</string>
+	
+	<string name="my_upscale_enable_title">超分滑块</string>
 </resources>

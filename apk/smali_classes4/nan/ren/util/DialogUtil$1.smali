@@ -1,6 +1,6 @@
-.class Lnan/ren/button/WMButton$2;
+.class Lnan/ren/util/DialogUtil$1;
 .super Ljava/lang/Object;
-.source "WMButton.java"
+.source "DialogUtil.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/button/WMButton;->showSelect()V
+    value = Lnan/ren/util/DialogUtil;->add(Ljava/lang/String;Landroid/view/View;Ljava/lang/String;)Landroid/app/AlertDialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,18 +17,11 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lnan/ren/button/WMButton;
-
-
 # direct methods
-.method constructor <init>(Lnan/ren/button/WMButton;)V
+.method constructor <init>()V
     .locals 0
-    .param p1, "this$0"    # Lnan/ren/button/WMButton;
 
-    .line 100
-    iput-object p1, p0, Lnan/ren/button/WMButton$2;->this$0:Lnan/ren/button/WMButton;
-
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,9 +34,9 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 103
+    .line 25
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 104
+    .line 26
     return-void
 .end method

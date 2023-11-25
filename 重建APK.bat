@@ -4,9 +4,10 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC8.4.300_V9.9.4
+set apkname=AGC8.4.300_V9.9.5
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
+del /S /F C:\Users\Administrator\AppData\Local\apktool\framework\*
 :startA
 echo ###############请选择要编译的包名（默认抖音版本）######################
 echo.
@@ -81,6 +82,6 @@ del /F /Q  "%BP%\%apkname%.R.apk"
 java -jar  signapk.jar sign\%pkg%.x509.pem sign\%pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
 del /F /Q  "%BP%\%apkname%.RO.apk"
 echo -------------------[End Build %pkg%]--------------------
-call d:\un\unload.bat
+scp D:\un\gcam2\apk\build\AGC8*.apk root@10.254.10.150:/tmp/sjs/
 
 EXIT /B 0

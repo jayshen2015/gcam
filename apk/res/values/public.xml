@@ -13790,6 +13790,9 @@
 	<public type="string" name="my_watermark_logo_point_ft_title" id="0x7f140f54" />
 	<public type="string" name="my_watermark_usecfg_title" id="0x7f140f55" />
 	<public type="string" name="my_delete_picture_ifuselut_title" id="0x7f140f56" />
+	<public type="string" name="my_upscale_enable_title" id="0x7f140f57" />
+	
+	
 	<public type="layout" name="bottom_bar_layout2" id="0x7f0e0900" />
 	
 </resources>

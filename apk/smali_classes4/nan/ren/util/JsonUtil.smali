@@ -25,13 +25,13 @@
     .locals 4
     .param p0, "ex"    # Landroid/media/ExifInterface;
 
-    .line 534
+    .line 535
     :try_start_0
     new-instance v0, Lnan/ren/util/JSONObject;
 
     invoke-direct {v0}, Lnan/ren/util/JSONObject;-><init>()V
 
-    .line 535
+    .line 536
     .local v0, "result":Lnan/ren/util/JSONObject;
     sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
 
@@ -52,7 +52,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 536
+    .line 537
     .local v2, "f":Ljava/lang/String;
     invoke-virtual {p0, v2}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
@@ -62,22 +62,22 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 537
+    .line 538
     nop
 
     .end local v2    # "f":Ljava/lang/String;
     goto :goto_0
 
-    .line 538
+    .line 539
     :cond_0
     return-object v0
 
-    .line 539
+    .line 540
     .end local v0    # "result":Lnan/ren/util/JSONObject;
     :catch_0
     move-exception v0
 
-    .line 540
+    .line 541
     .local v0, "eex":Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -104,21 +104,21 @@
         }
     .end annotation
 
-    .line 316
+    .line 317
     .local p1, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     .local p2, "t":Ljava/lang/Object;, "TT;"
     if-nez p1, :cond_0
 
-    .line 317
+    .line 318
     return-void
 
-    .line 320
+    .line 321
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
     move-result-object v0
 
-    .line 321
+    .line 322
     .local v0, "fields":[Ljava/lang/reflect/Field;
     array-length v1, v0
 
@@ -129,19 +129,19 @@
 
     aget-object v3, v0, v2
 
-    .line 323
+    .line 324
     .local v3, "field":Ljava/lang/reflect/Field;
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 325
+    .line 326
     .local v4, "fieldName":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v5
 
-    .line 326
+    .line 327
     .local v5, "filedClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, v4}, Lnan/ren/util/JSONObject;->isNull(Ljava/lang/String;)Z
 
@@ -149,16 +149,16 @@
 
     if-eqz v6, :cond_1
 
-    .line 327
+    .line 328
     goto/16 :goto_3
 
-    .line 330
+    .line 331
     :cond_1
     invoke-virtual {p0, v4}, Lnan/ren/util/JSONObject;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v6
 
-    .line 331
+    .line 332
     .local v6, "value":Ljava/lang/Object;
     invoke-static {v5}, Lnan/ren/util/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
@@ -176,7 +176,7 @@
 
     const-class v7, Lnan/ren/util/JSONArray;
 
-    .line 332
+    .line 333
     invoke-virtual {v7, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v7
@@ -185,7 +185,7 @@
 
     goto/16 :goto_2
 
-    .line 334
+    .line 335
     :cond_2
     invoke-virtual {v5}, Ljava/lang/Class;->isArray()Z
 
@@ -193,32 +193,32 @@
 
     if-eqz v7, :cond_3
 
-    .line 335
+    .line 336
     instance-of v7, v6, Lnan/ren/util/JSONArray;
 
     if-eqz v7, :cond_a
 
-    .line 336
+    .line 337
     move-object v7, v6
 
     check-cast v7, Lnan/ren/util/JSONArray;
 
-    .line 337
+    .line 338
     .local v7, "jsonArray":Lnan/ren/util/JSONArray;
     invoke-static {v7, v5}, Lnan/ren/util/JsonUtil;->createArr(Lnan/ren/util/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v8
 
-    .line 338
+    .line 339
     .local v8, "arr":Ljava/lang/Object;
     invoke-static {p1, v4, v5, p2, v8}, Lnan/ren/util/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 339
+    .line 340
     .end local v7    # "jsonArray":Lnan/ren/util/JSONArray;
     .end local v8    # "arr":Ljava/lang/Object;
     goto/16 :goto_3
 
-    .line 340
+    .line 341
     :cond_3
     const-class v7, Ljava/util/List;
 
@@ -228,39 +228,39 @@
 
     if-eqz v7, :cond_4
 
-    .line 341
+    .line 342
     instance-of v7, v6, Lnan/ren/util/JSONArray;
 
     if-eqz v7, :cond_a
 
-    .line 342
+    .line 343
     move-object v7, v6
 
     check-cast v7, Lnan/ren/util/JSONArray;
 
-    .line 343
+    .line 344
     .restart local v7    # "jsonArray":Lnan/ren/util/JSONArray;
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getGenericType()Ljava/lang/reflect/Type;
 
     move-result-object v8
 
-    .line 344
+    .line 345
     .local v8, "typeClass":Ljava/lang/reflect/Type;
     invoke-static {v8, v7}, Lnan/ren/util/JsonUtil;->createList(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/List;
 
     move-result-object v9
 
-    .line 345
+    .line 346
     .local v9, "list":Ljava/util/List;
     invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/util/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 346
+    .line 347
     .end local v7    # "jsonArray":Lnan/ren/util/JSONArray;
     .end local v8    # "typeClass":Ljava/lang/reflect/Type;
     .end local v9    # "list":Ljava/util/List;
     goto :goto_3
 
-    .line 347
+    .line 348
     :cond_4
     const-class v7, Ljava/util/Set;
 
@@ -270,39 +270,39 @@
 
     if-eqz v7, :cond_5
 
-    .line 348
+    .line 349
     instance-of v7, v6, Lnan/ren/util/JSONArray;
 
     if-eqz v7, :cond_a
 
-    .line 349
+    .line 350
     move-object v7, v6
 
     check-cast v7, Lnan/ren/util/JSONArray;
 
-    .line 350
+    .line 351
     .restart local v7    # "jsonArray":Lnan/ren/util/JSONArray;
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getGenericType()Ljava/lang/reflect/Type;
 
     move-result-object v8
 
-    .line 351
+    .line 352
     .restart local v8    # "typeClass":Ljava/lang/reflect/Type;
     invoke-static {v8, v7}, Lnan/ren/util/JsonUtil;->createSet(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/Set;
 
     move-result-object v9
 
-    .line 352
+    .line 353
     .local v9, "set":Ljava/util/Set;
     invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/util/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 353
+    .line 354
     .end local v7    # "jsonArray":Lnan/ren/util/JSONArray;
     .end local v8    # "typeClass":Ljava/lang/reflect/Type;
     .end local v9    # "set":Ljava/util/Set;
     goto :goto_3
 
-    .line 354
+    .line 355
     :cond_5
     const-class v7, Ljava/util/Map;
 
@@ -312,39 +312,39 @@
 
     if-eqz v7, :cond_6
 
-    .line 355
+    .line 356
     instance-of v7, v6, Lnan/ren/util/JSONObject;
 
     if-eqz v7, :cond_a
 
-    .line 356
+    .line 357
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getGenericType()Ljava/lang/reflect/Type;
 
     move-result-object v7
 
-    .line 357
+    .line 358
     .local v7, "typeClass":Ljava/lang/reflect/Type;
     move-object v8, v6
 
     check-cast v8, Lnan/ren/util/JSONObject;
 
-    .line 358
+    .line 359
     .local v8, "jsonObj":Lnan/ren/util/JSONObject;
     invoke-static {v7, v8}, Lnan/ren/util/JsonUtil;->createMap(Ljava/lang/reflect/Type;Lnan/ren/util/JSONObject;)Ljava/util/Map;
 
     move-result-object v9
 
-    .line 359
+    .line 360
     .local v9, "map":Ljava/util/Map;
     invoke-static {p1, v4, v5, p2, v9}, Lnan/ren/util/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 360
+    .line 361
     .end local v7    # "typeClass":Ljava/lang/reflect/Type;
     .end local v8    # "jsonObj":Lnan/ren/util/JSONObject;
     .end local v9    # "map":Ljava/util/Map;
     goto :goto_3
 
-    .line 361
+    .line 362
     :cond_6
     const-class v7, Lnan/ren/util/JSONObject;
 
@@ -364,25 +364,25 @@
 
     goto :goto_1
 
-    .line 364
+    .line 365
     :cond_7
     move-object v7, v6
 
     check-cast v7, Lnan/ren/util/JSONObject;
 
-    .line 365
+    .line 366
     .local v7, "obj":Lnan/ren/util/JSONObject;
     invoke-static {v7, v5}, Lnan/ren/util/JsonUtil;->createObject(Lnan/ren/util/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v8
 
-    .line 366
+    .line 367
     .local v8, "fieldObj":Ljava/lang/Object;
     invoke-static {p1, v4, v5, p2, v8}, Lnan/ren/util/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
     goto :goto_3
 
-    .line 362
+    .line 363
     .end local v7    # "obj":Lnan/ren/util/JSONObject;
     .end local v8    # "fieldObj":Ljava/lang/Object;
     :cond_8
@@ -391,12 +391,12 @@
 
     goto :goto_3
 
-    .line 333
+    .line 334
     :cond_9
     :goto_2
     invoke-static {p1, v4, v5, p2, v6}, Lnan/ren/util/JsonUtil;->setterObject(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 321
+    .line 322
     .end local v3    # "field":Ljava/lang/reflect/Field;
     .end local v4    # "fieldName":Ljava/lang/String;
     .end local v5    # "filedClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
@@ -407,17 +407,17 @@
 
     goto/16 :goto_0
 
-    .line 370
+    .line 371
     :cond_b
     invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 371
+    .line 372
     .local v1, "superClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {p0, v1, p2}, Lnan/ren/util/JsonUtil;->assignField(Lnan/ren/util/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 372
+    .line 373
     return-void
 .end method
 
@@ -425,12 +425,12 @@
     .locals 3
     .param p0, "name"    # Ljava/lang/String;
 
-    .line 131
+    .line 132
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v0
 
-    .line 133
+    .line 134
     .local v0, "cs":[C
     const/4 v1, 0x0
 
@@ -442,7 +442,7 @@
 
     aput-char v2, v0, v1
 
-    .line 134
+    .line 135
     invoke-static {v0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
 
     move-result-object v1
@@ -470,13 +470,13 @@
         }
     .end annotation
 
-    .line 289
+    .line 290
     .local p1, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-virtual {p0}, Lnan/ren/util/JSONArray;->length()I
 
     move-result v0
 
-    .line 292
+    .line 293
     .local v0, "len":I
     invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
@@ -486,7 +486,7 @@
 
     move-result-object v1
 
-    .line 293
+    .line 294
     .local v1, "arr":Ljava/lang/Object;
     const/4 v2, 0x0
 
@@ -494,12 +494,12 @@
     :goto_0
     if-ge v2, v0, :cond_3
 
-    .line 294
+    .line 295
     invoke-virtual {p0, v2}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 295
+    .line 296
     .local v3, "obj":Ljava/lang/Object;
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -521,7 +521,7 @@
 
     if-nez v4, :cond_0
 
-    .line 296
+    .line 297
     move-object v4, v3
 
     check-cast v4, Ljava/lang/Integer;
@@ -538,18 +538,18 @@
 
     goto :goto_2
 
-    .line 297
+    .line 298
     :cond_0
     instance-of v4, v3, Lnan/ren/util/JSONObject;
 
     if-eqz v4, :cond_1
 
-    .line 298
+    .line 299
     move-object v4, v3
 
     check-cast v4, Lnan/ren/util/JSONObject;
 
-    .line 299
+    .line 300
     .local v4, "jsonObjectNext":Lnan/ren/util/JSONObject;
     invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
@@ -564,18 +564,18 @@
     .end local v4    # "jsonObjectNext":Lnan/ren/util/JSONObject;
     goto :goto_1
 
-    .line 300
+    .line 301
     :cond_1
     instance-of v4, v3, Lnan/ren/util/JSONArray;
 
     if-eqz v4, :cond_2
 
-    .line 301
+    .line 302
     move-object v4, v3
 
     check-cast v4, Lnan/ren/util/JSONArray;
 
-    .line 302
+    .line 303
     .local v4, "jsonArrayNext":Lnan/ren/util/JSONArray;
     invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
 
@@ -589,20 +589,20 @@
 
     goto :goto_2
 
-    .line 300
+    .line 301
     .end local v4    # "jsonArrayNext":Lnan/ren/util/JSONArray;
     :cond_2
     :goto_1
     nop
 
-    .line 293
+    .line 294
     .end local v3    # "obj":Ljava/lang/Object;
     :goto_2
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 305
+    .line 306
     .end local v2    # "i":I
     :cond_3
     return-object v1
@@ -618,36 +618,36 @@
         }
     .end annotation
 
-    .line 418
+    .line 419
     invoke-static {p0}, Lnan/ren/util/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 419
+    .line 420
     .local v0, "klacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {v0}, Lnan/ren/util/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v1
 
-    .line 420
+    .line 421
     .local v1, "flag":Z
     invoke-virtual {p1}, Lnan/ren/util/JSONArray;->length()I
 
     move-result v2
 
-    .line 421
+    .line 422
     .local v2, "length":I
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 422
+    .line 423
     .local v3, "list":Ljava/util/List;
     move-object v4, p0
 
     check-cast v4, Ljava/lang/reflect/ParameterizedType;
 
-    .line 423
+    .line 424
     .local v4, "parameterizedType":Ljava/lang/reflect/ParameterizedType;
     invoke-interface {v4}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
@@ -657,13 +657,13 @@
 
     aget-object v5, v5, v6
 
-    .line 424
+    .line 425
     .local v5, "nextType":Ljava/lang/reflect/Type;
     invoke-static {v5}, Lnan/ren/util/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v6
 
-    .line 425
+    .line 426
     .local v6, "itemKlacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v7, 0x0
 
@@ -671,10 +671,10 @@
     :goto_0
     if-ge v7, v2, :cond_4
 
-    .line 426
+    .line 427
     if-eqz v1, :cond_0
 
-    .line 427
+    .line 428
     invoke-virtual {p1, v7}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -683,19 +683,19 @@
 
     goto :goto_1
 
-    .line 429
+    .line 430
     :cond_0
     invoke-virtual {p1, v7}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    .line 430
+    .line 431
     .local v8, "obj":Ljava/lang/Object;
     instance-of v9, v8, Lnan/ren/util/JSONObject;
 
     if-eqz v9, :cond_2
 
-    .line 431
+    .line 432
     const-class v9, Lnan/ren/util/JSONObject;
 
     invoke-virtual {v9, v6}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -704,57 +704,57 @@
 
     if-eqz v9, :cond_1
 
-    .line 432
+    .line 433
     invoke-interface {v3, v8}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 434
+    .line 435
     :cond_1
     invoke-virtual {v6}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 435
+    .line 436
     .local v9, "listItem":Ljava/lang/Object;
     move-object v10, v8
 
     check-cast v10, Lnan/ren/util/JSONObject;
 
-    .line 436
+    .line 437
     .local v10, "jsonObject":Lnan/ren/util/JSONObject;
     invoke-static {v10, v6, v9}, Lnan/ren/util/JsonUtil;->assignField(Lnan/ren/util/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 437
+    .line 438
     invoke-interface {v3, v9}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 438
+    .line 439
     .end local v9    # "listItem":Ljava/lang/Object;
     .end local v10    # "jsonObject":Lnan/ren/util/JSONObject;
     goto :goto_1
 
-    .line 439
+    .line 440
     :cond_2
     instance-of v9, v8, Lnan/ren/util/JSONArray;
 
     if-eqz v9, :cond_3
 
-    .line 440
+    .line 441
     move-object v9, v8
 
     check-cast v9, Lnan/ren/util/JSONArray;
 
-    .line 441
+    .line 442
     .local v9, "jsonArrayNext":Lnan/ren/util/JSONArray;
     invoke-static {v5, v9}, Lnan/ren/util/JsonUtil;->createList(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/List;
 
     move-result-object v10
 
-    .line 442
+    .line 443
     .local v10, "nextList":Ljava/util/List;
     invoke-interface {v3, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 425
+    .line 426
     .end local v8    # "obj":Ljava/lang/Object;
     .end local v9    # "jsonArrayNext":Lnan/ren/util/JSONArray;
     .end local v10    # "nextList":Ljava/util/List;
@@ -764,7 +764,7 @@
 
     goto :goto_0
 
-    .line 446
+    .line 447
     .end local v7    # "i":I
     :cond_4
     return-object v3
@@ -780,18 +780,18 @@
         }
     .end annotation
 
-    .line 385
+    .line 386
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 386
+    .line 387
     .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     move-object v1, p0
 
     check-cast v1, Ljava/lang/reflect/ParameterizedType;
 
-    .line 387
+    .line 388
     .local v1, "parameterizedType":Ljava/lang/reflect/ParameterizedType;
     invoke-interface {v1}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
@@ -801,19 +801,19 @@
 
     aget-object v2, v2, v3
 
-    .line 388
+    .line 389
     .local v2, "nextType":Ljava/lang/reflect/Type;
     invoke-static {v2}, Lnan/ren/util/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v3
 
-    .line 389
+    .line 390
     .local v3, "itemKlacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {v3}, Lnan/ren/util/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v4
 
-    .line 390
+    .line 391
     .local v4, "flag":Z
     invoke-virtual {p1}, Lnan/ren/util/JSONObject;->keySet()Ljava/util/Set;
 
@@ -823,7 +823,7 @@
 
     move-result-object v5
 
-    .line 391
+    .line 392
     .local v5, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_0
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
@@ -832,18 +832,18 @@
 
     if-eqz v6, :cond_4
 
-    .line 392
+    .line 393
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Ljava/lang/String;
 
-    .line 393
+    .line 394
     .local v6, "key":Ljava/lang/String;
     if-eqz v4, :cond_0
 
-    .line 394
+    .line 395
     invoke-virtual {p1, v6}, Lnan/ren/util/JSONObject;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
@@ -852,19 +852,19 @@
 
     goto :goto_1
 
-    .line 396
+    .line 397
     :cond_0
     invoke-virtual {p1, v6}, Lnan/ren/util/JSONObject;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v7
 
-    .line 397
+    .line 398
     .local v7, "obj":Ljava/lang/Object;
     instance-of v8, v7, Lnan/ren/util/JSONObject;
 
     if-eqz v8, :cond_2
 
-    .line 398
+    .line 399
     const-class v8, Lnan/ren/util/JSONObject;
 
     invoke-virtual {v8, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -873,57 +873,57 @@
 
     if-eqz v8, :cond_1
 
-    .line 399
+    .line 400
     invoke-interface {v0, v6, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_1
 
-    .line 401
+    .line 402
     :cond_1
     invoke-virtual {v3}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v8
 
-    .line 402
+    .line 403
     .local v8, "listItem":Ljava/lang/Object;
     move-object v9, v7
 
     check-cast v9, Lnan/ren/util/JSONObject;
 
-    .line 403
+    .line 404
     .local v9, "jsonObjectNext":Lnan/ren/util/JSONObject;
     invoke-static {v9, v3, v8}, Lnan/ren/util/JsonUtil;->assignField(Lnan/ren/util/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 404
+    .line 405
     invoke-interface {v0, v6, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 405
+    .line 406
     .end local v8    # "listItem":Ljava/lang/Object;
     .end local v9    # "jsonObjectNext":Lnan/ren/util/JSONObject;
     goto :goto_1
 
-    .line 406
+    .line 407
     :cond_2
     instance-of v8, v7, Lnan/ren/util/JSONArray;
 
     if-eqz v8, :cond_3
 
-    .line 407
+    .line 408
     move-object v8, v7
 
     check-cast v8, Lnan/ren/util/JSONArray;
 
-    .line 408
+    .line 409
     .local v8, "jsonArrayNext":Lnan/ren/util/JSONArray;
     invoke-static {v2, v8}, Lnan/ren/util/JsonUtil;->createList(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/List;
 
     move-result-object v9
 
-    .line 409
+    .line 410
     .local v9, "nextList":Ljava/util/List;
     invoke-interface {v0, v6, v9}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 412
+    .line 413
     .end local v6    # "key":Ljava/lang/String;
     .end local v7    # "obj":Ljava/lang/Object;
     .end local v8    # "jsonArrayNext":Lnan/ren/util/JSONArray;
@@ -932,7 +932,7 @@
     :goto_1
     goto :goto_0
 
-    .line 413
+    .line 414
     :cond_4
     return-object v0
 .end method
@@ -957,17 +957,17 @@
         }
     .end annotation
 
-    .line 310
+    .line 311
     .local p1, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-virtual {p1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 311
+    .line 312
     .local v0, "t":Ljava/lang/Object;, "TT;"
     invoke-static {p0, p1, v0}, Lnan/ren/util/JsonUtil;->assignField(Lnan/ren/util/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 312
+    .line 313
     return-object v0
 .end method
 
@@ -981,36 +981,36 @@
         }
     .end annotation
 
-    .line 451
+    .line 452
     invoke-static {p0}, Lnan/ren/util/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v0
 
-    .line 452
+    .line 453
     .local v0, "klacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {v0}, Lnan/ren/util/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v1
 
-    .line 453
+    .line 454
     .local v1, "flag":Z
     invoke-virtual {p1}, Lnan/ren/util/JSONArray;->length()I
 
     move-result v2
 
-    .line 454
+    .line 455
     .local v2, "length":I
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
 
-    .line 455
+    .line 456
     .local v3, "set":Ljava/util/Set;
     move-object v4, p0
 
     check-cast v4, Ljava/lang/reflect/ParameterizedType;
 
-    .line 456
+    .line 457
     .local v4, "parameterizedType":Ljava/lang/reflect/ParameterizedType;
     invoke-interface {v4}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
@@ -1020,13 +1020,13 @@
 
     aget-object v5, v5, v6
 
-    .line 457
+    .line 458
     .local v5, "nextType":Ljava/lang/reflect/Type;
     invoke-static {v5}, Lnan/ren/util/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v6
 
-    .line 458
+    .line 459
     .local v6, "itemKlacc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v7, 0x0
 
@@ -1034,10 +1034,10 @@
     :goto_0
     if-ge v7, v2, :cond_4
 
-    .line 459
+    .line 460
     if-eqz v1, :cond_0
 
-    .line 460
+    .line 461
     invoke-virtual {p1, v7}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v8
@@ -1046,19 +1046,19 @@
 
     goto :goto_1
 
-    .line 462
+    .line 463
     :cond_0
     invoke-virtual {p1, v7}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    .line 463
+    .line 464
     .local v8, "obj":Ljava/lang/Object;
     instance-of v9, v8, Lnan/ren/util/JSONObject;
 
     if-eqz v9, :cond_2
 
-    .line 464
+    .line 465
     const-class v9, Lnan/ren/util/JSONObject;
 
     invoke-virtual {v9, v6}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -1067,57 +1067,57 @@
 
     if-eqz v9, :cond_1
 
-    .line 465
+    .line 466
     invoke-interface {v3, v8}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 467
+    .line 468
     :cond_1
     invoke-virtual {v6}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
     move-result-object v9
 
-    .line 468
+    .line 469
     .local v9, "listItem":Ljava/lang/Object;
     move-object v10, v8
 
     check-cast v10, Lnan/ren/util/JSONObject;
 
-    .line 469
+    .line 470
     .local v10, "jsonObject":Lnan/ren/util/JSONObject;
     invoke-static {v10, v6, v9}, Lnan/ren/util/JsonUtil;->assignField(Lnan/ren/util/JSONObject;Ljava/lang/Class;Ljava/lang/Object;)V
 
-    .line 470
+    .line 471
     invoke-interface {v3, v9}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 471
+    .line 472
     .end local v9    # "listItem":Ljava/lang/Object;
     .end local v10    # "jsonObject":Lnan/ren/util/JSONObject;
     goto :goto_1
 
-    .line 472
+    .line 473
     :cond_2
     instance-of v9, v8, Lnan/ren/util/JSONArray;
 
     if-eqz v9, :cond_3
 
-    .line 473
+    .line 474
     move-object v9, v8
 
     check-cast v9, Lnan/ren/util/JSONArray;
 
-    .line 474
+    .line 475
     .local v9, "jsonArrayNext":Lnan/ren/util/JSONArray;
     invoke-static {v5, v9}, Lnan/ren/util/JsonUtil;->createList(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/List;
 
     move-result-object v10
 
-    .line 475
+    .line 476
     .local v10, "nextList":Ljava/util/List;
     invoke-interface {v3, v10}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 458
+    .line 459
     .end local v8    # "obj":Ljava/lang/Object;
     .end local v9    # "jsonArrayNext":Lnan/ren/util/JSONArray;
     .end local v10    # "nextList":Ljava/util/List;
@@ -1127,7 +1127,7 @@
 
     goto :goto_0
 
-    .line 479
+    .line 480
     .end local v7    # "i":I
     :cond_4
     return-object v3
@@ -1146,25 +1146,25 @@
         }
     .end annotation
 
-    .line 375
+    .line 376
     instance-of v0, p0, Ljava/lang/Class;
 
     if-eqz v0, :cond_0
 
-    .line 376
+    .line 377
     move-object v0, p0
 
     check-cast v0, Ljava/lang/Class;
 
     return-object v0
 
-    .line 378
+    .line 379
     :cond_0
     move-object v0, p0
 
     check-cast v0, Ljava/lang/reflect/ParameterizedType;
 
-    .line 380
+    .line 381
     .local v0, "parameterizedType":Ljava/lang/reflect/ParameterizedType;
     invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getRawType()Ljava/lang/reflect/Type;
 
@@ -1187,7 +1187,7 @@
         }
     .end annotation
 
-    .line 142
+    .line 143
     .local p0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->isPrimitive()Z
 
@@ -1197,7 +1197,7 @@
 
     const-class v0, Ljava/lang/String;
 
-    .line 143
+    .line 144
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1206,7 +1206,7 @@
 
     const-class v0, Ljava/lang/Integer;
 
-    .line 144
+    .line 145
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1215,7 +1215,7 @@
 
     const-class v0, Ljava/lang/Double;
 
-    .line 145
+    .line 146
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1224,7 +1224,7 @@
 
     const-class v0, Ljava/lang/Float;
 
-    .line 146
+    .line 147
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1233,7 +1233,7 @@
 
     const-class v0, Ljava/lang/Long;
 
-    .line 147
+    .line 148
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1242,7 +1242,7 @@
 
     const-class v0, Ljava/lang/Boolean;
 
-    .line 148
+    .line 149
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1251,7 +1251,7 @@
 
     const-class v0, Ljava/lang/Byte;
 
-    .line 149
+    .line 150
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1260,7 +1260,7 @@
 
     const-class v0, Ljava/lang/Short;
 
-    .line 150
+    .line 151
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1269,7 +1269,7 @@
 
     const-class v0, Ljava/lang/Character;
 
-    .line 151
+    .line 152
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1278,13 +1278,13 @@
 
     goto :goto_0
 
-    .line 154
+    .line 155
     :cond_0
     const/4 v0, 0x0
 
     return v0
 
-    .line 152
+    .line 153
     :cond_1
     :goto_0
     const/4 v0, 0x1
@@ -1296,7 +1296,7 @@
     .locals 4
     .param p0, "jo"    # Lnan/ren/util/JSONObject;
 
-    .line 499
+    .line 500
     invoke-virtual {p0}, Lnan/ren/util/JSONObject;->keySet()Ljava/util/Set;
 
     move-result-object v0
@@ -1305,13 +1305,13 @@
 
     move-result-object v0
 
-    .line 500
+    .line 501
     .local v0, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 501
+    .line 502
     .local v1, "map":Ljava/util/Map;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -1320,14 +1320,14 @@
 
     if-eqz v2, :cond_0
 
-    .line 502
+    .line 503
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/String;
 
-    .line 503
+    .line 504
     .local v2, "key":Ljava/lang/String;
     :try_start_0
     invoke-virtual {p0, v2}, Lnan/ren/util/JSONObject;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1343,12 +1343,12 @@
     :catch_0
     move-exception v3
 
-    .line 504
+    .line 505
     .end local v2    # "key":Ljava/lang/String;
     :goto_1
     goto :goto_0
 
-    .line 505
+    .line 506
     :cond_0
     return-object v1
 .end method
@@ -1373,7 +1373,7 @@
         }
     .end annotation
 
-    .line 221
+    .line 222
     .local p1, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     if-eqz p0, :cond_e
 
@@ -1395,7 +1395,7 @@
 
     if-nez v0, :cond_e
 
-    .line 225
+    .line 226
     invoke-static {p1}, Lnan/ren/util/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
     move-result v0
@@ -1410,7 +1410,7 @@
 
     goto :goto_0
 
-    .line 226
+    .line 227
     :cond_0
     new-instance v0, Ljava/lang/Exception;
 
@@ -1420,16 +1420,16 @@
 
     throw v0
 
-    .line 229
+    .line 230
     :cond_1
     :goto_0
     const/4 v0, 0x0
 
-    .line 230
+    .line 231
     .local v0, "jsonObject":Lnan/ren/util/JSONObject;
     const/4 v1, 0x0
 
-    .line 231
+    .line 232
     .local v1, "jsonArray":Lnan/ren/util/JSONArray;
     const-string v2, "{"
 
@@ -1439,7 +1439,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 233
+    .line 234
     new-instance v2, Lnan/ren/util/JSONObject;
 
     invoke-direct {v2, p0}, Lnan/ren/util/JSONObject;-><init>(Ljava/lang/String;)V
@@ -1448,7 +1448,7 @@
 
     goto :goto_1
 
-    .line 234
+    .line 235
     :cond_2
     const-string v2, "["
 
@@ -1458,14 +1458,14 @@
 
     if-eqz v2, :cond_d
 
-    .line 236
+    .line 237
     new-instance v2, Lnan/ren/util/JSONArray;
 
     invoke-direct {v2, p0}, Lnan/ren/util/JSONArray;-><init>(Ljava/lang/String;)V
 
     move-object v1, v2
 
-    .line 241
+    .line 242
     :goto_1
     const-class v2, Lnan/ren/util/JSONObject;
 
@@ -1475,10 +1475,10 @@
 
     if-eqz v2, :cond_3
 
-    .line 242
+    .line 243
     return-object v0
 
-    .line 244
+    .line 245
     :cond_3
     const-class v2, Lnan/ren/util/JSONArray;
 
@@ -1488,10 +1488,10 @@
 
     if-eqz v2, :cond_4
 
-    .line 245
+    .line 246
     return-object v1
 
-    .line 247
+    .line 248
     :cond_4
     invoke-virtual {p1}, Ljava/lang/Class;->isArray()Z
 
@@ -1499,14 +1499,14 @@
 
     if-eqz v2, :cond_5
 
-    .line 248
+    .line 249
     invoke-static {v1, p1}, Lnan/ren/util/JsonUtil;->createArr(Lnan/ren/util/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
 
     return-object v2
 
-    .line 249
+    .line 250
     :cond_5
     const-class v2, Ljava/util/List;
 
@@ -1516,18 +1516,18 @@
 
     if-eqz v2, :cond_7
 
-    .line 250
+    .line 251
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 251
+    .line 252
     .local v2, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Object;>;"
     invoke-virtual {v1}, Lnan/ren/util/JSONArray;->length()I
 
     move-result v3
 
-    .line 252
+    .line 253
     .local v3, "length":I
     const/4 v4, 0x0
 
@@ -1535,24 +1535,24 @@
     :goto_2
     if-ge v4, v3, :cond_6
 
-    .line 253
+    .line 254
     invoke-virtual {v1, v4}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-interface {v2, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 252
+    .line 253
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_2
 
-    .line 255
+    .line 256
     .end local v4    # "i":I
     :cond_6
     return-object v2
 
-    .line 256
+    .line 257
     .end local v2    # "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Object;>;"
     .end local v3    # "length":I
     :cond_7
@@ -1564,18 +1564,18 @@
 
     if-eqz v2, :cond_9
 
-    .line 257
+    .line 258
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
 
-    .line 258
+    .line 259
     .local v2, "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Object;>;"
     invoke-virtual {v1}, Lnan/ren/util/JSONArray;->length()I
 
     move-result v3
 
-    .line 259
+    .line 260
     .restart local v3    # "length":I
     const/4 v4, 0x0
 
@@ -1583,24 +1583,24 @@
     :goto_3
     if-ge v4, v3, :cond_8
 
-    .line 260
+    .line 261
     invoke-virtual {v1, v4}, Lnan/ren/util/JSONArray;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     invoke-interface {v2, v5}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    .line 259
+    .line 260
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_3
 
-    .line 262
+    .line 263
     .end local v4    # "i":I
     :cond_8
     return-object v2
 
-    .line 264
+    .line 265
     .end local v2    # "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Object;>;"
     .end local v3    # "length":I
     :cond_9
@@ -1612,12 +1612,12 @@
 
     if-eqz v2, :cond_b
 
-    .line 265
+    .line 266
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    .line 266
+    .line 267
     .local v2, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     invoke-virtual {v0}, Lnan/ren/util/JSONObject;->keySet()Ljava/util/Set;
 
@@ -1627,7 +1627,7 @@
 
     move-result-object v3
 
-    .line 267
+    .line 268
     .local v3, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_4
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
@@ -1636,14 +1636,14 @@
 
     if-eqz v4, :cond_a
 
-    .line 268
+    .line 269
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    .line 269
+    .line 270
     .local v4, "key":Ljava/lang/String;
     invoke-virtual {v0, v4}, Lnan/ren/util/JSONObject;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -1651,30 +1651,30 @@
 
     invoke-interface {v2, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 270
+    .line 271
     .end local v4    # "key":Ljava/lang/String;
     goto :goto_4
 
-    .line 271
+    .line 272
     :cond_a
     return-object v2
 
-    .line 273
+    .line 274
     .end local v2    # "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     .end local v3    # "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     :cond_b
     if-eqz v0, :cond_c
 
-    .line 276
+    .line 277
     invoke-static {v0, p1}, Lnan/ren/util/JsonUtil;->createObject(Lnan/ren/util/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v2
 
-    .line 277
+    .line 278
     .local v2, "t":Ljava/lang/Object;, "TT;"
     return-object v2
 
-    .line 274
+    .line 275
     .end local v2    # "t":Ljava/lang/Object;, "TT;"
     :cond_c
     new-instance v2, Ljava/lang/Exception;
@@ -1701,7 +1701,7 @@
 
     throw v2
 
-    .line 238
+    .line 239
     :cond_d
     new-instance v2, Ljava/lang/Exception;
 
@@ -1711,7 +1711,7 @@
 
     throw v2
 
-    .line 222
+    .line 223
     .end local v0    # "jsonObject":Lnan/ren/util/JSONObject;
     .end local v1    # "jsonArray":Lnan/ren/util/JSONArray;
     :cond_e
@@ -1744,7 +1744,7 @@
         }
     .end annotation
 
-    .line 168
+    .line 169
     .local p1, "typeReference":Lnan/ren/util/JsonUtil$TypeReference;, "Lnan/ren/util/JsonUtil$TypeReference<TT;>;"
     if-eqz p0, :cond_b
 
@@ -1766,18 +1766,18 @@
 
     if-nez v0, :cond_b
 
-    .line 172
+    .line 173
     invoke-virtual {p1}, Lnan/ren/util/JsonUtil$TypeReference;->genericParamType()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
-    .line 173
+    .line 174
     .local v0, "type":Ljava/lang/reflect/Type;
     invoke-static {v0}, Lnan/ren/util/JsonUtil;->getTclazz(Ljava/lang/reflect/Type;)Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 175
+    .line 176
     .local v1, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-static {v1}, Lnan/ren/util/JsonUtil;->isBaseType(Ljava/lang/Class;)Z
 
@@ -1793,7 +1793,7 @@
 
     goto :goto_0
 
-    .line 176
+    .line 177
     :cond_0
     new-instance v2, Ljava/lang/Exception;
 
@@ -1803,16 +1803,16 @@
 
     throw v2
 
-    .line 179
+    .line 180
     :cond_1
     :goto_0
     const/4 v2, 0x0
 
-    .line 180
+    .line 181
     .local v2, "jsonObject":Lnan/ren/util/JSONObject;
     const/4 v3, 0x0
 
-    .line 181
+    .line 182
     .local v3, "jsonArray":Lnan/ren/util/JSONArray;
     const-string v4, "{"
 
@@ -1822,7 +1822,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 182
+    .line 183
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-direct {v4, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
@@ -1833,7 +1833,7 @@
 
     goto :goto_1
 
-    .line 183
+    .line 184
     :cond_2
     const-string v4, "["
 
@@ -1843,7 +1843,7 @@
 
     if-eqz v4, :cond_a
 
-    .line 184
+    .line 185
     new-instance v4, Lorg/json/JSONArray;
 
     invoke-direct {v4, p0}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
@@ -1856,7 +1856,7 @@
 
     check-cast v3, Lnan/ren/util/JSONArray;
 
-    .line 189
+    .line 190
     :goto_1
     const-class v4, Lnan/ren/util/JSONObject;
 
@@ -1866,10 +1866,10 @@
 
     if-eqz v4, :cond_3
 
-    .line 190
+    .line 191
     return-object v2
 
-    .line 192
+    .line 193
     :cond_3
     const-class v4, Lnan/ren/util/JSONArray;
 
@@ -1879,10 +1879,10 @@
 
     if-eqz v4, :cond_4
 
-    .line 193
+    .line 194
     return-object v3
 
-    .line 195
+    .line 196
     :cond_4
     invoke-virtual {v1}, Ljava/lang/Class;->isArray()Z
 
@@ -1890,14 +1890,14 @@
 
     if-eqz v4, :cond_5
 
-    .line 196
+    .line 197
     invoke-static {v3, v1}, Lnan/ren/util/JsonUtil;->createArr(Lnan/ren/util/JSONArray;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v4
 
     return-object v4
 
-    .line 197
+    .line 198
     :cond_5
     const-class v4, Ljava/util/List;
 
@@ -1907,14 +1907,14 @@
 
     if-eqz v4, :cond_6
 
-    .line 198
+    .line 199
     invoke-static {v0, v3}, Lnan/ren/util/JsonUtil;->createList(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/List;
 
     move-result-object v4
 
     return-object v4
 
-    .line 199
+    .line 200
     :cond_6
     const-class v4, Ljava/util/Set;
 
@@ -1924,14 +1924,14 @@
 
     if-eqz v4, :cond_7
 
-    .line 200
+    .line 201
     invoke-static {v0, v3}, Lnan/ren/util/JsonUtil;->createSet(Ljava/lang/reflect/Type;Lnan/ren/util/JSONArray;)Ljava/util/Set;
 
     move-result-object v4
 
     return-object v4
 
-    .line 201
+    .line 202
     :cond_7
     const-class v4, Ljava/util/Map;
 
@@ -1941,27 +1941,27 @@
 
     if-eqz v4, :cond_8
 
-    .line 202
+    .line 203
     invoke-static {v0, v2}, Lnan/ren/util/JsonUtil;->createMap(Ljava/lang/reflect/Type;Lnan/ren/util/JSONObject;)Ljava/util/Map;
 
     move-result-object v4
 
     return-object v4
 
-    .line 204
+    .line 205
     :cond_8
     if-eqz v2, :cond_9
 
-    .line 207
+    .line 208
     invoke-static {v2, v1}, Lnan/ren/util/JsonUtil;->createObject(Lnan/ren/util/JSONObject;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 208
+    .line 209
     .local v4, "t":Ljava/lang/Object;, "TT;"
     return-object v4
 
-    .line 205
+    .line 206
     .end local v4    # "t":Ljava/lang/Object;, "TT;"
     :cond_9
     new-instance v4, Ljava/lang/Exception;
@@ -1988,7 +1988,7 @@
 
     throw v4
 
-    .line 186
+    .line 187
     :cond_a
     new-instance v4, Ljava/lang/Exception;
 
@@ -1998,7 +1998,7 @@
 
     throw v4
 
-    .line 169
+    .line 170
     .end local v0    # "type":Ljava/lang/reflect/Type;
     .end local v1    # "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     .end local v2    # "jsonObject":Lnan/ren/util/JSONObject;
@@ -2034,20 +2034,20 @@
         }
     .end annotation
 
-    .line 101
+    .line 102
     .local p0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     if-nez p0, :cond_0
 
-    .line 102
+    .line 103
     return-void
 
-    .line 105
+    .line 106
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
     move-result-object v0
 
-    .line 106
+    .line 107
     .local v0, "fields":[Ljava/lang/reflect/Field;
     array-length v1, v0
 
@@ -2058,7 +2058,7 @@
 
     aget-object v3, v0, v2
 
-    .line 108
+    .line 109
     .local v3, "field":Ljava/lang/reflect/Field;
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getModifiers()I
 
@@ -2070,22 +2070,22 @@
 
     if-eqz v4, :cond_1
 
-    .line 109
+    .line 110
     goto :goto_1
 
-    .line 112
+    .line 113
     :cond_1
     invoke-virtual {v3}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 113
+    .line 114
     .local v4, "fieldName":Ljava/lang/String;
     const/4 v5, 0x1
 
     invoke-virtual {v3, v5}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 114
+    .line 115
     invoke-virtual {v3, p2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
@@ -2096,7 +2096,7 @@
 
     invoke-virtual {p1, v4, v5}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 106
+    .line 107
     .end local v3    # "field":Ljava/lang/reflect/Field;
     .end local v4    # "fieldName":Ljava/lang/String;
     :goto_1
@@ -2104,7 +2104,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 125
     :cond_2
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
@@ -2112,7 +2112,7 @@
 
     invoke-static {v1, p1, p2}, Lnan/ren/util/JsonUtil;->parseObject(Ljava/lang/Class;Lnan/ren/util/JSONObject;Ljava/lang/Object;)V
 
-    .line 125
+    .line 126
     return-void
 .end method
 
@@ -2141,7 +2141,7 @@
         }
     .end annotation
 
-    .line 483
+    .line 484
     .local p0, "tClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     .local p2, "paramsClazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     .local p3, "t":Ljava/lang/Object;, "TT;"
@@ -2157,12 +2157,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 484
+    .line 485
     invoke-static {p4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 486
+    .line 487
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2198,7 +2198,7 @@
 
     move-result-object v0
 
-    .line 487
+    .line 488
     .local v0, "method":Ljava/lang/reflect/Method;
     new-array v1, v1, [Ljava/lang/Object;
 
@@ -2206,7 +2206,7 @@
 
     invoke-virtual {v0, p3, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 488
+    .line 489
     return-void
 .end method
 
@@ -2231,7 +2231,7 @@
     :cond_0
     instance-of v0, p0, Lnan/ren/util/JSONObject;
 
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
     instance-of v0, p0, Lnan/ren/util/JSONArray;
 
@@ -2301,7 +2301,7 @@
     :cond_3
     instance-of v0, p0, Lorg/json/JSONArray;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     .line 58
     move-object v0, p0
@@ -2324,29 +2324,35 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_4
+    if-ge v2, v3, :cond_5
 
     .line 61
     invoke-virtual {v0, v2}, Lorg/json/JSONArray;->opt(I)Ljava/lang/Object;
 
     move-result-object v3
 
+    .line 62
+    .local v3, "o":Ljava/lang/Object;
+    if-eqz v3, :cond_4
+
     invoke-virtual {v1, v3}, Lnan/ren/util/JSONArray;->add(Ljava/lang/Object;)Z
 
     .line 60
+    .end local v3    # "o":Ljava/lang/Object;
+    :cond_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 63
+    .line 64
     .end local v2    # "i":I
-    :cond_4
+    :cond_5
     return-object v1
 
-    .line 66
+    .line 67
     .end local v0    # "oja":Lorg/json/JSONArray;
     .end local v1    # "result":Lnan/ren/util/JSONArray;
-    :cond_5
+    :cond_6
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -2355,7 +2361,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_7
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -2365,29 +2371,29 @@
 
     move-result v0
 
-    if-nez v0, :cond_6
-
-    .line 67
-    return-object p0
+    if-nez v0, :cond_7
 
     .line 68
-    :cond_6
-    instance-of v0, p0, Ljava/util/Map;
-
-    if-eqz v0, :cond_8
+    return-object p0
 
     .line 69
+    :cond_7
+    instance-of v0, p0, Ljava/util/Map;
+
+    if-eqz v0, :cond_9
+
+    .line 70
     move-object v0, p0
 
     check-cast v0, Ljava/util/Map;
 
-    .line 70
+    .line 71
     .local v0, "map":Ljava/util/Map;
     new-instance v1, Lnan/ren/util/JSONObject;
 
     invoke-direct {v1}, Lnan/ren/util/JSONObject;-><init>()V
 
-    .line 71
+    .line 72
     .local v1, "jsonObject":Lnan/ren/util/JSONObject;
     invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
@@ -2402,19 +2408,19 @@
 
     move-result v3
 
-    if-eqz v3, :cond_7
+    if-eqz v3, :cond_8
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 72
+    .line 73
     .local v3, "key":Ljava/lang/Object;
     invoke-interface {v0, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 73
+    .line 74
     .local v4, "value":Ljava/lang/Object;
     invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -2426,35 +2432,35 @@
 
     invoke-virtual {v1, v5, v6}, Lnan/ren/util/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lnan/ren/util/JSONObject;
 
-    .line 74
+    .line 75
     .end local v3    # "key":Ljava/lang/Object;
     .end local v4    # "value":Ljava/lang/Object;
     goto :goto_2
 
-    .line 75
-    :cond_7
+    .line 76
+    :cond_8
     return-object v1
 
-    .line 76
+    .line 77
     .end local v0    # "map":Ljava/util/Map;
     .end local v1    # "jsonObject":Lnan/ren/util/JSONObject;
-    :cond_8
+    :cond_9
     instance-of v0, p0, Ljava/util/List;
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_b
 
-    .line 77
+    .line 78
     move-object v0, p0
 
     check-cast v0, Ljava/util/List;
 
-    .line 78
+    .line 79
     .local v0, "list":Ljava/util/List;
     new-instance v1, Lnan/ren/util/JSONArray;
 
     invoke-direct {v1}, Lnan/ren/util/JSONArray;-><init>()V
 
-    .line 79
+    .line 80
     .local v1, "jsonArray":Lnan/ren/util/JSONArray;
     const/4 v2, 0x0
 
@@ -2464,9 +2470,9 @@
 
     move-result v3
 
-    if-ge v2, v3, :cond_9
+    if-ge v2, v3, :cond_a
 
-    .line 80
+    .line 81
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2477,20 +2483,20 @@
 
     invoke-virtual {v1, v3}, Lnan/ren/util/JSONArray;->add(Ljava/lang/Object;)Z
 
-    .line 79
+    .line 80
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 82
+    .line 83
     .end local v2    # "i":I
-    :cond_9
+    :cond_a
     return-object v1
 
-    .line 83
+    .line 84
     .end local v0    # "list":Ljava/util/List;
     .end local v1    # "jsonArray":Lnan/ren/util/JSONArray;
-    :cond_a
+    :cond_b
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -2499,28 +2505,28 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c
+    if-eqz v0, :cond_d
 
-    .line 84
+    .line 85
     invoke-static {p0}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v0
 
-    .line 85
+    .line 86
     .local v0, "length":I
     new-instance v1, Lnan/ren/util/JSONArray;
 
     invoke-direct {v1}, Lnan/ren/util/JSONArray;-><init>()V
 
-    .line 86
+    .line 87
     .restart local v1    # "jsonArray":Lnan/ren/util/JSONArray;
     const/4 v2, 0x0
 
     .restart local v2    # "i":I
     :goto_4
-    if-ge v2, v0, :cond_b
+    if-ge v2, v0, :cond_c
 
-    .line 87
+    .line 88
     invoke-static {p0, v2}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2531,20 +2537,20 @@
 
     invoke-virtual {v1, v3}, Lnan/ren/util/JSONArray;->add(Ljava/lang/Object;)Z
 
-    .line 86
+    .line 87
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 89
+    .line 90
     .end local v2    # "i":I
-    :cond_b
+    :cond_c
     return-object v1
 
-    .line 90
+    .line 91
     .end local v0    # "length":I
     .end local v1    # "jsonArray":Lnan/ren/util/JSONArray;
-    :cond_c
+    :cond_d
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -2563,9 +2569,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_e
 
-    .line 91
+    .line 92
     move-object v0, p0
 
     check-cast v0, Landroid/media/ExifInterface;
@@ -2576,29 +2582,29 @@
 
     return-object v0
 
-    .line 93
-    :cond_d
+    .line 94
+    :cond_e
     new-instance v0, Lnan/ren/util/JSONObject;
 
     invoke-direct {v0}, Lnan/ren/util/JSONObject;-><init>()V
 
-    .line 94
+    .line 95
     .local v0, "jsonObject":Lnan/ren/util/JSONObject;
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    .line 95
+    .line 96
     .local v1, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {v1, v0, p0}, Lnan/ren/util/JsonUtil;->parseObject(Ljava/lang/Class;Lnan/ren/util/JSONObject;Ljava/lang/Object;)V
 
-    .line 96
+    .line 97
     return-object v0
 
     .line 45
     .end local v0    # "jsonObject":Lnan/ren/util/JSONObject;
     .end local v1    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_e
+    :cond_f
     :goto_5
     return-object p0
 .end method
@@ -2643,7 +2649,7 @@
     .locals 2
     .param p0, "obj"    # Ljava/lang/Object;
 
-    .line 492
+    .line 493
     :try_start_0
     invoke-static {p0}, Lnan/ren/util/JsonUtil;->toJSONObject(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -2655,11 +2661,11 @@
 
     return-object v0
 
-    .line 493
+    .line 494
     :catch_0
     move-exception v0
 
-    .line 494
+    .line 495
     .local v0, "ex":Ljava/lang/Exception;
     const/4 v1, 0x0
 
