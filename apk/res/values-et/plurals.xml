@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">%d-kordse kiirusega kiirendatud video</item>
+        <item quantity="one">%d-kordse kiirusega kiirendatud video</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Rohkem kui %1$d objekti.</item>
+        <item quantity="one">Rohkem kui üks objekt.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d on kärbitud.</item>
+        <item quantity="one">Üks on kärbitud.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d bussi</item>
+        <item quantity="one">Üks buss</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d autot</item>
+        <item quantity="one">Üks auto</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d kassi</item>
+        <item quantity="one">Üks kass</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumenti</item>
+        <item quantity="one">Üks dokument</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d koera</item>
+        <item quantity="one">Üks koer</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d jooki</item>
+        <item quantity="one">Üks jook</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektroonikaseadet</item>
+        <item quantity="one">Üks elektroonikaseade</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d nägu</item>
+        <item quantity="one">Üks nägu</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d toitu</item>
+        <item quantity="one">Üks toit</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d lemmiklooma</item>
+        <item quantity="one">Üks lemmikoom</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d veokit</item>
+        <item quantity="one">Üks veok</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ja %2$s on raamides.</item>
+        <item quantity="one">%2$s on raamides.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ja %2$s on kärbitud.</item>
+        <item quantity="one">%2$s on kärbitud.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Kärbitud: %1$s ja %2$s.</item>
+        <item quantity="one">Kärbitud: %2$s</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Raamides %1$s ja %2$s.</item>
+        <item quantity="one">Raamides: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Umbes %s fotot</item>
+        <item quantity="one">Umbes %s foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(Valitud on %1$d rakendust)</item>
+        <item quantity="one">(Valitud on %1$d rakendus)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Jagage sotsiaalrakendustes kiiresti fotosid ja videoid rakendusest Kaamera. Valige kuni %1$d rakendust. Lukustatud kausta salvestatud fotosid ja videoid ei saa jagada.</item>
+        <item quantity="one">Jagage sotsiaalrakendustes kiiresti fotosid ja videoid rakendusest Kaamera. Valige %1$d rakendus. Lukustatud kausta salvestatud fotosid ja videoid ei saa jagada.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Valige kuni %1$d rakendust</item>
+        <item quantity="one">Valige %1$d rakendus</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minutit videoid</item>
+        <item quantity="one">%s minut videoid</item>
+    </plurals>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Intervāla fotografēšana paātrinājumā %d</item>
+        <item quantity="zero">Intervāla fotografēšana paātrinājumā %d</item>
+        <item quantity="one">Intervāla fotografēšana paātrinājumā %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Vairāk nekā %1$d objekti.</item>
+        <item quantity="zero">Vairāk nekā %1$d objektu.</item>
+        <item quantity="one">Vairāk nekā %1$d objekts.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">Apgrieztas %d sejas.</item>
+        <item quantity="zero">Apgrieztas %d sejas.</item>
+        <item quantity="one">Apgriezta %d seja.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autobusi</item>
+        <item quantity="zero">%d autobusu</item>
+        <item quantity="one">%d autobuss</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d automašīnas</item>
+        <item quantity="zero">%d automašīnu</item>
+        <item quantity="one">%d automašīna</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d kaķi</item>
+        <item quantity="zero">%d kaķu</item>
+        <item quantity="one">%d kaķis</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumenti</item>
+        <item quantity="zero">%d dokumentu</item>
+        <item quantity="one">%d dokuments</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d suņi</item>
+        <item quantity="zero">%d suņu</item>
+        <item quantity="one">%d suns</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d dzērieni</item>
+        <item quantity="zero">%d dzērienu</item>
+        <item quantity="one">%d dzēriens</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektroniskās ierīces</item>
+        <item quantity="zero">%d elektronisko ierīču</item>
+        <item quantity="one">%d elektroniskā ierīce</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d sejas</item>
+        <item quantity="zero">%d seju</item>
+        <item quantity="one">%d seja</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d pārtikas produkti</item>
+        <item quantity="zero">%d pārtikas produktu</item>
+        <item quantity="one">%d pārtikas produkts</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d mājdzīvnieki</item>
+        <item quantity="zero">%d mājdzīvnieku</item>
+        <item quantity="one">%d mājdzīvnieks</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d kravas automašīnas</item>
+        <item quantity="zero">%d kravas automašīnu</item>
+        <item quantity="one">%d kravas automašīna</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">Kadrā ir %1$s, kā arī %2$s.</item>
+        <item quantity="zero">Kadrā ir %1$s, kā arī %2$s.</item>
+        <item quantity="one">Kadrā ir %1$s, kā arī %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Apgrieztie objekti: %1$s, kā arī %2$s.</item>
+        <item quantity="zero">Apgrieztie objekti: %1$s, kā arī %2$s.</item>
+        <item quantity="one">Apgrieztie objekti: %1$s, kā arī %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Apgrieztie objekti: %1$s, kā arī %2$s.</item>
+        <item quantity="zero">Apgrieztie objekti: %1$s, kā arī %2$s.</item>
+        <item quantity="one">Apgrieztie objekti: %1$s, kā arī %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Kadrā ir %1$s, kā arī %2$s.</item>
+        <item quantity="zero">Kadrā ir %1$s, kā arī %2$s.</item>
+        <item quantity="one">Kadrā ir %1$s, kā arī %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Aptuveni %s fotoattēli</item>
+        <item quantity="zero">Aptuveni %s fotoattēlu</item>
+        <item quantity="one">Aptuveni %s fotoattēls</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(atlasītas %1$d lietotnes)</item>
+        <item quantity="zero">(atlasītas %1$d lietotnes)</item>
+        <item quantity="one">(atlasīta %1$d lietotne)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs no lietotnes Kamera. Izvēlieties ne vairāk kā %1$d lietotnes. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
+        <item quantity="zero">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs no lietotnes Kamera. Izvēlieties ne vairāk kā %1$d lietotnes. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
+        <item quantity="one">Ātri kopīgojiet fotoattēlus un videoklipus sociālajās lietotnēs no lietotnes Kamera. Izvēlieties ne vairāk kā %1$d lietotni. Bloķētajā mapē saglabātos fotoattēlus un videoklipus nevar kopīgot.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Izvēlieties ne vairāk kā %1$d lietotnes</item>
+        <item quantity="zero">Izvēlieties ne vairāk kā %1$d lietotnes</item>
+        <item quantity="one">Izvēlieties ne vairāk kā %1$d lietotni</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minūtes ilgs videoklips</item>
+        <item quantity="zero">%s minūšu ilgs videoklips</item>
+        <item quantity="one">%s minūti ilgs videoklips</item>
+    </plurals>
+</resources>

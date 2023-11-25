@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Taymlaps tezligi %d marta</item>
+        <item quantity="one">Taymlaps tezligi %d marta</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d dan ortiq obyekt bor.</item>
+        <item quantity="one">Bittadan ortiq obyekt bor.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d tasi qirqildi.</item>
+        <item quantity="one">Bittasi qirqildi.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d ta avtobus</item>
+        <item quantity="one">Bitta avtobus</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d ta avtomobil</item>
+        <item quantity="one">Bitta avtomobil</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d ta mushuk</item>
+        <item quantity="one">Bitta mushuk</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d ta hujjat</item>
+        <item quantity="one">Bitta hujjat</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ta it</item>
+        <item quantity="one">Bitta it</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ta ichimlik</item>
+        <item quantity="one">Bitta ichimlik</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ta elektron qurilma</item>
+        <item quantity="one">Bitta elektron qurilma</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ta yuz</item>
+        <item quantity="one">Bitta yuz</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ta oziq-ovqat mahsuloti</item>
+        <item quantity="one">Bitta oziq-ovqat mahsuloti</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d ta jonivor</item>
+        <item quantity="one">Bir jonivor</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ta yuk mashinasi</item>
+        <item quantity="one">Bitta yuk mashinasi</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s va %2$s kadrda.</item>
+        <item quantity="one">%2$s kadrda.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s va %2$s qirqildi.</item>
+        <item quantity="one">%2$s qirqildi.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Qirqildi: %1$s va %2$s.</item>
+        <item quantity="one">Qirqildi: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Kadrda: %1$s va %2$s.</item>
+        <item quantity="one">Kadrda: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Taxminan %s ta surat</item>
+        <item quantity="one">Taxminan %s ta surat</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ta ilova tanlandi)</item>
+        <item quantity="one">%1$d ta ilova tanlandi</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Suratlarva videolarni ijtimoiy tarmoq ilovalariga Kamera orqali ulashing. %1$d tagacha ilova tanlashingiz mumkin. Qulflangan jildga saqlangan suratlar va videolar ulashilmaydi.</item>
+        <item quantity="one">Suratlarva videolarni ijtimoiy tarmoq ilovalariga Kamera orqali ulashing. %1$d ta ilovani tanlang. Qulflangan jildga saqlangan suratlar va videolar ulashilmaydi.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d tagacha ilova tanlashingiz mumkin</item>
+        <item quantity="one">%1$d ta ilova tanlashingiz mumkin</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s daqiqalik video</item>
+        <item quantity="one">%s daqiqalik video</item>
+    </plurals>
+</resources>

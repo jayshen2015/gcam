@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Selang Masa %d kelajuan masa</item>
+        <item quantity="one">Selang Masa %d kelajuan masa</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Lebih daripada %1$d objek.</item>
+        <item quantity="one">Lebih daripada satu objek.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d dipangkas.</item>
+        <item quantity="one">Dipangkas serentak.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d bas</item>
+        <item quantity="one">Satu bas</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d kereta</item>
+        <item quantity="one">Satu kereta</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d kucing</item>
+        <item quantity="one">Satu kucing</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumen</item>
+        <item quantity="one">Satu dokumen</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d anjing</item>
+        <item quantity="one">Satu anjing</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d minuman</item>
+        <item quantity="one">Satu minuman</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d peranti elektronik</item>
+        <item quantity="one">Satu peranti elektronik</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d muka</item>
+        <item quantity="one">Satu muka</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d item makanan</item>
+        <item quantity="one">Satu item makanan</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d haiwan kesayangan</item>
+        <item quantity="one">Seekor haiwan kesayangan</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d trak</item>
+        <item quantity="one">Satu trak</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s dan %2$s dalam bingkai.</item>
+        <item quantity="one">%2$s dalam bingkai.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s dan %2$s dipangkas.</item>
+        <item quantity="one">%2$s dipangkas.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Dipangkas: %1$s dan %2$s.</item>
+        <item quantity="one">Dipangkas: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Dalam bingkai: %1$s dan %2$s.</item>
+        <item quantity="one">Dalam bingkai: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Kira-kira %s foto</item>
+        <item quantity="one">Kira-kira %s foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d apl dipilih)</item>
+        <item quantity="one">(%1$d apl dipilih)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Kongsi foto dan video pada apl sosial dengan pantas daripada Kamera. Pilih hingga %1$d apl. Foto dan video yang disimpan pada Folder Dikunci tidak dapat dikongsi.</item>
+        <item quantity="one">Kongsi foto dan video pada apl sosial dengan pantas daripada Kamera. Pilih apl %1$d. Foto dan video yang disimpan pada Folder Dikunci tidak boleh dikongsi.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Pilih sehingga %1$d apl</item>
+        <item quantity="one">Pilih %1$d apl</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minit video</item>
+        <item quantity="one">%s minit video</item>
+    </plurals>
+</resources>

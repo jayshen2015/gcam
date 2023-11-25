@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Mpito wa Muda: kasi mara %d</item>
+        <item quantity="one">Mpito wa Muda: kasi mara %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Zaidi ya vitu %1$d.</item>
+        <item quantity="one">Zaidi ya kitu kimoja.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">Nyuso %d zimepunguzwa.</item>
+        <item quantity="one">Uso mmoja umepunguzwa.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">Mabasi %d</item>
+        <item quantity="one">Basi moja</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">Magari %d</item>
+        <item quantity="one">Gari moja</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">Paka %d</item>
+        <item quantity="one">Paka mmoja</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">Hati %d</item>
+        <item quantity="one">Hati moja</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">Mbwa %d</item>
+        <item quantity="one">Mbwa mmoja</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">Vinywaji %d</item>
+        <item quantity="one">Kinywaji kimoja</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">Vifaa %d vya kielektroniki</item>
+        <item quantity="one">Kifaa kimoja cha kielektroniki</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">Nyuso %d.</item>
+        <item quantity="one">Uso mmoja</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">Aina %d za vyakula</item>
+        <item quantity="one">Chakula cha aina moja</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">Wanyama vipenzi %d</item>
+        <item quantity="one">Mnyama kipenzi mmoja</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">Malori %d</item>
+        <item quantity="one">Lori moja</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s na %2$s kwenye fremu.</item>
+        <item quantity="one">%2$s kwenye fremu.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s na %2$s vimepunguzwa.</item>
+        <item quantity="one">%2$s kimepunguzwa.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Vimepunguzwa: %1$s na %2$s.</item>
+        <item quantity="one">Kimepunguzwa: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Kwenye fremu: %1$s na%2$s.</item>
+        <item quantity="one">Kwenye fremu: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Kuhusu picha %s</item>
+        <item quantity="one">Kuhusu picha %s</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(Programu %1$d zimechaguliwa)</item>
+        <item quantity="one">(Programu %1$d imechaguliwa)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Shiriki picha na video kwa haraka kwenye programu za kijamii moja kwa moja kutoka kwenye Kamera. Chagua hadi programu %1$d. Huwezi kushiriki picha na video zilizohifadhiwa kwenye Folda iliyofungwa.</item>
+        <item quantity="one">Shiriki picha na video kwa haraka kwenye programu za kijamii moja kwa moja kutoka kwenye Kamera. Chagua hadi programu %1$d. Huwezi kushiriki picha na video iliyohifadhiwa kwenye Folda Iliyofungwa.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Chagua hadi programu %1$d</item>
+        <item quantity="one">Chagua programu %1$d</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">Dakika %s za video</item>
+        <item quantity="one">Dakika %sya video</item>
+    </plurals>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Ubrzani video sa brzinom %d</item>
+        <item quantity="one">Ubrzani video sa brzinom %d</item>
+        <item quantity="few">Ubrzani video sa brzinom %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Više od %1$d subjekata.</item>
+        <item quantity="one">Više od %1$d subjekta.</item>
+        <item quantity="few">Više od %1$d subjekta.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d je opsečeno.</item>
+        <item quantity="one">%d je opsečeno.</item>
+        <item quantity="few">%d su opsečena.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autobusa</item>
+        <item quantity="one">%d autobus</item>
+        <item quantity="few">%d autobusa</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d automobila</item>
+        <item quantity="one">%d automobil</item>
+        <item quantity="few">%d automobila</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d mačaka</item>
+        <item quantity="one">%d mačka</item>
+        <item quantity="few">%d mačke</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumenata</item>
+        <item quantity="one">%d dokument</item>
+        <item quantity="few">%d dokumenta</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d pasa</item>
+        <item quantity="one">%d pas</item>
+        <item quantity="few">%d psa</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d pića</item>
+        <item quantity="one">%d piće</item>
+        <item quantity="few">%d pića</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektronskih uređaja</item>
+        <item quantity="one">%d elektronski uređaj</item>
+        <item quantity="few">%d elektronska uređaja</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d lica</item>
+        <item quantity="one">%d lice</item>
+        <item quantity="few">%d lica</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d jestivih stavki</item>
+        <item quantity="one">%d jestiva stavka</item>
+        <item quantity="few">%d jestive stavke</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d kućnih ljubimaca</item>
+        <item quantity="one">%d kućni ljubimac</item>
+        <item quantity="few">%d kućna ljubimca</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d kamiona</item>
+        <item quantity="one">%d kamion</item>
+        <item quantity="few">%d kamiona</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s i %2$s u kadru.</item>
+        <item quantity="one">%1$s i %2$s u kadru.</item>
+        <item quantity="few">%1$s i %2$s u kadru.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Opsečeno: %1$s i %2$s.</item>
+        <item quantity="one">Opsečeno: %1$s i %2$s.</item>
+        <item quantity="few">Opsečeno: %1$s i %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Opsečeno: %1$s i %2$s.</item>
+        <item quantity="one">Opsečeno: %1$s i %2$s.</item>
+        <item quantity="few">Opsečeno: %1$s i %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">U kadru: %1$s i %2$s.</item>
+        <item quantity="one">U kadru: %1$s i %2$s.</item>
+        <item quantity="few">U kadru: %1$s i %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Otprilike %s slika</item>
+        <item quantity="one">Otprilike %s slika</item>
+        <item quantity="few">Otprilike %s slike</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(izabrano je %1$d aplikacija)</item>
+        <item quantity="one">(izabrana je %1$d aplikacija)</item>
+        <item quantity="few">(izabrane su %1$d aplikacije)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Brzo delite slike i video snimke u društvenim aplikacijama iz Kamere. Odaberite maksimalno %1$d aplikacija. Slike i video snimci sačuvani u zaključanom folderu ne mogu da se dele.</item>
+        <item quantity="one">Brzo delite slike i video snimke u društvenim aplikacijama iz Kamere. Odaberite maksimalno %1$d aplikaciju. Slike i video snimci sačuvani u zaključanom folderu ne mogu da se dele.</item>
+        <item quantity="few">Brzo delite slike i video snimke u društvenim aplikacijama iz Kamere. Odaberite maksimalno %1$d aplikacije. Slike i video snimci sačuvani u zaključanom folderu ne mogu da se dele.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Odaberite najviše %1$d aplikacija</item>
+        <item quantity="one">Odaberite najviše %1$d aplikaciju</item>
+        <item quantity="few">Odaberite najviše %1$d aplikacije</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minuta videa</item>
+        <item quantity="one">%s minut videa</item>
+        <item quantity="few">%s minuta videa</item>
+    </plurals>
+</resources>

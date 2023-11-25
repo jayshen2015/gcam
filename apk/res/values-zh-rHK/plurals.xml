@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">延時攝影 %d 倍速</item>
+        <item quantity="one">延時攝影 %d 倍速</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">多過 %1$d 個物件。</item>
+        <item quantity="one">多過 1 個物件。</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">裁剪咗 %d 個面孔。</item>
+        <item quantity="one">裁剪咗 1 個面孔。</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d 架巴士</item>
+        <item quantity="one">1 架巴士</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d 部車</item>
+        <item quantity="one">1 部車</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d 隻貓</item>
+        <item quantity="one">1 隻貓</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d 份文件</item>
+        <item quantity="one">1 份文件</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d 隻狗</item>
+        <item quantity="one">1 隻狗</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d 樣飲品</item>
+        <item quantity="one">1 樣飲品</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d 部電子裝置</item>
+        <item quantity="one">1 部電子裝置</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d 塊面</item>
+        <item quantity="one">1 塊面</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d 樣食品</item>
+        <item quantity="one">1 樣食品</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d 隻寵物</item>
+        <item quantity="one">1 隻寵物</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d 架貨車</item>
+        <item quantity="one">1 架貨車</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">框入面有 %1$s同 %2$s。</item>
+        <item quantity="one">框入面有 %2$s。</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">裁剪咗 %1$s同 %2$s。</item>
+        <item quantity="one">裁剪咗 %2$s。</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">未完全入鏡：%1$s同 %2$s。</item>
+        <item quantity="one">未完全入鏡：%2$s。</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">完全入鏡：%1$s同埋 %2$s。</item>
+        <item quantity="one">完全入鏡：%2$s。</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">約 %s 張相片</item>
+        <item quantity="one">約 %s 張相片</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(已選擇 %1$d 個應用程式)</item>
+        <item quantity="one">(已選擇 %1$d 個應用程式)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">透過「相機」將相片和影片快速分享至社交應用程式。選擇最多 %1$d 個應用程式。無法分享儲存至「鎖定的資料夾」的相片和影片。</item>
+        <item quantity="one">透過「相機」將相片和影片快速分享至社交應用程式。選擇最多 %1$d 個應用程式。無法分享儲存至「鎖定的資料夾」的相片和影片。</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">選擇最多 %1$d 個應用程式</item>
+        <item quantity="one">選擇 %1$d 個應用程式</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s 分鐘影片</item>
+        <item quantity="one">%s 分鐘影片</item>
+    </plurals>
+</resources>

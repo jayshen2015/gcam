@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Pagreitinto vaizdo įrašo sparta: %d k.</item>
+        <item quantity="one">Pagreitinto vaizdo įrašo sparta: %d k.</item>
+        <item quantity="few">Pagreitinto vaizdo įrašo sparta: %d k.</item>
+        <item quantity="many">Pagreitinto vaizdo įrašo sparta: %d k.</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Daugiau nei %1$d objektų.</item>
+        <item quantity="one">Daugiau nei %1$d objektas.</item>
+        <item quantity="few">Daugiau nei %1$d objektai.</item>
+        <item quantity="many">Daugiau nei %1$d objekto.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d apkarpytų.</item>
+        <item quantity="one">%d apkarpytas.</item>
+        <item quantity="few">%d apkarpyti.</item>
+        <item quantity="many">%d apkarpyta.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autobusų</item>
+        <item quantity="one">%d autobusas</item>
+        <item quantity="few">%d autobusai</item>
+        <item quantity="many">%d autobuso</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d automobilių</item>
+        <item quantity="one">%d automobilis</item>
+        <item quantity="few">%d automobiliai</item>
+        <item quantity="many">%d automobilio</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d kačių</item>
+        <item quantity="one">%d katė</item>
+        <item quantity="few">%d katės</item>
+        <item quantity="many">%d katės</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumentų</item>
+        <item quantity="one">%d dokumentas</item>
+        <item quantity="few">%d dokumentai</item>
+        <item quantity="many">%d dokumento</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d šunų</item>
+        <item quantity="one">%d šuo</item>
+        <item quantity="few">%d šunys</item>
+        <item quantity="many">%d šuns</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d gėrimų</item>
+        <item quantity="one">%d gėrimas</item>
+        <item quantity="few">%d gėrimai</item>
+        <item quantity="many">%d gėrimo</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektroninių įrenginių</item>
+        <item quantity="one">%d elektroninis įrenginys</item>
+        <item quantity="few">%d elektroniniai įrenginiai</item>
+        <item quantity="many">%d elektroninio įrenginio</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d veidų</item>
+        <item quantity="one">%d veidas</item>
+        <item quantity="few">%d veidai</item>
+        <item quantity="many">%d veido</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d maisto objektų</item>
+        <item quantity="one">%d maisto objektas</item>
+        <item quantity="few">%d maisto objektai</item>
+        <item quantity="many">%d maisto objekto</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d augintinių</item>
+        <item quantity="one">%d augintinis</item>
+        <item quantity="few">%d augintiniai</item>
+        <item quantity="many">%d augintinio</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d sunkvežimių</item>
+        <item quantity="one">%d sunkvežimis</item>
+        <item quantity="few">%d sunkvežimiai</item>
+        <item quantity="many">%d sunkvežimio</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ir %2$s kadre.</item>
+        <item quantity="one">%1$s ir %2$s kadre.</item>
+        <item quantity="few">%1$s ir %2$s kadre.</item>
+        <item quantity="many">%1$s ir %2$s kadre.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Apkirpta: %1$s ir %2$s.</item>
+        <item quantity="one">Apkirpta: %1$s ir %2$s.</item>
+        <item quantity="few">Apkirpta: %1$s ir %2$s.</item>
+        <item quantity="many">Apkirpta: %1$s ir %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Apkirpta: %1$s ir %2$s.</item>
+        <item quantity="one">Apkirpta: %1$s ir %2$s.</item>
+        <item quantity="few">Apkirpta: %1$s ir %2$s.</item>
+        <item quantity="many">Apkirpta: %1$s ir %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Kadre: %1$s ir %2$s.</item>
+        <item quantity="one">Kadre: %1$s ir %2$s.</item>
+        <item quantity="few">Kadre: %1$s ir %2$s.</item>
+        <item quantity="many">Kadre: %1$s ir %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Maždaug %s nuotraukų</item>
+        <item quantity="one">Maždaug %s nuotrauka</item>
+        <item quantity="few">Maždaug %s nuotraukos</item>
+        <item quantity="many">Maždaug %s nuotraukos</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(pasirinkta %1$d programų)</item>
+        <item quantity="one">(pasirinkta %1$d programa)</item>
+        <item quantity="few">(pasirinktos %1$d programos)</item>
+        <item quantity="many">(pasirinkta %1$d programos)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programų. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="one">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programos. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="few">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programų. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+        <item quantity="many">Sparčiai bendrinkite nuotraukas ir vaizdo įrašus socialinėse programose iš Fotoaparato programos. Pasirinkite iki %1$d programos. Užrakintame aplanke išsaugotų nuotraukų ir vaizdo įrašų bendrinti negalima.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Pasirinkite iki %1$d programų</item>
+        <item quantity="one">Pasirinkite iki %1$d programos</item>
+        <item quantity="few">Pasirinkite iki %1$d programų</item>
+        <item quantity="many">Pasirinkite iki %1$d programos</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s vaizdo įrašo minučių</item>
+        <item quantity="one">%s vaizdo įrašo minutė</item>
+        <item quantity="few">%s vaizdo įrašo minutės</item>
+        <item quantity="many">%s vaizdo įrašo minutės</item>
+    </plurals>
+</resources>

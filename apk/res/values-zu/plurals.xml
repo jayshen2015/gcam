@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Ukudlula kwesikhathi %d isivinini sezikhathi</item>
+        <item quantity="one">Ukudlula kwesikhathi %d isivinini sezikhathi</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Izinto ezingaphezu kuka-%1$d.</item>
+        <item quantity="one">Izinto ezingaphezu kuka-%1$d.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">Okungu-%d kunqampuniwe.</item>
+        <item quantity="one">Okungu-%d kunqampuniwe.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">Amabhasi angu-%d</item>
+        <item quantity="one">Amabhasi angu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">Izimoto ezingu-%d</item>
+        <item quantity="one">Izimoto ezingu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">Amakati angu-%d</item>
+        <item quantity="one">Amakati angu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">Amadokhumenti angu-%d</item>
+        <item quantity="one">Amadokhumenti angu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">Izinja ezingu-%d</item>
+        <item quantity="one">Izinja ezingu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">Iziphuzo ezingu-%d</item>
+        <item quantity="one">Iziphuzo ezingu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">Amadivayisi kagesi angu-%d</item>
+        <item quantity="one">Amadivayisi kagesi angu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">Ubuso obungu-%d</item>
+        <item quantity="one">Ubuso obungu-%d</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">Izinto ezingu-%d zokudla</item>
+        <item quantity="one">Izinto ezingu-%d zokudla</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">Izilwane ezifuywayo %d</item>
+        <item quantity="one">Izilwane ezifuywayo %d</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">Amaloli angu-%d</item>
+        <item quantity="one">Amaloli angu-%d</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">Okungu-%1$s no-%2$s ohlakeni.</item>
+        <item quantity="one">Okungu-%1$s no-%2$s ohlakeni.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Okungu-%1$s ne-%2$s kunqampuniwe.</item>
+        <item quantity="one">Okungu-%1$s ne-%2$s kunqampuniwe.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Kunqampuliwe: %1$s kanye ne-%2$s.</item>
+        <item quantity="one">Kunqampuliwe: %1$s kanye ne-%2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Ohlakeni: %1$s kanye ne-%2$s.</item>
+        <item quantity="one">Ohlakeni: %1$s kanye ne-%2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Mayelana nezithombe ezingu-%s</item>
+        <item quantity="one">Mayelana nezithombe ezingu-%s</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(kukhethwe izinhlelo zokusebenza ezingu-%1$d)</item>
+        <item quantity="one">(kukhethwe izinhlelo zokusebenza ezingu-%1$d)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Yabelana ngezithombe namavidiyo ngokushesha kuzinhlelo zokusebenza zomphakathi ezivela Kukhamera. Khetha ama-app afika kwangu-%1$d. Izithombe namavidiyo okulondolozwe Kufolda Ekhiyiwe akukwazi ukwabiwa.</item>
+        <item quantity="one">Yabelana ngezithombe namavidiyo ngokushesha kuzinhlelo zokusebenza zomphakathi ezivela Kukhamera. Khetha ama-app afika kwangu-%1$d. Izithombe namavidiyo okulondolozwe Kufolda Ekhiyiwe akukwazi ukwabiwa.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Khetha izinhlelo zokusebenza kufika kwezingu-%1$d</item>
+        <item quantity="one">Khetha izinhlelo zokusebenza kufika kwezingu-%1$d</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">Amaminithi asele evidiyo angu-%s</item>
+        <item quantity="one">Amaminithi asele evidiyo angu-%s</item>
+    </plurals>
+</resources>

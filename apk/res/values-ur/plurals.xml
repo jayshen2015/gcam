@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">ٹائم لیپس %d گنا رفتار سے</item>
+        <item quantity="one">ٹائم لیپس %d گنا رفتار سے</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d سے زیادہ آبجیکٹس۔</item>
+        <item quantity="one">ایک سے زیادہ آبجیکٹ۔</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d تراشے گئے۔</item>
+        <item quantity="one">ایک تراشا گیا۔</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d بسیں</item>
+        <item quantity="one">ایک بس</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d کاریں</item>
+        <item quantity="one">ایک کار</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d بلیاں</item>
+        <item quantity="one">ایک بلی</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d دستاویزات</item>
+        <item quantity="one">ایک دستاویز</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d کتے</item>
+        <item quantity="one">ایک کتا</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d مشروبات</item>
+        <item quantity="one">ایک مشروب</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d الیکٹرانک آلات</item>
+        <item quantity="one">ایک الیکٹرانک آلہ</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d چہرے</item>
+        <item quantity="one">ایک چہرہ</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d کھانے کے آئٹمز</item>
+        <item quantity="one">ایک کھانے کا آئٹم</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d پالتو جانور</item>
+        <item quantity="one">ایک پالتو جانور</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ٹرکس</item>
+        <item quantity="one">ایک ٹرک</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">فریم میں %1$s اور%2$s۔</item>
+        <item quantity="one">فریم میں %2$s۔</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s اور %2$s تراشے گئے۔</item>
+        <item quantity="one">%2$s تراشے گئے۔</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">تراشے گئے: %1$s اور %2$s۔</item>
+        <item quantity="one">تراشا گیا: %2$s۔</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">فریم میں: %1$s اور %2$s۔</item>
+        <item quantity="one">فریم میں: %2$s۔</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s تصاویر کے بارے میں</item>
+        <item quantity="one">%sتصویر کے بارے میں</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ایپس منتخب کی گئیں)</item>
+        <item quantity="one">(%1$d ایپ منتخب کی گئی)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">کیمرے سے فوری طور پر سوشل ایپس پر تصاویر اور ویڈیوز کا اشتراک کریں۔ %1$d ایپس تک منتخب کریں۔ مقفل فولڈر میں محفوظ کردہ تصاویر اور ویڈیوز کا اشتراک نہیں کیا جا سکتا۔</item>
+        <item quantity="one">کیمرے سے فوری طور پر سوشل ایپس پر تصاویر اور ویڈیوز کا اشتراک کریں۔ %1$d ایپ منتخب کریں۔ مقفل فولڈر میں محفوظ کردہ تصاویر اور ویڈیوز کا اشتراک نہیں کیا جا سکتا۔</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d ایپس تک منتخب کریں</item>
+        <item quantity="one">%1$d ایپ منتخب کریں</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">ویڈیوز کے %s منٹس</item>
+        <item quantity="one">ویڈیوز کا %s منٹ</item>
+    </plurals>
+</resources>

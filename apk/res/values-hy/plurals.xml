@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Տեսագրության %d անգամ արագացում</item>
+        <item quantity="one">Տեսագրության %d անգամ արագացում</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Ավելի քան %1$d օբյեկտ։</item>
+        <item quantity="one">Ավելի քան %1$d օբյեկտ։</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d-ը եզրատվեց։</item>
+        <item quantity="one">%d-ը եզրատվեց։</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d ավտոբուս</item>
+        <item quantity="one">%d ավտոբուս</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d մեքենա</item>
+        <item quantity="one">%d մեքենա</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d կատու</item>
+        <item quantity="one">%d կատու</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d փաստաթուղթ</item>
+        <item quantity="one">%d փաստաթուղթ</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d շուն</item>
+        <item quantity="one">%d շուն</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ըմպելիք</item>
+        <item quantity="one">%d ըմպելիք</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d էլեկտրոնային սարք</item>
+        <item quantity="one">%d էլեկտրոնային սարք</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d դեմք</item>
+        <item quantity="one">%d դեմք</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ուտեստ</item>
+        <item quantity="one">%d ուտեստ</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d տնային կենդանի</item>
+        <item quantity="one">%d տնային կենդանի</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d բեռնատար</item>
+        <item quantity="one">%d բեռնատար</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s և %2$s՝ շրջանակում։</item>
+        <item quantity="one">%1$s և %2$s՝ շրջանակում։</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">«%1$s» և «%2$s» օբյեկտները եզրատվեցին։</item>
+        <item quantity="one">«%1$s» և «%2$s» օբյեկտները եզրատվեցին։</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Եզրատված՝ %1$s և %2$s։</item>
+        <item quantity="one">Եզրատված՝ %1$s և %2$s։</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Շրջանակում՝ %1$s և %2$s։</item>
+        <item quantity="one">Շրջանակում՝ %1$s և %2$s։</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Մոտ %s լուսանկար</item>
+        <item quantity="one">Մոտ %s լուսանկար</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(ընտրվել է %1$d հավելված)</item>
+        <item quantity="one">(ընտրվել է %1$d հավելված)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Տեսախցիկից արագ կիսվեք լուսանկարներով և տեսանյութերով սոցիալական հավելվածներում։ Ընտրեք մինչև %1$d հավելված։ Կողպված պանակում պահված լուսանկարներով ու տեսանյութերով հնարավոր չէ կիսվել։</item>
+        <item quantity="one">Տեսախցիկից արագ կիսվեք լուսանկարներով և տեսանյութերով սոցիալական հավելվածներում։ Ընտրեք մինչև %1$d հավելված։ Կողպված պանակում պահված լուսանկարներով ու տեսանյութերով հնարավոր չէ կիսվել։</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Ընտրեք մինչև %1$d հավելված</item>
+        <item quantity="one">Ընտրեք մինչև %1$d հավելված</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s րոպե տեսագրում</item>
+        <item quantity="one">%s րոպե տեսագրում</item>
+    </plurals>
+</resources>

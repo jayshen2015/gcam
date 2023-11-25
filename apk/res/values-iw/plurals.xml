@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">‏Time Lapse במהירות של %d</item>
+        <item quantity="one">‏Time Lapse במהירות של %d</item>
+        <item quantity="two">‏Time Lapse במהירות של %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">יש יותר מ-%1$d אובייקטים.</item>
+        <item quantity="one">יש יותר מ-%1$d אובייקטים.</item>
+        <item quantity="two">יש יותר מ-%1$d אובייקטים.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">פנים של %d אנשים נחתכו.</item>
+        <item quantity="one">פנים של %d אנשים נחתכו.</item>
+        <item quantity="two">פנים של %d אנשים נחתכו.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d אוטובוסים</item>
+        <item quantity="one">%d אוטובוסים</item>
+        <item quantity="two">%d אוטובוסים</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d רכבים</item>
+        <item quantity="one">%d רכבים</item>
+        <item quantity="two">%d רכבים</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d חתולים</item>
+        <item quantity="one">%d חתולים</item>
+        <item quantity="two">%d חתולים</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d מסמכים</item>
+        <item quantity="one">%d מסמכים</item>
+        <item quantity="two">%d מסמכים</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d כלבים</item>
+        <item quantity="one">%d כלבים</item>
+        <item quantity="two">%d כלבים</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d משקאות</item>
+        <item quantity="one">%d משקאות</item>
+        <item quantity="two">%d משקאות</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d מכשירים אלקטרוניים</item>
+        <item quantity="one">%d מכשירים אלקטרוניים</item>
+        <item quantity="two">%d מכשירים אלקטרוניים</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">פנים של %d אנשים</item>
+        <item quantity="one">פנים של %d אנשים</item>
+        <item quantity="two">פנים של %d אנשים</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d פריטי מזון</item>
+        <item quantity="one">%d פריטי מזון</item>
+        <item quantity="two">%d פריטי מזון</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d חיות מחמד</item>
+        <item quantity="one">%d חיות מחמד</item>
+        <item quantity="two">%d חיות מחמד</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d משאיות</item>
+        <item quantity="one">%d משאיות</item>
+        <item quantity="two">%d משאיות</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ו-%2$s בתוך המסגרת.</item>
+        <item quantity="one">%1$s ו-%2$s בתוך המסגרת.</item>
+        <item quantity="two">%1$s ו-%2$s בתוך המסגרת.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ו-%2$s נחתכו.</item>
+        <item quantity="one">%1$s ו-%2$s נחתכו.</item>
+        <item quantity="two">%1$s ו-%2$s נחתכו.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">נחתכו: %1$s ו-%2$s.</item>
+        <item quantity="one">נחתכו: %1$s ו-%2$s.</item>
+        <item quantity="two">נחתכו: %1$s ו-%2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">בתוך המסגרת: %1$s ו-%2$s.</item>
+        <item quantity="one">בתוך המסגרת: %1$s ו-%2$s.</item>
+        <item quantity="two">בתוך המסגרת: %1$s ו-%2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s תמונות בקירוב</item>
+        <item quantity="one">%s תמונות בקירוב</item>
+        <item quantity="two">%s תמונות בקירוב</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">נבחרו %1$d אפליקציות</item>
+        <item quantity="one">נבחרו %1$d אפליקציות</item>
+        <item quantity="two">נבחרו %1$d אפליקציות</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">אפשר לשתף במהירות תמונות וסרטונים באפליקציות חברתיות, ישירות מהמצלמה. יש לבחור עד %1$d אפליקציות. לא ניתן לשתף תמונות וסרטונים שנשמרים בתיקיית הכספת.</item>
+        <item quantity="one">אפשר לשתף במהירות תמונות וסרטונים באפליקציות חברתיות, ישירות מהמצלמה. יש לבחור עד %1$d אפליקציות. לא ניתן לשתף תמונות וסרטונים שנשמרים בתיקיית הכספת.</item>
+        <item quantity="two">אפשר לשתף במהירות תמונות וסרטונים באפליקציות חברתיות, ישירות מהמצלמה. יש לבחור עד %1$d אפליקציות. לא ניתן לשתף תמונות וסרטונים שנשמרים בתיקיית הכספת.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">יש לבחור עד %1$d אפליקציות</item>
+        <item quantity="one">יש לבחור עד %1$d אפליקציות</item>
+        <item quantity="two">יש לבחור עד %1$d אפליקציות</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s דקות להקלטת סרטונים</item>
+        <item quantity="one">%s דקות להקלטת סרטונים</item>
+        <item quantity="two">%s דקות להקלטת סרטונים</item>
+    </plurals>
+</resources>

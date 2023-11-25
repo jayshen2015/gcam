@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Zeitraffer: %d-fache Geschwindigkeit</item>
+        <item quantity="one">Zeitraffer: %d-fache Geschwindigkeit</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Mehr als %1$d Objekte.</item>
+        <item quantity="one">Mehr als ein Objekt.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d zugeschnitten.</item>
+        <item quantity="one">Eins zugeschnitten.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d Busse</item>
+        <item quantity="one">Ein Bus</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d Autos</item>
+        <item quantity="one">Ein Auto</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d Katzen</item>
+        <item quantity="one">Eine Katze</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d Dokumente</item>
+        <item quantity="one">Ein Dokument</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d Hunde</item>
+        <item quantity="one">Ein Hund</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d Getränke</item>
+        <item quantity="one">Ein Getränk</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d Elektronikgeräte</item>
+        <item quantity="one">Ein Elektronikgerät</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d Gesichter</item>
+        <item quantity="one">Ein Gesicht</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d Lebensmittel</item>
+        <item quantity="one">Ein Lebensmittel</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d Haustiere</item>
+        <item quantity="one">Ein Haustier</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d Lkw</item>
+        <item quantity="one">Ein Lkw</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s und %2$s im Bild.</item>
+        <item quantity="one">%2$s im Bild.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s und %2$s zugeschnitten.</item>
+        <item quantity="one">%2$s zugeschnitten.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Abgeschnitten: %1$s und %2$s.</item>
+        <item quantity="one">Abgeschnitten: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Im Bild: %1$s und %2$s.</item>
+        <item quantity="one">Im Bild: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Etwa %s Fotos</item>
+        <item quantity="one">Etwa %s Foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d Apps ausgewählt)</item>
+        <item quantity="one">(%1$d App ausgewählt)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Fotos und Videos lassen sich direkt über die Kamera App in Social Apps teilen. Du kannst bis zu %1$d Apps auswählen. Fotos und Videos, die im gesperrten Ordner gespeichert sind, können nicht geteilt werden.</item>
+        <item quantity="one">Fotos und Videos lassen sich direkt über die Kamera App in Social Apps teilen. Du kannst %1$d App auswählen. Fotos und Videos, die im gesperrten Ordner gespeichert sind, können nicht geteilt werden.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Du kannst bis zu %1$d Apps auswählen</item>
+        <item quantity="one">Du kannst %1$d App auswählen</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s Minuten Videomaterial</item>
+        <item quantity="one">%s Minute Videomaterial</item>
+    </plurals>
+</resources>

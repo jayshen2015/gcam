@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">டைம் லாப்ஸ் %d மடங்கு வேகம்</item>
+        <item quantity="one">டைம் லாப்ஸ் %d மடங்கு வேகம்</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$dக்கும் மேற்பட்டவை.</item>
+        <item quantity="one">ஒன்றுக்கும் மேற்பட்டவை.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d முகங்கள் செதுக்கப்பட்டன.</item>
+        <item quantity="one">ஒரு முகம் செதுக்கப்பட்டது.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d பேருந்துகள்</item>
+        <item quantity="one">ஒரு பேருந்து</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d கார்கள்</item>
+        <item quantity="one">ஒரு கார்</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d பூனைகள்</item>
+        <item quantity="one">ஒரு பூனை</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d ஆவணங்கள்</item>
+        <item quantity="one">ஓர் ஆவணம்</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d நாய்கள்</item>
+        <item quantity="one">ஒரு நாய்</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d பானங்கள்</item>
+        <item quantity="one">ஒரு பானம்</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d எலக்ட்ரானிக் சாதனங்கள்</item>
+        <item quantity="one">ஓர் எலக்ட்ரானிக் சாதனம்</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d முகங்கள்</item>
+        <item quantity="one">ஒரு முகம்</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d உணவுப்பொருட்கள்</item>
+        <item quantity="one">ஓர் உணவுப்பொருள்</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d செல்லப்பிராணிகள்</item>
+        <item quantity="one">ஒரு செல்லப்பிராணி</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d டிரக்குகள்</item>
+        <item quantity="one">ஒரு டிரக்</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">ஃபிரேமில் இருப்பவை: %1$s மற்றும் %2$s.</item>
+        <item quantity="one">ஃபிரேமில் இருப்பவை: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s மற்றும் %2$s செதுக்கப்பட்டன.</item>
+        <item quantity="one">%2$s செதுக்கப்பட்டது.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">செதுக்கப்பட்டவை: %1$s மற்றும் %2$s.</item>
+        <item quantity="one">செதுக்கப்பட்டது: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ஃபிரேமில் இருப்பவை: %1$s மற்றும் %2$s.</item>
+        <item quantity="one">ஃபிரேமில் இருப்பது: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">சுமார் %s படங்கள் உள்ளன</item>
+        <item quantity="one">சுமார் %s படம் உள்ளது</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ஆப்ஸ் தேர்ந்தெடுக்கப்பட்டன)</item>
+        <item quantity="one">(%1$d ஆப்ஸ் தேர்ந்தெடுக்கப்பட்டது)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">கேமராவில் இருந்தே சமூக ஆப்ஸில் படங்களையும் வீடியோக்களையும் விரைவாகப் பகிரலாம். %1$d ஆப்ஸ் வரை தேர்வுசெய்யலாம். பூட்டிய ஃபோல்டரில் சேமித்த படங்களையும் வீடியோக்களையும் பகிர முடியாது.</item>
+        <item quantity="one">கேமராவில் இருந்தே சமூக ஆப்ஸில் படங்களையும் வீடியோக்களையும் விரைவாகப் பகிரலாம். %1$d ஆப்ஸைத் தேர்வுசெய்யலாம். பூட்டிய ஃபோல்டரில் சேமித்த படங்களையும் வீடியோக்களையும் பகிர முடியாது.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d ஆப்ஸ் வரை தேர்வுசெய்யவும்</item>
+        <item quantity="one">%1$d ஆப்ஸைத் தேர்வுசெய்யவும்</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s நிமிடங்களுக்கான வீடியோக்கள்</item>
+        <item quantity="one">%s நிமிடத்திற்கான வீடியோக்கள்</item>
+    </plurals>
+</resources>

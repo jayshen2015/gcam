@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Shpejtësia %d herë më e lartë e \"Regjistrimit me intervale\"</item>
+        <item quantity="one">Shpejtësia %d herë më e lartë e \"Regjistrimit me intervale\"</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Më shumë se %1$d objekte.</item>
+        <item quantity="one">Më shumë se një objekt.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d u prenë.</item>
+        <item quantity="one">Një u pre.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autobusë</item>
+        <item quantity="one">Një autobus</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d makina</item>
+        <item quantity="one">Një makinë</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d mace</item>
+        <item quantity="one">Një mace</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumente</item>
+        <item quantity="one">Një dokument</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d qen</item>
+        <item quantity="one">Një qen</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d pije</item>
+        <item quantity="one">Një pije</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d pajisje elektronike</item>
+        <item quantity="one">Një pajisje elektronike</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d fytyra</item>
+        <item quantity="one">Një fytyrë</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d artikuj ushqimorë</item>
+        <item quantity="one">Një artikull ushqimor</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d kafshë shtëpiake</item>
+        <item quantity="one">Një kafshë shtëpiake</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d kamionë</item>
+        <item quantity="one">Një kamion</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s dhe %2$s në kuadër.</item>
+        <item quantity="one">%2$s në kuadër.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s dhe %2$s janë prerë.</item>
+        <item quantity="one">%2$s është prerë.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Prerë: %1$s dhe %2$s.</item>
+        <item quantity="one">Prerë: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Në kuadër: %1$s dhe %2$s.</item>
+        <item quantity="one">Në kuadër: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Rreth %s fotografi</item>
+        <item quantity="one">Rreth %s fotografi</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(U zgjodhën %1$d aplikacione)</item>
+        <item quantity="one">(U zgjodh %1$d aplikacion)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Ndaj me shpejtësi fotografitë dhe videot në aplikacionet sociale nga \"Kamera\". Zgjidh deri në %1$d aplikacione. Fotografitë dhe videot e ruajtura në \"Dosjen e kyçur\" nuk mund të ndahen.</item>
+        <item quantity="one">Ndaj me shpejtësi fotografitë dhe videot në aplikacionet sociale nga \"Kamera\". Zgjidh %1$d aplikacion. Fotografitë dhe videot e ruajtura në \"Dosjen e kyçur\" nuk mund të ndahen.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Zgjidh deri në %1$d aplikacione</item>
+        <item quantity="one">Zgjidh %1$d aplikacion</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minuta video</item>
+        <item quantity="one">%s minutë video</item>
+    </plurals>
+</resources>

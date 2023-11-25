@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">ಟೈಮ್ ಲ್ಯಾಪ್ಸ್ %d ಪಟ್ಟು ವೇಗ</item>
+        <item quantity="one">ಟೈಮ್ ಲ್ಯಾಪ್ಸ್ %d ಪಟ್ಟು ವೇಗ</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d ಕ್ಕಿಂತ ಹೆಚ್ಚು ವಸ್ತುಗಳು.</item>
+        <item quantity="one">%1$d ಕ್ಕಿಂತ ಹೆಚ್ಚು ವಸ್ತುಗಳು.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ಮುಖಗಳನ್ನು ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ.</item>
+        <item quantity="one">%d ಮುಖಗಳನ್ನು ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d ಬಸ್‍ಗಳು</item>
+        <item quantity="one">%d ಬಸ್‍ಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d ಕಾರುಗಳು</item>
+        <item quantity="one">%d ಕಾರುಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d ಬೆಕ್ಕುಗಳು</item>
+        <item quantity="one">%d ಬೆಕ್ಕುಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d ಡಾಕ್ಯುಮೆಂಟ್‌ಗಳು</item>
+        <item quantity="one">%d ಡಾಕ್ಯುಮೆಂಟ್‌ಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ನಾಯಿಗಳು</item>
+        <item quantity="one">%d ನಾಯಿಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ಪಾನೀಯಗಳು</item>
+        <item quantity="one">%d ಪಾನೀಯಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಾಧನಗಳು</item>
+        <item quantity="one">%d ಎಲೆಕ್ಟ್ರಾನಿಕ್ ಸಾಧನಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ಮುಖಗಳು</item>
+        <item quantity="one">%d ಮುಖಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ಆಹಾರದ ಐಟಂಗಳು</item>
+        <item quantity="one">%d ಆಹಾರದ ಐಟಂಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d ಸಾಕುಪ್ರಾಣಿಗಳು</item>
+        <item quantity="one">%d ಸಾಕುಪ್ರಾಣಿಗಳು</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ಟ್ರಕ್‌ಗಳು</item>
+        <item quantity="one">%d ಟ್ರಕ್‌ಗಳು</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ಹಾಗೂ %2$s ವಸ್ತುವು ಫ್ರೇಮ್‌ನಲ್ಲಿದೆ.</item>
+        <item quantity="one">%1$s ಹಾಗೂ %2$s ವಸ್ತುವು ಫ್ರೇಮ್‌ನಲ್ಲಿದೆ.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ಮತ್ತು %2$s ವಸ್ತುವನ್ನು ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ.</item>
+        <item quantity="one">%1$s ಮತ್ತು %2$s ವಸ್ತುವನ್ನು ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ: %1$s ಮತ್ತು %2$s.</item>
+        <item quantity="one">ಕ್ರಾಪ್ ಮಾಡಲಾಗಿದೆ: %1$s ಮತ್ತು %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ಫ್ರೇಮ್‌ನಲ್ಲಿದೆ: %1$s ಮತ್ತು %2$s.</item>
+        <item quantity="one">ಫ್ರೇಮ್‌ನಲ್ಲಿದೆ: %1$s ಮತ್ತು %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s ಫೋಟೋಗಳ ಬಗ್ಗೆ</item>
+        <item quantity="one">%s ಫೋಟೋಗಳ ಬಗ್ಗೆ</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ಆ್ಯಪ್‌ಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ)</item>
+        <item quantity="one">(%1$d ಆ್ಯಪ್‌ಗಳನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿದೆ)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">ಕ್ಯಾಮರಾದಿಂದ ಸಾಮಾಜಿಕ ಆ್ಯಪ್‌ಗಳಲ್ಲಿ ತ್ವರಿತವಾಗಿ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. %1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ. ಲಾಕ್ ಮಾಡಿದ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸಲಾದ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</item>
+        <item quantity="one">ಕ್ಯಾಮರಾದಿಂದ ಸಾಮಾಜಿಕ ಆ್ಯಪ್‌ಗಳಲ್ಲಿ ತ್ವರಿತವಾಗಿ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. %1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ. ಲಾಕ್ ಮಾಡಿದ ಫೋಲ್ಡರ್‌ನಲ್ಲಿ ಉಳಿಸಲಾದ ಫೋಟೋಗಳು ಮತ್ತು ವೀಡಿಯೊಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲಾಗುವುದಿಲ್ಲ.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ</item>
+        <item quantity="one">%1$d ಆ್ಯಪ್‌ಗಳವರೆಗೆ ಆಯ್ಕೆಮಾಡಿ</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s ನಿಮಿಷಗಳ ವೀಡಿಯೊಗಳು</item>
+        <item quantity="one">%s ನಿಮಿಷಗಳ ವೀಡಿಯೊಗಳು</item>
+    </plurals>
+</resources>

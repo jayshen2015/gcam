@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_gravity="bottom|center" android:orientation="horizontal" android:id="@id/disabled_controls" android:background="@drawable/disabled_controls_background" android:paddingTop="14.0dip" android:paddingBottom="14.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="24.0dip" android:paddingEnd="24.0dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:orientation="horizontal" android:id="@id/disabled_text" android:visibility="visible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="4.0" />
+    <TextView android:textSize="16.0sp" android:orientation="horizontal" android:id="@id/reset_disabled_text" android:focusable="true" android:visibility="visible" android:clickable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:textAlignment="textEnd" />
+</LinearLayout>

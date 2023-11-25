@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">‏‮Time‬‏ ‏‮Lapse‬‏ %d ‏‮times‬‏ ‏‮speed‬‏</item>
+        <item quantity="zero">‏‮Time‬‏ ‏‮Lapse‬‏ %d ‏‮times‬‏ ‏‮speed‬‏</item>
+        <item quantity="one">‏‮Time‬‏ ‏‮Lapse‬‏ %d ‏‮time‬‏ ‏‮speed‬‏</item>
+        <item quantity="two">‏‮Time‬‏ ‏‮Lapse‬‏ %d ‏‮times‬‏ ‏‮speed‬‏</item>
+        <item quantity="few">‏‮Time‬‏ ‏‮Lapse‬‏ %d ‏‮times‬‏ ‏‮speed‬‏</item>
+        <item quantity="many">‏‮Time‬‏ ‏‮Lapse‬‏ %d ‏‮times‬‏ ‏‮speed‬‏</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">‏‮More‬‏ ‏‮than‬‏ %1$d ‏‮objects‬‏.</item>
+        <item quantity="zero">‏‮More‬‏ ‏‮than‬‏ %1$d ‏‮objects‬‏.</item>
+        <item quantity="one">‏‮More‬‏ ‏‮than‬‏ ‏‮one‬‏ ‏‮object‬‏.</item>
+        <item quantity="two">‏‮More‬‏ ‏‮than‬‏ %1$d ‏‮objects‬‏.</item>
+        <item quantity="few">‏‮More‬‏ ‏‮than‬‏ %1$d ‏‮objects‬‏.</item>
+        <item quantity="many">‏‮More‬‏ ‏‮than‬‏ %1$d ‏‮objects‬‏.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ‏‮cropped‬‏.</item>
+        <item quantity="zero">%d ‏‮cropped‬‏.</item>
+        <item quantity="one">‏‮One‬‏ ‏‮cropped‬‏.</item>
+        <item quantity="two">%d ‏‮cropped‬‏.</item>
+        <item quantity="few">%d ‏‮cropped‬‏.</item>
+        <item quantity="many">%d ‏‮cropped‬‏.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d ‏‮buses‬‏</item>
+        <item quantity="zero">%d ‏‮buses‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮bus‬‏</item>
+        <item quantity="two">%d ‏‮buses‬‏</item>
+        <item quantity="few">%d ‏‮buses‬‏</item>
+        <item quantity="many">%d ‏‮buses‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d ‏‮cars‬‏</item>
+        <item quantity="zero">%d ‏‮cars‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮car‬‏</item>
+        <item quantity="two">%d ‏‮cars‬‏</item>
+        <item quantity="few">%d ‏‮cars‬‏</item>
+        <item quantity="many">%d ‏‮cars‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d ‏‮cats‬‏</item>
+        <item quantity="zero">%d ‏‮cats‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮cat‬‏</item>
+        <item quantity="two">%d ‏‮cats‬‏</item>
+        <item quantity="few">%d ‏‮cats‬‏</item>
+        <item quantity="many">%d ‏‮cats‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d ‏‮documents‬‏</item>
+        <item quantity="zero">%d ‏‮documents‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮document‬‏</item>
+        <item quantity="two">%d ‏‮documents‬‏</item>
+        <item quantity="few">%d ‏‮documents‬‏</item>
+        <item quantity="many">%d ‏‮documents‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ‏‮dogs‬‏</item>
+        <item quantity="zero">%d ‏‮dogs‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮dog‬‏</item>
+        <item quantity="two">%d ‏‮dogs‬‏</item>
+        <item quantity="few">%d ‏‮dogs‬‏</item>
+        <item quantity="many">%d ‏‮dogs‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ‏‮drinks‬‏</item>
+        <item quantity="zero">%d ‏‮drinks‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮drink‬‏</item>
+        <item quantity="two">%d ‏‮drinks‬‏</item>
+        <item quantity="few">%d ‏‮drinks‬‏</item>
+        <item quantity="many">%d ‏‮drinks‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ‏‮electronic‬‏ ‏‮devices‬‏</item>
+        <item quantity="zero">%d ‏‮electronic‬‏ ‏‮devices‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮electronic‬‏ ‏‮device‬‏</item>
+        <item quantity="two">%d ‏‮electronic‬‏ ‏‮devices‬‏</item>
+        <item quantity="few">%d ‏‮electronic‬‏ ‏‮devices‬‏</item>
+        <item quantity="many">%d ‏‮electronic‬‏ ‏‮devices‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ‏‮faces‬‏</item>
+        <item quantity="zero">%d ‏‮faces‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮face‬‏</item>
+        <item quantity="two">%d ‏‮faces‬‏</item>
+        <item quantity="few">%d ‏‮faces‬‏</item>
+        <item quantity="many">%d ‏‮faces‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ‏‮food‬‏ ‏‮items‬‏</item>
+        <item quantity="zero">%d ‏‮food‬‏ ‏‮items‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮food‬‏ ‏‮item‬‏</item>
+        <item quantity="two">%d ‏‮food‬‏ ‏‮items‬‏</item>
+        <item quantity="few">%d ‏‮food‬‏ ‏‮items‬‏</item>
+        <item quantity="many">%d ‏‮food‬‏ ‏‮items‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d ‏‮pets‬‏</item>
+        <item quantity="zero">%d ‏‮pets‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮pet‬‏</item>
+        <item quantity="two">%d ‏‮pets‬‏</item>
+        <item quantity="few">%d ‏‮pets‬‏</item>
+        <item quantity="many">%d ‏‮pets‬‏</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ‏‮trucks‬‏</item>
+        <item quantity="zero">%d ‏‮trucks‬‏</item>
+        <item quantity="one">‏‮One‬‏ ‏‮truck‬‏</item>
+        <item quantity="two">%d ‏‮trucks‬‏</item>
+        <item quantity="few">%d ‏‮trucks‬‏</item>
+        <item quantity="many">%d ‏‮trucks‬‏</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ‏‮and‬‏ %2$s ‏‮in‬‏ ‏‮frame‬‏.</item>
+        <item quantity="zero">%1$s ‏‮and‬‏ %2$s ‏‮in‬‏ ‏‮frame‬‏.</item>
+        <item quantity="one">%2$s ‏‮in‬‏ ‏‮frame‬‏.</item>
+        <item quantity="two">%1$s ‏‮and‬‏ %2$s ‏‮in‬‏ ‏‮frame‬‏.</item>
+        <item quantity="few">%1$s ‏‮and‬‏ %2$s ‏‮in‬‏ ‏‮frame‬‏.</item>
+        <item quantity="many">%1$s ‏‮and‬‏ %2$s ‏‮in‬‏ ‏‮frame‬‏.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ‏‮and‬‏ %2$s ‏‮cropped‬‏.</item>
+        <item quantity="zero">%1$s ‏‮and‬‏ %2$s ‏‮cropped‬‏.</item>
+        <item quantity="one">%2$s ‏‮cropped‬‏.</item>
+        <item quantity="two">%1$s ‏‮and‬‏ %2$s ‏‮cropped‬‏.</item>
+        <item quantity="few">%1$s ‏‮and‬‏ %2$s ‏‮cropped‬‏.</item>
+        <item quantity="many">%1$s ‏‮and‬‏ %2$s ‏‮cropped‬‏.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">‏‮Cropped‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="zero">‏‮Cropped‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="one">‏‮Cropped‬‏: %2$s.</item>
+        <item quantity="two">‏‮Cropped‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="few">‏‮Cropped‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="many">‏‮Cropped‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">‏‮In‬‏ ‏‮frame‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="zero">‏‮In‬‏ ‏‮frame‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="one">‏‮In‬‏ ‏‮frame‬‏: %2$s.</item>
+        <item quantity="two">‏‮In‬‏ ‏‮frame‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="few">‏‮In‬‏ ‏‮frame‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+        <item quantity="many">‏‮In‬‏ ‏‮frame‬‏: %1$s ‏‮and‬‏ %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">‏‮About‬‏ %s ‏‮photos‬‏</item>
+        <item quantity="zero">‏‮About‬‏ %s ‏‮photos‬‏</item>
+        <item quantity="one">‏‮About‬‏ %s ‏‮photo‬‏</item>
+        <item quantity="two">‏‮About‬‏ %s ‏‮photos‬‏</item>
+        <item quantity="few">‏‮About‬‏ %s ‏‮photos‬‏</item>
+        <item quantity="many">‏‮About‬‏ %s ‏‮photos‬‏</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ‏‮apps‬‏ ‏‮selected‬‏)</item>
+        <item quantity="zero">(%1$d ‏‮apps‬‏ ‏‮selected‬‏)</item>
+        <item quantity="one">(%1$d ‏‮app‬‏ ‏‮selected‬‏)</item>
+        <item quantity="two">(%1$d ‏‮apps‬‏ ‏‮selected‬‏)</item>
+        <item quantity="few">(%1$d ‏‮apps‬‏ ‏‮selected‬‏)</item>
+        <item quantity="many">(%1$d ‏‮apps‬‏ ‏‮selected‬‏)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">"‏‮Quickly‬‏ ‏‮share‬‏ ‏‮photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮on‬‏ ‏‮social‬‏ ‏‮apps‬‏ ‏‮from‬‏ ‏‮Camera‬‏. ‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏. ‏‮Photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮saved‬‏ ‏‮to‬‏ ‏‮Locked‬‏ ‏‮Folder‬‏ ‏‮can‬‏'‏‮t‬‏ ‏‮be‬‏ ‏‮shared‬‏."</item>
+        <item quantity="zero">"‏‮Quickly‬‏ ‏‮share‬‏ ‏‮photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮on‬‏ ‏‮social‬‏ ‏‮apps‬‏ ‏‮from‬‏ ‏‮Camera‬‏. ‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏. ‏‮Photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮saved‬‏ ‏‮to‬‏ ‏‮Locked‬‏ ‏‮Folder‬‏ ‏‮can‬‏'‏‮t‬‏ ‏‮be‬‏ ‏‮shared‬‏."</item>
+        <item quantity="one">"‏‮Quickly‬‏ ‏‮share‬‏ ‏‮photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮on‬‏ ‏‮social‬‏ ‏‮apps‬‏ ‏‮from‬‏ ‏‮Camera‬‏. ‏‮Choose‬‏ %1$d ‏‮app‬‏. ‏‮Photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮saved‬‏ ‏‮to‬‏ ‏‮Locked‬‏ ‏‮Folder‬‏ ‏‮can‬‏'‏‮t‬‏ ‏‮be‬‏ ‏‮shared‬‏."</item>
+        <item quantity="two">"‏‮Quickly‬‏ ‏‮share‬‏ ‏‮photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮on‬‏ ‏‮social‬‏ ‏‮apps‬‏ ‏‮from‬‏ ‏‮Camera‬‏. ‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏. ‏‮Photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮saved‬‏ ‏‮to‬‏ ‏‮Locked‬‏ ‏‮Folder‬‏ ‏‮can‬‏'‏‮t‬‏ ‏‮be‬‏ ‏‮shared‬‏."</item>
+        <item quantity="few">"‏‮Quickly‬‏ ‏‮share‬‏ ‏‮photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮on‬‏ ‏‮social‬‏ ‏‮apps‬‏ ‏‮from‬‏ ‏‮Camera‬‏. ‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏. ‏‮Photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮saved‬‏ ‏‮to‬‏ ‏‮Locked‬‏ ‏‮Folder‬‏ ‏‮can‬‏'‏‮t‬‏ ‏‮be‬‏ ‏‮shared‬‏."</item>
+        <item quantity="many">"‏‮Quickly‬‏ ‏‮share‬‏ ‏‮photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮on‬‏ ‏‮social‬‏ ‏‮apps‬‏ ‏‮from‬‏ ‏‮Camera‬‏. ‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏. ‏‮Photos‬‏ ‏‮and‬‏ ‏‮videos‬‏ ‏‮saved‬‏ ‏‮to‬‏ ‏‮Locked‬‏ ‏‮Folder‬‏ ‏‮can‬‏'‏‮t‬‏ ‏‮be‬‏ ‏‮shared‬‏."</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏</item>
+        <item quantity="zero">‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏</item>
+        <item quantity="one">‏‮Choose‬‏ %1$d ‏‮app‬‏</item>
+        <item quantity="two">‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏</item>
+        <item quantity="few">‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏</item>
+        <item quantity="many">‏‮Choose‬‏ ‏‮up‬‏ ‏‮to‬‏ %1$d ‏‮apps‬‏</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s ‏‮minutes‬‏ ‏‮of‬‏ ‏‮videos‬‏</item>
+        <item quantity="zero">%s ‏‮minutes‬‏ ‏‮of‬‏ ‏‮videos‬‏</item>
+        <item quantity="one">%s ‏‮minute‬‏ ‏‮of‬‏ ‏‮videos‬‏</item>
+        <item quantity="two">%s ‏‮minutes‬‏ ‏‮of‬‏ ‏‮videos‬‏</item>
+        <item quantity="few">%s ‏‮minutes‬‏ ‏‮of‬‏ ‏‮videos‬‏</item>
+        <item quantity="many">%s ‏‮minutes‬‏ ‏‮of‬‏ ‏‮videos‬‏</item>
+    </plurals>
+</resources>

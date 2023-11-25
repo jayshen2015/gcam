@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">টাইম লেপ্স: গতিবেগৰ %d গুণ</item>
+        <item quantity="one">টাইম লেপ্স: গতিবেগৰ %d গুণ</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d টাতকৈ অধিক বস্তু।</item>
+        <item quantity="one">%1$d টাতকৈ অধিক বস্তু।</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d খন ক্ৰপ কৰা।</item>
+        <item quantity="one">%d খন ক্ৰপ কৰা।</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d খন বাছ</item>
+        <item quantity="one">%d খন বাছ</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d খন গাড়ী</item>
+        <item quantity="one">%d খন গাড়ী</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d টা মেকুৰী</item>
+        <item quantity="one">%d টা মেকুৰী</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d খন নথি</item>
+        <item quantity="one">%d খন নথি</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d টা কুকুৰ</item>
+        <item quantity="one">%d টা কুকুৰ</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d টা পানীয়</item>
+        <item quantity="one">%d টা পানীয়</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d টা ইলেক্ট্ৰনিক ডিভাইচ</item>
+        <item quantity="one">%d টা ইলেক্ট্ৰনিক ডিভাইচ</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d খন মুখাৱয়ব</item>
+        <item quantity="one">%d খন মুখাৱয়ব</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d টা খাদ্যবস্তু</item>
+        <item quantity="one">%d টা খাদ্যবস্তু</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d টা পোহনীয়া জন্তু</item>
+        <item quantity="one">%d টা পোহনীয়া জন্তু</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d খন ট্ৰাক</item>
+        <item quantity="one">%d খন ট্ৰাক</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s আৰু %2$s ফ্ৰে’মত আছে।</item>
+        <item quantity="one">%1$s আৰু %2$s ফ্ৰে’মত আছে।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s আৰু %2$s ক্ৰপ কৰা হৈছে।</item>
+        <item quantity="one">%1$s আৰু %2$s ক্ৰপ কৰা হৈছে।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ক্ৰপ কৰা হৈছে: %1$s আৰু %2$s।</item>
+        <item quantity="one">ক্ৰপ কৰা হৈছে: %1$s আৰু %2$s।</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ফ্ৰে’মত আছে: %1$s আৰু %2$s।</item>
+        <item quantity="one">ফ্ৰে’মত আছে: %1$s আৰু %2$s।</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">প্ৰায় %s খন ফট’</item>
+        <item quantity="one">প্ৰায় %s খন ফট’</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d টা এপ্‌ বাছনি কৰা হৈছে)</item>
+        <item quantity="one">(%1$d টা এপ্‌ বাছনি কৰা হৈছে)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">কেমেৰাৰ পৰা ক্ষিপ্ৰভাৱে ছ’চিয়েল এপ্‌সমূহত ফট’ আৰু ভিডিঅ’ শ্বেয়াৰ কৰক। %1$d টা পৰ্যন্ত এপ্‌ বাছনি কৰক। লক কৰি ৰখা ফ’ল্ডাৰত থকা ফট’ আৰু ভিডিঅ’ শ্বেয়াৰ কৰিব নোৱাৰি।</item>
+        <item quantity="one">কেমেৰাৰ পৰা ক্ষিপ্ৰভাৱে ছ’চিয়েল এপ্‌সমূহত ফট’ আৰু ভিডিঅ’ শ্বেয়াৰ কৰক। %1$d টা পৰ্যন্ত এপ্‌ বাছনি কৰক। লক কৰি ৰখা ফ’ল্ডাৰত থকা ফট’ আৰু ভিডিঅ’ শ্বেয়াৰ কৰিব নোৱাৰি।</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$dটালৈকে এপ্‌ বাছনি কৰক</item>
+        <item quantity="one">%1$dটালৈকে এপ্‌ বাছনি কৰক</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s মিনিটৰ ভিডিঅ’</item>
+        <item quantity="one">%s মিনিটৰ ভিডিঅ’</item>
+    </plurals>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">ინტერვალური გადაღება %d დროის სიჩქარე</item>
+        <item quantity="one">ინტერვალური გადაღება %d დროის სიჩქარე</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d-ზე მეტი ობიექტი.</item>
+        <item quantity="one">ერთზე მეტი ობიექტი.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ჩამოიჭრა.</item>
+        <item quantity="one">ერთი მოჭრილი.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d ავტობუსი</item>
+        <item quantity="one">ერთი ავტობუსი</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d მანქანა</item>
+        <item quantity="one">ერთი მანქანა</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d კატა</item>
+        <item quantity="one">ერთი კატა</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d დოკუმენტი</item>
+        <item quantity="one">ერთი დოკუმენტი</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ძაღლი</item>
+        <item quantity="one">ერთი ძაღლი</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d სასმელი</item>
+        <item quantity="one">ერთი სასმელი</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ელექტრონული მოწყობილობა</item>
+        <item quantity="one">ერთი ელექტრონული მოწყობილობა</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d სახე</item>
+        <item quantity="one">ერთი სახე</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">საკვების %d ერთეული</item>
+        <item quantity="one">საკვების ერთი ერთეული</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d შინაური ცხოველი</item>
+        <item quantity="one">ერთი შინაური ცხოველი</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d სატვირთო მანქანა</item>
+        <item quantity="one">ერთი სატვირთო მანქანა</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s და %2$s კადრში.</item>
+        <item quantity="one">%2$s კადრში.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s და %2$s ჩამოიჭრა.</item>
+        <item quantity="one">%2$s ჩამოიჭრა.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ჩამოჭრილია %1$s და %2$s</item>
+        <item quantity="one">ჩამოჭრილია: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">კადრში : %1$s და %2$s.</item>
+        <item quantity="one">კადრში: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">დაახლოებით %s ფოტო</item>
+        <item quantity="one">დაახლოებით %s ფოტო</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(არჩეულია %1$d აპი)</item>
+        <item quantity="one">(არჩეულია %1$d აპი)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">სწრაფად გააზიარეთ ფოტოები და ვიდეოები სოციალურ აპებში კამერიდან. აირჩიეთ %1$d-მდე აპი. ჩაკეტილ საქაღალდეში შენახული ფოტოები და ვიდეოები არ გაზიარდება.</item>
+        <item quantity="one">სწრაფად გააზიარეთ ფოტოები და ვიდეოები სოციალურ აპებში კამერიდან. აირჩიეთ %1$d აპი. ჩაკეტილ საქაღალდეში შენახული ფოტოები და ვიდეოები არ გაზიარდება.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">აირჩიეთ %1$d-მდე აპი</item>
+        <item quantity="one">აირჩიეთ მაქსიმუმ %1$d აპი</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">ვიდეოს %s წუთი</item>
+        <item quantity="one">ვიდეოს %s წუთი</item>
+    </plurals>
+</resources>

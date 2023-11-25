@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Цагийн урсац %d цагийн хурд</item>
+        <item quantity="one">Цагийн урсац %d цагийн хурд</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d-с олон объект.</item>
+        <item quantity="one">Нэгээс олон объект.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d-г тайрсан.</item>
+        <item quantity="one">Нэгийг тайрсан.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d автобус</item>
+        <item quantity="one">Нэг автобус</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d автомашин</item>
+        <item quantity="one">Нэг автомашин</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d муур</item>
+        <item quantity="one">Нэг муур</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d бичиг баримт</item>
+        <item quantity="one">Нэг бичиг баримт</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d нохой</item>
+        <item quantity="one">Нэг нохой</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d уух зүйл</item>
+        <item quantity="one">Нэг уух зүйл</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d цахилгаан төхөөрөмж</item>
+        <item quantity="one">Нэг цахилгаан төхөөрөмж</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d царай</item>
+        <item quantity="one">Нэг царай</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d хүнсний зүйл</item>
+        <item quantity="one">Нэг хүнсний зүйл</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d тэжээвэр амьтан</item>
+        <item quantity="one">Нэг тэжээвэр амьтан</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ачааны машин</item>
+        <item quantity="one">Нэг ачааны машин</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s болон %2$s хүрээнд байна.</item>
+        <item quantity="one">%2$s хүрээнд байна.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s болон %2$s-г тайрсан.</item>
+        <item quantity="one">%2$s-г тайрсан.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Тайрсан: %1$s болон %2$s.</item>
+        <item quantity="one">Тайрсан: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Хүрээнд байна: %1$s болон %2$s.</item>
+        <item quantity="one">Хүрээнд байна: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Ойролцоогоор %s зураг</item>
+        <item quantity="one">Ойролцоогоор %s зураг</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d апп сонгосон)</item>
+        <item quantity="one">(%1$d апп сонгосон)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Камераас зураг болон видеог сошиал аппууд дээр шуурхай хуваалцаарай. %1$d хүртэлх апп сонгоно уу. Түгжсэн фолдерт хадгалсан зураг болон видеог хуваалцах боломжгүй.</item>
+        <item quantity="one">Камераас зураг болон видеог сошиал аппууд дээр шуурхай хуваалцаарай. %1$d аппыг сонгоно уу. Түгжсэн фолдерт хадгалсан зураг болон видеог хуваалцах боломжгүй.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d хүртэлх апп сонгоно уу</item>
+        <item quantity="one">%1$d апп сонгоно уу</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s минутын видео</item>
+        <item quantity="one">%s минутын видео</item>
+    </plurals>
+</resources>

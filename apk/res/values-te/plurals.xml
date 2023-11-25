@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">టైమ్ లాప్స్ %d టైమ్స్ స్పీడ్</item>
+        <item quantity="one">టైమ్ లాప్స్ %d టైమ్ స్పీడ్</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d కంటే ఎక్కువ ఆబ్జెక్ట్‌లు గుర్తించబడ్డాయి.</item>
+        <item quantity="one">ఒకటి కంటే ఎక్కువ ఆబ్జెక్ట్‌లు గుర్తించబడ్డాయి.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d కత్తిరించబడ్డాయి.</item>
+        <item quantity="one">ఒకటి కత్తిరించబడింది.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d బస్సులు</item>
+        <item quantity="one">ఒక బస్సు</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d కార్‌లు</item>
+        <item quantity="one">ఒక కారు</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d పిల్లులు</item>
+        <item quantity="one">ఒక పిల్లి</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d డాక్యుమెంట్‌లు</item>
+        <item quantity="one">ఒక డాక్యుమెంట్</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d కుక్కలు</item>
+        <item quantity="one">ఒక కుక్క</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d డ్రింక్స్</item>
+        <item quantity="one">ఒక డ్రింక్</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ఎలక్ట్రానిక్ పరికరాలు</item>
+        <item quantity="one">ఒక ఎలక్ట్రానిక్ పరికరం</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ముఖాలు</item>
+        <item quantity="one">ఒక ముఖం</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ఫుడ్ ఐటెమ్‌లు</item>
+        <item quantity="one">ఒక ఫుడ్ ఐటెమ్</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d పెంపుడు జంతువులు</item>
+        <item quantity="one">ఒక పెంపుడు జంతువు</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ట్రక్‌లు</item>
+        <item quantity="one">ఒక ట్రక్</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">ఫ్రేమ్‌లో %1$s ఇంకా %2$s గుర్తించబడ్డాయి.</item>
+        <item quantity="one">ఫ్రేమ్‌లో %2$s గుర్తించబడ్డాయి.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ఇంకా %2$s కత్తిరించబడ్డాయి.</item>
+        <item quantity="one">%2$s కత్తిరించబడ్డాయి.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">కత్తిరించబడ్డాయి: %1$s, %2$s.</item>
+        <item quantity="one">కత్తిరించబడింది: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ఫ్రేమ్‌లో: %1$s ఇంకా %2$s.</item>
+        <item quantity="one">ఫ్రేమ్‌లో: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s ఫోటోల గురించి</item>
+        <item quantity="one">%s ఫోటో గురించి</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d యాప్‌లు ఎంచుకోబడ్డాయి)</item>
+        <item quantity="one">(%1$d యాప్ ఎంచుకోబడింది)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">కెమెరా నుండి ఫోటోలు, వీడియోలను సోషల్ యాప్‌లలో త్వరగా షేర్ చేయండి. గరిష్ఠంగా %1$d యాప్ వరకు ఎంచుకోండి. లాక్ చేసిన ఫోల్డర్‌లో సేవ్ చేసిన ఫోటోలు, వీడియోలను షేర్ చేయడం సాధ్యం కాదు.</item>
+        <item quantity="one">కెమెరా నుండి ఫోటోలు, వీడియోలను సోషల్ యాప్‌లలో త్వరగా షేర్ చేయండి. %1$d యాప్‌ను ఎంచుకోండి. లాక్ చేసిన ఫోల్డర్‌లో సేవ్ చేసిన ఫోటోలు, వీడియోలను షేర్ చేయడం సాధ్యం కాదు.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d యాప్‌ల వరకు ఎంచుకోండి</item>
+        <item quantity="one">%1$d యాప్‌ను ఎంచుకోండి</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s నిమిషాల వీడియోలు</item>
+        <item quantity="one">%s నిమిషం వీడియోలు</item>
+    </plurals>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">အမြန်ပြကွက်မုဒ် %d ဆ မြန်နှုန်း</item>
+        <item quantity="one">အမြန်ပြကွက်မုဒ် %d ဆ မြန်နှုန်း</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">အရာ %1$d ခုထက်ပိုသည်။</item>
+        <item quantity="one">အရာတစ်ခုထက်ပိုသည်။</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ခု ဖြတ်ညှိထားသည်။</item>
+        <item quantity="one">တစ်ခု ဖြတ်ညှိထားသည်။</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">ဘတ်စ်ကား %d စီး</item>
+        <item quantity="one">ဘတ်စ်ကားတစ်စီး</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">ကား %d စီး</item>
+        <item quantity="one">ကားတစ်စီး</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">ကြောင် %d ကောင်</item>
+        <item quantity="one">ကြောင်တစ်ကောင်</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">မှတ်တမ်း %d ခု</item>
+        <item quantity="one">မှတ်တမ်းတစ်ခု</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">ခွေး %d ကောင်</item>
+        <item quantity="one">ခွေးတစ်ကောင်</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">သောက်စရာ %d မျိုး</item>
+        <item quantity="one">သောက်စရာတစ်မျိုး</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">အီလက်ထရောနစ်စက် %d ခု</item>
+        <item quantity="one">အီလက်ထရောနစ်စက်တစ်ခု</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">မျက်နှာ %d ခု</item>
+        <item quantity="one">မျက်နှာတစ်ခု</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">အစားအစာ %d မျိုး</item>
+        <item quantity="one">အစားအစာတစ်မျိုး</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">အိမ်မွေးတိရစ္ဆာန် %d ကောင်</item>
+        <item quantity="one">အိမ်မွေးတိရစ္ဆာန် တစ်ကောင်</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">ထရပ်ကား %d စီး</item>
+        <item quantity="one">ထရပ်ကားတစ်စီး</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s နှင့် %2$s ကို ဘောင်သွင်းချိန်ညှိထားသည်။</item>
+        <item quantity="one">%2$s ကို ဘောင်သွင်းချိန်ညှိထားသည်။</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s နှင့် %2$s ကို ဖြတ်ညှိထားသည်။</item>
+        <item quantity="one">%2$s ကို ဖြတ်ညှိထားသည်။</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ဖြတ်ညှိထားသည့်အရာ- %1$s နှင့် %2$s။</item>
+        <item quantity="one">ဖြတ်ညှိထားသည့်အရာ- %2$s။</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ဘောင်သွင်းချိန်ညှိထားသည့်အရာ- %1$s နှင့် %2$s။</item>
+        <item quantity="one">ဘောင်သွင်းချိန်ညှိထားသည့်အရာ- %2$s။</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">ဓာတ်ပုံ %s ပုံ ခန့်</item>
+        <item quantity="one">ဓာတ်ပုံ %s ပုံ ခန့်</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(အက်ပ် %1$d ခုရွေးထားသည်)</item>
+        <item quantity="one">(အက်ပ် %1$d ခုရွေးထားသည်)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">‘ကင်မရာ’ မှနေ၍ လူမှုအက်ပ်များသို့ ဓာတ်ပုံနှင့် ဗီဒီယိုများ အမြန်မျှဝေပါ။ အက်ပ် %1$d ခုအထိ ရွေးပါ။ ‘လော့ခ်ချထားသော ဖိုင်တွဲ’ တွင် သိမ်းထားသည့် ဓာတ်ပုံနှင့် ဗီဒီယိုများကို မျှဝေ၍မရပါ။</item>
+        <item quantity="one">‘ကင်မရာ’ မှနေ၍ လူမှုအက်ပ်များသို့ ဓာတ်ပုံနှင့် ဗီဒီယိုများ အမြန်မျှဝေပါ။ အက်ပ် %1$d ခု ရွေးပါ။ ‘လော့ခ်ချထားသော ဖိုင်တွဲ’ တွင် သိမ်းထားသည့် ဓာတ်ပုံနှင့် ဗီဒီယိုများကို မျှဝေ၍မရပါ။</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">အက်ပ် %1$d ခုအထိ ရွေးပါ</item>
+        <item quantity="one">အက်ပ် %1$d ခု ရွေးပါ</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">ဗီဒီယိုရိုက်ကူးရန်ကျန်ရှိချိန် %s မိနစ်</item>
+        <item quantity="one">ဗီဒီယိုရိုက်ကူးရန်ကျန်ရှိချိန် %s မိနစ်</item>
+    </plurals>
+</resources>

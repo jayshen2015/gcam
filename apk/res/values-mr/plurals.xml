@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">टाइम लॅप्स चा %d पट वेग</item>
+        <item quantity="one">टाइम लॅप्स चा %d पट वेग</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d पेक्षा जास्त ऑब्जेक्ट.</item>
+        <item quantity="one">एकापेक्षा जास्त ऑब्जेक्ट.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d क्रॉप केले आहेत.</item>
+        <item quantity="one">एक क्रॉप केला आहे.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d बस</item>
+        <item quantity="one">एक बस</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d कार</item>
+        <item quantity="one">एक कार</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d मांजरी</item>
+        <item quantity="one">एक मांजर</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d दस्तऐवज</item>
+        <item quantity="one">एक दस्तऐवज</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d कुत्रे</item>
+        <item quantity="one">एक कुत्रा</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d पेये</item>
+        <item quantity="one">एक पेय</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d इलेक्ट्रॉनिक डिव्हाइस</item>
+        <item quantity="one">एक इलेक्ट्रॉनिक डिव्हाइस</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d चेहरे</item>
+        <item quantity="one">एक चेहरा</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">खाद्यपदार्थांचे %d आयटम</item>
+        <item quantity="one">खाद्यपदार्थाचा एक आयटम</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d पाळीव प्राणी</item>
+        <item quantity="one">एक पाळीव प्राणी</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ट्रक</item>
+        <item quantity="one">एक ट्रक</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">या फ्रेममध्ये %1$s आणि %2$s आहेत.</item>
+        <item quantity="one">या फ्रेममध्ये %2$s आहे.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s आणि %2$s क्रॉप केले आहेत.</item>
+        <item quantity="one">%2$s क्रॉप केला आहे.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">हे क्रॉप केले आहे: %1$s आणि %2$s.</item>
+        <item quantity="one">हे क्रॉप केले आहे: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">फ्रेममध्ये हे आहे: %1$s आणि %2$s.</item>
+        <item quantity="one">फ्रेममध्ये हे आहे: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">अंदाजे %s फोटो</item>
+        <item quantity="one">अंदाजे %s फोटो</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ॲप्‍स निवडली)</item>
+        <item quantity="one">(%1$d ॲप निवडले)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">कॅमेरा मधून सोशल ॲप्सवर फोटो आणि व्हिडिओ झटपट शेअर करा. कमाल %1$d ॲप्स निवडा. लॉक्ड फोल्डर मध्ये सेव्ह केलेले फोटो आणि व्हिडिओ शेअर केले जाऊ शकत नाहीत.</item>
+        <item quantity="one">कॅमेरा मधून सोशल ॲप्सवर फोटो आणि व्हिडिओ झटपट शेअर करा. %1$d ॲप निवडा. लॉक्ड फोल्डर मध्ये सेव्ह केलेले फोटो आणि व्हिडिओ शेअर केले जाऊ शकत नाहीत.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">कमाल %1$d ॲप्स निवडा</item>
+        <item quantity="one">%1$d अ‍ॅप निवडा</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s मिनिटांचा व्हिडिओ</item>
+        <item quantity="one">%s मिनिटाचा व्हिडिओ</item>
+    </plurals>
+</resources>

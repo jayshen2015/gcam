@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Ταχύτητα Time Lapse %dx</item>
+        <item quantity="one">Ταχύτητα Time Lapse %dx</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Περισσότερα από %1$d αντικείμενα.</item>
+        <item quantity="one">Περισσότερα από ένα αντικείμενα.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d περικόπηκαν.</item>
+        <item quantity="one">Ένα περικόπηκε.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d λεωφορεία</item>
+        <item quantity="one">Ένα λεωφορείο</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d αυτοκίνητα</item>
+        <item quantity="one">Ένα αυτοκίνητο</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d γάτες</item>
+        <item quantity="one">Μία γάτα</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d έγγραφα</item>
+        <item quantity="one">Ένα έγγραφο</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d σκύλοι</item>
+        <item quantity="one">Ένας σκύλος</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ποτά</item>
+        <item quantity="one">Ένα ποτό</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ηλεκτρονικές συσκευές</item>
+        <item quantity="one">Μία ηλεκτρονική συσκευή</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d πρόσωπα</item>
+        <item quantity="one">Ένα πρόσωπο</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d στοιχεία φαγητού</item>
+        <item quantity="one">Ένα στοιχείο φαγητού</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d κατοικίδια</item>
+        <item quantity="one">Ένα κατοικίδιο</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d φορτηγά</item>
+        <item quantity="one">Ένα φορτηγό</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s και %2$s στο πλαίσιο.</item>
+        <item quantity="one">%2$s στο πλαίσιο.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s και %2$s περικόπηκαν.</item>
+        <item quantity="one">%2$s περικόπηκε.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Έγινε περικοπή: %1$s και %2$s.</item>
+        <item quantity="one">Έγινε περικοπή: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Στο πλαίσιο: %1$s και %2$s.</item>
+        <item quantity="one">Στο πλαίσιο: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Περίπου %s φωτογραφίες</item>
+        <item quantity="one">Περίπου %s φωτογραφία</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(επιλέχθηκαν %1$d εφαρμογές)</item>
+        <item quantity="one">(επιλέχθηκε %1$d εφαρμογή)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Κοινοποιήστε γρήγορα φωτογραφίες και βίντεο σε κοινωνικές εφαρμογές από την Κάμερα. Επιλέξτε έως %1$d εφαρμογές. Οι φωτογραφίες και τα βίντεο που είναι αποθηκευμένα στον Κλειδωμένο φάκελο δεν μπορούν να κοινοποιηθούν.</item>
+        <item quantity="one">Κοινοποιήστε γρήγορα φωτογραφίες και βίντεο σε κοινωνικές εφαρμογές από την Κάμερα. Επιλέξτε %1$d εφαρμογή. Οι φωτογραφίες και τα βίντεο που είναι αποθηκευμένα στον Κλειδωμένο φάκελο δεν μπορούν να κοινοποιηθούν.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Επιλέξτε έως και %1$d εφαρμογές</item>
+        <item quantity="one">Επιλέξτε %1$d εφαρμογή</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s λεπτά βίντεο</item>
+        <item quantity="one">%s λεπτό βίντεο</item>
+    </plurals>
+</resources>

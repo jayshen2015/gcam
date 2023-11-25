@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">"'ਟਾਈਮ ਲੈਪਸ' ਮੋਡ ਦੀ %d ਗੁਣਾ ਗਤੀ"</item>
+        <item quantity="one">"'ਟਾਈਮ ਲੈਪਸ' ਮੋਡ ਦੀ %d ਗੁਣਾ ਗਤੀ"</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d ਤੋਂ ਵੱਧ ਵਸਤੂਆਂ।</item>
+        <item quantity="one">%1$d ਤੋਂ ਵੱਧ ਵਸਤੂ।</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ਚਿਹਰਿਆਂ ਦੀ ਕਾਂਟ-ਛਾਂਟ ਕੀਤੀ ਗਈ।</item>
+        <item quantity="one">%d ਚਿਹਰੇ ਦੀ ਕਾਂਟ-ਛਾਂਟ ਕੀਤੀ ਗਈ।</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d ਬੱਸਾਂ</item>
+        <item quantity="one">%d ਬੱਸ</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d ਕਾਰਾਂ</item>
+        <item quantity="one">%d ਕਾਰ</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d ਬਿੱਲੀਆਂ</item>
+        <item quantity="one">%d ਬਿੱਲੀ</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d ਦਸਤਾਵੇਜ਼</item>
+        <item quantity="one">%d ਦਸਤਾਵੇਜ਼</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ਕੁੱਤੇ</item>
+        <item quantity="one">%d ਕੁੱਤਾ</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ਪੀਣ-ਪਦਾਰਥ</item>
+        <item quantity="one">%d ਪੀਣ-ਪਦਾਰਥ</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d ਇਲੈਕਟ੍ਰਾਨਿਕ ਡੀਵਾਈਸਾਂ</item>
+        <item quantity="one">%d ਇਲੈਕਟ੍ਰਾਨਿਕ ਡੀਵਾਈਸ</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ਚਿਹਰੇ</item>
+        <item quantity="one">%d ਚਿਹਰਾ</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ਭੋਜਨ ਆਈਟਮਾਂ</item>
+        <item quantity="one">%d ਭੋਜਨ ਆਈਟਮ</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d ਪਾਲਤੂ ਜਾਨਵਰ</item>
+        <item quantity="one">%d ਪਾਲਤੂ ਜਾਨਵਰ</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ਟਰੱਕ</item>
+        <item quantity="one">%d ਟਰੱਕ</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">ਫ੍ਰੇਮ ਵਿੱਚ %1$s ਅਤੇ %2$s।</item>
+        <item quantity="one">ਫ੍ਰੇਮ ਵਿੱਚ %1$s ਅਤੇ %2$s।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ਅਤੇ %2$s ਦੇ ਚਿਹਰਿਆਂ ਦੀ ਕਾਂਟ-ਛਾਂਟ ਕੀਤੀ ਗਈ।</item>
+        <item quantity="one">%1$s ਅਤੇ %2$s ਦੇ ਚਿਹਰੇ ਦੀ ਕਾਂਟ-ਛਾਂਟ ਕੀਤੀ ਗਈ।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ਕਾਂਟ-ਛਾਂਟ ਕੀਤੀ ਗਈ: %1$s ਅਤੇ %2$s।</item>
+        <item quantity="one">ਕਾਂਟ-ਛਾਂਟ ਕੀਤੀ ਗਈ: %1$s ਅਤੇ %2$s।</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ਫ੍ਰੇਮ ਵਿੱਚ: %1$s ਅਤੇ %2$s।</item>
+        <item quantity="one">ਫ੍ਰੇਮ ਵਿੱਚ: %1$s ਅਤੇ %2$s।</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s ਫ਼ੋਟੋਆਂ ਬਾਰੇ</item>
+        <item quantity="one">%s ਫ਼ੋਟੋ ਬਾਰੇ</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ਐਪਾਂ ਨੂੰ ਚੁਣਿਆ ਗਿਆ)</item>
+        <item quantity="one">(%1$d ਐਪ ਨੂੰ ਚੁਣਿਆ ਗਿਆ)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">"Camera ਤੋਂ ਤੇਜ਼ੀ ਨਾਲ ਫ਼ੋਟੋਆਂ ਅਤੇ ਵੀਡੀਓ ਨੂੰ ਸੋਸ਼ਲ ਐਪਾਂ 'ਤੇ ਸਾਂਝਾ ਕਰੋ। %1$d ਤੱਕ ਐਪਾਂ ਚੁਣੋ। ਲਾਕ ਕੀਤੇ ਫੋਲਡਰ ਵਿੱਚ ਰੱਖਿਅਤ ਕੀਤੀਆਂ ਫ਼ੋਟੋਆਂ ਅਤੇ ਵੀਡੀਓ ਨੂੰ ਸਾਂਝਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"</item>
+        <item quantity="one">"Camera ਤੋਂ ਤੇਜ਼ੀ ਨਾਲ ਫ਼ੋਟੋਆਂ ਅਤੇ ਵੀਡੀਓ ਨੂੰ ਸੋਸ਼ਲ ਐਪਾਂ 'ਤੇ ਸਾਂਝਾ ਕਰੋ। %1$d ਤੱਕ ਐਪ ਚੁਣੋ। ਲਾਕ ਕੀਤੇ ਫੋਲਡਰ ਵਿੱਚ ਰੱਖਿਅਤ ਕੀਤੀਆਂ ਫ਼ੋਟੋਆਂ ਅਤੇ ਵੀਡੀਓ ਨੂੰ ਸਾਂਝਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।"</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d ਤੱਕ ਐਪਾਂ ਚੁਣੋ</item>
+        <item quantity="one">%1$d ਤੱਕ ਐਪ ਚੁਣੋ</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s ਮਿੰਟ ਦੇ ਵੀਡੀਓ</item>
+        <item quantity="one">%s ਮਿੰਟ ਦੇ ਵੀਡੀਓ</item>
+    </plurals>
+</resources>

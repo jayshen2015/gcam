@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">टाइम ल्याप्सको गति: %d</item>
+        <item quantity="one">टाइम ल्याप्सको गति: %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d वटा भन्दा धेरै वस्तुहरू छन्।</item>
+        <item quantity="one">एकभन्दा धेरै वस्तु छ।</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d वटा अनुहार क्रप गरिएका छन्।</item>
+        <item quantity="one">एउटा अनुहार क्रप गरिएको छ।</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d वटा बस</item>
+        <item quantity="one">एउटा बस</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d वटा कार</item>
+        <item quantity="one">एउटा कार</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d वटा बिरालो</item>
+        <item quantity="one">एउटा बिरालो</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d वटा कागजात</item>
+        <item quantity="one">एउटा कागजात</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d वटा कुकुर</item>
+        <item quantity="one">एउटा कुकुर</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d वटा पेय पदार्थ</item>
+        <item quantity="one">एउटा पेय पदार्थ</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d वटा इलेक्ट्रोनिक डिभाइस</item>
+        <item quantity="one">एउटा इलेक्ट्रोनिक डिभाइस</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d वटा अनुहार</item>
+        <item quantity="one">एउटा अनुहार</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d वटा खाद्य वस्तु</item>
+        <item quantity="one">एउटा खाद्य वस्तु</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d वटा पाल्तु जनावर</item>
+        <item quantity="one">एउटा पाल्तु जनावर</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d वटा ट्रक</item>
+        <item quantity="one">एउटा ट्रक</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">फ्रेममा %1$s र %2$s छन्।</item>
+        <item quantity="one">फ्रेममा %2$s छन्।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s र %2$s वटा अनुहार क्रप गरिएका छन्।</item>
+        <item quantity="one">%2$s वटा अनुहार क्रप गरिएका छन्।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">%1$s र %2$s क्रप गरिएको छ।</item>
+        <item quantity="one">%2$s क्रप गरिएको छ।</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">फ्रेममा %1$s र %2$s समावेश छन्।</item>
+        <item quantity="one">फ्रेममा %2$s समावेश छ।</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">लगभग %s वटा फोटो</item>
+        <item quantity="one">लगभग %s फोटो</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d वटा एप चयन गरिए)</item>
+        <item quantity="one">(%1$d वटा एप चयन गरियो)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">क्यामेराबाटै छिटोछरितो रूपमा फोटो तथा भिडियोहरू सामाजिक सञ्जालका एपहरूमा सेयर गर्नुहोस्। बढीमा %1$d वटा एप छनौट गर्नुहोस्। लक गरिएको फोल्डरमा सेभ गरिएका फोटो तथा भिडियोहरू सेयर गर्न मिल्दैन।</item>
+        <item quantity="one">क्यामेराबाटै छिटोछरितो रूपमा फोटो तथा भिडियोहरू सामाजिक सञ्जालका एपहरूमा सेयर गर्नुहोस्। बढीमा %1$d वटा एप छनौट गर्नुहोस्। लक गरिएको फोल्डरमा सेभ गरिएका फोटो तथा भिडियोहरू सेयर गर्न मिल्दैन।</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">अधिकतम %1$d एपहरू छनौट गर्नुहोस्</item>
+        <item quantity="one">%1$d एप छनौट गर्नुहोस्</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s मिनेटको भिडियो</item>
+        <item quantity="one">%s मिनेटको भिडियो</item>
+    </plurals>
+</resources>

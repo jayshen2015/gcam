@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">زمان‌گریز با سرعت %d برابر</item>
+        <item quantity="one">زمان‌گریز با سرعت %d برابر</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">بیش‌از %1$d شیء وجود دارد.</item>
+        <item quantity="one">بیش‌از %1$d شیء وجود دارد.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d مورد برش داده شد.</item>
+        <item quantity="one">%d مورد برش داده شد.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d اتوبوس</item>
+        <item quantity="one">%d اتوبوس</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d خودرو</item>
+        <item quantity="one">%d خودرو</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d گربه</item>
+        <item quantity="one">%d گربه</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d سند</item>
+        <item quantity="one">%d سند</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d سگ</item>
+        <item quantity="one">%d سگ</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d نوشیدنی</item>
+        <item quantity="one">%d نوشیدنی</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d دستگاه الکترونیکی</item>
+        <item quantity="one">%d دستگاه الکترونیکی</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d چهره</item>
+        <item quantity="one">%d چهره</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d غذا</item>
+        <item quantity="one">%d غذا</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d حیوان خانگی</item>
+        <item quantity="one">%d حیوان خانگی</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d کامیون</item>
+        <item quantity="one">%d کامیون</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s و %2$s در قاب است.</item>
+        <item quantity="one">%1$s و %2$s در قاب است.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s و %2$s برش داده شد.</item>
+        <item quantity="one">%1$s و %2$s برش داده شد.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">برش داده شد: %1$s و %2$s.</item>
+        <item quantity="one">برش داده شد: %1$s و %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">در قاب: %1$s و %2$s.</item>
+        <item quantity="one">در قاب: %1$s و %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">حدود %s عکس</item>
+        <item quantity="one">حدود %s عکس</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d برنامه انتخاب شد)</item>
+        <item quantity="one">(%1$d برنامه انتخاب شد)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">عکس‌ها و ویدیوها را به‌سرعت ازطریق «دوربین» در برنامه‌های اجتماعی هم‌رسانی کنید. حداکثر %1$d برنامه انتخاب کنید. عکس‌ها و ویدیوهای ذخیره‌شده در «پوشه محافظت‌شده» را نمی‌توان هم‌رسانی کرد.</item>
+        <item quantity="one">عکس‌ها و ویدیوها را به‌سرعت ازطریق «دوربین» در برنامه‌های اجتماعی هم‌رسانی کنید. حداکثر %1$d برنامه انتخاب کنید. عکس‌ها و ویدیوهای ذخیره‌شده در «پوشه محافظت‌شده» را نمی‌توان هم‌رسانی کرد.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">حداکثر %1$d برنامه انتخاب کنید</item>
+        <item quantity="one">حداکثر %1$d برنامه انتخاب کنید</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s دقیقه ویدیو</item>
+        <item quantity="one">%s دقیقه ویدیو</item>
+    </plurals>
+</resources>

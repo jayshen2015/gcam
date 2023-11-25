@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Скорость записи в режиме ускорения: %d</item>
+        <item quantity="one">Скорость записи в режиме ускорения: %d</item>
+        <item quantity="few">Скорость записи в режиме ускорения: %d</item>
+        <item quantity="many">Скорость записи в режиме ускорения: %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Более %1$d объекта.</item>
+        <item quantity="one">Более %1$d объекта.</item>
+        <item quantity="few">Более %1$d объектов.</item>
+        <item quantity="many">Более %1$d объектов.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d лица частично в кадре.</item>
+        <item quantity="one">%d лицо частично в кадре.</item>
+        <item quantity="few">%d лица частично в кадре.</item>
+        <item quantity="many">%d лиц частично в кадре.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d автобуса</item>
+        <item quantity="one">%d автобус</item>
+        <item quantity="few">%d автобуса</item>
+        <item quantity="many">%d автобусов</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d автомобиля</item>
+        <item quantity="one">%d автомобиль</item>
+        <item quantity="few">%d автомобиля</item>
+        <item quantity="many">%d автомобилей</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d кошки</item>
+        <item quantity="one">%d кошка</item>
+        <item quantity="few">%d кошки</item>
+        <item quantity="many">%d кошек</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d документа</item>
+        <item quantity="one">%d документ</item>
+        <item quantity="few">%d документа</item>
+        <item quantity="many">%d документов</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d собаки</item>
+        <item quantity="one">%d собака</item>
+        <item quantity="few">%d собаки</item>
+        <item quantity="many">%d собак</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d напитка</item>
+        <item quantity="one">%d напиток</item>
+        <item quantity="few">%d напитка</item>
+        <item quantity="many">%d напитков</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d электронного устройства</item>
+        <item quantity="one">%d электронное устройство</item>
+        <item quantity="few">%d электронных устройства</item>
+        <item quantity="many">%d электронных устройств</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d лица</item>
+        <item quantity="one">%d лицо</item>
+        <item quantity="few">%d лица</item>
+        <item quantity="many">%d лиц</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d пищевого продукта</item>
+        <item quantity="one">%d пищевой продукт</item>
+        <item quantity="few">%d пищевых продукта</item>
+        <item quantity="many">%d пищевых продуктов</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d питомца</item>
+        <item quantity="one">%d питомец</item>
+        <item quantity="few">%d питомца</item>
+        <item quantity="many">%d питомцев</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d грузового автомобиля</item>
+        <item quantity="one">%d грузовой автомобиль</item>
+        <item quantity="few">%d грузовых автомобиля</item>
+        <item quantity="many">%d грузовых автомобилей</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">В кадре %1$s и %2$s.</item>
+        <item quantity="one">В кадре %1$s и %2$s.</item>
+        <item quantity="few">В кадре %1$s и %2$s.</item>
+        <item quantity="many">В кадре %1$s и %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s и %2$s частично в кадре.</item>
+        <item quantity="one">%1$s и %2$s частично в кадре.</item>
+        <item quantity="few">%1$s и %2$s частично в кадре.</item>
+        <item quantity="many">%1$s и %2$s частично в кадре.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">%1$s и %2$s частично в кадре.</item>
+        <item quantity="one">%1$s и %2$s частично в кадре.</item>
+        <item quantity="few">%1$s и %2$s частично в кадре.</item>
+        <item quantity="many">%1$s и %2$sчастично в кадре.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">В кадре %1$s и %2$s.</item>
+        <item quantity="one">В кадре %1$s и %2$s.</item>
+        <item quantity="few">В кадре %1$s и %2$s.</item>
+        <item quantity="many">В кадре %1$s и %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Примерно %s фотографии</item>
+        <item quantity="one">Примерно %s фотография</item>
+        <item quantity="few">Примерно %s фотографии</item>
+        <item quantity="many">Примерно %s фотографий</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(выбрано %1$d приложения)</item>
+        <item quantity="one">(выбрано %1$d приложение)</item>
+        <item quantity="few">(выбрано %1$d приложения)</item>
+        <item quantity="many">(выбрано %1$d приложений)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Делитесь фотографиями и видео прямо из Камеры. Выберите не более %1$d приложения. Отправлять файлы из личной папки нельзя.</item>
+        <item quantity="one">Делитесь фотографиями и видео прямо из Камеры. Выберите не более %1$d приложения. Отправлять файлы из личной папки нельзя.</item>
+        <item quantity="few">Делитесь фотографиями и видео прямо из Камеры. Выберите не более %1$d приложений. Отправлять файлы из личной папки нельзя.</item>
+        <item quantity="many">Делитесь фотографиями и видео прямо из Камеры. Выберите не более %1$d приложений. Отправлять файлы из личной папки нельзя.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Можно выбрать не более %1$d приложения.</item>
+        <item quantity="one">Можно выбрать не более %1$d приложения.</item>
+        <item quantity="few">Можно выбрать не более %1$d приложений.</item>
+        <item quantity="many">Можно выбрать не более %1$d приложений.</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s минуты видео</item>
+        <item quantity="one">%s минута видео</item>
+        <item quantity="few">%s минуты видео</item>
+        <item quantity="many">%s минут видео</item>
+    </plurals>
+</resources>

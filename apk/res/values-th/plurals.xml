@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">ความเร็ว %d สำหรับไทม์แลปส์</item>
+        <item quantity="one">ความเร็ว %d สำหรับไทม์แลปส์</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">ออบเจ็กต์มากกว่า %1$d รายการ</item>
+        <item quantity="one">ออบเจ็กต์มากกว่า 1 รายการ</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">ครอบตัดแล้ว %d ใบหน้า</item>
+        <item quantity="one">ครอบตัดแล้ว 1 ใบหน้า</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">รถประจำทาง %d คัน</item>
+        <item quantity="one">รถประจำทาง 1 คัน</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">รถยนต์ %d คัน</item>
+        <item quantity="one">รถยนต์ 1 คัน</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">แมว %d ตัว</item>
+        <item quantity="one">แมว 1 ตัว</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">เอกสาร %d รายการ</item>
+        <item quantity="one">เอกสาร 1 รายการ</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">สุนัข %d ตัว</item>
+        <item quantity="one">สุนัข 1 ตัว</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">เครื่องดื่ม %d รายการ</item>
+        <item quantity="one">เครื่องดื่ม 1 รายการ</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">อุปกรณ์อิเล็กทรอนิกส์ %d เครื่อง</item>
+        <item quantity="one">อุปกรณ์อิเล็กทรอนิกส์ 1 เครื่อง</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">ใบหน้า %d ใบหน้า</item>
+        <item quantity="one">ใบหน้า 1 ใบหน้า</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">รายการอาหาร %d รายการ</item>
+        <item quantity="one">รายการอาหาร 1 รายการ</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">สัตว์เลี้ยง %d ตัว</item>
+        <item quantity="one">สัตว์เลี้ยง 1 ตัว</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">รถบรรทุก %d คัน</item>
+        <item quantity="one">รถบรรทุก 1 คัน</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$sและ%2$sในเฟรม</item>
+        <item quantity="one">%2$sในเฟรม</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">ครอบตัด%1$sและ%2$sแล้ว</item>
+        <item quantity="one">ครอบตัด%2$sแล้ว</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ถูกครอบตัด: %1$s และ %2$s</item>
+        <item quantity="one">ถูกครอบตัด: %2$s</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">อยู่ในเฟรม: %1$s และ %2$s</item>
+        <item quantity="one">อยู่ในเฟรม: %2$s</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">ประมาณ %s รูป</item>
+        <item quantity="one">ประมาณ %s รูป</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(เลือกไว้ %1$d แอป)</item>
+        <item quantity="one">(เลือกไว้ %1$d แอป)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">แชร์รูปภาพและวิดีโอจากกล้องกับแอปโซเชียลได้อย่างรวดเร็ว โดยเลือกได้ถึง %1$d แอป ไม่สามารถแชร์รูปภาพและวิดีโอที่บันทึกไว้ในโฟลเดอร์ที่ล็อก</item>
+        <item quantity="one">แชร์รูปภาพและวิดีโอจากกล้องกับแอปโซเชียลได้อย่างรวดเร็ว โดยเลือกได้ %1$d แอป ไม่สามารถแชร์รูปภาพและวิดีโอที่บันทึกไว้ในโฟลเดอร์ที่ล็อก</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">เลือกได้สูงสุด %1$d แอป</item>
+        <item quantity="one">เลือก %1$d แอป</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s นาทีของวิดีโอ</item>
+        <item quantity="one">%s นาทีของวิดีโอ</item>
+    </plurals>
+</resources>

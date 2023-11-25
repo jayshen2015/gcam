@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">የረዘመ ጊዜ %d የጊዜያት ፍጥነት</item>
+        <item quantity="one">የረዘመ ጊዜ %d የጊዜ ፍጥነት</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">ከ%1$d ነገሮች በላይ።</item>
+        <item quantity="one">ከ%1$d ነገር በላይ።</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ተከርክመዋል።</item>
+        <item quantity="one">%d ተከርክሟል።</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d አውቶቡሶች</item>
+        <item quantity="one">%d አውቶቡስ</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d መኪናዎች</item>
+        <item quantity="one">%d መኪና</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d ድመቶች</item>
+        <item quantity="one">%d ድመት</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d ሰነዶች</item>
+        <item quantity="one">%d ሰነድ</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ውሻዎች</item>
+        <item quantity="one">%d ውሻ</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d መጠጦች</item>
+        <item quantity="one">%d መጠጥ</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d የኤሌክትሮኒክ መሣሪያዎች</item>
+        <item quantity="one">%d የኤሌክትሮኒክ መሣሪያ</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ፊቶች</item>
+        <item quantity="one">%d ፊት</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d የምግብ ንጥሎች</item>
+        <item quantity="one">%d የምግብ ንጥል</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d የቤት እንስሳት</item>
+        <item quantity="one">%d የቤት እንስሳ</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%dየጭነት መኪናዎች</item>
+        <item quantity="one">%d የጭነት መኪና</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s እና %2$s በክፈፍ ውስጥ ናቸው።</item>
+        <item quantity="one">%1$s እና %2$s በክፈፍ ውስጥ ናቸው።</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s እና %2$s ተከርክመዋል።</item>
+        <item quantity="one">%1$s እና %2$s ተከርክመዋል።</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">የተከረከሙ፦ %1$s እና %2$s።</item>
+        <item quantity="one">የተከረከሙ፦ %1$s እና %2$s።</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">በክፈፍ ውስጥ፦ %1$s እና %2$s።</item>
+        <item quantity="one">በክፈፍ ውስጥ፦ %1$s እና %2$s።</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s ፎቶዎች ገደማ</item>
+        <item quantity="one">%s ፎቶዎች ገደማ</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d መተግበሪያዎች ተመርጠዋል)</item>
+        <item quantity="one">(%1$d መተግበሪያዎች ተመርጠዋል)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">ከካሜራው ሆነው ፎቶዎችን እና ቪዲዮዎችን በማኅበራዊ መተግበሪያዎች ላይ በፍጥነት ያጋሩ። እስከ %1$d መተግበሪያዎች ድረስ ያጋሩ። በተቆለፈ አቃፊ ውስጥ የተቀመጡ ፎቶዎች እና ቪዲዮዎች ሊጋሩ አይችሉም።</item>
+        <item quantity="one">ከካሜራው ሆነው ፎቶዎችን እና ቪዲዮዎችን በማኅበራዊ መተግበሪያዎች ላይ በፍጥነት ያጋሩ። እስከ %1$d መተግበሪያዎች ድረስ ያጋሩ። በተቆለፈ አቃፊ ውስጥ የተቀመጡ ፎቶዎች እና ቪዲዮዎች ሊጋሩ አይችሉም።</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">እስከ %1$d መተግበሪያዎች ድረስ ይምረጡ</item>
+        <item quantity="one">እስከ %1$d መተግበሪያዎች ድረስ ይምረጡ</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s የቪዲዮዎች ደቂቃዎች</item>
+        <item quantity="one">%s የቪዲዮዎች ደቂቃዎች</item>
+    </plurals>
+</resources>

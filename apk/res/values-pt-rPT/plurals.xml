@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Velocidade do Time Lapse: %d vezes</item>
+        <item quantity="one">Velocidade do Time Lapse: %d vez</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Mais de %1$d objetos.</item>
+        <item quantity="one">Mais de um objeto.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d recortadas.</item>
+        <item quantity="one">Uma recortada.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autocarros</item>
+        <item quantity="one">Um autocarro</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d carros</item>
+        <item quantity="one">Um carro</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d gatos</item>
+        <item quantity="one">Um gato</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d documentos</item>
+        <item quantity="one">Um documento</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d cães</item>
+        <item quantity="one">Um cão</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d bebidas</item>
+        <item quantity="one">Uma bebida</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d dispositivos eletrónicos</item>
+        <item quantity="one">Um dispositivo eletrónico</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d caras</item>
+        <item quantity="one">Uma cara</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d alimentos</item>
+        <item quantity="one">Um alimento</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d animais de estimação</item>
+        <item quantity="one">Um animal de estimação</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d camiões</item>
+        <item quantity="one">Um camião</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s e %2$s no enquadramento.</item>
+        <item quantity="one">%2$s no enquadramento.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s e %2$s recortados.</item>
+        <item quantity="one">%2$s recortados.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Recorte de %1$s e %2$s.</item>
+        <item quantity="one">Recorte de %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">No enquadramento: %1$s e %2$s.</item>
+        <item quantity="one">No enquadramento: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Acerca de %s fotos</item>
+        <item quantity="one">Acerca de %s foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d apps selecionadas)</item>
+        <item quantity="one">(%1$d app selecionada)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Partilhe rapidamente fotos e vídeos nas apps sociais a partir da Câmara. Escolha até %1$d apps. Não é possível partilhar as fotos e os vídeos guardados na Pasta privada.</item>
+        <item quantity="one">Partilhe rapidamente fotos e vídeos nas apps sociais a partir da Câmara. Escolha %1$d app. Não é possível partilhar as fotos e os vídeos guardados na Pasta privada.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Escolha até %1$d aplicações.</item>
+        <item quantity="one">Escolha %1$d aplicação.</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minutos de vídeos</item>
+        <item quantity="one">%s minuto de vídeos</item>
+    </plurals>
+</resources>

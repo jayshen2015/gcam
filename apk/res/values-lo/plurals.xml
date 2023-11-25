@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">ຄວາມໄວ %d ສຳລັບທາມແລບ</item>
+        <item quantity="one">ຄວາມໄວ %d ສຳລັບທາມແລບ</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">ຫຼາຍກວ່າ %1$d ວັດຖຸ.</item>
+        <item quantity="one">ຫຼາຍກວ່າໜຶ່ງວັດຖຸ.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d ຖືກຕັດແລ້ວ.</item>
+        <item quantity="one">ໜຶ່ງຖືກຕັດແລ້ວ.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">ລົດເມ %d ຄັນ</item>
+        <item quantity="one">ລົດເມໜຶ່ງຄັນ</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">ລົດ %d ຄັນ</item>
+        <item quantity="one">ລົດໜຶ່ງຄັນ</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">ແມວ %d ຕົວ</item>
+        <item quantity="one">ແມວໜຶ່ງຕົວ</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">ເອກະສານ %d ສະບັບ</item>
+        <item quantity="one">ເອກະສານໜຶ່ງສະບັບ</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">ໝາ %d ຕົວ</item>
+        <item quantity="one">ໝາໜຶ່ງຕົວ</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">ເຄື່ອງດື່ມ %d ຢ່າງ</item>
+        <item quantity="one">ເຄື່ອງດື່ມໜຶ່ງຢ່າງ</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">ອຸປະກອນໄຟຟ້າ %d ຢ່າງ</item>
+        <item quantity="one">ອຸປະກອນໄຟຟ້າໜຶ່ງຢ່າງ</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ໜ້າ</item>
+        <item quantity="one">ໜຶ່ງໜ້າ</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">ອາຫານ %d ຢ່າງ</item>
+        <item quantity="one">ອາຫານໜຶ່ງຢ່າງ</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">ສັດລ້ຽງ %d ຕົວ</item>
+        <item quantity="one">ສັດລ້ຽງໜຶ່ງຕົວ</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">ລົດບັນທຸກ %d ຄັນ</item>
+        <item quantity="one">ລົດບັນທຸກໜຶ່ງຄັນ</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ແລະ %2$s ໃນເຟຣມ.</item>
+        <item quantity="one">%2$s ໃນເຟຣມ.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">ຕັດ %1$s ແລະ %2$s ແລ້ວ.</item>
+        <item quantity="one">ຕັດ %2$s ແລ້ວ.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ຕັດອອກ: %1$s ແລະ %2$s.</item>
+        <item quantity="one">ຕັດອອກ: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ໃນເຟຣມ: %1$s ແລະ %2$s.</item>
+        <item quantity="one">ໃນເຟຣມ: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">ປະມານ %s ຮູບ</item>
+        <item quantity="one">ປະມານ %s ຮູບ</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(ເລືອກ %1$d ແອັບແລ້ວ)</item>
+        <item quantity="one">(ເລືອກ %1$d ແອັບແລ້ວ)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">ແບ່ງປັນຮູບພາບ ແລະ ວິດີໂອຢູ່ແອັບສັງຄົມໄດ້ຢ່າງວ່ອງໄວຈາກກ້ອງຖ່າຍຮູບ. ເລືອກໄດ້ສູງສຸດ %1$d ແອັບ. ຮູບພາບ ແລະ ວິດີໂອທີ່ຖືກບັນທຶກໄປໃສ່ໂຟນເດີທີ່ລັອກໄວ້ແມ່ນບໍ່ສາມາດແບ່ງປັນໄດ້.</item>
+        <item quantity="one">ແບ່ງປັນຮູບພາບ ແລະ ວິດີໂອຢູ່ແອັບສັງຄົມໄດ້ຢ່າງວ່ອງໄວຈາກກ້ອງຖ່າຍຮູບ. ເລືອກ %1$d ແອັບ. ຮູບພາບ ແລະ ວິດີໂອທີ່ຖືກບັນທຶກໄປໃສ່ໂຟນເດີທີ່ລັອກໄວ້ແມ່ນບໍ່ສາມາດແບ່ງປັນໄດ້.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">ເລືອກໄດ້ສູງສຸດ %1$d ແອັບ</item>
+        <item quantity="one">ເລືອກ %1$d ແອັບ</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">ວິດີໂອ %s ນາທີ</item>
+        <item quantity="one">ວິດີໂອ %s ນາທີ</item>
+    </plurals>
+</resources>

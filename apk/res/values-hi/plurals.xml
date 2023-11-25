@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">टाइम लैप्स मोड में वीडियो रिकॉर्ड करने की रफ़्तार: %dx</item>
+        <item quantity="one">टाइम लैप्स मोड में वीडियो रिकॉर्ड करने की रफ़्तार: %dx</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d से ज़्यादा ऑब्जेक्ट हैं.</item>
+        <item quantity="one">%1$d से ज़्यादा ऑब्जेक्ट हैं.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d को क्रॉप किया गया.</item>
+        <item quantity="one">%d को क्रॉप किया गया.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d बसें</item>
+        <item quantity="one">%d बस</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d कारें</item>
+        <item quantity="one">%d कार</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d बिल्लियां</item>
+        <item quantity="one">%d बिल्ली</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d दस्तावेज़</item>
+        <item quantity="one">%d दस्तावेज़</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d कुत्ते</item>
+        <item quantity="one">%d कुत्ता</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ड्रिंक</item>
+        <item quantity="one">%d ड्रिंक</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d इलेक्ट्रॉनिक डिवाइस</item>
+        <item quantity="one">%d इलेक्ट्रॉनिक डिवाइस</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d चेहरे</item>
+        <item quantity="one">%d चेहरा</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">खाने के %d आइटम</item>
+        <item quantity="one">खाने का %d आइटम</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d पालतू जानवर</item>
+        <item quantity="one">%d पालतू जानवर</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d ट्रक</item>
+        <item quantity="one">%d ट्रक</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s और %2$s फ़्रेम में.</item>
+        <item quantity="one">%1$s और %2$s फ़्रेम में.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s और %2$s को क्रॉप किया गया.</item>
+        <item quantity="one">%1$s और %2$s को क्रॉप किया गया.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">%1$s और %2$s क्रॉप किए गए.</item>
+        <item quantity="one">%1$s और %2$s को क्रॉप किया गया.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">फ़्रेम में: %1$s और %2$s.</item>
+        <item quantity="one">फ़्रेम में: %1$s और %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">करीब और %s फ़ोटो कैप्चर की जा सकती हैं</item>
+        <item quantity="one">करीब और %s फ़ोटो कैप्चर की जा सकती है</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d ऐप्लिकेशन चुने गए)</item>
+        <item quantity="one">(%1$d ऐप्लिकेशन चुना गया)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Camera से फ़ोटो खींचकर या वीडियो रिकॉर्ड करके, सोशल मीडिया ऐप्लिकेशन पर तेज़ी से शेयर करें. ज़्यादा से ज़्यादा %1$d ऐप्लिकेशन चुनें. लॉक किए हुए फ़ोल्डर मेंं सेव किए गए फ़ोटो और वीडियो शेयर नहीं किए जा सकते.</item>
+        <item quantity="one">Camera से फ़ोटो खींचकर या वीडियो रिकॉर्ड करके, सोशल मीडिया ऐप्लिकेशन पर तेज़ी से शेयर करें. ज़्यादा से ज़्यादा %1$d ऐप्लिकेशन चुनें. लॉक किए हुए फ़ोल्डर मेंं सेव किए गए फ़ोटो और वीडियो शेयर नहीं किए जा सकते.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">ज़्यादा से ज़्यादा %1$d ऐप्लिकेशन चुनें</item>
+        <item quantity="one">ज़्यादा से ज़्यादा %1$d ऐप्लिकेशन चुनें</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">वीडियो को और %s मिनट तक रिकॉर्ड किया जा सकता है</item>
+        <item quantity="one">वीडियो को और %s मिनट तक रिकॉर्ड किया जा सकता है</item>
+    </plurals>
+</resources>

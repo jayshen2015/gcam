@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">التسريع الزمني بمقدار %d مرة</item>
+        <item quantity="zero">التسريع الزمني بمقدار %d مرة</item>
+        <item quantity="one">التسريع الزمني بمقدار مرة واحدة (%d)</item>
+        <item quantity="two">التسريع الزمني بمقدار مرَتين (%d)</item>
+        <item quantity="few">التسريع الزمني بمقدار %d مرات</item>
+        <item quantity="many">التسريع الزمني بمقدار %d مرة</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">أكثر من %1$d عنصر</item>
+        <item quantity="zero">أكثر من %1$d عنصر</item>
+        <item quantity="one">أكثر من عنصر واحد</item>
+        <item quantity="two">أكثر من عنصرَين (%1$d)</item>
+        <item quantity="few">أكثر من %1$d عناصر</item>
+        <item quantity="many">أكثر من %1$d عنصرًا</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">تم اقتصاص %d وجه.</item>
+        <item quantity="zero">تم اقتصاص %d وجه.</item>
+        <item quantity="one">تم اقتصاص وجه واحد.</item>
+        <item quantity="two">تم اقتصاص وجهَين (%d).</item>
+        <item quantity="few">تم اقتصاص %d وجوه.</item>
+        <item quantity="many">تم اقتصاص %d وجهًا.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">‫%d حافلة</item>
+        <item quantity="zero">‫%d حافلة</item>
+        <item quantity="one">حافلة واحدة</item>
+        <item quantity="two">حافلتان (%d)</item>
+        <item quantity="few">‫%d حافلات</item>
+        <item quantity="many">‫%d حافلة</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">‫%d سيارة</item>
+        <item quantity="zero">‫%d سيارة</item>
+        <item quantity="one">سيارة واحدة</item>
+        <item quantity="two">سيارتان (%d)</item>
+        <item quantity="few">‫%d سيارات</item>
+        <item quantity="many">‫%d سيارة</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">‫%d قطة</item>
+        <item quantity="zero">‫%d قطة</item>
+        <item quantity="one">قطة واحدة</item>
+        <item quantity="two">قطتان (%d)</item>
+        <item quantity="few">‫%d قطط</item>
+        <item quantity="many">‫%d قطة</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">‫%d مستند</item>
+        <item quantity="zero">‫%d مستند</item>
+        <item quantity="one">مستند واحد</item>
+        <item quantity="two">مستندان (%d)</item>
+        <item quantity="few">‫%d مستندات</item>
+        <item quantity="many">‫%d مستندًا</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">‫%d كلب</item>
+        <item quantity="zero">‫%d كلب</item>
+        <item quantity="one">كلب واحد</item>
+        <item quantity="two">كلبان (%d)</item>
+        <item quantity="few">‫%d كلاب</item>
+        <item quantity="many">‫%d كلبًا</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">‫%d مشروب</item>
+        <item quantity="zero">‫%d مشروب</item>
+        <item quantity="one">مشروب واحد</item>
+        <item quantity="two">مشروبان (%d)</item>
+        <item quantity="few">‫%d مشروبات</item>
+        <item quantity="many">‫%d مشروبًا</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">‫%d جهاز إلكتروني</item>
+        <item quantity="zero">‫%d جهاز إلكتروني</item>
+        <item quantity="one">جهاز إلكتروني واحد</item>
+        <item quantity="two">جهازان إلكترونيان (%d)</item>
+        <item quantity="few">‫%d أجهزة إلكترونية</item>
+        <item quantity="many">‫%d جهازًا إلكترونيًا</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">‫%d وجه</item>
+        <item quantity="zero">‫%d وجه</item>
+        <item quantity="one">وجه واحد</item>
+        <item quantity="two">وجهان (%d)</item>
+        <item quantity="few">‫%d أوجه</item>
+        <item quantity="many">‫%d وجهًا</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">‫%d صنف من الطعام</item>
+        <item quantity="zero">‫%d صنف من الطعام</item>
+        <item quantity="one">صنف واحد من الطعام</item>
+        <item quantity="two">صنفان من الطعام (%d)</item>
+        <item quantity="few">‫%d أصناف من الطعام</item>
+        <item quantity="many">‫%d صنفًا من الطعام</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d حيوان أليف</item>
+        <item quantity="zero">%d حيوان أليف</item>
+        <item quantity="one">حيوان أليف واحد</item>
+        <item quantity="two">حيوانان أليفان (%d)</item>
+        <item quantity="few">%d حيوانات أليفة</item>
+        <item quantity="many">%d حيوانًا أليفًا</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">‫%d شاحنة</item>
+        <item quantity="zero">‫%d شاحنة</item>
+        <item quantity="one">شاحنة واحدة</item>
+        <item quantity="two">شاحنتان (%d)</item>
+        <item quantity="few">‫%d شاحنات</item>
+        <item quantity="many">‫%d شاحنة</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">تم رصد %1$s و%2$s داخل الإطار.</item>
+        <item quantity="zero">تم رصد %1$s و%2$s داخل الإطار.</item>
+        <item quantity="one">تم رصد %2$s داخل الإطار.</item>
+        <item quantity="two">تم رصد %1$s و%2$s داخل الإطار.</item>
+        <item quantity="few">تم رصد %1$s و%2$s داخل الإطار.</item>
+        <item quantity="many">تم رصد %1$s و%2$s داخل الإطار.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">تم اقتصاص %1$s و%2$s.</item>
+        <item quantity="zero">تم اقتصاص %1$s و%2$s.</item>
+        <item quantity="one">تم اقتصاص %2$s.</item>
+        <item quantity="two">تم اقتصاص %1$s و%2$s.</item>
+        <item quantity="few">تم اقتصاص %1$s و%2$s.</item>
+        <item quantity="many">تم اقتصاص %1$s و%2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ما تم اقتصاصه: %1$s و%2$s</item>
+        <item quantity="zero">ما تم اقتصاصه: %1$s و%2$s</item>
+        <item quantity="one">ما تم اقتصاصه: %2$s</item>
+        <item quantity="two">ما تم اقتصاصه: %1$s و%2$s</item>
+        <item quantity="few">ما تم اقتصاصه: %1$s و%2$s</item>
+        <item quantity="many">ما تم اقتصاصه: %1$s و%2$s</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ما تم رصده داخل الإطار: %1$s و%2$s</item>
+        <item quantity="zero">ما تم رصده داخل الإطار: %1$s و%2$s</item>
+        <item quantity="one">ما تم رصده داخل الإطار: %2$s</item>
+        <item quantity="two">ما تم رصده داخل الإطار: %1$s و%2$s</item>
+        <item quantity="few">ما تم رصده داخل الإطار: %1$s و%2$s</item>
+        <item quantity="many">ما تم رصده داخل الإطار: %1$s و%2$s</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s صورة تقريبًا</item>
+        <item quantity="zero">%s صورة تقريبًا</item>
+        <item quantity="one">صورة واحدة (%s) تقريبًا</item>
+        <item quantity="two">صورتان (%s) تقريبًا</item>
+        <item quantity="few">%s صور تقريبًا</item>
+        <item quantity="many">%s صورة تقريبًا</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(تم اختيار %1$d تطبيق)</item>
+        <item quantity="zero">(تم اختيار %1$d تطبيق)</item>
+        <item quantity="one">(تم اختيار تطبيق واحد (%1$d))</item>
+        <item quantity="two">(تم اختيار تطبيقين (%1$d))</item>
+        <item quantity="few">(تم اختيار %1$d تطبيقات)</item>
+        <item quantity="many">(تم اختيار %1$d تطبيقًا)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">‏يمكنك مشاركة الصور والفيديوهات بسرعة على التطبيقات الاجتماعية من تطبيق \"كاميرا Google\". وتستطيع اختيار عدد من التطبيقات بحد أقصى %1$d تطبيق. يُرجى العِلم أنّ الصور والفيديوهات المحفوظة في \"المجلد المُقفَل\" لا يمكن مشاركتها.</item>
+        <item quantity="zero">‏يمكنك مشاركة الصور والفيديوهات بسرعة على التطبيقات الاجتماعية من تطبيق \"كاميرا Google\". وتستطيع اختيار عدد من التطبيقات بحد أقصى %1$d تطبيق. يُرجى العِلم أنّ الصور والفيديوهات المحفوظة في \"المجلد المُقفَل\" لا يمكن مشاركتها.</item>
+        <item quantity="one">‏يمكنك مشاركة الصور والفيديوهات بسرعة على التطبيقات الاجتماعية من تطبيق \"كاميرا Google\". وتستطيع اختيار عدد من التطبيقات بحد أقصى تطبيق واحد (%1$d). يُرجى العِلم أنّ الصور والفيديوهات المحفوظة في \"المجلد المُقفَل\" لا يمكن مشاركتها.</item>
+        <item quantity="two">‏يمكنك مشاركة الصور والفيديوهات بسرعة على التطبيقات الاجتماعية من تطبيق \"كاميرا Google\". وتستطيع اختيار عدد من التطبيقات بحد أقصى تطبيقَين (%1$d). يُرجى العِلم أنّ الصور والفيديوهات المحفوظة في \"المجلد المُقفَل\" لا يمكن مشاركتها.</item>
+        <item quantity="few">‏يمكنك مشاركة الصور والفيديوهات بسرعة على التطبيقات الاجتماعية من تطبيق \"كاميرا Google\". وتستطيع اختيار عدد من التطبيقات بحد أقصى %1$d تطبيقات. يُرجى العِلم أنّ الصور والفيديوهات المحفوظة في \"المجلد المُقفَل\" لا يمكن مشاركتها.</item>
+        <item quantity="many">‏يمكنك مشاركة الصور والفيديوهات بسرعة على التطبيقات الاجتماعية من تطبيق \"كاميرا Google\". وتستطيع اختيار عدد من التطبيقات بحد أقصى %1$d تطبيقًا. يُرجى العِلم أنّ الصور والفيديوهات المحفوظة في \"المجلد المُقفَل\" لا يمكن مشاركتها.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">اختَر %1$d تطبيق كحد أقصى.</item>
+        <item quantity="zero">اختَر %1$d تطبيق كحد أقصى.</item>
+        <item quantity="one">اختَر تطبيقًا واحدًا (%1$d).</item>
+        <item quantity="two">اختَر تطبيقَين (%1$d) كحد أقصى.</item>
+        <item quantity="few">اختَر %1$d تطبيقات كحد أقصى.</item>
+        <item quantity="many">اختَر %1$d تطبيقًا كحد أقصى.</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s دقيقة فيديو</item>
+        <item quantity="zero">%s دقيقة فيديو</item>
+        <item quantity="one">دقيقة فيديو واحدة (%s)</item>
+        <item quantity="two">دقيقتا فيديو (%s)</item>
+        <item quantity="few">%s دقائق فيديو</item>
+        <item quantity="many">%s دقيقة فيديو</item>
+    </plurals>
+</resources>

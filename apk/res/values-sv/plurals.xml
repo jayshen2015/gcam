@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">%d gånger hastigheten för timelapse</item>
+        <item quantity="one">%d gång hastigheten för timelapse</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Fler än %1$d föremål.</item>
+        <item quantity="one">Fler än ett föremål.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d beskurna.</item>
+        <item quantity="one">Ett beskuret.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d bussar</item>
+        <item quantity="one">En buss</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d bilar</item>
+        <item quantity="one">En bil</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d katter</item>
+        <item quantity="one">En katt</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokument</item>
+        <item quantity="one">Ett dokument</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d hundar</item>
+        <item quantity="one">En hund</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d drycker</item>
+        <item quantity="one">En dryck</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektroniska enheter</item>
+        <item quantity="one">En elektronisk enhet</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d ansikten</item>
+        <item quantity="one">Ett ansikte</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d matvaror</item>
+        <item quantity="one">En matvara</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d husdjur</item>
+        <item quantity="one">Ett husdjur</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d lastbilar</item>
+        <item quantity="one">En lastbil</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s och %2$s på bilden.</item>
+        <item quantity="one">%2$s på bilden.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s och %2$s har beskurits.</item>
+        <item quantity="one">%2$s har beskurits.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Beskärs: %1$s och %2$s.</item>
+        <item quantity="one">Beskärs: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">I bild: %1$s och %2$s.</item>
+        <item quantity="one">I bild: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Cirka %s foton</item>
+        <item quantity="one">Cirka %s foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d appar har valts)</item>
+        <item quantity="one">(%1$d app har valts)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Dela snabbt foton och videor i sociala appar med Kamera. Välj upp till %1$d appar. Det går inte att dela foton och videor som har sparats i Låst mapp.</item>
+        <item quantity="one">Dela snabbt foton och videor i sociala appar med Kamera. Välj %1$d app. Det går inte att dela foton och videor som har sparats i Låst mapp.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Välj upp till %1$d appar</item>
+        <item quantity="one">Välj %1$d app</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minuter med videor</item>
+        <item quantity="one">%s minuter med video</item>
+    </plurals>
+</resources>

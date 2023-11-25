@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Nopeutettu kuva %d-kertainen nopeus</item>
+        <item quantity="one">Nopeutettu kuva %d-kertainen nopeus</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Yli %1$d kohdetta.</item>
+        <item quantity="one">Useita kohteita.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d rajattu.</item>
+        <item quantity="one">Yksi rajattu.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d bussia</item>
+        <item quantity="one">Yksi bussi</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d autoa</item>
+        <item quantity="one">Yksi auto</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d kissaa</item>
+        <item quantity="one">Yksi kissa</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d asiakirjaa</item>
+        <item quantity="one">Yksi asiakirja</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d koiraa</item>
+        <item quantity="one">Yksi koira</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d juomaa</item>
+        <item quantity="one">Yksi juoma</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d laitetta</item>
+        <item quantity="one">Yksi laite</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d kasvot</item>
+        <item quantity="one">Yhdet kasvot</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d ruokatuotetta</item>
+        <item quantity="one">Yksi ruokatuote</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d lemmikkiä</item>
+        <item quantity="one">Yksi lemmikki</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d rekka-autoa</item>
+        <item quantity="one">Yksi rekka-auto</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s ja %2$s kuvassa.</item>
+        <item quantity="one">%2$s kuvassa.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s ja %2$s rajattu.</item>
+        <item quantity="one">%2$s rajattu.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Rajattu: %1$s ja %2$s.</item>
+        <item quantity="one">Rajattu: %2$s</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Kehyksissä: %1$s ja %2$s.</item>
+        <item quantity="one">Kehyksissä: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Tietoja %s kuvasta</item>
+        <item quantity="one">Tietoja %s kuvasta</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d sovellusta valittu)</item>
+        <item quantity="one">(%1$d sovellus valittu)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Jaa kuvia ja videoita nopeasti some-sovelluksiin Kamerasta. Valitse enintään %1$d sovellusta. Lukittuun kansioon tallennettuja kuvia ja videoita ei voi jakaa.</item>
+        <item quantity="one">Jaa kuvia ja videoita nopeasti some-sovelluksiin Kamerasta. Valitse %1$d sovellus. Lukittuun kansioon tallennettuja kuvia ja videoita ei voi jakaa.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Valitse enintään %1$d sovellusta</item>
+        <item quantity="one">Valitse %1$d sovellus</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minuuttia videoita</item>
+        <item quantity="one">%s minuutti videoita</item>
+    </plurals>
+</resources>

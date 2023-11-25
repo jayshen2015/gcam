@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Snelheid van timelapse: %d keer</item>
+        <item quantity="one">Snelheid van timelapse: %d keer</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Meer dan %1$d objecten.</item>
+        <item quantity="one">Meer dan één object.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d bijgesneden.</item>
+        <item quantity="one">Eén bijgesneden.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d bussen</item>
+        <item quantity="one">Eén bus</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">"%d auto's"</item>
+        <item quantity="one">Eén auto</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d katten</item>
+        <item quantity="one">Eén kat</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d documenten</item>
+        <item quantity="one">Eén document</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d honden</item>
+        <item quantity="one">Eén hond</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d items om te drinken</item>
+        <item quantity="one">Eén item om te drinken</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektronische apparaten</item>
+        <item quantity="one">Eén elektronisch apparaat</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d gezichten</item>
+        <item quantity="one">Eén gezicht</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d voedselitems</item>
+        <item quantity="one">Eén voedselitem</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d huisdieren</item>
+        <item quantity="one">1 huisdier</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d vrachtwagens</item>
+        <item quantity="one">Eén vrachtwagen</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s en %2$s in beeld.</item>
+        <item quantity="one">%2$s in beeld.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s en %2$s afgekapt.</item>
+        <item quantity="one">%2$s afgekapt.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Bijgesneden: %1$s en %2$s.</item>
+        <item quantity="one">Bijgesneden: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">In beeld: %1$s en %2$s.</item>
+        <item quantity="one">In beeld: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">"Ongeveer %s foto's"</item>
+        <item quantity="one">Ongeveer %s foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d apps geselecteerd)</item>
+        <item quantity="one">(%1$d app geselecteerd)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">"Je kunt vanuit Camera snel foto's en video's delen in sociale apps. Kies maximaal %1$d apps. Foto's en video's die zijn opgeslagen in de Vergrendelde map, kunnen niet worden gedeeld."</item>
+        <item quantity="one">"Je kunt vanuit Camera snel foto's en video's delen in sociale apps. Kies %1$d app. Foto's en video's die zijn opgeslagen in de Vergrendelde map, kunnen niet worden gedeeld."</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Kies maximaal %1$d apps</item>
+        <item quantity="one">Kies %1$d app</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">"%s minuten aan video's"</item>
+        <item quantity="one">"%s minuut aan video's"</item>
+    </plurals>
+</resources>

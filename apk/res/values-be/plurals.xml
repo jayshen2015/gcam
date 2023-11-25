@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Хуткасць пакадравай здымкі %dх</item>
+        <item quantity="one">Хуткасць пакадравай здымкі %dх</item>
+        <item quantity="few">Хуткасць пакадравай здымкі %dх</item>
+        <item quantity="many">Хуткасць пакадравай здымкі %dх</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">"Больш чым %1$d аб'екта."</item>
+        <item quantity="one">"Больш чым %1$d аб'ект."</item>
+        <item quantity="few">"Больш чым %1$d аб'екты."</item>
+        <item quantity="many">"Больш чым %1$d аб'ектаў."</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d абрэзана.</item>
+        <item quantity="one">%d абрэзаны.</item>
+        <item quantity="few">%d абрэзана.</item>
+        <item quantity="many">%d абрэзана.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d аўтобуса</item>
+        <item quantity="one">%d аўтобус</item>
+        <item quantity="few">%d аўтобусы</item>
+        <item quantity="many">%d аўтобусаў</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d аўтамабіля</item>
+        <item quantity="one">%d аўтамабіль</item>
+        <item quantity="few">%d аўтамабілі</item>
+        <item quantity="many">%d аўтамабіляў</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d ката</item>
+        <item quantity="one">%d кот</item>
+        <item quantity="few">%d каты</item>
+        <item quantity="many">%d катоў</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d дакумента</item>
+        <item quantity="one">%d дакумент</item>
+        <item quantity="few">%d дакументы</item>
+        <item quantity="many">%d дакументаў</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d сабакі</item>
+        <item quantity="one">%d сабака</item>
+        <item quantity="few">%d сабакі</item>
+        <item quantity="many">%d сабак</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d напітку</item>
+        <item quantity="one">%d напітак</item>
+        <item quantity="few">%d напіткі</item>
+        <item quantity="many">%d напіткаў</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d электроннай прылады</item>
+        <item quantity="one">%d электронная прылада</item>
+        <item quantity="few">%d электронныя прылады</item>
+        <item quantity="many">%d электронных прылад</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d твару</item>
+        <item quantity="one">%d твар</item>
+        <item quantity="few">%d твары</item>
+        <item quantity="many">%d твараў</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d харчовага прадукту</item>
+        <item quantity="one">%d харчовы прадукт</item>
+        <item quantity="few">%d харчовыя прадукты</item>
+        <item quantity="many">%d харчовых прадуктаў</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d дамашняга гадаванца</item>
+        <item quantity="one">%d дамашні гадаванец</item>
+        <item quantity="few">%d дамашнія гадаванцы</item>
+        <item quantity="many">%d дамашніх гадаванцаў</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d грузавіка</item>
+        <item quantity="one">%d грузавік</item>
+        <item quantity="few">%d грузавікі</item>
+        <item quantity="many">%d грузавікоў</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">У кадры %1$s і %2$s.</item>
+        <item quantity="one">У кадры %1$s і %2$s.</item>
+        <item quantity="few">У кадры %1$s і %2$s.</item>
+        <item quantity="many">У кадры %1$s і %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Часткова ў кадры %1$s і %2$s.</item>
+        <item quantity="one">Часткова ў кадры %1$s і %2$s.</item>
+        <item quantity="few">Часткова ў кадры %1$s і %2$s.</item>
+        <item quantity="many">Часткова ў кадры %1$s і %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Абрэзана: %1$s, %2$s.</item>
+        <item quantity="one">Абрэзана: %1$s, %2$s.</item>
+        <item quantity="few">Абрэзана: %1$s, %2$s.</item>
+        <item quantity="many">Абрэзана: %1$s, %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">У кадры: %1$s, %2$s.</item>
+        <item quantity="one">У кадры: %1$s, %2$s.</item>
+        <item quantity="few">У кадры: %1$s, %2$s.</item>
+        <item quantity="many">У кадры: %1$s, %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Інфармацыя пра %s фота</item>
+        <item quantity="one">Інфармацыя пра %s фота</item>
+        <item quantity="few">Інфармацыя пра %s фота</item>
+        <item quantity="many">Інфармацыя пра %s фота</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(Выбраны %1$d праграмы)</item>
+        <item quantity="one">(Выбрана %1$d праграма)</item>
+        <item quantity="few">(Выбраны %1$d праграмы)</item>
+        <item quantity="many">(Выбраны %1$d праграм)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграмы. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
+        <item quantity="one">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграму. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
+        <item quantity="few">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграмы. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
+        <item quantity="many">Абагульвайце ў сацыяльных сетках фота і відэа прама з Камеры. Выберыце не больш як %1$d праграм. Фота і відэа, захаваныя ў закрытай папцы, не будуць абагульвацца.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Выберыце не больш як %1$d сацыяльнай сеткі</item>
+        <item quantity="one">Выберыце не больш як %1$d сацыяльную сетку</item>
+        <item quantity="few">Выберыце не больш як %1$d сацыяльныя сеткі</item>
+        <item quantity="many">Выберыце не больш як %1$d сацыяльных сетак</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s хвіліны відэа</item>
+        <item quantity="one">%s хвіліна відэа</item>
+        <item quantity="few">%s хвіліны відэа</item>
+        <item quantity="many">%s хвілін відэа</item>
+    </plurals>
+</resources>

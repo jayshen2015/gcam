@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Time Lapse %d times speed</item>
+        <item quantity="one">Time Lapse %d time speed</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">More than %1$d objects.</item>
+        <item quantity="one">More than one object.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d cropped.</item>
+        <item quantity="one">One cropped.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d buses</item>
+        <item quantity="one">One bus</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d cars</item>
+        <item quantity="one">One car</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d cats</item>
+        <item quantity="one">One cat</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d documents</item>
+        <item quantity="one">One document</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d dogs</item>
+        <item quantity="one">One dog</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d drinks</item>
+        <item quantity="one">One drink</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d electronic devices</item>
+        <item quantity="one">One electronic device</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d faces</item>
+        <item quantity="one">One face</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d food items</item>
+        <item quantity="one">One food item</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d pets</item>
+        <item quantity="one">One pet</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d trucks</item>
+        <item quantity="one">One truck</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s and %2$s in frame.</item>
+        <item quantity="one">%2$s in frame.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s and %2$s cropped.</item>
+        <item quantity="one">%2$s cropped.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Cropped: %1$s and %2$s.</item>
+        <item quantity="one">Cropped: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">In frame: %1$s and %2$s.</item>
+        <item quantity="one">In frame: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">About %s photos</item>
+        <item quantity="one">About %s photo</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d apps selected)</item>
+        <item quantity="zero">(%1$d apps selected)</item>
+        <item quantity="one">(%1$d app selected)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">"Quickly share photos and videos on social apps from Camera. Choose up to %1$d apps. Photos and videos saved to Locked Folder can't be shared."</item>
+        <item quantity="one">"Quickly share photos and videos on social apps from Camera. Choose %1$d app. Photos and videos saved to Locked Folder can't be shared."</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Choose up to %1$d apps</item>
+        <item quantity="one">Choose %1$d app</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minutes of videos</item>
+        <item quantity="one">%s minute of videos</item>
+    </plurals>
+</resources>

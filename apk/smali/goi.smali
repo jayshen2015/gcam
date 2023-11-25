@@ -1,0 +1,61 @@
+.class public final Lgoi;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lqys;
+
+
+# instance fields
+.field private final a:Lrbe;
+
+
+# direct methods
+.method public constructor <init>(Lrbe;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lgoi;->a:Lrbe;
+
+    return-void
+.end method
+
+.method public static a(Lrbe;)Lgoi;
+    .locals 1
+
+    new-instance v0, Lgoi;
+
+    invoke-direct {v0, p0}, Lgoi;-><init>(Lrbe;)V
+
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final b()Lgfw;
+    .locals 2
+
+    iget-object v0, p0, Lgoi;->a:Lrbe;
+
+    check-cast v0, Lify;
+
+    invoke-virtual {v0}, Lify;->a()Landroid/util/DisplayMetrics;
+
+    move-result-object v0
+
+    new-instance v1, Lgfw;
+
+    invoke-direct {v1, v0}, Lgfw;-><init>(Ljava/lang/Object;)V
+
+    return-object v1
+.end method
+
+.method public final bridge synthetic get()Ljava/lang/Object;
+    .locals 1
+
+    invoke-virtual {p0}, Lgoi;->b()Lgfw;
+
+    move-result-object v0
+
+    return-object v0
+.end method

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Časosběr, %d rychlost</item>
+        <item quantity="one">Časosběr, %d rychlost</item>
+        <item quantity="few">Časosběr, %d rychlost</item>
+        <item quantity="many">Časosběr, %d rychlost</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Více než %1$d objektů.</item>
+        <item quantity="one">Více než jeden objekt.</item>
+        <item quantity="few">Více než %1$d objekty.</item>
+        <item quantity="many">Více než %1$d objektu.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d oříznutých.</item>
+        <item quantity="one">1 oříznutý.</item>
+        <item quantity="few">%d oříznuté.</item>
+        <item quantity="many">%d oříznutého.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autobusů</item>
+        <item quantity="one">Jeden autobus</item>
+        <item quantity="few">%d autobusy</item>
+        <item quantity="many">%d autobusu</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d aut</item>
+        <item quantity="one">Jedno auto</item>
+        <item quantity="few">%d auta</item>
+        <item quantity="many">%d auta</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d koček</item>
+        <item quantity="one">Jedna kočka</item>
+        <item quantity="few">%d kočky</item>
+        <item quantity="many">%d kočky</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumentů</item>
+        <item quantity="one">Jeden dokument</item>
+        <item quantity="few">%d dokumenty</item>
+        <item quantity="many">%d dokumentu</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d psů</item>
+        <item quantity="one">Jeden pes</item>
+        <item quantity="few">%d psi</item>
+        <item quantity="many">%d psa</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d nápojů</item>
+        <item quantity="one">Jeden nápoj</item>
+        <item quantity="few">%d nápoje</item>
+        <item quantity="many">%d nápoje</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektronických zařízení</item>
+        <item quantity="one">Jedno elektronické zařízení</item>
+        <item quantity="few">%d elektronická zařízení</item>
+        <item quantity="many">%d elektronického zařízení</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d obličejů</item>
+        <item quantity="one">Jeden obličej</item>
+        <item quantity="few">%d obličeje</item>
+        <item quantity="many">%d obličeje</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d potravin</item>
+        <item quantity="one">Jedna potravina</item>
+        <item quantity="few">%d potraviny</item>
+        <item quantity="many">%d potraviny</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d domácích mazlíčků</item>
+        <item quantity="one">Jeden domácí mazlíček</item>
+        <item quantity="few">%d domácí mazlíčci</item>
+        <item quantity="many">%d domácího mazlíčka</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d kamionů</item>
+        <item quantity="one">Jeden kamion</item>
+        <item quantity="few">%d kamiony</item>
+        <item quantity="many">%d kamionu</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s a %2$s v záběru.</item>
+        <item quantity="one">%2$s v záběru.</item>
+        <item quantity="few">%1$s a %2$s v záběru.</item>
+        <item quantity="many">%1$s a %2$s v záběru.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Oříznuto: %1$s a %2$s.</item>
+        <item quantity="one">Oříznuto: %2$s.</item>
+        <item quantity="few">Oříznuto: %1$s a %2$s.</item>
+        <item quantity="many">Oříznuto: %1$s a %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Oříznuto: %1$s a %2$s.</item>
+        <item quantity="one">Oříznuto: %2$s</item>
+        <item quantity="few">Oříznuto: %1$s a %2$s.</item>
+        <item quantity="many">Oříznuto: %1$s a %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">V záběru: %1$s a %2$s.</item>
+        <item quantity="one">V záběru: %2$s.</item>
+        <item quantity="few">V záběru: %1$s a %2$s.</item>
+        <item quantity="many">V záběru: %1$s a %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Přibližně %s fotek</item>
+        <item quantity="one">Přibližně %s fotka</item>
+        <item quantity="few">Přibližně %s fotky</item>
+        <item quantity="many">Přibližně %s fotky</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(vybráno %1$d aplikací)</item>
+        <item quantity="one">(vybrána %1$d aplikace)</item>
+        <item quantity="few">(vybrány %1$d aplikace)</item>
+        <item quantity="many">(vybráno %1$d aplikace)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikací. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="one">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte %1$d aplikaci. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="few">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikace. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+        <item quantity="many">Rychle sdílejte fotky a videa z Fotoaparátu v sociálních aplikacích. Vyberte si až %1$d aplikace. Fotky a videa uložené v uzamčené složce nelze sdílet.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Vyberte si až %1$d aplikací</item>
+        <item quantity="one">Vyberte si %1$d aplikaci</item>
+        <item quantity="few">Vyberte si až %1$d aplikace</item>
+        <item quantity="many">Vyberte si až %1$d aplikace</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minut videa</item>
+        <item quantity="one">%s minuta videa</item>
+        <item quantity="few">%s minuty videa</item>
+        <item quantity="many">%s minuty videa</item>
+    </plurals>
+</resources>

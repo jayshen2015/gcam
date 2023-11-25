@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">A time-lapse sebessége ennyiszer gyorsabb: %d</item>
+        <item quantity="one">A time-lapse sebessége ennyiszer gyorsabb: %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Több mint %1$d tárgy.</item>
+        <item quantity="one">Több mint egy tárgy.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d körbevágva.</item>
+        <item quantity="one">1 körbevágva.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d busz</item>
+        <item quantity="one">Egy busz</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d autó</item>
+        <item quantity="one">Egy autó</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d macska</item>
+        <item quantity="one">Egy macska</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d dokumentum</item>
+        <item quantity="one">Egy dokumentum</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d kutya</item>
+        <item quantity="one">Egy kutya</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d ital</item>
+        <item quantity="one">Egy ital</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d elektronikai eszköz</item>
+        <item quantity="one">Egy elektronikai eszköz</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d arc</item>
+        <item quantity="one">Egy arc</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d étel</item>
+        <item quantity="one">Egy étel</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d kisállat</item>
+        <item quantity="one">Egy kisállat</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d teherautó</item>
+        <item quantity="one">Egy teherautó</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s és %2$s van a keretben.</item>
+        <item quantity="one">%2$s van a keretben.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s és %2$s körbe van vágva.</item>
+        <item quantity="one">%2$s körbe van vágva.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Körbevágva: %1$s és %2$s.</item>
+        <item quantity="one">Körbevágva: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">%1$s és %2$s van a keretben.</item>
+        <item quantity="one">%2$s van a keretben.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Körülbelül %s fotó</item>
+        <item quantity="one">Körülbelül %s fotó</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d alkalmazás kiválasztva)</item>
+        <item quantity="one">(%1$d alkalmazás kiválasztva)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Gyorsan megoszthat fotókat és videókat a közösségi alkalmazásokban a Fényképezőgépből. Legfeljebb %1$d alkalmazást választhat. A Zárolt mappába mentett fotók és videók nem oszthatók meg.</item>
+        <item quantity="one">Gyorsan megoszthat fotókat és videókat a közösségi alkalmazásokban a Fényképezőgépből. Legfeljebb %1$d alkalmazást választhat. A Zárolt mappába mentett fotók és videók nem oszthatók meg.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Legfeljebb %1$d alkalmazást választhat ki</item>
+        <item quantity="one">%1$d alkalmazást választhat ki</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s percnyi videó</item>
+        <item quantity="one">%s percnyi videó</item>
+    </plurals>
+</resources>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">La velocitat de la filmació a intervals és de %d</item>
+        <item quantity="one">La velocitat de la filmació a intervals és de %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Més de %1$d objectes.</item>
+        <item quantity="one">"Més d'un objecte."</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">"%d s'han retallat."</item>
+        <item quantity="one">"S'ha retallat un."</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d autobusos</item>
+        <item quantity="one">Un autobús</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d cotxes</item>
+        <item quantity="one">Un cotxe</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d gats</item>
+        <item quantity="one">Un gat</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d documents</item>
+        <item quantity="one">Un document</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d gossos</item>
+        <item quantity="one">Un gos</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d begudes</item>
+        <item quantity="one">Una beguda</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d dispositius electrònics</item>
+        <item quantity="one">Un dispositiu electrònic</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d cares</item>
+        <item quantity="one">Una cara</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d aliments</item>
+        <item quantity="one">Un aliment</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d animals de companyia</item>
+        <item quantity="one">Un animal de companyia</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d camions</item>
+        <item quantity="one">Un camió</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s i %2$s dins del marc.</item>
+        <item quantity="one">%2$s dins del marc.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">"%1$s i %2$s s'han retallat."</item>
+        <item quantity="one">"%2$s s'ha retallat."</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Retallat: %1$s i %2$s.</item>
+        <item quantity="one">Retallat: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Dins del marc: %1$s i %2$s.</item>
+        <item quantity="one">Dins del marc: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Informació sobre %s fotos</item>
+        <item quantity="one">Informació sobre %s foto</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d aplicacions seleccionades)</item>
+        <item quantity="one">(%1$d aplicació seleccionada)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Comparteix ràpidament fotos i vídeos en aplicacions socials des de Càmera. Tria fins a %1$d aplicacions. Les fotos i els vídeos desats a Carpeta bloquejada no es poden compartir.</item>
+        <item quantity="one">Comparteix ràpidament fotos i vídeos en aplicacions socials des de Càmera. Tria %1$d aplicació. Les fotos i els vídeos desats a Carpeta bloquejada no es poden compartir.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Tria fins a %1$d aplicacions</item>
+        <item quantity="one">Tria %1$d aplicació</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s minuts de vídeo</item>
+        <item quantity="one">%s minut de vídeo</item>
+    </plurals>
+</resources>

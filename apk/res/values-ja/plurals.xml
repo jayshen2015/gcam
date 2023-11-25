@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">タイムラプス: %d 倍速</item>
+        <item quantity="one">タイムラプス: %d 倍速</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">被写体が %1$d 以上あります。</item>
+        <item quantity="one">被写体が複数あります。</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d 件切り抜きました。</item>
+        <item quantity="one">1 件切り抜きました。</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">バス %d 台</item>
+        <item quantity="one">バス 1 台</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">車 %d 台</item>
+        <item quantity="one">車 1 台</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">猫 %d 頭</item>
+        <item quantity="one">猫 1 頭</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">ドキュメント %d 件</item>
+        <item quantity="one">ドキュメント 1 件</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">犬 %d 頭</item>
+        <item quantity="one">犬 1 頭</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">飲み物 %d 個</item>
+        <item quantity="one">飲み物 1 個</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">電子機器 %d 個</item>
+        <item quantity="one">電子機器 1 個</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">顔 %d 個。</item>
+        <item quantity="one">顔 1 個。</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">食品 %d 個</item>
+        <item quantity="one">食品 1 個</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d 匹のペット</item>
+        <item quantity="one">1 匹のペット</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">トラック %d 台</item>
+        <item quantity="one">トラック 1 台</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$sおよび%2$sがフレームに入っています。</item>
+        <item quantity="one">%2$sがフレームに入っています。</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$sおよび%2$sを切り抜きました。</item>
+        <item quantity="one">%2$sを切り抜きました。</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">切り抜きました: %1$s と %2$s。</item>
+        <item quantity="one">切り抜きました: %2$s。</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">フレームに入っています: %1$s と %2$s。</item>
+        <item quantity="one">フレームに入っています: %2$s。</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">写真: 約 %s 枚</item>
+        <item quantity="one">写真: 約 %s 枚</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">（%1$d 個のアプリを選択済み）</item>
+        <item quantity="one">（%1$d 個のアプリを選択済み）</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">ソーシャル アプリに掲載する写真や動画をカメラからすぐに共有できます。選択できるアプリは %1$d 個までです。ロックされたフォルダに保存されている写真や動画は共有できません。</item>
+        <item quantity="one">ソーシャル アプリに掲載する写真や動画をカメラからすぐに共有できます。選択できるアプリは %1$d 個です。ロックされたフォルダに保存されている写真や動画は共有できません。</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">選択できるアプリは %1$d 個までです</item>
+        <item quantity="one">選択できるアプリは %1$d 個です</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">動画: %s 分</item>
+        <item quantity="one">動画: %s 分</item>
+    </plurals>
+</resources>

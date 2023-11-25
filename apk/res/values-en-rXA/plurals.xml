@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">[Ţîmé Ļåþšé ᐅ%dᐊ ţîméš šþééð one two three four five six]</item>
+        <item quantity="one">[Ţîmé Ļåþšé ᐅ%dᐊ ţîmé šþééð one two three four five six]</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">[Möŕé ţĥåñ ᐅ%1$dᐊ öбĵéçţš. one two three four five]</item>
+        <item quantity="one">[Möŕé ţĥåñ öñé öбĵéçţ. one two three four five]</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">[ᐅ%dᐊ çŕöþþéð. one two three]</item>
+        <item quantity="one">[Öñé çŕöþþéð. one two]</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">[ᐅ%dᐊ бûšéš one two three]</item>
+        <item quantity="one">[Öñé бûš one]</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">[ᐅ%dᐊ çåŕš one two]</item>
+        <item quantity="one">[Öñé çåŕ one]</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">[ᐅ%dᐊ çåţš one two]</item>
+        <item quantity="one">[Öñé çåţ one]</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">[ᐅ%dᐊ ðöçûméñţš one two three]</item>
+        <item quantity="one">[Öñé ðöçûméñţ one two]</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">[ᐅ%dᐊ ðöĝš one two]</item>
+        <item quantity="one">[Öñé ðöĝ one]</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">[ᐅ%dᐊ ðŕîñķš one two three]</item>
+        <item quantity="one">[Öñé ðŕîñķ one two]</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">[ᐅ%dᐊ éļéçţŕöñîç ðévîçéš one two three four five]</item>
+        <item quantity="one">[Öñé éļéçţŕöñîç ðévîçé one two three]</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">[ᐅ%dᐊ ƒåçéš one two three]</item>
+        <item quantity="one">[Öñé ƒåçé one]</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">[ᐅ%dᐊ ƒööð îţémš one two three]</item>
+        <item quantity="one">[Öñé ƒööð îţém one two]</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">[ᐅ%dᐊ þéţš one two]</item>
+        <item quantity="one">[Öñé þéţ one]</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">[ᐅ%dᐊ ţŕûçķš one two three]</item>
+        <item quantity="one">[Öñé ţŕûçķ one two]</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">[ᐅ%1$sᐊ åñð ᐅ%2$sᐊ îñ ƒŕåmé. one two three four five]</item>
+        <item quantity="one">[ᐅ%2$sᐊ îñ ƒŕåmé. one two three]</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">[ᐅ%1$sᐊ åñð ᐅ%2$sᐊ çŕöþþéð. one two three four five]</item>
+        <item quantity="one">[ᐅ%2$sᐊ çŕöþþéð. one two three]</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">[Çŕöþþéð: ᐅ%1$sᐊ åñð ᐅ%2$sᐊ. one two three four five]</item>
+        <item quantity="one">[Çŕöþþéð: ᐅ%2$sᐊ. one two three]</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">[Îñ ƒŕåmé: ᐅ%1$sᐊ åñð ᐅ%2$sᐊ. one two three four five]</item>
+        <item quantity="one">[Îñ ƒŕåmé: ᐅ%2$sᐊ. one two three]</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">[Åбöûţ ᐅ%sᐊ þĥöţöš one two three four]</item>
+        <item quantity="one">[Åбöûţ ᐅ%sᐊ þĥöţö one two three four]</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">[(ᐅ%1$dᐊ åþþš šéļéçţéð) one two three four]</item>
+        <item quantity="one">[(ᐅ%1$dᐊ åþþ šéļéçţéð) one two three four]</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">"[Qûîçķļý šĥåŕé þĥöţöš åñð vîðéöš öñ šöçîåļ åþþš ƒŕöm Çåméŕå. Çĥööšé ûþ ţö ᐅ%1$dᐊ åþþš. Þĥöţöš åñð vîðéöš šåvéð ţö Ļöçķéð Föļðéŕ çåñ'ţ бé šĥåŕéð. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone]"</item>
+        <item quantity="one">"[Qûîçķļý šĥåŕé þĥöţöš åñð vîðéöš öñ šöçîåļ åþþš ƒŕöm Çåméŕå. Çĥööšé ᐅ%1$dᐊ åþþ. Þĥöţöš åñð vîðéöš šåvéð ţö Ļöçķéð Föļðéŕ çåñ'ţ бé šĥåŕéð. one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty twentyone]"</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">[Çĥööšé ûþ ţö ᐅ%1$dᐊ åþþš one two three four five]</item>
+        <item quantity="one">[Çĥööšé ᐅ%1$dᐊ åþþ one two three]</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">[ᐅ%sᐊ mîñûţéš öƒ vîðéöš one two three four five]</item>
+        <item quantity="one">[ᐅ%sᐊ mîñûţé öƒ vîðéöš one two three four five]</item>
+    </plurals>
+</resources>

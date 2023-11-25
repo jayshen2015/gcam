@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">টাইম ল্যাপ্স %d গুণ স্পিড</item>
+        <item quantity="one">টাইম ল্যাপ্স %d গুণ স্পিড</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$dটির বেশি অবজেক্ট।</item>
+        <item quantity="one">%1$dটির বেশি অবজেক্ট।</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%dটি ক্রপ করা হয়েছে।</item>
+        <item quantity="one">%dটি ক্রপ করা হয়েছে।</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%dটি বাস</item>
+        <item quantity="one">%dটি বাস</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%dটি গাড়ি</item>
+        <item quantity="one">%dটি গাড়ি</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%dটি বিড়াল</item>
+        <item quantity="one">%dটি বিড়াল</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%dটি ডকুমেন্ট</item>
+        <item quantity="one">%dটি ডকুমেন্ট</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%dটি কুকুর</item>
+        <item quantity="one">%dটি কুকুর</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%dটি পানীয়</item>
+        <item quantity="one">%dটি পানীয়</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%dটি ইলেকট্রনিক ডিভাইস</item>
+        <item quantity="one">%dটি ইলেকট্রনিক ডিভাইস</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%dটি মুখ</item>
+        <item quantity="one">%dটি মুখ</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">খাবারের %dটি আইটেম</item>
+        <item quantity="one">খাবারের %dটি আইটেম</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%dটি পোষা প্রাণী</item>
+        <item quantity="one">%dটি পোষা প্রাণী</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%dটি ট্রাক</item>
+        <item quantity="one">%dটি ট্রাক</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">ফ্রেমে %1$s এবং %2$s।</item>
+        <item quantity="one">ফ্রেমে %1$s এবং %2$s।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s এবং %2$sটি ক্রপ করা হয়েছে।</item>
+        <item quantity="one">%1$s এবং %2$sটি ক্রপ করা হয়েছে।</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">ক্রপ করা হয়েছে: %1$s ও %2$s।</item>
+        <item quantity="one">ক্রপ করা হয়েছে: %1$s ও %2$s।</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">ফ্রেমে: %1$s ও %2$s।</item>
+        <item quantity="one">ফ্রেমে: %1$s ও %2$s।</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">প্রায় %sটি ফটো তোলা যাবে</item>
+        <item quantity="one">প্রায় %sটি ফটো তোলা যাবে</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$dটি অ্যাপ বেছে নেওয়া হয়েছে)</item>
+        <item quantity="one">(%1$dটি অ্যাপ বেছে নেওয়া হয়েছে)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">"ক্যামেরা থেকে সামাজিক অ্যাপে ফটো ও ভিডিও ঝটপট শেয়ার করুন। সর্বাধিক %1$dটি অ্যাপ বেছে নিন। 'লক করা ফোল্ডারে' সেভ থাকা ফটো ও ভিডিও শেয়ার করা যাবে না।"</item>
+        <item quantity="one">"ক্যামেরা থেকে সামাজিক অ্যাপে ফটো ও ভিডিও ঝটপট শেয়ার করুন। সর্বাধিক %1$dটি অ্যাপ বেছে নিন। 'লক করা ফোল্ডারে' সেভ থাকা ফটো ও ভিডিও শেয়ার করা যাবে না।"</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">সর্বাধিক %1$dটি অ্যাপ বেছে নিন</item>
+        <item quantity="one">সর্বাধিক %1$dটি অ্যাপ বেছে নিন</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s মিনিটের ভিডিও ক্যাপচার করা যাবে</item>
+        <item quantity="one">%s মিনিটের ভিডিও ক্যাপচার করা যাবে</item>
+    </plurals>
+</resources>

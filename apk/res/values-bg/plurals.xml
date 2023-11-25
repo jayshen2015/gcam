@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">%d пъти скоростта на цайтрафера</item>
+        <item quantity="one">%d път скоростта на цайтрафера</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Повече от %1$d обекта.</item>
+        <item quantity="one">Повече от един обект.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">Подрязани са %d.</item>
+        <item quantity="one">Подрязано е едно.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d автобуса</item>
+        <item quantity="one">Един автобус</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d автомобила</item>
+        <item quantity="one">Един автомобил</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d котки</item>
+        <item quantity="one">Една котка</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d документа</item>
+        <item quantity="one">Един документ</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d кучета</item>
+        <item quantity="one">Едно куче</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d напитки</item>
+        <item quantity="one">Една напитка</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d електронни устройства</item>
+        <item quantity="one">Едно електронно устройство</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d лица</item>
+        <item quantity="one">Едно лице</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d хранителни продукта</item>
+        <item quantity="one">Един хранителен продукт</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d домашни любимци</item>
+        <item quantity="one">Един домашен любимец</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d камиона</item>
+        <item quantity="one">Един камион</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">В кадър: %1$s и %2$s.</item>
+        <item quantity="one">В кадър: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Подрязохте %1$s и %2$s.</item>
+        <item quantity="one">Подрязохте %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Подрязани: %1$s и %2$s.</item>
+        <item quantity="one">Подрязани: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">В кадър: %1$s и %2$s.</item>
+        <item quantity="one">В кадър: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Около %s снимка</item>
+        <item quantity="one">Около %s снимка</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(избрани са %1$d приложения)</item>
+        <item quantity="one">(избрано е %1$d приложение)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Бързо споделяйте в социалните приложения снимки и видеоклипове от Камера. Изберете до %1$d приложения. Не могат да се споделят снимки и видеоклипове, запазени в заключена папка.</item>
+        <item quantity="one">Бързо споделяйте в социалните приложения снимки и видеоклипове от Камера. Изберете %1$d приложение. Не могат да се споделят снимки и видеоклипове, запазени в заключена папка.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Изберете до %1$d приложения</item>
+        <item quantity="one">Изберете %1$d приложение</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">Видеоклипове с продължителност %s минути</item>
+        <item quantity="one">Видеоклипове с продължителност%s минута</item>
+    </plurals>
+</resources>

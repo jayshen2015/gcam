@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Hraði hraðmyndar: %dx</item>
+        <item quantity="one">Hraði hraðmyndar: %dx</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">Fleiri en %1$d hlutir.</item>
+        <item quantity="one">Fleiri en %1$d hlutur.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d skorin.</item>
+        <item quantity="one">%d skorið.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d rútur</item>
+        <item quantity="one">%d rúta</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d bílar</item>
+        <item quantity="one">%d bíll</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d kettir</item>
+        <item quantity="one">%d köttur</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d skjöl</item>
+        <item quantity="one">%d skjal</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d hundar</item>
+        <item quantity="one">%d hundur</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d drykkir</item>
+        <item quantity="one">%d drykkur</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d raftæki</item>
+        <item quantity="one">%d raftæki</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d andlit.</item>
+        <item quantity="one">%d andlit.</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d matvörur</item>
+        <item quantity="one">%d matvara</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d gæludýr</item>
+        <item quantity="one">%d gæludýr</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d vörubílar</item>
+        <item quantity="one">%d vörubíll</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">%1$s og %2$s í ramma.</item>
+        <item quantity="one">%1$s og %2$s í ramma.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">Skorin mynd af %1$s og %2$s.</item>
+        <item quantity="one">Skorin mynd af %1$s og %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Skorin mynd: %1$s og %2$s.</item>
+        <item quantity="one">Skorin mynd: %1$s og %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Í ramma: %1$s og %2$s.</item>
+        <item quantity="one">Í ramma: %1$s og %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">Um það bil %s myndir</item>
+        <item quantity="one">Um það bil %s mynd</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d forrit valin)</item>
+        <item quantity="one">(%1$d forrit valið)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Deildu myndum og myndskeiðum á fljótlegan hátt í samfélagsforritum úr myndavélinni. Veldu allt að %1$d forrit. Ekki er hægt að deila myndum og myndskeiðum sem eru vistuð í læstri möppu.</item>
+        <item quantity="one">Deildu myndum og myndskeiðum á fljótlegan hátt í samfélagsforritum úr myndavélinni. Veldu allt að %1$d forrit. Ekki er hægt að deila myndum og myndskeiðum sem eru vistuð í læstri möppu.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">Veldu allt að %1$d forrit</item>
+        <item quantity="one">Veldu allt að %1$d forrit</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">%s mínútur af myndskeiðum</item>
+        <item quantity="one">%s mínúta af myndskeiðum</item>
+    </plurals>
+</resources>

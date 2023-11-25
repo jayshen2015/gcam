@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="accessibility_timelapse_manual_record_speed_desc">
+        <item quantity="other">Time Lapse ылдамдыгы: %d</item>
+        <item quantity="one">Time Lapse ылдамдыгы: %d</item>
+    </plurals>
+    <plurals name="more_than_max_objects_announcement">
+        <item quantity="other">%1$d объекттен көбүрөөк.</item>
+        <item quantity="one">Бир объекттен көбүрөөк.</item>
+    </plurals>
+    <plurals name="number_of_cropped_face">
+        <item quantity="other">%d кесилди.</item>
+        <item quantity="one">Бири кесилди.</item>
+    </plurals>
+    <plurals name="number_of_object_bus">
+        <item quantity="other">%d автобус</item>
+        <item quantity="one">Бир автобус</item>
+    </plurals>
+    <plurals name="number_of_object_car">
+        <item quantity="other">%d унаа</item>
+        <item quantity="one">Бир унаа</item>
+    </plurals>
+    <plurals name="number_of_object_cat">
+        <item quantity="other">%d мышык</item>
+        <item quantity="one">Бир мышык</item>
+    </plurals>
+    <plurals name="number_of_object_document">
+        <item quantity="other">%d документ</item>
+        <item quantity="one">Бир документ</item>
+    </plurals>
+    <plurals name="number_of_object_dog">
+        <item quantity="other">%d ит</item>
+        <item quantity="one">Бир ит</item>
+    </plurals>
+    <plurals name="number_of_object_drink">
+        <item quantity="other">%d суусундук</item>
+        <item quantity="one">Бир суусундук</item>
+    </plurals>
+    <plurals name="number_of_object_electronic_group">
+        <item quantity="other">%d электрондук түзмөк</item>
+        <item quantity="one">Бир электрондук түзмөк</item>
+    </plurals>
+    <plurals name="number_of_object_face">
+        <item quantity="other">%d адамдын жүзү</item>
+        <item quantity="one">Бир адамдын жүзү</item>
+    </plurals>
+    <plurals name="number_of_object_food">
+        <item quantity="other">%d азык</item>
+        <item quantity="one">Бир азык</item>
+    </plurals>
+    <plurals name="number_of_object_pet">
+        <item quantity="other">%d үй жаныбары</item>
+        <item quantity="one">Бир үй жаныбары</item>
+    </plurals>
+    <plurals name="number_of_object_truck">
+        <item quantity="other">%d жүк ташуучу унаа</item>
+        <item quantity="one">Бир жүк ташуучу унаа</item>
+    </plurals>
+    <plurals name="objects_summary">
+        <item quantity="other">Алкакта %1$s жана %2$s.</item>
+        <item quantity="one">Алкакта %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped">
+        <item quantity="other">%1$s жана %2$s кесилди.</item>
+        <item quantity="one">%2$s кесилди.</item>
+    </plurals>
+    <plurals name="objects_summary_cropped_in_back">
+        <item quantity="other">Кесилди: %1$s жана %2$s.</item>
+        <item quantity="one">Кесилди: %2$s.</item>
+    </plurals>
+    <plurals name="objects_summary_in_back">
+        <item quantity="other">Кадрда: %1$s жана %2$s.</item>
+        <item quantity="one">Кадрда: %2$s.</item>
+    </plurals>
+    <plurals name="photos_remaining">
+        <item quantity="other">%s сүрөт жөнүндө маалымат</item>
+        <item quantity="one">%s сүрөт жөнүндө маалымат</item>
+    </plurals>
+    <plurals name="social_apps_selected">
+        <item quantity="other">(%1$d колдонмо тандалды)</item>
+        <item quantity="one">(%1$d колдонмо тандалды)</item>
+    </plurals>
+    <plurals name="social_share_info">
+        <item quantity="other">Сүрөттөр менен видеолоруңузду коомдук тармактарга Камерадан бөлүшөсүз. %1$d колдонмого чейин тандасаңыз болот. Жеке папкадагы сүрөттөр жана видеолорду бөлүшө албайсыз.</item>
+        <item quantity="one">Сүрөттөр менен видеолоруңузду коомдук тармактарга Камерадан бөлүшөсүз. %1$d колдонмого чейин тандаңыз. Жеке папкадагы сүрөттөр жана видеолорду бөлүшө албайсыз.</item>
+    </plurals>
+    <plurals name="social_share_select_error">
+        <item quantity="other">%1$d колдонмого чейин тандасаңыз болот</item>
+        <item quantity="one">%1$d колдонмо тандасаңыз болот</item>
+    </plurals>
+    <plurals name="videos_remaining">
+        <item quantity="other">Видеолордун %s мүнөтү калды</item>
+        <item quantity="one">Видеолордун %s мүнөтү калды</item>
+    </plurals>
+</resources>
