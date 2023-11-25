@@ -12,7 +12,7 @@
 
 .field lutFile:Ljava/lang/String;
 
-.field lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+.field lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
 
 # direct methods
@@ -42,17 +42,17 @@
 
     .line 40
     :try_start_0
-    iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->destroy()V
+    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->destroy()V
 
     .line 41
     :cond_0
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    iput-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
     .line 42
     iget-object v1, p0, Lnan/ren/bean/LUT;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
@@ -103,9 +103,9 @@
     .param p2, "_intensity"    # F
 
     .line 25
-    iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
-    invoke-virtual {v0, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->setIntensity(F)V
+    invoke-virtual {v0, p2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setIntensity(F)V
 
     .line 26
     iget-object v0, p0, Lnan/ren/bean/LUT;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
@@ -139,30 +139,30 @@
     iput-object v0, p0, Lnan/ren/bean/LUT;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     .line 19
-    new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    new-instance v0, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
-    invoke-direct {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;-><init>()V
+    invoke-direct {v0}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;-><init>()V
 
-    iput-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    iput-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
     .line 20
     iget-object v1, p0, Lnan/ren/bean/LUT;->lutBit:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
 
     .line 21
-    iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    iget-object v0, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
     iget v1, p0, Lnan/ren/bean/LUT;->intensity:F
 
-    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;->setIntensity(F)V
+    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setIntensity(F)V
 
     .line 22
     iget-object v0, p0, Lnan/ren/bean/LUT;->gpuImage:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    iget-object v1, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageLookupFilter;
+    iget-object v1, p0, Lnan/ren/bean/LUT;->lutFilter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
-    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+    invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
     .line 23
     return-void

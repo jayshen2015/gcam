@@ -15,7 +15,9 @@
 .method public static deviceProperties(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
-    invoke-static {}, Lagc/Agc;->getDefaultDeviceProperties()Ljava/lang/String;
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lagc/Agc;->getDefaultDeviceProperties(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -109,6 +111,206 @@
     return-object v0
 .end method
 
+.method public static getBitrate()I
+    .locals 2
+
+    const-string v0, "pref_bitrate_key"
+
+    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    packed-switch v0, :pswitch_data_0
+
+    return v1
+
+    :pswitch_0
+    const v0, 0x2faf0800
+
+    return v0
+
+    :pswitch_1
+    const v0, 0x2aea5400
+
+    return v0
+
+    :pswitch_2
+    const v0, 0x2625a000
+
+    return v0
+
+    :pswitch_3
+    const v0, 0x2160ec00
+
+    return v0
+
+    :pswitch_4
+    const v0, 0x1c9c3800
+
+    return v0
+
+    :pswitch_5
+    const v0, 0x17d78400
+
+    return v0
+
+    :pswitch_6
+    const v0, 0x1312d000
+
+    return v0
+
+    :pswitch_7
+    const v0, 0xe4e1c00
+
+    return v0
+
+    :pswitch_8
+    const v0, 0x9896800
+
+    return v0
+
+    :pswitch_9
+    const v0, 0x7270e00
+
+    return v0
+
+    :pswitch_a
+    const v0, 0x5b8d800
+
+    return v0
+
+    :pswitch_b
+    const v0, 0x4c4b400
+
+    return v0
+
+    :pswitch_c
+    const v0, 0x44aa200
+
+    return v0
+
+    :pswitch_d
+    const v0, 0x3d09000
+
+    return v0
+
+    :pswitch_e
+    const v0, 0x3567e00
+
+    return v0
+
+    :pswitch_f
+    const v0, 0x2dc6c00
+
+    return v0
+
+    :pswitch_10
+    const v0, 0x2625a00
+
+    return v0
+
+    :pswitch_11
+    const v0, 0x2255100
+
+    return v0
+
+    :pswitch_12
+    const v0, 0x1e84800
+
+    return v0
+
+    :pswitch_13
+    const v0, 0x1ab3f00
+
+    return v0
+
+    :pswitch_14
+    const v0, 0x16e3600
+
+    return v0
+
+    :pswitch_15
+    const v0, 0x1312d00
+
+    return v0
+
+    :pswitch_16
+    const v0, 0xf42400
+
+    return v0
+
+    :pswitch_17
+    const v0, 0xb71b00
+
+    return v0
+
+    :pswitch_18
+    const v0, 0x7a1200
+
+    return v0
+
+    :pswitch_19
+    const v0, 0x3d0900
+
+    return v0
+
+    :pswitch_1a
+    const v0, 0xc3500
+
+    return v0
+
+    :pswitch_1b
+    return v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static getBracketFrameCount()I
+    .locals 2
+
+    const-string v0, "pref_frame_count_bracket_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getCorrectionBlackLevelDynamic([F[F)[F
     .locals 6
 
@@ -153,7 +355,7 @@
     goto :goto_0
 .end method
 
-.method public static getExpastro(F)F
+.method public static getExpastro(Ljava/lang/Float;)Ljava/lang/Float;
     .locals 4
 
     const-string v0, "pref_expastro_key"
@@ -162,24 +364,36 @@
 
     move-result v1
 
-    const/4 v2, 0x0
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    cmpl-float v2, v1, v2
+    move-result-object v1
 
-    if-nez v2, :cond_1
-
-    invoke-static {}, Lagc/Agc;->needFixExposureTime()Z
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    const/4 v3, 0x0
 
-    const/high16 v1, 0x46fa0000    # 32000.0f
+    cmpl-float v2, v2, v3
+
+    if-nez v2, :cond_1
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const/high16 v2, 0x46fa0000    # 32000.0f
+
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
 
     goto :goto_0
 
     :cond_0
-    move v1, p0
+    move-object v1, p0
 
     :cond_1
     :goto_0
@@ -197,7 +411,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -207,7 +421,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
@@ -221,9 +435,9 @@
 
     const-string v2, "getExpastro"
 
-    invoke-static {v2, v1}, Lcom/agc/Log;->e(Ljava/lang/Object;F)I
+    invoke-static {v2, v1}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    return v1
+    return-object v1
 .end method
 
 .method public static getExpcomp(I)I
@@ -390,6 +604,10 @@
 
     invoke-static {v6, v3}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
 
+    sget-object v3, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    iput v2, v3, Lcom/Parameters;->frameCount:I
+
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -527,7 +745,9 @@
 .method public static getHdrModel(Ljava/lang/String;)Ljava/lang/String;
     .locals 5
 
-    invoke-static {}, Lagc/Agc;->getDefaultDeviceProperties()Ljava/lang/String;
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lagc/Agc;->getDefaultDeviceProperties(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -629,7 +849,7 @@
     return v0
 .end method
 
-.method public static getImageFormatArr()[I
+.method public static getImageFormatArr([I)[I
     .locals 3
 
     invoke-static {}, Lcom/agc/LensSettings;->getImageFormat()I
@@ -646,7 +866,9 @@
 
     aput v0, v1, v2
 
-    return-object v1
+    move-object p0, v1
+
+    goto :goto_0
 
     :cond_0
     const/4 v1, 0x4
@@ -655,7 +877,16 @@
 
     fill-array-data v1, :array_0
 
-    return-object v1
+    move-object p0, v1
+
+    :goto_0
+    const-string v1, "getImageFormatArr"
+
+    invoke-static {v1, p0}, Lcom/agc/Log;->d(Ljava/lang/Object;[I)I
+
+    return-object p0
+
+    nop
 
     :array_0
     .array-data 4
@@ -664,6 +895,31 @@
         0x20
         0x23
     .end array-data
+.end method
+
+.method public static getInitialZoom(Ljava/lang/Float;)Ljava/lang/Float;
+    .locals 2
+
+    const-string v0, "lib_initial_zoom_key"
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    return-object v1
+
+    :cond_0
+    return-object p0
 .end method
 
 .method public static getLongExposureImageFormat(I)I
@@ -714,6 +970,124 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static getMicroVideo()I
+    .locals 2
+
+    const-string v0, "pref_micro_video_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getMicroVideoHeight()I
+    .locals 2
+
+    invoke-static {}, Lcom/agc/LensSettings;->getMicroVideo()I
+
+    move-result v0
+
+    const/16 v1, 0x1e0
+
+    packed-switch v0, :pswitch_data_0
+
+    return v1
+
+    :pswitch_0
+    const/16 v0, 0x870
+
+    return v0
+
+    :pswitch_1
+    const/16 v0, 0x438
+
+    return v0
+
+    :pswitch_2
+    const/16 v0, 0x2d0
+
+    return v0
+
+    :pswitch_3
+    return v1
+
+    :pswitch_4
+    const-string v0, "pref_micro_video_height_key"
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public static getMicroVideoWeight()I
+    .locals 2
+
+    invoke-static {}, Lcom/agc/LensSettings;->getMicroVideo()I
+
+    move-result v0
+
+    const/16 v1, 0x280
+
+    packed-switch v0, :pswitch_data_0
+
+    return v1
+
+    :pswitch_0
+    const/16 v0, 0xf00
+
+    return v0
+
+    :pswitch_1
+    const/16 v0, 0x780
+
+    return v0
+
+    :pswitch_2
+    const/16 v0, 0x500
+
+    return v0
+
+    :pswitch_3
+    return v1
+
+    :pswitch_4
+    const-string v0, "pref_micro_video_width_key"
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+
+    nop
+
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public static getOverrideTargetFps()Z
@@ -1163,31 +1537,53 @@
 .end method
 
 .method public static getUpscale(I)I
-    .locals 3
+    .locals 4
 
-    const-string v0, "pref_upscale_key"
+    const-string v0, "lib_pref_upscale_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;)F
+    invoke-static {v0}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;)F
 
     move-result v0
 
     const/4 v1, 0x0
 
-    cmpl-float v1, v0, v1
+    cmpl-float v2, v0, v1
 
-    if-lez v1, :cond_0
+    const/high16 v3, 0x41200000    # 10.0f
+
+    if-lez v2, :cond_0
 
     int-to-float v1, p0
 
     mul-float/2addr v1, v0
 
-    const/high16 v2, 0x41200000    # 10.0f
-
-    div-float/2addr v1, v2
+    div-float/2addr v1, v3
 
     float-to-int p0, v1
 
+    goto :goto_0
+
     :cond_0
+    const-string v2, "pref_upscale_key"
+
+    invoke-static {v2}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-lez v1, :cond_1
+
+    int-to-float v1, p0
+
+    mul-float/2addr v1, v0
+
+    div-float/2addr v1, v3
+
+    float-to-int p0, v1
+
+    :cond_1
+    :goto_0
     return p0
 .end method
 
@@ -1240,6 +1636,31 @@
     return v1
 .end method
 
+.method public static getZoomRatio(Ljava/lang/Float;)Ljava/lang/Float;
+    .locals 2
+
+    const-string v0, "lib_zoom_ratio_key"
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-eqz v1, :cond_0
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    return-object v1
+
+    :cond_0
+    return-object p0
+.end method
+
 .method public static getZslFrameCount(I)I
     .locals 2
 
@@ -1261,6 +1682,29 @@
     invoke-static {v1, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;I)I
 
     return v0
+.end method
+
+.method public static isOpenAWB(Z)Z
+    .locals 3
+
+    const-string v0, "pref_awb_switch_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getBooleanValue(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    move p0, v1
+
+    return p0
 .end method
 
 .method public static isSupportLEVEL3()Z

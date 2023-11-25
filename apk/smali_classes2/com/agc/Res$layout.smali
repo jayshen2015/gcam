@@ -23,6 +23,8 @@
 
 .field public static final agc_chooser_dialog:I
 
+.field public static final agc_config_load_dialog:I
+
 .field public static final agc_dialog_color_mix:I
 
 .field public static final agc_dialog_layout:I
@@ -247,6 +249,14 @@
     move-result v0
 
     sput v0, Lcom/agc/Res$layout;->agc_input_dialog_title:I
+
+    const-string v0, "agc_config_load_dialog"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_config_load_dialog:I
 
     const-string v0, "agc_library_preference_dialog"
 

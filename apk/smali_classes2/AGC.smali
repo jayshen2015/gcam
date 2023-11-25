@@ -338,65 +338,46 @@
     return-object p0
 .end method
 
-.method public static GetNightMode()I
-    .locals 2
-
-    invoke-static {}, Lagc/Agc;->getSMode()I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-ne v0, v1, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    return v0
-.end method
-
 .method public static ProcIndicatorSwitch(I)V
     .locals 2
 
-    const-string v0, "proc_indecator"
+    sget-object v0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
 
-    if-eqz p0, :cond_0
+    if-nez v0, :cond_0
 
-    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+    return-void
 
-    const/4 v1, 0x0
+    :cond_0
+    const-string v1, "proc_indecator"
 
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->h(Z)V
+    if-eqz p0, :cond_1
 
-    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+    const/4 p0, 0x0
 
-    invoke-static {v0}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
+    invoke-virtual {v0, p0}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->h(Z)V
 
-    move-result v0
+    sget-object v0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-static {v1}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
 
-    move-result-object p0
+    move-result v1
 
-    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    :cond_0
-    sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
+    :cond_1
+    const/4 p0, 0x1
 
-    const/4 v1, 0x1
-
-    invoke-virtual {p0, v1}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->h(Z)V
+    invoke-virtual {v0, p0}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->h(Z)V
 
     sget-object p0, LAGC;->linearMinibarImpl:Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;
 
-    invoke-static {v0}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
+    invoke-static {v1}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
 
     move-result v0
 
@@ -547,15 +528,14 @@
 
     move-result-object v1
 
-    if-eq p0, p1, :cond_0
+    if-ne p0, p1, :cond_0
 
     invoke-virtual {v1}, Lcom/agc/Camera;->isOisSupported()Z
 
     move-result v2
 
-    if-eqz v2, :cond_1
+    if-eqz v2, :cond_0
 
-    :cond_0
     sget-object v2, Landroid/hardware/camera2/CaptureRequest;->LENS_OPTICAL_STABILIZATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -564,22 +544,21 @@
 
     invoke-virtual {v0, v2, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_1
+    :cond_0
     const-string p0, "pref_ois_data_key"
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
     move-result p0
 
-    if-eq p0, p1, :cond_2
+    if-ne p0, p1, :cond_1
 
     invoke-virtual {v1}, Lcom/agc/Camera;->isOisSupported()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_1
 
-    :cond_2
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -588,14 +567,14 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_3
+    :cond_1
     const-string p0, "pref_antibanding_key"
 
     invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result p0
 
-    if-eqz p0, :cond_4
+    if-eqz p0, :cond_2
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_ANTIBANDING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -605,14 +584,14 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_4
+    :cond_2
     const-string p0, "pref_hot_pixel_key"
 
     invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result p0
 
-    if-lez p0, :cond_5
+    if-lez p0, :cond_3
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->HOT_PIXEL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -622,12 +601,12 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_5
+    :cond_3
     invoke-static {}, Lcom/agc/AdvancedSettings;->getShading()I
 
     move-result p0
 
-    if-ltz p0, :cond_6
+    if-ltz p0, :cond_4
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->SHADING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -637,14 +616,14 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_6
+    :cond_4
     sget-object p0, LDeveloperOptions;->ccam:Ldhk;
 
     invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Ldhk;)I
 
     move-result p0
 
-    if-eqz p0, :cond_7
+    if-eqz p0, :cond_5
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_ABERRATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -656,14 +635,14 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_7
+    :cond_5
     sget-object p0, LDeveloperOptions;->discm:Ldhk;
 
     invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Ldhk;)I
 
     move-result p0
 
-    if-eqz p0, :cond_8
+    if-eqz p0, :cond_6
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->DISTORTION_CORRECTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -675,14 +654,14 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_8
+    :cond_6
     sget-object p0, LDeveloperOptions;->coloco:Ldhk;
 
     invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Ldhk;)I
 
     move-result p0
 
-    if-eqz p0, :cond_9
+    if-eqz p0, :cond_7
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -694,14 +673,14 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_9
+    :cond_7
     sget-object p0, LDeveloperOptions;->tonmod:Ldhk;
 
     invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Ldhk;)I
 
     move-result p0
 
-    if-eqz p0, :cond_a
+    if-eqz p0, :cond_8
 
     sget-object v1, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -713,7 +692,7 @@
 
     invoke-virtual {v0, v1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_a
+    :cond_8
     sget-object p0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     const-string p1, "samsung"
@@ -722,21 +701,21 @@
 
     move-result p0
 
-    if-eqz p0, :cond_b
+    if-eqz p0, :cond_9
 
-    const-string p0, "pref_livehdr_key"
+    sget-object p0, Lcom/CameraAPI2Keys;->CONTROL_METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    const-string p1, "pref_livehdr_key"
 
-    move-result p0
+    invoke-static {p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    sget-object p1, Lcom/CameraAPI2Keys;->CONTROL_LIVE_HDR_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    move-result p1
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object p0
+    move-result-object p1
 
-    invoke-virtual {v0, p1, p0}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, p0, p1}, Lkkr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     sget-object p0, Lcom/CameraAPI2Keys;->CONTROL_LIVE_HDR_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -757,12 +736,12 @@
 
     goto :goto_1
 
-    :cond_b
+    :cond_9
     invoke-static {}, Lagc/Agc;->isXiaomi13Ultra()Z
 
     move-result p0
 
-    if-eqz p0, :cond_c
+    if-eqz p0, :cond_a
 
     sget-object p0, Lcom/CameraAPI2Keys;->XIAOMI_LENS_APERTURE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -781,7 +760,7 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_c
+    :cond_a
     return-object v0
 
     :catch_0
@@ -813,6 +792,60 @@
     invoke-direct {p1, p0}, Lkdf;-><init>(Ljava/lang/Throwable;)V
 
     throw p1
+.end method
+
+.method public static getAstroEnabled(Lfcn;Z)Z
+    .locals 1
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return p1
+
+    :cond_0
+    iget-object p0, p0, Lfcn;->c:Lgzm;
+
+    sget-object p1, Lgzd;->ao:Lgzs;
+
+    invoke-interface {p0, p1}, Lgzm;->c(Lgzb;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Integer;
+
+    const/4 p1, 0x2
+
+    invoke-static {p1}, Linb;->D(I)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    const/4 p1, 0x0
+
+    if-eqz p0, :cond_1
+
+    invoke-static {}, Lagc/Agc;->getSMode()I
+
+    move-result p0
+
+    const/4 v0, 0x4
+
+    if-ne p0, v0, :cond_1
+
+    const/4 p1, 0x1
+
+    :cond_1
+    return p1
 .end method
 
 .method public static getBlackLevel(Lkli;Lkou;)[F
@@ -1203,6 +1236,50 @@
     return-object p0
 .end method
 
+.method public static getFocusDistance(Lgyp;)F
+    .locals 1
+
+    sget-object v0, Lgyp;->c:Lgyp;
+
+    if-ne p0, v0, :cond_0
+
+    const p0, 0x4164a3d7    # 14.29f
+
+    const-string v0, "pref_manual_focus_near_key"
+
+    :goto_0
+    invoke-static {v0, p0}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
+
+    move-result p0
+
+    goto :goto_1
+
+    :cond_0
+    sget-object v0, Lgyp;->d:Lgyp;
+
+    if-ne p0, v0, :cond_1
+
+    const p0, 0x3e570a3d    # 0.21f
+
+    const-string v0, "pref_manual_focus_far_key"
+
+    goto :goto_0
+
+    :cond_1
+    const p0, 0x3df5c28f    # 0.12f
+
+    const-string v0, "pref_manual_focus_infinity_key"
+
+    goto :goto_0
+
+    :goto_1
+    sput p0, Lcom/agc/LogData$Device;->focusDistance:F
+
+    invoke-static {}, Lcom/agc/LogData$Device;->log()V
+
+    return p0
+.end method
+
 .method public static getGcamSensorId(Lkli;Lkou;)Lnrg;
     .locals 1
 
@@ -1438,6 +1515,48 @@
     invoke-static {v0, p0}, Lcom/agc/Log;->e(Ljava/lang/Object;I)I
 
     return p0
+.end method
+
+.method public static isAndroid11()Z
+    .locals 2
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x1e
+
+    if-gt v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public static isGoogleDevice()Z
+    .locals 2
+
+    sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+
+    const-string v1, "Google"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
 .method public static manualFocus(Lkkr;)V
@@ -1708,7 +1827,7 @@
 .end method
 
 .method public static setDeveloperSettings()V
-    .locals 4
+    .locals 5
 
     invoke-static {}, LDeveloperOptions;->setDefaultValue()V
 
@@ -1735,16 +1854,6 @@
     sget-object v1, Ldgu;->nonzsl_base_frame:Ldhj;
 
     invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldho;->bn:Ldhj;
-
-    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
-
-    move-result v3
-
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
@@ -1967,6 +2076,50 @@
     invoke-static {}, LAGC;->setDeveloperSettingsNonPixel()V
 
     :cond_0
+    const-string v0, "lib_max_exp_ms_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v3, v0, v1
+
+    if-eqz v3, :cond_1
+
+    sget-object v3, LAGC;->gcaConfig:Ldit;
+
+    sget-object v4, Ldhq;->B:Ldhj;
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v4, v0}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
+
+    :cond_1
+    const-string v0, "lib_shasta_max_exp_ms_key"
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+
+    move-result v0
+
+    cmpl-float v1, v0, v1
+
+    if-eqz v1, :cond_2
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v3, Ldhq;->N:Ldhj;
+
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v3, v0}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
+
+    :cond_2
     const-string v0, "hdrnet_enabled"
 
     invoke-static {v0, v2}, Lcom/Utils/Pref;->getBooleanValue(Ljava/lang/String;Z)Z
@@ -1987,349 +2140,397 @@
 .method public static setDeveloperSettingsNonPixel()V
     .locals 6
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    invoke-static {}, Lcom/Utils/Lens;->getCurrentCamera()Lcom/agc/Camera;
 
-    sget-object v1, Ldif;->d:Ldhj;
+    move-result-object v0
 
-    const/4 v2, 0x0
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v2, Ldgu;->aj:Ldhj;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    const/4 v3, 0x0
 
-    sget-object v1, Ldih;->b:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldif;->d:Ldhj;
 
-    sget-object v1, Ldhh;->g:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldgu;->ad:Ldhj;
 
-    sget-object v1, Ldgu;->ad:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldgu;->ae:Ldhj;
 
-    sget-object v1, Ldgu;->ae:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldgu;->Y:Ldhj;
 
-    sget-object v1, Ldho;->cc:Ldhj;
+    const/4 v4, 0x1
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v1, v2, v4}, Ldit;->u(Ldhj;Z)V
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v1, Ldho;->cb:Ldhj;
+    sget-object v2, Ldih;->b:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v1, Ldho;->bX:Ldhj;
+    sget-object v2, Ldhh;->g:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v1, Ldhg;->n:Ldhj;
+    sget-object v2, Ldho;->cc:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v1, Ldgu;->Y:Ldhj;
+    sget-object v2, Ldho;->cb:Ldhj;
 
-    const/4 v3, 0x1
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldho;->bX:Ldhj;
 
-    sget-object v1, Ldhq;->as:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhg;->n:Ldhj;
 
-    sget-object v1, Ldhq;->z:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->as:Ldhj;
 
-    sget-object v1, Ldhq;->R:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->z:Ldhj;
 
-    sget-object v1, Ldhq;->T:Ldhj;
+    invoke-virtual {v1, v2, v4}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->R:Ldhj;
 
-    sget-object v1, Ldhq;->ar:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->T:Ldhj;
 
-    sget-object v1, Ldhq;->y:Ldhj;
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    const-string v4, "camera.cuttle.motion_metadata"
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    sget-object v2, Ldhq;->ar:Ldhj;
 
-    move-result v4
+    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->y:Ldhj;
 
-    sget-object v1, Ldhq;->Q:Ldhj;
+    const-string v5, "camera.cuttle.motion_metadata"
 
-    const-string v4, "SABRE_ALLOWED"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->Q:Ldhj;
 
-    sget-object v1, Ldhq;->S:Ldhj;
+    const-string v5, "SABRE_ALLOWED"
 
-    const-string v4, "camera.wiener_force"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->S:Ldhj;
 
-    sget-object v1, Ldhq;->L:Ldhj;
+    const-string v5, "camera.wiener_force"
 
-    const-string v4, "camera.shasta_zsl"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->L:Ldhj;
 
-    sget-object v1, Ldhq;->K:Ldhj;
+    const-string v5, "camera.shasta_zsl"
 
-    const-string v4, "camera.shasta_psl"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->K:Ldhj;
 
-    sget-object v1, Ldib;->F:Ldhj;
+    const-string v5, "camera.shasta_psl"
 
-    const-string v4, "camera.gouda.shasta_zsl"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldib;->F:Ldhj;
 
-    sget-object v1, Ldho;->bo:Ldhj;
+    const-string v5, "camera.gouda.shasta_zsl"
 
-    const-string v4, "camera.pck_large_yuv"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldho;->bo:Ldhj;
 
-    sget-object v1, Ldhw;->W:Ldhj;
+    const-string v5, "camera.pck_large_yuv"
 
-    const-string v4, "camera.mts_gpu_yuv"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhw;->W:Ldhj;
 
-    sget-object v1, Ldhw;->s:Ldhj;
+    const-string v5, "camera.mts_gpu_yuv"
 
-    const-string v4, "camera.mts_fast_hdr"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhw;->s:Ldhj;
 
-    sget-object v1, Ldhw;->n:Ldhj;
+    const-string v5, "camera.mts_fast_hdr"
 
-    const-string v4, "camera.mts_4k"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhw;->n:Ldhj;
 
-    sget-object v1, Ldgu;->t:Ldhj;
+    const-string v5, "camera.mts_4k"
 
-    const-string v4, "camcorder.trk_yuv"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldgu;->t:Ldhj;
 
-    sget-object v1, Ldgu;->q:Ldhj;
+    const-string v5, "camcorder.trk_yuv"
 
-    const-string v4, "camcorder.codec_video"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldgu;->q:Ldhj;
 
-    sget-object v1, Ldhq;->ao:Ldhj;
+    const-string v5, "camcorder.codec_video"
 
-    const-string v4, "camera.disable_hdrplus_postview"
+    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
 
-    invoke-static {v4}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
+    move-result v5
 
-    move-result v4
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    sget-object v2, Ldhq;->ao:Ldhj;
 
-    sget-object v1, Ldho;->ag:Ldhj;
+    invoke-virtual {v0}, Lcom/agc/Camera;->isRaw10Supported()Z
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    move-result v5
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
 
-    sget-object v1, Ldho;->ai:Ldhj;
+    sget-object v1, LAGC;->gcaConfig:Ldit;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    sget-object v2, Ldic;->a:Ldhk;
+
+    invoke-static {}, Lagc/Agc;->isSamsExynosDevice()Z
+
+    move-result v5
+
+    xor-int/2addr v5, v4
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v2, v5}, Ldit;->q(Ldhk;Ljava/lang/Integer;)V
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v2, Ldho;->bn:Ldhj;
+
+    invoke-virtual {v0}, Lcom/agc/Camera;->isLogical()Z
+
+    move-result v5
+
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v2, Ldho;->ag:Ldhj;
+
+    invoke-virtual {v0}, Lcom/agc/Camera;->isLogical()Z
+
+    move-result v5
+
+    invoke-virtual {v1, v2, v5}, Ldit;->u(Ldhj;Z)V
+
+    sget-object v1, LAGC;->gcaConfig:Ldit;
+
+    sget-object v2, Ldho;->ai:Ldhj;
+
+    invoke-virtual {v0}, Lcom/agc/Camera;->isLogical()Z
+
+    move-result v0
+
+    invoke-virtual {v1, v2, v0}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhu;->i:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhw;->q:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldho;->am:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhh;->f:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhf;->b:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldho;->az:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->N:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->V:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->W:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->X:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->O:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->Z:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->p:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldgu;->o:Ldhj;
+
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
+
+    sget-object v0, LAGC;->gcaConfig:Ldit;
+
+    sget-object v1, Ldho;->aa:Ldhj;
 
     invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
@@ -2337,230 +2538,164 @@
 
     sget-object v1, Ldho;->aP:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldho;->aW:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldho;->bJ:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldho;->X:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldho;->Y:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldib;->E:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhh;->e:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldil;->c:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldil;->d:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhh;->c:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->c:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->d:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->e:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->f:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->g:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->h:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhc;->i:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldib;->q:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldib;->s:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldib;->i:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldib;->f:Ldhj;
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v0, v1, v5}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
+    invoke-virtual {v0, v1, v2}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhv;->g:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhv;->i:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhv;->j:Ldhj;
 
-    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v4}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhv;->k:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Ldit;
 
     sget-object v1, Ldhv;->l:Ldhj;
 
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
+    invoke-virtual {v0, v1, v3}, Ldit;->u(Ldhj;Z)V
 
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldho;->aa:Ldhj;
-
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Ldit;
-
-    sget-object v1, Ldgu;->aj:Ldhj;
-
-    invoke-virtual {v0, v1, v2}, Ldit;->u(Ldhj;Z)V
-
-    const-string v0, "lib_initial_zoom_key"
-
-    invoke-static {v0, v4}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
-
-    move-result v0
-
-    cmpl-float v1, v0, v4
-
-    if-eqz v1, :cond_0
-
-    const-string v1, "initialZoom"
-
-    invoke-static {v1, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;F)I
-
-    sget-object v1, LAGC;->gcaConfig:Ldit;
-
-    sget-object v2, Ldho;->bN:Ldhj;
-
-    invoke-virtual {v1, v2, v3}, Ldit;->u(Ldhj;Z)V
-
-    sget-object v1, LAGC;->gcaConfig:Ldit;
-
-    sget-object v2, Ldho;->bO:Ldhj;
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v2, v0}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
-
-    :cond_0
-    const-string v0, "lib_tele_zoom_ratio_key"
-
-    const/high16 v1, 0x40000000    # 2.0f
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
-
-    move-result v0
-
-    cmpl-float v1, v0, v1
-
-    if-eqz v1, :cond_1
-
-    sget-object v1, LAGC;->gcaConfig:Ldit;
-
-    sget-object v2, Ldho;->ao:Ldhj;
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v2, v0}, Ldit;->t(Ldhj;Ljava/lang/Float;)V
-
-    :cond_1
     return-void
 .end method
 

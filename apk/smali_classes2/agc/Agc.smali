@@ -81,10 +81,13 @@
 .method public static native drawTimeWaterMark(Ljava/lang/String;)V
 .end method
 
-.method public static native drawWaterMark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public static native drawWatermark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
-.method public static native drawWaterMarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public static native drawWatermarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.end method
+
+.method public static native drawWatermarkV3(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
 .method public static native experimentalKeys(I)V
@@ -117,10 +120,7 @@
 .method public static native getCameraMinimumFocusDistance()F
 .end method
 
-.method public static native getDefaultDevice()I
-.end method
-
-.method public static native getDefaultDeviceProperties()Ljava/lang/String;
+.method public static native getDefaultDeviceProperties(I)Ljava/lang/String;
 .end method
 
 .method public static native getDevice(I)Ljava/lang/String;
@@ -165,7 +165,7 @@
 .method public static native getHardwareLevel(I)I
 .end method
 
-.method public static native getImageExif(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public static native getImageExif(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 .end method
 
 .method public static native getImageFormat(I)I
@@ -193,9 +193,6 @@
 .end method
 
 .method public static native getViewfinderFormat()I
-.end method
-
-.method public static native getXiaoMi13UAperture()Ljava/lang/String;
 .end method
 
 .method public static native imageProcessing(Ljava/lang/String;)V
@@ -303,6 +300,9 @@
 .method public static native isXiaomi12SUltra()Z
 .end method
 
+.method public static native isXiaomi13Pro()Z
+.end method
+
 .method public static native isXiaomi13Ultra()Z
 .end method
 
@@ -390,6 +390,9 @@
 .method public static native preferenceImport(Ljava/lang/String;Ljava/lang/String;)I
 .end method
 
+.method public static native preferenceLoadProcess(Ljava/lang/String;Z)I
+.end method
+
 .method public static native processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
 .end method
 
@@ -406,6 +409,9 @@
 .end method
 
 .method public static native setGcamCameraId(I)V
+.end method
+
+.method public static native setLeicaMode(Z)V
 .end method
 
 .method public static native setSMode(Ljava/lang/String;)V

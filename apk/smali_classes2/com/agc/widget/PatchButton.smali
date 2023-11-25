@@ -232,7 +232,7 @@
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     iput-object v0, p0, Lcom/agc/widget/PatchButton;->items:Ljava/util/List;
-	
+
     iget-object v0, p0, Lcom/agc/widget/PatchButton;->items:Ljava/util/List;
 
     invoke-static {v0}, Lnan/ren/G;->initKaKaItems(Ljava/util/List;)V

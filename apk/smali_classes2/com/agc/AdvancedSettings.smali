@@ -12,18 +12,6 @@
     return-void
 .end method
 
-.method public static experimentalKeys(I)V
-    .locals 1
-
-    const-string v0, "AGC experimentalKeys"
-
-    invoke-static {v0, p0}, Lcom/agc/Log;->i(Ljava/lang/Object;I)I
-
-    invoke-static {p0}, Lagc/Agc;->experimentalKeys(I)V
-
-    return-void
-.end method
-
 .method public static get48m()I
     .locals 1
 
@@ -98,13 +86,11 @@
 
     const-string v0, "pref_auto_ns_key"
 
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
     move-result v0
-
-    const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
@@ -124,46 +110,16 @@
     return p0
 .end method
 
-.method public static getCompressMergedDNG()Z
-    .locals 2
+.method public static getCompressMergedDNG(Z)Z
+    .locals 0
 
-    const-string v0, "pref_compress_merged_dng_key"
-
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-ne v0, v1, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    :goto_0
-    return v1
+    return p0
 .end method
 
 .method public static getFixShastaZSL(Z)Z
     .locals 1
 
     const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public static getFocusLockTime()I
-    .locals 2
-
-    const-string v0, "pref_focus_lock_time_key"
-
-    const/4 v1, 0x6
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
-
-    move-result v0
 
     return v0
 .end method
@@ -238,7 +194,7 @@
 .end method
 
 .method public static getHexagonDSP(Z)Z
-    .locals 3
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -251,36 +207,6 @@
     move v0, p0
 
     :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "getHexagonDSP "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " => "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
-
     return p0
 .end method
 
@@ -362,34 +288,10 @@
     return v0
 .end method
 
-.method public static getMicroVideo()I
-    .locals 1
-
-    const-string v0, "pref_micro_video_key"
-
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public static getMotion()I
     .locals 1
 
     const-string v0, "pref_motion_key"
-
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static getNightMode()I
-    .locals 1
-
-    const-string v0, "pref_nightmode_key"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
@@ -514,7 +416,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Focus-Tracking in Photo/Video mode "
+    const-string v2, "Focus-Tracking in Photo/Portrait mode "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -547,21 +449,53 @@
     return v0
 .end method
 
-.method public static getZSLFrames(I)I
-    .locals 1
+.method public static getVideoPrefix()Ljava/lang/String;
+    .locals 2
 
-    const-string v0, "pref_zsl_frames_key"
+    const-string v0, "pref_vid_prefix_key"
+
+    const-string v1, "AGC_VID_"
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static isAnalysisYuvSupported()Z
+    .locals 5
+
+    const-string v0, "pck_analysis_yuv"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    return v0
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v3, v2
+
+    goto :goto_0
 
     :cond_0
-    return p0
+    move v3, v1
+
+    :goto_0
+    const-string v4, "isOpenGLPreviewSupported:"
+
+    invoke-static {v4, v3}, Lcom/agc/Log;->d(Ljava/lang/Object;Z)I
+
+    if-ne v0, v2, :cond_1
+
+    move v1, v2
+
+    :cond_1
+    return v1
 .end method
 
 .method public static isOpenGLPreviewSupported()Z

@@ -170,7 +170,7 @@
 
     new-instance v1, Landroid/content/Intent;
 
-    const-string v3, "https://d.agccam.com/AGCToolKit.apk"
+    const-string v3, "https://download.agccam.com"
 
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 

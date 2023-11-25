@@ -25,6 +25,12 @@
 .method public final a(Lkou;)Z
     .locals 3
 
+    invoke-static {}, Lagc/Agc;->skipCaptureResult()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
     const/4 v0, 0x0
 
     if-nez p1, :cond_0

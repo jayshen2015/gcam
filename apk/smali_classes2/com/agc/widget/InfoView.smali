@@ -77,7 +77,7 @@
 .end method
 
 .method private addTextView(Landroid/content/Context;)V
-    .locals 4
+    .locals 2
 
     new-instance v0, Landroid/widget/TextView;
 
@@ -88,16 +88,6 @@
     const/high16 v1, 0x41400000    # 12.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
-
-    iget-object v0, p0, Lcom/agc/widget/InfoView;->textView:Landroid/widget/TextView;
-
-    const/high16 v1, 0x41200000    # 10.0f
-
-    const/4 v2, 0x0
-
-    const v3, -0x777778
-
-    invoke-virtual {v0, v1, v2, v2, v3}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
@@ -121,8 +111,11 @@
 
     sget-object v0, Lcom/agc/widget/InfoView;->defaultView:Lcom/agc/widget/InfoView;
 
+    if-eqz v0, :cond_0
+
     invoke-direct {v0, p0}, Lcom/agc/widget/InfoView;->_show(Ljava/lang/String;)V
 
+    :cond_0
     return-void
 .end method
 

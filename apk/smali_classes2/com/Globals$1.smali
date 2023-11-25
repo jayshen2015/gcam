@@ -18,7 +18,7 @@
 
 
 # instance fields
-.field final synthetic val$filePath:Ljava/lang/String;
+.field final synthetic val$absolutePath:Ljava/lang/String;
 
 .field final synthetic val$handler:Landroid/os/Handler;
 
@@ -34,7 +34,7 @@
 
     iput-object p1, p0, Lcom/Globals$1;->val$handler:Landroid/os/Handler;
 
-    iput-object p2, p0, Lcom/Globals$1;->val$filePath:Ljava/lang/String;
+    iput-object p2, p0, Lcom/Globals$1;->val$absolutePath:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 

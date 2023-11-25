@@ -32,7 +32,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/util/JsonUtil;
 
-    .line 507
+    .line 508
     .local p0, "this":Lnan/ren/util/JsonUtil$TypeReference;, "Lnan/ren/util/JsonUtil$TypeReference<TT;>;"
     iput-object p1, p0, Lnan/ren/util/JsonUtil$TypeReference;->this$0:Lnan/ren/util/JsonUtil;
 
@@ -46,7 +46,7 @@
 .method public genericParamType()Ljava/lang/reflect/Type;
     .locals 4
 
-    .line 514
+    .line 515
     .local p0, "this":Lnan/ren/util/JsonUtil$TypeReference;, "Lnan/ren/util/JsonUtil$TypeReference<TT;>;"
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -56,24 +56,24 @@
 
     move-result-object v0
 
-    .line 517
+    .line 518
     .local v0, "superType":Ljava/lang/reflect/Type;
     instance-of v1, v0, Ljava/lang/Class;
 
     if-eqz v1, :cond_0
 
-    .line 518
+    .line 519
     const-class v1, Ljava/lang/Object;
 
     return-object v1
 
-    .line 526
+    .line 527
     :cond_0
     move-object v1, v0
 
     check-cast v1, Ljava/lang/reflect/ParameterizedType;
 
-    .line 528
+    .line 529
     .local v1, "parameterizedType":Ljava/lang/reflect/ParameterizedType;
     invoke-interface {v1}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
@@ -83,7 +83,7 @@
 
     aget-object v2, v2, v3
 
-    .line 529
+    .line 530
     .local v2, "argumentType":Ljava/lang/reflect/Type;
     return-object v2
 .end method

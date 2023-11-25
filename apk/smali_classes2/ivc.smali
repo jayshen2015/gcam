@@ -93,7 +93,7 @@
 
     array-length v0, v0
 
-    invoke-static {v0}, Lcom/agc/AdvancedSettings;->experimentalKeys(I)V
+    invoke-static {v0}, Lcom/Globals;->experimentalKeys(I)V
 
     return-void
 .end method

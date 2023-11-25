@@ -6,8 +6,6 @@
 # static fields
 .field public static GcamVersion:Ljava/lang/String; = null
 
-.field public static ISO:I = 0x0
-
 .field public static ISOsystem:I = 0x0
 
 .field public static final awbFolder:Ljava/io/File;
@@ -25,6 +23,8 @@
 .field public static final lutFolder:Ljava/io/File;
 
 .field public static final lutPath:Ljava/lang/String;
+
+.field public static mParameters:Lcom/Parameters;
 
 .field public static maxAnalogSens:F
 
@@ -264,8 +264,68 @@
     return-void
 .end method
 
+.method public static GoogleDevices()Z
+    .locals 2
+
+    sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "GOOGLE"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static HdrRawFixFirst(I)I
+    .locals 1
+
+    invoke-static {}, Lagc/Agc;->isSamsungFix()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/16 p0, 0x20
+
+    :cond_0
+    return p0
+.end method
+
+.method public static HdrRawFixSecond(I)I
+    .locals 1
+
+    invoke-static {}, Lagc/Agc;->isSamsungFix()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/16 p0, 0x23
+
+    :cond_0
+    return p0
+.end method
+
 .method public static debug(Ljava/lang/String;)V
     .locals 0
+
+    return-void
+.end method
+
+.method public static experimentalKeys(I)V
+    .locals 1
+
+    const-string v0, "AGC experimentalKeys"
+
+    invoke-static {v0, p0}, Lcom/agc/Log;->i(Ljava/lang/Object;I)I
+
+    invoke-static {p0}, Lagc/Agc;->experimentalKeys(I)V
 
     return-void
 .end method
@@ -389,6 +449,18 @@
     invoke-static {v2, v1}, Lcom/agc/Log;->w(Ljava/lang/Object;[Ljava/lang/Object;)I
 
     return-object v1
+.end method
+
+.method public static getThrowable(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .locals 1
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;[Ljava/lang/Object;)I
+
+    return-void
 .end method
 
 .method public static googleDevicesIndividually()Z
@@ -680,6 +752,12 @@
 .method public static initDevice()V
     .locals 14
 
+    new-instance v0, Lcom/Parameters;
+
+    invoke-direct {v0}, Lcom/Parameters;-><init>()V
+
+    sput-object v0, Lcom/Globals;->mParameters:Lcom/Parameters;
+
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
     move-result-object v0
@@ -788,6 +866,14 @@
     move-result-object v2
 
     invoke-static {v2}, Lagc/Agc;->configFilePath(Ljava/lang/String;)V
+
+    sget-object v2, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    iput-object v3, v2, Lcom/Parameters;->mCameraID:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
 
@@ -1012,6 +1098,12 @@
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
+    const-string v0, "pref_video_stabilization_key"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+
     const-string v0, "pref_camera_hdrplus_option_available_key"
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
@@ -1031,6 +1123,10 @@
     invoke-static {v2, v0}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
     const-string v0, "pref_ois_key"
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+
+    const-string v0, "pref_ois_data_key"
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
@@ -1062,8 +1158,13 @@
 
     const-string v1, "8.4"
 
-    if-ne v0, v1, :cond_0
+    if-eq v0, v1, :cond_0
 
+    const-string v1, "8.5"
+
+    if-ne v0, v1, :cond_1
+
+    :cond_0
     const-string v0, "camera.cuttle.glpreview"
 
     invoke-static {v0}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
@@ -1072,7 +1173,7 @@
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Z)V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
@@ -1080,7 +1181,7 @@
     .locals 1
 	invoke-static {p0}, Lnan/ren/G;->medianFilter(Ljava/io/File;)V
     return-void
-.end method	
+.end method
 .method public static medianFilter2(Ljava/io/File;)V
     .locals 5
 
@@ -1088,6 +1189,21 @@
 
     move-result-object v0
 
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ".dng"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    return-void
+
+    :cond_0
     new-instance v1, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;

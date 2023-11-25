@@ -1,5 +1,5 @@
 .class public Lfbd;
-.super Landroid/app/Application;
+.super Lbin/mt/signature/KillerApplication;
 
 
 # static fields
@@ -13,6 +13,8 @@
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
+
+    invoke-static {}, Lcom/pairip/StartupLauncher;->launch()V
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtimeNanos()J
 

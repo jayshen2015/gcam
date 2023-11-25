@@ -10,7 +10,7 @@
 
 .field private final b:Lebl;
 
-.field private final c:Lgzm;
+.field public final c:Lgzm;
 
 .field private final d:Ljvs;
 
@@ -52,47 +52,6 @@
     invoke-interface {p7}, Ldhi;->g()V
 
     return-void
-.end method
-
-.method public static GetAstroEnabled(Lfcn;)I
-    .locals 10
-
-    iget-object v2, p0, Lfcn;->c:Lgzm;
-
-    sget-object v1, Lgzd;->ao:Lgzs;
-
-    invoke-interface {v2, v1}, Lgzm;->c(Lgzb;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    const v3, 0x2
-
-    invoke-static {v3}, Linb;->D(I)I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    invoke-static {}, LAGC;->GetNightMode()I
-
-    move-result v0
-
-    return v0
-
-    :cond_0
-    const v0, 0x0
-
-    return v0
 .end method
 
 .method private final declared-synchronized c(ZZLklv;ZZ)V
@@ -174,7 +133,7 @@
 
     :cond_2
     :goto_0
-    invoke-static {p0}, Lfcn;->GetAstroEnabled(Lfcn;)I
+    invoke-static {p0, p1}, LAGC;->getAstroEnabled(Lfcn;Z)Z
 
     move-result p1
 

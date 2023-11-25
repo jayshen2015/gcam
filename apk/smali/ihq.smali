@@ -183,6 +183,10 @@
 
     move-result-object v0
 
+    invoke-static {v0}, Lcom/agc/LensSettings;->getInitialZoom(Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v0
+
     return-object v0
 
     :pswitch_6

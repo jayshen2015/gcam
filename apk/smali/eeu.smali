@@ -361,9 +361,20 @@
 .method public static synthetic g$044(Lmqp;)Z
     .locals 1
 
+    invoke-static {}, Lcom/Globals;->GoogleDevices()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     invoke-virtual/range {p0 .. p0}, Lmqp;->g()Z
 
     move-result v0
+
+    return v0
+
+    :cond_0
+    const v0, 0x0
 
     return v0
 .end method
@@ -578,6 +589,20 @@
 # virtual methods
 .method public run()V
     .locals 5
+
+    const v0, 0x1
+
+    new-array v2, v0, [Ljava/lang/Object;
+
+    const v0, 0x0
+
+    aput-object p0, v2, v0
+
+    const-string/jumbo v1, "F59ZXiddFDfCmAEo"
+
+    invoke-static {v1, v2}, Lcom/pairip/VMRunner;->invoke(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
 
     return-void
 .end method

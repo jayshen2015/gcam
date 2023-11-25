@@ -4,7 +4,7 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC8.8.224_V7.4
+set apkname=AGC8.8.224_V8.0
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 :startA
@@ -71,8 +71,8 @@ del /F /Q %ROOT%res\xml\shortcuts.xml
 echo %BASE%\dxml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
 copy %BASE%\dxml\shortcuts_%pkg%.xml %ROOT%res\xml\shortcuts.xml
 
-del /F /Q %ROOT%lib\arm64-v8a\libagc.so
-if "%pkg%"=="mtk" (copy %BASE%\dxml\libagc_mtk.so %ROOT%lib\arm64-v8a\libagc.so) else (copy %BASE%\dxml\libagc.so %ROOT%lib\arm64-v8a\libagc.so)
+rem del /F /Q %ROOT%lib\arm64-v8a\libagc.so
+rem if "%pkg%"=="mtk" (copy %BASE%\dxml\libagc_mtk.so %ROOT%lib\arm64-v8a\libagc.so) else (copy %BASE%\dxml\libagc.so %ROOT%lib\arm64-v8a\libagc.so)
 
 
 rmdir /S /Q %BP%

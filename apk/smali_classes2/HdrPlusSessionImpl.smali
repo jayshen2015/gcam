@@ -73,11 +73,9 @@
 
     iget-wide v4, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {}, Lcom/agc/AdvancedSettings;->getCompressMergedDNG()Z
+    const/4 v11, 0x1
 
-    move-result v6
-
-    invoke-static {v4, v5, v10, v6}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_compress_merged_dng_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v4, v5, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_compress_merged_dng_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     iget-wide v4, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
@@ -99,13 +97,13 @@
 
     sget-object v5, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_TIMESTAMP_SOURCE:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    const/4 v11, 0x0
+    const/4 v12, 0x0
 
-    invoke-static {v11}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-interface {v4, v5, v12}, Lkli;->m(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v4, v5, v13}, Lkli;->m(Landroid/hardware/camera2/CameraCharacteristics$Key;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
 
@@ -117,9 +115,7 @@
 
     const-wide/16 v5, 0x0
 
-    const/4 v13, 0x1
-
-    if-ne v4, v13, :cond_0
+    if-ne v4, v11, :cond_0
 
     invoke-virtual/range {p8 .. p8}, Lmqp;->g()Z
 
@@ -273,7 +269,7 @@
     goto :goto_1
 
     :cond_4
-    move v2, v13
+    move v2, v11
 
     :goto_1
     const/4 v4, 0x3
@@ -306,23 +302,23 @@
 
     if-eqz v4, :cond_9
 
-    sub-int/2addr v4, v13
+    sub-int/2addr v4, v11
 
     if-eqz v4, :cond_7
 
-    if-eq v4, v13, :cond_6
+    if-eq v4, v11, :cond_6
 
     if-eq v4, v5, :cond_5
 
     goto :goto_3
 
     :cond_5
-    invoke-virtual {v10, v11}, Lcom/google/googlex/gcam/ShotParams;->d(Z)V
+    invoke-virtual {v10, v12}, Lcom/google/googlex/gcam/ShotParams;->d(Z)V
 
     goto :goto_3
 
     :cond_6
-    invoke-virtual {v10, v13}, Lcom/google/googlex/gcam/ShotParams;->d(Z)V
+    invoke-virtual {v10, v11}, Lcom/google/googlex/gcam/ShotParams;->d(Z)V
 
     goto :goto_3
 
@@ -331,12 +327,12 @@
 
     if-nez p11, :cond_8
 
-    move v4, v13
+    move v4, v11
 
     goto :goto_2
 
     :cond_8
-    move v4, v11
+    move v4, v12
 
     :goto_2
     invoke-virtual {v10, v4}, Lcom/google/googlex/gcam/ShotParams;->d(Z)V
@@ -347,7 +343,7 @@
 
     const-string v6, "pref_awb_switch_key"
 
-    invoke-static {v6, v11}, Lcom/Utils/Pref;->getBooleanValue(Ljava/lang/String;Z)Z
+    invoke-static {v6, v12}, Lcom/Utils/Pref;->getBooleanValue(Ljava/lang/String;Z)Z
 
     move-result v6
 
@@ -466,12 +462,12 @@
 
     if-ltz v4, :cond_c
 
-    move v4, v13
+    move v4, v11
 
     goto :goto_5
 
     :cond_c
-    move v4, v11
+    move v4, v12
 
     :goto_5
     iget-object v8, v0, Lech;->l:Ldhi;
@@ -517,12 +513,12 @@
     :cond_d
     if-nez v7, :cond_e
 
-    move v5, v13
+    move v5, v11
 
     goto :goto_6
 
     :cond_e
-    move v5, v11
+    move v5, v12
 
     :goto_6
     iget-object v6, v0, Lech;->l:Ldhi;
@@ -602,7 +598,7 @@
     goto :goto_7
 
     :cond_12
-    move v4, v11
+    move v4, v12
 
     :goto_8
     invoke-virtual {v10, v4}, Lcom/google/googlex/gcam/ShotParams;->f(Z)V
@@ -623,13 +619,13 @@
 
     iget-wide v5, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v5, v6, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, v10, v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     if-eqz v2, :cond_16
 
     iget-wide v5, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v5, v6, v10, v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_motion_ef_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_motion_ef_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     iget-object v2, v0, Lech;->k:Lebi;
 
@@ -661,17 +657,17 @@
 
     move-result v2
 
-    if-ne v2, v13, :cond_15
+    if-ne v2, v11, :cond_15
 
     iget-wide v5, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v5, v6, v10, v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_device_is_on_tripod_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_device_is_on_tripod_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     if-eqz p10, :cond_14
 
     iget-wide v5, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v5, v6, v10, v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_downsample_by_2_before_merge_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_downsample_by_2_before_merge_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     sget-object v2, Ljzr;->b:Ljzr;
 
@@ -714,7 +710,7 @@
     :cond_14
     iget-wide v5, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v5, v6, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, v10, v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     :cond_15
     sget-object v2, Ldhq;->c:Ldhk;
@@ -755,7 +751,7 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v12}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v13}, Lj$/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
 
@@ -820,7 +816,7 @@
 
     iget-wide v2, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v2, v3, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_gpu_power_boost_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v2, v3, v10, v12}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_gpu_power_boost_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     sget-object v2, Ldhq;->ax:Ldhj;
 
@@ -879,7 +875,7 @@
 
     iget-wide v1, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v1, v2, v10, v13}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_nonzsl_extended_base_frame_selection_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v1, v2, v10, v11}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_nonzsl_extended_base_frame_selection_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     iget-wide v1, v10, Lcom/google/googlex/gcam/ShotParams;->a:J
 

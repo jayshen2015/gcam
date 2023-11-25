@@ -368,7 +368,9 @@
 
     filled-new-array {v3, v2, v1}, [I
 
-    invoke-static {}, Lcom/agc/LensSettings;->getImageFormatArr()[I
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/agc/LensSettings;->getImageFormatArr([I)[I
 
     move-result-object v1
 
@@ -936,7 +938,9 @@
 
     filled-new-array {v3, v2, v1}, [I
 
-    invoke-static {}, Lcom/agc/LensSettings;->getImageFormatArr()[I
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/agc/LensSettings;->getImageFormatArr([I)[I
 
     move-result-object v1
 

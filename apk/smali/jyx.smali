@@ -160,7 +160,7 @@
 
     iget p1, p1, Ljxg;->g:I
 
-    invoke-static {p1}, LCamcorderProfileUtil;->getProfilehasHfr(I)Z
+    invoke-static {p1}, LCamcorderProfileUtil;->hasHfrProfile(I)Z
 
     move-result v0
 
@@ -198,7 +198,7 @@
 
     iget p1, p1, Ljxg;->g:I
 
-    invoke-static {p1}, LCamcorderProfileUtil;->getProfilehasHfr(I)Z
+    invoke-static {p1}, LCamcorderProfileUtil;->hasHfrProfile(I)Z
 
     move-result v0
 
@@ -259,7 +259,7 @@
 
     iget p1, p1, Ljxi;->k:I
 
-    invoke-static {p1}, LCamcorderProfileUtil;->getProfilehas(I)Z
+    invoke-static {p1}, LCamcorderProfileUtil;->hasProfile(I)Z
 
     move-result v0
 

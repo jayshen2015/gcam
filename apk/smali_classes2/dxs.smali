@@ -121,7 +121,7 @@
 
     sput-wide v6, Ldxs;->j:J
 
-    invoke-static {}, Lcom/agc/AdvancedSettings;->getMicroVideo()I
+    invoke-static {}, Lcom/agc/LensSettings;->getMicroVideo()I
 
     move-result v6
 

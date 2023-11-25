@@ -412,7 +412,7 @@
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
-    .locals 3
+    .locals 8
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -436,22 +436,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const-string v1, "noise_model_title"
-
-    invoke-static {v1}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "pref_screen_title"
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v1, "pref_screen_extra"
-
-    const-string v2, "noise_model_screen"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
     invoke-static {}, Lcom/Utils/Lens;->getAuxKey()I
 
     move-result v1
@@ -460,19 +444,150 @@
 
     move-result-object v1
 
-    const-string v2, "pref_lens_id"
+    const-string v3, "pref_lens_id"
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v3, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {p0}, Lcom/agc/asv/CameraSwitchButton;->getContext()Landroid/content/Context;
+    const-string v1, "pref_switch_long_action_key"
+
+    const-string v3, "noise_model_screen"
+
+    invoke-static {v1, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    const-string v4, ""
 
-    const/4 v1, 0x0
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    return v1
+    move-result v4
+
+    const/4 v5, 0x0
+
+    if-nez v4, :cond_1
+
+    const-string v4, "none"
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_1
+
+    const-string v4, "pref_screen_extra"
+
+    invoke-virtual {v0, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v4, "Settings"
+
+    const/4 v6, -0x1
+
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+
+    move-result v7
+
+    sparse-switch v7, :sswitch_data_0
+
+    :cond_0
+    goto :goto_0
+
+    :sswitch_0
+    const-string v3, "color_settings_awb_key"
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    goto :goto_1
+
+    :sswitch_1
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    const/4 v2, 0x2
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v2, "color_settings_screen"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    move v2, v5
+
+    goto :goto_1
+
+    :goto_0
+    move v2, v6
+
+    :goto_1
+    packed-switch v2, :pswitch_data_0
+
+    goto :goto_2
+
+    :pswitch_0
+    const-string v2, "noise_model_title"
+
+    invoke-static {v2}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :goto_2
+
+    :pswitch_1
+    const-string v2, "awb_settings_title"
+
+    invoke-static {v2}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    goto :goto_2
+
+    :pswitch_2
+    const-string v2, "color_settings_title"
+
+    invoke-static {v2}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    nop
+
+    :goto_2
+    const-string v2, "pref_screen_title"
+
+    invoke-virtual {v0, v2, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lcom/agc/asv/CameraSwitchButton;->getContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :cond_1
+    return v5
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x4173fcd4 -> :sswitch_2
+        -0xe5350b9 -> :sswitch_1
+        0x7c0107cc -> :sswitch_0
+    .end sparse-switch
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public setFrontFacing(Z)V

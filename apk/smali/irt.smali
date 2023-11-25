@@ -140,6 +140,10 @@
 
     check-cast v0, Ljava/lang/Float;
 
+    invoke-static {v0}, Lcom/agc/LensSettings;->getZoomRatio(Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v0
+
     iput-object v0, p0, Lirt;->m:Ljava/lang/Float;
 
     sget-object v0, Ldho;->ap:Ldhj;

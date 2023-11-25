@@ -133,9 +133,25 @@
     invoke-direct {v3, p0}, Lcom/agc/widget/OptionWindow$3;-><init>(Lcom/agc/widget/OptionWindow;)V
 
     invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    invoke-static {p0}, Lnan/ren/G;->popWinFilter(Lcom/agc/widget/OptionWindow;)V
     
+    invoke-static {p0}, Lnan/ren/G;->popWinFilter(Lcom/agc/widget/OptionWindow;)V
+
+    const-string v3, "agc_config_load_btn"
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v3
+
+    move-object v2, v3
+
+    check-cast v2, Landroid/widget/Button;
+
+    new-instance v3, Lcom/agc/pref/ConfigLoader;
+
+    invoke-direct {v3, p1}, Lcom/agc/pref/ConfigLoader;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v2, v3}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
     return-void
 .end method
 

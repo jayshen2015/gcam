@@ -1177,23 +1177,7 @@
     move-result-object v1
 
     :cond_0
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "pref_noise_model_key_"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
+    const-string v3, "pref_noise_model_key"
 
     invoke-virtual {v0, v3}, Landroid/preference/PreferenceScreen;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
 
@@ -1563,6 +1547,102 @@
     return-void
 .end method
 
+.method private static updatePatchCustomPref(Landroid/preference/PreferenceFragment;)V
+    .locals 8
+
+    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getPreferenceScreen()Landroid/preference/PreferenceScreen;
+
+    move-result-object v0
+
+    const-string v1, "lib_custom_patch_count_key"
+
+    const/16 v2, 0xa
+
+    invoke-static {v1, v2}, Lcom/Utils/Pref;->getAuxProfilePrefIntValue(Ljava/lang/String;I)I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v1, :cond_0
+
+    new-instance v3, Landroid/preference/LibraryPreference;
+
+    invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    const-string v5, "Description"
+
+    const-string v6, "Address"
+
+    const-string v7, "Patch hex"
+
+    invoke-direct {v3, v4, v5, v6, v7}, Landroid/preference/LibraryPreference;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    add-int/lit8 v4, v2, 0x1
+
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "custom_patch"
+
+    invoke-static {v5}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "%1$d"
+
+    invoke-virtual {v5, v6, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, v3, Landroid/preference/LibraryPreference;->defaultTitle:Ljava/lang/String;
+
+    const-string v5, "custom_patch_summary"
+
+    invoke-static {v5}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    iput-object v5, v3, Landroid/preference/LibraryPreference;->defaultSummary:Ljava/lang/String;
+
+    sget v5, Lcom/agc/Res$layout;->preference_with_margin:I
+
+    invoke-virtual {v3, v5}, Landroid/preference/LibraryPreference;->setLayoutResource(I)V
+
+    const-string v5, "lib_custom_%1$d_key"
+
+    invoke-virtual {v5, v6, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v3, v5}, Landroid/preference/LibraryPreference;->setKey(Ljava/lang/String;)V
+
+    iget-object v5, v3, Landroid/preference/LibraryPreference;->defaultTitle:Ljava/lang/String;
+
+    invoke-virtual {v3, v5}, Landroid/preference/LibraryPreference;->setTitle(Ljava/lang/CharSequence;)V
+
+    const-string v5, "agc_lib_patcher"
+
+    invoke-static {v5}, Lcom/agc/Res;->getDrawableID(Ljava/lang/String;)I
+
+    move-result v5
+
+    invoke-virtual {v3, v5}, Landroid/preference/LibraryPreference;->setIcon(I)V
+
+    invoke-virtual {v0, v3}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
 .method public static updatePreference(Landroid/preference/PreferenceFragment;)V
     .locals 3
 
@@ -1570,13 +1650,11 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceScreen;->setDependency(Ljava/lang/String;)V
-
-    invoke-static {p0}, Lcom/agc/Preference;->updateLensAndConfigKey(Landroid/preference/PreferenceFragment;)V
 
     invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getKey()Ljava/lang/String;
 
@@ -1638,11 +1716,28 @@
     invoke-static {p0}, Lcom/agc/Preference;->updatePatchConfigrPref(Landroid/preference/PreferenceFragment;)V
 
     :cond_3
-	invoke-static {p0}, Lnan/ren/G;->updatePreference(Landroid/preference/PreferenceFragment;)V
-	
-    invoke-static {v0}, Lcom/agc/Preference;->updatePreferenceSummary(Landroid/preference/PreferenceGroup;)V
+    invoke-virtual {v0}, Landroid/preference/PreferenceScreen;->getKey()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "lib_custom_patch_screen"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    invoke-static {p0}, Lcom/agc/Preference;->updatePatchCustomPref(Landroid/preference/PreferenceFragment;)V
 
     :cond_4
+    invoke-static {p0}, Lcom/agc/Preference;->updateLensAndConfigKey(Landroid/preference/PreferenceFragment;)V
+
+    invoke-static {p0}, Lnan/ren/G;->updatePreference(Landroid/preference/PreferenceFragment;)V
+
+    invoke-static {v0}, Lcom/agc/Preference;->updatePreferenceSummary(Landroid/preference/PreferenceGroup;)V
+
+    :cond_5
     const-string v1, "prefscreen_top"
 
     invoke-virtual {p0, v1}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;

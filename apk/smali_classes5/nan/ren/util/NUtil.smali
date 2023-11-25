@@ -239,7 +239,7 @@
     .locals 6
 
     .line 77
-    const/4 v0, 0x0
+    const-string v0, ""
 
     :try_start_0
     const-string v1, "lib_patch_profile_key"
@@ -408,24 +408,26 @@
 .end method
 
 .method public static log(Ljava/lang/Object;)V
-    .locals 3
+    .locals 4
     .param p0, "o"    # Ljava/lang/Object;
 
     .line 102
+    const-string v0, ">>>>BY SJS >>>>:"
+
     :try_start_0
-    const-string v0, ""
+    const-string v1, ""
 
     .line 103
-    .local v0, "r":Ljava/lang/String;
+    .local v1, "r":Ljava/lang/String;
     if-nez p0, :cond_0
 
     .line 104
-    const-string v1, "null"
+    const-string v2, "null"
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    move-object v0, v1
+    move-object v1, v2
 
     goto :goto_0
 
@@ -434,39 +436,37 @@
     :try_start_1
     invoke-static {p0}, Lnan/ren/util/JsonUtil;->toJSONString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    move-object v0, v1
+    move-object v1, v2
 
     .line 110
     goto :goto_0
 
     .line 108
     :catch_0
-    move-exception v1
+    move-exception v2
 
     .line 109
-    .local v1, "ex":Ljava/lang/Exception;
+    .local v2, "ex":Ljava/lang/Exception;
     :try_start_2
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    move-object v0, v2
+    move-object v1, v3
 
     .line 112
-    .end local v1    # "ex":Ljava/lang/Exception;
+    .end local v2    # "ex":Ljava/lang/Exception;
     :goto_0
     :try_start_3
-    const-string v1, ">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>:"
-
-    invoke-static {v1, v0}, Lcom/agc/CrashHandler;->writeLog(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/agc/CrashHandler;->writeLog(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
@@ -474,14 +474,12 @@
     goto :goto_1
 
     :catch_1
-    move-exception v1
+    move-exception v2
 
     .line 113
     :goto_1
     :try_start_4
-    const-string v1, ">>>>>>>>>>>>BY SJS>>>>>>>>>>>>>>>>>>"
-
-    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
@@ -489,12 +487,12 @@
     goto :goto_2
 
     :catch_2
-    move-exception v1
+    move-exception v0
 
     goto :goto_2
 
     .line 116
-    .end local v0    # "r":Ljava/lang/String;
+    .end local v1    # "r":Ljava/lang/String;
     :catchall_0
     move-exception v0
 

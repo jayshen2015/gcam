@@ -158,7 +158,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 9
 
     const/4 v0, 0x1
 
@@ -850,8 +850,15 @@
 
     sput-object v1, Lgzd;->an:Lgzs;
 
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v8
+
+    if-nez v8, :cond_0
+
     const v5, 0x1
 
+    :cond_0
     invoke-static {v5}, Linb;->D(I)I
 
     move-result v1

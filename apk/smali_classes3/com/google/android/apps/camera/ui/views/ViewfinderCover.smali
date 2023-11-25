@@ -69,8 +69,6 @@
     move-result-object p1
 
     iput-object p1, p0, Lcom/google/android/apps/camera/ui/views/ViewfinderCover;->k:Ldhi;
-	
-	invoke-static {p0}, Lnan/ren/G;->initCameraDraw(Lcom/google/android/apps/camera/ui/views/ViewfinderCover;)V
 
     return-void
 .end method

@@ -207,7 +207,7 @@
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 1
+    .locals 0
     .param p1, "compoundButton"    # Landroid/widget/CompoundButton;
     .param p2, "z"    # Z
 
@@ -215,21 +215,6 @@
     invoke-super {p0, p1, p2}, Lcom/agc/widget/OptionButton;->onCheckedChanged(Landroid/widget/CompoundButton;Z)V
 
     .line 66
-    iget v0, p0, Lnan/ren/button/LutButton;->selectedIndex:I
-
-    if-lez v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-virtual {p0, v0}, Lnan/ren/button/LutButton;->setChecked(Z)V
-
-    .line 67
     return-void
 .end method
 
@@ -237,22 +222,22 @@
     .locals 1
     .param p1, "i"    # I
 
-    .line 70
+    .line 69
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->onClickPopItem(I)V
 
-    .line 71
+    .line 70
     const-string v0, "my_preview_luts"
 
     invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    .line 72
+    .line 71
     return-void
 .end method
 
 .method showPreview()V
     .locals 3
 
-    .line 75
+    .line 74
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
@@ -261,17 +246,17 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 76
+    .line 75
     .local v0, "intent":Landroid/content/Intent;
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 77
+    .line 76
     iget-object v1, p0, Lnan/ren/button/LutButton;->myContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 78
+    .line 77
     return-void
 .end method

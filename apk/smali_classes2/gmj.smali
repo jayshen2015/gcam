@@ -342,7 +342,7 @@
     invoke-virtual {v14, v0, v2}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
 
     :cond_3
-    invoke-static {}, Lagc/Agc;->isSamsDevice()Z
+    invoke-static {}, Lagc/Agc;->isSamsExynosDevice()Z
 
     move-result v0
 

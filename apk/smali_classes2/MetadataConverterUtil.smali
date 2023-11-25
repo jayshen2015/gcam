@@ -644,19 +644,27 @@
     :goto_7
     const v1, 0x46bb8000    # 24000.0f
 
-    invoke-static {v1}, Lcom/agc/LensSettings;->getExpastro(F)F
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result v1
+    move-result-object v1
 
     goto :goto_9
 
     :cond_d
     :goto_8
-    invoke-static {v4}, Lcom/agc/LensSettings;->getExpastro(F)F
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    :goto_9
+    invoke-static {v1}, Lcom/agc/LensSettings;->getExpastro(Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
     move-result v1
 
-    :goto_9
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
@@ -664,7 +672,15 @@
     :goto_a
     if-nez v1, :cond_f
 
-    invoke-static {v4}, Lcom/agc/LensSettings;->getExpastro(F)F
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/agc/LensSettings;->getExpastro(Ljava/lang/Float;)Ljava/lang/Float;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
 
     move-result v1
 
@@ -1719,6 +1735,320 @@
     throw p0
 .end method
 
+.method public static getPhysicalCharacteristics(Lkli;Lklj;Lkou;Lkll;)Lkli;
+    .locals 5
+
+    invoke-interface {p0}, Lkli;->B()Ljava/util/Set;
+
+    move-result-object v0
+
+    if-eqz p3, :cond_0
+
+    invoke-interface {v0, p3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p1, p3}, Lklj;->a(Lkll;)Lkli;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    invoke-interface {p0}, Lkli;->M()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_d
+
+    invoke-interface {p0}, Lkli;->D()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    goto/16 :goto_5
+
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Set;->size()I
+
+    move-result p0
+
+    const/4 v1, 0x1
+
+    if-ne p0, v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkll;
+
+    :goto_0
+    invoke-interface {p1, p0}, Lklj;->a(Lkll;)Lkli;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    invoke-interface {p2}, Lkou;->g()Ljava/util/Map;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    if-nez v2, :cond_4
+
+    move-object p2, p0
+
+    check-cast p2, Lmyz;
+
+    iget p2, p2, Lmyz;->c:I
+
+    if-ne p2, v1, :cond_3
+
+    move-object p2, p0
+
+    check-cast p2, Lmwa;
+
+    invoke-virtual {p2}, Lmwa;->values()Ljava/util/Collection;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Lj$/util/stream/Stream;->findFirst()Lj$/util/Optional;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lj$/util/Optional;->get()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lkoq;
+
+    invoke-interface {p2}, Lkoq;->e()Ljava/lang/String;
+
+    move-result-object p2
+
+    goto :goto_1
+
+    :cond_3
+    move-object p2, v3
+
+    goto :goto_1
+
+    :cond_4
+    invoke-interface {p2}, Lkou;->e()Ljava/lang/String;
+
+    move-result-object p2
+
+    :goto_1
+    if-eqz p2, :cond_6
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_6
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkll;
+
+    iget-object p3, p0, Lkll;->a:Ljava/lang/String;
+
+    invoke-virtual {p2, p3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p3
+
+    if-eqz p3, :cond_5
+
+    invoke-interface {p1, p0}, Lklj;->a(Lkll;)Lkli;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_5
+    invoke-interface {p1, p2}, Lklj;->d(Ljava/lang/String;)Lkll;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_6
+    invoke-interface {p0}, Ljava/util/Map;->isEmpty()Z
+
+    move-result p2
+
+    if-nez p2, :cond_9
+
+    if-eqz p3, :cond_8
+
+    iget-object p2, p3, Lkll;->a:Ljava/lang/String;
+
+    invoke-interface {p0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lkoq;
+
+    if-nez p2, :cond_7
+
+    goto :goto_2
+
+    :cond_7
+    sget-object p0, Landroid/hardware/camera2/CaptureResult;->LENS_FOCAL_LENGTH:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p2, p0}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    goto :goto_3
+
+    :cond_8
+    :goto_2
+    move-object p2, p0
+
+    check-cast p2, Lmyz;
+
+    iget p2, p2, Lmyz;->c:I
+
+    if-ne p2, v1, :cond_9
+
+    check-cast p0, Lmwa;
+
+    invoke-virtual {p0}, Lmwa;->values()Ljava/util/Collection;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lj$/util/Collection$-EL;->stream(Ljava/util/Collection;)Lj$/util/stream/Stream;
+
+    move-result-object p0
+
+    invoke-interface {p0}, Lj$/util/stream/Stream;->findFirst()Lj$/util/Optional;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Lj$/util/Optional;->get()Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lkoq;
+
+    sget-object p2, Landroid/hardware/camera2/CaptureResult;->LENS_FOCAL_LENGTH:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, p2}, Lkoq;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :goto_3
+    move-object v3, p0
+
+    check-cast v3, Ljava/lang/Float;
+
+    :cond_9
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_a
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_c
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lkll;
+
+    invoke-interface {p1, p2}, Lklj;->a(Lkll;)Lkli;
+
+    move-result-object p2
+
+    invoke-interface {p2}, Lkli;->r()Ljava/util/List;
+
+    move-result-object p3
+
+    invoke-interface {p3}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    const/4 v2, 0x0
+
+    if-ne v0, v1, :cond_b
+
+    move v0, v1
+
+    goto :goto_4
+
+    :cond_b
+    move v0, v2
+
+    :goto_4
+    const-string v4, "Physical cameras must have single focal length."
+
+    invoke-static {v0, v4}, Lmoz;->f(ZLjava/lang/Object;)V
+
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
+
+    move-result v0
+
+    invoke-interface {p3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p3
+
+    check-cast p3, Ljava/lang/Float;
+
+    invoke-virtual {p3}, Ljava/lang/Float;->floatValue()F
+
+    move-result p3
+
+    cmpl-float p3, v0, p3
+
+    if-nez p3, :cond_a
+
+    return-object p2
+
+    :cond_c
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Physical camera with matching focal length not found."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+
+    :cond_d
+    :goto_5
+    return-object p0
+.end method
+
 .method public static getPseudoCT(Lcom/google/googlex/gcam/FloatArray9;Lkou;)Lcom/google/googlex/gcam/FloatArray9;
     .locals 6
 
@@ -1757,8 +2087,6 @@
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
-
-    sput p1, Lcom/agc/NoiseModels;->ISO_RESULT:I
 
     invoke-static {v1, p1}, Lcom/agc/ColorTransform;->ColorTransformSelector([FI)V
 

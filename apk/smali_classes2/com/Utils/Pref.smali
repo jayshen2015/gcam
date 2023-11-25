@@ -1684,16 +1684,6 @@
 .method private static handleCustomLogical(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 5
 
-    sget-object v0, Lcom/Globals;->GcamVersion:Ljava/lang/String;
-
-    const-string v1, "8.4"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
     const-string v0, "pref_hdrnet_key"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1722,7 +1712,7 @@
     :goto_0
     const-string v4, "hdrnet_enabled"
 
-    invoke-static {v4, v3}, Lcom/Utils/Pref;->setBooleanValue(Ljava/lang/String;Z)V
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
 
     if-ne v0, v2, :cond_1
 
@@ -1731,13 +1721,40 @@
     :cond_1
     const-string v2, "camera.chameleon.enabled"
 
-    invoke-static {v2, v1}, Lcom/Utils/Pref;->setBooleanValue(Ljava/lang/String;Z)V
+    invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
 
     const-string v1, "pref_chameleon_control_key"
 
     invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
     :cond_2
+    return-void
+.end method
+
+.method private static handleFocus(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+    .locals 2
+
+    const-string v0, "pref_af_mode_back"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    invoke-static {}, Lcom/Globals;->onReInit()V
+
+    :cond_0
     return-void
 .end method
 

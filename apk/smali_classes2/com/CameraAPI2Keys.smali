@@ -111,16 +111,6 @@
     .end annotation
 .end field
 
-.field public static final API_KEY_QCOM_CONTRAST_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/hardware/camera2/CaptureRequest$Key<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public static final API_KEY_QCOM_CUSTOM_NOISE_REDUCTION:Landroid/hardware/camera2/CaptureRequest$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -250,16 +240,6 @@
     .end annotation
 .end field
 
-.field public static final API_KEY_QCOM_SATURATION_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/hardware/camera2/CaptureRequest$Key<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public static final API_KEY_QCOM_SATURATION_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -307,31 +287,11 @@
     .end annotation
 .end field
 
-.field public static final API_KEY_QCOM_SHARPNESS_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/hardware/camera2/CaptureRequest$Key<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 .field public static final API_KEY_QCOM_SHARPNESS_RANGE:Landroid/hardware/camera2/CameraCharacteristics$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/hardware/camera2/CameraCharacteristics$Key<",
             "[I>;"
-        }
-    .end annotation
-.end field
-
-.field public static final API_KEY_QCOM_USE_ISO_VALUE:Landroid/hardware/camera2/CaptureRequest$Key;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/hardware/camera2/CaptureRequest$Key<",
-            "Ljava/lang/Integer;",
-            ">;"
         }
     .end annotation
 .end field
@@ -436,6 +396,26 @@
     .end annotation
 .end field
 
+.field public static final BLUE_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final CONTRAST:Landroid/hardware/camera2/CaptureRequest$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static final CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -466,6 +446,36 @@
     .end annotation
 .end field
 
+.field public static final CONTROL_METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final CONTROL_PHASE_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public static final ISO_VALUE:Landroid/hardware/camera2/CaptureRequest$Key;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/hardware/camera2/CaptureRequest$Key<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field public static final LENS_APERTURE:Landroid/hardware/camera2/CaptureRequest$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -486,7 +496,7 @@
     .end annotation
 .end field
 
-.field public static final METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+.field public static final SATURATION:Landroid/hardware/camera2/CaptureRequest$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/hardware/camera2/CaptureRequest$Key<",
@@ -496,7 +506,7 @@
     .end annotation
 .end field
 
-.field public static final PHASE_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+.field public static final SHARPNESS:Landroid/hardware/camera2/CaptureRequest$Key;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/hardware/camera2/CaptureRequest$Key<",
@@ -525,6 +535,10 @@
 
     const-class v1, [I
 
+    const/4 v2, 0x0
+
+    sput-object v2, Lcom/CameraAPI2Keys;->BLUE_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
+
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
     sget-object v3, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
@@ -534,6 +548,56 @@
     invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->LENS_APERTURE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-string v4, "org.codeaurora.qcamera3.saturation.use_saturation"
+
+    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    sput-object v2, Lcom/CameraAPI2Keys;->SATURATION:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-string v4, "org.codeaurora.qcamera3.contrast.level"
+
+    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    sput-object v2, Lcom/CameraAPI2Keys;->CONTRAST:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-string v4, "org.codeaurora.qcamera3.sharpness.strength"
+
+    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    sput-object v2, Lcom/CameraAPI2Keys;->SHARPNESS:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-string v4, "org.codeaurora.qcamera3.iso_exp_priority.use_iso_value"
+
+    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    sput-object v2, Lcom/CameraAPI2Keys;->ISO_VALUE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+    const-string v4, "samsung.android.control.meteringMode"
+
+    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+
+    sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -549,7 +613,7 @@
 
     sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "samsung.android.control.meteringMode"
+    const-string v4, "samsung.android.control.liveHdrMode"
 
     invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
@@ -559,19 +623,11 @@
 
     sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v2, Lcom/CameraAPI2Keys;->METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
     const-string v4, "samsung.android.control.pafMode"
 
     invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    sput-object v2, Lcom/CameraAPI2Keys;->PHASE_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_PHASE_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -595,13 +651,11 @@
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-static {}, Lagc/Agc;->getXiaoMi13UAperture()Ljava/lang/String;
+    sget-object v3, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    move-result-object v3
+    const-string v4, "com.xiaomi.sessionparams.initAperture"
 
-    sget-object v4, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
-
-    invoke-direct {v2, v3, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->XIAOMI_LENS_APERTURE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -779,16 +833,6 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v4, "org.codeaurora.qcamera3.iso_exp_priority.use_iso_value"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_USE_ISO_VALUE:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const-class v3, Ljava/lang/Integer;
-
     const-string v4, "com.qti.chi.multicameracontrol.BlueLevel"
 
     invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
@@ -852,36 +896,6 @@
     invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_3A_SYNC:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    const-string v5, "org.codeaurora.qcamera3.contrast.level"
-
-    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_CONTRAST_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const-class v3, Ljava/lang/Integer;
-
-    const-string v5, "org.codeaurora.qcamera3.saturation.use_saturation"
-
-    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_SATURATION_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
-
-    new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
-
-    const-class v3, Ljava/lang/Integer;
-
-    const-string v5, "org.codeaurora.qcamera3.sharpness.strength"
-
-    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
-
-    sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_SHARPNESS_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureResult$Key;
 
