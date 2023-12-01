@@ -1,6 +1,5 @@
 .class public Lcom/agc/Toast;
 .super Ljava/lang/Object;
-.source "Toast.java"
 
 
 # direct methods
@@ -31,7 +30,7 @@
 
     invoke-static {p0, p1}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method

@@ -1,6 +1,5 @@
 .class public Lcom/Globals;
 .super Ljava/lang/Object;
-.source "Globals.java"
 
 
 # static fields
@@ -11,6 +10,8 @@
 .field public static final awbFolder:Ljava/io/File;
 
 .field public static final awbPath:Ljava/lang/String;
+
+.field public static final configFolder:Ljava/io/File;
 
 .field public static final configPath:Ljava/lang/String;
 
@@ -32,7 +33,7 @@
 
 .field public static final noisePath:Ljava/lang/String;
 
-.field static previousHdrPlus:Ljava/lang/String;
+.field public static previousHdrPlus:Ljava/lang/String;
 
 .field public static sHdrProcessTime:J
 
@@ -40,7 +41,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 5
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
@@ -52,6 +53,22 @@
     move-result-object v0
 
     sput-object v0, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    new-instance v0, Ljava/io/File;
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v1
+
+    const-string v2, "gcastartup_libs"
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -81,21 +98,31 @@
 
     sput-object v0, Lcom/Globals;->configPath:Ljava/lang/String;
 
-    new-instance v0, Ljava/io/File;
+    new-instance v2, Ljava/io/File;
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v4
 
-    const-string v3, "gcastartup_libs"
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v0, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    move-result-object v3
 
-    sput-object v0, Lcom/Globals;->libFolder:Ljava/io/File;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    sput-object v2, Lcom/Globals;->configFolder:Ljava/io/File;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -312,6 +339,98 @@
     return p0
 .end method
 
+.method private static createFolders()V
+    .locals 5
+
+    const/4 v0, 0x4
+
+    new-array v1, v0, [Ljava/io/File;
+
+    sget-object v2, Lcom/Globals;->configFolder:Ljava/io/File;
+
+    const/4 v3, 0x0
+
+    aput-object v2, v1, v3
+
+    sget-object v2, Lcom/Globals;->awbFolder:Ljava/io/File;
+
+    const/4 v4, 0x1
+
+    aput-object v2, v1, v4
+
+    sget-object v2, Lcom/Globals;->lutFolder:Ljava/io/File;
+
+    const/4 v4, 0x2
+
+    aput-object v2, v1, v4
+
+    sget-object v2, Lcom/Globals;->noiseFolder:Ljava/io/File;
+
+    const/4 v4, 0x3
+
+    aput-object v2, v1, v4
+
+    :goto_0
+    if-ge v3, v0, :cond_1
+
+    aget-object v2, v1, v3
+
+    :try_start_0
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v4
+
+    if-nez v4, :cond_0
+
+    invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_1
+
+    :catch_0
+    move-exception v2
+
+    :cond_0
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_1
+    return-void
+.end method
+
+.method public static createTextFrom(Ljava/util/Map;)Ljava/lang/String;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;)",
+            "Ljava/lang/String;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    new-instance v1, Lcom/Globals$$ExternalSyntheticLambda0;
+
+    invoke-direct {v1, v0}, Lcom/Globals$$ExternalSyntheticLambda0;-><init>(Ljava/lang/StringBuilder;)V
+
+    invoke-interface {p0, v1}, Ljava/util/Map;->forEach(Ljava/util/function/BiConsumer;)V
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static debug(Ljava/lang/String;)V
     .locals 0
 
@@ -337,8 +456,6 @@
 
     move-result-object v0
 
-    nop
-
     :try_start_0
     invoke-virtual {v0}, Landroid/app/Application;->getPackageName()Ljava/lang/String;
 
@@ -348,22 +465,22 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Application;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v1
+    return-object v0
 
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public static getCameraIdList()[Ljava/lang/String;
@@ -389,21 +506,119 @@
 
     if-eqz v0, :cond_0
 
-    move-object v0, p0
-
     goto :goto_0
 
     :cond_0
     invoke-static {}, Lcom/Globals;->getSwitchCameraList()[Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
     :goto_0
+    return-object p0
+.end method
+
+.method private static getResultFieldName(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;
+    .locals 7
+
+    const-string v0, ""
+
+    if-nez p1, :cond_0
+
+    return-object v0
+
+    :cond_0
+    const-class v1, Landroid/hardware/camera2/CameraMetadata;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
+
+    move-result-object v1
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :goto_0
+    if-ge v3, v2, :cond_2
+
+    aget-object v4, v1, v3
+
+    invoke-virtual {v4}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    :try_start_0
+    invoke-virtual {v4, v4}, Ljava/lang/reflect/Field;->getInt(Ljava/lang/Object;)I
+
+    move-result v5
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v6
+
+    if-ne v5, v6, :cond_1
+
+    invoke-virtual {v4}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p0, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "("
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    const-string v6, ")"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object p0
+
+    :catch_0
+    move-exception v4
+
+    invoke-virtual {v4}, Ljava/lang/Exception;->printStackTrace()V
+
+    :cond_1
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_0
+
+    :cond_2
     return-object v0
 .end method
 
 .method public static getSwitchCameraList()[Ljava/lang/String;
-    .locals 4
+    .locals 3
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKey()I
 
@@ -436,29 +651,29 @@
 
     aput-object v0, v1, v2
 
-    const/4 v2, 0x1
-
     invoke-static {}, Lagc/Agc;->getFrontMainCameraId()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    aput-object v3, v1, v2
+    const/4 v2, 0x1
 
-    const-string v2, "getSwitchCameraList"
+    aput-object v0, v1, v2
 
-    invoke-static {v2, v1}, Lcom/agc/Log;->w(Ljava/lang/Object;[Ljava/lang/Object;)I
+    const-string v0, "getSwitchCameraList"
+
+    invoke-static {v0, v1}, Lcom/agc/Log;->w(Ljava/lang/Object;[Ljava/lang/Object;)I
 
     return-object v1
 .end method
 
 .method public static getThrowable(Ljava/lang/String;Ljava/lang/Throwable;)V
-    .locals 1
+    .locals 0
 
     invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;[Ljava/lang/Object;)I
+    invoke-static {p0, p1}, Lcom/agc/Log;->e(Ljava/lang/Object;[Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -472,101 +687,81 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "raven"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "bluejay"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "panther"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "cheetah"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "pipit"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "tangor"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "lynx"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "felix"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "husky"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "shiba"
 
@@ -600,131 +795,105 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "marlin"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "walleye"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "taimen"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "blueline"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "crosshatch"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "sargo"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "bonito"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "flame"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "coral"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "sunfish"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "bramble"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "redfin"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-nez v0, :cond_1
-
-    sget-object v0, Landroid/os/Build;->DEVICE:Ljava/lang/String;
+    if-nez v1, :cond_1
 
     const-string v1, "barbet"
 
@@ -830,108 +999,108 @@
 
     invoke-static {}, Lagc/Agc;->getBackMainCameraId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
+    invoke-static {v0}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
 
     move-result v0
 
     invoke-static {v0}, Lcom/Utils/Lens;->setAuxKey(I)V
 
     :cond_0
-    sget-object v2, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
+    sget-object v1, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
 
-    invoke-static {v2}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lagc/Agc;->downloadFilePath(Ljava/lang/String;)V
+    invoke-static {v1}, Lagc/Agc;->downloadFilePath(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, ""
+    const-string v2, ""
 
-    invoke-static {v2, v3}, Lcom/agc/util/FileUtil;->getFilesDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v1, v2}, Lcom/agc/util/FileUtil;->getFilesDir(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lagc/Agc;->configFilePath(Ljava/lang/String;)V
+    invoke-static {v1}, Lagc/Agc;->configFilePath(Ljava/lang/String;)V
 
-    sget-object v2, Lcom/Globals;->mParameters:Lcom/Parameters;
-
-    invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    iput-object v3, v2, Lcom/Parameters;->mCameraID:Ljava/lang/String;
+    sget-object v1, Lcom/Globals;->mParameters:Lcom/Parameters;
 
     invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Lagc/Agc;->setCameraID(Ljava/lang/String;)V
+    iput-object v2, v1, Lcom/Parameters;->mCameraID:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lagc/Agc;->setCameraID(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "/"
+    const-string v1, "/"
 
-    invoke-static {v2, v3}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lagc/Agc;->setCachePath(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-string v3, "fonts/MiSans-Demibold.ttf"
-
-    invoke-static {v2, v3}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-static {v0}, Lagc/Agc;->setCachePath(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "fonts/MiSans-Regular.ttf"
+    const-string v1, "fonts/MiSans-Demibold.ttf"
 
-    invoke-static {v2, v3}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "fonts/DS-Digital-Bold.ttf"
+    const-string v1, "fonts/MiSans-Regular.ttf"
 
-    invoke-static {v2, v3}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "fonts/DS-Digital-Bold.ttf"
+
+    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     invoke-static {}, Lcom/Globals;->initMenuValue()V
 
@@ -939,15 +1108,17 @@
 
     invoke-static {}, Ljava/util/TimeZone;->getDefault()Ljava/util/TimeZone;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/util/TimeZone;->getRawOffset()I
+    invoke-virtual {v0}, Ljava/util/TimeZone;->getRawOffset()I
 
-    move-result v2
+    move-result v0
 
-    div-int/lit16 v2, v2, 0x3e8
+    div-int/lit16 v0, v0, 0x3e8
 
-    invoke-static {v2}, Lagc/Agc;->setTimeZoneOffset(I)V
+    invoke-static {v0}, Lagc/Agc;->setTimeZoneOffset(I)V
+
+    invoke-static {}, Lcom/Globals;->createFolders()V
 
     return-void
 .end method
@@ -1010,8 +1181,6 @@
     move-exception v0
 
     :goto_0
-    nop
-
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     const-string v1, "info_manuf_key"
@@ -1177,50 +1346,443 @@
     return-void
 .end method
 
+.method static synthetic lambda$createTextFrom$0(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string p1, " : "
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string p1, "\n"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    return-void
+.end method
+
 .method public static medianFilter(Ljava/io/File;)V
     .locals 1
 	invoke-static {p0}, Lnan/ren/G;->medianFilter(Ljava/io/File;)V
     return-void
 .end method
 
+
 .method public static medianFilter2(Ljava/io/File;)V
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    const-string v1, ".dng"
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    const-string v2, ".dng"
+    move-result v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     return-void
 
     :cond_0
-    new-instance v1, Landroid/os/Handler;
+    new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v1, Lcom/Globals$1;
+
+    invoke-direct {v1, v0, p0}, Lcom/Globals$1;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
+
+    const-wide/16 v2, 0x64
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    return-void
+.end method
+
+.method public static metadataValue(Lndu;)V
+    .locals 9
+
+    invoke-static {}, Lcom/agc/AdvancedSettings;->isShowDebugData()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    const-string v2, "CONTROL_AF_MODE_"
+
+    invoke-static {v2, v1}, Lcom/Globals;->getResultFieldName(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "AF_MODE"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_TRIGGER:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    const-string v2, "CONTROL_AF_TRIGGER_"
+
+    invoke-static {v2, v1}, Lcom/Globals;->getResultFieldName(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "AF_TRIGGER"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_STATE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    const-string v2, "CONTROL_AF_STATE_"
+
+    invoke-static {v2, v1}, Lcom/Globals;->getResultFieldName(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "AF_STATE"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    const-string v2, "CONTROL_AE_MODE_"
+
+    invoke-static {v2, v1}, Lcom/Globals;->getResultFieldName(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "AE_MODE"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->FLASH_MODE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    const-string v2, "FLASH_MODE_"
+
+    invoke-static {v2, v1}, Lcom/Globals;->getResultFieldName(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "FLASH_MODE"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const/4 v1, 0x1
+
+    new-array v2, v1, [Ljava/lang/Object;
+
+    sget-object v3, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v3}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/Float;
+
+    invoke-virtual {v3}, Ljava/lang/Float;->floatValue()F
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v3
+
+    const/4 v4, 0x0
+
+    aput-object v3, v2, v4
+
+    const-string v3, "%.2f"
+
+    invoke-static {v3, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
     move-result-object v2
 
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    const-string v3, "FOCUS_DISTANCE"
 
-    new-instance v2, Lcom/Globals$1;
+    invoke-virtual {v0, v3, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-direct {v2, v1, v0}, Lcom/Globals$1;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
+    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_EXPOSURE_TIME:Landroid/hardware/camera2/CaptureResult$Key;
 
-    const-wide/16 v3, 0x64
+    invoke-interface {p0, v2}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    move-result-object v2
 
+    check-cast v2, Ljava/lang/Long;
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Lcom/ExposureIndex;->ExposureString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "EXPOSURE_TIME"
+
+    invoke-virtual {v0, v3, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v2}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "ISO"
+
+    invoke-virtual {v0, v3, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_NEUTRAL_COLOR_POINT:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v2}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, [Landroid/util/Rational;
+
+    const/4 v3, 0x3
+
+    if-nez v2, :cond_0
+
+    new-array v2, v3, [Landroid/util/Rational;
+
+    move v5, v4
+
+    :goto_0
+    if-ge v5, v3, :cond_0
+
+    new-instance v6, Landroid/util/Rational;
+
+    const/16 v7, 0x65
+
+    const/16 v8, 0x64
+
+    invoke-direct {v6, v7, v8}, Landroid/util/Rational;-><init>(II)V
+
+    aput-object v6, v2, v5
+
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    new-array v5, v3, [F
+
+    aget-object v6, v2, v4
+
+    invoke-virtual {v6}, Landroid/util/Rational;->floatValue()F
+
+    move-result v6
+
+    aput v6, v5, v4
+
+    aget-object v6, v2, v1
+
+    invoke-virtual {v6}, Landroid/util/Rational;->floatValue()F
+
+    move-result v6
+
+    aput v6, v5, v1
+
+    const/4 v6, 0x2
+
+    aget-object v2, v2, v6
+
+    invoke-virtual {v2}, Landroid/util/Rational;->floatValue()F
+
+    move-result v2
+
+    aput v2, v5, v6
+
+    new-array v2, v3, [Ljava/lang/Object;
+
+    aget v3, v5, v4
+
+    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v3
+
+    aput-object v3, v2, v4
+
+    aget v3, v5, v1
+
+    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v3
+
+    aput-object v3, v2, v1
+
+    aget v1, v5, v6
+
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    move-result-object v1
+
+    aput-object v1, v2, v6
+
+    const-string v1, "%.3f %.3f %.3f"
+
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "White Point"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Landroid/hardware/camera2/params/MeteringRectangle;
+
+    invoke-static {v1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "W AF_RECT"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, [Landroid/hardware/camera2/params/MeteringRectangle;
+
+    invoke-static {v1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "I AE_RECT"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v1, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, [Landroid/hardware/camera2/params/Face;
+
+    sget-object v1, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    array-length v2, p0
+
+    iput v2, v1, Lcom/Parameters;->faceCount:I
+
+    array-length v1, p0
+
+    if-eqz v1, :cond_2
+
+    array-length v1, p0
+
+    new-array v1, v1, [Landroid/graphics/Rect;
+
+    move v2, v4
+
+    :goto_1
+    array-length v3, p0
+
+    if-ge v2, v3, :cond_1
+
+    aget-object v3, p0, v4
+
+    invoke-virtual {v3}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v3
+
+    aput-object v3, v1, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    invoke-static {v1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v1, "I AF_FACE"
+
+    invoke-virtual {v0, v1, p0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    sget-object p0, Lcom/agc/Debug;->focusView:Lcom/agc/fw/FloatManager;
+
+    invoke-static {v0}, Lcom/Globals;->createTextFrom(Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "I"
+
+    invoke-virtual {p0, v1, v0}, Lcom/agc/fw/FloatManager;->log(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_3
     return-void
 .end method
 
@@ -1233,15 +1795,15 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v1}, Lcom/agc/asv/FocusView;->execCommands(Landroid/content/Context;)V
+    invoke-static {p0}, Lcom/agc/asv/FocusView;->execCommands(Landroid/content/Context;)V
 
     :cond_0
     return-void
@@ -1278,7 +1840,7 @@
 .end method
 
 .method public static onRestart(ZZ)V
-    .locals 5
+    .locals 4
 
     sget v0, Lcom/Globals;->sHdr_process:I
 
@@ -1323,44 +1885,44 @@
 
     if-eqz p0, :cond_0
 
-    const-string v3, "android.intent.extras.CAMERA_FACING"
+    const-string p0, "android.intent.extras.CAMERA_FACING"
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v2, p0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    const-string v3, "android.intent.extras.LENS_FACING_FRONT"
+    const-string p0, "android.intent.extras.LENS_FACING_FRONT"
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v2, p0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    const-string v3, "android.intent.extra.USE_FRONT_CAMERA"
+    const-string p0, "android.intent.extra.USE_FRONT_CAMERA"
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v2, p0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
     :cond_0
-    const-string v3, "android.intent.extra.REQUIRE_FOCUS"
+    const-string p0, "android.intent.extra.REQUIRE_FOCUS"
 
-    invoke-virtual {v2, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+    invoke-virtual {v2, p0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    const-string v3, "lib_profile_action_key"
+    const-string p0, "lib_profile_action_key"
 
-    invoke-static {v3}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object p0
 
-    const-string v4, "onRestart sMode: "
+    const-string p1, "onRestart sMode: "
 
-    invoke-static {v4, v3}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    const-string v4, ""
+    const-string p1, ""
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result p1
 
-    if-nez v4, :cond_1
+    if-nez p1, :cond_1
 
-    invoke-virtual {v2, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, p0}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     :cond_1
     invoke-virtual {v1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
@@ -1385,7 +1947,7 @@
 .end method
 
 .method public static sHdrProcessTime(I)V
-    .locals 6
+    .locals 4
 
     const-wide/16 v0, 0x0
 
@@ -1395,9 +1957,9 @@
 
     sget-wide v2, Lcom/Globals;->sHdrProcessTime:J
 
-    cmp-long v0, v2, v0
+    cmp-long p0, v2, v0
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -1410,17 +1972,11 @@
     :cond_0
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v2
-
-    sget-wide v4, Lcom/Globals;->sHdrProcessTime:J
-
-    sub-long/2addr v2, v4
-
     sput-wide v0, Lcom/Globals;->sHdrProcessTime:J
 
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    invoke-static {v0}, Lcom/agc/widget/HDRProgress;->updateProgress(F)V
+    invoke-static {p0}, Lcom/agc/widget/HDRProgress;->updateProgress(F)V
 
     :cond_1
     :goto_0
@@ -1428,7 +1984,7 @@
 .end method
 
 .method public static setSMode(Ljava/lang/String;)V
-    .locals 4
+    .locals 3
 
     const-string v0, "setSMode"
 
@@ -1446,56 +2002,56 @@
 
     if-eq v0, v1, :cond_1
 
-    const-string v1, "PORTRAIT"
+    const-string v0, "PORTRAIT"
 
-    invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    const-string v2, "pref_camera_hdr_plus_key"
+    const-string v1, "pref_camera_hdr_plus_key"
 
-    if-eqz v1, :cond_0
+    if-eqz v0, :cond_0
 
     invoke-static {}, Lagc/Agc;->getSMode()I
 
-    move-result v1
+    move-result v0
 
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    if-eq v1, v3, :cond_1
+    if-eq v0, v2, :cond_1
 
-    invoke-static {v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sput-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
-    const-string v1, "auto"
+    const-string v0, "auto"
 
-    invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
     :cond_0
-    sget-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sget-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    const-string v3, ""
+    const-string v2, ""
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    sget-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sget-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
-    invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    sput-object v1, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
+    sput-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
 
     :cond_1
     :goto_0
@@ -1503,11 +2059,11 @@
 
     invoke-static {}, Lcom/Utils/EventBus;->getShared()Lcom/Utils/EventBus;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "shot_mode"
+    const-string v1, "shot_mode"
 
-    invoke-virtual {v1, v2, p0}, Lcom/Utils/EventBus;->post(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Lcom/Utils/EventBus;->post(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method

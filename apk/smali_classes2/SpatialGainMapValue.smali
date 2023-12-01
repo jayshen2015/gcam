@@ -1,6 +1,5 @@
 .class public LSpatialGainMapValue;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

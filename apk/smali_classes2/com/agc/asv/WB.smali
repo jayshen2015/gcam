@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/WB;
 .super Landroid/widget/ToggleButton;
-.source "WB.java"
 
 
 # annotations
@@ -31,13 +30,13 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    sget-object v0, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
+    sget-object p2, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
 
-    iput-object v0, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
+    iput-object p2, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
 
     invoke-virtual {p0, p1}, Lcom/agc/asv/WB;->init(Landroid/content/Context;)V
 
@@ -45,13 +44,13 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    sget-object v0, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
+    sget-object p2, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
 
-    iput-object v0, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
+    iput-object p2, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
 
     invoke-virtual {p0, p1}, Lcom/agc/asv/WB;->init(Landroid/content/Context;)V
 
@@ -59,13 +58,13 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3, p4}, Landroid/widget/ToggleButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    sget-object v0, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
+    sget-object p2, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
 
-    iput-object v0, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
+    iput-object p2, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
 
     invoke-virtual {p0, p1}, Lcom/agc/asv/WB;->init(Landroid/content/Context;)V
 
@@ -73,9 +72,9 @@
 .end method
 
 .method private updateType(Z)V
-    .locals 5
+    .locals 4
 
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -83,7 +82,7 @@
 
     iget-object v2, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
 
-    invoke-virtual {v2}, Lcom/agc/asv/WB$WBType;->ordinal()I
+    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
 
     move-result v2
 
@@ -91,139 +90,111 @@
 
     const-string v2, "drawable"
 
-    packed-switch v1, :pswitch_data_0
+    const/4 v3, 0x1
 
-    goto/16 :goto_0
+    if-eq v1, v3, :cond_4
 
-    :pswitch_0
-    if-eqz p1, :cond_0
+    const/4 v3, 0x2
 
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getResources()Landroid/content/res/Resources;
+    if-eq v1, v3, :cond_2
 
-    move-result-object v1
+    const/4 v3, 0x3
 
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    if-eq v1, v3, :cond_0
 
-    move-result-object v3
-
-    const-string v4, "agc_show_lb"
-
-    invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WB;->setBackgroundResource(I)V
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "agc_show_lw"
-
-    invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WB;->setBackgroundResource(I)V
-
-    goto :goto_0
-
-    :pswitch_1
     if-eqz p1, :cond_1
 
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object p1
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string v4, "agc_huika_lb"
-
-    invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WB;->setBackgroundResource(I)V
+    const-string v1, "agc_show_lb"
 
     goto :goto_0
 
     :cond_1
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "agc_huika_lw"
-
-    invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WB;->setBackgroundResource(I)V
-
-    goto :goto_0
-
-    :pswitch_2
-    if-eqz p1, :cond_2
-
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
+    move-result-object p1
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string v4, "agc_auto_lb"
-
-    invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WB;->setBackgroundResource(I)V
+    const-string v1, "agc_show_lw"
 
     goto :goto_0
 
     :cond_2
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->getResources()Landroid/content/res/Resources;
+    if-eqz p1, :cond_3
 
-    move-result-object v1
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string v4, "agc_auto_lw"
+    const-string v1, "agc_huika_lb"
 
-    invoke-virtual {v1, v4, v2, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    goto :goto_0
 
-    move-result v1
+    :cond_3
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getResources()Landroid/content/res/Resources;
 
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WB;->setBackgroundResource(I)V
+    move-result-object p1
 
-    nop
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "agc_huika_lw"
+
+    goto :goto_0
+
+    :cond_4
+    if-eqz p1, :cond_5
+
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "agc_auto_lb"
+
+    goto :goto_0
+
+    :cond_5
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "agc_auto_lw"
 
     :goto_0
-    return-void
+    invoke-virtual {p1, v1, v2, v0}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/ToggleButton;->setBackgroundResource(I)V
+
+    :goto_1
+    return-void
 .end method
 
 
@@ -233,29 +204,29 @@
 
     invoke-direct {p0, p1}, Lcom/agc/asv/WB;->updateType(Z)V
 
-    invoke-virtual {p0, p1}, Lcom/agc/asv/WB;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Landroid/widget/ToggleButton;->setChecked(Z)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->invalidate()V
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->invalidate()V
 
     return-void
 .end method
 
 .method public init(Landroid/content/Context;)V
-    .locals 1
+    .locals 0
 
-    const/high16 v0, 0x41000000    # 8.0f
+    const/high16 p1, 0x41000000    # 8.0f
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WB;->setTextSize(F)V
+    invoke-virtual {p0, p1}, Landroid/widget/ToggleButton;->setTextSize(F)V
 
-    const-string v0, ""
+    const-string p1, ""
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WB;->setTextOff(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroid/widget/ToggleButton;->setTextOff(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WB;->setTextOn(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Landroid/widget/ToggleButton;->setTextOn(Ljava/lang/CharSequence;)V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WB;->UpdateUi(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/asv/WB;->UpdateUi(Z)V
 
     return-void
 .end method
@@ -267,15 +238,15 @@
 
     iput-object v0, p0, Lcom/agc/asv/WB;->wbType:Lcom/agc/asv/WB$WBType;
 
-    iget-boolean v0, p1, Lcom/agc/asv/WBModel;->isChecked:Z
+    iget-boolean p1, p1, Lcom/agc/asv/WBModel;->isChecked:Z
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WB;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Landroid/widget/ToggleButton;->setChecked(Z)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/WB;->isChecked()Z
+    invoke-virtual {p0}, Landroid/widget/ToggleButton;->isChecked()Z
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WB;->UpdateUi(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/asv/WB;->UpdateUi(Z)V
 
     return-void
 .end method

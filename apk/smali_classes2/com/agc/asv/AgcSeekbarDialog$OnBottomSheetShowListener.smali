@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;
 .super Ljava/lang/Object;
-.source "AgcSeekbarDialog.java"
 
 
 # annotations

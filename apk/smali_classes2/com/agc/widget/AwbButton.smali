@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/AwbButton;
 .super Lcom/agc/widget/OptionButton;
-.source "AwbButton.java"
 
 # interfaces
 .implements Ljava/util/Observer;
@@ -54,7 +53,7 @@
 
     const/4 v0, 0x6
 
-    iput v0, p0, Lcom/agc/widget/AwbButton;->iconPadding:I
+    iput v0, p0, Lcom/agc/widget/OptionButton;->iconPadding:I
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -100,7 +99,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v0, p0, Lcom/agc/widget/AwbButton;->items:Ljava/util/List;
+    iput-object v0, p0, Lcom/agc/widget/OptionButton;->items:Ljava/util/List;
 
     const-string v0, "pref_awb_switch_key"
 
@@ -108,26 +107,24 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/agc/widget/AwbButton;->selectedIndex:I
-
-    iget v0, p0, Lcom/agc/widget/AwbButton;->selectedIndex:I
+    iput v0, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
     if-lez v0, :cond_0
 
     move v2, v6
 
     :cond_0
-    invoke-virtual {p0, v2}, Lcom/agc/widget/AwbButton;->setChecked(Z)V
+    invoke-virtual {p0, v2}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 
     return-void
 .end method
 
-.method protected onAttachedToWindow()V
+.method public onAttachedToWindow()V
     .locals 2
 
-    invoke-super {p0}, Lcom/agc/widget/OptionButton;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->onAttachedToWindow()V
 
     invoke-static {}, Lcom/Utils/EventBus;->getShared()Lcom/Utils/EventBus;
 
@@ -141,53 +138,53 @@
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 1
+    .locals 0
 
     invoke-super {p0, p1, p2}, Lcom/agc/widget/OptionButton;->onCheckedChanged(Landroid/widget/CompoundButton;Z)V
 
-    iget v0, p0, Lcom/agc/widget/AwbButton;->selectedIndex:I
+    iget p1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/agc/widget/AwbButton;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     return-void
 .end method
 
 .method public onClickPopItem(I)V
-    .locals 2
+    .locals 1
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->onClickPopItem(I)V
 
     if-lez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    const-string v1, "pref_awb_switch_key"
+    const-string v0, "pref_awb_switch_key"
 
-    invoke-static {v1, v0}, Lcom/Utils/Pref;->setBooleanValue(Ljava/lang/String;Z)V
+    invoke-static {v0, p1}, Lcom/Utils/Pref;->setBooleanValue(Ljava/lang/String;Z)V
 
     return-void
 .end method
 
-.method protected onDetachedFromWindow()V
+.method public onDetachedFromWindow()V
     .locals 1
 
-    invoke-super {p0}, Lcom/agc/widget/OptionButton;->onDetachedFromWindow()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->onDetachedFromWindow()V
 
     invoke-static {}, Lcom/Utils/EventBus;->getShared()Lcom/Utils/EventBus;
 
@@ -199,63 +196,61 @@
 .end method
 
 .method public update(Ljava/util/Observable;Ljava/lang/Object;)V
-    .locals 3
+    .locals 1
 
-    instance-of v0, p2, Ljava/lang/String;
+    instance-of p1, p2, Ljava/lang/String;
 
-    if-eqz v0, :cond_3
+    if-eqz p1, :cond_3
 
-    move-object v0, p2
+    check-cast p2, Ljava/lang/String;
 
-    check-cast v0, Ljava/lang/String;
+    const-string p1, "LONG_EXPOSURE"
 
-    const-string v1, "LONG_EXPOSURE"
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result p1
 
-    move-result v1
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
+    if-nez p1, :cond_1
 
-    if-nez v1, :cond_1
+    const-string p1, "PORTRAIT"
 
-    const-string v1, "PORTRAIT"
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result p1
 
-    move-result v1
+    if-nez p1, :cond_1
 
-    if-nez v1, :cond_1
+    const-string p1, "PHOTO"
 
-    const-string v1, "PHOTO"
+    invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result p1
 
-    move-result v1
-
-    if-eqz v1, :cond_0
+    if-eqz p1, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    move p1, v0
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 v1, 0x1
+    const/4 p1, 0x1
 
     :goto_1
-    if-eqz v1, :cond_2
+    if-eqz p1, :cond_2
 
     goto :goto_2
 
     :cond_2
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
     :goto_2
-    invoke-virtual {p0, v2}, Lcom/agc/widget/AwbButton;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     :cond_3
     return-void

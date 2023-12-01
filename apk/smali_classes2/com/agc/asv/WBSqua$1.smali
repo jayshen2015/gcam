@@ -1,6 +1,5 @@
 .class synthetic Lcom/agc/asv/WBSqua$1;
 .super Ljava/lang/Object;
-.source "WBSqua.java"
 
 
 # annotations
@@ -9,17 +8,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x1009
     name = null
 .end annotation
 
 
 # static fields
-.field static final synthetic $SwitchMap$com$agc$asv$WB$WBType:[I
+.field public static final synthetic $SwitchMap$com$agc$asv$WB$WBType:[I
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 3
 
     invoke-static {}, Lcom/agc/asv/WB$WBType;->values()[Lcom/agc/asv/WB$WBType;
@@ -35,7 +34,7 @@
     :try_start_0
     sget-object v1, Lcom/agc/asv/WB$WBType;->AUTO:Lcom/agc/asv/WB$WBType;
 
-    invoke-virtual {v1}, Lcom/agc/asv/WB$WBType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -56,7 +55,7 @@
 
     sget-object v1, Lcom/agc/asv/WB$WBType;->INITN:Lcom/agc/asv/WB$WBType;
 
-    invoke-virtual {v1}, Lcom/agc/asv/WB$WBType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -77,7 +76,7 @@
 
     sget-object v1, Lcom/agc/asv/WB$WBType;->KAHUI:Lcom/agc/asv/WB$WBType;
 
-    invoke-virtual {v1}, Lcom/agc/asv/WB$WBType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
@@ -98,7 +97,7 @@
 
     sget-object v1, Lcom/agc/asv/WB$WBType;->SHADOW:Lcom/agc/asv/WB$WBType;
 
-    invoke-virtual {v1}, Lcom/agc/asv/WB$WBType;->ordinal()I
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 

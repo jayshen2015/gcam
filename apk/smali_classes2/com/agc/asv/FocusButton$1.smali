@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/FocusButton$1;
 .super Ljava/lang/Object;
-.source "FocusButton.java"
 
 # interfaces
 .implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/FocusButton;
+.field public final synthetic this$0:Lcom/agc/asv/FocusButton;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/FocusButton;)V
+.method public constructor <init>(Lcom/agc/asv/FocusButton;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/FocusButton$1;->this$0:Lcom/agc/asv/FocusButton;
@@ -35,7 +34,7 @@
 
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 2
+    .locals 1
 
     const-string v0, "pref_manual_focus_enabled"
 
@@ -43,7 +42,7 @@
 
     iget-object v0, p0, Lcom/agc/asv/FocusButton$1;->this$0:Lcom/agc/asv/FocusButton;
 
-    invoke-virtual {v0}, Lcom/agc/asv/FocusButton;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/widget/ToggleButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -51,27 +50,27 @@
 
     invoke-virtual {p1}, Landroid/widget/CompoundButton;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/view/ViewGroup;
+    check-cast p1, Landroid/view/ViewGroup;
 
-    const-string v1, "FocusView"
+    const-string v0, "FocusView"
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
     if-eqz p2, :cond_0
 
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x4
+    const/4 p2, 0x4
 
     :goto_0
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

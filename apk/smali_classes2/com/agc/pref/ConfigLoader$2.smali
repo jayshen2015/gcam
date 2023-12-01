@@ -1,6 +1,5 @@
 .class Lcom/agc/pref/ConfigLoader$2;
 .super Ljava/lang/Object;
-.source "ConfigLoader.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/pref/ConfigLoader;
+.field public final synthetic this$0:Lcom/agc/pref/ConfigLoader;
 
-.field final synthetic val$selectedIndex:[I
+.field public final synthetic val$selectedIndex:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/pref/ConfigLoader;[I)V
+.method public constructor <init>(Lcom/agc/pref/ConfigLoader;[I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,13 +43,13 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/pref/ConfigLoader$2;->val$selectedIndex:[I
+    iget-object p1, p0, Lcom/agc/pref/ConfigLoader$2;->val$selectedIndex:[I
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    aput p2, v0, v1
+    aput p2, p1, v0
 
     return-void
 .end method

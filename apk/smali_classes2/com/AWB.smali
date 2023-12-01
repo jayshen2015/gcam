@@ -1,6 +1,5 @@
 .class public Lcom/AWB;
 .super Ljava/lang/Object;
-.source "AWB.java"
 
 
 # direct methods

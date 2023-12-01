@@ -1,6 +1,5 @@
 .class Landroid/preference/LibraryPreference$NearDialog$3;
 .super Ljava/lang/Object;
-.source "LibraryPreference.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$confirmListener:Landroid/preference/LibraryPreference$CallBack;
+.field public final synthetic val$confirmListener:Landroid/preference/LibraryPreference$CallBack;
 
 
 # direct methods
-.method constructor <init>(Landroid/preference/LibraryPreference$CallBack;)V
+.method public constructor <init>(Landroid/preference/LibraryPreference$CallBack;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -40,13 +39,13 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Landroid/preference/LibraryPreference$NearDialog$3;->val$confirmListener:Landroid/preference/LibraryPreference$CallBack;
+    iget-object p1, p0, Landroid/preference/LibraryPreference$NearDialog$3;->val$confirmListener:Landroid/preference/LibraryPreference$CallBack;
 
-    const-string v1, ""
+    const-string p2, ""
 
-    invoke-interface {v0, v1, v1, v1}, Landroid/preference/LibraryPreference$CallBack;->onSubmit(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, p2, p2, p2}, Landroid/preference/LibraryPreference$CallBack;->onSubmit(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method

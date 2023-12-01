@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/ShadowRulerView$OnValueChangeListener;
 .super Ljava/lang/Object;
-.source "ShadowRulerView.java"
 
 
 # annotations

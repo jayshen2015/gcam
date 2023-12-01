@@ -1,6 +1,5 @@
 .class public final Lcom/Utils/EventBus;
 .super Ljava/util/Observable;
-.source "EventBus.kt"
 
 
 # annotations
@@ -8,39 +7,6 @@
     value = {
         Lcom/Utils/EventBus$Companion;
     }
-.end annotation
-
-.annotation runtime Lkotlin/Metadata;
-    d1 = {
-        "\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0005\u0018\u0000 \u00102\u00020\u0001:\u0001\u0010B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0016\u0010\u0008\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u000cJ\u0016\u0010\r\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\u0007J\u000e\u0010\u000f\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\u0007J\u0016\u0010\u000f\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000e\u001a\u00020\u0007R \u0010\u0003\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00070\u00050\u0004X\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0011"
-    }
-    d2 = {
-        "Lcom/Utils/EventBus;",
-        "Ljava/util/Observable;",
-        "()V",
-        "observers",
-        "",
-        "Lkotlin/Pair;",
-        "",
-        "Ljava/util/Observer;",
-        "post",
-        "",
-        "name",
-        "data",
-        "",
-        "register",
-        "observer",
-        "unregister",
-        "Companion",
-        "agc_release"
-    }
-    k = 0x1
-    mv = {
-        0x1,
-        0x8,
-        0x0
-    }
-    xi = 0x30
 .end annotation
 
 
@@ -85,7 +51,7 @@
     return p0
 .end method
 
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 2
 
     new-instance v0, Lcom/Utils/EventBus$Companion;
@@ -113,8 +79,6 @@
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    check-cast v0, Ljava/util/List;
 
     iput-object v0, p0, Lcom/Utils/EventBus;->observers:Ljava/util/List;
 
@@ -150,15 +114,15 @@
 
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Ljava/lang/Boolean;
+    check-cast p0, Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method private static final unregister$lambda$1(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
@@ -170,21 +134,21 @@
 
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Ljava/lang/Boolean;
+    check-cast p0, Ljava/lang/Boolean;
 
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 
 # virtual methods
 .method public final post(Ljava/lang/String;Ljava/lang/Object;)V
-    .locals 4
+    .locals 3
 
     const-string v0, "name"
 
@@ -226,15 +190,11 @@
 
     invoke-virtual {v1}, Lkotlin/Pair;->getSecond()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/util/Observer;
+    check-cast v1, Ljava/util/Observer;
 
-    move-object v3, p0
-
-    check-cast v3, Ljava/util/Observable;
-
-    invoke-interface {v2, v3, p2}, Ljava/util/Observer;->update(Ljava/util/Observable;Ljava/lang/Object;)V
+    invoke-interface {v1, p0, p2}, Ljava/util/Observer;->update(Ljava/util/Observable;Ljava/lang/Object;)V
 
     goto :goto_0
 
@@ -265,7 +225,7 @@
 .end method
 
 .method public final unregister(Ljava/lang/String;Ljava/util/Observer;)V
-    .locals 3
+    .locals 2
 
     const-string v0, "name"
 
@@ -281,19 +241,17 @@
 
     invoke-direct {v1, p1, p2}, Lcom/Utils/EventBus$unregister$2;-><init>(Ljava/lang/String;Ljava/util/Observer;)V
 
-    check-cast v1, Lkotlin/jvm/functions/Function1;
+    new-instance p1, Lcom/Utils/EventBus$$ExternalSyntheticLambda0;
 
-    new-instance v2, Lcom/Utils/EventBus$$ExternalSyntheticLambda0;
+    invoke-direct {p1, v1}, Lcom/Utils/EventBus$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-direct {v2, v1}, Lcom/Utils/EventBus$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-interface {v0, v2}, Ljava/util/List;->removeIf(Ljava/util/function/Predicate;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->removeIf(Ljava/util/function/Predicate;)Z
 
     return-void
 .end method
 
 .method public final unregister(Ljava/util/Observer;)V
-    .locals 3
+    .locals 2
 
     const-string v0, "observer"
 
@@ -305,13 +263,11 @@
 
     invoke-direct {v1, p1}, Lcom/Utils/EventBus$unregister$1;-><init>(Ljava/util/Observer;)V
 
-    check-cast v1, Lkotlin/jvm/functions/Function1;
+    new-instance p1, Lcom/Utils/EventBus$$ExternalSyntheticLambda1;
 
-    new-instance v2, Lcom/Utils/EventBus$$ExternalSyntheticLambda1;
+    invoke-direct {p1, v1}, Lcom/Utils/EventBus$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
-    invoke-direct {v2, v1}, Lcom/Utils/EventBus$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
-
-    invoke-interface {v0, v2}, Ljava/util/List;->removeIf(Ljava/util/function/Predicate;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->removeIf(Ljava/util/function/Predicate;)Z
 
     return-void
 .end method

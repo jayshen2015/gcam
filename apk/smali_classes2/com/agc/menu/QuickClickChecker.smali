@@ -1,6 +1,5 @@
 .class public Lcom/agc/menu/QuickClickChecker;
 .super Ljava/lang/Object;
-.source "QuickClickChecker.java"
 
 
 # instance fields

@@ -1,6 +1,5 @@
 .class public Lcom/agc/Application;
 .super Ljava/lang/Object;
-.source "Application.java"
 
 
 # static fields
@@ -8,7 +7,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lcom/agc/Application$1;

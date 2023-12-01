@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/ColorButton$1;
 .super Ljava/lang/Object;
-.source "ColorButton.java"
 
 # interfaces
 .implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/ColorButton;
+.field public final synthetic this$0:Lcom/agc/widget/ColorButton;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/ColorButton;)V
+.method public constructor <init>(Lcom/agc/widget/ColorButton;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/ColorButton$1;->this$0:Lcom/agc/widget/ColorButton;
@@ -35,19 +34,19 @@
 
 # virtual methods
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 2
+    .locals 0
 
-    const-string v0, "lib_enable_cct_key"
+    const-string p1, "lib_enable_cct_key"
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->setAuxProfilePrefIntValue(Ljava/lang/String;I)V
+    invoke-static {p1, p2}, Lcom/Utils/Pref;->setAuxProfilePrefIntValue(Ljava/lang/String;I)V
 
-    iget-object v0, p0, Lcom/agc/widget/ColorButton$1;->this$0:Lcom/agc/widget/ColorButton;
+    iget-object p1, p0, Lcom/agc/widget/ColorButton$1;->this$0:Lcom/agc/widget/ColorButton;
 
-    invoke-static {v0}, Lcom/agc/widget/ColorButton;->access$000(Lcom/agc/widget/ColorButton;)I
+    invoke-static {p1}, Lcom/agc/widget/ColorButton;->access$000(Lcom/agc/widget/ColorButton;)I
 
-    move-result v1
+    move-result p2
 
-    invoke-static {v0, v1}, Lcom/agc/widget/ColorButton;->access$101(Lcom/agc/widget/ColorButton;I)V
+    invoke-static {p1, p2}, Lcom/agc/widget/ColorButton;->access$101(Lcom/agc/widget/ColorButton;I)V
 
     return-void
 .end method

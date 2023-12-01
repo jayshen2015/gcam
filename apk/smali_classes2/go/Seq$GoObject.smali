@@ -1,6 +1,5 @@
 .class public interface abstract Lgo/Seq$GoObject;
 .super Ljava/lang/Object;
-.source "Seq.java"
 
 
 # annotations

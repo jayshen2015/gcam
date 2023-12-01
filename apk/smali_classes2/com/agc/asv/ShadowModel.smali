@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/ShadowModel;
 .super Ljava/lang/Object;
-.source "ShadowModel.java"
 
 
 # instance fields
@@ -105,13 +104,13 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/math/BigDecimal;->setScale(II)Ljava/math/BigDecimal;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/math/BigDecimal;->floatValue()F
+    invoke-virtual {v0}, Ljava/math/BigDecimal;->floatValue()F
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 .end method
 
 .method public getProcess100Per()F
@@ -195,25 +194,25 @@
 .end method
 
 .method public setProcess(F)V
-    .locals 1
+    .locals 0
 
     iput p1, p0, Lcom/agc/asv/ShadowModel;->process:F
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    iput-boolean v0, p0, Lcom/agc/asv/ShadowModel;->showImage:Z
+    iput-boolean p1, p0, Lcom/agc/asv/ShadowModel;->showImage:Z
 
     return-void
 .end method
 
 .method public setSelected(Z)V
-    .locals 1
+    .locals 0
 
     iput-boolean p1, p0, Lcom/agc/asv/ShadowModel;->selected:Z
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    iput-boolean v0, p0, Lcom/agc/asv/ShadowModel;->showImage:Z
+    iput-boolean p1, p0, Lcom/agc/asv/ShadowModel;->showImage:Z
 
     return-void
 .end method

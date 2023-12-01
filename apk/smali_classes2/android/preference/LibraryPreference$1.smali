@@ -1,6 +1,5 @@
 .class Landroid/preference/LibraryPreference$1;
 .super Ljava/lang/Object;
-.source "LibraryPreference.java"
 
 # interfaces
 .implements Landroid/preference/LibraryPreference$CallBack;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Landroid/preference/LibraryPreference;
+.field public final synthetic this$0:Landroid/preference/LibraryPreference;
 
-.field final synthetic val$view:Landroid/view/View;
+.field public final synthetic val$view:Landroid/view/View;
 
 
 # direct methods
-.method constructor <init>(Landroid/preference/LibraryPreference;Landroid/view/View;)V
+.method public constructor <init>(Landroid/preference/LibraryPreference;Landroid/view/View;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

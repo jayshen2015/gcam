@@ -1,10 +1,11 @@
 .class public Lcom/Parameters;
 .super Ljava/lang/Object;
-.source "Parameters.java"
 
 
 # instance fields
 .field public denoise:F
+
+.field public faceCount:I
 
 .field public focalLength:F
 
@@ -37,7 +38,7 @@
 .end method
 
 .method private FltFormat(Ljava/lang/Object;)Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     const/4 v0, 0x1
 
@@ -45,27 +46,27 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    invoke-static {p1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
-    move-result v1
+    move-result p1
 
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v1
+    move-result-object p1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aput-object v1, v0, v2
+    aput-object p1, v0, v1
 
-    const-string v1, "%.2f"
+    const-string p1, "%.2f"
 
-    invoke-static {v1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public static getVersion()Ljava/lang/String;
@@ -108,7 +109,7 @@
 
 
 # virtual methods
-.method protected Build()Lcom/Parameters;
+.method public Build()Lcom/Parameters;
     .locals 2
 
     new-instance v0, Lcom/Parameters;
@@ -274,6 +275,18 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\n FaceCount="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget v1, p0, Lcom/Parameters;->faceCount:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 

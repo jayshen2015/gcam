@@ -1,6 +1,5 @@
 .class Lcom/gcam/simple/filechooser/ChooserDialog$5;
 .super Ljava/lang/Object;
-.source "ChooserDialog.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
+.field public final synthetic this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
 
 
 # direct methods
-.method constructor <init>(Lcom/gcam/simple/filechooser/ChooserDialog;)V
+.method public constructor <init>(Lcom/gcam/simple/filechooser/ChooserDialog;)V
     .locals 0
 
     iput-object p1, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
@@ -35,31 +34,31 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$300(Landroid/content/DialogInterface;I)V
 
-    iget-object v0, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
+    iget-object p1, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
 
-    invoke-static {v0}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$400(Lcom/gcam/simple/filechooser/ChooserDialog;)Lcom/gcam/simple/filechooser/ChooserDialog$Result;
+    invoke-static {p1}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$400(Lcom/gcam/simple/filechooser/ChooserDialog;)Lcom/gcam/simple/filechooser/ChooserDialog$Result;
 
-    move-result-object v0
+    move-result-object p1
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
-    iget-object v0, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
+    iget-object p1, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
 
-    invoke-static {v0}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$400(Lcom/gcam/simple/filechooser/ChooserDialog;)Lcom/gcam/simple/filechooser/ChooserDialog$Result;
+    invoke-static {p1}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$400(Lcom/gcam/simple/filechooser/ChooserDialog;)Lcom/gcam/simple/filechooser/ChooserDialog$Result;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
+    iget-object p2, p0, Lcom/gcam/simple/filechooser/ChooserDialog$5;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
 
-    invoke-static {v1}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$500(Lcom/gcam/simple/filechooser/ChooserDialog;)Ljava/util/List;
+    invoke-static {p2}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$500(Lcom/gcam/simple/filechooser/ChooserDialog;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object p2
 
-    invoke-interface {v0, v1}, Lcom/gcam/simple/filechooser/ChooserDialog$Result;->onChoosePathList(Ljava/util/List;)V
+    invoke-interface {p1, p2}, Lcom/gcam/simple/filechooser/ChooserDialog$Result;->onChoosePathList(Ljava/util/List;)V
 
     :cond_0
     return-void

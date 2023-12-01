@@ -1,6 +1,5 @@
 .class public abstract Lgo/Universe;
 .super Ljava/lang/Object;
-.source "Universe.java"
 
 
 # annotations
@@ -12,7 +11,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 0
 
     invoke-static {}, Lgo/Seq;->touch()V

@@ -1,6 +1,5 @@
 .class Lcom/agc/net/NetworkUtil$2;
 .super Ljava/lang/Object;
-.source "NetworkUtil.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$content:Ljava/lang/String;
+.field public final synthetic val$content:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

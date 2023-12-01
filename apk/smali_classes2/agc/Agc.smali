@@ -1,6 +1,5 @@
 .class public abstract Lagc/Agc;
 .super Ljava/lang/Object;
-.source "Agc.java"
 
 
 # annotations
@@ -12,7 +11,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 0
 
     invoke-static {}, Lgo/Seq;->touch()V
@@ -307,6 +306,9 @@
 .end method
 
 .method public static native isXiaomi13Ultra()Z
+.end method
+
+.method public static native isXiaomi14()Z
 .end method
 
 .method public static native isZFLIP4()Z

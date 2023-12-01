@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/InfoView$1;
 .super Ljava/lang/Object;
-.source "InfoView.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/InfoView;
+.field public final synthetic this$0:Lcom/agc/widget/InfoView;
 
-.field final synthetic val$text:Ljava/lang/String;
+.field public final synthetic val$text:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/InfoView;Ljava/lang/String;)V
+.method public constructor <init>(Lcom/agc/widget/InfoView;Ljava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

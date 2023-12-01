@@ -1,6 +1,5 @@
 .class public Lcom/agc/ExperimentalSettings;
 .super Ljava/lang/Object;
-.source "ExperimentalSettings.java"
 
 
 # direct methods

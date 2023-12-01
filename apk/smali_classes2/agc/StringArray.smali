@@ -1,6 +1,5 @@
 .class public final Lagc/StringArray;
 .super Ljava/lang/Object;
-.source "StringArray.java"
 
 # interfaces
 .implements Lgo/Seq$Proxy;
@@ -11,7 +10,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 0
 
     invoke-static {}, Lagc/Agc;->touch()V
@@ -35,7 +34,7 @@
     return-void
 .end method
 
-.method constructor <init>(I)V
+.method public constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +52,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 1
 
     if-eqz p1, :cond_1
 
@@ -64,19 +63,17 @@
     goto :goto_0
 
     :cond_0
-    move-object v0, p1
+    check-cast p1, Lagc/StringArray;
 
-    check-cast v0, Lagc/StringArray;
+    const/4 p1, 0x1
 
-    const/4 v1, 0x1
-
-    return v1
+    return p1
 
     :cond_1
     :goto_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    return v0
+    return p1
 .end method
 
 .method public native get(J)Ljava/lang/String;
@@ -132,11 +129,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

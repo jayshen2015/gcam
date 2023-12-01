@@ -1,6 +1,5 @@
 .class public final LDeveloper$OnChangeListener;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 # interfaces
 .implements Landroid/preference/Preference$OnPreferenceChangeListener;
@@ -18,7 +17,7 @@
 
 
 # instance fields
-.field controller:Lngx;
+.field public controller:Lngx;
 
 .field public final key:Ljava/lang/Object;
 
@@ -296,7 +295,7 @@
 
     if-eqz p1, :cond_3
 
-    invoke-virtual {p1}, Landroid/preference/PreferenceGroup;->removeAll()V
+    invoke-virtual {p1}, Landroid/preference/PreferenceScreen;->removeAll()V
 
     iget-object p2, p0, LDeveloper$OnChangeListener;->controller:Lngx;
 

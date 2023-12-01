@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/HorizontalListView$1;
 .super Landroid/database/DataSetObserver;
-.source "HorizontalListView.java"
 
 
 # annotations
@@ -9,17 +8,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/HorizontalListView;
+.field public final synthetic this$0:Lcom/agc/asv/HorizontalListView;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/HorizontalListView;)V
+.method public constructor <init>(Lcom/agc/asv/HorizontalListView;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/HorizontalListView$1;->this$0:Lcom/agc/asv/HorizontalListView;
@@ -51,11 +50,11 @@
 
     iget-object v0, p0, Lcom/agc/asv/HorizontalListView$1;->this$0:Lcom/agc/asv/HorizontalListView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/HorizontalListView;->invalidate()V
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->invalidate()V
 
     iget-object v0, p0, Lcom/agc/asv/HorizontalListView$1;->this$0:Lcom/agc/asv/HorizontalListView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/HorizontalListView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->requestLayout()V
 
     return-void
 
@@ -79,11 +78,11 @@
 
     iget-object v0, p0, Lcom/agc/asv/HorizontalListView$1;->this$0:Lcom/agc/asv/HorizontalListView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/HorizontalListView;->invalidate()V
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->invalidate()V
 
     iget-object v0, p0, Lcom/agc/asv/HorizontalListView$1;->this$0:Lcom/agc/asv/HorizontalListView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/HorizontalListView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->requestLayout()V
 
     return-void
 .end method

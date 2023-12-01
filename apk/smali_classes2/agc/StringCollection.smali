@@ -1,6 +1,5 @@
 .class public interface abstract Lagc/StringCollection;
 .super Ljava/lang/Object;
-.source "StringCollection.java"
 
 
 # virtual methods

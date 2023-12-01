@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/AgcSeekbarDialog;
 .super Landroid/app/Dialog;
-.source "AgcSeekbarDialog.java"
 
 
 # annotations
@@ -19,9 +18,9 @@
 
 
 # instance fields
-.field key:Ljava/util/ArrayList;
+.field public key:Ljava/util/ArrayList;
 
-.field listview:Landroidx/recyclerview/widget/RecyclerView;
+.field public listview:Landroidx/recyclerview/widget/RecyclerView;
 
 .field private mContentView:Landroid/view/View;
 
@@ -29,49 +28,49 @@
 
 .field private mOnBottomSheetShowListener:Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;
 
-.field myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+.field public myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
-.field value:Ljava/util/ArrayList;
+.field public value:Ljava/util/ArrayList;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+    .locals 2
 
     sget v0, Lcom/agc/R$style;->AppTheme_BottomSheet:I
 
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    iput-boolean v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mIsAnimating:Z
+    iput-boolean p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->mIsAnimating:Z
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance p1, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
 
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance p1, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->value:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->value:Ljava/util/ArrayList;
 
-    new-instance v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+    new-instance p1, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
-    iget-object v1, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lcom/agc/asv/AgcSeekbarDialog;->value:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/agc/asv/AgcSeekbarDialog;->value:Ljava/util/ArrayList;
 
-    invoke-direct {v0, p0, v1, v2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;-><init>(Lcom/agc/asv/AgcSeekbarDialog;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+    invoke-direct {p1, p0, v0, v1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;-><init>(Lcom/agc/asv/AgcSeekbarDialog;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
     return-void
 .end method
 
-.method static synthetic access$002(Lcom/agc/asv/AgcSeekbarDialog;Z)Z
+.method public static synthetic access$002(Lcom/agc/asv/AgcSeekbarDialog;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->mIsAnimating:Z
@@ -79,7 +78,7 @@
     return p1
 .end method
 
-.method static synthetic access$101(Lcom/agc/asv/AgcSeekbarDialog;)V
+.method public static synthetic access$101(Lcom/agc/asv/AgcSeekbarDialog;)V
     .locals 0
 
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
@@ -87,12 +86,12 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/agc/asv/AgcSeekbarDialog;)Landroid/view/View;
-    .locals 1
+.method public static synthetic access$200(Lcom/agc/asv/AgcSeekbarDialog;)Landroid/view/View;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
+    iget-object p0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private animateDown()V
@@ -143,27 +142,27 @@
 
     invoke-virtual {v2, v1}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    new-instance v4, Landroid/view/animation/DecelerateInterpolator;
+    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-direct {v4}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    invoke-virtual {v2, v4}, Landroid/view/animation/AnimationSet;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v2, v0}, Landroid/view/animation/AnimationSet;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    const-wide/16 v4, 0xc8
+    const-wide/16 v0, 0xc8
 
-    invoke-virtual {v2, v4, v5}, Landroid/view/animation/AnimationSet;->setDuration(J)V
+    invoke-virtual {v2, v0, v1}, Landroid/view/animation/AnimationSet;->setDuration(J)V
 
     invoke-virtual {v2, v3}, Landroid/view/animation/AnimationSet;->setFillAfter(Z)V
 
-    new-instance v3, Lcom/agc/asv/AgcSeekbarDialog$1;
+    new-instance v0, Lcom/agc/asv/AgcSeekbarDialog$1;
 
-    invoke-direct {v3, p0}, Lcom/agc/asv/AgcSeekbarDialog$1;-><init>(Lcom/agc/asv/AgcSeekbarDialog;)V
+    invoke-direct {v0, p0}, Lcom/agc/asv/AgcSeekbarDialog$1;-><init>(Lcom/agc/asv/AgcSeekbarDialog;)V
 
-    invoke-virtual {v2, v3}, Landroid/view/animation/AnimationSet;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+    invoke-virtual {v2, v0}, Landroid/view/animation/AnimationSet;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    iget-object v3, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
+    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
 
-    invoke-virtual {v3, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     return-void
 .end method
@@ -218,27 +217,27 @@
 
     invoke-virtual {v2, v1}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    new-instance v4, Landroid/view/animation/DecelerateInterpolator;
+    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    invoke-direct {v4}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
-    invoke-virtual {v2, v4}, Landroid/view/animation/AnimationSet;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v2, v0}, Landroid/view/animation/AnimationSet;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    const-wide/16 v4, 0xc8
+    const-wide/16 v0, 0xc8
 
-    invoke-virtual {v2, v4, v5}, Landroid/view/animation/AnimationSet;->setDuration(J)V
+    invoke-virtual {v2, v0, v1}, Landroid/view/animation/AnimationSet;->setDuration(J)V
 
     invoke-virtual {v2, v3}, Landroid/view/animation/AnimationSet;->setFillAfter(Z)V
 
-    iget-object v3, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
+    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
 
-    invoke-virtual {v3, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     return-void
 .end method
 
 .method private initData()V
-    .locals 5
+    .locals 4
 
     iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
 
@@ -325,7 +324,7 @@
 
     if-ge v0, v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -355,9 +354,9 @@
 
     invoke-static {v1, v2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v0, v0, 0x1
 
@@ -374,7 +373,7 @@
 .end method
 
 .method public static showDialog(Landroid/content/Context;)V
-    .locals 2
+    .locals 1
 
     sget-object v0, Lcom/agc/asv/AgcSeekbarDialog;->mShadowPopup:Lcom/agc/asv/AgcSeekbarDialog;
 
@@ -386,24 +385,24 @@
 
     sput-object v0, Lcom/agc/asv/AgcSeekbarDialog;->mShadowPopup:Lcom/agc/asv/AgcSeekbarDialog;
 
-    new-instance v1, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda0;
+    new-instance p0, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda0;
 
-    invoke-direct {v1}, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda0;-><init>()V
+    invoke-direct {p0}, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda0;-><init>()V
 
-    invoke-virtual {v0, v1}, Lcom/agc/asv/AgcSeekbarDialog;->setmOnBottomSheetShowListener(Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;)V
+    invoke-virtual {v0, p0}, Lcom/agc/asv/AgcSeekbarDialog;->setmOnBottomSheetShowListener(Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;)V
 
     :cond_0
-    sget-object v0, Lcom/agc/asv/AgcSeekbarDialog;->mShadowPopup:Lcom/agc/asv/AgcSeekbarDialog;
+    sget-object p0, Lcom/agc/asv/AgcSeekbarDialog;->mShadowPopup:Lcom/agc/asv/AgcSeekbarDialog;
 
-    invoke-virtual {v0}, Lcom/agc/asv/AgcSeekbarDialog;->isShowing()Z
+    invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
-    sget-object v0, Lcom/agc/asv/AgcSeekbarDialog;->mShadowPopup:Lcom/agc/asv/AgcSeekbarDialog;
+    sget-object p0, Lcom/agc/asv/AgcSeekbarDialog;->mShadowPopup:Lcom/agc/asv/AgcSeekbarDialog;
 
-    invoke-virtual {v0}, Lcom/agc/asv/AgcSeekbarDialog;->show()V
+    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->show()V
 
     :cond_1
     return-void
@@ -439,118 +438,118 @@
 .end method
 
 .method synthetic lambda$setContentView$1$com-agc-asv-AgcSeekbarDialog(Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
     invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->dismiss()V
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mOnBottomSheetShowListener:Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->mOnBottomSheetShowListener:Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
-    invoke-interface {v0}, Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;->onSave()V
+    invoke-interface {p1}, Lcom/agc/asv/AgcSeekbarDialog$OnBottomSheetShowListener;->onSave()V
 
     :cond_0
     return-void
 .end method
 
-.method protected onCreate(Landroid/os/Bundle;)V
-    .locals 5
+.method public onCreate(Landroid/os/Bundle;)V
+    .locals 2
 
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0, v0, v0, v0}, Landroid/view/View;->setPadding(IIII)V
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object p1
+
+    const/4 v0, -0x2
+
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->height:I
+
+    const/16 v0, 0x51
+
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    invoke-static {v0}, Lcom/agc/asv/DisplayHelper;->getScreenWidth(Landroid/content/Context;)I
 
-    move-result-object v0
+    move-result v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
-
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
-
-    move-result-object v0
-
-    const/4 v1, -0x2
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
-
-    const/16 v1, 0x51
-
-    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
-
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/agc/asv/DisplayHelper;->getScreenWidth(Landroid/content/Context;)I
+    invoke-static {v1}, Lcom/agc/asv/DisplayHelper;->getScreenHeight(Landroid/content/Context;)I
 
     move-result v1
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getContext()Landroid/content/Context;
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result-object v2
+    move-result v0
 
-    invoke-static {v2}, Lcom/agc/asv/DisplayHelper;->getScreenHeight(Landroid/content/Context;)I
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    move-result v2
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+    move-result-object v0
 
-    move-result v3
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    iput v3, v0, Landroid/view/WindowManager$LayoutParams;->width:I
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getWindow()Landroid/view/Window;
+    move-result-object p1
 
-    move-result-object v3
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    invoke-virtual {v3, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    move-result-object p1
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getWindow()Landroid/view/Window;
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    move-result-object v3
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->alpha:F
 
-    invoke-virtual {v3}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    const/4 v0, 0x0
 
-    move-result-object v3
+    iput v0, p1, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    iput v4, v3, Landroid/view/WindowManager$LayoutParams;->alpha:F
+    move-result-object v0
 
-    const/4 v4, 0x0
+    invoke-virtual {v0, p1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    iput v4, v3, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
+    const/4 p1, 0x1
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p0, p1}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    move-result-object v4
+    sget p1, Lcom/agc/Res$layout;->agc_seekbar_dialog:I
 
-    invoke-virtual {v4, v3}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
-
-    const/4 v4, 0x1
-
-    invoke-virtual {p0, v4}, Lcom/agc/asv/AgcSeekbarDialog;->setCanceledOnTouchOutside(Z)V
-
-    sget v4, Lcom/agc/Res$layout;->agc_seekbar_dialog:I
-
-    invoke-virtual {p0, v4}, Lcom/agc/asv/AgcSeekbarDialog;->setContentView(I)V
+    invoke-virtual {p0, p1}, Lcom/agc/asv/AgcSeekbarDialog;->setContentView(I)V
 
     return-void
 .end method
 
 .method public setContentView(I)V
-    .locals 3
+    .locals 2
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -562,71 +561,71 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->mContentView:Landroid/view/View;
 
-    invoke-super {p0, v0}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
+    invoke-super {p0, p1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
     invoke-direct {p0}, Lcom/agc/asv/AgcSeekbarDialog;->initData()V
 
-    sget v0, Lcom/agc/Res$id;->rv_list:I
+    sget p1, Lcom/agc/Res$id;->rv_list:I
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/AgcSeekbarDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, p1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroidx/recyclerview/widget/RecyclerView;
+    check-cast p1, Landroidx/recyclerview/widget/RecyclerView;
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->listview:Landroidx/recyclerview/widget/RecyclerView;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->listview:Landroidx/recyclerview/widget/RecyclerView;
 
-    new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
+    new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
-
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->listview:Landroidx/recyclerview/widget/RecyclerView;
-
-    iget-object v1, p0, Lcom/agc/asv/AgcSeekbarDialog;->myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
-
-    invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
-
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
-
-    iget-object v1, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
-
-    iget-object v2, p0, Lcom/agc/asv/AgcSeekbarDialog;->value:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, v1, v2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->setData(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-
-    sget v0, Lcom/agc/Res$id;->agc_cancel:I
-
-    invoke-virtual {p0, v0}, Lcom/agc/asv/AgcSeekbarDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    sget v1, Lcom/agc/Res$id;->agc_save:I
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/AgcSeekbarDialog;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    new-instance v2, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda1;
+    invoke-direct {v0, v1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
-    invoke-direct {v2, p0}, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda1;-><init>(Lcom/agc/asv/AgcSeekbarDialog;)V
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->listview:Landroidx/recyclerview/widget/RecyclerView;
 
-    new-instance v2, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda2;
+    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
-    invoke-direct {v2, p0}, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda2;-><init>(Lcom/agc/asv/AgcSeekbarDialog;)V
+    invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog;->myAdapter:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+
+    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog;->key:Ljava/util/ArrayList;
+
+    iget-object v1, p0, Lcom/agc/asv/AgcSeekbarDialog;->value:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, v0, v1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->setData(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+
+    sget p1, Lcom/agc/Res$id;->agc_cancel:I
+
+    invoke-virtual {p0, p1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    sget v0, Lcom/agc/Res$id;->agc_save:I
+
+    invoke-virtual {p0, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, p0}, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda1;-><init>(Lcom/agc/asv/AgcSeekbarDialog;)V
+
+    invoke-virtual {p1, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    new-instance p1, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda2;
+
+    invoke-direct {p1, p0}, Lcom/agc/asv/AgcSeekbarDialog$$ExternalSyntheticLambda2;-><init>(Lcom/agc/asv/AgcSeekbarDialog;)V
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

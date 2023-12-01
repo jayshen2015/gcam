@@ -1,6 +1,5 @@
 .class public final LCamcorderProfileUtil;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

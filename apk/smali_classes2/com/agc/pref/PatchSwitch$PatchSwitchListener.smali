@@ -1,6 +1,5 @@
 .class public Lcom/agc/pref/PatchSwitch$PatchSwitchListener;
 .super Ljava/lang/Object;
-.source "PatchSwitch.java"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -19,7 +18,7 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/pref/PatchSwitch;
+.field public final synthetic this$0:Lcom/agc/pref/PatchSwitch;
 
 
 # direct methods
@@ -67,11 +66,11 @@
 .end method
 
 .method public onPreferenceChange(Landroid/preference/Preference;Ljava/lang/Object;)Z
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Lcom/agc/pref/PatchSwitch$PatchSwitchListener;->togglePatchEnable()V
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    return v0
+    return p1
 .end method

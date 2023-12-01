@@ -1,6 +1,5 @@
 .class public Lcom/CameraAPI2Keys;
 .super Ljava/lang/Object;
-.source "CameraAPI2Keys.java"
 
 
 # static fields
@@ -528,16 +527,12 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public static constructor <clinit>()V
+    .locals 7
 
     const-class v0, [F
 
     const-class v1, [I
-
-    const/4 v2, 0x0
-
-    sput-object v2, Lcom/CameraAPI2Keys;->BLUE_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -551,121 +546,99 @@
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.codeaurora.qcamera3.saturation.use_saturation"
+    const-string v5, "org.codeaurora.qcamera3.saturation.use_saturation"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->SATURATION:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "org.codeaurora.qcamera3.contrast.level"
 
-    const-string v4, "org.codeaurora.qcamera3.contrast.level"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->CONTRAST:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "org.codeaurora.qcamera3.sharpness.strength"
 
-    const-string v4, "org.codeaurora.qcamera3.sharpness.strength"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->SHARPNESS:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "org.codeaurora.qcamera3.iso_exp_priority.use_iso_value"
 
-    const-string v4, "org.codeaurora.qcamera3.iso_exp_priority.use_iso_value"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->ISO_VALUE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "samsung.android.control.meteringMode"
 
-    const-string v4, "samsung.android.control.meteringMode"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "samsung.android.control.liveHdrLevel"
 
-    const-string v4, "samsung.android.control.liveHdrLevel"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_LIVE_HDR_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "samsung.android.control.liveHdrMode"
 
-    const-string v4, "samsung.android.control.liveHdrMode"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_LIVE_HDR_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "samsung.android.control.pafMode"
 
-    const-string v4, "samsung.android.control.pafMode"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_PHASE_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "android.control.afMode"
 
-    const-string v4, "android.control.afMode"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v5, "samsung.android.lens.opticalStabilizationOperationMode"
 
-    const-string v4, "samsung.android.lens.opticalStabilizationOperationMode"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->LENS_OPTICAL_STABILIZATION_OPERATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    const-string v5, "com.xiaomi.sessionparams.initAperture"
 
-    const-string v4, "com.xiaomi.sessionparams.initAperture"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->XIAOMI_LENS_APERTURE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v3, "org.quic.camera2.sensor_register_control"
 
-    const-string v4, "org.quic.camera2.sensor_register_control"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v3, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_REGISTER_CONTROL:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -673,9 +646,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera.eis3enable.EISV3Enable"
+    const-string v5, "org.quic.camera.eis3enable.EISV3Enable"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_VIDEO_EISV3:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -683,9 +656,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera.eisrealtime.Enabled"
+    const-string v5, "org.quic.camera.eisrealtime.Enabled"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_VIDEO_EIS_REALTIME:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -693,29 +666,25 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera.eisrealtime.StabilizationMargins"
+    const-string v5, "org.quic.camera.eisrealtime.StabilizationMargins"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_VIDEO_EIS_REALTIME_MARGINS:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v3, "org.codeaurora.qcamera3.sensor_meta_data.sensor_mode_index"
 
-    const-string v4, "org.codeaurora.qcamera3.sensor_meta_data.sensor_mode_index"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v3, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_SENSOR_MODE_INDEX:Landroid/hardware/camera2/CaptureRequest$Key;
 
     new-instance v2, Landroid/hardware/camera2/CaptureRequest$Key;
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v3, "com.qti.sensorbps_mode_index"
 
-    const-string v4, "com.qti.sensorbps_mode_index"
-
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v3, v4}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_BPS_SENSOR_MODE_INDEX:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -723,9 +692,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera.SensorModeFS.SensorModeFS"
+    const-string v5, "org.quic.camera.SensorModeFS.SensorModeFS"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_FS_SENSOR_MODE_INDEX:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -733,9 +702,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.codeaurora.qcamera3.sensor_meta_data.sensor_mode_info"
+    const-string v5, "org.codeaurora.qcamera3.sensor_meta_data.sensor_mode_info"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_SENSOR_MODE_INFO:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -743,9 +712,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera2.streamconfigs.HDRVideoMode"
+    const-string v5, "org.quic.camera2.streamconfigs.HDRVideoMode"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_VIDEO_HDR:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -753,9 +722,9 @@
 
     sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "xiaomi.superResolution.enabled"
+    const-string v5, "xiaomi.superResolution.enabled"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_XIAOMI_SUPER_RESOLUTION:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -763,9 +732,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.codeaurora.qcamera3.ae_bracket.mode"
+    const-string v5, "org.codeaurora.qcamera3.ae_bracket.mode"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_AE_BRACKET:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -773,9 +742,9 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v4, "org.codeaurora.qcamera3.exposure_metering.exposure_metering_mode"
+    const-string v5, "org.codeaurora.qcamera3.exposure_metering.exposure_metering_mode"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_EXPOSURE_METERING:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -783,9 +752,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.codeaurora.qcamera3.histogram.enable"
+    const-string v5, "org.codeaurora.qcamera3.histogram.enable"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_HISTO_GRAM_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -793,9 +762,9 @@
 
     const-class v3, Ljava/lang/Long;
 
-    const-string v4, "org.codeaurora.qcamera3.iso_exp_priority.use_iso_exp_priority"
+    const-string v5, "org.codeaurora.qcamera3.iso_exp_priority.use_iso_exp_priority"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_ISO_EXP_PRIORITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -803,9 +772,9 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v4, "org.codeaurora.qcamera3.iso_exp_priority.select_priority"
+    const-string v5, "org.codeaurora.qcamera3.iso_exp_priority.select_priority"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_ISO_EXP_SELECT_PRIORITY:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -813,9 +782,9 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v4, "com.qti.chi.multicameracontrol.LightingMode"
+    const-string v5, "com.qti.chi.multicameracontrol.LightingMode"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_LIGHTING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -823,9 +792,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera.BurstFPS.burstfps"
+    const-string v5, "org.quic.camera.BurstFPS.burstfps"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_CAPTURE_BURST_FPS:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -833,9 +802,9 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v4, "com.qti.chi.multicameracontrol.BlueLevel"
+    const-string v5, "com.qti.chi.multicameracontrol.BlueLevel"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_BOKEH_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -843,9 +812,9 @@
 
     sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    const-string v4, "org.quic.camera.CustomNoiseReduction.CustomNoiseReduction"
+    const-string v5, "org.quic.camera.CustomNoiseReduction.CustomNoiseReduction"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_CUSTOM_NOISE_REDUCTION:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -861,9 +830,9 @@
 
     const-class v3, Ljava/lang/Float;
 
-    const-string v4, "org.quic.camera2.statsconfigs.AECLuxIndex"
+    const-string v5, "org.quic.camera2.statsconfigs.AECLuxIndex"
 
-    invoke-direct {v2, v4, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_AEC_LUX_INDEX_REQUEST:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -871,9 +840,9 @@
 
     const-class v3, Ljava/lang/Byte;
 
-    const-string v5, "org.codeaurora.qcamera3.sessionParameters.enableHVXSHDRMode"
+    const-string v6, "org.codeaurora.qcamera3.sessionParameters.enableHVXSHDRMode"
 
-    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v6, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_ENABLE_HVX_SHDR_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -881,9 +850,9 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v5, "org.codeaurora.qcamera3.sessionParameters.EnableSHDR"
+    const-string v6, "org.codeaurora.qcamera3.sessionParameters.EnableSHDR"
 
-    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v6, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_ENABLE_SHDR:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -891,9 +860,9 @@
 
     const-class v3, Ljava/lang/Integer;
 
-    const-string v5, "org.quic.camera2.statsconfigs.MultiCamera3ASyncType"
+    const-string v6, "org.quic.camera2.statsconfigs.MultiCamera3ASyncType"
 
-    invoke-direct {v2, v5, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v2, v6, v3}, Landroid/hardware/camera2/CaptureRequest$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v2, Lcom/CameraAPI2Keys;->API_KEY_QCOM_3A_SYNC:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -909,17 +878,15 @@
 
     const-class v2, Ljava/lang/Float;
 
-    invoke-direct {v0, v4, v2}, Landroid/hardware/camera2/CaptureResult$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v5, v2}, Landroid/hardware/camera2/CaptureResult$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/CameraAPI2Keys;->API_KEY_QCOM_AEC_LUX_INDEX_RESULT:Landroid/hardware/camera2/CaptureResult$Key;
 
     new-instance v0, Landroid/hardware/camera2/CaptureResult$Key;
 
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    const-string v2, "com.qti.stats_control.is_lls_needed"
 
-    const-string v3, "com.qti.stats_control.is_lls_needed"
-
-    invoke-direct {v0, v3, v2}, Landroid/hardware/camera2/CaptureResult$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
+    invoke-direct {v0, v2, v4}, Landroid/hardware/camera2/CaptureResult$Key;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
     sput-object v0, Lcom/CameraAPI2Keys;->API_KEY_QCOM_IS_LLS_NEEDED:Landroid/hardware/camera2/CaptureResult$Key;
 

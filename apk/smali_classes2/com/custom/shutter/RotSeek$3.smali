@@ -1,6 +1,5 @@
 .class Lcom/custom/shutter/RotSeek$3;
 .super Ljava/lang/Object;
-.source "RotSeek.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/custom/shutter/RotSeek;
+.field public final synthetic this$0:Lcom/custom/shutter/RotSeek;
 
 
 # direct methods
-.method constructor <init>(Lcom/custom/shutter/RotSeek;)V
+.method public constructor <init>(Lcom/custom/shutter/RotSeek;)V
     .locals 0
 
     iput-object p1, p0, Lcom/custom/shutter/RotSeek$3;->this$0:Lcom/custom/shutter/RotSeek;

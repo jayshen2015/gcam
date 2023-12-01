@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/ShadowPopup$2;
 .super Ljava/lang/Object;
-.source "ShadowPopup.java"
 
 # interfaces
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/ShadowPopup;
+.field public final synthetic this$0:Lcom/agc/asv/ShadowPopup;
 
-.field final synthetic val$mList:Ljava/util/List;
+.field public final synthetic val$mList:Ljava/util/List;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/ShadowPopup;Ljava/util/List;)V
+.method public constructor <init>(Lcom/agc/asv/ShadowPopup;Ljava/util/List;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,7 +49,7 @@
 
     iget-object v1, v0, Lcom/agc/asv/ShadowPopup;->listview:Lcom/agc/asv/HorizontalListView;
 
-    invoke-virtual {v1}, Lcom/agc/asv/HorizontalListView;->getWidth()I
+    invoke-virtual {v1}, Landroid/widget/AdapterView;->getWidth()I
 
     move-result v1
 
@@ -94,7 +93,7 @@
 
     iget-object v2, p0, Lcom/agc/asv/ShadowPopup$2;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    invoke-virtual {v2}, Lcom/agc/asv/ShadowPopup;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v2
 
@@ -120,13 +119,13 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/agc/asv/HorizontalListView;->scrollTo(II)V
+    invoke-virtual {v0, v1, v2}, Landroid/widget/AdapterView;->scrollTo(II)V
 
     iget-object v0, p0, Lcom/agc/asv/ShadowPopup$2;->this$0:Lcom/agc/asv/ShadowPopup;
 
     iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->listview:Lcom/agc/asv/HorizontalListView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/HorizontalListView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 

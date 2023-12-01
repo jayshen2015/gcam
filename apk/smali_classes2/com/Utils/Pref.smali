@@ -1,6 +1,5 @@
 .class public Lcom/Utils/Pref;
 .super Ljava/lang/Object;
-.source "Pref.java"
 
 
 # static fields
@@ -30,32 +29,30 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public static constructor <clinit>()V
+    .locals 2
+
+    new-instance v0, Lcom/Utils/Pref$1;
+
+    invoke-direct {v0}, Lcom/Utils/Pref$1;-><init>()V
+
+    sput-object v0, Lcom/Utils/Pref;->listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
+
+    const-string v0, "pref_camera_recordlocation_key"
+
+    const-string v1, "pref_camera_dirty_lens_history_key"
+
+    filled-new-array {v0, v1}, [Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/Utils/Pref;->noRestartKey:Ljava/util/List;
 
     const/4 v0, 0x0
-
-    sput-boolean v0, Lcom/Utils/Pref;->needsRestart:Z
-
-    new-instance v1, Lcom/Utils/Pref$1;
-
-    invoke-direct {v1}, Lcom/Utils/Pref$1;-><init>()V
-
-    sput-object v1, Lcom/Utils/Pref;->listener:Landroid/content/SharedPreferences$OnSharedPreferenceChangeListener;
-
-    const-string v1, "pref_camera_recordlocation_key"
-
-    const-string v2, "pref_camera_dirty_lens_history_key"
-
-    filled-new-array {v1, v2}, [Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/Utils/Pref;->noRestartKey:Ljava/util/List;
 
     sput-boolean v0, Lcom/Utils/Pref;->isProcessingProfile:Z
 
@@ -119,13 +116,13 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static MenuValue(Ljava/lang/String;I)I
-    .locals 3
+    .locals 2
 
     invoke-static {}, Lcom/Utils/Pref;->getAppSharedPreferences()Landroid/content/SharedPreferences;
 
@@ -144,25 +141,25 @@
 
     invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v2
+    move-result p0
 
-    return v2
+    return p0
 
     :cond_1
     return p1
 .end method
 
-.method static synthetic access$000(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+.method public static synthetic access$000(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handleAstro(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -170,7 +167,7 @@
     return-void
 .end method
 
-.method static synthetic access$100(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+.method public static synthetic access$100(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handlePrefSync(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -178,7 +175,7 @@
     return-void
 .end method
 
-.method static synthetic access$200(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+.method public static synthetic access$200(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handleCustomLogical(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -186,7 +183,7 @@
     return-void
 .end method
 
-.method static synthetic access$300(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+.method public static synthetic access$300(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handlePatch(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -194,7 +191,7 @@
     return-void
 .end method
 
-.method static synthetic access$400(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+.method public static synthetic access$400(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handleRestart(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -202,7 +199,7 @@
     return-void
 .end method
 
-.method static synthetic access$500(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+.method public static synthetic access$500(Landroid/content/SharedPreferences;Ljava/lang/String;)V
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handleShadowPref(Landroid/content/SharedPreferences;Ljava/lang/String;)V
@@ -240,13 +237,13 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getAuxPrefBooleanValue(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static getAuxPrefBooleanValue(Ljava/lang/String;Z)Z
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -254,39 +251,39 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Pref;->getAppSharedPreferences()Landroid/content/SharedPreferences;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1, v0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxPrefDoubleValue(Ljava/lang/String;)D
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -294,35 +291,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;)D
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-wide v1
+    move-result-object p0
 
-    return-wide v1
+    invoke-static {p0}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;)D
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method public static getAuxPrefDoubleValue(Ljava/lang/String;D)D
-    .locals 3
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -330,35 +327,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1, p2}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;D)D
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-wide v1
+    move-result-object p0
 
-    return-wide v1
+    invoke-static {p0, p1, p2}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;D)D
+
+    move-result-wide p0
+
+    return-wide p0
 .end method
 
 .method public static getAuxPrefFloatValue(Ljava/lang/String;)F
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -366,35 +363,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;)F
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v1
+    move-result-object p0
 
-    return v1
+    invoke-static {p0}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;)F
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static getAuxPrefFloatValue(Ljava/lang/String;F)F
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -402,35 +399,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v1
+    move-result-object p0
 
-    return v1
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static getAuxPrefFloatValueByAuxKey(Ljava/lang/String;IF)F
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -438,35 +435,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {p1}, Lcom/Utils/Lens;->getAuxKeyString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxPrefIntValue(Ljava/lang/String;)I
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -474,35 +471,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v1
+    move-result-object p0
 
-    return v1
+    invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static getAuxPrefIntValue(Ljava/lang/String;I)I
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -510,35 +507,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result v1
+    move-result-object p0
 
-    return v1
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static getAuxPrefIntValueByAuxKey(Ljava/lang/String;II)I
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -546,35 +543,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {p1}, Lcom/Utils/Lens;->getAuxKeyString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxPrefLongValue(Ljava/lang/String;)J
-    .locals 3
+    .locals 2
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -582,35 +579,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getLongValue(Ljava/lang/String;)J
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-wide v1
+    move-result-object p0
 
-    return-wide v1
+    invoke-static {p0}, Lcom/Utils/Pref;->getLongValue(Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    return-wide v0
 .end method
 
 .method public static getAuxPrefStringValue(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -618,35 +615,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    invoke-static {p0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static getAuxPrefStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -654,35 +651,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static getAuxPrefStringValueByAuxKey(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -690,35 +687,35 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {p1}, Lcom/Utils/Lens;->getAuxKeyString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 .method private static getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     const-string v0, "lib_patch_profile_key"
 
@@ -736,205 +733,205 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    const-string v2, "_p"
+    const-string v1, "_p"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    const-string v2, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getAuxProfilePrefDoubleValue(Ljava/lang/String;)D
-    .locals 3
+    .locals 2
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;)D
+    invoke-static {p0}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;)D
 
-    move-result-wide v1
+    move-result-wide v0
 
-    return-wide v1
+    return-wide v0
 .end method
 
 .method public static getAuxProfilePrefDoubleValue(Ljava/lang/String;D)D
-    .locals 3
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1, p2}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;D)D
+    invoke-static {p0, p1, p2}, Lcom/Utils/Pref;->getDoubleValue(Ljava/lang/String;D)D
 
-    move-result-wide v1
+    move-result-wide p0
 
-    return-wide v1
+    return-wide p0
 .end method
 
 .method public static getAuxProfilePrefFloatValue(Ljava/lang/String;)F
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;)F
+    invoke-static {p0}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;)F
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxProfilePrefFloatValueByAuxKey(Ljava/lang/String;IF)F
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxProfilePrefIntValue(Ljava/lang/String;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxProfilePrefIntValue(Ljava/lang/String;I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxProfilePrefIntValueByAuxKey(Ljava/lang/String;II)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
-    move-result v1
+    move-result p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getAuxProfilePrefLongValue(Ljava/lang/String;)J
-    .locals 3
+    .locals 2
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getLongValue(Ljava/lang/String;)J
+    invoke-static {p0}, Lcom/Utils/Pref;->getLongValue(Ljava/lang/String;)J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    return-wide v1
+    return-wide v0
 .end method
 
 .method public static getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getAuxProfilePrefStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getAuxProfilePrefStringValueByAuxKey(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getBoolValue(Ljava/lang/String;)Z
@@ -944,29 +941,29 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getBoolValue(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static getBoolValue(Ljava/lang/String;Z)Z
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p0
 
-    if-lez v0, :cond_0
+    if-lez p0, :cond_0
 
-    const/4 v1, 0x1
+    const/4 p0, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
     :goto_0
-    return v1
+    return p0
 .end method
 
 .method public static getBooleanValue(Ljava/lang/String;Z)Z
@@ -978,119 +975,119 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static getColorsFloatValue(Ljava/lang/String;Ljava/lang/String;F)F
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/Utils/Pref;->getColorsIntValue(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "lib_"
+    const-string v0, "lib_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getAuxProfilePrefFloatValue(Ljava/lang/String;F)F
 
-    move-result p2
+    move-result p0
 
     goto :goto_0
 
     :cond_0
     invoke-static {}, Lagc/Agc;->getGcamAuxKey()I
 
-    move-result v0
+    move-result p0
 
-    if-ltz v0, :cond_1
+    if-ltz p0, :cond_1
 
-    invoke-static {p1, v0, p2}, Lcom/Utils/Pref;->getAuxPrefFloatValueByAuxKey(Ljava/lang/String;IF)F
+    invoke-static {p1, p0, p2}, Lcom/Utils/Pref;->getAuxPrefFloatValueByAuxKey(Ljava/lang/String;IF)F
 
-    move-result p2
+    move-result p0
 
     goto :goto_0
 
     :cond_1
     invoke-static {p1, p2}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
 
-    move-result p2
+    move-result p0
 
     :goto_0
-    return p2
+    return p0
 .end method
 
 .method public static getColorsIntValue(Ljava/lang/String;Ljava/lang/String;I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/Utils/Pref;->getColorsIntValue(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "lib_"
+    const-string v0, "lib_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getAuxProfilePrefIntValue(Ljava/lang/String;I)I
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getAuxProfilePrefIntValue(Ljava/lang/String;I)I
 
-    move-result p2
+    move-result p0
 
     goto :goto_0
 
     :cond_0
     invoke-static {}, Lagc/Agc;->getGcamAuxKey()I
 
-    move-result v0
+    move-result p0
 
-    if-ltz v0, :cond_1
+    if-ltz p0, :cond_1
 
-    invoke-static {p1, v0, p2}, Lcom/Utils/Pref;->getAuxPrefIntValueByAuxKey(Ljava/lang/String;II)I
+    invoke-static {p1, p0, p2}, Lcom/Utils/Pref;->getAuxPrefIntValueByAuxKey(Ljava/lang/String;II)I
 
-    move-result p2
+    move-result p0
 
     goto :goto_0
 
     :cond_1
     invoke-static {p1, p2}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
 
-    move-result p2
+    move-result p0
 
     :goto_0
-    return p2
+    return p0
 .end method
 
 .method public static getColorsIntValue(Ljava/lang/String;)Z
@@ -1108,88 +1105,88 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_key"
+    const-string v0, "_key"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxProfilePrefIntValue(Ljava/lang/String;)I
+    invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfilePrefIntValue(Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne p0, v0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_0
-    return v1
+    return v0
 .end method
 
 .method public static getColorsStringValue(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/Utils/Pref;->getColorsIntValue(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "lib_"
+    const-string v0, "lib_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p2}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
     invoke-static {}, Lagc/Agc;->getGcamAuxKey()I
 
-    move-result v0
+    move-result p0
 
-    if-ltz v0, :cond_1
+    if-ltz p0, :cond_1
 
-    invoke-static {p1, v0, p2}, Lcom/Utils/Pref;->getAuxPrefStringValueByAuxKey(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p0, p2}, Lcom/Utils/Pref;->getAuxPrefStringValueByAuxKey(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p0
 
     goto :goto_0
 
     :cond_1
     invoke-static {p1, p2}, Lcom/Utils/Pref;->getAuxPrefStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object p0
 
     :goto_0
-    return-object p2
+    return-object p0
 .end method
 
 .method public static getDoubleValue(Ljava/lang/String;)D
@@ -1205,27 +1202,22 @@
 .end method
 
 .method public static getDoubleValue(Ljava/lang/String;D)D
-    .locals 3
+    .locals 1
 
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v1
-
-    goto :goto_0
+    move-result-wide p1
 
     :cond_0
-    move-wide v1, p1
-
-    :goto_0
-    return-wide v1
+    return-wide p1
 .end method
 
 .method public static getFloatValue(Ljava/lang/String;)F
@@ -1235,51 +1227,46 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getFloatValue(Ljava/lang/String;F)F
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static getFloatValue(Ljava/lang/String;F)F
-    .locals 2
+    .locals 1
 
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
-    move-result v1
-
-    goto :goto_0
+    move-result p1
 
     :cond_0
-    move v1, p1
-
-    :goto_0
-    return v1
+    return p1
 .end method
 
 .method public static getHexIntValue(Ljava/lang/String;)I
-    .locals 2
+    .locals 1
 
     const-string v0, "0"
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const/16 v1, 0x10
+    const/16 v0, 0x10
 
-    invoke-static {v0, v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    invoke-static {p0, v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static getHexLongValue(Ljava/lang/String;)J
@@ -1289,11 +1276,11 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const/16 v1, 0x10
+    const/16 v0, 0x10
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
+    invoke-static {p0, v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
 
     move-result-wide v0
 
@@ -1307,9 +1294,9 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getLocalizedString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static getLocalizedString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1358,31 +1345,31 @@
     return-object v0
 
     :cond_0
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1397,15 +1384,15 @@
     :cond_1
     invoke-static {p0, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
-    return-object v0
+    return-object p0
 
     :cond_2
     return-object p1
@@ -1424,27 +1411,22 @@
 .end method
 
 .method public static getLongValue(Ljava/lang/String;J)J
-    .locals 3
+    .locals 1
 
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v1
-
-    goto :goto_0
+    move-result-wide p1
 
     :cond_0
-    move-wide v1, p1
-
-    :goto_0
-    return-wide v1
+    return-wide p1
 .end method
 
 .method public static getStringSetValue(Ljava/lang/String;)Ljava/util/Set;
@@ -1474,17 +1456,17 @@
 
     invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences;->getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    new-instance v1, Ljava/util/HashSet;
+    new-instance p0, Ljava/util/HashSet;
 
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {p0}, Ljava/util/HashSet;-><init>()V
 
     :goto_0
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getStringValue(Ljava/lang/String;)Ljava/lang/String;
@@ -1494,9 +1476,9 @@
 
     invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -1514,15 +1496,10 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
-
-    goto :goto_0
+    move-result-object p1
 
     :cond_0
-    move-object v1, p1
-
-    :goto_0
-    return-object v1
+    return-object p1
 .end method
 
 .method public static getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
@@ -1533,11 +1510,11 @@
     :try_start_0
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    return-object v0
+    return-object p0
 
     :catchall_0
     move-exception v1
@@ -1551,11 +1528,11 @@
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    return-object v0
+    return-object p0
 
     :catchall_1
     move-exception v2
@@ -1569,11 +1546,11 @@
 
     invoke-static {v2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
-    return-object v0
+    return-object p0
 
     :catchall_2
     move-exception v2
@@ -1585,11 +1562,11 @@
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    return-object v0
+    return-object p0
 
     :catchall_3
     move-exception v1
@@ -1603,11 +1580,11 @@
 
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_4
 
-    return-object v0
+    return-object p0
 
     :catchall_4
     move-exception v1
@@ -1615,20 +1592,20 @@
     :try_start_5
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences;->getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_5
 
-    return-object v0
+    return-object p0
 
     :catchall_5
-    move-exception v1
+    move-exception p0
 
     return-object v0
 .end method
 
 .method private static handleAstro(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
 
     const-string v0, "pref_camera_astro"
 
@@ -1640,20 +1617,20 @@
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {p1, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
     :cond_0
     return-void
 .end method
 
 .method private static handleCameraLog(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
 
     const-string v0, ".*_\\d+$"
 
@@ -1667,72 +1644,72 @@
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    array-length v1, v0
+    array-length v0, p1
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    aget-object v1, v0, v1
+    aget-object p1, p1, v0
 
-    invoke-static {v1, p0}, Lcom/agc/LogData$Lens;->log(Ljava/lang/String;Landroid/content/SharedPreferences;)V
+    invoke-static {p1, p0}, Lcom/agc/LogData$Lens;->log(Ljava/lang/String;Landroid/content/SharedPreferences;)V
 
     :cond_0
     return-void
 .end method
 
 .method private static handleCustomLogical(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 5
+    .locals 3
 
-    const-string v0, "pref_hdrnet_key"
+    const-string p0, "pref_hdrnet_key"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p1
 
-    if-eqz v1, :cond_2
+    if-eqz p1, :cond_2
 
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    const/4 v1, 0x0
+    const/4 p1, 0x0
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    if-ne v0, v2, :cond_0
+    if-ne p0, v0, :cond_0
 
-    move v3, v2
+    move v1, v0
 
     goto :goto_0
 
     :cond_0
-    move v3, v1
+    move v1, p1
 
     :goto_0
-    const-string v4, "hdrnet_enabled"
-
-    invoke-static {v4, v3}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
-
-    if-ne v0, v2, :cond_1
-
-    move v1, v2
-
-    :cond_1
-    const-string v2, "camera.chameleon.enabled"
+    const-string v2, "hdrnet_enabled"
 
     invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
 
-    const-string v1, "pref_chameleon_control_key"
+    if-ne p0, v0, :cond_1
 
-    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
+    move p1, v0
+
+    :cond_1
+    const-string v0, "camera.chameleon.enabled"
+
+    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
+
+    const-string p1, "pref_chameleon_control_key"
+
+    invoke-static {p1, p0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
     :cond_2
     return-void
 .end method
 
 .method private static handleFocus(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
 
     const-string v0, "pref_af_mode_back"
 
@@ -1744,13 +1721,13 @@
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {p1, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
     invoke-static {}, Lcom/Globals;->onReInit()V
 
@@ -1782,11 +1759,9 @@
     :cond_0
     invoke-static {p0, p1}, Lcom/Utils/Pref;->getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {p1, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    return-void
+    invoke-static {p1, p0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
     :cond_1
     :goto_0
@@ -1794,98 +1769,98 @@
 .end method
 
 .method private static handlePatch(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 6
+    .locals 4
 
-    sget-boolean v0, Lcom/Utils/Pref;->isProcessingProfile:Z
+    sget-boolean p0, Lcom/Utils/Pref;->isProcessingProfile:Z
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
     return-void
 
     :cond_0
-    const-string v0, "lib_"
+    const-string p0, "lib_"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    const-string v1, "patch_profile_key_"
+    const-string v0, "patch_profile_key_"
 
-    if-eqz v0, :cond_3
+    if-eqz p0, :cond_2
 
-    const-string v0, ".*_key_\\d+$"
+    const-string p0, ".*_key_\\d+$"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_1
+    if-eqz p0, :cond_1
 
-    const-string v0, "_"
+    const-string p0, "_"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    array-length v3, v2
-
-    add-int/lit8 v3, v3, -0x1
-
-    aget-object v3, v2, v3
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    array-length v2, v1
 
-    move-result-object v1
+    add-int/lit8 v2, v2, -0x1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aget-object v2, v1, v2
 
-    move-result-object v1
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v1
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "p"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    array-length v5, v2
-
-    invoke-static {v2, v4, v5}, Lcom/Utils/Pref;->insert([Ljava/lang/String;Ljava/lang/String;I)[Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "p"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    array-length v2, v1
+
+    invoke-static {v1, v0, v2}, Lcom/Utils/Pref;->insert([Ljava/lang/String;Ljava/lang/String;I)[Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Landroid/text/TextUtils;->join(Ljava/lang/CharSequence;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p0
+
     invoke-static {p1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-static {v0, v4}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -1895,90 +1870,88 @@
     :goto_0
     invoke-static {p1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "Off (as in library)"
+    const-string v0, "Off (as in library)"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result p0
 
-    if-eqz v1, :cond_2
+    if-eqz p0, :cond_3
 
-    const-string v1, ".*_key_p\\d+_\\d+$"
+    const-string p0, ".*_key_p\\d+_\\d+$"
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result p0
 
-    if-eqz v1, :cond_2
+    if-eqz p0, :cond_3
 
     invoke-static {p1}, Lcom/Utils/Pref;->remove(Ljava/lang/String;)V
 
-    :cond_2
     goto :goto_1
 
-    :cond_3
-    invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    :cond_2
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
+    :cond_3
     :goto_1
     return-void
 .end method
 
 .method private static handlePrefSync(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->getValue(Landroid/content/SharedPreferences;Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {p1, v1}, Lagc/Agc;->onPreferenceChanged(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p1, p0}, Lagc/Agc;->onPreferenceChanged(Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_0
     return-void
 .end method
 
 .method private static handleRestart(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
-    sget-object v0, Lcom/Utils/Pref;->noRestartKey:Ljava/util/List;
+    sget-object p0, Lcom/Utils/Pref;->noRestartKey:Ljava/util/List;
 
-    invoke-interface {v0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {p0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
-    const-string v0, "pref_social_app_"
+    const-string p0, "pref_social_app_"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    if-nez v0, :cond_1
+    if-nez p0, :cond_1
 
-    const-string v0, "pref_lens_title_key_"
+    const-string p0, "pref_lens_title_key_"
 
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, p0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x1
+    const/4 p0, 0x1
 
-    sput-boolean v0, Lcom/Utils/Pref;->needsRestart:Z
-
-    return-void
+    sput-boolean p0, Lcom/Utils/Pref;->needsRestart:Z
 
     :cond_1
     :goto_0
@@ -2049,54 +2022,50 @@
 .end method
 
 .method private static insert([Ljava/lang/String;Ljava/lang/String;I)[Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     array-length v0, p0
 
     add-int/lit8 v0, v0, 0x1
 
-    new-array v0, v0, [Ljava/lang/String;
+    new-array v1, v0, [Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     :goto_0
-    array-length v2, v0
+    if-ge v2, v0, :cond_2
 
-    if-ge v1, v2, :cond_2
+    add-int/lit8 v3, p2, -0x1
 
-    add-int/lit8 v2, p2, -0x1
+    if-ge v2, v3, :cond_0
 
-    if-ge v1, v2, :cond_0
+    aget-object v3, p0, v2
 
-    aget-object v2, p0, v1
-
-    aput-object v2, v0, v1
+    aput-object v3, v1, v2
 
     goto :goto_1
 
     :cond_0
-    add-int/lit8 v2, p2, -0x1
+    if-ne v2, v3, :cond_1
 
-    if-ne v1, v2, :cond_1
-
-    aput-object p1, v0, v1
+    aput-object p1, v1, v2
 
     goto :goto_1
 
     :cond_1
-    add-int/lit8 v2, v1, -0x1
+    add-int/lit8 v3, v2, -0x1
 
-    aget-object v2, p0, v2
+    aget-object v3, p0, v3
 
-    aput-object v2, v0, v1
+    aput-object v3, v1, v2
 
     :goto_1
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_2
-    return-object v0
+    return-object v1
 .end method
 
 .method public static printAppSharedPreferencesAll()Ljava/util/Map;
@@ -2147,15 +2116,15 @@
 
     invoke-interface {v0, p0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
 
 .method public static setAuxPrefIntValue(Ljava/lang/String;I)V
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2163,33 +2132,33 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public static setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2197,51 +2166,51 @@
 
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "_"
+    const-string v0, "_"
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKeyString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public static setAuxProfilePrefIntValue(Ljava/lang/String;I)V
-    .locals 1
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public static setAuxProfilePrefValue(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 1
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Pref;->getAuxProfileKey(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2259,9 +2228,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
@@ -2292,49 +2261,49 @@
 .end method
 
 .method public static setDefaultStringValue(Ljava/lang/String;D)V
-    .locals 1
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public static setDefaultStringValue(Ljava/lang/String;F)V
-    .locals 1
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public static setDefaultStringValue(Ljava/lang/String;I)V
-    .locals 1
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
 
 .method public static setDefaultStringValue(Ljava/lang/String;J)V
-    .locals 1
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2348,19 +2317,19 @@
 .end method
 
 .method public static setDefaultStringValue(Ljava/lang/String;Z)V
-    .locals 1
+    .locals 0
 
     if-eqz p1, :cond_0
 
-    const-string v0, "1"
+    const-string p1, "1"
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "0"
+    const-string p1, "0"
 
     :goto_0
-    invoke-static {p0, v0}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -2388,9 +2357,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -2419,9 +2388,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -2450,9 +2419,9 @@
 
     invoke-interface {v0, p0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -2481,9 +2450,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -2521,9 +2490,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -2552,16 +2521,16 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
 .end method
 
 .method public static setMenuValue(Ljava/lang/String;F)V
-    .locals 2
+    .locals 1
 
     invoke-static {}, Lcom/Utils/Pref;->getAppSharedPreferences()Landroid/content/SharedPreferences;
 
@@ -2573,19 +2542,19 @@
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
 
 .method public static setMenuValue(Ljava/lang/String;I)V
-    .locals 2
+    .locals 1
 
     invoke-static {}, Lcom/Utils/Pref;->getAppSharedPreferences()Landroid/content/SharedPreferences;
 
@@ -2597,19 +2566,19 @@
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
 
 .method public static setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 1
 
     invoke-static {}, Lcom/Utils/Pref;->getAppSharedPreferences()Landroid/content/SharedPreferences;
 
@@ -2621,13 +2590,13 @@
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
@@ -2654,15 +2623,15 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
 
 .method public static setMenuValue(Ljava/lang/String;Z)V
-    .locals 2
+    .locals 1
 
     invoke-static {}, Lcom/Utils/Pref;->getAppSharedPreferences()Landroid/content/SharedPreferences;
 
@@ -2674,19 +2643,19 @@
 
     if-eqz p1, :cond_0
 
-    const-string v1, "1"
+    const-string p1, "1"
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "0"
+    const-string p1, "0"
 
     :goto_0
-    invoke-interface {v0, p0, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
 .end method
@@ -2762,9 +2731,9 @@
 
     invoke-interface {v2, p2, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -2786,9 +2755,9 @@
 
     invoke-interface {v3, p2, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
@@ -2810,9 +2779,9 @@
 
     invoke-interface {v3, p2, v2}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_2
 
@@ -2832,9 +2801,9 @@
 
     invoke-interface {v2, p2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
@@ -2856,9 +2825,9 @@
 
     invoke-interface {v3, p2, v1, v2}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_4
 
@@ -2870,24 +2839,24 @@
     :try_start_5
     invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences;->getStringSet(Ljava/lang/String;Ljava/util/Set;)Ljava/util/Set;
 
-    move-result-object v0
+    move-result-object p1
 
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-interface {v1, p2, v0}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
+    invoke-interface {p0, p2, p1}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_5
 
     return-void
 
     :catchall_5
-    move-exception v0
+    move-exception p0
 
     return-void
 .end method

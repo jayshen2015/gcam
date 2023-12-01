@@ -1,6 +1,5 @@
 .class public Lcom/agc/pref/ConfigSave;
 .super Ljava/lang/Object;
-.source "ConfigSave.java"
 
 # interfaces
 .implements Landroid/preference/Preference$OnPreferenceClickListener;
@@ -40,19 +39,19 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result v1
+    move-result p0
 
-    if-nez v1, :cond_0
+    if-nez p0, :cond_0
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
@@ -71,27 +70,27 @@
 
     invoke-static {p1, v1}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v0, p1}, Ljava/lang/String;-><init>([B)V
 
     return-object v0
 .end method
 
 .method public final Base64encode(Ljava/lang/String;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
+    invoke-static {p1, v0}, Landroid/util/Base64;->encodeToString([BI)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public final createFolderConfig(Ljava/lang/String;)V
@@ -113,19 +112,19 @@
 
     invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result v1
+    move-result p1
 
-    if-nez v1, :cond_0
+    if-nez p1, :cond_0
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
@@ -168,156 +167,150 @@
 
     move-result-object v0
 
-    const-string v1, "files/"
+    const-string v2, "files/"
 
-    const-string v2, ""
+    const-string v3, ""
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/agc/pref/ConfigSave;->preference:Landroid/preference/Preference;
+    iget-object v2, p0, Lcom/agc/pref/ConfigSave;->preference:Landroid/preference/Preference;
 
-    invoke-virtual {v1}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {v2}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferencesName(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferencesName(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    new-instance v2, Ljava/io/File;
+    new-instance v3, Ljava/io/File;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
     const-string v4, "shared_prefs"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    sget-object v4, Ljava/io/File;->separator:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, ".xml"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/io/File;->isDirectory()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    invoke-virtual {v2}, Ljava/io/File;->delete()Z
-
-    :cond_0
-    return-object v2
-.end method
-
-.method public final onPreferenceClick(Landroid/preference/Preference;)Z
-    .locals 5
-
-    invoke-virtual {p1}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    new-instance v1, Landroid/widget/EditText;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-direct {v1, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
+    move-result-object v0
 
-    const-string v2, ".agc"
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
+    move-result-object v0
 
-    new-instance v2, Landroid/app/AlertDialog$Builder;
+    const-string v1, ".xml"
 
-    invoke-direct {v2, v0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "Do you want to save configs?"
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/16 v3, 0x10
+    invoke-direct {v3, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1, v3, v3, v3, v3}, Lcom/agc/util/AgcUtil;->viewWithMargin(Landroid/view/View;IIII)Landroid/view/View;
+    invoke-virtual {v3}, Ljava/io/File;->isDirectory()Z
 
-    move-result-object v3
+    move-result v0
 
-    invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+    if-eqz v0, :cond_0
 
-    move-result-object v2
+    invoke-virtual {v3}, Ljava/io/File;->delete()Z
 
-    new-instance v3, Lcom/agc/pref/ConfigSave$1;
+    :cond_0
+    return-object v3
+.end method
 
-    invoke-direct {v3, p0, v1}, Lcom/agc/pref/ConfigSave$1;-><init>(Lcom/agc/pref/ConfigSave;Landroid/widget/EditText;)V
+.method public final onPreferenceClick(Landroid/preference/Preference;)Z
+    .locals 2
 
-    const-string v4, "Yes"
+    invoke-virtual {p1}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    move-result-object p1
 
-    move-result-object v2
+    new-instance v0, Landroid/widget/EditText;
 
-    const/4 v3, 0x0
+    invoke-direct {v0, p1}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    move-object v4, v3
+    const-string v1, ".agc"
 
-    check-cast v4, Landroid/content/DialogInterface$OnClickListener;
+    invoke-virtual {v0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    const-string v4, "Cancel"
+    new-instance v1, Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v2, v4, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-direct {v1, p1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    move-result-object v2
+    const-string p1, "Do you want to save configs?"
 
-    invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    invoke-virtual {v1, p1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v2}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    const/16 v1, 0x10
 
-    move-result-object v3
+    invoke-static {v0, v1, v1, v1, v1}, Lcom/agc/util/AgcUtil;->viewWithMargin(Landroid/view/View;IIII)Landroid/view/View;
 
-    const/4 v4, 0x4
+    move-result-object v1
 
-    invoke-virtual {v3, v4}, Landroid/view/Window;->setSoftInputMode(I)V
+    invoke-virtual {p1, v1}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
+    move-result-object p1
 
-    const/4 v3, 0x0
+    new-instance v1, Lcom/agc/pref/ConfigSave$1;
 
-    invoke-virtual {v2, v3}, Landroid/app/AlertDialog;->setCancelable(Z)V
+    invoke-direct {v1, p0, v0}, Lcom/agc/pref/ConfigSave$1;-><init>(Lcom/agc/pref/ConfigSave;Landroid/widget/EditText;)V
 
-    const/4 v3, 0x1
+    const-string v0, "Yes"
 
-    return v3
+    invoke-virtual {p1, v0, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object p1
+
+    const-string v0, "Cancel"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
+
+    invoke-virtual {p1}, Landroid/app/AlertDialog;->show()V
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/app/AlertDialog;->setCancelable(Z)V
+
+    const/4 p1, 0x1
+
+    return p1
 .end method
 
 .method public final saveSharedPreferences(Ljava/lang/String;)V
-    .locals 10
+    .locals 9
 
     const-string v0, "pref_xml_path_key"
 
@@ -343,64 +336,68 @@
 
     invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v2, v3, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     :try_start_0
-    new-instance v3, Ljava/io/FileInputStream;
+    new-instance v0, Ljava/io/FileInputStream;
 
-    invoke-direct {v3, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v0, v1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    invoke-virtual {v3}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+    invoke-virtual {v0}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
-    move-result-object v5
+    move-result-object v0
 
-    new-instance v3, Ljava/io/FileOutputStream;
+    new-instance v1, Ljava/io/FileOutputStream;
 
-    invoke-direct {v3, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v1, v2}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    invoke-virtual {v3}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
+    invoke-virtual {v1}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v5, 0x0
 
-    invoke-virtual {v5}, Ljava/nio/channels/FileChannel;->size()J
+    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->size()J
 
-    move-result-wide v8
+    move-result-wide v7
 
-    invoke-virtual/range {v4 .. v9}, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J
+    move-object v3, v1
 
-    invoke-virtual {v5}, Ljava/nio/channels/FileChannel;->close()V
+    move-object v4, v0
 
-    invoke-virtual {v4}, Ljava/nio/channels/FileChannel;->close()V
+    invoke-virtual/range {v3 .. v8}, Ljava/nio/channels/FileChannel;->transferFrom(Ljava/nio/channels/ReadableByteChannel;JJ)J
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1}, Ljava/nio/channels/FileChannel;->close()V
 
-    const-string v6, "Saved config is : "
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v3
+    const-string v1, "Saved config is : "
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
     :try_end_0
     .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
@@ -408,40 +405,35 @@
     goto :goto_0
 
     :catch_0
-    move-exception v3
+    move-exception p1
 
-    invoke-virtual {v3}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object p1
 
-    move-object v3, v4
-
-    goto :goto_1
+    goto :goto_0
 
     :catch_1
-    move-exception v3
+    move-exception p1
 
-    invoke-virtual {v3}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/io/FileNotFoundException;->getMessage()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object p1
 
     :goto_0
-    nop
+    iget-object v0, p0, Lcom/agc/pref/ConfigSave;->preference:Landroid/preference/Preference;
 
-    :goto_1
-    iget-object v4, p0, Lcom/agc/pref/ConfigSave;->preference:Landroid/preference/Preference;
+    invoke-virtual {v0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
 
-    invoke-virtual {v4}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    move-result-object v0
 
-    move-result-object v4
+    const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    invoke-static {v0, p1, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
-    invoke-static {v4, v3, v5}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object p1
 
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/widget/Toast;->show()V
+    invoke-virtual {p1}, Landroid/widget/Toast;->show()V
 
     return-void
 .end method

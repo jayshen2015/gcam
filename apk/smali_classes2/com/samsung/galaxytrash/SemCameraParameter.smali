@@ -1,6 +1,5 @@
 .class public Lcom/samsung/galaxytrash/SemCameraParameter;
 .super Ljava/lang/Object;
-.source "SemCameraParameter.java"
 
 
 # static fields
@@ -58,7 +57,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 2
 
     const/4 v0, 0x1

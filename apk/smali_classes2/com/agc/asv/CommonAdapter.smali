@@ -1,6 +1,5 @@
 .class public abstract Lcom/agc/asv/CommonAdapter;
 .super Landroid/widget/BaseAdapter;
-.source "CommonAdapter.java"
 
 
 # annotations
@@ -74,9 +73,9 @@
 
     invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public getItemId(I)J

@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/menu/ButtonEventListener;
 .super Ljava/lang/Object;
-.source "ButtonEventListener.java"
 
 
 # virtual methods

@@ -1,6 +1,5 @@
 .class Landroid/preference/LibraryPreference$NearDialog$1;
 .super Ljava/lang/Object;
-.source "LibraryPreference.java"
 
 # interfaces
 .implements Landroid/text/TextWatcher;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$extractValueTv:Landroid/widget/TextView;
+.field public final synthetic val$extractValueTv:Landroid/widget/TextView;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/TextView;)V
+.method public constructor <init>(Landroid/widget/TextView;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -52,21 +51,21 @@
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Landroid/preference/LibraryPreference$NearDialog$1;->val$extractValueTv:Landroid/widget/TextView;
+    iget-object p2, p0, Landroid/preference/LibraryPreference$NearDialog$1;->val$extractValueTv:Landroid/widget/TextView;
 
-    if-eqz v0, :cond_0
+    if-eqz p2, :cond_0
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-static {v1}, Landroid/preference/LibraryPreference;->access$000(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1}, Landroid/preference/LibraryPreference;->access$000(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_0
     return-void

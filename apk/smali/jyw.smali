@@ -41,6 +41,10 @@
 
     const-string v4, "yyyyMMdd_HHmmssSSS"
 
+    invoke-static {v4}, Lcom/agc/AdvancedSettings;->getPhotoSuffix(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
     invoke-direct {v2, v4, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
     invoke-static {}, Lagc/Agc;->isGoogleDevice()Z

@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/OptionWindow$3;
 .super Ljava/lang/Object;
-.source "OptionWindow.java"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/OptionWindow;
+.field public final synthetic this$0:Lcom/agc/widget/OptionWindow;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/OptionWindow;)V
+.method public constructor <init>(Lcom/agc/widget/OptionWindow;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/OptionWindow$3;->this$0:Lcom/agc/widget/OptionWindow;
@@ -35,15 +34,15 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/widget/OptionWindow$3;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$3;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-static {v0}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
+    invoke-static {p1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0}, Lcom/agc/widget/OptionWindow$OnPopItemClickListener;->onClickAccessoryButton()V
+    invoke-interface {p1}, Lcom/agc/widget/OptionWindow$OnPopItemClickListener;->onClickAccessoryButton()V
 
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/GrayscaleButton;
 .super Lcom/agc/widget/OptionButton;
-.source "GrayscaleButton.java"
 
 
 # direct methods
@@ -85,7 +84,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v0, p0, Lcom/agc/widget/GrayscaleButton;->items:Ljava/util/List;
+    iput-object v0, p0, Lcom/agc/widget/OptionButton;->items:Ljava/util/List;
 
     const-string v0, "pref_photo_grayscale_key"
 
@@ -93,16 +92,14 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/agc/widget/GrayscaleButton;->selectedIndex:I
-
-    iget v0, p0, Lcom/agc/widget/GrayscaleButton;->selectedIndex:I
+    iput v0, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
     if-lez v0, :cond_0
 
     move v5, v6
 
     :cond_0
-    invoke-virtual {p0, v5}, Lcom/agc/widget/GrayscaleButton;->setChecked(Z)V
+    invoke-virtual {p0, v5}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 
@@ -110,23 +107,23 @@
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 1
+    .locals 0
 
     invoke-super {p0, p1, p2}, Lcom/agc/widget/OptionButton;->onCheckedChanged(Landroid/widget/CompoundButton;Z)V
 
-    iget v0, p0, Lcom/agc/widget/GrayscaleButton;->selectedIndex:I
+    iget p1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/agc/widget/GrayscaleButton;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     return-void
 .end method

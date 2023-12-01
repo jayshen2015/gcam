@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/CircleProgressView;
 .super Landroid/view/View;
-.source "CircleProgressView.java"
 
 
 # annotations
@@ -75,98 +74,98 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 2
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/4 v0, 0x0
+    const/4 p2, 0x0
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressType:I
+    iput p2, p0, Lcom/agc/asv/CircleProgressView;->mProgressType:I
 
     invoke-direct {p0}, Lcom/agc/asv/CircleProgressView;->initPaint()V
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/high16 p2, 0x3f800000    # 1.0f
 
-    invoke-static {p1, v0}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {p1, p2}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mDefaultWidth:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mDefaultWidth:I
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
-    const-string v0, "#ffffffff"
+    const-string p1, "#ffffffff"
 
-    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {p1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressColor:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressColor:I
 
-    const-string v0, "#4dffffff"
+    const-string p1, "#4dffffff"
 
-    invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+    invoke-static {p1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundColor:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundColor:I
 
-    const/16 v0, -0x5a
+    const/16 p1, -0x5a
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mStartAngle:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mStartAngle:I
 
-    const/16 v0, 0x10e
+    const/16 p1, 0x10e
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mEndAngle:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mEndAngle:I
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    iput-boolean v0, p0, Lcom/agc/asv/CircleProgressView;->mShowAnimation:Z
+    iput-boolean p1, p0, Lcom/agc/asv/CircleProgressView;->mShowAnimation:Z
 
-    const/16 v0, 0x3e8
+    const/16 p1, 0x3e8
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mDuration:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mDuration:I
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
-    int-to-float v1, v1
+    int-to-float p2, p2
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/agc/asv/CircleProgressView;->mProgressColor:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mProgressColor:I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
-    int-to-float v1, v1
+    int-to-float p2, p2
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundColor:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundColor:I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/agc/asv/CircleProgressView;)F
-    .locals 1
+.method public static synthetic access$000(Lcom/agc/asv/CircleProgressView;)F
+    .locals 0
 
-    iget v0, p0, Lcom/agc/asv/CircleProgressView;->mProgress:F
+    iget p0, p0, Lcom/agc/asv/CircleProgressView;->mProgress:F
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$002(Lcom/agc/asv/CircleProgressView;F)F
+.method public static synthetic access$002(Lcom/agc/asv/CircleProgressView;F)F
     .locals 0
 
     iput p1, p0, Lcom/agc/asv/CircleProgressView;->mProgress:F
@@ -174,20 +173,20 @@
     return p1
 .end method
 
-.method static synthetic access$100(Lcom/agc/asv/CircleProgressView;)Lcom/agc/asv/CircleProgressView$OnProgressChangedListener;
-    .locals 1
+.method public static synthetic access$100(Lcom/agc/asv/CircleProgressView;)Lcom/agc/asv/CircleProgressView$OnProgressChangedListener;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mListener:Lcom/agc/asv/CircleProgressView$OnProgressChangedListener;
+    iget-object p0, p0, Lcom/agc/asv/CircleProgressView;->mListener:Lcom/agc/asv/CircleProgressView$OnProgressChangedListener;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$200(Lcom/agc/asv/CircleProgressView;)F
-    .locals 1
+.method public static synthetic access$200(Lcom/agc/asv/CircleProgressView;)F
+    .locals 0
 
-    iget v0, p0, Lcom/agc/asv/CircleProgressView;->mTotalProgress:F
+    iget p0, p0, Lcom/agc/asv/CircleProgressView;->mTotalProgress:F
 
-    return v0
+    return p0
 .end method
 
 .method private initPaint()V
@@ -219,7 +218,7 @@
 .end method
 
 .method private measureHeight(I)I
-    .locals 3
+    .locals 2
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -227,54 +226,47 @@
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v1
+    move-result p1
 
-    sparse-switch v1, :sswitch_data_0
+    const/high16 v1, -0x80000000
 
-    invoke-virtual {p0}, Lcom/agc/asv/CircleProgressView;->getContext()Landroid/content/Context;
+    if-eq p1, v1, :cond_1
 
-    move-result-object v2
+    const/high16 v1, 0x40000000    # 2.0f
 
-    invoke-static {v2}, Lcom/agc/asv/DisplayHelper;->getScreenHeight(Landroid/content/Context;)I
+    if-eq p1, v1, :cond_0
 
-    move-result v2
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    goto :goto_1
+    move-result-object p1
 
-    :sswitch_0
-    iget v2, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
+    invoke-static {p1}, Lcom/agc/asv/DisplayHelper;->getScreenHeight(Landroid/content/Context;)I
 
-    if-ge v0, v2, :cond_0
+    move-result v0
 
     goto :goto_0
 
     :cond_0
-    move v2, v0
+    iget p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
+    if-ge v0, p1, :cond_2
+
+    move v0, p1
+
+    goto :goto_0
+
+    :cond_1
+    iget p1, p0, Lcom/agc/asv/CircleProgressView;->mDefaultWidth:I
+
+    mul-int/lit8 v0, p1, 0x2
+
+    :cond_2
     :goto_0
-    goto :goto_1
-
-    :sswitch_1
-    iget v2, p0, Lcom/agc/asv/CircleProgressView;->mDefaultWidth:I
-
-    mul-int/lit8 v2, v2, 0x2
-
-    nop
-
-    :goto_1
-    return v2
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x80000000 -> :sswitch_1
-        0x40000000 -> :sswitch_0
-    .end sparse-switch
+    return v0
 .end method
 
 .method private measureWidth(I)I
-    .locals 3
+    .locals 2
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -282,55 +274,48 @@
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v1
+    move-result p1
 
-    sparse-switch v1, :sswitch_data_0
+    const/high16 v1, -0x80000000
 
-    invoke-virtual {p0}, Lcom/agc/asv/CircleProgressView;->getContext()Landroid/content/Context;
+    if-eq p1, v1, :cond_1
 
-    move-result-object v2
+    const/high16 v1, 0x40000000    # 2.0f
 
-    invoke-static {v2}, Lcom/agc/asv/DisplayHelper;->getScreenWidth(Landroid/content/Context;)I
+    if-eq p1, v1, :cond_0
 
-    move-result v2
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    goto :goto_1
+    move-result-object p1
 
-    :sswitch_0
-    iget v2, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
+    invoke-static {p1}, Lcom/agc/asv/DisplayHelper;->getScreenWidth(Landroid/content/Context;)I
 
-    if-ge v0, v2, :cond_0
+    move-result v0
 
     goto :goto_0
 
     :cond_0
-    move v2, v0
+    iget p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
+    if-ge v0, p1, :cond_2
+
+    move v0, p1
+
+    goto :goto_0
+
+    :cond_1
+    iget p1, p0, Lcom/agc/asv/CircleProgressView;->mDefaultWidth:I
+
+    mul-int/lit8 v0, p1, 0x2
+
+    :cond_2
     :goto_0
-    goto :goto_1
-
-    :sswitch_1
-    iget v2, p0, Lcom/agc/asv/CircleProgressView;->mDefaultWidth:I
-
-    mul-int/lit8 v2, v2, 0x2
-
-    nop
-
-    :goto_1
-    return v2
-
-    nop
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x80000000 -> :sswitch_1
-        0x40000000 -> :sswitch_0
-    .end sparse-switch
+    return v0
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method public onDraw(Landroid/graphics/Canvas;)V
     .locals 14
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
@@ -339,29 +324,17 @@
 
     iget v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
-    div-int/lit8 v2, v0, 0x2
-
-    int-to-float v2, v2
-
-    div-int/lit8 v3, v0, 0x2
-
-    int-to-float v3, v3
-
-    iget v4, p0, Lcom/agc/asv/CircleProgressView;->mViewWidth:I
-
-    div-int/lit8 v5, v0, 0x2
-
-    sub-int v5, v4, v5
-
-    int-to-float v5, v5
-
     div-int/lit8 v0, v0, 0x2
 
-    sub-int/2addr v4, v0
+    int-to-float v2, v0
 
-    int-to-float v0, v4
+    iget v3, p0, Lcom/agc/asv/CircleProgressView;->mViewWidth:I
 
-    invoke-direct {v1, v2, v3, v5, v0}, Landroid/graphics/RectF;-><init>(FFFF)V
+    sub-int/2addr v3, v0
+
+    int-to-float v0, v3
+
+    invoke-direct {v1, v2, v2, v0, v0}, Landroid/graphics/RectF;-><init>(FFFF)V
 
     iput-object v1, p0, Lcom/agc/asv/CircleProgressView;->mRectf:Landroid/graphics/RectF;
 
@@ -375,28 +348,23 @@
 
     iget v0, p0, Lcom/agc/asv/CircleProgressView;->mViewWidth:I
 
-    div-int/lit8 v1, v0, 0x2
-
-    int-to-float v1, v1
-
-    div-int/lit8 v2, v0, 0x2
-
-    int-to-float v2, v2
-
     div-int/lit8 v0, v0, 0x2
 
-    iget v3, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
+    int-to-float v1, v0
 
-    div-int/lit8 v3, v3, 0x2
+    iget v2, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
-    sub-int/2addr v0, v3
+    div-int/lit8 v2, v2, 0x2
+
+    sub-int/2addr v0, v2
 
     int-to-float v0, v0
 
-    iget-object v3, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
+    iget-object v2, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v1, v2, v0, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v1, v1, v0, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
+    :goto_0
     iget-object v9, p0, Lcom/agc/asv/CircleProgressView;->mRectf:Landroid/graphics/RectF;
 
     iget v0, p0, Lcom/agc/asv/CircleProgressView;->mStartAngle:I
@@ -409,15 +377,15 @@
 
     div-float v11, v0, v6
 
-    const/4 v12, 0x0
-
     iget-object v13, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
+
+    const/4 v12, 0x0
 
     move-object v8, p1
 
     invoke-virtual/range {v8 .. v13}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     const/4 v2, 0x1
@@ -434,59 +402,41 @@
 
     int-to-float v3, v3
 
-    const/4 v4, 0x0
-
     iget-object v5, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
+
+    const/4 v4, 0x0
 
     move-object v0, p1
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    iget-object v9, p0, Lcom/agc/asv/CircleProgressView;->mRectf:Landroid/graphics/RectF;
-
-    iget v0, p0, Lcom/agc/asv/CircleProgressView;->mStartAngle:I
-
-    int-to-float v10, v0
-
-    iget v0, p0, Lcom/agc/asv/CircleProgressView;->mProgress:F
-
-    mul-float/2addr v0, v7
-
-    div-float v11, v0, v6
-
-    const/4 v12, 0x0
-
-    iget-object v13, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
-
-    move-object v8, p1
-
-    invoke-virtual/range {v8 .. v13}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+    goto :goto_0
 
     :cond_1
-    :goto_0
+    :goto_1
     return-void
 .end method
 
-.method protected onMeasure(II)V
-    .locals 3
+.method public onMeasure(II)V
+    .locals 0
 
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     invoke-direct {p0, p1}, Lcom/agc/asv/CircleProgressView;->measureWidth(I)I
 
-    move-result v0
+    move-result p1
 
     invoke-direct {p0, p2}, Lcom/agc/asv/CircleProgressView;->measureHeight(I)I
 
-    move-result v1
+    move-result p2
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
 
-    move-result v2
+    move-result p1
 
-    iput v2, p0, Lcom/agc/asv/CircleProgressView;->mViewWidth:I
+    iput p1, p0, Lcom/agc/asv/CircleProgressView;->mViewWidth:I
 
-    invoke-virtual {p0, v2, v2}, Lcom/agc/asv/CircleProgressView;->setMeasuredDimension(II)V
+    invoke-virtual {p0, p1, p1}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method
@@ -500,7 +450,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/CircleProgressView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method
@@ -544,107 +494,107 @@
 .end method
 
 .method public setProgress(FZ)V
-    .locals 3
+    .locals 2
 
     iput-boolean p2, p0, Lcom/agc/asv/CircleProgressView;->mShowAnimation:Z
 
-    iget v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressType:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mProgressType:I
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    if-ne v0, v1, :cond_0
+    if-ne p2, v0, :cond_0
 
-    iget v0, p0, Lcom/agc/asv/CircleProgressView;->mEndAngle:I
+    iget p1, p0, Lcom/agc/asv/CircleProgressView;->mEndAngle:I
 
-    iget v2, p0, Lcom/agc/asv/CircleProgressView;->mStartAngle:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mStartAngle:I
 
-    sub-int/2addr v0, v2
+    sub-int/2addr p1, p2
 
-    mul-int/lit8 v0, v0, 0x64
+    mul-int/lit8 p1, p1, 0x64
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    const/high16 v2, 0x43b40000    # 360.0f
+    const/high16 p2, 0x43b40000    # 360.0f
 
-    div-float/2addr v0, v2
+    div-float/2addr p1, p2
 
-    float-to-int v0, v0
+    float-to-int p1, p1
 
-    int-to-float p1, v0
+    int-to-float p1, p1
 
     iput p1, p0, Lcom/agc/asv/CircleProgressView;->mTotalProgress:F
 
     goto :goto_0
 
     :cond_0
-    const/high16 v0, 0x42c80000    # 100.0f
+    const/high16 p2, 0x42c80000    # 100.0f
 
-    iput v0, p0, Lcom/agc/asv/CircleProgressView;->mTotalProgress:F
+    iput p2, p0, Lcom/agc/asv/CircleProgressView;->mTotalProgress:F
 
     :goto_0
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
+    iget-object p2, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    if-eqz v0, :cond_1
+    if-eqz p2, :cond_1
 
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->isRunning()Z
+    invoke-virtual {p2}, Landroid/animation/ValueAnimator;->isRunning()Z
 
-    move-result v0
+    move-result p2
 
-    if-eqz v0, :cond_1
+    if-eqz p2, :cond_1
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
+    iget-object p2, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
+    invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
-    iget-boolean v0, p0, Lcom/agc/asv/CircleProgressView;->mShowAnimation:Z
+    iget-boolean p2, p0, Lcom/agc/asv/CircleProgressView;->mShowAnimation:Z
 
-    if-eqz v0, :cond_2
+    if-eqz p2, :cond_2
 
-    new-array v0, v1, [F
+    new-array p2, v0, [F
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    aput p1, v0, v1
+    aput p1, p2, v0
 
-    invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
+    iput-object p1, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    iget v1, p0, Lcom/agc/asv/CircleProgressView;->mDuration:I
+    iget p2, p0, Lcom/agc/asv/CircleProgressView;->mDuration:I
 
-    int-to-long v1, v1
+    int-to-long v0, p2
 
-    invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Landroid/view/animation/LinearInterpolator;
+    new-instance p2, Landroid/view/animation/LinearInterpolator;
 
-    invoke-direct {v1}, Landroid/view/animation/LinearInterpolator;-><init>()V
+    invoke-direct {p2}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lcom/agc/asv/CircleProgressView$1;
+    new-instance p2, Lcom/agc/asv/CircleProgressView$1;
 
-    invoke-direct {v1, p0}, Lcom/agc/asv/CircleProgressView$1;-><init>(Lcom/agc/asv/CircleProgressView;)V
+    invoke-direct {p2, p0}, Lcom/agc/asv/CircleProgressView$1;-><init>(Lcom/agc/asv/CircleProgressView;)V
 
-    invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
+    iget-object p1, p0, Lcom/agc/asv/CircleProgressView;->mValueAnimator:Landroid/animation/ValueAnimator;
 
-    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_1
 
     :cond_2
     iput p1, p0, Lcom/agc/asv/CircleProgressView;->mProgress:F
 
-    invoke-virtual {p0}, Lcom/agc/asv/CircleProgressView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :goto_1
     return-void
@@ -671,21 +621,19 @@
 .end method
 
 .method public setProgressWidth(I)V
-    .locals 2
+    .locals 1
 
     iput p1, p0, Lcom/agc/asv/CircleProgressView;->mProgressWidth:I
 
     iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mBackgroundPaint:Landroid/graphics/Paint;
 
-    int-to-float v1, p1
+    int-to-float p1, p1
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     iget-object v0, p0, Lcom/agc/asv/CircleProgressView;->mProgressPaint:Landroid/graphics/Paint;
 
-    int-to-float v1, p1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class public final Lfqx;
 .super Landroid/preference/Preference;
-.source "SourceFile"
 
 
 # instance fields

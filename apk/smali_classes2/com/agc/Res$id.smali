@@ -1,6 +1,5 @@
 .class public Lcom/agc/Res$id;
 .super Ljava/lang/Object;
-.source "Res.java"
 
 
 # annotations
@@ -69,7 +68,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     const-string v0, "agc_view"

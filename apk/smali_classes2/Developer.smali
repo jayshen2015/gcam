@@ -1,6 +1,5 @@
 .class public final LDeveloper;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # annotations
@@ -116,7 +115,7 @@
 
     move-result-object p0
 
-    invoke-virtual {p2, p0}, Landroid/preference/PreferenceGroup;->addPreference(Landroid/preference/Preference;)Z
+    invoke-virtual {p2, p0}, Landroid/preference/PreferenceScreen;->addPreference(Landroid/preference/Preference;)Z
 
     invoke-interface {p1}, Lfll;->getConfigurationMap()Ljava/util/Map;
 
@@ -182,15 +181,15 @@
 
     new-instance v0, Landroid/preference/EditTextPreference;
 
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
     invoke-direct {v0, p0}, Landroid/preference/EditTextPreference;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/DialogPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
     invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -219,7 +218,7 @@
 
     const-string v1, "Input float type value"
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0}, Landroid/preference/EditTextPreference;->getEditText()Landroid/widget/EditText;
 
@@ -227,7 +226,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setSelectAllOnFocus(Z)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setSelectAllOnFocus(Z)V
 
     const/16 v1, 0x3002
 
@@ -235,7 +234,7 @@
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setLayoutResource(I)V
 
     if-eqz p4, :cond_1
 
@@ -267,7 +266,7 @@
     const-string p0, "auto"
 
     :goto_0
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     new-instance p0, LDeveloper$OnChangeListener;
 
@@ -275,7 +274,7 @@
 
     invoke-direct {p0, p1, p3, p4}, LDeveloper$OnChangeListener;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;I)V
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     new-instance p0, Lgut;
 
@@ -291,15 +290,15 @@
 
     new-instance v0, Landroid/preference/EditTextPreference;
 
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
     invoke-direct {v0, p0}, Landroid/preference/EditTextPreference;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/DialogPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
     invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -324,7 +323,7 @@
 
     const-string v1, "Input Integer type value"
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0}, Landroid/preference/EditTextPreference;->getEditText()Landroid/widget/EditText;
 
@@ -332,7 +331,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setSelectAllOnFocus(Z)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setSelectAllOnFocus(Z)V
 
     const/16 v1, 0x1002
 
@@ -340,7 +339,7 @@
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setLayoutResource(I)V
 
     if-eqz p4, :cond_1
 
@@ -372,7 +371,7 @@
     const-string p0, "auto"
 
     :goto_0
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     new-instance p0, LDeveloper$OnChangeListener;
 
@@ -380,7 +379,7 @@
 
     invoke-direct {p0, p1, p3, p4}, LDeveloper$OnChangeListener;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;I)V
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     new-instance p0, Lgut;
 
@@ -396,15 +395,15 @@
 
     new-instance v0, Landroid/preference/EditTextPreference;
 
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
     invoke-direct {v0, p0}, Landroid/preference/EditTextPreference;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/DialogPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
     invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -429,7 +428,7 @@
 
     const-string v1, "Input long type value"
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0}, Landroid/preference/EditTextPreference;->getEditText()Landroid/widget/EditText;
 
@@ -437,7 +436,7 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setSelectAllOnFocus(Z)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setSelectAllOnFocus(Z)V
 
     const/16 v1, 0x3002
 
@@ -445,7 +444,7 @@
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setLayoutResource(I)V
 
     if-eqz p4, :cond_1
 
@@ -477,7 +476,7 @@
     const-string p0, "auto"
 
     :goto_0
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     new-instance p0, LDeveloper$OnChangeListener;
 
@@ -485,7 +484,7 @@
 
     invoke-direct {p0, p1, p3, p4}, LDeveloper$OnChangeListener;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;I)V
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     new-instance p0, Lgut;
 
@@ -501,15 +500,15 @@
 
     new-instance v0, Landroid/preference/EditTextPreference;
 
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
     invoke-direct {v0, p0}, Landroid/preference/EditTextPreference;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/DialogPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/EditTextPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
     invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -530,7 +529,7 @@
 
     const-string v1, "Input string"
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0}, Landroid/preference/EditTextPreference;->getEditText()Landroid/widget/EditText;
 
@@ -538,13 +537,13 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/widget/TextView;->setSelectAllOnFocus(Z)V
+    invoke-virtual {p0, v1}, Landroid/widget/EditText;->setSelectAllOnFocus(Z)V
 
     invoke-virtual {p0, v1}, Landroid/widget/EditText;->setInputType(I)V
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setLayoutResource(I)V
 
     if-eqz p4, :cond_1
 
@@ -560,7 +559,7 @@
     const-string p0, "auto"
 
     :goto_0
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     new-instance p0, LDeveloper$OnChangeListener;
 
@@ -568,7 +567,7 @@
 
     invoke-direct {p0, p1, p3, p4}, LDeveloper$OnChangeListener;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;I)V
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v0, p0}, Landroid/preference/EditTextPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     new-instance p0, Lgut;
 
@@ -584,7 +583,7 @@
 
     new-instance v0, Landroid/preference/ListPreference;
 
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
@@ -669,7 +668,7 @@
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v0, p3}, Landroid/preference/DialogPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
     invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -692,9 +691,9 @@
 
     invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/DialogPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
     if-eqz p4, :cond_4
 
@@ -720,7 +719,7 @@
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setLayoutResource(I)V
 
     new-instance p0, LDeveloper$OnChangeListener;
 
@@ -728,7 +727,7 @@
 
     invoke-direct {p0, p1, p3, p4}, LDeveloper$OnChangeListener;-><init>(Landroid/content/SharedPreferences;Ljava/lang/String;I)V
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     new-instance p0, Lgut;
 
@@ -809,7 +808,7 @@
 
     iget-object v5, p5, Lfln;->c:Lphz;
 
-    invoke-virtual {v5}, Ljava/util/AbstractCollection;->size()I
+    invoke-virtual {v5}, Lphz;->size()I
 
     move-result v0
 
@@ -918,19 +917,19 @@
 
     new-instance v0, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;
 
-    invoke-virtual {p0}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p0
 
     invoke-direct {v0, p0}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p3}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->setTitle(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
+    invoke-virtual {v0, p3}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->setKey(Ljava/lang/String;)V
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p0}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->setLayoutResource(I)V
 
     invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
@@ -949,13 +948,13 @@
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setDefaultValue(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->setDefaultValue(Ljava/lang/Object;)V
 
     invoke-static {p4}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
 
     move-result-object p0
 
-    invoke-virtual {v0, p0}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/apps/camera/ui/preference/ManagedSwitchPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     new-instance p0, LDeveloper$OnChangeListener;
 
@@ -996,7 +995,7 @@
 
     new-instance v0, Landroid/preference/ListPreference;
 
-    invoke-virtual {p1}, Landroid/preference/Preference;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/preference/PreferenceScreen;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
@@ -1008,25 +1007,25 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/preference/Preference;->setTitle(I)V
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setTitle(I)V
 
     invoke-static {p1}, Lcom/agc/Res;->getStringID(Ljava/lang/String;)I
 
     move-result p1
 
-    invoke-virtual {v0, p1}, Landroid/preference/DialogPreference;->setDialogTitle(I)V
+    invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setDialogTitle(I)V
 
-    invoke-virtual {v0, p3}, Landroid/preference/Preference;->setKey(Ljava/lang/String;)V
+    invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setKey(Ljava/lang/String;)V
 
     sget p1, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    invoke-virtual {v0, p1}, Landroid/preference/Preference;->setLayoutResource(I)V
+    invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setLayoutResource(I)V
 
     invoke-static {p4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {v0, p1}, Landroid/preference/Preference;->setDefaultValue(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setDefaultValue(Ljava/lang/Object;)V
 
     const-string p1, "%s"
 
@@ -1034,7 +1033,7 @@
 
     const/4 p1, 0x0
 
-    invoke-virtual {v0, p1}, Landroid/preference/Preference;->setOrder(I)V
+    invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setOrder(I)V
 
     const-string p1, "pref_dev_filter_entries"
 
@@ -1060,7 +1059,7 @@
 
     iput-object p0, p1, LDeveloper$OnChangeListener;->controller:Lngx;
 
-    invoke-virtual {v0, p1}, Landroid/preference/Preference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
+    invoke-virtual {v0, p1}, Landroid/preference/ListPreference;->setOnPreferenceChangeListener(Landroid/preference/Preference$OnPreferenceChangeListener;)V
 
     return-object v0
 .end method

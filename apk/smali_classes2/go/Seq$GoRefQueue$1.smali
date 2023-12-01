@@ -1,6 +1,5 @@
 .class Lgo/Seq$GoRefQueue$1;
 .super Ljava/lang/Object;
-.source "Seq.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lgo/Seq$GoRefQueue;
+.field public final synthetic this$0:Lgo/Seq$GoRefQueue;
 
 
 # direct methods
-.method constructor <init>(Lgo/Seq$GoRefQueue;)V
+.method public constructor <init>(Lgo/Seq$GoRefQueue;)V
     .locals 0
 
     iput-object p1, p0, Lgo/Seq$GoRefQueue$1;->this$0:Lgo/Seq$GoRefQueue;
@@ -41,7 +40,7 @@
     :try_start_0
     iget-object v0, p0, Lgo/Seq$GoRefQueue$1;->this$0:Lgo/Seq$GoRefQueue;
 
-    invoke-virtual {v0}, Lgo/Seq$GoRefQueue;->remove()Ljava/lang/ref/Reference;
+    invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->remove()Ljava/lang/ref/Reference;
 
     move-result-object v0
 
@@ -59,15 +58,14 @@
 
     invoke-static {v1}, Lgo/Seq;->destroyRef(I)V
 
-    invoke-virtual {v0}, Lgo/Seq$GoRef;->clear()V
+    invoke-virtual {v0}, Ljava/lang/ref/PhantomReference;->clear()V
     :try_end_0
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
     move-exception v0
 
-    :goto_1
     goto :goto_0
 .end method

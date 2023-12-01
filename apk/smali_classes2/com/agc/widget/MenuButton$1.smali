@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/MenuButton$1;
 .super Ljava/lang/Object;
-.source "MenuButton.java"
 
 # interfaces
 .implements Lcom/agc/menu/ButtonEventListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/MenuButton;
+.field public final synthetic this$0:Lcom/agc/widget/MenuButton;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/MenuButton;)V
+.method public constructor <init>(Lcom/agc/widget/MenuButton;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/MenuButton$1;->this$0:Lcom/agc/widget/MenuButton;

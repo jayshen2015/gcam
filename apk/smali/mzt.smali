@@ -57,17 +57,17 @@
 .method public final c()Lndp;
     .locals 2
 
-    iget-object v0, p0, Lmzt;->a:Landroid/hardware/camera2/CaptureResult;
+    new-instance v0, Lmzq;
 
-    new-instance v1, Lmzq;
+    iget-object v1, p0, Lmzt;->a:Landroid/hardware/camera2/CaptureResult;
 
-    invoke-virtual {v0}, Landroid/hardware/camera2/CaptureResult;->getRequest()Landroid/hardware/camera2/CaptureRequest;
+    invoke-virtual {v1}, Landroid/hardware/camera2/CaptureResult;->getRequest()Landroid/hardware/camera2/CaptureRequest;
 
-    move-result-object v0
+    move-result-object v1
 
-    invoke-direct {v1, v0}, Lmzq;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
+    invoke-direct {v0, v1}, Lmzq;-><init>(Landroid/hardware/camera2/CaptureRequest;)V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public final d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
@@ -108,13 +108,10 @@
 
     invoke-interface {v2, p1, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    goto :goto_0
-
     :cond_0
-    :goto_0
     monitor-exit v1
 
-    goto :goto_1
+    goto :goto_0
 
     :catchall_0
     move-exception p1
@@ -126,7 +123,7 @@
     throw p1
 
     :cond_1
-    :goto_1
+    :goto_0
     iget-object p1, v0, Lmzs;->d:Ljava/lang/Object;
 
     sget-object v1, Lmzs;->a:Ljava/lang/Object;
@@ -155,7 +152,7 @@
     :cond_2
     monitor-exit v0
 
-    goto :goto_2
+    goto :goto_1
 
     :catchall_1
     move-exception p1
@@ -167,7 +164,7 @@
     throw p1
 
     :cond_3
-    :goto_2
+    :goto_1
     return-object p1
 .end method
 

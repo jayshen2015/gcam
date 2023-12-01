@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;
 .super Ljava/lang/Object;
-.source "CameraMultipleAdapter.java"
 
 
 # annotations
@@ -9,13 +8,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "ViewHolderOne"
 .end annotation
 
 
 # instance fields
-.field textView:Landroid/widget/TextView;
+.field public textView:Landroid/widget/TextView;
 
 
 # direct methods
@@ -36,11 +35,11 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast p1, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
+    iput-object p1, p0, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
 
     return-void
 .end method

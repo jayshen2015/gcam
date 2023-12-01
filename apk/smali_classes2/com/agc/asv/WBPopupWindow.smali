@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/WBPopupWindow;
 .super Landroid/widget/PopupWindow;
-.source "WBPopupWindow.java"
 
 
 # annotations
@@ -27,17 +26,17 @@
 
     const/4 v0, -0x2
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WBPopupWindow;->setHeight(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setHeight(I)V
 
     const/4 v0, -0x1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WBPopupWindow;->setWidth(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setWidth(I)V
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WBPopupWindow;->setOutsideTouchable(Z)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/WBPopupWindow;->setFocusable(Z)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
@@ -45,7 +44,7 @@
 
     invoke-direct {v1, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WBPopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
@@ -101,27 +100,27 @@
 
     invoke-virtual {v3, v0}, Lcom/agc/asv/HorizontalListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    new-instance v2, Lcom/agc/asv/WBPopupWindow$1;
+    new-instance p1, Lcom/agc/asv/WBPopupWindow$1;
 
-    invoke-direct {v2, p0, v0}, Lcom/agc/asv/WBPopupWindow$1;-><init>(Lcom/agc/asv/WBPopupWindow;Lcom/agc/asv/WBAdapter;)V
+    invoke-direct {p1, p0, v0}, Lcom/agc/asv/WBPopupWindow$1;-><init>(Lcom/agc/asv/WBPopupWindow;Lcom/agc/asv/WBAdapter;)V
 
-    invoke-virtual {v3, v2}, Lcom/agc/asv/HorizontalListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
+    invoke-virtual {v3, p1}, Lcom/agc/asv/HorizontalListView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    invoke-virtual {p0, v1}, Lcom/agc/asv/WBPopupWindow;->setContentView(Landroid/view/View;)V
+    invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/agc/asv/WBPopupWindow;)Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
-    .locals 1
+.method public static synthetic access$000(Lcom/agc/asv/WBPopupWindow;)Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/WBPopupWindow;->mChangeListner:Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
+    iget-object p0, p0, Lcom/agc/asv/WBPopupWindow;->mChangeListner:Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static showUp(Landroid/view/View;Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;)V
-    .locals 6
+    .locals 4
 
     sget-object v0, Lcom/agc/asv/WBPopupWindow;->mWBPopupWindow:Lcom/agc/asv/WBPopupWindow;
 
@@ -140,31 +139,31 @@
     invoke-virtual {v0, p1}, Lcom/agc/asv/WBPopupWindow;->setOnPopItemClickListener(Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;)V
 
     :cond_0
-    const/4 v0, 0x2
+    const/4 p1, 0x2
 
-    new-array v0, v0, [I
+    new-array p1, p1, [I
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->getLocationOnScreen([I)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    sget-object v1, Lcom/agc/asv/WBPopupWindow;->mWBPopupWindow:Lcom/agc/asv/WBPopupWindow;
+    sget-object v0, Lcom/agc/asv/WBPopupWindow;->mWBPopupWindow:Lcom/agc/asv/WBPopupWindow;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aget v3, v0, v2
+    aget v2, p1, v1
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    aget v4, v0, v4
+    aget p1, p1, v3
 
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
-    move-result v5
+    move-result v3
 
-    sub-int/2addr v4, v5
+    sub-int/2addr p1, v3
 
-    add-int/lit8 v4, v4, -0x14
+    add-int/lit8 p1, p1, -0x14
 
-    invoke-virtual {v1, p0, v2, v3, v4}, Lcom/agc/asv/WBPopupWindow;->showAtLocation(Landroid/view/View;III)V
+    invoke-virtual {v0, p0, v1, v2, p1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 .end method
@@ -195,19 +194,19 @@
 .end method
 
 .method public vibrate(Landroid/content/Context;)V
-    .locals 3
+    .locals 2
 
     const-string v0, "vibrator"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/os/Vibrator;
+    check-cast p1, Landroid/os/Vibrator;
 
-    const-wide/16 v1, 0x1f4
+    const-wide/16 v0, 0x1f4
 
-    invoke-virtual {v0, v1, v2}, Landroid/os/Vibrator;->vibrate(J)V
+    invoke-virtual {p1, v0, v1}, Landroid/os/Vibrator;->vibrate(J)V
 
     return-void
 .end method

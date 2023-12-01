@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/widget/colorbar/OnColorPickerListener;
 .super Ljava/lang/Object;
-.source "OnColorPickerListener.java"
 
 
 # virtual methods

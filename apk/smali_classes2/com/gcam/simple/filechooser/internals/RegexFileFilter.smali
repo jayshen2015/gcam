@@ -1,28 +1,23 @@
 .class public Lcom/gcam/simple/filechooser/internals/RegexFileFilter;
 .super Ljava/lang/Object;
-.source "RegexFileFilter.java"
 
 # interfaces
 .implements Ljava/io/FileFilter;
 
 
 # instance fields
-.field c:Ljava/util/regex/Pattern;
+.field public c:Ljava/util/regex/Pattern;
 
-.field directory:Z
+.field public directory:Z
 
-.field hidden:Z
+.field public hidden:Z
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 2
+    .locals 1
 
     const/4 v0, 0x0
-
-    move-object v1, v0
-
-    check-cast v1, Ljava/util/regex/Pattern;
 
     invoke-direct {p0, v0}, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;-><init>(Ljava/util/regex/Pattern;)V
 
@@ -40,7 +35,7 @@
 .end method
 
 .method public constructor <init>(ZZLjava/lang/String;)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,19 +43,19 @@
 
     iput-boolean p1, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->directory:Z
 
-    const/4 v0, 0x2
+    const/4 p1, 0x2
 
-    invoke-static {p3, v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
+    invoke-static {p3, p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->c:Ljava/util/regex/Pattern;
+    iput-object p1, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->c:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
 .method public constructor <init>(ZZLjava/lang/String;I)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -70,9 +65,9 @@
 
     invoke-static {p3, p4}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->c:Ljava/util/regex/Pattern;
+    iput-object p1, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->c:Ljava/util/regex/Pattern;
 
     return-void
 .end method
@@ -144,17 +139,17 @@
     :cond_3
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v1, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->c:Ljava/util/regex/Pattern;
+    iget-object v0, p0, Lcom/gcam/simple/filechooser/internals/RegexFileFilter;->c:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v1}, Ljava/util/regex/Matcher;->matches()Z
+    invoke-virtual {p1}, Ljava/util/regex/Matcher;->matches()Z
 
-    move-result v1
+    move-result p1
 
-    return v1
+    return p1
 .end method

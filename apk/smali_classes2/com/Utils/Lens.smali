@@ -1,6 +1,5 @@
 .class public Lcom/Utils/Lens;
 .super Ljava/lang/Object;
-.source "Lens.java"
 
 
 # static fields
@@ -53,7 +52,7 @@
     return-object p0
 .end method
 
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Ljava/util/ArrayList;
@@ -86,7 +85,7 @@
 .end method
 
 .method private static getAllCameras()Ljava/util/List;
-    .locals 9
+    .locals 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -102,7 +101,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_4
 
     const-string v0, "pref_all_camera_id_list_key"
 
@@ -112,67 +111,67 @@
 
     invoke-interface {v1}, Ljava/util/Set;->stream()Ljava/util/stream/Stream;
 
-    move-result-object v2
+    move-result-object v1
 
-    new-instance v3, Lcom/Utils/Lens$$ExternalSyntheticLambda0;
+    new-instance v2, Lcom/Utils/Lens$$ExternalSyntheticLambda0;
 
-    invoke-direct {v3}, Lcom/Utils/Lens$$ExternalSyntheticLambda0;-><init>()V
+    invoke-direct {v2}, Lcom/Utils/Lens$$ExternalSyntheticLambda0;-><init>()V
 
-    invoke-interface {v2, v3}, Ljava/util/stream/Stream;->mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
+    invoke-interface {v1, v2}, Ljava/util/stream/Stream;->mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-interface {v2}, Ljava/util/stream/IntStream;->sorted()Ljava/util/stream/IntStream;
+    invoke-interface {v1}, Ljava/util/stream/IntStream;->sorted()Ljava/util/stream/IntStream;
 
-    move-result-object v2
+    move-result-object v1
 
-    new-instance v3, Lcom/Utils/Lens$$ExternalSyntheticLambda1;
+    new-instance v2, Lcom/Utils/Lens$$ExternalSyntheticLambda1;
 
-    invoke-direct {v3}, Lcom/Utils/Lens$$ExternalSyntheticLambda1;-><init>()V
+    invoke-direct {v2}, Lcom/Utils/Lens$$ExternalSyntheticLambda1;-><init>()V
 
-    invoke-interface {v2, v3}, Ljava/util/stream/IntStream;->mapToObj(Ljava/util/function/IntFunction;)Ljava/util/stream/Stream;
+    invoke-interface {v1, v2}, Ljava/util/stream/IntStream;->mapToObj(Ljava/util/function/IntFunction;)Ljava/util/stream/Stream;
 
-    move-result-object v2
+    move-result-object v1
 
-    new-instance v3, Lcom/Utils/Lens$$ExternalSyntheticLambda2;
+    new-instance v2, Lcom/Utils/Lens$$ExternalSyntheticLambda2;
 
-    invoke-direct {v3}, Lcom/Utils/Lens$$ExternalSyntheticLambda2;-><init>()V
+    invoke-direct {v2}, Lcom/Utils/Lens$$ExternalSyntheticLambda2;-><init>()V
 
-    invoke-interface {v2, v3}, Ljava/util/stream/Stream;->toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
+    invoke-interface {v1, v2}, Ljava/util/stream/Stream;->toArray(Ljava/util/function/IntFunction;)[Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, [Ljava/lang/String;
+    check-cast v1, [Ljava/lang/String;
 
-    new-instance v3, Lcom/agc/CamerasFinder;
+    new-instance v2, Lcom/agc/CamerasFinder;
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "camera"
+    const-string v4, "camera"
 
-    invoke-virtual {v4, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/hardware/camera2/CameraManager;
-
-    invoke-direct {v3, v4}, Lcom/agc/CamerasFinder;-><init>(Landroid/hardware/camera2/CameraManager;)V
-
-    sput-object v3, Lcom/Utils/Lens;->camerasFinder:Lcom/agc/CamerasFinder;
-
-    invoke-virtual {v3, v2}, Lcom/agc/CamerasFinder;->getResult([Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
-    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    check-cast v3, Landroid/hardware/camera2/CameraManager;
 
-    move-result-object v4
+    invoke-direct {v2, v3}, Lcom/agc/CamerasFinder;-><init>(Landroid/hardware/camera2/CameraManager;)V
 
-    invoke-static {v0, v4}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/util/Set;)V
+    sput-object v2, Lcom/Utils/Lens;->camerasFinder:Lcom/agc/CamerasFinder;
 
-    invoke-interface {v3}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-virtual {v2, v1}, Lcom/agc/CamerasFinder;->getResult([Ljava/lang/String;)Ljava/util/Map;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/util/Set;)V
+
+    invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
     move-result-object v0
 
@@ -180,11 +179,11 @@
 
     move-result-object v0
 
-    new-instance v4, Lcom/Utils/Lens$$ExternalSyntheticLambda0;
+    new-instance v2, Lcom/Utils/Lens$$ExternalSyntheticLambda0;
 
-    invoke-direct {v4}, Lcom/Utils/Lens$$ExternalSyntheticLambda0;-><init>()V
+    invoke-direct {v2}, Lcom/Utils/Lens$$ExternalSyntheticLambda0;-><init>()V
 
-    invoke-interface {v0, v4}, Ljava/util/stream/Stream;->mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
+    invoke-interface {v0, v2}, Ljava/util/stream/Stream;->mapToInt(Ljava/util/function/ToIntFunction;)Ljava/util/stream/IntStream;
 
     move-result-object v0
 
@@ -192,150 +191,146 @@
 
     move-result-object v0
 
-    new-instance v4, Lcom/Utils/Lens$$ExternalSyntheticLambda1;
+    new-instance v2, Lcom/Utils/Lens$$ExternalSyntheticLambda1;
 
-    invoke-direct {v4}, Lcom/Utils/Lens$$ExternalSyntheticLambda1;-><init>()V
+    invoke-direct {v2}, Lcom/Utils/Lens$$ExternalSyntheticLambda1;-><init>()V
 
-    invoke-interface {v0, v4}, Ljava/util/stream/IntStream;->mapToObj(Ljava/util/function/IntFunction;)Ljava/util/stream/Stream;
+    invoke-interface {v0, v2}, Ljava/util/stream/IntStream;->mapToObj(Ljava/util/function/IntFunction;)Ljava/util/stream/Stream;
 
     move-result-object v0
 
     invoke-static {}, Ljava/util/stream/Collectors;->toList()Ljava/util/stream/Collector;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-interface {v0, v4}, Ljava/util/stream/Stream;->collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
+    invoke-interface {v0, v2}, Ljava/util/stream/Stream;->collect(Ljava/util/stream/Collector;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/List;
 
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    sget-object v5, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
+    sget-object v3, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    const-string v6, "Google"
+    const-string v4, "Google"
 
-    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_3
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/lang/String;
+
+    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/agc/Camera;
+
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {}, Lagc/Agc;->getFilteredCameraIDs()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, ","
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_1
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
 
     if-eqz v5, :cond_1
 
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
 
-    :goto_0
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v5, Ljava/lang/String;
 
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Ljava/lang/String;
-
-    invoke-interface {v3, v6}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Lcom/agc/Camera;
-
-    invoke-virtual {v4, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_0
-
-    :cond_0
-    goto :goto_3
-
-    :cond_1
-    invoke-static {}, Lagc/Agc;->getFilteredCameraIDs()Ljava/lang/String;
+    invoke-interface {v1, v5}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v5
 
-    const-string v6, ","
+    check-cast v5, Lcom/agc/Camera;
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v6
-
-    :goto_1
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_2
-
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/lang/String;
-
-    invoke-interface {v3, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, Lcom/agc/Camera;
-
-    invoke-virtual {v4, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    :cond_2
+    :cond_1
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v6
+    move-result-object v0
 
+    :cond_2
     :goto_2
-    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v4
 
-    if-eqz v7, :cond_4
+    if-eqz v4, :cond_3
 
-    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v4
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v4, Ljava/lang/String;
 
-    invoke-interface {v5, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v3, v4}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v5
 
-    if-nez v8, :cond_3
+    if-nez v5, :cond_2
 
-    invoke-interface {v3, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v4
 
-    check-cast v8, Lcom/agc/Camera;
+    check-cast v4, Lcom/agc/Camera;
 
-    invoke-virtual {v4, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_3
     goto :goto_2
 
-    :cond_4
-    :goto_3
-    sput-object v4, Lcom/Utils/Lens;->allLens:Ljava/util/List;
+    :cond_3
+    sput-object v2, Lcom/Utils/Lens;->allLens:Ljava/util/List;
 
-    :cond_5
+    :cond_4
     sget-object v0, Lcom/Utils/Lens;->allLens:Ljava/util/List;
 
     return-object v0
@@ -362,20 +357,22 @@
 
     const/4 v1, 0x0
 
+    move v2, v1
+
     :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v3
 
-    if-ge v1, v2, :cond_1
+    if-ge v2, v3, :cond_1
 
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v3
 
-    check-cast v2, Lcom/agc/Camera;
+    check-cast v3, Lcom/agc/Camera;
 
-    invoke-virtual {v2}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
     move-result-object v3
 
@@ -385,16 +382,14 @@
 
     if-eqz v3, :cond_0
 
-    return v1
+    return v2
 
     :cond_0
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
     :cond_1
-    const/4 v1, 0x0
-
     return v1
 .end method
 
@@ -413,13 +408,13 @@
 .end method
 
 .method public static getAuxKeyString(I)Ljava/lang/String;
-    .locals 1
+    .locals 0
 
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static getAvailableLens()Ljava/util/List;
@@ -496,22 +491,22 @@
 
     invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v1}, Lcom/Utils/Lens;->mainCamera(Z)Lcom/agc/Camera;
+    invoke-static {v0}, Lcom/Utils/Lens;->mainCamera(Z)Lcom/agc/Camera;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static getCamera(I)Lcom/agc/Camera;
@@ -529,39 +524,39 @@
 
     invoke-interface {v0, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p0
 
-    check-cast v1, Lcom/agc/Camera;
+    check-cast p0, Lcom/agc/Camera;
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
     :goto_0
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getCameraID(I)Ljava/lang/String;
-    .locals 2
+    .locals 0
 
     invoke-static {p0}, Lcom/Utils/Lens;->getCamera(I)Lcom/agc/Camera;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-eqz v0, :cond_0
+    if-eqz p0, :cond_0
 
-    invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    const/4 p0, 0x0
 
     :goto_0
-    return-object v1
+    return-object p0
 .end method
 
 .method public static getCameraIdList()[Ljava/lang/String;
@@ -582,22 +577,22 @@
     :try_start_0
     invoke-virtual {v0}, Landroid/hardware/camera2/CameraManager;->getCameraIdList()[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v1
+    return-object v0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    invoke-virtual {v1}, Landroid/hardware/camera2/CameraAccessException;->printStackTrace()V
+    invoke-virtual {v0}, Landroid/hardware/camera2/CameraAccessException;->printStackTrace()V
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    new-array v1, v1, [Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/String;
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static getCurrentCamera()Lcom/agc/Camera;
@@ -709,41 +704,42 @@
 
     move-result v4
 
+    const/4 v5, 0x0
+
     if-nez v4, :cond_1
 
-    new-instance v4, Ljava/util/HashSet;
+    new-instance v0, Ljava/util/HashSet;
 
     invoke-virtual {v3, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-static {v5}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v3}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-direct {v4, v5}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, v3}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    move-object v0, v4
-
-    goto :goto_3
+    goto :goto_2
 
     :cond_1
-    const/4 v4, 0x0
+    sget-object v3, Lcom/Utils/Lens;->allLens:Ljava/util/List;
 
-    sget-object v5, Lcom/Utils/Lens;->allLens:Ljava/util/List;
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object v3
 
-    move-result-object v5
+    move v4, v5
 
+    :cond_2
     :goto_1
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v6
 
     if-eqz v6, :cond_5
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
@@ -759,63 +755,59 @@
 
     move-result v7
 
-    if-nez v7, :cond_2
+    if-nez v7, :cond_3
 
     invoke-static {}, Lagc/Agc;->noNeedFilterLogicLens()Z
 
     move-result v7
 
-    if-eqz v7, :cond_4
+    if-eqz v7, :cond_2
 
-    :cond_2
+    :cond_3
     invoke-virtual {v6}, Lcom/agc/Camera;->isFront()Z
 
     move-result v7
 
-    if-eqz v7, :cond_3
+    if-eqz v7, :cond_4
 
-    if-nez v4, :cond_4
+    if-nez v4, :cond_2
 
     invoke-virtual {v6}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-interface {v0, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     const/4 v4, 0x1
 
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual {v6}, Lcom/agc/Camera;->getId()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-interface {v0, v7}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    goto :goto_1
 
     :cond_4
-    :goto_2
+    invoke-virtual {v6}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-interface {v0, v6}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
     goto :goto_1
 
     :cond_5
-    :goto_3
+    :goto_2
     invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/util/Set;)V
 
-    const/4 v4, 0x0
+    invoke-static {v5}, Lcom/Utils/Lens;->mainCamera(Z)Lcom/agc/Camera;
 
-    invoke-static {v4}, Lcom/Utils/Lens;->mainCamera(Z)Lcom/agc/Camera;
+    move-result-object v0
 
-    move-result-object v4
+    invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    invoke-virtual {v4}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v4
+    invoke-static {v0}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
 
-    invoke-static {v4}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
+    move-result v0
 
-    move-result v4
-
-    invoke-static {v4}, Lcom/Utils/Lens;->setAuxKey(I)V
+    invoke-static {v0}, Lcom/Utils/Lens;->setAuxKey(I)V
 
     :cond_6
     :try_start_0
@@ -830,7 +822,7 @@
     :catchall_0
     move-exception v0
 
-    new-instance v3, Ljava/util/HashSet;
+    new-instance v0, Ljava/util/HashSet;
 
     invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
@@ -844,9 +836,9 @@
 
     move-result-object v1
 
-    invoke-direct {v3, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    return-object v3
+    return-object v0
 .end method
 
 .method public static getFilteredCameras()Ljava/util/List;
@@ -868,30 +860,31 @@
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    const/4 v2, 0x0
-
     invoke-static {}, Lcom/Utils/Lens;->getAllCameras()Ljava/util/List;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v2
 
+    const/4 v3, 0x0
+
+    :cond_0
     :goto_0
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
     if-eqz v4, :cond_2
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lcom/agc/Camera;
 
-    if-eqz v4, :cond_1
+    if-eqz v4, :cond_0
 
     invoke-virtual {v4}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
@@ -901,31 +894,29 @@
 
     move-result v5
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_0
 
     invoke-virtual {v4}, Lcom/agc/Camera;->isFront()Z
 
     move-result v5
 
-    if-eqz v5, :cond_0
+    if-eqz v5, :cond_1
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
-    :cond_0
+    :cond_1
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    sub-int/2addr v5, v2
+    sub-int/2addr v5, v3
 
     invoke-virtual {v1, v5, v4}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    :cond_1
-    :goto_1
     goto :goto_0
 
     :cond_2
@@ -933,7 +924,7 @@
 .end method
 
 .method public static getFilteredIndex(Ljava/lang/String;)I
-    .locals 5
+    .locals 4
 
     const/4 v0, 0x0
 
@@ -946,7 +937,7 @@
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    move v2, v0
 
     :goto_0
     invoke-interface {v1}, Ljava/util/List;->size()I
@@ -963,13 +954,13 @@
 
     invoke-virtual {v3}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {p0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
     return v2
 
@@ -999,7 +990,7 @@
 .end method
 
 .method private static getKeyByValue(Ljava/util/Map;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -1014,52 +1005,49 @@
 
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
+    move-result-object p0
+
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    check-cast v0, Ljava/util/Map$Entry;
 
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/util/Map$Entry;
+    invoke-static {p1, v1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result v1
 
-    move-result-object v2
+    if-eqz v1, :cond_0
 
-    invoke-static {p1, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result v2
+    move-result-object p0
 
-    if-eqz v2, :cond_0
-
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    goto :goto_0
+    return-object p0
 
     :cond_1
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static handleIntent(Landroid/app/Activity;)V
-    .locals 5
+    .locals 2
 
     invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
@@ -1083,54 +1071,54 @@
     :cond_1
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v0
+    move-result-object p0
 
-    if-nez v0, :cond_2
+    if-nez p0, :cond_2
 
     return-void
 
     :cond_2
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    const-string v2, "android.intent.extra.USE_FRONT_CAMERA"
+    const-string v1, "android.intent.extra.USE_FRONT_CAMERA"
 
-    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v1
+    move-result p0
 
-    if-nez v1, :cond_3
+    if-nez p0, :cond_3
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKey()I
 
-    move-result v2
+    move-result p0
 
-    invoke-static {v2}, Lcom/Utils/Lens;->getCamera(I)Lcom/agc/Camera;
+    invoke-static {p0}, Lcom/Utils/Lens;->getCamera(I)Lcom/agc/Camera;
 
-    move-result-object v2
+    move-result-object p0
 
-    if-eqz v2, :cond_3
+    if-eqz p0, :cond_3
 
-    invoke-virtual {v2}, Lcom/agc/Camera;->isFront()Z
+    invoke-virtual {p0}, Lcom/agc/Camera;->isFront()Z
 
-    move-result v3
+    move-result p0
 
-    if-eqz v3, :cond_3
+    if-eqz p0, :cond_3
 
     invoke-static {}, Lcom/Utils/Lens;->getBackCameraID()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object p0
 
-    invoke-static {v3}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
+    invoke-static {p0}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
 
-    move-result v3
+    move-result p0
 
-    invoke-static {v3}, Lcom/Utils/Lens;->setAuxKey(I)V
+    invoke-static {p0}, Lcom/Utils/Lens;->setAuxKey(I)V
 
     invoke-static {}, Lcom/Globals;->onRestart()V
 
-    const-string v4, "Reset current camera auxKey"
+    const-string v0, "Reset current camera auxKey"
 
-    invoke-static {v4, v3}, Lcom/agc/Log;->w(Ljava/lang/Object;I)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->w(Ljava/lang/Object;I)I
 
     :cond_3
     return-void
@@ -1163,9 +1151,9 @@
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static isFront()Z
@@ -1181,15 +1169,15 @@
 .end method
 
 .method static synthetic lambda$getAllCameras$0(I)[Ljava/lang/String;
-    .locals 1
+    .locals 0
 
-    new-array v0, p0, [Ljava/lang/String;
+    new-array p0, p0, [Ljava/lang/String;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private static mainCamera(Z)Lcom/agc/Camera;
-    .locals 5
+    .locals 4
 
     invoke-static {}, Lcom/Utils/Lens;->getFilteredCameras()Ljava/util/List;
 
@@ -1207,33 +1195,65 @@
 
     invoke-static {v1}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v1
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v3
+    move-result v2
 
-    if-ge v2, v3, :cond_0
+    if-ge v1, v2, :cond_0
 
-    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :goto_0
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object p0
 
-    check-cast v3, Lcom/agc/Camera;
+    :goto_1
+    check-cast p0, Lcom/agc/Camera;
 
-    return-object v3
+    return-object p0
 
     :cond_0
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
+    move-result-object v0
+
+    :cond_1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     move-result-object v1
 
-    :goto_0
+    check-cast v1, Lcom/agc/Camera;
+
+    invoke-virtual {v1}, Lcom/agc/Camera;->isFront()Z
+
+    move-result v2
+
+    if-ne v2, p0, :cond_1
+
+    return-object v1
+
+    :cond_2
+    invoke-static {}, Lcom/Utils/Lens;->getAllCameras()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :cond_3
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_4
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1245,86 +1265,42 @@
 
     move-result v3
 
-    if-ne v3, p0, :cond_1
+    if-ne v3, p0, :cond_3
 
     return-object v2
-
-    :cond_1
-    goto :goto_0
-
-    :cond_2
-    invoke-static {}, Lcom/Utils/Lens;->getAllCameras()Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_1
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_4
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/agc/Camera;
-
-    invoke-virtual {v3}, Lcom/agc/Camera;->isFront()Z
-
-    move-result v4
-
-    if-ne v4, p0, :cond_3
-
-    return-object v3
-
-    :cond_3
-    goto :goto_1
 
     :cond_4
     if-eqz p0, :cond_5
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result p0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    if-le v2, v3, :cond_5
+    if-le p0, v1, :cond_5
 
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/agc/Camera;
-
-    return-object v2
+    goto :goto_0
 
     :cond_5
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    move-result v2
+    move-result p0
 
-    if-nez v2, :cond_6
+    if-nez p0, :cond_6
 
-    const/4 v2, 0x0
+    const/4 p0, 0x0
 
-    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p0
 
-    check-cast v2, Lcom/agc/Camera;
-
-    return-object v2
+    goto :goto_1
 
     :cond_6
-    const/4 v2, 0x0
+    const/4 p0, 0x0
 
-    return-object v2
+    return-object p0
 .end method
 
 .method public static setAuxKey(I)V
@@ -1360,34 +1336,34 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    const-string v2, " => cameraId:"
+    const-string v1, " => cameraId:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
     invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v1}, Lcom/agc/Log;->w(Ljava/lang/Object;)I
+    invoke-static {p0}, Lcom/agc/Log;->w(Ljava/lang/Object;)I
 
     goto :goto_0
 
     :cond_0
-    const-string v1, "setAuxKey failed"
+    const-string p0, "setAuxKey failed"
 
-    invoke-static {v1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+    invoke-static {p0}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
     :goto_0
     return-void

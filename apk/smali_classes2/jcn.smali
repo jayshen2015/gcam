@@ -1,6 +1,5 @@
 .class public final Ljcn;
 .super Lnie;
-.source "SourceFile"
 
 
 # instance fields
@@ -116,19 +115,14 @@
 
     move-result v1
 
-    mul-int/2addr v1, v0
+    mul-int/2addr v0, v1
 
-    div-int/lit8 v1, v1, 0x64
-
-    invoke-virtual {v5, v1}, Ljcq;->d(I)V
-
-    goto :goto_1
+    div-int/lit8 v0, v0, 0x64
 
     :cond_2
     invoke-virtual {v5, v0}, Ljcq;->d(I)V
 
     :cond_3
-    :goto_1
     const/4 v0, 0x1
 
     if-eqz v2, :cond_6
@@ -141,10 +135,10 @@
 
     const/4 v1, 0x0
 
-    :goto_2
+    :goto_1
     invoke-virtual {v5, v1}, Ljcq;->b(Z)V
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_4
     if-eqz v3, :cond_5
@@ -177,13 +171,13 @@
 
     xor-int/2addr v1, v0
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_5
     invoke-virtual {v5, v0}, Ljcq;->b(Z)V
 
     :cond_6
-    :goto_3
+    :goto_2
     iget-object v1, p0, Ljcn;->c:Lgut;
 
     new-instance v2, Lgln;
@@ -236,7 +230,7 @@
 
     move-result v0
 
-    goto :goto_4
+    goto :goto_3
 
     :cond_7
     sget-object v3, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_MAX_ANALOG_SENSITIVITY:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -253,7 +247,7 @@
 
     int-to-float v0, v0
 
-    :goto_4
+    :goto_3
     iput v0, v2, Lgln;->b:F
 
     iget-byte v0, v2, Lgln;->e:B
@@ -292,7 +286,7 @@
 
     move-result v0
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_8
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->SENSOR_SENSITIVITY:Landroid/hardware/camera2/CaptureResult$Key;
@@ -311,7 +305,7 @@
 
     int-to-float v0, v0
 
-    :goto_5
+    :goto_4
     invoke-virtual {v1, p1}, Lgut;->g(Lndu;)F
 
     move-result v3
@@ -338,9 +332,9 @@
 
     div-float/2addr v3, v4
 
-    mul-float/2addr v3, v0
+    mul-float/2addr v0, v3
 
-    iput v3, v2, Lgln;->d:F
+    iput v0, v2, Lgln;->d:F
 
     iget-byte v0, v2, Lgln;->e:B
 

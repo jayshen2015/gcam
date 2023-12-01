@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 .super Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-.source "AgcSeekbarDialog.java"
 
 
 # annotations
@@ -19,7 +18,7 @@
 
 .field private initLeft:I
 
-.field final synthetic this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+.field public final synthetic this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
 .field private tvThumb:Landroid/widget/TextView;
 
@@ -30,77 +29,77 @@
 
 # direct methods
 .method public constructor <init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
     invoke-direct {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    sget v0, Lcom/agc/R$id;->agc_csb:I
+    sget p1, Lcom/agc/R$id;->agc_csb:I
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lcom/agc/widget/CenterSeekBar;
+    check-cast p1, Lcom/agc/widget/CenterSeekBar;
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->centerSeekBar:Lcom/agc/widget/CenterSeekBar;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->centerSeekBar:Lcom/agc/widget/CenterSeekBar;
 
-    sget v0, Lcom/agc/R$id;->tv_value:I
+    sget p1, Lcom/agc/R$id;->tv_value:I
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast p1, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValue:Landroid/widget/TextView;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValue:Landroid/widget/TextView;
 
-    sget v0, Lcom/agc/R$id;->tv_thumb_hint:I
+    sget p1, Lcom/agc/R$id;->tv_thumb_hint:I
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast p1, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvThumb:Landroid/widget/TextView;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvThumb:Landroid/widget/TextView;
 
-    sget v0, Lcom/agc/R$id;->tv_value_hint:I
+    sget p1, Lcom/agc/R$id;->tv_value_hint:I
 
-    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p2, p1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/widget/TextView;
+    check-cast p1, Landroid/widget/TextView;
 
-    iput-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValueHint:Landroid/widget/TextView;
+    iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValueHint:Landroid/widget/TextView;
 
     return-void
 .end method
 
-.method static synthetic access$400(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
-    .locals 1
+.method public static synthetic access$400(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValue:Landroid/widget/TextView;
+    iget-object p0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValue:Landroid/widget/TextView;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
-    .locals 1
+.method public static synthetic access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvThumb:Landroid/widget/TextView;
+    iget-object p0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvThumb:Landroid/widget/TextView;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$600(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
-    .locals 1
+.method public static synthetic access$600(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValueHint:Landroid/widget/TextView;
+    iget-object p0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValueHint:Landroid/widget/TextView;
 
-    return-object v0
+    return-object p0
 .end method
 
 
@@ -114,20 +113,16 @@
 
     const/4 v2, 0x0
 
-    const/4 v3, 0x0
+    move v3, v2
 
     :goto_0
     iget-object v4, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
     iget-object v4, v4, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->scope02:[I
 
-    array-length v4, v4
+    array-length v5, v4
 
-    if-ge v3, v4, :cond_1
-
-    iget-object v4, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
-
-    iget-object v4, v4, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->scope02:[I
+    if-ge v3, v5, :cond_1
 
     aget v4, v4, v3
 
@@ -170,29 +165,29 @@
     invoke-virtual/range {v10 .. v16}, Lcom/agc/widget/CenterSeekBar;->setProgress(DDD)V
 
     :goto_2
-    iget-object v3, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValueHint:Landroid/widget/TextView;
+    iget-object v2, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->tvValueHint:Landroid/widget/TextView;
 
-    iget-object v4, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+    iget-object v3, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
-    invoke-static {v4}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->access$300(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->access$300(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;)Ljava/util/ArrayList;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Ljava/lang/CharSequence;
+    check-cast v3, Ljava/lang/CharSequence;
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v3, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->centerSeekBar:Lcom/agc/widget/CenterSeekBar;
+    iget-object v2, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->centerSeekBar:Lcom/agc/widget/CenterSeekBar;
 
-    new-instance v4, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;
+    new-instance v3, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;
 
-    invoke-direct {v4, v0, v1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;-><init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;I)V
+    invoke-direct {v3, v0, v1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;-><init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;I)V
 
-    invoke-virtual {v3, v4}, Lcom/agc/widget/CenterSeekBar;->setOnSeekBarChangeListener(Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;)V
+    invoke-virtual {v2, v3}, Lcom/agc/widget/CenterSeekBar;->setOnSeekBarChangeListener(Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;)V
 
     return-void
 .end method

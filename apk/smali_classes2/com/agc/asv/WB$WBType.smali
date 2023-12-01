@@ -1,6 +1,5 @@
 .class public final enum Lcom/agc/asv/WB$WBType;
 .super Ljava/lang/Enum;
-.source "WB.java"
 
 
 # annotations
@@ -69,7 +68,7 @@
     return-object v0
 .end method
 
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 3
 
     new-instance v0, Lcom/agc/asv/WB$WBType;
@@ -141,11 +140,11 @@
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    move-result-object v0
+    move-result-object p0
 
-    check-cast v0, Lcom/agc/asv/WB$WBType;
+    check-cast p0, Lcom/agc/asv/WB$WBType;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static values()[Lcom/agc/asv/WB$WBType;

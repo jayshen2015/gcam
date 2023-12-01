@@ -1,6 +1,5 @@
 .class public Lcom/agc/util/Permission;
 .super Ljava/lang/Object;
-.source "Permission.java"
 
 
 # direct methods
@@ -19,9 +18,9 @@
 
     invoke-static {p0, v0}, Lcom/agc/util/Permission;->requestPermission(Landroid/app/Activity;I)Z
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static requestPermission(Landroid/app/Activity;I)Z
@@ -99,9 +98,9 @@
     goto :goto_0
 
     :cond_1
-    const/4 v0, 0x1
+    const/4 p0, 0x1
 
-    return v0
+    return p0
 
     :cond_2
     :goto_0

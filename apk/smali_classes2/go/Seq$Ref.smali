@@ -1,6 +1,5 @@
 .class public final Lgo/Seq$Ref;
 .super Ljava/lang/Object;
-.source "Seq.java"
 
 
 # annotations
@@ -23,8 +22,8 @@
 
 
 # direct methods
-.method constructor <init>(ILjava/lang/Object;)V
-    .locals 3
+.method public constructor <init>(ILjava/lang/Object;)V
+    .locals 2
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,49 +31,49 @@
 
     iput p1, p0, Lgo/Seq$Ref;->refnum:I
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    iput v0, p0, Lgo/Seq$Ref;->refcnt:I
+    iput p1, p0, Lgo/Seq$Ref;->refcnt:I
 
     iput-object p2, p0, Lgo/Seq$Ref;->obj:Ljava/lang/Object;
 
     return-void
 
     :cond_0
-    new-instance v0, Ljava/lang/RuntimeException;
+    new-instance p2, Ljava/lang/RuntimeException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Ref instantiated with a Go refnum "
+    const-string v1, "Ref instantiated with a Go refnum "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p2
 .end method
 
-.method static synthetic access$100(Lgo/Seq$Ref;)I
-    .locals 1
+.method public static synthetic access$100(Lgo/Seq$Ref;)I
+    .locals 0
 
-    iget v0, p0, Lgo/Seq$Ref;->refcnt:I
+    iget p0, p0, Lgo/Seq$Ref;->refcnt:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$110(Lgo/Seq$Ref;)I
+.method public static synthetic access$110(Lgo/Seq$Ref;)I
     .locals 2
 
     iget v0, p0, Lgo/Seq$Ref;->refcnt:I
@@ -88,7 +87,7 @@
 
 
 # virtual methods
-.method inc()V
+.method public inc()V
     .locals 3
 
     iget v0, p0, Lgo/Seq$Ref;->refcnt:I

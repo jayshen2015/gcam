@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/ShadowRulerView;
 .super Landroid/view/View;
-.source "ShadowRulerView.java"
 
 
 # annotations
@@ -12,7 +11,7 @@
 
 
 # static fields
-.field private static hightPer:I
+.field private static hightPer:I = 0xa
 
 
 # instance fields
@@ -72,16 +71,12 @@
 
 .field private tempValue:F
 
-.field vib:Landroid/os/Vibrator;
+.field public vib:Landroid/os/Vibrator;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/16 v0, 0xa
-
-    sput v0, Lcom/agc/asv/ShadowRulerView;->hightPer:I
+.method public static constructor <clinit>()V
+    .locals 0
 
     return-void
 .end method
@@ -107,59 +102,59 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 3
+    .locals 2
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/high16 v0, 0x41f00000    # 30.0f
+    const/high16 p3, 0x41f00000    # 30.0f
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
+    iput p3, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mInitValue:F
+    iput p3, p0, Lcom/agc/asv/ShadowRulerView;->mInitValue:F
 
-    const/4 v1, 0x5
+    const/4 v0, 0x5
 
-    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mInitIndex:I
+    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mInitIndex:I
 
-    const/high16 v1, 0x42c80000    # 100.0f
+    const/high16 v0, 0x42c80000    # 100.0f
 
-    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mMaxValue:F
-
-    const/4 v1, 0x0
-
-    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
-
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
-
-    const/high16 v2, 0x40a00000    # 5.0f
-
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
-
-    const/high16 v2, 0x40800000    # 4.0f
-
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
-
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
-
-    const/high16 v0, 0x41880000    # 17.0f
-
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
+    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mMaxValue:F
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/agc/asv/ShadowRulerView;->mAlphaEnable:Z
+    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
 
-    const v0, -0x777778
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineColor:I
+    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
 
-    const/4 v0, -0x1
+    const/high16 v1, 0x40a00000    # 5.0f
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
+    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
 
-    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->tempValue:F
+    const/high16 v1, 0x40800000    # 4.0f
+
+    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
+
+    iput p3, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
+
+    const/high16 p3, 0x41880000    # 17.0f
+
+    iput p3, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
+
+    const/4 p3, 0x0
+
+    iput-boolean p3, p0, Lcom/agc/asv/ShadowRulerView;->mAlphaEnable:Z
+
+    const p3, -0x777778
+
+    iput p3, p0, Lcom/agc/asv/ShadowRulerView;->mLineColor:I
+
+    const/4 p3, -0x1
+
+    iput p3, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
+
+    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->tempValue:F
 
     invoke-virtual {p0, p1, p2}, Lcom/agc/asv/ShadowRulerView;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -181,9 +176,9 @@
 
     iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mMaxOffset:I
 
-    int-to-float v2, v1
+    int-to-float v1, v1
 
-    cmpg-float v2, v0, v2
+    cmpg-float v2, v0, v1
 
     const/4 v3, 0x1
 
@@ -191,25 +186,7 @@
 
     if-gtz v2, :cond_0
 
-    int-to-float v0, v1
-
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
-
-    iput v4, p0, Lcom/agc/asv/ShadowRulerView;->mMove:I
-
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v0, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-ltz v0, :cond_1
-
+    :goto_0
     iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
 
     iput v4, p0, Lcom/agc/asv/ShadowRulerView;->mMove:I
@@ -218,8 +195,19 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
 
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-ltz v0, :cond_1
+
+    goto :goto_0
+
     :cond_1
-    :goto_0
+    :goto_1
     iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
 
     iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
@@ -250,7 +238,7 @@
 
     invoke-direct {p0}, Lcom/agc/asv/ShadowRulerView;->notifyValueChange()V
 
-    invoke-virtual {p0}, Lcom/agc/asv/ShadowRulerView;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method
@@ -270,17 +258,16 @@
 
     iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mMaxOffset:I
 
-    int-to-float v2, v1
+    int-to-float v1, v1
 
-    cmpg-float v2, v0, v2
+    cmpg-float v2, v0, v1
 
     if-gtz v2, :cond_0
 
-    int-to-float v0, v1
+    :goto_0
+    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     const/4 v1, 0x0
@@ -289,10 +276,10 @@
 
     if-ltz v0, :cond_1
 
-    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
+    goto :goto_0
 
     :cond_1
-    :goto_0
+    :goto_1
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLastX:I
@@ -341,7 +328,7 @@
 
     invoke-direct {p0}, Lcom/agc/asv/ShadowRulerView;->notifyValueChange()V
 
-    invoke-virtual {p0}, Lcom/agc/asv/ShadowRulerView;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method
@@ -381,11 +368,11 @@
 
     iget-object v2, p0, Lcom/agc/asv/ShadowRulerView;->mScroller:Landroid/widget/Scroller;
 
+    float-to-int v5, v0
+
     const/4 v3, 0x0
 
     const/4 v4, 0x0
-
-    float-to-int v5, v0
 
     const/4 v6, 0x0
 
@@ -404,35 +391,35 @@
 .end method
 
 .method private getFontHeight(Landroid/graphics/Paint;)F
-    .locals 3
+    .locals 1
 
     invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, v0, Landroid/graphics/Paint$FontMetrics;->descent:F
+    iget v0, p1, Landroid/graphics/Paint$FontMetrics;->descent:F
 
-    iget v2, v0, Landroid/graphics/Paint$FontMetrics;->ascent:F
+    iget p1, p1, Landroid/graphics/Paint$FontMetrics;->ascent:F
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v0, p1
 
-    return v1
+    return v0
 .end method
 
 .method public static myfloat(F)I
-    .locals 2
+    .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    mul-float/2addr v0, p0
+    mul-float/2addr p0, v0
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    add-float/2addr v0, v1
+    add-float/2addr p0, v0
 
-    float-to-int v0, v0
+    float-to-int p0, p0
 
-    return v0
+    return p0
 .end method
 
 .method private notifyValueChange()V
@@ -633,159 +620,159 @@
     return-void
 .end method
 
-.method protected init(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+.method public init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 1
 
-    const-string v0, "zkk---"
+    const-string p2, "zkk---"
 
-    const-string v1, "init"
+    const-string v0, "init"
 
-    invoke-static {v0, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p2, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    new-instance v0, Landroid/widget/Scroller;
+    new-instance p2, Landroid/widget/Scroller;
 
-    invoke-direct {v0, p1}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mScroller:Landroid/widget/Scroller;
+    iput-object p2, p0, Lcom/agc/asv/ShadowRulerView;->mScroller:Landroid/widget/Scroller;
 
-    const-string v0, "vibrator"
+    const-string p2, "vibrator"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/os/Vibrator;
+    check-cast p1, Landroid/os/Vibrator;
 
-    iput-object v0, p0, Lcom/agc/asv/ShadowRulerView;->vib:Landroid/os/Vibrator;
+    iput-object p1, p0, Lcom/agc/asv/ShadowRulerView;->vib:Landroid/os/Vibrator;
 
-    const/high16 v0, 0x41c80000    # 25.0f
+    const/high16 p1, 0x41c80000    # 25.0f
 
-    invoke-static {v0}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
 
-    const/high16 v0, 0x40800000    # 4.0f
+    const/high16 p1, 0x40800000    # 4.0f
 
-    invoke-static {v0}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
 
-    const/high16 v0, 0x42480000    # 50.0f
+    const/high16 p1, 0x42480000    # 50.0f
 
-    invoke-static {v0}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
 
-    const/high16 v0, 0x41f00000    # 30.0f
+    const/high16 p1, 0x41f00000    # 30.0f
 
-    invoke-static {v0}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/ShadowRulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
 
-    invoke-virtual {p0}, Lcom/agc/asv/ShadowRulerView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
+    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/ShadowRulerView;->mMinVelocity:I
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mMinVelocity:I
 
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance p1, Landroid/graphics/Paint;
 
-    const/4 v1, 0x1
+    const/4 p2, 0x1
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
+    iput-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineColor:I
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineColor:I
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance p1, Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
+    iput-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance p1, Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
+    iput-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
+    iget p1, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
 
-    iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mMaxValue:F
+    iget v0, p0, Lcom/agc/asv/ShadowRulerView;->mMaxValue:F
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/agc/asv/ShadowRulerView;->setValue(FFF)V
+    invoke-virtual {p0, p1, p2, v0}, Lcom/agc/asv/ShadowRulerView;->setValue(FFF)V
 
     return-void
 .end method
 
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method public onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
@@ -814,21 +801,19 @@
 
     move-result-wide v1
 
-    long-to-float v1, v1
+    long-to-float v5, v1
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
+    iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
 
-    iget v3, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
+    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
 
-    iget v4, p0, Lcom/agc/asv/ShadowRulerView;->mLineMinHeight:F
+    sub-float/2addr v2, v1
 
-    sub-float/2addr v3, v4
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+    move-result v2
 
-    move-result v3
-
-    add-float v10, v3, v1
+    add-float/2addr v2, v5
 
     const/4 v3, 0x0
 
@@ -839,21 +824,21 @@
 
     int-to-float v4, v0
 
-    iget v5, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
+    iget v6, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
 
-    add-float/2addr v4, v5
+    add-float/2addr v4, v6
 
-    int-to-float v5, v3
+    int-to-float v6, v3
 
-    iget v6, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
+    iget v7, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
 
-    mul-float/2addr v5, v6
+    mul-float/2addr v6, v7
 
-    add-float v11, v4, v5
+    add-float v9, v4, v6
 
     const/4 v4, 0x0
 
-    cmpg-float v4, v11, v4
+    cmpg-float v4, v9, v4
 
     if-ltz v4, :cond_3
 
@@ -861,7 +846,7 @@
 
     int-to-float v4, v4
 
-    cmpl-float v4, v11, v4
+    cmpl-float v4, v9, v4
 
     if-lez v4, :cond_0
 
@@ -874,9 +859,9 @@
 
     iget v4, p0, Lcom/agc/asv/ShadowRulerView;->mLineWidth:F
 
-    iget-object v5, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
+    iget-object v6, p0, Lcom/agc/asv/ShadowRulerView;->mPointPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v11, v4, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v9, v4, v4, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     :cond_1
     sget v4, Lcom/agc/asv/ShadowRulerView;->hightPer:I
@@ -887,33 +872,29 @@
 
     iget-object v4, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    iget v5, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
+    iget v6, p0, Lcom/agc/asv/ShadowRulerView;->mMiddLineColor:I
 
     goto :goto_1
 
     :cond_2
     iget-object v4, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    iget v5, p0, Lcom/agc/asv/ShadowRulerView;->mLineColor:I
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
+    iget v6, p0, Lcom/agc/asv/ShadowRulerView;->mLineColor:I
 
     :goto_1
-    add-float v8, v2, v10
+    invoke-virtual {v4, v6}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget-object v9, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
+    add-float v10, v1, v2
 
-    move-object v4, p1
+    iget-object v11, p0, Lcom/agc/asv/ShadowRulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    move v5, v11
+    move-object v6, p1
 
-    move v6, v10
+    move v7, v9
 
-    move v7, v11
+    move v8, v2
 
-    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     :cond_3
     :goto_2
@@ -922,8 +903,6 @@
     goto :goto_0
 
     :cond_4
-    int-to-float v4, v0
-
     int-to-float v6, v0
 
     iget v7, p0, Lcom/agc/asv/ShadowRulerView;->mLineMidHeight:F
@@ -932,15 +911,15 @@
 
     move-object v3, p1
 
-    move v5, v1
+    move v4, v6
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     return-void
 .end method
 
-.method protected onSizeChanged(IIII)V
-    .locals 2
+.method public onSizeChanged(IIII)V
+    .locals 0
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
@@ -952,46 +931,46 @@
 
     iput p2, p0, Lcom/agc/asv/ShadowRulerView;->mHeight:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "onSizeChanged,mWidth="
+    const-string p2, "onSizeChanged,mWidth="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mWidth:I
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mWidth:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, ",mHeight="
+    const-string p2, ",mHeight="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mHeight:I
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mHeight:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
 
     :cond_0
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 5
+    .locals 3
 
     const-string v0, "zkk---"
 
@@ -1024,20 +1003,20 @@
 
     invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    const/4 v2, 0x0
+    const/4 p1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
     :pswitch_0
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mLastX:I
+    iget p1, p0, Lcom/agc/asv/ShadowRulerView;->mLastX:I
 
-    sub-int/2addr v2, v1
+    sub-int/2addr p1, v1
 
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mMove:I
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mMove:I
 
     invoke-direct {p0}, Lcom/agc/asv/ShadowRulerView;->changeMoveAndValue()V
 
@@ -1048,23 +1027,23 @@
 
     invoke-direct {p0}, Lcom/agc/asv/ShadowRulerView;->countVelocityTracker()V
 
-    return v2
+    return p1
 
     :pswitch_2
-    iget-object v4, p0, Lcom/agc/asv/ShadowRulerView;->mScroller:Landroid/widget/Scroller;
+    iget-object v0, p0, Lcom/agc/asv/ShadowRulerView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v4, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
+    invoke-virtual {v0, v2}, Landroid/widget/Scroller;->forceFinished(Z)V
 
     iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mLastX:I
 
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mMove:I
-
-    nop
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mMove:I
 
     :goto_0
     iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mLastX:I
 
-    return v3
+    return v2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -1110,11 +1089,11 @@
 
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
-    move-result v1
+    move-result v2
 
-    const/high16 v2, 0x43fa0000    # 500.0f
+    const/high16 v3, 0x43fa0000    # 500.0f
 
-    div-float/2addr v1, v2
+    div-float/2addr v2, v3
 
     iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
 
@@ -1122,29 +1101,23 @@
 
     iput p2, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
 
-    mul-float v2, v1, v0
+    mul-float v3, v2, v0
 
-    float-to-int v2, v2
+    float-to-int v3, v3
 
-    int-to-float v2, v2
+    int-to-float v3, v3
 
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
+    iput v3, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
 
-    mul-float v3, p3, v0
+    div-float/2addr v1, v3
 
-    mul-float v4, p2, v0
+    float-to-int v1, v1
 
-    sub-float/2addr v3, v4
+    add-int/lit8 v1, v1, 0x1
 
-    div-float/2addr v3, v2
+    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mTotalLine:I
 
-    float-to-int v2, v3
-
-    add-int/lit8 v2, v2, 0x1
-
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mTotalLine:I
-
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mInitValue:F
+    iget v1, p0, Lcom/agc/asv/ShadowRulerView;->mInitValue:F
 
     invoke-static {p2}, Ljava/lang/Math;->abs(F)F
 
@@ -1160,169 +1133,169 @@
 
     div-float/2addr v3, v4
 
-    add-float/2addr v2, v3
+    add-float/2addr v1, v3
 
-    mul-float/2addr v2, v0
+    mul-float/2addr v1, v0
 
     iget v3, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
 
-    div-float/2addr v2, v3
+    div-float/2addr v1, v3
 
-    float-to-int v2, v2
+    float-to-int v1, v1
 
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mInitIndex:I
+    iput v1, p0, Lcom/agc/asv/ShadowRulerView;->mInitIndex:I
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v3, "selectorValue="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    const-string v3, ",minValue="
+    const-string v1, ",minValue="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    const-string v3, ",maxValue="
+    const-string p2, ",maxValue="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v2, p3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    const-string v3, ",per="
+    const-string p2, ",per="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    const-string v3, ",mInitIndex="
+    const-string p2, ",mInitIndex="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    iget v3, p0, Lcom/agc/asv/ShadowRulerView;->mInitIndex:I
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mInitIndex:I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-static {v2}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mTotalLine:I
+    iget p1, p0, Lcom/agc/asv/ShadowRulerView;->mTotalLine:I
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 p1, p1, -0x1
 
-    neg-int v2, v2
+    neg-int p1, p1
 
-    int-to-float v2, v2
+    int-to-float p1, p1
 
-    iget v3, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mLineSpaceWidth:F
 
-    mul-float/2addr v2, v3
+    mul-float/2addr p1, p2
 
-    float-to-int v2, v2
+    float-to-int p1, p1
 
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mMaxOffset:I
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mMaxOffset:I
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
+    iget p1, p0, Lcom/agc/asv/ShadowRulerView;->mMinValue:F
 
-    iget v4, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
+    iget p3, p0, Lcom/agc/asv/ShadowRulerView;->mSelectorValue:F
 
-    sub-float/2addr v2, v4
+    sub-float/2addr p1, p3
 
-    iget v4, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
+    iget p3, p0, Lcom/agc/asv/ShadowRulerView;->mPerValue:F
 
-    div-float/2addr v2, v4
+    div-float/2addr p1, p3
 
-    mul-float/2addr v2, v3
+    mul-float/2addr p1, p2
 
-    mul-float/2addr v2, v0
+    mul-float/2addr p1, v0
 
-    iput v2, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
+    iput p1, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "mOffset--"
+    const-string p2, "mOffset--"
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mOffset:F
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v2, "=====mMaxOffset "
+    const-string p2, "=====mMaxOffset "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mMaxOffset:I
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mMaxOffset:I
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v2, "  mTotalLine  "
+    const-string p2, "  mTotalLine  "
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v2, p0, Lcom/agc/asv/ShadowRulerView;->mTotalLine:I
+    iget p2, p0, Lcom/agc/asv/ShadowRulerView;->mTotalLine:I
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
 
-    invoke-virtual {p0}, Lcom/agc/asv/ShadowRulerView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/ShadowRulerView;->setVisibility(I)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
 
 .method public setValue(Lcom/agc/asv/ShadowModel;)V
-    .locals 3
+    .locals 2
 
     invoke-virtual {p1}, Lcom/agc/asv/ShadowModel;->getInitProcess()F
 
@@ -1342,9 +1315,9 @@
 
     invoke-virtual {p1}, Lcom/agc/asv/ShadowModel;->getMaxValue()F
 
-    move-result v2
+    move-result p1
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/agc/asv/ShadowRulerView;->setValue(FFF)V
+    invoke-virtual {p0, v0, v1, p1}, Lcom/agc/asv/ShadowRulerView;->setValue(FFF)V
 
     return-void
 .end method

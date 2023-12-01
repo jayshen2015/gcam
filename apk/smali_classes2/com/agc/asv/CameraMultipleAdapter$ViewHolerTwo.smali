@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;
 .super Ljava/lang/Object;
-.source "CameraMultipleAdapter.java"
 
 
 # annotations
@@ -9,13 +8,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "ViewHolerTwo"
 .end annotation
 
 
 # instance fields
-.field imageView:Landroid/widget/ImageView;
+.field public imageView:Landroid/widget/ImageView;
 
 
 # direct methods
@@ -36,11 +35,11 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/widget/ImageView;
+    check-cast p1, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;->imageView:Landroid/widget/ImageView;
+    iput-object p1, p0, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;->imageView:Landroid/widget/ImageView;
 
     return-void
 .end method

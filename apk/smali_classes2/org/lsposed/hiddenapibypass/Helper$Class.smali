@@ -1,6 +1,5 @@
 .class public final Lorg/lsposed/hiddenapibypass/Helper$Class;
 .super Ljava/lang/Object;
-.source "Helper.java"
 
 
 # annotations

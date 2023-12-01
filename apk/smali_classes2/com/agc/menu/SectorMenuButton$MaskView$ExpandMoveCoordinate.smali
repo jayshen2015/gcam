@@ -1,6 +1,5 @@
 .class Lcom/agc/menu/SectorMenuButton$MaskView$ExpandMoveCoordinate;
 .super Ljava/lang/Object;
-.source "SectorMenuButton.java"
 
 
 # annotations
@@ -9,15 +8,15 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "ExpandMoveCoordinate"
 .end annotation
 
 
 # instance fields
-.field moveX:F
+.field public moveX:F
 
-.field moveY:F
+.field public moveY:F
 
 
 # direct methods

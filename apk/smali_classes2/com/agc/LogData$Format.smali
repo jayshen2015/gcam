@@ -1,6 +1,5 @@
 .class public Lcom/agc/LogData$Format;
 .super Ljava/lang/Object;
-.source "LogData.java"
 
 
 # annotations
@@ -97,26 +96,26 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    return-object p0
 
     :catch_0
     move-exception v0
 
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 
 # virtual methods
 .method public log()V
-    .locals 7
+    .locals 6
 
     const-string v0, "("
 
@@ -183,41 +182,41 @@
 
     invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    iget v5, p0, Lcom/agc/LogData$Format;->defaultFixResolution:I
+    iget v4, p0, Lcom/agc/LogData$Format;->defaultFixResolution:I
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, ") => "
+    const-string v4, ") => "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v4, p0, Lcom/agc/LogData$Format;->fixResolution:I
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v4, ")"
+    iget v1, p0, Lcom/agc/LogData$Format;->fixResolution:I
 
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ")"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
@@ -225,121 +224,117 @@
 
     move-result-object v0
 
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    invoke-static {v2, v0, v4}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v2, v0, v1}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
 
     iget-object v0, p0, Lcom/agc/LogData$Format;->formats:[I
 
     array-length v0, v0
 
-    new-array v0, v0, [Ljava/lang/String;
-
-    const/4 v2, 0x0
+    new-array v2, v0, [Ljava/lang/String;
 
     :goto_0
-    array-length v4, v0
+    if-ge v1, v0, :cond_0
 
-    if-ge v2, v4, :cond_0
+    iget-object v3, p0, Lcom/agc/LogData$Format;->formats:[I
 
-    iget-object v4, p0, Lcom/agc/LogData$Format;->formats:[I
+    aget v3, v3, v1
 
-    aget v4, v4, v2
+    invoke-static {v3}, Lcom/agc/LogData$Format;->format(I)Ljava/lang/String;
 
-    invoke-static {v4}, Lcom/agc/LogData$Format;->format(I)Ljava/lang/String;
+    move-result-object v3
 
-    move-result-object v4
+    aput-object v3, v2, v1
 
-    aput-object v4, v0, v2
-
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    iget-object v2, p0, Lcom/agc/LogData$Format;->filename:Ljava/lang/String;
+    iget-object v0, p0, Lcom/agc/LogData$Format;->filename:Ljava/lang/String;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "\nHDR+ Formats:\n"
+    const-string v3, "\nHDR+ Formats:\n"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    const/4 v5, 0x1
+    const/4 v2, 0x1
 
-    invoke-static {v2, v4, v5}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    iget-object v2, p0, Lcom/agc/LogData$Format;->filename:Ljava/lang/String;
+    iget-object v0, p0, Lcom/agc/LogData$Format;->filename:Ljava/lang/String;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Current:\n"
+    const-string v3, "Current:\n"
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    iget v6, p0, Lcom/agc/LogData$Format;->current:I
+    iget v3, p0, Lcom/agc/LogData$Format;->current:I
 
-    invoke-static {v6}, Lcom/agc/LogData$Format;->format(I)Ljava/lang/String;
+    invoke-static {v3}, Lcom/agc/LogData$Format;->format(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {v2, v4, v5}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    iget-object v2, p0, Lcom/agc/LogData$Format;->filename:Ljava/lang/String;
+    iget-object v0, p0, Lcom/agc/LogData$Format;->filename:Ljava/lang/String;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "Resolution:\n"
+    const-string v3, "Resolution:\n"
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    iget-object v6, p0, Lcom/agc/LogData$Format;->resolution:Ljava/util/List;
+    iget-object v3, p0, Lcom/agc/LogData$Format;->resolution:Ljava/util/List;
 
-    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-static {v2, v4, v5}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v0, v1, v2}, Lagc/Agc;->logToFile(Ljava/lang/String;Ljava/lang/String;Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -349,7 +344,5 @@
     move-exception v0
 
     :goto_1
-    nop
-
     return-void
 .end method

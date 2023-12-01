@@ -1,6 +1,5 @@
 .class public final Lcom/samsung/galaxytrash/SemCaptureRequest;
 .super Lcom/samsung/galaxytrash/SemCameraParameter;
-.source "SemCaptureRequest.java"
 
 
 # static fields
@@ -793,7 +792,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 4
 
     const-class v0, [I

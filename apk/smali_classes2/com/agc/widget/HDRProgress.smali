@@ -1,16 +1,15 @@
 .class public Lcom/agc/widget/HDRProgress;
 .super Lcom/agc/asv/CircleProgressView;
-.source "HDRProgress.java"
 
 
 # static fields
-.field static handler:Landroid/os/Handler;
+.field public static handler:Landroid/os/Handler;
 
 .field private static instance:Lcom/agc/widget/HDRProgress;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 2
 
     new-instance v0, Landroid/os/Handler;
@@ -56,7 +55,7 @@
     return-void
 .end method
 
-.method static synthetic access$000()Lcom/agc/widget/HDRProgress;
+.method public static synthetic access$000()Lcom/agc/widget/HDRProgress;
     .locals 1
 
     sget-object v0, Lcom/agc/widget/HDRProgress;->instance:Lcom/agc/widget/HDRProgress;
@@ -73,23 +72,23 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {p0, v0, v1}, Lcom/agc/widget/HDRProgress;->setProgress(FZ)V
+    invoke-virtual {p0, v0, v1}, Lcom/agc/asv/CircleProgressView;->setProgress(FZ)V
 
     invoke-virtual {p0, p1}, Lcom/agc/widget/HDRProgress;->getColorAccent(Landroid/content/Context;)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lcom/agc/widget/HDRProgress;->setProgressColor(I)V
+    invoke-virtual {p0, v0}, Lcom/agc/asv/CircleProgressView;->setProgressColor(I)V
 
-    invoke-virtual {p0, v1}, Lcom/agc/widget/HDRProgress;->setBackgroundCircleColor(I)V
+    invoke-virtual {p0, v1}, Lcom/agc/asv/CircleProgressView;->setBackgroundCircleColor(I)V
 
     const/high16 v0, 0x40c00000    # 6.0f
 
     invoke-static {p1, v0}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
-    move-result v0
+    move-result p1
 
-    invoke-virtual {p0, v0}, Lcom/agc/widget/HDRProgress;->setProgressWidth(I)V
+    invoke-virtual {p0, p1}, Lcom/agc/asv/CircleProgressView;->setProgressWidth(I)V
 
     return-void
 .end method
@@ -101,24 +100,22 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0, p0}, Lcom/agc/widget/HDRProgress;->setEnabled(Z)V
+    invoke-virtual {v0, p0}, Landroid/view/View;->setEnabled(Z)V
 
     :cond_0
     return-void
 .end method
 
 .method public static updateProgress(F)V
-    .locals 3
+    .locals 2
 
-    move v0, p0
+    sget-object v0, Lcom/agc/widget/HDRProgress;->handler:Landroid/os/Handler;
 
-    sget-object v1, Lcom/agc/widget/HDRProgress;->handler:Landroid/os/Handler;
+    new-instance v1, Lcom/agc/widget/HDRProgress$1;
 
-    new-instance v2, Lcom/agc/widget/HDRProgress$1;
+    invoke-direct {v1, p0}, Lcom/agc/widget/HDRProgress$1;-><init>(F)V
 
-    invoke-direct {v2, v0}, Lcom/agc/widget/HDRProgress$1;-><init>(F)V
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method
@@ -126,7 +123,7 @@
 
 # virtual methods
 .method public getColorAccent(Landroid/content/Context;)I
-    .locals 4
+    .locals 3
 
     new-instance v0, Landroid/util/TypedValue;
 
@@ -134,15 +131,15 @@
 
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v1
+    move-result-object p1
 
-    const v2, 0x1010435
+    const v1, 0x1010435
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    invoke-virtual {p1, v1, v0, v2}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    iget v1, v0, Landroid/util/TypedValue;->data:I
+    iget p1, v0, Landroid/util/TypedValue;->data:I
 
-    return v1
+    return p1
 .end method

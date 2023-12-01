@@ -1,6 +1,5 @@
 .class public Lcom/agc/util/SpUtils;
 .super Ljava/lang/Object;
-.source "SpUtils.java"
 
 
 # static fields
@@ -12,7 +11,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lcom/agc/util/SpUtils;
@@ -49,14 +48,14 @@
 
     invoke-virtual {p0, v1, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    move-result-object p0
 
-    sput-object v0, Lcom/agc/util/SpUtils;->mSp:Landroid/content/SharedPreferences;
+    sput-object p0, Lcom/agc/util/SpUtils;->mSp:Landroid/content/SharedPreferences;
 
     :cond_0
-    sget-object v0, Lcom/agc/util/SpUtils;->instace:Lcom/agc/util/SpUtils;
+    sget-object p0, Lcom/agc/util/SpUtils;->instace:Lcom/agc/util/SpUtils;
 
-    return-object v0
+    return-object p0
 .end method
 
 
@@ -68,9 +67,9 @@
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v0
+    move-result p1
 
-    return v0
+    return p1
 .end method
 
 .method public getFloat(Ljava/lang/String;F)Ljava/lang/Float;
@@ -80,13 +79,13 @@
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
 
-    move-result v0
+    move-result p1
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public getInt(Ljava/lang/String;I)I
@@ -96,9 +95,9 @@
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p1
 
-    return v0
+    return p1
 .end method
 
 .method public getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
@@ -108,13 +107,13 @@
 
     invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public save(Ljava/lang/String;Ljava/lang/Object;)V
-    .locals 2
+    .locals 1
 
     instance-of v0, p2, Ljava/lang/String;
 
@@ -126,17 +125,16 @@
 
     move-result-object v0
 
-    move-object v1, p2
+    check-cast p2, Ljava/lang/String;
 
-    check-cast v1, Ljava/lang/String;
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    move-result-object p1
 
-    move-result-object v0
+    :goto_0
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     instance-of v0, p2, Ljava/lang/Boolean;
@@ -149,19 +147,15 @@
 
     move-result-object v0
 
-    move-object v1, p2
+    check-cast p2, Ljava/lang/Boolean;
 
-    check-cast v1, Ljava/lang/Boolean;
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-result p2
 
-    move-result v1
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    move-result-object p1
 
     goto :goto_0
 
@@ -176,19 +170,15 @@
 
     move-result-object v0
 
-    move-object v1, p2
+    check-cast p2, Ljava/lang/Integer;
 
-    check-cast v1, Ljava/lang/Integer;
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    move-result p2
 
-    move-result v1
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    move-result-object p1
 
     goto :goto_0
 
@@ -203,21 +193,19 @@
 
     move-result-object v0
 
-    move-object v1, p2
+    check-cast p2, Ljava/lang/Float;
 
-    check-cast v1, Ljava/lang/Float;
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
 
-    invoke-virtual {v1}, Ljava/lang/Float;->floatValue()F
+    move-result p2
 
-    move-result v1
+    invoke-interface {v0, p1, p2}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
 
-    invoke-interface {v0, p1, v1}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
+    move-result-object p1
 
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    goto :goto_0
 
     :cond_3
-    :goto_0
+    :goto_1
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
 .super Ljava/lang/Object;
-.source "CenterSeekBar.java"
 
 
 # annotations

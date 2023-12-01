@@ -1,6 +1,5 @@
 .class public final LDeveloper$LogListener;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 # interfaces
 .implements Landroid/preference/Preference$OnPreferenceClickListener;

@@ -1,6 +1,5 @@
 .class Lcom/gcam/simple/filechooser/ChooserDialog$3;
 .super Ljava/lang/Object;
-.source "ChooserDialog.java"
 
 # interfaces
 .implements Ljava/util/Comparator;
@@ -12,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -27,11 +26,11 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
+.field public final synthetic this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
 
 
 # direct methods
-.method constructor <init>(Lcom/gcam/simple/filechooser/ChooserDialog;)V
+.method public constructor <init>(Lcom/gcam/simple/filechooser/ChooserDialog;)V
     .locals 0
 
     iput-object p1, p0, Lcom/gcam/simple/filechooser/ChooserDialog$3;->this$0:Lcom/gcam/simple/filechooser/ChooserDialog;
@@ -44,19 +43,15 @@
 
 # virtual methods
 .method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
-    move-object v0, p1
+    check-cast p1, Ljava/io/File;
 
-    check-cast v0, Ljava/io/File;
+    check-cast p2, Ljava/io/File;
 
-    move-object v1, p2
+    invoke-static {p1, p2}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$200(Ljava/io/File;Ljava/io/File;)I
 
-    check-cast v1, Ljava/io/File;
+    move-result p1
 
-    invoke-static {v0, v1}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$200(Ljava/io/File;Ljava/io/File;)I
-
-    move-result v0
-
-    return v0
+    return p1
 .end method

@@ -141,6 +141,12 @@
 .method public final c(F)V
     .locals 1
 
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getVideoBrightnessFix()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     iget-object v0, p0, Lett;->g:Landroid/view/Window;
 
     invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
@@ -153,6 +159,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
+    :cond_0
     return-void
 .end method
 

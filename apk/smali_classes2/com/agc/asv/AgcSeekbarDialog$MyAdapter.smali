@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 .super Landroidx/recyclerview/widget/RecyclerView$Adapter;
-.source "AgcSeekbarDialog.java"
 
 
 # annotations
@@ -9,7 +8,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
+    accessFlags = 0x1
     name = "MyAdapter"
 .end annotation
 
@@ -39,9 +38,9 @@
     .end annotation
 .end field
 
-.field scope02:[I
+.field public scope02:[I
 
-.field final synthetic this$0:Lcom/agc/asv/AgcSeekbarDialog;
+.field public final synthetic this$0:Lcom/agc/asv/AgcSeekbarDialog;
 
 .field private valueList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -97,12 +96,12 @@
     .end array-data
 .end method
 
-.method static synthetic access$300(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;)Ljava/util/ArrayList;
-    .locals 1
+.method public static synthetic access$300(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;)Ljava/util/ArrayList;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->nameList:Ljava/util/ArrayList;
+    iget-object p0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->nameList:Ljava/util/ArrayList;
 
-    return-object v0
+    return-object p0
 .end method
 
 
@@ -190,29 +189,29 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
-    .locals 3
+    .locals 2
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v0
+    move-result-object p2
 
-    sget v1, Lcom/agc/R$layout;->agc_seekbar_item:I
+    sget v0, Lcom/agc/R$layout;->agc_seekbar_item:I
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p2, v0, p1, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    new-instance v1, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    new-instance p2, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    invoke-direct {v1, p0, v0}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;-><init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;Landroid/view/View;)V
+    invoke-direct {p2, p0, p1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;-><init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;Landroid/view/View;)V
 
-    return-object v1
+    return-object p2
 .end method
 
 .method public setData(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
@@ -233,7 +232,7 @@
 
     iput-object p2, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->valueList:Ljava/util/ArrayList;
 
-    invoke-virtual {p0}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
 .end method

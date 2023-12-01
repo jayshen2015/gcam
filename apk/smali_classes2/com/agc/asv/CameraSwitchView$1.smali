@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/CameraSwitchView$1;
 .super Ljava/lang/Object;
-.source "CameraSwitchView.java"
 
 # interfaces
 .implements Landroid/widget/AdapterView$OnItemClickListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/CameraSwitchView;
+.field public final synthetic this$0:Lcom/agc/asv/CameraSwitchView;
 
-.field final synthetic val$adapter:Lcom/agc/asv/CameraMultipleAdapter;
+.field public final synthetic val$adapter:Lcom/agc/asv/CameraMultipleAdapter;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/CameraSwitchView;Lcom/agc/asv/CameraMultipleAdapter;)V
+.method public constructor <init>(Lcom/agc/asv/CameraSwitchView;Lcom/agc/asv/CameraMultipleAdapter;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,7 +43,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 13
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,159 +54,144 @@
         }
     .end annotation
 
-    move-object v0, p0
-
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
-    move-result-object v1
+    move-result-object v0
 
-    move/from16 v8, p3
+    invoke-interface {v0, p3}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
 
-    invoke-interface {v1, v8}, Landroid/widget/Adapter;->getItem(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v1
+    check-cast v0, Lcom/agc/asv/CameraMultipleModel;
 
-    check-cast v1, Lcom/agc/asv/CameraMultipleModel;
+    iget-object v1, p0, Lcom/agc/asv/CameraSwitchView$1;->val$adapter:Lcom/agc/asv/CameraMultipleAdapter;
 
-    iget-object v2, v0, Lcom/agc/asv/CameraSwitchView$1;->val$adapter:Lcom/agc/asv/CameraMultipleAdapter;
+    iget v2, v0, Lcom/agc/asv/CameraMultipleModel;->index:I
 
-    iget v3, v1, Lcom/agc/asv/CameraMultipleModel;->index:I
+    invoke-virtual {v1, v2}, Lcom/agc/asv/CameraMultipleAdapter;->setOnClickItem(I)Z
 
-    invoke-virtual {v2, v3}, Lcom/agc/asv/CameraMultipleAdapter;->setOnClickItem(I)Z
+    move-result v1
 
-    move-result v2
+    if-eqz v1, :cond_4
 
-    if-eqz v2, :cond_4
-
-    const/4 v2, 0x1
-
-    iget-object v9, v1, Lcom/agc/asv/CameraMultipleModel;->camera:Lcom/agc/Camera;
-
-    if-eqz v9, :cond_0
-
-    invoke-virtual {v9}, Lcom/agc/Camera;->isFront()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
+    iget-object v1, v0, Lcom/agc/asv/CameraMultipleModel;->camera:Lcom/agc/Camera;
 
     const/4 v2, 0x0
 
-    move v10, v2
+    const/4 v3, 0x1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Lcom/agc/Camera;->isFront()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    move v4, v2
 
     goto :goto_0
 
     :cond_0
-    move v10, v2
+    move v4, v3
 
     :goto_0
-    invoke-virtual {v9}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
+    invoke-static {v1}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
 
-    move-result v11
+    move-result v1
 
-    const-string v2, "pref_switch_front_restart_key"
+    const-string v5, "pref_switch_front_restart_key"
 
-    invoke-static {v2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v5}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v5
 
-    const/4 v3, 0x1
+    if-ne v5, v3, :cond_1
 
-    if-ne v2, v3, :cond_1
-
-    goto :goto_1
+    move v2, v3
 
     :cond_1
-    const/4 v3, 0x0
+    invoke-static {v1}, Lcom/Utils/Lens;->setAuxKey(I)V
 
-    :goto_1
-    move v12, v3
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-static {v11}, Lcom/Utils/Lens;->setAuxKey(I)V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v6, "CameraSwitchButton CameraID: "
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "CameraSwitchButton CameraID: "
+    move-result-object v5
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, v0, Lcom/agc/asv/CameraMultipleModel;->id:Ljava/lang/String;
 
-    move-result-object v2
+    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v3, v1, Lcom/agc/asv/CameraMultipleModel;->id:Ljava/lang/String;
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, " AuxKey: "
 
-    move-result-object v2
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, " AuxKey: "
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string v1, " isBackLens: "
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, " isBackLens: "
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, v10}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
-    move-result-object v2
+    if-nez v4, :cond_3
 
-    invoke-static {v2}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+    if-eqz v2, :cond_2
 
-    if-nez v10, :cond_3
-
-    if-eqz v12, :cond_2
-
-    goto :goto_2
+    goto :goto_1
 
     :cond_2
     invoke-static {}, Lcom/agc/Patch;->patchAll()V
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_3
+    :goto_1
+    xor-int/lit8 v0, v4, 0x1
+
+    invoke-static {v0}, Lcom/Globals;->onRestart(Z)V
+
     :goto_2
-    xor-int/lit8 v2, v10, 0x1
+    iget-object v0, p0, Lcom/agc/asv/CameraSwitchView$1;->this$0:Lcom/agc/asv/CameraSwitchView;
 
-    invoke-static {v2}, Lcom/Globals;->onRestart(Z)V
+    iget-object v1, v0, Lcom/agc/asv/CameraSwitchView;->listener:Landroid/widget/AdapterView$OnItemClickListener;
 
-    :goto_3
-    iget-object v2, v0, Lcom/agc/asv/CameraSwitchView$1;->this$0:Lcom/agc/asv/CameraSwitchView;
+    if-eqz v1, :cond_4
 
-    iget-object v2, v2, Lcom/agc/asv/CameraSwitchView;->listener:Landroid/widget/AdapterView$OnItemClickListener;
+    move-object v2, p1
 
-    if-eqz v2, :cond_4
+    move-object v3, p2
 
-    iget-object v2, v0, Lcom/agc/asv/CameraSwitchView$1;->this$0:Lcom/agc/asv/CameraSwitchView;
+    move v4, p3
 
-    iget-object v2, v2, Lcom/agc/asv/CameraSwitchView;->listener:Landroid/widget/AdapterView$OnItemClickListener;
+    move-wide v5, p4
 
-    move-object v3, p1
-
-    move-object v4, p2
-
-    move/from16 v5, p3
-
-    move-wide/from16 v6, p4
-
-    invoke-interface/range {v2 .. v7}, Landroid/widget/AdapterView$OnItemClickListener;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    invoke-interface/range {v1 .. v6}, Landroid/widget/AdapterView$OnItemClickListener;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
 
     :cond_4
     return-void

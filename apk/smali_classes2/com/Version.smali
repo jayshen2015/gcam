@@ -1,14 +1,13 @@
 .class public Lcom/Version;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
-.field public static buildDate:Ljava/lang/String; = "2023-11-10 20:23"
+.field public static buildDate:Ljava/lang/String; = "2023-11-25 13:21"
 
-.field public static buildVersion:Ljava/lang/String; = "af8786e1"
+.field public static buildVersion:Ljava/lang/String; = "9ecda93b"
 
-.field public static version:Ljava/lang/String; = "V4.0"
+.field public static version:Ljava/lang/String; = "V6.0"
 
 
 # direct methods

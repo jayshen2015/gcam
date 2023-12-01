@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/CameraMultipleAdapter;
 .super Landroid/widget/BaseAdapter;
-.source "CameraMultipleAdapter.java"
 
 
 # annotations
@@ -66,9 +65,9 @@
 
     invoke-static {}, Lcom/Utils/Lens;->getAuxKey()I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
+    iput p1, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
 
     return-void
 .end method
@@ -104,15 +103,15 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    return-object v0
+    return-object p1
 .end method
 
 .method public getItemId(I)J
@@ -130,272 +129,248 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lcom/agc/asv/CameraMultipleModel;
+    check-cast p1, Lcom/agc/asv/CameraMultipleModel;
 
-    iget v0, v0, Lcom/agc/asv/CameraMultipleModel;->type:I
+    iget p1, p1, Lcom/agc/asv/CameraMultipleModel;->type:I
 
-    return v0
+    return p1
 .end method
 
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 9
+    .locals 5
 
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getWidth()I
 
-    move-result v0
+    move-result p3
 
-    move v1, v0
+    const/4 v0, 0x0
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    if-nez p2, :cond_1
+    const/4 v1, 0x1
 
     invoke-virtual {p0, p1}, Lcom/agc/asv/CameraMultipleAdapter;->getItemViewType(I)I
 
-    move-result v4
+    move-result v2
 
-    const/4 v5, 0x0
+    if-nez p2, :cond_3
 
-    packed-switch v4, :pswitch_data_0
+    if-eqz v2, :cond_1
 
-    goto :goto_0
-
-    :pswitch_0
-    iget-object v4, p0, Lcom/agc/asv/CameraMultipleAdapter;->mContext:Landroid/content/Context;
-
-    invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v4
-
-    sget v6, Lcom/agc/Res$layout;->agc_item_style_image:I
-
-    invoke-virtual {v4, v6, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object p2
-
-    new-instance v4, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-direct {v4, v0, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    new-instance v4, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;
-
-    invoke-direct {v4, p2}, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;-><init>(Landroid/view/View;)V
-
-    move-object v3, v4
-
-    invoke-virtual {p2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    if-eq v2, v1, :cond_0
 
     goto :goto_0
-
-    :pswitch_1
-    iget-object v4, p0, Lcom/agc/asv/CameraMultipleAdapter;->mContext:Landroid/content/Context;
-
-    invoke-static {v4}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v4
-
-    sget v6, Lcom/agc/Res$layout;->agc_item_style_text:I
-
-    invoke-virtual {v4, v6, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
-
-    move-result-object p2
-
-    new-instance v4, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-direct {v4, v0, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    new-instance v4, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;
-
-    invoke-direct {v4, p2}, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;-><init>(Landroid/view/View;)V
-
-    move-object v2, v4
-
-    iget-boolean v4, p0, Lcom/agc/asv/CameraMultipleAdapter;->compact:Z
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, v2, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
-
-    const/high16 v5, 0x41300000    # 11.0f
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setTextSize(F)V
 
     :cond_0
-    invoke-virtual {p2, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    iget-object p2, p0, Lcom/agc/asv/CameraMultipleAdapter;->mContext:Landroid/content/Context;
 
-    nop
+    invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    :goto_0
+    move-result-object p2
+
+    sget v2, Lcom/agc/Res$layout;->agc_item_style_image:I
+
+    invoke-virtual {p2, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object p2
+
+    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v2, p3, p3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p2, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance p3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;
+
+    invoke-direct {p3, p2}, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;-><init>(Landroid/view/View;)V
+
+    invoke-virtual {p2, p3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
     goto :goto_1
 
     :cond_1
-    invoke-virtual {p0, p1}, Lcom/agc/asv/CameraMultipleAdapter;->getItemViewType(I)I
+    iget-object p2, p0, Lcom/agc/asv/CameraMultipleAdapter;->mContext:Landroid/content/Context;
 
-    move-result v4
+    invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    packed-switch v4, :pswitch_data_1
+    move-result-object p2
+
+    sget v2, Lcom/agc/Res$layout;->agc_item_style_text:I
+
+    invoke-virtual {p2, v2, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+
+    move-result-object p2
+
+    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v2, p3, p3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p2, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    new-instance p3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;
+
+    invoke-direct {p3, p2}, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;-><init>(Landroid/view/View;)V
+
+    iget-boolean v2, p0, Lcom/agc/asv/CameraMultipleAdapter;->compact:Z
+
+    if-eqz v2, :cond_2
+
+    iget-object v2, p3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
+
+    const/high16 v3, 0x41300000    # 11.0f
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextSize(F)V
+
+    :cond_2
+    invoke-virtual {p2, p3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    move-object v4, v0
+
+    move-object v0, p3
+
+    move-object p3, v4
 
     goto :goto_1
 
-    :pswitch_2
-    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+    :cond_3
+    if-eqz v2, :cond_5
 
-    move-result-object v4
+    if-eq v2, v1, :cond_4
 
-    move-object v3, v4
-
-    check-cast v3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;
-
-    new-instance v4, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-direct {v4, v0, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    :goto_0
+    move-object p3, v0
 
     goto :goto_1
 
-    :pswitch_3
+    :cond_4
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v2
 
-    move-object v2, v4
+    check-cast v2, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;
+
+    new-instance v3, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v3, p3, p3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p2, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    move-object p3, v2
+
+    goto :goto_1
+
+    :cond_5
+    invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v2
 
     check-cast v2, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;
 
-    new-instance v4, Landroid/view/ViewGroup$LayoutParams;
+    new-instance v3, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-direct {v4, v0, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+    invoke-direct {v3, p3, p3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    invoke-virtual {p2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p2, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    nop
+    move-object p3, v0
+
+    move-object v0, v2
 
     :goto_1
     invoke-virtual {p0, p1}, Lcom/agc/asv/CameraMultipleAdapter;->getItemViewType(I)I
 
-    move-result v4
+    move-result v2
 
-    const/4 v5, 0x1
+    const/4 v3, 0x0
 
-    const/4 v6, 0x0
+    if-eqz v2, :cond_8
 
-    packed-switch v4, :pswitch_data_2
+    if-eq v2, v1, :cond_6
 
     goto :goto_4
 
-    :pswitch_4
-    iget-object v4, v3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;->imageView:Landroid/widget/ImageView;
+    :cond_6
+    iget-object v0, p3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;->imageView:Landroid/widget/ImageView;
 
-    iget-object v7, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v2
 
-    check-cast v7, Lcom/agc/asv/CameraMultipleModel;
+    check-cast v2, Lcom/agc/asv/CameraMultipleModel;
 
-    iget v7, v7, Lcom/agc/asv/CameraMultipleModel;->drawableRes:I
+    iget v2, v2, Lcom/agc/asv/CameraMultipleModel;->drawableRes:I
 
-    invoke-virtual {v4, v7}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    iget-object v4, v3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;->imageView:Landroid/widget/ImageView;
+    iget-object p3, p3, Lcom/agc/asv/CameraMultipleAdapter$ViewHolerTwo;->imageView:Landroid/widget/ImageView;
 
-    iget-object v7, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object p1
 
-    check-cast v7, Lcom/agc/asv/CameraMultipleModel;
+    check-cast p1, Lcom/agc/asv/CameraMultipleModel;
 
-    iget v7, v7, Lcom/agc/asv/CameraMultipleModel;->index:I
+    iget p1, p1, Lcom/agc/asv/CameraMultipleModel;->index:I
 
-    iget v8, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
+    iget v0, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
 
-    if-ne v7, v8, :cond_2
+    if-ne p1, v0, :cond_7
 
     goto :goto_2
 
-    :cond_2
-    move v5, v6
+    :cond_7
+    move v1, v3
 
     :goto_2
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setSelected(Z)V
+    invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setSelected(Z)V
 
     goto :goto_4
 
-    :pswitch_5
-    iget-object v4, v2, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
+    :cond_8
+    iget-object p3, v0, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
 
-    iget-object v7, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v2
 
-    check-cast v7, Lcom/agc/asv/CameraMultipleModel;
+    check-cast v2, Lcom/agc/asv/CameraMultipleModel;
 
-    iget-object v7, v7, Lcom/agc/asv/CameraMultipleModel;->text:Ljava/lang/String;
+    iget-object v2, v2, Lcom/agc/asv/CameraMultipleModel;->text:Ljava/lang/String;
 
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    iget-object v4, v2, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
+    iget-object p3, v0, Lcom/agc/asv/CameraMultipleAdapter$ViewHolderOne;->textView:Landroid/widget/TextView;
 
-    iget-object v7, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
+    iget-object v0, p0, Lcom/agc/asv/CameraMultipleAdapter;->mList:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object p1
 
-    check-cast v7, Lcom/agc/asv/CameraMultipleModel;
+    check-cast p1, Lcom/agc/asv/CameraMultipleModel;
 
-    iget v7, v7, Lcom/agc/asv/CameraMultipleModel;->index:I
+    iget p1, p1, Lcom/agc/asv/CameraMultipleModel;->index:I
 
-    iget v8, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
+    iget v0, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
 
-    if-ne v7, v8, :cond_3
+    if-ne p1, v0, :cond_9
 
     goto :goto_3
 
-    :cond_3
-    move v5, v6
+    :cond_9
+    move v1, v3
 
     :goto_3
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setSelected(Z)V
-
-    nop
+    invoke-virtual {p3, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
     :goto_4
     return-object p2
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-    .end packed-switch
-
-    :pswitch_data_2
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-    .end packed-switch
 .end method
 
 .method public getViewTypeCount()I
@@ -407,7 +382,7 @@
 .end method
 
 .method public setOnClickItem(I)Z
-    .locals 3
+    .locals 2
 
     sget v0, Lcom/Globals;->sHdr_process:I
 
@@ -415,11 +390,11 @@
 
     if-lez v0, :cond_0
 
-    const-string v0, "d"
+    const-string p1, "d"
 
-    const-string v2, "HDR Processing"
+    const-string v0, "HDR Processing"
 
-    invoke-static {v0, v2}, Lcom/agc/Toast;->show(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/agc/Toast;->show(Ljava/lang/String;Ljava/lang/String;)I
 
     return v1
 
@@ -430,11 +405,11 @@
 
     iput p1, p0, Lcom/agc/asv/CameraMultipleAdapter;->selectedIndex:I
 
-    invoke-virtual {p0}, Lcom/agc/asv/CameraMultipleAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    return v0
+    return p1
 
     :cond_1
     return v1

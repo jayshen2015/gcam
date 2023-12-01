@@ -1,6 +1,5 @@
 .class public final Lorg/lsposed/hiddenapibypass/Helper$MethodHandleImpl;
 .super Lorg/lsposed/hiddenapibypass/Helper$MethodHandle;
-.source "Helper.java"
 
 
 # annotations

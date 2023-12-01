@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/HorizontalListView;
 .super Landroid/widget/AdapterView;
-.source "HorizontalListView.java"
 
 
 # annotations
@@ -16,11 +15,11 @@
 # instance fields
 .field public canScroll:Z
 
-.field protected mAdapter:Landroid/widget/ListAdapter;
+.field public mAdapter:Landroid/widget/ListAdapter;
 
 .field public mAlwaysOverrideTouch:Z
 
-.field protected mCurrentX:I
+.field public mCurrentX:I
 
 .field private mDataChanged:Z
 
@@ -34,7 +33,7 @@
 
 .field private mMaxX:I
 
-.field protected mNextX:I
+.field public mNextX:I
 
 .field private mOnGesture:Landroid/view/GestureDetector$OnGestureListener;
 
@@ -56,65 +55,65 @@
 
 .field private mRightViewIndex:I
 
-.field protected mScroller:Landroid/widget/Scroller;
+.field public mScroller:Landroid/widget/Scroller;
 
-.field startX:F
+.field public startX:F
 
-.field startY:F
+.field public startY:F
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 2
+    .locals 0
 
     invoke-direct {p0, p1, p2}, Landroid/widget/AdapterView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    iput-boolean v0, p0, Lcom/agc/asv/HorizontalListView;->mAlwaysOverrideTouch:Z
+    iput-boolean p1, p0, Lcom/agc/asv/HorizontalListView;->mAlwaysOverrideTouch:Z
 
-    iput-boolean v0, p0, Lcom/agc/asv/HorizontalListView;->canScroll:Z
+    iput-boolean p1, p0, Lcom/agc/asv/HorizontalListView;->canScroll:Z
 
-    const/4 v0, -0x1
+    const/4 p1, -0x1
 
-    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
+    iput p1, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
+    iput p1, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
 
-    const v1, 0x7fffffff
+    const p2, 0x7fffffff
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
+    iput p2, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
 
-    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mDisplayOffset:I
+    iput p1, p0, Lcom/agc/asv/HorizontalListView;->mDisplayOffset:I
 
-    new-instance v1, Ljava/util/LinkedList;
+    new-instance p2, Ljava/util/LinkedList;
 
-    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {p2}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object v1, p0, Lcom/agc/asv/HorizontalListView;->mRemovedViewQueue:Ljava/util/Queue;
+    iput-object p2, p0, Lcom/agc/asv/HorizontalListView;->mRemovedViewQueue:Ljava/util/Queue;
 
-    iput-boolean v0, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
+    iput-boolean p1, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
 
-    new-instance v0, Lcom/agc/asv/HorizontalListView$1;
+    new-instance p1, Lcom/agc/asv/HorizontalListView$1;
 
-    invoke-direct {v0, p0}, Lcom/agc/asv/HorizontalListView$1;-><init>(Lcom/agc/asv/HorizontalListView;)V
+    invoke-direct {p1, p0}, Lcom/agc/asv/HorizontalListView$1;-><init>(Lcom/agc/asv/HorizontalListView;)V
 
-    iput-object v0, p0, Lcom/agc/asv/HorizontalListView;->mDataObserver:Landroid/database/DataSetObserver;
+    iput-object p1, p0, Lcom/agc/asv/HorizontalListView;->mDataObserver:Landroid/database/DataSetObserver;
 
-    new-instance v0, Lcom/agc/asv/HorizontalListView$3;
+    new-instance p1, Lcom/agc/asv/HorizontalListView$3;
 
-    invoke-direct {v0, p0}, Lcom/agc/asv/HorizontalListView$3;-><init>(Lcom/agc/asv/HorizontalListView;)V
+    invoke-direct {p1, p0}, Lcom/agc/asv/HorizontalListView$3;-><init>(Lcom/agc/asv/HorizontalListView;)V
 
-    iput-object v0, p0, Lcom/agc/asv/HorizontalListView;->mOnGesture:Landroid/view/GestureDetector$OnGestureListener;
+    iput-object p1, p0, Lcom/agc/asv/HorizontalListView;->mOnGesture:Landroid/view/GestureDetector$OnGestureListener;
 
     invoke-direct {p0}, Lcom/agc/asv/HorizontalListView;->initView()V
 
     return-void
 .end method
 
-.method static synthetic access$002(Lcom/agc/asv/HorizontalListView;Z)Z
+.method public static synthetic access$002(Lcom/agc/asv/HorizontalListView;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
@@ -122,7 +121,7 @@
     return p1
 .end method
 
-.method static synthetic access$100(Lcom/agc/asv/HorizontalListView;)V
+.method public static synthetic access$100(Lcom/agc/asv/HorizontalListView;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/agc/asv/HorizontalListView;->reset()V
@@ -130,40 +129,40 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/agc/asv/HorizontalListView;)Landroid/widget/AdapterView$OnItemClickListener;
-    .locals 1
+.method public static synthetic access$200(Lcom/agc/asv/HorizontalListView;)Landroid/widget/AdapterView$OnItemClickListener;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mOnItemClicked:Landroid/widget/AdapterView$OnItemClickListener;
+    iget-object p0, p0, Lcom/agc/asv/HorizontalListView;->mOnItemClicked:Landroid/widget/AdapterView$OnItemClickListener;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$300(Lcom/agc/asv/HorizontalListView;)I
-    .locals 1
+.method public static synthetic access$300(Lcom/agc/asv/HorizontalListView;)I
+    .locals 0
 
-    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
+    iget p0, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$400(Lcom/agc/asv/HorizontalListView;)Landroid/widget/AdapterView$OnItemSelectedListener;
-    .locals 1
+.method public static synthetic access$400(Lcom/agc/asv/HorizontalListView;)Landroid/widget/AdapterView$OnItemSelectedListener;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mOnItemSelected:Landroid/widget/AdapterView$OnItemSelectedListener;
+    iget-object p0, p0, Lcom/agc/asv/HorizontalListView;->mOnItemSelected:Landroid/widget/AdapterView$OnItemSelectedListener;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$500(Lcom/agc/asv/HorizontalListView;)Landroid/widget/AdapterView$OnItemLongClickListener;
-    .locals 1
+.method public static synthetic access$500(Lcom/agc/asv/HorizontalListView;)Landroid/widget/AdapterView$OnItemLongClickListener;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mOnItemLongClicked:Landroid/widget/AdapterView$OnItemLongClickListener;
+    iget-object p0, p0, Lcom/agc/asv/HorizontalListView;->mOnItemLongClicked:Landroid/widget/AdapterView$OnItemLongClickListener;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private addAndMeasureChild(Landroid/view/View;I)V
-    .locals 4
+    .locals 2
 
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -171,82 +170,81 @@
 
     if-nez v0, :cond_0
 
-    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
+    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
-    invoke-direct {v1, v2, v2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    move-object v0, v1
+    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     :cond_0
     const/4 v1, 0x1
 
-    invoke-virtual {p0, p1, p2, v0, v1}, Lcom/agc/asv/HorizontalListView;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
+    invoke-virtual {p0, p1, p2, v0, v1}, Landroid/widget/AdapterView;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getWidth()I
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getWidth()I
+
+    move-result p2
+
+    const/high16 v0, -0x80000000
+
+    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getHeight()I
 
     move-result v1
 
-    const/high16 v2, -0x80000000
+    invoke-static {v1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    move-result v0
 
-    move-result v1
-
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getHeight()I
-
-    move-result v3
-
-    invoke-static {v3, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v2
-
-    invoke-virtual {p1, v1, v2}, Landroid/view/View;->measure(II)V
+    invoke-virtual {p1, p2, v0}, Landroid/view/View;->measure(II)V
 
     return-void
 .end method
 
 .method private fillList(I)V
-    .locals 3
+    .locals 2
 
-    const/4 v0, 0x0
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getChildCount()I
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {v0}, Landroid/view/View;->getRight()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_0
+    move v0, v1
+
+    :goto_0
+    invoke-direct {p0, v0, p1}, Lcom/agc/asv/HorizontalListView;->fillListRight(II)V
+
+    invoke-virtual {p0, v1}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
     move-result v1
 
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
-
-    invoke-virtual {v1}, Landroid/view/View;->getRight()I
-
-    move-result v0
-
-    :cond_0
-    invoke-direct {p0, v0, p1}, Lcom/agc/asv/HorizontalListView;->fillListRight(II)V
-
-    const/4 v0, 0x0
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v2}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_1
-
-    invoke-virtual {v1}, Landroid/view/View;->getLeft()I
-
-    move-result v0
-
     :cond_1
-    invoke-direct {p0, v0, p1}, Lcom/agc/asv/HorizontalListView;->fillListLeft(II)V
+    invoke-direct {p0, v1, p1}, Lcom/agc/asv/HorizontalListView;->fillListLeft(II)V
 
     return-void
 .end method
@@ -297,9 +295,9 @@
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v2
+    move-result v0
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v1, v0
 
     iput v1, p0, Lcom/agc/asv/HorizontalListView;->mDisplayOffset:I
 
@@ -315,7 +313,7 @@
     :goto_0
     add-int v0, p1, p2
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getWidth()I
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getWidth()I
 
     move-result v1
 
@@ -353,49 +351,49 @@
 
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
+    move-result v0
+
+    add-int/2addr p1, v0
+
+    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
+
+    iget-object v1, p0, Lcom/agc/asv/HorizontalListView;->mAdapter:Landroid/widget/ListAdapter;
+
+    invoke-interface {v1}, Landroid/widget/ListAdapter;->getCount()I
+
     move-result v1
 
-    add-int/2addr p1, v1
+    add-int/lit8 v1, v1, -0x1
 
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
+    if-ne v0, v1, :cond_0
 
-    iget-object v2, p0, Lcom/agc/asv/HorizontalListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
 
-    invoke-interface {v2}, Landroid/widget/ListAdapter;->getCount()I
+    add-int/2addr v0, p1
 
-    move-result v2
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getWidth()I
 
-    add-int/lit8 v2, v2, -0x1
+    move-result v1
 
-    if-ne v1, v2, :cond_0
+    sub-int/2addr v0, v1
 
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
-
-    add-int/2addr v1, p1
-
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getWidth()I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
+    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
 
     :cond_0
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
+    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
 
-    if-gez v1, :cond_1
+    if-gez v0, :cond_1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
+    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
 
     :cond_1
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
+    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
+    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
 
     goto :goto_0
 
@@ -429,7 +427,7 @@
 
     new-instance v0, Landroid/widget/Scroller;
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -439,7 +437,7 @@
 
     new-instance v0, Landroid/view/GestureDetector;
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
@@ -464,9 +462,9 @@
 .end method
 
 .method private positionItems(I)V
-    .locals 7
+    .locals 6
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
 
     move-result v0
 
@@ -478,18 +476,18 @@
 
     iput v0, p0, Lcom/agc/asv/HorizontalListView;->mDisplayOffset:I
 
-    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mDisplayOffset:I
+    const/4 p1, 0x0
 
-    const/4 v1, 0x0
+    move v1, p1
 
     :goto_0
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getChildCount()I
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
 
     move-result v2
 
     if-ge v1, v2, :cond_0
 
-    invoke-virtual {p0, v1}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
@@ -497,23 +495,21 @@
 
     move-result v3
 
-    const/4 v4, 0x0
-
-    add-int v5, v0, v3
+    add-int v4, v0, v3
 
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v6
+    move-result v5
 
-    invoke-virtual {v2, v0, v4, v5, v6}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v2, v0, p1, v4, v5}, Landroid/view/View;->layout(IIII)V
 
     invoke-virtual {v2}, Landroid/view/View;->getPaddingRight()I
 
-    move-result v4
+    move-result v2
 
-    add-int/2addr v4, v3
+    add-int/2addr v3, v2
 
-    add-int/2addr v0, v4
+    add-int/2addr v0, v3
 
     add-int/lit8 v1, v1, 0x1
 
@@ -528,11 +524,11 @@
 
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
+    :goto_0
+    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    :goto_0
     if-eqz v1, :cond_0
 
     invoke-virtual {v1}, Landroid/view/View;->getRight()I
@@ -557,32 +553,28 @@
 
     invoke-interface {v2, v1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v1}, Lcom/agc/asv/HorizontalListView;->removeViewInLayout(Landroid/view/View;)V
+    invoke-virtual {p0, v1}, Landroid/widget/AdapterView;->removeViewInLayout(Landroid/view/View;)V
 
-    iget v2, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
+    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iput v2, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
-
-    invoke-virtual {p0, v0}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v1
+    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mLeftViewIndex:I
 
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getChildCount()I
+    :goto_1
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getChildCount()I
 
     move-result v0
 
     add-int/lit8 v0, v0, -0x1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    :goto_1
     if-eqz v0, :cond_1
 
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
@@ -591,7 +583,7 @@
 
     add-int/2addr v1, p1
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getWidth()I
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getWidth()I
 
     move-result v2
 
@@ -601,23 +593,13 @@
 
     invoke-interface {v1, v0}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/HorizontalListView;->removeViewInLayout(Landroid/view/View;)V
+    invoke-virtual {p0, v0}, Landroid/widget/AdapterView;->removeViewInLayout(Landroid/view/View;)V
 
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
+    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
 
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
-
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getChildCount()I
-
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-virtual {p0, v1}, Lcom/agc/asv/HorizontalListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
+    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mRightViewIndex:I
 
     goto :goto_1
 
@@ -633,9 +615,9 @@
     :try_start_0
     invoke-direct {p0}, Lcom/agc/asv/HorizontalListView;->initView()V
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->removeAllViewsInLayout()V
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->removeAllViewsInLayout()V
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->requestLayout()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
@@ -654,7 +636,7 @@
 
 # virtual methods
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 7
+    .locals 4
 
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -668,7 +650,7 @@
 
     or-int/2addr v0, v1
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
@@ -680,12 +662,15 @@
 
     move-result v1
 
-    packed-switch v1, :pswitch_data_0
+    if-eqz v1, :cond_2
 
-    :pswitch_0
+    const/4 v2, 0x2
+
+    if-eq v1, v2, :cond_0
+
     goto :goto_0
 
-    :pswitch_1
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -698,48 +683,48 @@
 
     float-to-int v2, v2
 
-    int-to-float v3, v1
+    int-to-float v1, v1
 
-    iget v4, p0, Lcom/agc/asv/HorizontalListView;->startX:F
+    iget v3, p0, Lcom/agc/asv/HorizontalListView;->startX:F
 
-    sub-float/2addr v3, v4
+    sub-float/2addr v1, v3
 
-    float-to-int v3, v3
+    float-to-int v1, v1
 
-    int-to-float v4, v2
+    int-to-float v2, v2
 
-    iget v5, p0, Lcom/agc/asv/HorizontalListView;->startY:F
+    iget v3, p0, Lcom/agc/asv/HorizontalListView;->startY:F
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v2, v3
 
-    float-to-int v4, v4
+    float-to-int v2, v2
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    move-result v5
+    move-result v1
 
-    add-int/lit8 v5, v5, 0x32
+    add-int/lit8 v1, v1, 0x32
 
-    invoke-static {v4}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
 
-    move-result v6
+    move-result v2
 
-    if-le v5, v6, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    invoke-interface {v5, v6}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+    if-le v1, v2, :cond_1
 
     goto :goto_0
 
-    :pswitch_2
+    :cond_1
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-interface {v1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    goto :goto_0
+
+    :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -760,23 +745,14 @@
 
     iput v1, p0, Lcom/agc/asv/HorizontalListView;->startY:F
 
-    nop
-
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v1
+    move-result p1
 
-    or-int/2addr v1, v0
+    or-int/2addr p1, v0
 
-    return v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return p1
 .end method
 
 .method public bridge synthetic getAdapter()Landroid/widget/Adapter;
@@ -805,19 +781,19 @@
     return-object v0
 .end method
 
-.method protected onDown(Landroid/view/MotionEvent;)Z
-    .locals 2
+.method public onDown(Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/widget/Scroller;->forceFinished(Z)V
+    invoke-virtual {p1, v0}, Landroid/widget/Scroller;->forceFinished(Z)V
 
-    return v1
+    return v0
 .end method
 
-.method protected onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+.method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .locals 9
 
     monitor-enter p0
@@ -829,9 +805,9 @@
 
     const/4 v2, 0x0
 
-    neg-float v3, p3
+    neg-float p1, p3
 
-    float-to-int v3, v3
+    float-to-int v3, p1
 
     const/4 v4, 0x0
 
@@ -849,36 +825,39 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->requestLayout()V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    return v0
+    return p1
 
     :catchall_0
-    move-exception v0
+    move-exception p1
 
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    throw v0
+    throw p1
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 8
+    .locals 5
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_2
 
-    :pswitch_0
+    const/4 v1, 0x2
+
+    if-eq v0, v1, :cond_0
+
     goto :goto_0
 
-    :pswitch_1
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -889,50 +868,50 @@
 
     iget v2, p0, Lcom/agc/asv/HorizontalListView;->startX:F
 
-    sub-float v2, v0, v2
+    sub-float/2addr v0, v2
 
-    iget v3, p0, Lcom/agc/asv/HorizontalListView;->startY:F
+    iget v2, p0, Lcom/agc/asv/HorizontalListView;->startY:F
 
-    sub-float v3, v1, v3
+    sub-float/2addr v1, v2
 
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    move-result v4
+    move-result v2
 
-    const/high16 v5, 0x41200000    # 10.0f
+    const/high16 v3, 0x41200000    # 10.0f
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v2, v3
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
-
-    move-result v6
-
-    cmpl-float v4, v4, v6
-
-    const/4 v6, 0x1
-
-    if-lez v4, :cond_0
-
-    return v6
-
-    :cond_0
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v4
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+    cmpl-float v2, v2, v4
 
-    move-result v7
+    const/4 v4, 0x1
 
-    sub-float/2addr v7, v5
+    if-lez v2, :cond_1
 
-    cmpg-float v4, v4, v7
+    return v4
 
-    if-gez v4, :cond_1
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    return v6
+    move-result v0
 
-    :pswitch_2
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
+
+    move-result v1
+
+    sub-float/2addr v1, v3
+
+    cmpg-float v0, v0, v1
+
+    if-gez v0, :cond_3
+
+    return v4
+
+    :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -945,39 +924,28 @@
 
     iput v0, p0, Lcom/agc/asv/HorizontalListView;->startY:F
 
-    nop
-
-    :cond_1
+    :cond_3
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/AdapterView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v0
+    move-result p1
 
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_0
-        :pswitch_1
-    .end packed-switch
+    return p1
 .end method
 
-.method protected declared-synchronized onLayout(ZIIII)V
-    .locals 3
+.method public declared-synchronized onLayout(ZIIII)V
+    .locals 0
 
     monitor-enter p0
 
     :try_start_0
     invoke-super/range {p0 .. p5}, Landroid/widget/AdapterView;->onLayout(ZIIII)V
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mAdapter:Landroid/widget/ListAdapter;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
     monitor-exit p0
 
@@ -985,95 +953,95 @@
 
     :cond_0
     :try_start_1
-    iget-boolean v0, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
+    iget-boolean p1, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
 
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
-    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
+    iget p1, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
 
     invoke-direct {p0}, Lcom/agc/asv/HorizontalListView;->initView()V
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->removeAllViewsInLayout()V
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->removeAllViewsInLayout()V
 
-    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iput p1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    iput-boolean v1, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
+    iput-boolean p2, p0, Lcom/agc/asv/HorizontalListView;->mDataChanged:Z
 
     :cond_1
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v0}, Landroid/widget/Scroller;->computeScrollOffset()Z
+    invoke-virtual {p1}, Landroid/widget/Scroller;->computeScrollOffset()Z
 
-    move-result v0
+    move-result p1
 
-    if-eqz v0, :cond_2
+    if-eqz p1, :cond_2
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v0}, Landroid/widget/Scroller;->getCurrX()I
+    invoke-virtual {p1}, Landroid/widget/Scroller;->getCurrX()I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iput p1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
     :cond_2
-    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iget p1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    const/4 v2, 0x1
+    const/4 p3, 0x1
 
-    if-gtz v0, :cond_3
+    if-gtz p1, :cond_3
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iput p2, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v0, v2}, Landroid/widget/Scroller;->forceFinished(Z)V
+    invoke-virtual {p1, p3}, Landroid/widget/Scroller;->forceFinished(Z)V
 
     :cond_3
-    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iget p1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
+    iget p2, p0, Lcom/agc/asv/HorizontalListView;->mMaxX:I
 
-    if-lt v0, v1, :cond_4
+    if-lt p1, p2, :cond_4
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iput p2, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    iget-object v0, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v0, v2}, Landroid/widget/Scroller;->forceFinished(Z)V
+    invoke-virtual {p1, p3}, Landroid/widget/Scroller;->forceFinished(Z)V
 
     :cond_4
-    iget v0, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
+    iget p1, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
 
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iget p2, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    sub-int/2addr v0, v1
+    sub-int/2addr p1, p2
 
-    invoke-direct {p0, v0}, Lcom/agc/asv/HorizontalListView;->removeNonVisibleItems(I)V
+    invoke-direct {p0, p1}, Lcom/agc/asv/HorizontalListView;->removeNonVisibleItems(I)V
 
-    invoke-direct {p0, v0}, Lcom/agc/asv/HorizontalListView;->fillList(I)V
+    invoke-direct {p0, p1}, Lcom/agc/asv/HorizontalListView;->fillList(I)V
 
-    invoke-direct {p0, v0}, Lcom/agc/asv/HorizontalListView;->positionItems(I)V
+    invoke-direct {p0, p1}, Lcom/agc/asv/HorizontalListView;->positionItems(I)V
 
-    iget v1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
+    iget p1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    iput v1, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
+    iput p1, p0, Lcom/agc/asv/HorizontalListView;->mCurrentX:I
 
-    iget-object v1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
+    iget-object p1, p0, Lcom/agc/asv/HorizontalListView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v1}, Landroid/widget/Scroller;->isFinished()Z
+    invoke-virtual {p1}, Landroid/widget/Scroller;->isFinished()Z
 
-    move-result v1
+    move-result p1
 
-    if-nez v1, :cond_5
+    if-nez p1, :cond_5
 
-    new-instance v1, Lcom/agc/asv/HorizontalListView$2;
+    new-instance p1, Lcom/agc/asv/HorizontalListView$2;
 
-    invoke-direct {v1, p0}, Lcom/agc/asv/HorizontalListView$2;-><init>(Lcom/agc/asv/HorizontalListView;)V
+    invoke-direct {p1, p0}, Lcom/agc/asv/HorizontalListView$2;-><init>(Lcom/agc/asv/HorizontalListView;)V
 
-    invoke-virtual {p0, v1}, Lcom/agc/asv/HorizontalListView;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p0, p1}, Landroid/widget/AdapterView;->post(Ljava/lang/Runnable;)Z
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -1091,7 +1059,7 @@
 .end method
 
 .method public declared-synchronized scrollTo(I)V
-    .locals 4
+    .locals 3
 
     monitor-enter p0
 
@@ -1100,13 +1068,13 @@
 
     iget v1, p0, Lcom/agc/asv/HorizontalListView;->mNextX:I
 
-    sub-int v2, p1, v1
+    sub-int/2addr p1, v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v3, v2, v3}, Landroid/widget/Scroller;->startScroll(IIII)V
+    invoke-virtual {v0, v1, v2, p1, v2}, Landroid/widget/Scroller;->startScroll(IIII)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/HorizontalListView;->requestLayout()V
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->requestLayout()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 

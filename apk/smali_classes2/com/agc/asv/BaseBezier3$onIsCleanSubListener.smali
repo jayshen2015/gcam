@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/BaseBezier3$onIsCleanSubListener;
 .super Ljava/lang/Object;
-.source "BaseBezier3.java"
 
 
 # annotations

@@ -1,12 +1,11 @@
 .class public Lcom/agc/asv/WBModel;
 .super Ljava/lang/Object;
-.source "WBModel.java"
 
 
 # instance fields
-.field isChecked:Z
+.field public isChecked:Z
 
-.field wbType:Lcom/agc/asv/WB$WBType;
+.field public wbType:Lcom/agc/asv/WB$WBType;
 
 
 # direct methods

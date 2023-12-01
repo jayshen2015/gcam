@@ -1,6 +1,5 @@
 .class public Lcom/agc/LogData;
 .super Ljava/lang/Object;
-.source "LogData.java"
 
 
 # annotations
@@ -15,34 +14,18 @@
 
 
 # static fields
-.field static BLANK_STRING:Ljava/lang/String;
+.field public static BLANK_STRING:Ljava/lang/String; = "--"
 
-.field static NO_VALUE_FLOAT:F
+.field public static NO_VALUE_FLOAT:F = 3.4028235E38f
 
-.field static NO_VALUE_INT:I
+.field public static NO_VALUE_INT:I = 0x7fffffff
 
-.field static NO_VALUE_STRING:Ljava/lang/String;
+.field public static NO_VALUE_STRING:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const v0, 0x7fffffff
-
-    sput v0, Lcom/agc/LogData;->NO_VALUE_INT:I
-
-    const v0, 0x7f7fffff    # Float.MAX_VALUE
-
-    sput v0, Lcom/agc/LogData;->NO_VALUE_FLOAT:F
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/agc/LogData;->NO_VALUE_STRING:Ljava/lang/String;
-
-    const-string v0, "--"
-
-    sput-object v0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
+.method public static constructor <clinit>()V
+    .locals 0
 
     return-void
 .end method
@@ -55,7 +38,7 @@
     return-void
 .end method
 
-.method static format(F)Ljava/lang/String;
+.method public static format(F)Ljava/lang/String;
     .locals 1
 
     sget v0, Lcom/agc/LogData;->NO_VALUE_FLOAT:F
@@ -64,53 +47,48 @@
 
     if-nez v0, :cond_0
 
-    sget-object v0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
+    sget-object p0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
 
     goto :goto_0
 
     :cond_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
     :goto_0
-    return-object v0
+    return-object p0
 .end method
 
-.method static format(I)Ljava/lang/String;
+.method public static format(I)Ljava/lang/String;
     .locals 1
 
     sget v0, Lcom/agc/LogData;->NO_VALUE_INT:I
 
     if-ne p0, v0, :cond_0
 
-    sget-object v0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
+    sget-object p0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
 
     goto :goto_0
 
     :cond_0
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
     :goto_0
-    return-object v0
+    return-object p0
 .end method
 
-.method static format(Ljava/lang/String;)Ljava/lang/String;
+.method public static format(Ljava/lang/String;)Ljava/lang/String;
     .locals 1
 
     sget-object v0, Lcom/agc/LogData;->NO_VALUE_STRING:Ljava/lang/String;
 
     if-ne p0, v0, :cond_0
 
-    sget-object v0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
-
-    goto :goto_0
+    sget-object p0, Lcom/agc/LogData;->BLANK_STRING:Ljava/lang/String;
 
     :cond_0
-    move-object v0, p0
-
-    :goto_0
-    return-object v0
+    return-object p0
 .end method

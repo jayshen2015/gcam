@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/colorbar/ColorMixLayout$3;
 .super Ljava/lang/Object;
-.source "ColorMixLayout.java"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+.field public final synthetic this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/colorbar/ColorMixLayout;)V
+.method public constructor <init>(Lcom/agc/widget/colorbar/ColorMixLayout;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
@@ -35,7 +34,19 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 3
+    .locals 2
+
+    iget-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+
+    invoke-static {p1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$200(Lcom/agc/widget/colorbar/ColorMixLayout;)Landroid/widget/CheckBox;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/CheckBox;->isChecked()Z
+
+    move-result p1
+
+    xor-int/lit8 p1, p1, 0x1
 
     iget-object v0, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
@@ -43,43 +54,31 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/widget/CheckBox;->isChecked()Z
+    invoke-virtual {v0, p1}, Landroid/widget/CheckBox;->setChecked(Z)V
 
-    move-result v0
+    iget-object v0, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
-    xor-int/lit8 v0, v0, 0x1
+    invoke-static {v0}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
 
-    iget-object v1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+    move-result-object v0
 
-    invoke-static {v1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$200(Lcom/agc/widget/colorbar/ColorMixLayout;)Landroid/widget/CheckBox;
+    if-eqz v0, :cond_0
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
-    invoke-virtual {v1, v0}, Landroid/widget/CheckBox;->setChecked(Z)V
+    invoke-static {v0}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
 
-    iget-object v1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
-
-    invoke-static {v1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_0
+    move-result-object v0
 
     iget-object v1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
-    invoke-static {v1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
+    invoke-static {v1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$100(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/ColorSliderBar;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/agc/widget/colorbar/ColorMixLayout$3;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+    iget v1, v1, Lcom/agc/widget/colorbar/ColorSliderBar;->colorIndex:I
 
-    invoke-static {v2}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$100(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/ColorSliderBar;
-
-    move-result-object v2
-
-    iget v2, v2, Lcom/agc/widget/colorbar/ColorSliderBar;->colorIndex:I
-
-    invoke-interface {v1, v0, v2}, Lcom/agc/widget/colorbar/OnColorPickerListener;->onColorOverride(ZI)V
+    invoke-interface {v0, p1, v1}, Lcom/agc/widget/colorbar/OnColorPickerListener;->onColorOverride(ZI)V
 
     :cond_0
     return-void

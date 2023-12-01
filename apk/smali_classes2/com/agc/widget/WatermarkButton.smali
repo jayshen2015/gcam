@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/WatermarkButton;
 .super Lcom/agc/widget/OptionButton;
-.source "WatermarkButton.java"
 
 
 # direct methods
@@ -51,7 +50,7 @@
 
     const/16 v0, 0xa
 
-    iput v0, p0, Lcom/agc/widget/WatermarkButton;->iconPadding:I
+    iput v0, p0, Lcom/agc/widget/OptionButton;->iconPadding:I
 
     new-instance v6, Ljava/util/ArrayList;
 
@@ -103,7 +102,7 @@
 
     invoke-direct {v6, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v6, p0, Lcom/agc/widget/WatermarkButton;->items:Ljava/util/List;
+    iput-object v6, p0, Lcom/agc/widget/OptionButton;->items:Ljava/util/List;
 
     const-string v1, "pref_photo_watermark_key"
 
@@ -111,16 +110,14 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/agc/widget/WatermarkButton;->selectedIndex:I
-
-    iget v1, p0, Lcom/agc/widget/WatermarkButton;->selectedIndex:I
+    iput v1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
     if-lez v1, :cond_0
 
     move v9, v0
 
     :cond_0
-    invoke-virtual {p0, v9}, Lcom/agc/widget/WatermarkButton;->setChecked(Z)V
+    invoke-virtual {p0, v9}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 
@@ -128,23 +125,23 @@
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 1
+    .locals 0
 
     invoke-super {p0, p1, p2}, Lcom/agc/widget/OptionButton;->onCheckedChanged(Landroid/widget/CompoundButton;Z)V
 
-    iget v0, p0, Lcom/agc/widget/WatermarkButton;->selectedIndex:I
+    iget p1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/agc/widget/WatermarkButton;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     return-void
 .end method

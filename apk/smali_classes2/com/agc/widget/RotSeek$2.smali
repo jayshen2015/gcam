@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/RotSeek$2;
 .super Ljava/lang/Object;
-.source "RotSeek.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/RotSeek;
+.field public final synthetic this$0:Lcom/agc/widget/RotSeek;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/RotSeek;)V
+.method public constructor <init>(Lcom/agc/widget/RotSeek;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
@@ -35,7 +34,7 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .locals 8
 
     iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
@@ -89,168 +88,153 @@
 
     if-ge v2, v3, :cond_0
 
-    goto/16 :goto_2
+    goto/16 :goto_3
 
     :cond_0
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v6}, Lcom/agc/widget/RotSeek;->access$500(Lcom/agc/widget/RotSeek;)I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v5}, Lcom/agc/widget/RotSeek;->access$600(Lcom/agc/widget/RotSeek;)I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Lcom/agc/widget/RotSeek;->log(Ljava/lang/String;)V
+    move-result-object v0
 
     iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$500(Lcom/agc/widget/RotSeek;)I
 
     move-result v3
 
-    if-gez v3, :cond_1
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$600(Lcom/agc/widget/RotSeek;)I
 
     move-result v3
 
-    add-int/2addr v3, v1
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    if-gez v3, :cond_1
+    move-result-object v0
 
-    iget-object v1, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/agc/widget/RotSeek;->access$408(Lcom/agc/widget/RotSeek;)I
+    move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-virtual {v2, v0}, Lcom/agc/widget/RotSeek;->log(Ljava/lang/String;)V
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
 
-    move-result v4
+    move-result v0
 
-    invoke-static {v3, v4}, Lcom/agc/widget/RotSeek;->access$320(Lcom/agc/widget/RotSeek;I)I
+    if-gez v0, :cond_1
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-virtual {v3}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+
+    move-result v0
+
+    add-int/2addr v0, v1
+
+    if-gez v0, :cond_1
+
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$408(Lcom/agc/widget/RotSeek;)I
+
+    :goto_0
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+
+    move-result v2
+
+    invoke-static {v0, v2}, Lcom/agc/widget/RotSeek;->access$320(Lcom/agc/widget/RotSeek;I)I
+
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-virtual {v0}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
+
+    goto :goto_2
+
+    :cond_1
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+
+    move-result v0
+
+    if-lez v0, :cond_3
+
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
+
+    move-result v0
+
+    sub-int/2addr v0, v1
+
+    if-gtz v0, :cond_2
 
     goto :goto_1
 
-    :cond_1
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    :cond_2
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
-
-    move-result v3
-
-    if-lez v3, :cond_3
-
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
-
-    move-result v3
-
-    sub-int/2addr v3, v1
-
-    if-gtz v3, :cond_2
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$410(Lcom/agc/widget/RotSeek;)I
 
     goto :goto_0
 
-    :cond_2
-    iget-object v1, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v1}, Lcom/agc/widget/RotSeek;->access$410(Lcom/agc/widget/RotSeek;)I
-
-    const/4 v1, 0x1
-
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$400(Lcom/agc/widget/RotSeek;)I
-
-    move-result v4
-
-    invoke-static {v3, v4}, Lcom/agc/widget/RotSeek;->access$320(Lcom/agc/widget/RotSeek;I)I
-
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-virtual {v3}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
-
-    goto :goto_1
-
     :cond_3
-    :goto_0
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-virtual {v3}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
-
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v3, v7}, Lcom/agc/widget/RotSeek;->access$402(Lcom/agc/widget/RotSeek;I)I
-
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
-
-    move-result v4
-
-    invoke-virtual {v3, v4, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
-
-    const/4 v1, 0x0
-
     :goto_1
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-virtual {v0}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
+
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v0, v7}, Lcom/agc/widget/RotSeek;->access$402(Lcom/agc/widget/RotSeek;I)I
+
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v0}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
+
+    move-result v2
+
+    invoke-virtual {v0, v2, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
+
+    move v1, v7
+
+    :goto_2
     if-eqz v1, :cond_9
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-virtual {v3}, Lcom/agc/widget/RotSeek;->handleAutoScroll()V
+    invoke-virtual {v0}, Lcom/agc/widget/RotSeek;->handleAutoScroll()V
 
-    goto/16 :goto_4
+    goto/16 :goto_6
 
     :cond_4
-    :goto_2
+    :goto_3
     iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
     invoke-static {v3, v7}, Lcom/agc/widget/RotSeek;->access$202(Lcom/agc/widget/RotSeek;Z)Z
@@ -267,19 +251,20 @@
 
     if-le v2, v3, :cond_5
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$700(Lcom/agc/widget/RotSeek;)[Ljava/lang/String;
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$700(Lcom/agc/widget/RotSeek;)[Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v3
 
-    array-length v7, v7
+    array-length v3, v3
 
-    sub-int/2addr v7, v1
+    sub-int/2addr v3, v1
 
-    invoke-virtual {v3, v7, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
+    :goto_4
+    invoke-virtual {v2, v3, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_5
     iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
@@ -290,123 +275,123 @@
 
     if-ge v2, v3, :cond_6
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-virtual {v3, v7, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
+    invoke-virtual {v2, v7, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_6
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-virtual {v3}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
+    invoke-virtual {v2}, Lcom/agc/widget/RotSeek;->checkifCurrentValueHasChanged()V
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
 
-    move-result v3
-
-    iget-object v8, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v8}, Lcom/agc/widget/RotSeek;->access$700(Lcom/agc/widget/RotSeek;)[Ljava/lang/String;
-
-    move-result-object v8
-
-    array-length v8, v8
-
-    sub-int/2addr v8, v1
-
-    if-le v3, v8, :cond_7
+    move-result v2
 
     iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
     invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$700(Lcom/agc/widget/RotSeek;)[Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    array-length v8, v8
+    array-length v3, v3
 
-    sub-int/2addr v8, v1
+    sub-int/2addr v3, v1
 
-    invoke-static {v3, v8}, Lcom/agc/widget/RotSeek;->access$002(Lcom/agc/widget/RotSeek;I)I
+    if-le v2, v3, :cond_7
+
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$700(Lcom/agc/widget/RotSeek;)[Ljava/lang/String;
+
+    move-result-object v3
+
+    array-length v3, v3
+
+    sub-int/2addr v3, v1
+
+    invoke-static {v2, v3}, Lcom/agc/widget/RotSeek;->access$002(Lcom/agc/widget/RotSeek;I)I
 
     :cond_7
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
+
+    move-result v2
+
+    if-gez v2, :cond_8
+
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v2, v7}, Lcom/agc/widget/RotSeek;->access$002(Lcom/agc/widget/RotSeek;I)I
+
+    :cond_8
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
 
     move-result v3
 
-    if-gez v3, :cond_8
+    goto :goto_4
 
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v3, v7}, Lcom/agc/widget/RotSeek;->access$002(Lcom/agc/widget/RotSeek;I)I
-
-    :cond_8
-    iget-object v3, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
-
-    invoke-static {v3}, Lcom/agc/widget/RotSeek;->access$000(Lcom/agc/widget/RotSeek;)I
-
-    move-result v7
-
-    invoke-virtual {v3, v7, v1}, Lcom/agc/widget/RotSeek;->setProgress(IZ)V
-
-    :goto_3
+    :goto_5
     iget-object v1, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    iget-object v5, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v5}, Lcom/agc/widget/RotSeek;->access$500(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$500(Lcom/agc/widget/RotSeek;)I
 
-    move-result v5
+    move-result v2
 
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    iget-object v4, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    iget-object v2, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-static {v4}, Lcom/agc/widget/RotSeek;->access$600(Lcom/agc/widget/RotSeek;)I
+    invoke-static {v2}, Lcom/agc/widget/RotSeek;->access$600(Lcom/agc/widget/RotSeek;)I
 
-    move-result v4
+    move-result v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v1, v3}, Lcom/agc/widget/RotSeek;->log(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lcom/agc/widget/RotSeek;->log(Ljava/lang/String;)V
 
     :cond_9
-    :goto_4
-    iget-object v1, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
+    :goto_6
+    iget-object v0, p0, Lcom/agc/widget/RotSeek$2;->this$0:Lcom/agc/widget/RotSeek;
 
-    invoke-virtual {v1}, Lcom/agc/widget/RotSeek;->redraw()V
+    invoke-virtual {v0}, Lcom/agc/widget/RotSeek;->redraw()V
 
     :cond_a
     return-void

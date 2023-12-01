@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/RulerView$OnValueChangeListener;
 .super Ljava/lang/Object;
-.source "RulerView.java"
 
 
 # annotations

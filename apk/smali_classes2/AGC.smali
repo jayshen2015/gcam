@@ -1,6 +1,5 @@
 .class public LAGC;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # static fields
@@ -259,7 +258,7 @@
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
@@ -278,7 +277,7 @@
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/google/android/apps/camera/optionsbar/view/LinearMinibarImpl;->findViewById(I)Landroid/view/View;
 
     move-result-object p0
 
@@ -637,6 +636,60 @@
     invoke-direct {p1, p0}, Lmsk;-><init>(Ljava/lang/Throwable;)V
 
     throw p1
+.end method
+
+.method public static getAstroEnabled(Libp;Z)Z
+    .locals 1
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return p1
+
+    :cond_0
+    iget-object p0, p0, Libp;->j:Ljnm;
+
+    sget-object p1, Ljni;->ax:Ljnv;
+
+    invoke-virtual {p0, p1}, Ljnm;->b(Ljng;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Integer;
+
+    const/4 p1, 0x2
+
+    invoke-static {p1}, Ljhp;->w(I)I
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+    move-result p0
+
+    const/4 p1, 0x0
+
+    if-eqz p0, :cond_1
+
+    invoke-static {}, Lagc/Agc;->getSMode()I
+
+    move-result p0
+
+    const/4 v0, 0x4
+
+    if-ne p0, v0, :cond_1
+
+    const/4 p1, 0x1
+
+    :cond_1
+    return p1
 .end method
 
 .method public static getBlackLevel(Lnah;Lndu;)[F
@@ -1108,47 +1161,66 @@
 .end method
 
 .method public static getFocusDistance(Ljmt;)F
-    .locals 1
+    .locals 3
 
-    sget-object v0, Ljmt;->c:Ljmt;
+    invoke-virtual {p0}, Ljmt;->ordinal()I
 
-    if-ne p0, v0, :cond_0
+    move-result v0
 
-    const p0, 0x4164a3d7    # 14.29f
+    const/4 v1, 0x0
 
-    const-string v0, "pref_manual_focus_near_key"
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_0
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_0
+    const v0, 0x3f553f7d    # 0.833f
 
     :goto_0
-    invoke-static {v0, p0}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
+    sget-object v2, Ljmt;->c:Ljmt;
+
+    if-ne p0, v2, :cond_1
+
+    const-string p0, "pref_manual_focus_near_key"
+
+    :goto_1
+    invoke-static {p0, v1}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
 
     move-result p0
 
-    goto :goto_1
-
-    :cond_0
-    sget-object v0, Ljmt;->d:Ljmt;
-
-    if-ne p0, v0, :cond_1
-
-    const p0, 0x3e570a3d    # 0.21f
-
-    const-string v0, "pref_manual_focus_far_key"
-
-    goto :goto_0
+    goto :goto_2
 
     :cond_1
-    const p0, 0x3df5c28f    # 0.12f
+    sget-object v2, Ljmt;->d:Ljmt;
 
-    const-string v0, "pref_manual_focus_infinity_key"
+    if-ne p0, v2, :cond_2
 
-    goto :goto_0
+    const-string p0, "pref_manual_focus_far_key"
 
-    :goto_1
-    sput p0, Lcom/agc/LogData$Device;->focusDistance:F
+    goto :goto_1
+
+    :cond_2
+    const-string p0, "pref_manual_focus_infinity_key"
+
+    goto :goto_1
+
+    :goto_2
+    cmpl-float v1, p0, v1
+
+    if-eqz v1, :cond_3
+
+    move v0, p0
+
+    :cond_3
+    sput v0, Lcom/agc/LogData$Device;->focusDistance:F
 
     invoke-static {}, Lcom/agc/LogData$Device;->log()V
 
-    return p0
+    return v0
 .end method
 
 .method public static getGcamSensorId(Lnah;Lndu;)Lqdj;
@@ -1200,94 +1272,15 @@
 .end method
 
 .method public static getLensInfoFocusDistance(Lnak;Landroid/util/Range;)Landroid/util/Range;
-    .locals 3
+    .locals 0
 
-    const-string v0, "pref_minimum_focus_distance_key"
-
-    const/4 v1, 0x0
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v2
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;F)F
-
-    move-result v0
-
-    cmpl-float v1, v0, v1
-
-    if-eqz v1, :cond_0
-
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    :goto_0
-    invoke-static {v2, p0}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
-
-    move-result-object p1
-
-    goto :goto_2
-
-    :cond_0
-    invoke-static {}, Lagc/Agc;->isXiaomi13Pro()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3
-
-    iget-object v0, p0, Lnak;->a:Ljava/lang/String;
-
-    const-string v1, "3"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const p0, 0x413a0be8
-
-    :goto_1
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object p0
-
-    goto :goto_0
-
-    :cond_1
-    iget-object v0, p0, Lnak;->a:Ljava/lang/String;
-
-    const-string v1, "2"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    const p0, 0x41eb4b4a
-
-    goto :goto_1
-
-    :cond_2
     iget-object p0, p0, Lnak;->a:Ljava/lang/String;
 
-    const-string v0, "7"
+    invoke-static {p0, p1}, Lcom/agc/LensSettings;->getLensInfoFocusDistance(Ljava/lang/String;Landroid/util/Range;)Landroid/util/Range;
 
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object p0
 
-    move-result p0
-
-    if-eqz p0, :cond_3
-
-    const p0, 0x4112c9fc
-
-    goto :goto_1
-
-    :cond_3
-    :goto_2
-    return-object p1
+    return-object p0
 .end method
 
 .method public static getLogicalMultiCameraActivePhysicalID(Lndu;)Ljava/lang/String;
@@ -1317,6 +1310,36 @@
     const/4 p0, 0x0
 
     :goto_0
+    return-object p0
+.end method
+
+.method public static getSensorInfoExposureTimeRange(Landroid/util/Range;)Landroid/util/Range;
+    .locals 2
+
+    invoke-virtual {p0}, Landroid/util/Range;->getLower()Ljava/lang/Comparable;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/Long;
+
+    invoke-virtual {p0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object p0
+
+    const-wide v0, 0x3b9aca000L
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Landroid/util/Range;->create(Ljava/lang/Comparable;Ljava/lang/Comparable;)Landroid/util/Range;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
@@ -1558,40 +1581,6 @@
 
     :goto_5
     invoke-static {p0, v0}, LAGC;->setShasta(Lcom/google/googlex/gcam/ShotParams;Z)V
-
-    return-void
-.end method
-
-.method public static metadataValue(Lndu;)V
-    .locals 2
-
-    sget-object v0, Landroid/hardware/camera2/CaptureResult;->LENS_FOCUS_DISTANCE:Landroid/hardware/camera2/CaptureResult$Key;
-
-    invoke-interface {p0, v0}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    check-cast p0, Ljava/lang/Float;
-
-    const/4 v0, 0x1
-
-    new-array v0, v0, [Ljava/lang/Object;
-
-    invoke-virtual {p0}, Ljava/lang/Float;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    const/4 v1, 0x0
-
-    aput-object p0, v0, v1
-
-    const-string p0, "Focus distance: %s"
-
-    invoke-static {p0, v0}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Lcom/agc/widget/InfoView;->show(Ljava/lang/String;)V
 
     return-void
 .end method

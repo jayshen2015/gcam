@@ -1,6 +1,5 @@
 .class public Lcom/Utils/IsoTime;
 .super Ljava/lang/Object;
-.source "IsoTime.java"
 
 
 # static fields
@@ -139,7 +138,7 @@
 .end method
 
 .method public static DenoisePlus()V
-    .locals 5
+    .locals 4
 
     const-string v0, "pref_erasedots_key"
 
@@ -149,50 +148,50 @@
 
     if-eqz v0, :cond_1
 
-    sget v1, Lcom/Utils/IsoTime;->sGetActual_analog_gain:F
+    sget v0, Lcom/Utils/IsoTime;->sGetActual_analog_gain:F
 
-    sget v2, Lcom/Utils/IsoTime;->sGetApplied_digital_gain:F
+    sget v1, Lcom/Utils/IsoTime;->sGetApplied_digital_gain:F
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v0, v1
 
-    sget v2, Lcom/Utils/IsoTime;->sGetPost_raw_digital_gain:F
+    sget v1, Lcom/Utils/IsoTime;->sGetPost_raw_digital_gain:F
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v0, v1
 
-    const/high16 v2, 0x40400000    # 3.0f
+    const/high16 v1, 0x40400000    # 3.0f
 
-    mul-float/2addr v1, v2
+    mul-float/2addr v0, v1
 
-    sget v3, Lcom/Utils/IsoTime;->sGetActual_exposure_time_ms:F
+    sget v2, Lcom/Utils/IsoTime;->sGetActual_exposure_time_ms:F
 
-    div-float/2addr v3, v2
+    div-float/2addr v2, v1
 
-    sput v3, Lcom/Utils/IsoTime;->sGetActual_exposure_time_ms:F
+    sput v2, Lcom/Utils/IsoTime;->sGetActual_exposure_time_ms:F
 
-    sget v2, Lcom/Utils/IsoTime;->shotMaxISO:F
+    sget v1, Lcom/Utils/IsoTime;->shotMaxISO:F
 
-    cmpg-float v3, v2, v1
+    cmpg-float v2, v1, v0
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    if-gez v3, :cond_0
+    if-gez v2, :cond_0
 
-    sput v2, Lcom/Utils/IsoTime;->sGetActual_analog_gain:F
+    sput v1, Lcom/Utils/IsoTime;->sGetActual_analog_gain:F
 
-    div-float v2, v1, v2
+    div-float/2addr v0, v1
 
-    sput v2, Lcom/Utils/IsoTime;->sGetApplied_digital_gain:F
+    sput v0, Lcom/Utils/IsoTime;->sGetApplied_digital_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetPost_raw_digital_gain:F
+    sput v3, Lcom/Utils/IsoTime;->sGetPost_raw_digital_gain:F
 
     return-void
 
     :cond_0
-    sput v1, Lcom/Utils/IsoTime;->sGetActual_analog_gain:F
+    sput v0, Lcom/Utils/IsoTime;->sGetActual_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetApplied_digital_gain:F
+    sput v3, Lcom/Utils/IsoTime;->sGetApplied_digital_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetPost_raw_digital_gain:F
+    sput v3, Lcom/Utils/IsoTime;->sGetPost_raw_digital_gain:F
 
     :cond_1
     return-void
@@ -323,11 +322,11 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "_ExpParamLogs.log"
+    const-string v1, "_ExpParamLogs.log"
 
-    invoke-static {v2, v1}, Lcom/agc/CrashHandler;->logWriteToFile(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/agc/CrashHandler;->logWriteToFile(Ljava/lang/String;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -559,7 +558,7 @@
 .end method
 
 .method public static getBitrate()I
-    .locals 2
+    .locals 1
 
     const-string v0, "pref_bitrate_key"
 
@@ -567,11 +566,11 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     packed-switch v0, :pswitch_data_0
 
-    return v1
+    const/4 v0, 0x0
+
+    return v0
 
     :pswitch_0
     const v0, 0x2faf0800
@@ -708,12 +707,10 @@
 
     return v0
 
-    :pswitch_1b
-    return v1
+    nop
 
     :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1b
+    .packed-switch 0x1
         :pswitch_1a
         :pswitch_19
         :pswitch_18
@@ -745,7 +742,7 @@
 .end method
 
 .method public static getLimitMaxTime()F
-    .locals 4
+    .locals 2
 
     const-string v0, "pref_exposure_max_key"
 
@@ -753,45 +750,41 @@
 
     move-result v0
 
-    const/4 v1, 0x0
-
     packed-switch v0, :pswitch_data_0
 
-    sget v2, Lcom/Utils/IsoTime;->shotMaxTime:F
+    sget v0, Lcom/Utils/IsoTime;->shotMaxTime:F
 
     goto :goto_0
 
     :pswitch_0
-    sget v2, Lcom/Utils/IsoTime;->shotMaxTime:F
+    sget v0, Lcom/Utils/IsoTime;->shotMaxTime:F
 
-    const v3, 0x3f19999a    # 0.6f
+    const v1, 0x3f19999a    # 0.6f
 
-    mul-float/2addr v2, v3
+    mul-float/2addr v0, v1
 
     goto :goto_0
 
     :pswitch_1
-    const v2, 0x453b8000    # 3000.0f
+    const v0, 0x453b8000    # 3000.0f
 
     goto :goto_0
 
     :pswitch_2
-    const/high16 v2, 0x447a0000    # 1000.0f
+    const/high16 v0, 0x447a0000    # 1000.0f
 
     goto :goto_0
 
     :pswitch_3
-    const/high16 v2, 0x43fa0000    # 500.0f
+    const/high16 v0, 0x43fa0000    # 500.0f
 
     goto :goto_0
 
     :pswitch_4
-    const/high16 v2, 0x43960000    # 300.0f
-
-    nop
+    const/high16 v0, 0x43960000    # 300.0f
 
     :goto_0
-    return v2
+    return v0
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -804,7 +797,7 @@
 .end method
 
 .method public static isoTimeAstroParametrs()V
-    .locals 7
+    .locals 5
 
     invoke-static {}, Lcom/Utils/IsoTime;->AstroTime()F
 
@@ -839,28 +832,28 @@
     return-void
 
     :cond_0
-    div-float v4, v1, v0
+    div-float/2addr v1, v0
 
-    sget v5, Lcom/Utils/IsoTime;->shotMaxISO:F
+    sget v3, Lcom/Utils/IsoTime;->shotMaxISO:F
 
-    sub-float v6, v4, v5
+    sub-float v4, v1, v3
 
-    float-to-int v6, v6
+    float-to-int v4, v4
 
-    if-lez v6, :cond_1
+    if-lez v4, :cond_1
 
-    div-float v2, v4, v5
+    div-float/2addr v1, v3
 
-    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
-    sput v5, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
     return-void
 
     :cond_1
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
     sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
@@ -870,7 +863,7 @@
 .end method
 
 .method public static isoTimeOneShotParametrs()V
-    .locals 7
+    .locals 5
 
     invoke-static {}, Lcom/Utils/IsoTime;->OneShotTime()F
 
@@ -905,28 +898,28 @@
     return-void
 
     :cond_0
-    div-float v4, v1, v0
+    div-float/2addr v1, v0
 
-    sget v5, Lcom/Utils/IsoTime;->shotMaxISO:F
+    sget v3, Lcom/Utils/IsoTime;->shotMaxISO:F
 
-    sub-float v6, v4, v5
+    sub-float v4, v1, v3
 
-    float-to-int v6, v6
+    float-to-int v4, v4
 
-    if-lez v6, :cond_1
+    if-lez v4, :cond_1
 
-    div-float v2, v4, v5
+    div-float/2addr v1, v3
 
-    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
-    sput v5, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
     return-void
 
     :cond_1
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
     sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
@@ -936,7 +929,7 @@
 .end method
 
 .method public static isoTimeParametrs(I)V
-    .locals 9
+    .locals 6
 
     if-nez p0, :cond_0
 
@@ -953,388 +946,382 @@
 
     mul-float/2addr v0, v1
 
-    const/4 v1, 0x0
+    const/high16 v1, 0x41200000    # 10.0f
 
-    const/4 v2, 0x0
-
-    const/high16 v3, 0x41200000    # 10.0f
-
-    const/high16 v4, 0x3f800000    # 1.0f
+    const/high16 v2, 0x3f800000    # 1.0f
 
     packed-switch p0, :pswitch_data_0
 
     return-void
 
     :pswitch_0
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_1
-    const/high16 v3, 0x40000000    # 2.0f
+    const/high16 p0, 0x40000000    # 2.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_2
-    const/high16 v3, 0x40a00000    # 5.0f
+    const/high16 p0, 0x40a00000    # 5.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_3
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_4
-    const/high16 v3, 0x41700000    # 15.0f
+    const/high16 p0, 0x41700000    # 15.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_5
-    const/high16 v3, 0x41a00000    # 20.0f
+    const/high16 p0, 0x41a00000    # 20.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_6
-    const/high16 v3, 0x41f00000    # 30.0f
+    const/high16 p0, 0x41f00000    # 30.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_7
-    const/high16 v3, 0x42480000    # 50.0f
+    const/high16 p0, 0x42480000    # 50.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_8
-    const/high16 v3, 0x42820000    # 65.0f
+    const/high16 p0, 0x42820000    # 65.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_9
-    const/high16 v3, 0x42a00000    # 80.0f
+    const/high16 p0, 0x42a00000    # 80.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_a
-    const/high16 v3, 0x42c80000    # 100.0f
+    const/high16 p0, 0x42c80000    # 100.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_b
-    const v3, 0x430edb64
+    const p0, 0x430edb64
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_c
-    const/high16 v3, 0x43480000    # 200.0f
+    const/high16 p0, 0x43480000    # 200.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_d
-    const v3, 0x43a6aaa0
+    const p0, 0x43a6aaa0
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_e
-    const/high16 v3, 0x43fa0000    # 500.0f
+    const/high16 p0, 0x43fa0000    # 500.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_f
-    const/high16 v3, 0x447a0000    # 1000.0f
+    const/high16 p0, 0x447a0000    # 1000.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_10
-    const/high16 v3, 0x44fa0000    # 2000.0f
+    const/high16 p0, 0x44fa0000    # 2000.0f
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_11
-    sget v3, Lcom/Utils/IsoTime;->shotMaxTime:F
+    sget p0, Lcom/Utils/IsoTime;->shotMaxTime:F
 
-    cmpl-float v5, v0, v3
+    cmpl-float v1, v0, p0
 
-    if-lez v5, :cond_2
+    if-lez v1, :cond_2
 
-    div-float v5, v0, v3
+    div-float/2addr v0, p0
 
-    sget v6, Lcom/Utils/IsoTime;->shotMaxISO:F
+    sget v1, Lcom/Utils/IsoTime;->shotMaxISO:F
 
-    cmpl-float v7, v5, v6
+    cmpl-float v3, v0, v1
 
-    if-lez v7, :cond_1
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    if-lez v3, :cond_1
 
-    sput v6, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    div-float v3, v5, v6
+    div-float/2addr v0, v1
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v0, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :cond_1
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput v0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v5, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
-
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :cond_2
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_12
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso100:F
+    sget p0, Lcom/Utils/IsoTime;->iso100:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_13
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso200:F
+    sget p0, Lcom/Utils/IsoTime;->iso200:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_14
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso300:F
+    sget p0, Lcom/Utils/IsoTime;->iso300:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_15
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso400:F
+    sget p0, Lcom/Utils/IsoTime;->iso400:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_16
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso500:F
+    sget p0, Lcom/Utils/IsoTime;->iso500:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_17
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso800:F
+    sget p0, Lcom/Utils/IsoTime;->iso800:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_18
     sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sget v3, Lcom/Utils/IsoTime;->iso1600:F
+    sget p0, Lcom/Utils/IsoTime;->iso1600:F
 
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    sput p0, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
     :pswitch_19
     invoke-static {}, Lcom/Utils/IsoTime;->getLimitMaxTime()F
 
-    move-result v5
+    move-result p0
 
-    const/high16 v6, 0x41200000    # 10.0f
+    cmpl-float v3, v0, v1
 
-    cmpl-float v7, v0, v3
+    if-lez v3, :cond_6
 
-    if-lez v7, :cond_5
+    div-float v3, v0, v1
 
-    div-float v1, v0, v3
+    sget v4, Lcom/Utils/IsoTime;->shotMaxISO:F
 
-    sget v3, Lcom/Utils/IsoTime;->shotMaxISO:F
+    cmpl-float v5, v3, v4
 
-    cmpl-float v7, v1, v3
+    if-lez v5, :cond_4
 
-    if-lez v7, :cond_3
+    div-float v1, v0, v4
 
-    sget v1, Lcom/Utils/IsoTime;->shotMaxISO:F
+    sub-float v3, v1, p0
 
-    div-float v6, v0, v1
+    const/4 v5, 0x0
 
-    sub-float v7, v6, v5
+    cmpl-float v3, v3, v5
 
-    const/4 v8, 0x0
+    if-lez v3, :cond_3
 
-    cmpl-float v7, v7, v8
+    div-float v3, v0, p0
 
-    if-lez v7, :cond_3
+    move v1, p0
 
-    move v6, v5
-
-    div-float v1, v0, v6
+    goto :goto_0
 
     :cond_3
-    sput v6, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
-
-    cmpl-float v7, v1, v3
-
-    if-lez v7, :cond_4
-
-    div-float v4, v1, v3
-
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
-
-    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
-
-    return-void
+    move v3, v4
 
     :cond_4
-    sput v1, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+    :goto_0
+    sput v1, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    cmpl-float p0, v3, v4
+
+    if-lez p0, :cond_5
+
+    div-float/2addr v3, v4
+
+    sput v3, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+
+    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
     return-void
 
     :cond_5
-    sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+    sput v3, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
 
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
-
-    sput v4, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
 
     return-void
 
-    nop
+    :cond_6
+    sput v0, Lcom/Utils/IsoTime;->sGetDesired_exposure_time_ms:F
+
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_analog_gain:F
+
+    sput v2, Lcom/Utils/IsoTime;->sGetDesired_digital_gain:F
+
+    return-void
 
     :pswitch_data_0
     .packed-switch 0x1

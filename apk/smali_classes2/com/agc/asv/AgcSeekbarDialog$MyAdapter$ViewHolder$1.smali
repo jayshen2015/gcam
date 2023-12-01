@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;
 .super Ljava/lang/Object;
-.source "AgcSeekbarDialog.java"
 
 # interfaces
 .implements Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+.field public final synthetic this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-.field final synthetic val$position:I
+.field public final synthetic val$position:I
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;I)V
+.method public constructor <init>(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;I)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,37 +43,93 @@
 
 # virtual methods
 .method public onProgressChanged(Lcom/agc/widget/CenterSeekBar;DZ)V
-    .locals 10
+    .locals 6
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    iget-object p2, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    iget-object v0, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
+    iget-object p2, p2, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->this$1:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;
 
-    invoke-static {v0}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->access$300(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->access$300(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;)Ljava/util/ArrayList;
 
-    move-result-object v0
+    move-result-object p2
 
-    iget v1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->val$position:I
+    iget p3, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->val$position:I
 
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p2
 
-    check-cast v0, Ljava/lang/String;
+    check-cast p2, Ljava/lang/String;
 
     invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getProgress()D
 
-    move-result-wide v1
+    move-result-wide p3
 
-    double-to-float v1, v1
+    double-to-float p3, p3
 
-    invoke-static {v0, v1}, Lagc/Agc;->patchValueCorrect(Ljava/lang/String;F)F
+    invoke-static {p2, p3}, Lagc/Agc;->patchValueCorrect(Ljava/lang/String;F)F
 
-    move-result v0
+    move-result p2
+
+    iget-object p3, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+
+    invoke-static {p3}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$400(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+
+    move-result-object p3
+
+    new-instance p4, Ljava/lang/StringBuilder;
+
+    invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p4, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p4
+
+    const-string v0, ""
+
+    invoke-virtual {p4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p4
+
+    invoke-virtual {p3, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object p3
+
+    iget p3, p3, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result p4
+
+    invoke-static {p4}, Ljava/lang/Math;->abs(I)I
+
+    move-result p4
+
+    sub-int/2addr p3, p4
+
+    iget-object p4, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+
+    invoke-static {p4}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Landroid/widget/TextView;->getTop()I
+
+    move-result p4
 
     iget-object v1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    invoke-static {v1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$400(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    invoke-static {v1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
     move-result-object v1
 
@@ -82,203 +137,115 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "newX--->"
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    const-string v0, "-->"
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+
+    move-result v1
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    move-result v1
+
+    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    const-string v1, "---->"
+
+    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    const-string v3, ""
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget v2, v2, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    int-to-double v0, p3
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getLeft()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    iget-object v2, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
-
-    invoke-static {v2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    invoke-virtual {v2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Landroid/widget/TextView;->getTop()I
-
-    move-result v2
-
-    iget-object v4, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
-
-    invoke-static {v4}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "newX--->"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v4, "-->"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getLeft()I
-
-    move-result v5
-
-    invoke-static {v5}, Ljava/lang/Math;->abs(I)I
-
-    move-result v5
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string v5, "---->"
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v6
-
-    iget v6, v6, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/graphics/Rect;->left:I
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    int-to-double v4, v1
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v6
-
-    iget v6, v6, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v7
-
-    iget v7, v7, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v6, v7
-
-    int-to-double v6, v6
-
-    const-wide/high16 v8, 0x3fe0000000000000L    # 0.5
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "newX"
-
-    invoke-static {v4, v3}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    iget v2, v2, Landroid/graphics/Rect;->right:I
 
     invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
@@ -288,153 +255,185 @@
 
     move-result-object v3
 
-    iget v3, v3, Landroid/graphics/Rect;->right:I
+    iget v3, v3, Landroid/graphics/Rect;->left:I
+
+    sub-int/2addr v2, v3
+
+    int-to-double v2, v2
+
+    const-wide/high16 v4, 0x3fe0000000000000L    # 0.5
+
+    mul-double/2addr v2, v4
+
+    sub-double/2addr v0, v2
+
+    invoke-virtual {p2, v0, v1}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v0, "newX"
+
+    invoke-static {v0, p2}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
     invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v4
+    move-result-object p2
 
-    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v4
+    move-result-object p2
 
-    iget v4, v4, Landroid/graphics/Rect;->left:I
+    iget p2, p2, Landroid/graphics/Rect;->right:I
 
-    sub-int/2addr v3, v4
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
-    int-to-double v3, v3
+    move-result-object p1
 
-    mul-double/2addr v3, v8
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    double-to-float v3, v3
+    move-result-object p1
 
-    int-to-float v4, v1
+    iget p1, p1, Landroid/graphics/Rect;->left:I
 
-    sub-float/2addr v4, v3
+    sub-int/2addr p2, p1
 
-    float-to-double v4, v4
+    int-to-double p1, p2
 
-    iget-object v6, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    mul-double/2addr p1, v4
 
-    invoke-static {v6}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    double-to-float p1, p1
 
-    move-result-object v6
+    int-to-float p2, p3
 
-    invoke-virtual {v6}, Landroid/widget/TextView;->getWidth()I
+    sub-float/2addr p2, p1
 
-    move-result v6
+    float-to-double p1, p2
 
-    int-to-double v6, v6
+    iget-object p3, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    mul-double/2addr v6, v8
+    invoke-static {p3}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    sub-double/2addr v4, v6
+    move-result-object p3
 
-    double-to-float v4, v4
+    invoke-virtual {p3}, Landroid/widget/TextView;->getWidth()I
 
-    iget-object v5, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    move-result p3
 
-    invoke-static {v5}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    int-to-double v0, p3
 
-    move-result-object v5
+    mul-double/2addr v0, v4
 
-    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setX(F)V
+    sub-double/2addr p1, v0
 
-    iget-object v5, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    double-to-float p1, p1
 
-    invoke-static {v5}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    iget-object p2, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    move-result-object v5
+    invoke-static {p2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    int-to-float v6, v2
+    move-result-object p2
 
-    invoke-virtual {v5, v6}, Landroid/widget/TextView;->setY(F)V
+    invoke-virtual {p2, p1}, Landroid/widget/TextView;->setX(F)V
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static {p1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    const-string v6, "x:"
+    move-result-object p1
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    int-to-float p2, p4
 
-    move-result-object v5
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setY(F)V
 
-    iget-object v6, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-static {v6}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v6
+    const-string p2, "x:"
 
-    invoke-virtual {v6}, Landroid/widget/TextView;->getX()F
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v6
+    move-result-object p1
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iget-object p2, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    move-result-object v5
+    invoke-static {p2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    const-string v6, "----y:"
+    move-result-object p2
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2}, Landroid/widget/TextView;->getX()F
 
-    move-result-object v5
+    move-result p2
 
-    iget-object v6, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    invoke-static {v6}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    move-result-object p1
 
-    move-result-object v6
+    const-string p2, "----y:"
 
-    invoke-virtual {v6}, Landroid/widget/TextView;->getY()F
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v6
+    move-result-object p1
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iget-object p2, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    move-result-object v5
+    invoke-static {p2}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p2
 
-    move-result-object v5
+    invoke-virtual {p2}, Landroid/widget/TextView;->getY()F
 
-    const-string v6, "tvThumb--x"
+    move-result p2
 
-    invoke-static {v6, v5}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "tvThumb--x"
+
+    invoke-static {p2, p1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
     return-void
 .end method
 
 .method public onStartTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    invoke-static {v0}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$400(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    invoke-static {p1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$400(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    invoke-static {v0}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$600(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    invoke-static {p1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$600(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
+    iget-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder$1;->this$2:Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;
 
-    invoke-static {v0}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
+    invoke-static {p1}, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;->access$500(Lcom/agc/asv/AgcSeekbarDialog$MyAdapter$ViewHolder;)Landroid/widget/TextView;
 
-    move-result-object v0
+    move-result-object p1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     return-void
 .end method
@@ -476,7 +475,7 @@
 
     iget-object v0, v0, Lcom/agc/asv/AgcSeekbarDialog$MyAdapter;->this$0:Lcom/agc/asv/AgcSeekbarDialog;
 
-    invoke-virtual {v0}, Lcom/agc/asv/AgcSeekbarDialog;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
@@ -510,19 +509,19 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    const-string v3, ""
+    const-string v2, ""
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p1
 
-    invoke-virtual {v0, v1, v2}, Lcom/agc/util/SpUtils;->save(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p1}, Lcom/agc/util/SpUtils;->save(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/CircleProgressView$OnProgressChangedListener;
 .super Ljava/lang/Object;
-.source "CircleProgressView.java"
 
 
 # annotations

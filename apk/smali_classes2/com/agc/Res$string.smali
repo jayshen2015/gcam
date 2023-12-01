@@ -1,6 +1,5 @@
 .class public Lcom/agc/Res$string;
 .super Ljava/lang/Object;
-.source "Res.java"
 
 
 # annotations
@@ -19,7 +18,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     const-string v0, "gcam_tools_title"

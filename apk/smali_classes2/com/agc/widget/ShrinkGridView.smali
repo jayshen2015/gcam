@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/ShrinkGridView;
 .super Landroid/widget/GridView;
-.source "ShrinkGridView.java"
 
 
 # direct methods
@@ -38,18 +37,18 @@
 
 
 # virtual methods
-.method protected onMeasure(II)V
-    .locals 2
+.method public onMeasure(II)V
+    .locals 1
 
-    const v0, 0x1fffffff
+    const p2, 0x1fffffff
 
-    const/high16 v1, -0x80000000
+    const/high16 v0, -0x80000000
 
-    invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v0
+    move-result p2
 
-    invoke-super {p0, p1, v0}, Landroid/widget/GridView;->onMeasure(II)V
+    invoke-super {p0, p1, p2}, Landroid/widget/GridView;->onMeasure(II)V
 
     return-void
 .end method

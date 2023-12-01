@@ -1,6 +1,5 @@
 .class Lcom/agc/pref/ConfigLoader$1;
 .super Ljava/lang/Object;
-.source "ConfigLoader.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -12,23 +11,23 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/pref/ConfigLoader;
+.field public final synthetic this$0:Lcom/agc/pref/ConfigLoader;
 
-.field final synthetic val$file:Ljava/io/File;
+.field public final synthetic val$file:Ljava/io/File;
 
-.field final synthetic val$list:Ljava/util/List;
+.field public final synthetic val$list:Ljava/util/List;
 
-.field final synthetic val$selectedIndex:[I
+.field public final synthetic val$selectedIndex:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/pref/ConfigLoader;[ILjava/util/List;Ljava/io/File;)V
+.method public constructor <init>(Lcom/agc/pref/ConfigLoader;[ILjava/util/List;Ljava/io/File;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -52,41 +51,41 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 5
+    .locals 3
 
-    iget-object v0, p0, Lcom/agc/pref/ConfigLoader$1;->val$selectedIndex:[I
+    iget-object p1, p0, Lcom/agc/pref/ConfigLoader$1;->val$selectedIndex:[I
 
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
-    aget v0, v0, v1
+    aget p1, p1, p2
 
-    if-ltz v0, :cond_0
+    if-ltz p1, :cond_0
 
-    iget-object v2, p0, Lcom/agc/pref/ConfigLoader$1;->val$list:Ljava/util/List;
+    iget-object v0, p0, Lcom/agc/pref/ConfigLoader$1;->val$list:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v2
+    move-result v0
 
-    if-ge v0, v2, :cond_0
+    if-ge p1, v0, :cond_0
 
-    iget-object v0, p0, Lcom/agc/pref/ConfigLoader$1;->this$0:Lcom/agc/pref/ConfigLoader;
+    iget-object p1, p0, Lcom/agc/pref/ConfigLoader$1;->this$0:Lcom/agc/pref/ConfigLoader;
 
-    iget-object v2, p0, Lcom/agc/pref/ConfigLoader$1;->val$file:Ljava/io/File;
+    iget-object v0, p0, Lcom/agc/pref/ConfigLoader$1;->val$file:Ljava/io/File;
 
-    iget-object v3, p0, Lcom/agc/pref/ConfigLoader$1;->val$list:Ljava/util/List;
+    iget-object v1, p0, Lcom/agc/pref/ConfigLoader$1;->val$list:Ljava/util/List;
 
-    iget-object v4, p0, Lcom/agc/pref/ConfigLoader$1;->val$selectedIndex:[I
+    iget-object v2, p0, Lcom/agc/pref/ConfigLoader$1;->val$selectedIndex:[I
 
-    aget v1, v4, v1
+    aget p2, v2, p2
 
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p2
 
-    check-cast v1, Ljava/lang/String;
+    check-cast p2, Ljava/lang/String;
 
-    invoke-static {v0, v2, v1}, Lcom/agc/pref/ConfigLoader;->access$000(Lcom/agc/pref/ConfigLoader;Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {p1, v0, p2}, Lcom/agc/pref/ConfigLoader;->access$000(Lcom/agc/pref/ConfigLoader;Ljava/io/File;Ljava/lang/String;)V
 
     :cond_0
     return-void

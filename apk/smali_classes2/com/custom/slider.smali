@@ -1,6 +1,5 @@
 .class public Lcom/custom/slider;
 .super Ljava/lang/Object;
-.source "slider.java"
 
 
 # static fields
@@ -67,88 +66,88 @@
 .end method
 
 .method private static getISO(I)F
-    .locals 1
+    .locals 0
 
     packed-switch p0, :pswitch_data_0
 
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    return v0
+    return p0
 
     :pswitch_0
-    const/high16 v0, 0x45480000    # 3200.0f
+    const/high16 p0, 0x45480000    # 3200.0f
 
-    return v0
+    return p0
 
     :pswitch_1
-    const/high16 v0, 0x44c80000    # 1600.0f
+    const/high16 p0, 0x44c80000    # 1600.0f
 
-    return v0
+    return p0
 
     :pswitch_2
-    const/high16 v0, 0x44480000    # 800.0f
+    const/high16 p0, 0x44480000    # 800.0f
 
-    return v0
+    return p0
 
     :pswitch_3
-    const/high16 v0, 0x44200000    # 640.0f
+    const/high16 p0, 0x44200000    # 640.0f
 
-    return v0
+    return p0
 
     :pswitch_4
-    const/high16 v0, 0x43fa0000    # 500.0f
+    const/high16 p0, 0x43fa0000    # 500.0f
 
-    return v0
+    return p0
 
     :pswitch_5
-    const/high16 v0, 0x43c80000    # 400.0f
+    const/high16 p0, 0x43c80000    # 400.0f
 
-    return v0
+    return p0
 
     :pswitch_6
-    const/high16 v0, 0x43a00000    # 320.0f
+    const/high16 p0, 0x43a00000    # 320.0f
 
-    return v0
+    return p0
 
     :pswitch_7
-    const/high16 v0, 0x437a0000    # 250.0f
+    const/high16 p0, 0x437a0000    # 250.0f
 
-    return v0
+    return p0
 
     :pswitch_8
-    const/high16 v0, 0x43480000    # 200.0f
+    const/high16 p0, 0x43480000    # 200.0f
 
-    return v0
+    return p0
 
     :pswitch_9
-    const/high16 v0, 0x43200000    # 160.0f
+    const/high16 p0, 0x43200000    # 160.0f
 
-    return v0
+    return p0
 
     :pswitch_a
-    const/high16 v0, 0x42fa0000    # 125.0f
+    const/high16 p0, 0x42fa0000    # 125.0f
 
-    return v0
+    return p0
 
     :pswitch_b
-    const/high16 v0, 0x42c80000    # 100.0f
+    const/high16 p0, 0x42c80000    # 100.0f
 
-    return v0
+    return p0
 
     :pswitch_c
-    const/high16 v0, 0x42a00000    # 80.0f
+    const/high16 p0, 0x42a00000    # 80.0f
 
-    return v0
+    return p0
 
     :pswitch_d
-    const/high16 v0, 0x42800000    # 64.0f
+    const/high16 p0, 0x42800000    # 64.0f
 
-    return v0
+    return p0
 
     :pswitch_e
-    const/high16 v0, 0x42480000    # 50.0f
+    const/high16 p0, 0x42480000    # 50.0f
 
-    return v0
+    return p0
 
     :pswitch_data_0
     .packed-switch 0x1
@@ -179,6 +178,7 @@
 
     const-wide/16 v0, 0x0
 
+    :goto_0
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
@@ -190,11 +190,7 @@
 
     move-result-wide v0
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    return-object v0
+    goto :goto_0
 .end method
 
 .method public static getManualIso()F
@@ -415,39 +411,38 @@
 .end method
 
 .method public static setFocusSeek(IF)V
-    .locals 2
+    .locals 1
 
     sput p0, Lcom/custom/slider;->focusMode:I
 
     if-nez p0, :cond_0
 
-    const-string v0, "pref_af_mode"
+    const-string p0, "pref_af_mode"
 
-    const-string v1, "0"
+    const-string p1, "0"
 
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
 
-    const v0, 0x38d1b717    # 1.0E-4f
+    const p0, 0x38d1b717    # 1.0E-4f
 
-    sput v0, Lcom/custom/slider;->focusDistance:F
+    :goto_0
+    sput p0, Lcom/custom/slider;->focusDistance:F
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     const/4 v0, 0x1
 
     if-ne p0, v0, :cond_1
 
-    const/4 v0, 0x0
-
-    sput v0, Lcom/custom/slider;->focusDistance:F
+    const/4 p0, 0x0
 
     goto :goto_0
 
     :cond_1
     sput p1, Lcom/custom/slider;->focusDistance:F
 
-    :goto_0
+    :goto_1
     return-void
 .end method
 
@@ -466,11 +461,12 @@
 
     if-nez v0, :cond_0
 
-    sget v1, Lcom/custom/slider;->sGainAE:F
+    sget v0, Lcom/custom/slider;->sGainAE:F
 
-    sput v1, Lcom/custom/slider;->sManualIsoGain:F
+    :goto_0
+    sput v0, Lcom/custom/slider;->sManualIsoGain:F
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
     const/4 v1, 0x1
@@ -481,16 +477,14 @@
 
     if-gt v0, v2, :cond_1
 
-    int-to-float v1, v0
+    int-to-float v0, v0
 
-    sput v1, Lcom/custom/slider;->sManualIsoGain:F
-
-    goto :goto_1
+    goto :goto_0
 
     :cond_1
     const/4 v2, 0x6
 
-    :goto_0
+    :goto_1
     const/16 v3, 0x9
 
     if-gt v2, v3, :cond_3
@@ -510,10 +504,10 @@
     :cond_2
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_3
-    :goto_1
+    :goto_2
     return-void
 .end method
 

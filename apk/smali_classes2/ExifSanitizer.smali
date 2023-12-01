@@ -1,6 +1,5 @@
 .class public LExifSanitizer;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/menu/Blur$Callback;
 .super Ljava/lang/Object;
-.source "Blur.java"
 
 
 # annotations

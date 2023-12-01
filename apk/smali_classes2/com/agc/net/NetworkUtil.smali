@@ -1,6 +1,5 @@
 .class public Lcom/agc/net/NetworkUtil;
 .super Ljava/lang/Object;
-.source "NetworkUtil.java"
 
 
 # static fields
@@ -8,12 +7,8 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    const-wide/16 v0, 0x0
-
-    sput-wide v0, Lcom/agc/net/NetworkUtil;->timeUpload:J
+.method public static constructor <clinit>()V
+    .locals 0
 
     return-void
 .end method
@@ -26,14 +21,14 @@
     return-void
 .end method
 
-.method static synthetic access$000(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
+.method public static synthetic access$000(Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
 
     invoke-static {p0}, Lcom/agc/net/NetworkUtil;->encode(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private static canUpload()Z
@@ -110,7 +105,7 @@
 .end method
 
 .method public static doGet(Ljava/lang/String;)Ljava/lang/String;
-    .locals 5
+    .locals 2
 
     :try_start_0
     new-instance v0, Ljava/net/URL;
@@ -119,58 +114,55 @@
 
     invoke-virtual {v0}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
-    move-result-object v1
+    move-result-object p0
 
-    check-cast v1, Ljava/net/HttpURLConnection;
+    check-cast p0, Ljava/net/HttpURLConnection;
 
-    const-string v2, "GET"
+    const-string v0, "GET"
 
-    invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
-    move-result v2
+    move-result v0
 
-    const/16 v3, 0xc8
+    const/16 v1, 0xc8
 
-    if-ne v2, v3, :cond_0
+    if-ne v0, v1, :cond_0
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
-    move-result-object v2
+    move-result-object p0
 
-    new-instance v3, Ljava/io/BufferedReader;
+    new-instance v0, Ljava/io/BufferedReader;
 
-    new-instance v4, Ljava/io/InputStreamReader;
+    new-instance v1, Ljava/io/InputStreamReader;
 
-    invoke-direct {v4, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v1, p0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {v3, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    invoke-direct {v0, v1}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v4
-
-    :cond_0
-    goto :goto_0
+    return-object p0
 
     :catch_0
-    move-exception v0
+    move-exception p0
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
-    :goto_0
-    const-string v0, "{ \"success\": false,\n   \"errorMsg\": \"\u540e\u53f0\u670d\u52a1\u5668\u5f00\u5c0f\u5dee\u4e86!\",\n     \"result\":{}}"
+    :cond_0
+    const-string p0, "{ \"success\": false,\n   \"errorMsg\": \"\u540e\u53f0\u670d\u52a1\u5668\u5f00\u5c0f\u5dee\u4e86!\",\n     \"result\":{}}"
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static doPost(Ljava/lang/String;Ljava/util/HashMap;)Ljava/lang/String;
-    .locals 5
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -190,100 +182,97 @@
 
     invoke-virtual {v0}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
-    move-result-object v1
+    move-result-object p0
 
-    check-cast v1, Ljava/net/HttpURLConnection;
+    check-cast p0, Ljava/net/HttpURLConnection;
 
-    const-string v2, "POST"
+    const-string v0, "POST"
 
-    invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->setRequestMethod(Ljava/lang/String;)V
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
+    invoke-virtual {p0, v0}, Ljava/net/HttpURLConnection;->setDoOutput(Z)V
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getOutputStream()Ljava/io/OutputStream;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-static {p1}, Lcom/agc/net/NetworkUtil;->getParams(Ljava/util/HashMap;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object p1
 
-    invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
-    move-result-object v3
+    move-result-object p1
 
-    invoke-virtual {v2, v3}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v0, p1}, Ljava/io/OutputStream;->write([B)V
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
-    move-result v2
+    move-result p1
 
-    const/16 v3, 0xc8
+    const/16 v0, 0xc8
 
-    if-ne v2, v3, :cond_0
+    if-ne p1, v0, :cond_0
 
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {p0}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
 
-    move-result-object v2
+    move-result-object p0
 
-    new-instance v3, Ljava/io/BufferedReader;
+    new-instance p1, Ljava/io/BufferedReader;
 
-    new-instance v4, Ljava/io/InputStreamReader;
+    new-instance v0, Ljava/io/InputStreamReader;
 
-    invoke-direct {v4, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    invoke-direct {v0, p0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
-    invoke-direct {v3, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    invoke-direct {p1, v0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
-    invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v4
-
-    :cond_0
-    goto :goto_0
+    return-object p0
 
     :catch_0
-    move-exception v0
+    move-exception p0
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Exception="
+    const-string v0, "Exception="
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p0
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    invoke-static {p0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
 
-    :goto_0
-    const-string v0, "{ \"success\": false,\n   \"errorMsg\": \"\u540e\u53f0\u670d\u52a1\u5668\u5f00\u5c0f\u5dee\u4e86!\",\n     \"result\":{}}"
+    :cond_0
+    const-string p0, "{ \"success\": false,\n   \"errorMsg\": \"\u540e\u53f0\u670d\u52a1\u5668\u5f00\u5c0f\u5dee\u4e86!\",\n     \"result\":{}}"
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private static encode(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+    .locals 1
 
     :try_start_0
     sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -294,28 +283,28 @@
 
     invoke-static {p0, v0}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_0
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    return-object p0
 
     :catch_0
-    move-exception v0
+    move-exception p0
 
-    new-instance v1, Ljava/lang/RuntimeException;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    invoke-virtual {v0}, Ljava/io/UnsupportedEncodingException;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {p0}, Ljava/io/UnsupportedEncodingException;->getCause()Ljava/lang/Throwable;
 
-    move-result-object v2
+    move-result-object p0
 
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v1
+    throw v0
 .end method
 
 .method private static getParams(Ljava/util/HashMap;)Ljava/lang/String;
-    .locals 5
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -333,56 +322,55 @@
 
     invoke-virtual {p0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {p0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object p0
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_0
+    if-eqz v1, :cond_0
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/Map$Entry;
+
+    :try_start_0
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v2, Ljava/lang/String;
 
-    :try_start_0
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Ljava/lang/String;
-
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-virtual {v0, v3, v4}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v2, v1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_0
 
     :catch_0
-    move-exception v3
+    move-exception v1
 
-    invoke-virtual {v3}, Lorg/json/JSONException;->printStackTrace()V
+    invoke-virtual {v1}, Lorg/json/JSONException;->printStackTrace()V
 
-    :goto_1
     goto :goto_0
 
     :cond_0
     invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method
 
 .method public static uploadLogs(Ljava/lang/String;)V

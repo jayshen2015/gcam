@@ -1,6 +1,5 @@
 .class Lcom/agc/pref/ConfigImport$1;
 .super Ljava/lang/Object;
-.source "ConfigImport.java"
 
 # interfaces
 .implements Landroid/content/DialogInterface$OnClickListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$activity:Landroid/app/Activity;
+.field public final synthetic val$activity:Landroid/app/Activity;
 
-.field final synthetic val$path:Ljava/lang/String;
+.field public final synthetic val$path:Ljava/lang/String;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Activity;Ljava/lang/String;)V
+.method public constructor <init>(Landroid/app/Activity;Ljava/lang/String;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,29 +43,29 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 0
 
     :try_start_0
-    iget-object v0, p0, Lcom/agc/pref/ConfigImport$1;->val$activity:Landroid/app/Activity;
+    iget-object p1, p0, Lcom/agc/pref/ConfigImport$1;->val$activity:Landroid/app/Activity;
 
-    iget-object v1, p0, Lcom/agc/pref/ConfigImport$1;->val$path:Ljava/lang/String;
+    iget-object p2, p0, Lcom/agc/pref/ConfigImport$1;->val$path:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/agc/pref/ConfigImport;->access$000(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lcom/agc/pref/ConfigImport;->access$000(Landroid/content/Context;Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/agc/pref/ConfigImport$1;->val$activity:Landroid/app/Activity;
+    iget-object p1, p0, Lcom/agc/pref/ConfigImport$1;->val$activity:Landroid/app/Activity;
 
-    iget-object v1, p0, Lcom/agc/pref/ConfigImport$1;->val$path:Ljava/lang/String;
+    iget-object p2, p0, Lcom/agc/pref/ConfigImport$1;->val$path:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/agc/pref/ConfigLoader;->importConfig(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p1, p2}, Lcom/agc/pref/ConfigLoader;->importConfig(Landroid/content/Context;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
     :catch_0
-    move-exception v0
+    move-exception p1
 
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {p1}, Ljava/io/IOException;->printStackTrace()V
 
     :goto_0
     return-void

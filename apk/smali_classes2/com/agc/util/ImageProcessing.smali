@@ -1,6 +1,5 @@
 .class public Lcom/agc/util/ImageProcessing;
 .super Ljava/lang/Object;
-.source "ImageProcessing.java"
 
 
 # instance fields
@@ -46,6 +45,10 @@
 
 .field private vignetteStart:F
 
+.field private wbTemperature:F
+
+.field private wbTint:F
+
 
 # direct methods
 .method public constructor <init>()V
@@ -78,6 +81,12 @@
     iput v0, p0, Lcom/agc/util/ImageProcessing;->contrast:F
 
     iput v0, p0, Lcom/agc/util/ImageProcessing;->gamma:F
+
+    const v2, 0x459c4000    # 5000.0f
+
+    iput v2, p0, Lcom/agc/util/ImageProcessing;->wbTemperature:F
+
+    iput v1, p0, Lcom/agc/util/ImageProcessing;->wbTint:F
 
     const/high16 v2, 0x42b40000    # 90.0f
 
@@ -121,17 +130,17 @@
 
     invoke-static {p1}, Lcom/agc/util/ImageUtil;->getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    move-result-object p1
 
     goto :goto_0
 
     :cond_0
     invoke-static {p1}, Lcom/agc/util/CubeUtil;->getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    move-result-object p1
 
     :goto_0
-    return-object v0
+    return-object p1
 .end method
 
 
@@ -141,48 +150,48 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x0
-
     :try_start_0
-    new-instance v2, Ljp/co/cyberagent/android/gpuimage/GPUImage;
+    new-instance v1, Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v2, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImage;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImage;-><init>(Landroid/content/Context;)V
 
-    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;
+    new-instance v2, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;
 
-    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;-><init>()V
+    invoke-direct {v2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;-><init>()V
 
-    iget-object v4, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
+    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
 
-    if-eqz v4, :cond_0
+    const/4 v4, 0x1
+
+    if-eqz v3, :cond_0
 
     const-string v5, ""
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v3
 
-    if-nez v4, :cond_0
+    if-nez v3, :cond_0
 
-    new-instance v4, Ljava/io/File;
+    new-instance v3, Ljava/io/File;
 
     iget-object v5, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
 
-    invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+    invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
-    move-result v4
+    move-result v3
 
-    if-eqz v4, :cond_0
+    if-eqz v3, :cond_0
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;-><init>()V
 
     iget-object v5, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
 
@@ -190,350 +199,407 @@
 
     move-result-object v5
 
-    invoke-virtual {v4, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
 
     iget v5, p0, Lcom/agc/util/ImageProcessing;->lutIntensity:F
 
-    invoke-virtual {v4, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setIntensity(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setIntensity(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
+
+    goto :goto_0
 
     :cond_0
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->brightness:F
+    const/4 v3, 0x0
 
-    const/4 v5, 0x0
+    :goto_0
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->brightness:F
 
-    cmpl-float v4, v4, v5
+    const/4 v6, 0x0
 
-    if-eqz v4, :cond_1
+    cmpl-float v5, v5, v6
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;
+    if-eqz v5, :cond_1
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;-><init>()V
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;
 
-    iget v6, p0, Lcom/agc/util/ImageProcessing;->brightness:F
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;-><init>()V
 
-    invoke-virtual {v4, v6}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;->setBrightness(F)V
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->brightness:F
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;->setBrightness(F)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;->destroy()V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    const/4 v0, 0x1
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageBrightnessFilter;->destroy()V
+
+    move v3, v4
 
     :cond_1
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->luminanceThreshold:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->luminanceThreshold:F
 
-    cmpl-float v4, v4, v5
+    cmpl-float v5, v5, v6
 
-    if-eqz v4, :cond_2
+    if-eqz v5, :cond_2
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;-><init>()V
 
-    iget v6, p0, Lcom/agc/util/ImageProcessing;->luminanceThreshold:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->luminanceThreshold:F
 
-    invoke-virtual {v4, v6}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;->setThreshold(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;->setThreshold(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLuminanceThresholdFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_2
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->exposure:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->exposure:F
 
-    cmpl-float v4, v4, v5
+    cmpl-float v5, v5, v6
 
-    if-eqz v4, :cond_3
+    if-eqz v5, :cond_3
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;-><init>()V
 
-    iget v6, p0, Lcom/agc/util/ImageProcessing;->exposure:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->exposure:F
 
-    invoke-virtual {v4, v6}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;->setExposure(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;->setExposure(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageExposureFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_3
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->contrast:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->contrast:F
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/high16 v7, 0x3f800000    # 1.0f
 
-    cmpl-float v4, v4, v6
+    cmpl-float v5, v5, v7
 
-    if-eqz v4, :cond_4
+    if-eqz v5, :cond_4
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;-><init>()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->contrast:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->contrast:F
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;->setContrast(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;->setContrast(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageContrastFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_4
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->gamma:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->gamma:F
 
-    cmpl-float v4, v4, v5
+    cmpl-float v5, v5, v6
 
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_5
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;-><init>()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->gamma:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->gamma:F
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;->setGamma(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;->setGamma(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageGammaFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_5
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->saturation:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->saturation:F
 
-    cmpl-float v4, v4, v6
+    cmpl-float v5, v5, v7
 
-    if-eqz v4, :cond_6
+    if-eqz v5, :cond_6
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;-><init>()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->saturation:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->saturation:F
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;->setSaturation(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;->setSaturation(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSaturationFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_6
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->hue:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->hue:F
 
-    const/high16 v7, 0x42b40000    # 90.0f
+    const/high16 v8, 0x42b40000    # 90.0f
 
-    cmpl-float v4, v4, v7
+    cmpl-float v5, v5, v8
 
-    if-eqz v4, :cond_7
+    if-eqz v5, :cond_7
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;-><init>()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->hue:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->hue:F
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;->setHue(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;->setHue(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHueFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_7
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->vibrance:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->vibrance:F
 
-    const v7, 0x3f99999a    # 1.2f
+    const v8, 0x3f99999a    # 1.2f
 
-    cmpl-float v4, v4, v7
+    cmpl-float v5, v5, v8
 
-    if-eqz v4, :cond_8
+    if-eqz v5, :cond_8
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;-><init>()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->vibrance:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->vibrance:F
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;->setVibrance(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;->setVibrance(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVibranceFilter;->destroy()V
 
-    const/4 v0, 0x1
+    move v3, v4
 
     :cond_8
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->rgbRed:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->wbTemperature:F
 
-    cmpl-float v4, v4, v5
+    const v8, 0x459c4000    # 5000.0f
 
-    if-nez v4, :cond_9
+    cmpl-float v5, v5, v8
 
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->rgbGreen:F
+    if-nez v5, :cond_9
 
-    cmpl-float v4, v4, v5
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->wbTint:F
 
-    if-nez v4, :cond_9
+    cmpl-float v5, v5, v6
 
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->rgbBlue:F
-
-    cmpl-float v4, v4, v5
-
-    if-eqz v4, :cond_d
+    if-eqz v5, :cond_c
 
     :cond_9
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageWhiteBalanceFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageWhiteBalanceFilter;-><init>()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->rgbRed:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->wbTemperature:F
 
-    cmpl-float v8, v7, v5
+    cmpl-float v8, v5, v8
 
     if-eqz v8, :cond_a
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->setRed(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageWhiteBalanceFilter;->setTemperature(F)V
 
     :cond_a
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->rgbGreen:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->wbTint:F
 
-    cmpl-float v8, v7, v5
+    cmpl-float v8, v5, v6
 
     if-eqz v8, :cond_b
 
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->setGreen(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageWhiteBalanceFilter;->setTint(F)V
 
     :cond_b
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->rgbBlue:F
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    cmpl-float v8, v7, v5
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageWhiteBalanceFilter;->destroy()V
 
-    if-eqz v8, :cond_c
-
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->setBlue(F)V
+    move v3, v4
 
     :cond_c
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->rgbRed:F
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->destroy()V
+    cmpl-float v5, v5, v6
 
-    const/4 v0, 0x1
+    if-nez v5, :cond_d
+
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->rgbGreen:F
+
+    cmpl-float v5, v5, v6
+
+    if-nez v5, :cond_d
+
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->rgbBlue:F
+
+    cmpl-float v5, v5, v6
+
+    if-eqz v5, :cond_11
 
     :cond_d
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;
 
-    cmpl-float v4, v4, v5
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;-><init>()V
 
-    if-eqz v4, :cond_e
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->rgbRed:F
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;
+    cmpl-float v8, v5, v6
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;-><init>()V
+    if-eqz v8, :cond_e
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
-
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;->setSharpness(F)V
-
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
-
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;->destroy()V
-
-    const/4 v0, 0x1
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->setRed(F)V
 
     :cond_e
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->unsharpIntensity:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->rgbGreen:F
 
-    cmpl-float v4, v4, v5
+    cmpl-float v8, v5, v6
 
-    if-eqz v4, :cond_f
+    if-eqz v8, :cond_f
 
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;
-
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;-><init>()V
-
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->unsharpIntensity:F
-
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;->setIntensity(F)V
-
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
-
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;->destroy()V
-
-    const/4 v0, 0x1
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->setGreen(F)V
 
     :cond_f
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->highlights:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->rgbBlue:F
 
-    cmpl-float v7, v4, v5
+    cmpl-float v8, v5, v6
 
-    if-nez v7, :cond_10
+    if-eqz v8, :cond_10
 
-    cmpl-float v4, v4, v6
-
-    if-eqz v4, :cond_13
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->setBlue(F)V
 
     :cond_10
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;-><init>()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageRGBFilter;->destroy()V
 
-    iget v7, p0, Lcom/agc/util/ImageProcessing;->highlights:F
-
-    cmpl-float v6, v7, v6
-
-    if-eqz v6, :cond_11
-
-    invoke-virtual {v4, v7}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;->setHighlights(F)V
+    move v3, v4
 
     :cond_11
-    iget v6, p0, Lcom/agc/util/ImageProcessing;->shadows:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
 
-    cmpl-float v7, v6, v5
+    cmpl-float v5, v5, v6
 
-    if-eqz v7, :cond_12
+    if-eqz v5, :cond_12
 
-    invoke-virtual {v4, v6}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;->setShadows(F)V
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;
+
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;-><init>()V
+
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
+
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;->setSharpness(F)V
+
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageSharpenFilter;->destroy()V
+
+    move v3, v4
 
     :cond_12
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->unsharpIntensity:F
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;->destroy()V
+    cmpl-float v5, v5, v6
 
-    const/4 v0, 0x1
+    if-eqz v5, :cond_13
+
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;
+
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;-><init>()V
+
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->unsharpIntensity:F
+
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;->setIntensity(F)V
+
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageUnsharpMaskFilter;->destroy()V
+
+    move v3, v4
 
     :cond_13
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->vignetteStart:F
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->highlights:F
 
-    cmpl-float v4, v4, v5
+    cmpl-float v8, v5, v6
 
-    if-nez v4, :cond_14
+    if-nez v8, :cond_14
 
-    iget v4, p0, Lcom/agc/util/ImageProcessing;->vignetteEnd:F
+    cmpl-float v5, v5, v7
 
-    cmpl-float v4, v4, v5
-
-    if-eqz v4, :cond_15
+    if-eqz v5, :cond_17
 
     :cond_14
-    new-instance v4, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;
 
-    invoke-direct {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;-><init>()V
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;-><init>()V
+
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->highlights:F
+
+    cmpl-float v7, v5, v7
+
+    if-eqz v7, :cond_15
+
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;->setHighlights(F)V
+
+    :cond_15
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->shadows:F
+
+    cmpl-float v7, v5, v6
+
+    if-eqz v7, :cond_16
+
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;->setShadows(F)V
+
+    :cond_16
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageHighlightShadowFilter;->destroy()V
+
+    move v3, v4
+
+    :cond_17
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->vignetteStart:F
+
+    cmpl-float v5, v5, v6
+
+    if-nez v5, :cond_19
+
+    iget v5, p0, Lcom/agc/util/ImageProcessing;->vignetteEnd:F
+
+    cmpl-float v5, v5, v6
+
+    if-eqz v5, :cond_18
+
+    goto :goto_1
+
+    :cond_18
+    move v4, v3
+
+    goto :goto_2
+
+    :cond_19
+    :goto_1
+    new-instance v3, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;
+
+    invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;-><init>()V
 
     new-instance v5, Landroid/graphics/PointF;
 
@@ -541,143 +607,139 @@
 
     invoke-direct {v5, v6, v6}, Landroid/graphics/PointF;-><init>(FF)V
 
-    invoke-virtual {v4, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->setVignetteCenter(Landroid/graphics/PointF;)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->setVignetteCenter(Landroid/graphics/PointF;)V
 
     iget v5, p0, Lcom/agc/util/ImageProcessing;->vignetteStart:F
 
-    invoke-virtual {v4, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->setVignetteStart(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->setVignetteStart(F)V
 
     iget v5, p0, Lcom/agc/util/ImageProcessing;->vignetteEnd:F
 
-    invoke-virtual {v4, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->setVignetteEnd(F)V
+    invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->setVignetteEnd(F)V
 
-    invoke-virtual {v3, v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->addFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    invoke-virtual {v4}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->destroy()V
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageVignetteFilter;->destroy()V
 
-    const/4 v0, 0x1
+    :goto_2
+    invoke-virtual {v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
-    :cond_15
-    invoke-virtual {v2, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->setFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
+    invoke-virtual {v2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->destroy()V
 
-    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->destroy()V
+    if-nez v4, :cond_1a
 
-    if-nez v0, :cond_16
+    return-object v0
 
-    return-object v1
+    :cond_1a
+    invoke-virtual {v1, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    :cond_16
-    invoke-virtual {v2, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    move-result-object p1
 
-    move-result-object v4
+    iget v1, p0, Lcom/agc/util/ImageProcessing;->quality:I
 
-    iget v5, p0, Lcom/agc/util/ImageProcessing;->quality:I
+    if-lez v1, :cond_1b
 
-    if-lez v5, :cond_17
+    const/16 v2, 0x64
 
-    const/16 v6, 0x64
+    if-ge v1, v2, :cond_1b
 
-    if-ge v5, v6, :cond_17
+    invoke-static {p1, v1}, Lcom/agc/util/ImageUtil;->compressImageByQuality(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
-    invoke-static {v4, v5}, Lcom/agc/util/ImageUtil;->compressImageByQuality(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
-
-    move-result-object v1
+    move-result-object p1
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v4, v1
-
-    :cond_17
-    return-object v4
+    :cond_1b
+    return-object p1
 
     :catch_0
-    move-exception v0
+    move-exception p1
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public saveImageByLUT(Z)Ljava/lang/String;
-    .locals 8
+    .locals 6
 
     iget-object v0, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
-    new-instance v1, Ljava/io/File;
+    new-instance v0, Ljava/io/File;
 
-    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v3
 
-    add-int/lit8 v4, v4, -0x4
+    add-int/lit8 v3, v3, -0x4
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    invoke-virtual {v3, v5, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v2, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, "_"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, "_"
+    const-string v5, "."
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v5}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
-    move-result-object v2
+    move-result v0
 
-    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v3, v4, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/io/File;->getName()Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    const-string v7, "."
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+    move-result-object v0
 
-    move-result v6
+    iget v1, p0, Lcom/agc/util/ImageProcessing;->lutIntensity:F
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ".jpg"
 
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
-
-    iget v3, p0, Lcom/agc/util/ImageProcessing;->lutIntensity:F
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ".jpg"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -694,40 +756,40 @@
 
     if-nez v1, :cond_1
 
-    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
 
-    return-object v2
+    return-object p1
 
     :cond_1
     const/16 v2, 0x64
 
     invoke-static {v1, v0, v2}, Lcom/agc/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
 
-    new-instance v2, Ljava/io/File;
+    new-instance v1, Ljava/io/File;
 
-    invoke-direct {v2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+    invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v2}, Ljava/io/File;->length()J
+    invoke-virtual {v1}, Ljava/io/File;->length()J
 
-    move-result-wide v3
+    move-result-wide v1
 
-    const-wide/16 v5, 0x3e8
+    const-wide/16 v3, 0x3e8
 
-    cmp-long v3, v3, v5
+    cmp-long v1, v1, v3
 
-    if-lez v3, :cond_2
+    if-lez v1, :cond_2
 
     if-eqz p1, :cond_2
 
-    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
 
-    invoke-static {v0, v3}, Lcom/agc/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, p1}, Lcom/agc/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
@@ -896,6 +958,22 @@
     .locals 0
 
     iput p1, p0, Lcom/agc/util/ImageProcessing;->vignetteStart:F
+
+    return-void
+.end method
+
+.method public setWbTemperature(F)V
+    .locals 0
+
+    iput p1, p0, Lcom/agc/util/ImageProcessing;->wbTemperature:F
+
+    return-void
+.end method
+
+.method public setWbTint(F)V
+    .locals 0
+
+    iput p1, p0, Lcom/agc/util/ImageProcessing;->wbTint:F
 
     return-void
 .end method

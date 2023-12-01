@@ -1,6 +1,5 @@
 .class public Lcom/agc/menu/Blur;
 .super Ljava/lang/Object;
-.source "Blur.java"
 
 
 # annotations
@@ -38,50 +37,50 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/agc/menu/Blur;)Landroid/content/Context;
-    .locals 1
+.method public static synthetic access$000(Lcom/agc/menu/Blur;)Landroid/content/Context;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/menu/Blur;->context:Landroid/content/Context;
+    iget-object p0, p0, Lcom/agc/menu/Blur;->context:Landroid/content/Context;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$100(Lcom/agc/menu/Blur;)Landroid/graphics/Bitmap;
-    .locals 1
+.method public static synthetic access$100(Lcom/agc/menu/Blur;)Landroid/graphics/Bitmap;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/menu/Blur;->inBitmap:Landroid/graphics/Bitmap;
+    iget-object p0, p0, Lcom/agc/menu/Blur;->inBitmap:Landroid/graphics/Bitmap;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$200(Lcom/agc/menu/Blur;)F
-    .locals 1
+.method public static synthetic access$200(Lcom/agc/menu/Blur;)F
+    .locals 0
 
-    iget v0, p0, Lcom/agc/menu/Blur;->radius:F
+    iget p0, p0, Lcom/agc/menu/Blur;->radius:F
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$300(Lcom/agc/menu/Blur;Landroid/content/Context;Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
-    .locals 1
+.method public static synthetic access$300(Lcom/agc/menu/Blur;Landroid/content/Context;Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
+    .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lcom/agc/menu/Blur;->getBlurBitmap(Landroid/content/Context;Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$400(Lcom/agc/menu/Blur;)Lcom/agc/menu/Blur$Callback;
-    .locals 1
+.method public static synthetic access$400(Lcom/agc/menu/Blur;)Lcom/agc/menu/Blur$Callback;
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/menu/Blur;->callback:Lcom/agc/menu/Blur$Callback;
+    iget-object p0, p0, Lcom/agc/menu/Blur;->callback:Lcom/agc/menu/Blur$Callback;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private getBlurBitmap(Landroid/content/Context;Landroid/graphics/Bitmap;F)Landroid/graphics/Bitmap;
-    .locals 8
+    .locals 3
 
     if-eqz p1, :cond_0
 
@@ -117,58 +116,58 @@
 
     invoke-static {p2, v0, v1, v2}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
-    move-result-object v2
+    move-result-object p2
 
-    invoke-static {v2}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    invoke-static {p2}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
-    move-result-object v3
+    move-result-object v0
 
     invoke-static {p1}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
 
-    move-result-object v4
+    move-result-object p1
 
-    invoke-static {v4}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
+    invoke-static {p1}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v4, v5}, Landroid/renderscript/ScriptIntrinsicBlur;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;
+    invoke-static {p1, v1}, Landroid/renderscript/ScriptIntrinsicBlur;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v4, v2}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+    invoke-static {p1, p2}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
 
-    move-result-object v6
+    move-result-object p2
 
-    invoke-static {v4, v3}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+    invoke-static {p1, v0}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v5, p3}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
+    invoke-virtual {v1, p3}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
 
-    invoke-virtual {v5, v6}, Landroid/renderscript/ScriptIntrinsicBlur;->setInput(Landroid/renderscript/Allocation;)V
+    invoke-virtual {v1, p2}, Landroid/renderscript/ScriptIntrinsicBlur;->setInput(Landroid/renderscript/Allocation;)V
 
-    invoke-virtual {v5, v7}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(Landroid/renderscript/Allocation;)V
+    invoke-virtual {v1, v2}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(Landroid/renderscript/Allocation;)V
 
-    invoke-virtual {v7, v3}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v2, v0}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
 
-    invoke-virtual {v6}, Landroid/renderscript/Allocation;->destroy()V
+    invoke-virtual {p2}, Landroid/renderscript/Allocation;->destroy()V
 
-    invoke-virtual {v7}, Landroid/renderscript/Allocation;->destroy()V
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->destroy()V
 
-    invoke-virtual {v5}, Landroid/renderscript/ScriptIntrinsicBlur;->destroy()V
+    invoke-virtual {v1}, Landroid/renderscript/ScriptIntrinsicBlur;->destroy()V
 
-    invoke-virtual {v4}, Landroid/renderscript/RenderScript;->destroy()V
+    invoke-virtual {p1}, Landroid/renderscript/RenderScript;->destroy()V
 
-    return-object v3
+    return-object v0
 
     :cond_0
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "have not called setParams() before call execute()"
+    const-string p2, "have not called setParams() before call execute()"
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p1
 .end method
 
 .method private initThread()V

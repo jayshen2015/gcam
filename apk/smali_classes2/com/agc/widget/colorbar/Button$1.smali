@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/colorbar/Button$1;
 .super Ljava/lang/Object;
-.source "Button.java"
 
 # interfaces
 .implements Lcom/agc/widget/colorbar/OnColorPickerListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/colorbar/Button;
+.field public final synthetic this$0:Lcom/agc/widget/colorbar/Button;
 
-.field final synthetic val$dialog:Landroid/app/Dialog;
+.field public final synthetic val$dialog:Landroid/app/Dialog;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/colorbar/Button;Landroid/app/Dialog;)V
+.method public constructor <init>(Lcom/agc/widget/colorbar/Button;Landroid/app/Dialog;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -100,37 +99,37 @@
 
     invoke-static {p1, p2, p3, p4}, Lcom/agc/ColorTransform;->setColorsValue(IFFF)V
 
-    iget-object v0, p0, Lcom/agc/widget/colorbar/Button$1;->val$dialog:Landroid/app/Dialog;
+    iget-object p1, p0, Lcom/agc/widget/colorbar/Button$1;->val$dialog:Landroid/app/Dialog;
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    invoke-virtual {p1}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 .end method
 
 .method public onColorOverride(ZI)V
-    .locals 2
+    .locals 1
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "onColorOverride: "
+    const-string v0, "onColorOverride: "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p2
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, "MainActivity"
+    const-string p2, "MainActivity"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->i(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p2, p1}, Lcom/agc/Log;->i(Ljava/lang/Object;Ljava/lang/Object;)I
 
     return-void
 .end method
@@ -230,11 +229,11 @@
 .end method
 
 .method public onColorSelceted(I)[F
-    .locals 1
+    .locals 0
 
     invoke-static {p1}, Lcom/agc/ColorTransform;->onColorSelceted(I)[F
 
-    move-result-object v0
+    move-result-object p1
 
-    return-object v0
+    return-object p1
 .end method

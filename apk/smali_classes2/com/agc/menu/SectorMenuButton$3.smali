@@ -1,6 +1,5 @@
 .class Lcom/agc/menu/SectorMenuButton$3;
 .super Lcom/agc/menu/SectorMenuButton$SimpleAnimatorListener;
-.source "SectorMenuButton.java"
 
 
 # annotations
@@ -9,24 +8,24 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/menu/SectorMenuButton;
+.field public final synthetic this$0:Lcom/agc/menu/SectorMenuButton;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/menu/SectorMenuButton;)V
-    .locals 1
+.method public constructor <init>(Lcom/agc/menu/SectorMenuButton;)V
+    .locals 0
 
     iput-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    invoke-direct {p0, v0}, Lcom/agc/menu/SectorMenuButton$SimpleAnimatorListener;-><init>(Lcom/agc/menu/SectorMenuButton$1;)V
+    invoke-direct {p0, p1}, Lcom/agc/menu/SectorMenuButton$SimpleAnimatorListener;-><init>(Lcom/agc/menu/SectorMenuButton$1;)V
 
     return-void
 .end method
@@ -36,70 +35,67 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1}, Lcom/agc/menu/SectorMenuButton;->access$402(Lcom/agc/menu/SectorMenuButton;Z)Z
+    invoke-static {p1, v0}, Lcom/agc/menu/SectorMenuButton;->access$402(Lcom/agc/menu/SectorMenuButton;Z)Z
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    invoke-static {v0, v1}, Lcom/agc/menu/SectorMenuButton;->access$602(Lcom/agc/menu/SectorMenuButton;Z)Z
+    invoke-static {p1, v0}, Lcom/agc/menu/SectorMenuButton;->access$602(Lcom/agc/menu/SectorMenuButton;Z)Z
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    invoke-static {v0}, Lcom/agc/menu/SectorMenuButton;->access$1000(Lcom/agc/menu/SectorMenuButton;)Landroid/animation/ValueAnimator;
+    invoke-static {p1}, Lcom/agc/menu/SectorMenuButton;->access$1000(Lcom/agc/menu/SectorMenuButton;)Landroid/animation/ValueAnimator;
 
-    move-result-object v0
+    move-result-object p1
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    invoke-static {v0}, Lcom/agc/menu/SectorMenuButton;->access$1100(Lcom/agc/menu/SectorMenuButton;)V
+    :goto_0
+    invoke-static {p1}, Lcom/agc/menu/SectorMenuButton;->access$1100(Lcom/agc/menu/SectorMenuButton;)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    iget v0, v0, Lcom/agc/menu/SectorMenuButton;->expandAnimDuration:I
+    iget v0, p1, Lcom/agc/menu/SectorMenuButton;->expandAnimDuration:I
 
-    iget-object v1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
-
-    iget v1, v1, Lcom/agc/menu/SectorMenuButton;->rotateAnimDuration:I
+    iget v1, p1, Lcom/agc/menu/SectorMenuButton;->rotateAnimDuration:I
 
     if-lt v0, v1, :cond_1
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
-
-    invoke-static {v0}, Lcom/agc/menu/SectorMenuButton;->access$1100(Lcom/agc/menu/SectorMenuButton;)V
+    goto :goto_0
 
     :cond_1
-    :goto_0
+    :goto_1
     return-void
 .end method
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-static {v0, v1}, Lcom/agc/menu/SectorMenuButton;->access$402(Lcom/agc/menu/SectorMenuButton;Z)Z
+    invoke-static {p1, v0}, Lcom/agc/menu/SectorMenuButton;->access$402(Lcom/agc/menu/SectorMenuButton;Z)Z
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    invoke-static {v0}, Lcom/agc/menu/SectorMenuButton;->access$700(Lcom/agc/menu/SectorMenuButton;)V
+    invoke-static {p1}, Lcom/agc/menu/SectorMenuButton;->access$700(Lcom/agc/menu/SectorMenuButton;)V
 
-    iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
+    iget-object p1, p0, Lcom/agc/menu/SectorMenuButton$3;->this$0:Lcom/agc/menu/SectorMenuButton;
 
-    invoke-static {v0}, Lcom/agc/menu/SectorMenuButton;->access$800(Lcom/agc/menu/SectorMenuButton;)Lcom/agc/menu/SectorMenuButton$MaskView;
+    invoke-static {p1}, Lcom/agc/menu/SectorMenuButton;->access$800(Lcom/agc/menu/SectorMenuButton;)Lcom/agc/menu/SectorMenuButton$MaskView;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/menu/SectorMenuButton$MaskView;->access$900(Lcom/agc/menu/SectorMenuButton$MaskView;)V
+    invoke-static {p1}, Lcom/agc/menu/SectorMenuButton$MaskView;->access$900(Lcom/agc/menu/SectorMenuButton$MaskView;)V
 
     return-void
 .end method

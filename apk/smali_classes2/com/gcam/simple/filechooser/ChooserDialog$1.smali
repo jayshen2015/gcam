@@ -1,6 +1,5 @@
 .class Lcom/gcam/simple/filechooser/ChooserDialog$1;
 .super Ljava/lang/Object;
-.source "ChooserDialog.java"
 
 # interfaces
 .implements Ljava/io/FileFilter;
@@ -12,13 +11,13 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,11 +28,11 @@
 
 # virtual methods
 .method public accept(Ljava/io/File;)Z
-    .locals 1
+    .locals 0
 
     invoke-static {p1}, Lcom/gcam/simple/filechooser/ChooserDialog;->access$000(Ljava/io/File;)Z
 
-    move-result v0
+    move-result p1
 
-    return v0
+    return p1
 .end method

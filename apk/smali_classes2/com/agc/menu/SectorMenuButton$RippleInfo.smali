@@ -1,6 +1,5 @@
 .class Lcom/agc/menu/SectorMenuButton$RippleInfo;
 .super Ljava/lang/Object;
-.source "SectorMenuButton.java"
 
 
 # annotations
@@ -9,21 +8,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "RippleInfo"
 .end annotation
 
 
 # instance fields
-.field buttonIndex:I
+.field public buttonIndex:I
 
-.field pressX:F
+.field public pressX:F
 
-.field pressY:F
+.field public pressY:F
 
-.field rippleColor:I
+.field public rippleColor:I
 
-.field rippleRadius:F
+.field public rippleRadius:F
 
 
 # direct methods
@@ -39,7 +38,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/agc/menu/SectorMenuButton$1;)V
+.method public synthetic constructor <init>(Lcom/agc/menu/SectorMenuButton$1;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/agc/menu/SectorMenuButton$RippleInfo;-><init>()V

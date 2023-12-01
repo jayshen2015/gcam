@@ -1,17 +1,16 @@
 .class public Lcom/gcam/simple/filechooser/internals/ExtFileFilter;
 .super Ljava/lang/Object;
-.source "ExtFileFilter.java"
 
 # interfaces
 .implements Ljava/io/FileFilter;
 
 
 # instance fields
-.field a:Z
+.field public a:Z
 
-.field b:Z
+.field public b:Z
 
-.field c:[Ljava/lang/String;
+.field public c:[Ljava/lang/String;
 
 
 # direct methods
@@ -54,7 +53,7 @@
 
 # virtual methods
 .method public accept(Ljava/io/File;)Z
-    .locals 7
+    .locals 6
 
     iget-boolean v0, p0, Lcom/gcam/simple/filechooser/internals/ExtFileFilter;->a:Z
 
@@ -104,33 +103,33 @@
     :cond_3
     invoke-static {p1}, Lcom/gcam/simple/filechooser/internals/FileUtil;->getExtension(Ljava/io/File;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget-object v3, p0, Lcom/gcam/simple/filechooser/internals/ExtFileFilter;->c:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/gcam/simple/filechooser/internals/ExtFileFilter;->c:[Ljava/lang/String;
 
-    array-length v4, v3
+    array-length v3, v0
 
-    const/4 v5, 0x0
+    move v4, v1
 
     :goto_0
-    if-ge v5, v4, :cond_5
+    if-ge v4, v3, :cond_5
 
-    aget-object v6, v3, v5
+    aget-object v5, v0, v4
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {p1, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_4
+    if-eqz v5, :cond_4
 
     return v2
 
     :cond_4
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 

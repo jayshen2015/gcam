@@ -1,6 +1,5 @@
 .class public Lcom/agc/android/Configuration;
 .super Ljava/lang/Object;
-.source "Configuration.java"
 
 
 # direct methods
@@ -21,12 +20,12 @@
 
     if-ge v0, v1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    return v0
+    return p0
 
     :cond_0
-    iget v0, p0, Landroid/content/res/Configuration;->fontWeightAdjustment:I
+    iget p0, p0, Landroid/content/res/Configuration;->fontWeightAdjustment:I
 
-    return v0
+    return p0
 .end method

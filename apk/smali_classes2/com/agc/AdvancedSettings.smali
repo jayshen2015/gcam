@@ -1,6 +1,5 @@
 .class public Lcom/agc/AdvancedSettings;
 .super Ljava/lang/Object;
-.source "AdvancedSettings.java"
 
 
 # direct methods
@@ -82,7 +81,7 @@
 .end method
 
 .method public static getAutoNs(Z)Z
-    .locals 2
+    .locals 3
 
     const-string v0, "pref_auto_ns_key"
 
@@ -92,6 +91,8 @@
 
     move-result v0
 
+    const/4 v2, 0x1
+
     if-ne v0, v1, :cond_0
 
     const/4 p0, 0x0
@@ -99,11 +100,9 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x1
+    if-ne v0, v2, :cond_1
 
-    if-ne v0, v1, :cond_1
-
-    const/4 p0, 0x1
+    move p0, v2
 
     :cond_1
     :goto_0
@@ -111,17 +110,32 @@
 .end method
 
 .method public static getCompressMergedDNG(Z)Z
-    .locals 0
+    .locals 3
 
+    const-string v0, "pref_disabled_compress_merged_dng_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move p0, v1
+
+    :cond_0
     return p0
 .end method
 
 .method public static getFixShastaZSL(Z)Z
-    .locals 1
+    .locals 0
 
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
-    return v0
+    return p0
 .end method
 
 .method public static getFocusLockTime(I)I
@@ -137,10 +151,13 @@
 
     if-nez v0, :cond_0
 
-    move v0, p0
+    goto :goto_0
 
     :cond_0
-    return v0
+    move p0, v0
+
+    :goto_0
+    return p0
 .end method
 
 .method public static getGeometricCalibrationQualityFix(I)I
@@ -156,7 +173,7 @@
 
     if-ne v0, v1, :cond_0
 
-    const/4 p0, 0x1
+    move p0, v1
 
     :cond_0
     return p0
@@ -194,56 +211,68 @@
 .end method
 
 .method public static getHexagonDSP(Z)Z
-    .locals 2
-
-    const/4 v0, 0x0
+    .locals 0
 
     invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    move v0, p0
-
-    :cond_0
     return p0
 .end method
 
 .method public static getJPGQuality(Ljava/lang/String;)I
-    .locals 4
+    .locals 3
 
     const-string v0, "pref_qjpg_key"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_0
+    if-nez v0, :cond_0
 
-    const/16 v1, 0x61
+    const/16 v0, 0x61
 
     :cond_0
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "JPGQuality "
+    const-string v2, "JPGQuality "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object p0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p0
 
-    invoke-static {v2, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
+    invoke-static {p0, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
 
+    return v0
+.end method
+
+.method public static getMaxBrigtness()Z
+    .locals 3
+
+    const-string v0, "pref_max_brigtness_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
     return v1
 .end method
 
@@ -277,13 +306,13 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;F)I
+    invoke-static {p0, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;F)I
 
     return v0
 .end method
@@ -314,6 +343,145 @@
     return-object v0
 .end method
 
+.method public static getPhotoSuffix(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    const-string v0, "pref_date_key"
+
+    const-string v1, ""
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    move-object p0, v0
+
+    :cond_0
+    const-string v0, "pref_suffix_key"
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v2, "\'"
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v1, "\'."
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    :goto_0
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    goto :goto_2
+
+    :cond_1
+    const-string v0, "lib_patch_profile_key"
+
+    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, "\'.KaNight\'"
+
+    :goto_1
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    :goto_2
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_3
+
+    :cond_2
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_3
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v0, "\'.KaDay\'"
+
+    goto :goto_1
+
+    :cond_3
+    if-eqz v0, :cond_4
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v1, "\'.Profile"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    goto :goto_0
+
+    :cond_4
+    :goto_3
+    return-object p0
+.end method
+
 .method public static getPhotosGallery()I
     .locals 1
 
@@ -335,30 +503,32 @@
 .method public static getShading()I
     .locals 3
 
-    const/4 v0, -0x1
+    const-string v0, "pref_photo_grayscale_key"
 
-    const-string v1, "pref_photo_grayscale_key"
+    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    move-result v0
 
-    move-result v1
+    const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-ne v1, v2, :cond_0
+    if-ne v0, v2, :cond_0
 
-    const/4 v0, 0x0
-
-    :cond_0
-    if-nez v0, :cond_1
+    move v0, v1
 
     goto :goto_0
 
-    :cond_1
-    const/4 v2, 0x0
+    :cond_0
+    const/4 v0, -0x1
 
     :goto_0
-    sput-boolean v2, Lcom/agc/LogData$Device;->leica:Z
+    if-nez v0, :cond_1
+
+    move v1, v2
+
+    :cond_1
+    sput-boolean v1, Lcom/agc/LogData$Device;->leica:Z
 
     invoke-static {}, Lcom/agc/LogData$Device;->log()V
 
@@ -386,11 +556,13 @@
 
     move-result v0
 
+    const/4 v1, 0x1
+
     if-nez v0, :cond_0
 
-    move v0, p0
+    move v1, p0
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
     const-string v0, "pref_track_focus_key"
@@ -398,8 +570,6 @@
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result v0
-
-    const/4 v1, 0x1
 
     if-ne v0, v1, :cond_1
 
@@ -409,30 +579,27 @@
     const/4 v1, 0x0
 
     :goto_0
-    move v0, v1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    :goto_1
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "Focus-Tracking in Photo/Portrait mode "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, p0}, Lcom/agc/Log;->w(Ljava/lang/Object;Z)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->w(Ljava/lang/Object;Z)I
 
-    return v0
+    return v1
 .end method
 
 .method public static getVibro()I
@@ -447,6 +614,27 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static getVideoBrightnessFix()Z
+    .locals 3
+
+    const-string v0, "pref_fix_video_brightness_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    return v1
 .end method
 
 .method public static getVideoPrefix()Ljava/lang/String;
@@ -533,16 +721,46 @@
     return v1
 .end method
 
-.method public static isShowAFData()I
-    .locals 1
+.method public static isShowAFData()Z
+    .locals 3
 
     const-string v0, "pref_show_af_data_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
     move-result v0
 
-    return v0
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    return v1
+.end method
+
+.method public static isShowDebugData()Z
+    .locals 3
+
+    const-string v0, "pref_show_debug_data_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-ne v0, v2, :cond_0
+
+    move v1, v2
+
+    :cond_0
+    return v1
 .end method
 
 .method public static updateColorsOnline()I

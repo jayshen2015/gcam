@@ -1,20 +1,19 @@
 .class Lcom/agc/asv/CameraMultipleModel;
 .super Ljava/lang/Object;
-.source "CameraMultipleAdapter.java"
 
 
 # instance fields
-.field camera:Lcom/agc/Camera;
+.field public camera:Lcom/agc/Camera;
 
-.field drawableRes:I
+.field public drawableRes:I
 
-.field id:Ljava/lang/String;
+.field public id:Ljava/lang/String;
 
-.field index:I
+.field public index:I
 
-.field text:Ljava/lang/String;
+.field public text:Ljava/lang/String;
 
-.field type:I
+.field public type:I
 
 
 # direct methods

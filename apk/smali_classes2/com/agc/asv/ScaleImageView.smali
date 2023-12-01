@@ -1,19 +1,14 @@
 .class public Lcom/agc/asv/ScaleImageView;
 .super Landroid/widget/ImageButton;
-.source "ScaleImageView.java"
 
 
 # static fields
-.field private static scaleValue:F
+.field private static scaleValue:F = 0.5f
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    const/high16 v0, 0x3f000000    # 0.5f
-
-    sput v0, Lcom/agc/asv/ScaleImageView;->scaleValue:F
+.method public static constructor <clinit>()V
+    .locals 0
 
     return-void
 .end method
@@ -58,7 +53,7 @@
     return-void
 .end method
 
-.method static synthetic access$000()F
+.method public static synthetic access$000()F
     .locals 1
 
     sget v0, Lcom/agc/asv/ScaleImageView;->scaleValue:F
@@ -67,19 +62,19 @@
 .end method
 
 .method private init(Landroid/content/Context;)V
-    .locals 1
+    .locals 0
 
-    new-instance v0, Lcom/agc/asv/ScaleImageView$1;
+    new-instance p1, Lcom/agc/asv/ScaleImageView$1;
 
-    invoke-direct {v0, p0}, Lcom/agc/asv/ScaleImageView$1;-><init>(Lcom/agc/asv/ScaleImageView;)V
+    invoke-direct {p1, p0}, Lcom/agc/asv/ScaleImageView$1;-><init>(Lcom/agc/asv/ScaleImageView;)V
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/ScaleImageView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {p0, p1}, Landroid/widget/ImageButton;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    new-instance v0, Lcom/agc/asv/ScaleImageView$2;
+    new-instance p1, Lcom/agc/asv/ScaleImageView$2;
 
-    invoke-direct {v0, p0}, Lcom/agc/asv/ScaleImageView$2;-><init>(Lcom/agc/asv/ScaleImageView;)V
+    invoke-direct {p1, p0}, Lcom/agc/asv/ScaleImageView$2;-><init>(Lcom/agc/asv/ScaleImageView;)V
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/ScaleImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p0, p1}, Landroid/widget/ImageButton;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     return-void
 .end method

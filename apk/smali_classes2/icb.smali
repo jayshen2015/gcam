@@ -1,6 +1,5 @@
 .class public final Licb;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 # interfaces
 .implements Lmpt;
@@ -94,7 +93,7 @@
 
     sget-object p5, Llai;->m:Llai;
 
-    invoke-virtual {p1, p5}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p5}, Llai;->equals(Ljava/lang/Object;)Z
 
     move-result p5
 
@@ -327,7 +326,7 @@
 
     sget-object v2, Llai;->b:Llai;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Llai;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -337,7 +336,7 @@
 
     sget-object v2, Llai;->n:Llai;
 
-    invoke-virtual {v0, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v2}, Llai;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -552,7 +551,7 @@
 
     sget-object v3, Llai;->n:Llai;
 
-    invoke-virtual {v1, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Llai;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 

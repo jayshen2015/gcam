@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/HDRProgress$1;
 .super Ljava/lang/Object;
-.source "HDRProgress.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$finalProgress:F
+.field public final synthetic val$finalProgress:F
 
 
 # direct methods
-.method constructor <init>(F)V
+.method public constructor <init>(F)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -64,7 +63,7 @@
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2}, Lcom/agc/widget/HDRProgress;->setProgress(FZ)V
+    invoke-virtual {v0, v1, v2}, Lcom/agc/asv/CircleProgressView;->setProgress(FZ)V
 
     :cond_0
     return-void

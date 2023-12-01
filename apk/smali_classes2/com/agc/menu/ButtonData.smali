@@ -1,6 +1,5 @@
 .class public Lcom/agc/menu/ButtonData;
 .super Ljava/lang/Object;
-.source "ButtonData.java"
 
 # interfaces
 .implements Ljava/lang/Cloneable;
@@ -79,7 +78,7 @@
 
 
 # virtual methods
-.method protected clone()Ljava/lang/Object;
+.method public clone()Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -177,17 +176,17 @@
 .end method
 
 .method public setBackgroundColorId(Landroid/content/Context;I)V
-    .locals 1
+    .locals 0
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/menu/ButtonData;->backgroundColor:I
+    iput p1, p0, Lcom/agc/menu/ButtonData;->backgroundColor:I
 
     return-void
 .end method
@@ -209,17 +208,17 @@
 .end method
 
 .method public setIconResId(Landroid/content/Context;I)V
-    .locals 1
+    .locals 0
 
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v0
+    move-result-object p1
 
-    iput-object v0, p0, Lcom/agc/menu/ButtonData;->icon:Landroid/graphics/drawable/Drawable;
+    iput-object p1, p0, Lcom/agc/menu/ButtonData;->icon:Landroid/graphics/drawable/Drawable;
 
     return-void
 .end method
@@ -249,20 +248,20 @@
 
     iput-object v0, p0, Lcom/agc/menu/ButtonData;->texts:[Ljava/lang/String;
 
-    const/4 v0, 0x0
+    array-length v0, p1
 
-    array-length v1, p1
+    const/4 v1, 0x0
 
     :goto_0
-    if-ge v0, v1, :cond_0
+    if-ge v1, v0, :cond_0
 
     iget-object v2, p0, Lcom/agc/menu/ButtonData;->texts:[Ljava/lang/String;
 
-    aget-object v3, p1, v0
+    aget-object v3, p1, v1
 
-    aput-object v3, v2, v0
+    aput-object v3, v2, v1
 
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 

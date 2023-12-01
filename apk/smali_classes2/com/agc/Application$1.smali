@@ -1,6 +1,5 @@
 .class Lcom/agc/Application$1;
 .super Ljava/lang/Object;
-.source "Application.java"
 
 # interfaces
 .implements Landroid/app/Application$ActivityLifecycleCallbacks;
@@ -12,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
@@ -22,7 +21,7 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 1
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -67,46 +66,46 @@
 .end method
 
 .method public onActivityStarted(Landroid/app/Activity;)V
-    .locals 2
+    .locals 1
 
-    iget v0, p0, Lcom/agc/Application$1;->activityNumber:I
+    iget p1, p0, Lcom/agc/Application$1;->activityNumber:I
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v0, p1, 0x1
 
-    iput v1, p0, Lcom/agc/Application$1;->activityNumber:I
+    iput v0, p0, Lcom/agc/Application$1;->activityNumber:I
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    sput-boolean v0, Lcom/agc/CrashHandler;->isForeground:Z
+    sput-boolean p1, Lcom/agc/CrashHandler;->isForeground:Z
 
-    const-string v0, "App returns to the foreground"
+    const-string p1, "App returns to the foreground"
 
-    invoke-static {v0}, Lcom/agc/Log;->i(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->i(Ljava/lang/Object;)I
 
     :cond_0
     return-void
 .end method
 
 .method public onActivityStopped(Landroid/app/Activity;)V
-    .locals 1
+    .locals 0
 
-    iget v0, p0, Lcom/agc/Application$1;->activityNumber:I
+    iget p1, p0, Lcom/agc/Application$1;->activityNumber:I
 
-    add-int/lit8 v0, v0, -0x1
+    add-int/lit8 p1, p1, -0x1
 
-    iput v0, p0, Lcom/agc/Application$1;->activityNumber:I
+    iput p1, p0, Lcom/agc/Application$1;->activityNumber:I
 
-    if-nez v0, :cond_0
+    if-nez p1, :cond_0
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    sput-boolean v0, Lcom/agc/CrashHandler;->isForeground:Z
+    sput-boolean p1, Lcom/agc/CrashHandler;->isForeground:Z
 
-    const-string v0, "App enter the background"
+    const-string p1, "App enter the background"
 
-    invoke-static {v0}, Lcom/agc/Log;->i(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->i(Ljava/lang/Object;)I
 
     :cond_0
     return-void

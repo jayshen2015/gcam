@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/FeatureButton;
 .super Lcom/agc/widget/OptionButton;
-.source "FeatureButton.java"
 
 
 # instance fields
@@ -11,35 +10,35 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .locals 3
+    .locals 1
 
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/agc/widget/OptionButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
-    const/4 v0, 0x0
+    const/4 p3, 0x0
 
-    iput v0, p0, Lcom/agc/widget/FeatureButton;->position:I
+    iput p3, p0, Lcom/agc/widget/FeatureButton;->position:I
 
-    const-string v1, ""
+    const-string p4, ""
 
-    iput-object v1, p0, Lcom/agc/widget/FeatureButton;->type:Ljava/lang/String;
+    iput-object p4, p0, Lcom/agc/widget/FeatureButton;->type:Ljava/lang/String;
 
-    const/4 v1, 0x0
+    const/4 p4, 0x0
 
-    const-string v2, "position"
+    const-string v0, "position"
 
-    invoke-interface {p2, v1, v2, v0}, Landroid/util/AttributeSet;->getAttributeIntValue(Ljava/lang/String;Ljava/lang/String;I)I
+    invoke-interface {p2, p4, v0, p3}, Landroid/util/AttributeSet;->getAttributeIntValue(Ljava/lang/String;Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p3
 
-    iput v0, p0, Lcom/agc/widget/FeatureButton;->position:I
+    iput p3, p0, Lcom/agc/widget/FeatureButton;->position:I
 
-    const-string v0, "type"
+    const-string p3, "type"
 
-    invoke-interface {p2, v1, v0}, Landroid/util/AttributeSet;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p2, p4, p3}, Landroid/util/AttributeSet;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p2
 
-    iput-object v0, p0, Lcom/agc/widget/FeatureButton;->type:Ljava/lang/String;
+    iput-object p2, p0, Lcom/agc/widget/FeatureButton;->type:Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/agc/widget/FeatureButton;->init(Landroid/content/Context;)V
 
@@ -63,7 +62,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v0, p0, Lcom/agc/widget/FeatureButton;->items:Ljava/util/List;
+    iput-object v0, p0, Lcom/agc/widget/OptionButton;->items:Ljava/util/List;
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 

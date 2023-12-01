@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/BaseBezier3;
 .super Landroid/view/View;
-.source "BaseBezier3.java"
 
 
 # annotations
@@ -48,15 +47,15 @@
 
 .field public onIsCleanSubListener:Lcom/agc/asv/BaseBezier3$onIsCleanSubListener;
 
-.field path:Landroid/graphics/Path;
+.field public path:Landroid/graphics/Path;
 
-.field r:Landroid/graphics/Region;
+.field public r:Landroid/graphics/Region;
 
 .field private startX:I
 
 .field private startY:I
 
-.field touchMap:Ljava/util/HashMap;
+.field public touchMap:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/HashMap<",
@@ -76,29 +75,29 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    iput-boolean v0, p0, Lcom/agc/asv/BaseBezier3;->isMoveLeft:Z
+    iput-boolean p1, p0, Lcom/agc/asv/BaseBezier3;->isMoveLeft:Z
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    iput-boolean v0, p0, Lcom/agc/asv/BaseBezier3;->isClean:Z
+    iput-boolean p1, p0, Lcom/agc/asv/BaseBezier3;->isClean:Z
 
-    new-instance v0, Landroid/graphics/Path;
+    new-instance p1, Landroid/graphics/Path;
 
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/agc/asv/BaseBezier3;->path:Landroid/graphics/Path;
+    iput-object p1, p0, Lcom/agc/asv/BaseBezier3;->path:Landroid/graphics/Path;
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance p1, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
+    iput-object p1, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
 
     return-void
 .end method
@@ -136,67 +135,67 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 2
+    .locals 0
 
-    const/4 v0, 0x0
+    const/4 p3, 0x0
 
-    invoke-direct {p0, p1, p2, v0}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/4 v1, 0x1
+    const/4 p1, 0x1
 
-    iput-boolean v1, p0, Lcom/agc/asv/BaseBezier3;->isMoveLeft:Z
+    iput-boolean p1, p0, Lcom/agc/asv/BaseBezier3;->isMoveLeft:Z
 
-    iput-boolean v0, p0, Lcom/agc/asv/BaseBezier3;->isClean:Z
+    iput-boolean p3, p0, Lcom/agc/asv/BaseBezier3;->isClean:Z
 
-    new-instance v0, Landroid/graphics/Path;
+    new-instance p1, Landroid/graphics/Path;
 
-    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
-    iput-object v0, p0, Lcom/agc/asv/BaseBezier3;->path:Landroid/graphics/Path;
+    iput-object p1, p0, Lcom/agc/asv/BaseBezier3;->path:Landroid/graphics/Path;
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance p1, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
+    iput-object p1, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
 
     return-void
 .end method
 
 .method private initAttr(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 3
+    .locals 1
 
     sget-object v0, Lcom/agc/R$styleable;->BaseBezier3:[I
 
     invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget v1, Lcom/agc/R$styleable;->BaseBezier3_custom_color3:I
+    sget p2, Lcom/agc/R$styleable;->BaseBezier3_custom_color3:I
 
-    iget v2, p0, Lcom/agc/asv/BaseBezier3;->mCustomColor:I
+    iget v0, p0, Lcom/agc/asv/BaseBezier3;->mCustomColor:I
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v1
+    move-result p2
 
-    iput v1, p0, Lcom/agc/asv/BaseBezier3;->mCustomColor:I
+    iput p2, p0, Lcom/agc/asv/BaseBezier3;->mCustomColor:I
 
-    sget v1, Lcom/agc/R$styleable;->BaseBezier3_custom_size3:I
+    sget p2, Lcom/agc/R$styleable;->BaseBezier3_custom_size3:I
 
-    iget v2, p0, Lcom/agc/asv/BaseBezier3;->mCustomSize:I
+    iget v0, p0, Lcom/agc/asv/BaseBezier3;->mCustomSize:I
 
-    int-to-float v2, v2
+    int-to-float v0, v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimension(IF)F
+    invoke-virtual {p1, p2, v0}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    move-result v1
+    move-result p2
 
-    float-to-int v1, v1
+    float-to-int p2, p2
 
-    iput v1, p0, Lcom/agc/asv/BaseBezier3;->mCustomSize:I
+    iput p2, p0, Lcom/agc/asv/BaseBezier3;->mCustomSize:I
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
@@ -288,7 +287,7 @@
 .end method
 
 .method private isPathPoint(II)Z
-    .locals 10
+    .locals 9
 
     new-instance v0, Landroid/graphics/PathMeasure;
 
@@ -312,40 +311,38 @@
 
     fill-array-data v3, :array_1
 
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "length"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "isPathPoint"
+
+    invoke-static {v6, v5}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+
     const/4 v5, 0x0
 
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "length"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string v7, "isPathPoint"
-
-    invoke-static {v7, v6}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    const/4 v6, 0x0
+    move v6, v5
 
     :goto_0
     int-to-float v7, v6
 
-    cmpg-float v7, v7, v1
+    cmpg-float v8, v7, v1
 
-    if-gez v7, :cond_2
-
-    int-to-float v7, v6
+    if-gez v8, :cond_2
 
     invoke-virtual {v0, v7, v4, v3}, Landroid/graphics/PathMeasure;->getPosTan(F[F[F)Z
 
@@ -359,29 +356,27 @@
 
     move-result-object v7
 
-    const/4 v8, 0x0
+    aget v8, v4, v5
 
-    aget v9, v4, v8
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    const-string v9, "pos[1]"
+    const-string v8, "pos[1]"
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    aget v9, v4, v2
-
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    const-string v9, "x"
+    aget v8, v4, v2
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object v7
+
+    const-string v8, "x"
+
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -389,9 +384,9 @@
 
     move-result-object v7
 
-    const-string v9, "y"
+    const-string v8, "y"
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -399,33 +394,33 @@
 
     move-result-object v7
 
-    const-string v9, "---->x == (int) pos[0] && y == (int) pos[1]"
+    const-string v8, "---->x == (int) pos[0] && y == (int) pos[1]"
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
-    aget v9, v4, v8
+    aget v8, v4, v5
 
-    float-to-int v9, v9
+    float-to-int v8, v8
 
-    if-ne p1, v9, :cond_0
+    if-ne p1, v8, :cond_0
 
-    aget v9, v4, v2
+    aget v8, v4, v2
 
-    float-to-int v9, v9
+    float-to-int v8, v8
 
-    if-ne p2, v9, :cond_0
+    if-ne p2, v8, :cond_0
 
-    move v9, v2
+    move v8, v2
 
     goto :goto_1
 
     :cond_0
-    move v9, v8
+    move v8, v5
 
     :goto_1
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -433,19 +428,17 @@
 
     move-result-object v7
 
-    const-string v9, "1111111111111"
+    const-string v8, "1111111111111"
 
-    invoke-static {v9, v7}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {v8, v7}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    aget v7, v4, v8
+    aget v7, v4, v5
 
-    float-to-int v7, v7
+    float-to-int v8, v7
 
-    add-int/lit8 v7, v7, 0xa
+    add-int/lit8 v8, v8, 0xa
 
-    if-ge p1, v7, :cond_1
-
-    aget v7, v4, v8
+    if-ge p1, v8, :cond_1
 
     float-to-int v7, v7
 
@@ -455,21 +448,17 @@
 
     aget v7, v4, v2
 
-    float-to-int v7, v7
+    float-to-int v8, v7
 
-    add-int/lit8 v7, v7, -0xa
+    add-int/lit8 v8, v8, -0xa
 
-    if-le p2, v7, :cond_1
-
-    aget v7, v4, v2
+    if-le p2, v8, :cond_1
 
     float-to-int v7, v7
 
     add-int/lit8 v7, v7, 0xa
 
     if-ge p2, v7, :cond_1
-
-    const/4 v5, 0x1
 
     goto :goto_2
 
@@ -479,8 +468,10 @@
     goto :goto_0
 
     :cond_2
+    move v2, v5
+
     :goto_2
-    return v5
+    return v2
 
     :array_0
     .array-data 4
@@ -523,7 +514,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/BaseBezier3;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method
@@ -554,7 +545,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    invoke-virtual {p0}, Lcom/agc/asv/BaseBezier3;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method
@@ -577,7 +568,7 @@
     return-void
 .end method
 
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method public onDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
     iget-object v0, p0, Lcom/agc/asv/BaseBezier3;->path:Landroid/graphics/Path;
@@ -689,21 +680,21 @@
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Ljava/lang/Integer;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v3
+    move-result v1
 
-    int-to-float v3, v3
+    int-to-float v1, v1
+
+    iget-object v3, p0, Lcom/agc/asv/BaseBezier3;->mCustomCirlePaint:Landroid/graphics/Paint;
 
     const/high16 v4, 0x40a00000    # 5.0f
 
-    iget-object v5, p0, Lcom/agc/asv/BaseBezier3;->mCustomCirlePaint:Landroid/graphics/Paint;
-
-    invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v2, v1, v4, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     goto :goto_0
 
@@ -711,88 +702,82 @@
     return-void
 .end method
 
-.method protected onMeasure(II)V
-    .locals 4
+.method public onMeasure(II)V
+    .locals 2
 
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/BaseBezier3;->weight:I
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->weight:I
 
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/BaseBezier3;->height:I
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->height:I
 
-    iget v1, p0, Lcom/agc/asv/BaseBezier3;->weight:I
+    iget p2, p0, Lcom/agc/asv/BaseBezier3;->weight:I
 
-    invoke-virtual {p0, v1, v0}, Lcom/agc/asv/BaseBezier3;->setMeasuredDimension(II)V
+    invoke-virtual {p0, p2, p1}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    iget v0, p0, Lcom/agc/asv/BaseBezier3;->weight:I
+    iget p1, p0, Lcom/agc/asv/BaseBezier3;->weight:I
 
-    div-int/lit8 v1, v0, 0x2
+    div-int/lit8 p1, p1, 0x2
 
-    add-int/lit16 v1, v1, -0x1f4
+    add-int/lit16 p2, p1, -0x1f4
 
-    iput v1, p0, Lcom/agc/asv/BaseBezier3;->startX:I
+    iput p2, p0, Lcom/agc/asv/BaseBezier3;->startX:I
 
-    iget v2, p0, Lcom/agc/asv/BaseBezier3;->height:I
+    iget v0, p0, Lcom/agc/asv/BaseBezier3;->height:I
 
-    const/16 v3, 0x32
+    const/16 v1, 0x32
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v0, v1
 
-    iput v2, p0, Lcom/agc/asv/BaseBezier3;->startY:I
+    iput v0, p0, Lcom/agc/asv/BaseBezier3;->startY:I
 
-    div-int/lit8 v0, v0, 0x2
+    add-int/lit16 p1, p1, 0x1f4
 
-    add-int/lit16 v0, v0, 0x1f4
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->endX:I
 
-    iput v0, p0, Lcom/agc/asv/BaseBezier3;->endX:I
+    iput v1, p0, Lcom/agc/asv/BaseBezier3;->endY:I
 
-    iput v3, p0, Lcom/agc/asv/BaseBezier3;->endY:I
+    add-int/lit16 p2, p2, 0xc8
 
-    add-int/lit16 v1, v1, 0xc8
+    iput p2, p0, Lcom/agc/asv/BaseBezier3;->eventLeftX:I
 
-    iput v1, p0, Lcom/agc/asv/BaseBezier3;->eventLeftX:I
+    add-int/lit16 v0, v0, 0xc8
 
-    add-int/lit16 v2, v2, 0xc8
+    iput v0, p0, Lcom/agc/asv/BaseBezier3;->eventLeftY:I
 
-    iput v2, p0, Lcom/agc/asv/BaseBezier3;->eventLeftY:I
+    add-int/lit16 p1, p1, -0xc8
 
-    add-int/lit16 v0, v0, -0xc8
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->eventRightX:I
 
-    iput v0, p0, Lcom/agc/asv/BaseBezier3;->eventRightX:I
+    const/16 p1, -0x32
 
-    const/16 v0, 0x64
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->initLeftY:I
 
-    rsub-int/lit8 v1, v0, 0x32
-
-    iput v1, p0, Lcom/agc/asv/BaseBezier3;->initLeftY:I
-
-    sub-int/2addr v3, v0
-
-    iput v3, p0, Lcom/agc/asv/BaseBezier3;->initRightY:I
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->initRightY:I
 
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 5
+    .locals 3
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
-    :pswitch_0
+    :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -801,56 +786,49 @@
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
+    move-result p1
+
+    float-to-int p1, p1
+
+    iget-object v1, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->size()I
+
     move-result v1
 
-    float-to-int v1, v1
+    const/16 v2, 0x10
 
-    iget-object v2, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
+    if-ge v1, v2, :cond_1
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->size()I
+    invoke-direct {p0, v0, p1}, Lcom/agc/asv/BaseBezier3;->isPathPoint(II)Z
 
-    move-result v2
+    move-result v1
 
-    const/16 v3, 0x10
+    if-eqz v1, :cond_1
 
-    if-ge v2, v3, :cond_0
+    const-string v1, "1111111111111"
 
-    invoke-direct {p0, v0, v1}, Lcom/agc/asv/BaseBezier3;->isPathPoint(II)Z
+    invoke-static {v1, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    const-string v2, "1111111111111"
-
-    invoke-static {v2, v2}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    iget-object v2, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/agc/asv/BaseBezier3;->touchMap:Ljava/util/HashMap;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v4
+    move-result-object p1
 
-    invoke-virtual {v2, v3, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-virtual {p0}, Lcom/agc/asv/BaseBezier3;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
-    :cond_0
+    :cond_1
     :goto_0
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    return v0
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p1
 .end method
 
 .method public setLeftY(D)V
@@ -862,11 +840,11 @@
 
     mul-double/2addr v0, p1
 
-    double-to-int v0, v0
+    double-to-int p1, v0
 
-    iput v0, p0, Lcom/agc/asv/BaseBezier3;->startY:I
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->startY:I
 
-    invoke-virtual {p0}, Lcom/agc/asv/BaseBezier3;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method
@@ -890,11 +868,11 @@
 
     mul-double/2addr v0, p1
 
-    double-to-int v0, v0
+    double-to-int p1, v0
 
-    iput v0, p0, Lcom/agc/asv/BaseBezier3;->endY:I
+    iput p1, p0, Lcom/agc/asv/BaseBezier3;->endY:I
 
-    invoke-virtual {p0}, Lcom/agc/asv/BaseBezier3;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method

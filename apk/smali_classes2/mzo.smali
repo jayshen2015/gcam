@@ -1,6 +1,5 @@
 .class public final Lmzo;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 # interfaces
 .implements Lndo;
@@ -173,7 +172,7 @@
     :catch_0
     move-exception p1
 
-    invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
+    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_0
     return-void

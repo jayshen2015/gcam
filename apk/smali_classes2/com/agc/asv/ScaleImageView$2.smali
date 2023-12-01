@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/ScaleImageView$2;
 .super Ljava/lang/Object;
-.source "ScaleImageView.java"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/ScaleImageView;
+.field public final synthetic this$0:Lcom/agc/asv/ScaleImageView;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/ScaleImageView;)V
+.method public constructor <init>(Lcom/agc/asv/ScaleImageView;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/ScaleImageView$2;->this$0:Lcom/agc/asv/ScaleImageView;
@@ -35,15 +34,15 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/ScaleImageView$2;->this$0:Lcom/agc/asv/ScaleImageView;
+    iget-object p1, p0, Lcom/agc/asv/ScaleImageView$2;->this$0:Lcom/agc/asv/ScaleImageView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/ScaleImageView;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/asv/AgcSeekbarDialog;->showDialog(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/agc/asv/AgcSeekbarDialog;->showDialog(Landroid/content/Context;)V
 
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class public final Lagc/StringArrays;
 .super Ljava/lang/Object;
-.source "StringArrays.java"
 
 # interfaces
 .implements Lgo/Seq$Proxy;
@@ -11,7 +10,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 0
 
     invoke-static {}, Lagc/Agc;->touch()V
@@ -35,7 +34,7 @@
     return-void
 .end method
 
-.method constructor <init>(I)V
+.method public constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +52,7 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .locals 7
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -66,61 +65,59 @@
     goto :goto_0
 
     :cond_0
-    move-object v1, p1
-
-    check-cast v1, Lagc/StringArrays;
+    check-cast p1, Lagc/StringArrays;
 
     invoke-virtual {p0}, Lagc/StringArrays;->getValues()Ljava/lang/String;
 
+    move-result-object v1
+
+    invoke-virtual {p1}, Lagc/StringArrays;->getValues()Ljava/lang/String;
+
     move-result-object v2
 
-    invoke-virtual {v1}, Lagc/StringArrays;->getValues()Ljava/lang/String;
+    if-nez v1, :cond_1
 
-    move-result-object v3
-
-    if-nez v2, :cond_1
-
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     return v0
 
     :cond_1
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_2
+    if-nez v1, :cond_2
 
     return v0
 
     :cond_2
     invoke-virtual {p0}, Lagc/StringArrays;->getDefValue()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v1}, Lagc/StringArrays;->getDefValue()Ljava/lang/String;
+    invoke-virtual {p1}, Lagc/StringArrays;->getDefValue()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object p1
 
-    if-nez v4, :cond_3
+    if-nez v1, :cond_3
 
-    if-eqz v5, :cond_4
+    if-eqz p1, :cond_4
 
     return v0
 
     :cond_3
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result p1
 
-    if-nez v6, :cond_4
+    if-nez p1, :cond_4
 
     return v0
 
     :cond_4
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
-    return v0
+    return p1
 
     :cond_5
     :goto_0
@@ -236,11 +233,11 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

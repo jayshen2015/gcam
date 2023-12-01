@@ -1,6 +1,5 @@
 .class public Lcom/samsung/galaxytrash/PdkUtil;
 .super Ljava/lang/Object;
-.source "PdkUtil.java"
 
 
 # static fields
@@ -14,8 +13,8 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public static constructor <clinit>()V
+    .locals 6
 
     new-instance v0, Ldalvik/system/PathClassLoader;
 
@@ -38,35 +37,35 @@
 
     invoke-static {v1, v2, v0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v3, "setSamsungParameter"
+    const-string v1, "setSamsungParameter"
 
-    const/4 v4, 0x2
+    const/4 v3, 0x2
 
-    new-array v4, v4, [Ljava/lang/Class;
+    new-array v3, v3, [Ljava/lang/Class;
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    const-class v6, Landroid/hardware/camera2/CameraDevice;
+    const-class v5, Landroid/hardware/camera2/CameraDevice;
 
-    aput-object v6, v4, v5
+    aput-object v5, v3, v4
 
-    const-class v5, Ljava/lang/String;
+    const-class v4, Ljava/lang/String;
 
-    aput-object v5, v4, v2
+    aput-object v4, v3, v2
 
-    invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v1, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/samsung/galaxytrash/PdkUtil;->mSetParameterMethods:Ljava/lang/reflect/Method;
+    sput-object v0, Lcom/samsung/galaxytrash/PdkUtil;->mSetParameterMethods:Ljava/lang/reflect/Method;
 
-    const-string v1, "PdkUtil-tdrk"
+    const-string v0, "PdkUtil-tdrk"
 
-    const-string v2, "Custom interface setSamsungParameter Impl. from preloaded jar."
+    const-string v1, "Custom interface setSamsungParameter Impl. from preloaded jar."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
@@ -74,17 +73,17 @@
     goto :goto_1
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
     goto :goto_0
 
     :catch_1
-    move-exception v1
+    move-exception v0
 
     :goto_0
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    sput-object v2, Lcom/samsung/galaxytrash/PdkUtil;->mSetParameterMethods:Ljava/lang/reflect/Method;
+    sput-object v0, Lcom/samsung/galaxytrash/PdkUtil;->mSetParameterMethods:Ljava/lang/reflect/Method;
 
     :goto_1
     return-void
@@ -107,9 +106,9 @@
 
     if-nez v0, :cond_0
 
-    const-string v2, "Fail to set samsung parameter to camera device. (No implementation)"
+    const-string p0, "Fail to set samsung parameter to camera device. (No implementation)"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     return-void
 
@@ -125,9 +124,9 @@
 
     aput-object p0, v3, v4
 
-    const/4 v4, 0x1
+    const/4 p0, 0x1
 
-    aput-object p1, v3, v4
+    aput-object p1, v3, p0
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
@@ -138,22 +137,22 @@
     goto :goto_1
 
     :catch_0
-    move-exception v2
+    move-exception p0
 
     goto :goto_0
 
     :catch_1
-    move-exception v2
+    move-exception p0
 
     goto :goto_0
 
     :catch_2
-    move-exception v2
+    move-exception p0
 
     :goto_0
-    const-string v3, "Fail to set samsung parameter to camera device."
+    const-string p1, "Fail to set samsung parameter to camera device."
 
-    invoke-static {v1, v3, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, p1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     :goto_1
     return-void

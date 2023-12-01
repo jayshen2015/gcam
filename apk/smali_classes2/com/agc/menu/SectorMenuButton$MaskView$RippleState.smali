@@ -1,6 +1,5 @@
 .class interface abstract annotation Lcom/agc/menu/SectorMenuButton$MaskView$RippleState;
 .super Ljava/lang/Object;
-.source "SectorMenuButton.java"
 
 # interfaces
 .implements Ljava/lang/annotation/Annotation;
@@ -12,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x260a
+    accessFlags = 0x2609
     name = "RippleState"
 .end annotation
 

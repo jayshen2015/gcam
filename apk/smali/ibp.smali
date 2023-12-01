@@ -24,7 +24,7 @@
 
 .field private i:Z
 
-.field private final j:Ljnm;
+.field public final j:Ljnm;
 
 
 # direct methods
@@ -145,6 +145,10 @@
 
     :cond_2
     :goto_0
+    invoke-static {p0, p1}, LAGC;->getAstroEnabled(Libp;Z)Z
+
+    move-result p1
+
     iget-object p3, p0, Libp;->b:Lggx;
 
     if-eqz p1, :cond_3

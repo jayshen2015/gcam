@@ -1,6 +1,5 @@
 .class Lgo/Seq$GoRefQueue;
 .super Ljava/lang/ref/ReferenceQueue;
-.source "Seq.java"
 
 
 # annotations
@@ -9,7 +8,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "GoRefQueue"
 .end annotation
 
@@ -35,7 +34,7 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method public constructor <init>()V
     .locals 2
 
     invoke-direct {p0}, Ljava/lang/ref/ReferenceQueue;-><init>()V
@@ -71,17 +70,17 @@
     return-void
 .end method
 
-.method static synthetic access$200(Lgo/Seq$GoRefQueue;)Ljava/util/Collection;
-    .locals 1
+.method public static synthetic access$200(Lgo/Seq$GoRefQueue;)Ljava/util/Collection;
+    .locals 0
 
-    iget-object v0, p0, Lgo/Seq$GoRefQueue;->refs:Ljava/util/Collection;
+    iget-object p0, p0, Lgo/Seq$GoRefQueue;->refs:Ljava/util/Collection;
 
-    return-object v0
+    return-object p0
 .end method
 
 
 # virtual methods
-.method track(ILgo/Seq$GoObject;)V
+.method public track(ILgo/Seq$GoObject;)V
     .locals 2
 
     iget-object v0, p0, Lgo/Seq$GoRefQueue;->refs:Ljava/util/Collection;

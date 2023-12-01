@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/FocusView$1;
 .super Ljava/lang/Object;
-.source "FocusView.java"
 
 # interfaces
 .implements Lcom/agc/asv/RulerView$OnValueChangeListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/FocusView;
+.field public final synthetic this$0:Lcom/agc/asv/FocusView;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/FocusView;)V
+.method public constructor <init>(Lcom/agc/asv/FocusView;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/FocusView$1;->this$0:Lcom/agc/asv/FocusView;
@@ -35,15 +34,15 @@
 
 # virtual methods
 .method public onValueChange(F)V
-    .locals 1
+    .locals 0
 
-    iget-object v0, p0, Lcom/agc/asv/FocusView$1;->this$0:Lcom/agc/asv/FocusView;
+    iget-object p1, p0, Lcom/agc/asv/FocusView$1;->this$0:Lcom/agc/asv/FocusView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/FocusView;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/asv/FocusView;->execCommands(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/agc/asv/FocusView;->execCommands(Landroid/content/Context;)V
 
     return-void
 .end method

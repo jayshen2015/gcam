@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/ShadowPopup$1;
 .super Ljava/lang/Object;
-.source "ShadowPopup.java"
 
 # interfaces
 .implements Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/ShadowPopup;
+.field public final synthetic this$0:Lcom/agc/asv/ShadowPopup;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/ShadowPopup;)V
+.method public constructor <init>(Lcom/agc/asv/ShadowPopup;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
@@ -35,313 +34,311 @@
 
 # virtual methods
 .method public onProgressChanged(Lcom/agc/widget/CenterSeekBar;DZ)V
-    .locals 10
+    .locals 5
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    iget-object p4, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p4, p4, Lcom/agc/asv/ShadowPopup;->tvValue:Landroid/widget/TextView;
 
-    iget-object v1, v1, Lcom/agc/asv/ShadowPopup;->tvValue:Landroid/widget/TextView;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string v3, ""
+    const-string v2, ""
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getLeft()I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    iget-object v2, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
-
-    iget-object v2, v2, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
-
-    invoke-virtual {v2}, Landroid/widget/TextView;->getTop()I
-
-    move-result v2
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "progress:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p2, p3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "----right:"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
+    invoke-virtual {p4, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v5
+    move-result-object p4
 
-    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+    invoke-virtual {p4}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v5
+    move-result-object p4
 
-    iget v5, v5, Landroid/graphics/Rect;->right:I
+    iget p4, p4, Landroid/graphics/Rect;->right:I
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
-    move-result-object v4
+    move-result v0
 
-    const-string v5, "-----left"
+    sub-int/2addr p4, v0
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    move-result-object v4
+    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
 
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getTop()I
 
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v5
-
-    iget v5, v5, Landroid/graphics/Rect;->left:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string v5, "onProgressChanged--progress"
-
-    invoke-static {v5, v4}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    iget-object v4, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
-
-    iget-object v4, v4, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    iget-object v3, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
-
-    iget-object v3, v3, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
-
-    iget-object v4, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
-
-    invoke-static {v4}, Lcom/agc/asv/ShadowPopup;->access$000(Lcom/agc/asv/ShadowPopup;)I
-
-    move-result v4
-
-    add-int/2addr v4, v1
-
-    int-to-double v4, v4
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v6
-
-    iget v6, v6, Landroid/graphics/Rect;->right:I
-
-    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v7
-
-    iget v7, v7, Landroid/graphics/Rect;->left:I
-
-    sub-int/2addr v6, v7
-
-    int-to-double v6, v6
-
-    const-wide/high16 v8, 0x3fe0000000000000L    # 0.5
-
-    mul-double/2addr v6, v8
-
-    sub-double/2addr v4, v6
-
-    double-to-float v4, v4
-
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setX(F)V
-
-    iget-object v3, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
-
-    iget-object v3, v3, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
-
-    int-to-float v4, v2
-
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setY(F)V
+    move-result v0
 
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "x:"
+    const-string v4, "progress:"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    iget-object v4, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    invoke-virtual {v3, p2, p3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    iget-object v4, v4, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+    move-result-object p2
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->getX()F
+    const-string p3, "----right:"
 
-    move-result v4
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    move-result-object p2
 
-    move-result-object v3
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
-    const-string v4, "----y:"
+    move-result-object p3
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v3
+    move-result-object p3
 
-    iget-object v4, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget p3, p3, Landroid/graphics/Rect;->right:I
 
-    iget-object v4, v4, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v4}, Landroid/widget/TextView;->getY()F
+    move-result-object p2
 
-    move-result v4
+    const-string p3, "-----left"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object p2
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object p3
 
-    const-string v4, "tvThumb--x"
+    invoke-virtual {p3}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
-    invoke-static {v4, v3}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    move-result-object p3
+
+    iget p3, p3, Landroid/graphics/Rect;->left:I
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p3, "onProgressChanged--progress"
+
+    invoke-static {p3, p2}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    iget-object p2, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+
+    iget-object p2, p2, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+
+    new-instance p3, Ljava/lang/StringBuilder;
+
+    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p3
+
+    invoke-virtual {p3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    iget-object p2, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+
+    iget-object p3, p2, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+
+    invoke-static {p2}, Lcom/agc/asv/ShadowPopup;->access$000(Lcom/agc/asv/ShadowPopup;)I
+
+    move-result p2
+
+    add-int/2addr p4, p2
+
+    int-to-double v1, p4
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object p2
+
+    iget p2, p2, Landroid/graphics/Rect;->right:I
+
+    invoke-virtual {p1}, Lcom/agc/widget/CenterSeekBar;->getMThumb()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object p1
+
+    iget p1, p1, Landroid/graphics/Rect;->left:I
+
+    sub-int/2addr p2, p1
+
+    int-to-double p1, p2
+
+    const-wide/high16 v3, 0x3fe0000000000000L    # 0.5
+
+    mul-double/2addr p1, v3
+
+    sub-double/2addr v1, p1
+
+    double-to-float p1, v1
+
+    invoke-virtual {p3, p1}, Landroid/widget/TextView;->setX(F)V
+
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+
+    int-to-float p2, v0
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setY(F)V
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string p2, "x:"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+
+    iget-object p2, p2, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+
+    invoke-virtual {p2}, Landroid/widget/TextView;->getX()F
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    const-string p2, "----y:"
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    iget-object p2, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+
+    iget-object p2, p2, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+
+    invoke-virtual {p2}, Landroid/widget/TextView;->getY()F
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string p2, "tvThumb--x"
+
+    invoke-static {p2, p1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
     return-void
 .end method
 
 .method public onStartTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->linearLayout:Landroid/widget/LinearLayout;
 
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvValue:Landroid/widget/TextView;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvValue:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvValueHint:Landroid/widget/TextView;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvValueHint:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     return-void
 .end method
 
 .method public onStopTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->linearLayout:Landroid/widget/LinearLayout;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->linearLayout:Landroid/widget/LinearLayout;
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvValue:Landroid/widget/TextView;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvValue:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvValueHint:Landroid/widget/TextView;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvValueHint:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    iget-object v0, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
+    iget-object p1, p0, Lcom/agc/asv/ShadowPopup$1;->this$0:Lcom/agc/asv/ShadowPopup;
 
-    iget-object v0, v0, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
+    iget-object p1, p1, Lcom/agc/asv/ShadowPopup;->tvThumb:Landroid/widget/TextView;
 
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     return-void
 .end method

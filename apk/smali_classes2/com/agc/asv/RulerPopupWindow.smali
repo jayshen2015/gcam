@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/RulerPopupWindow;
 .super Landroid/widget/PopupWindow;
-.source "RulerPopupWindow.java"
 
 
 # static fields
@@ -9,23 +8,23 @@
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/agc/asv/RulerView$OnValueChangeListener;)V
-    .locals 4
+    .locals 3
 
     invoke-direct {p0, p1}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;)V
 
     const/4 v0, -0x2
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerPopupWindow;->setHeight(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setHeight(I)V
 
     const/4 v0, -0x1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerPopupWindow;->setWidth(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setWidth(I)V
 
     const/4 v0, 0x1
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerPopupWindow;->setOutsideTouchable(Z)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerPopupWindow;->setFocusable(Z)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
     new-instance v0, Landroid/graphics/drawable/ColorDrawable;
 
@@ -33,37 +32,37 @@
 
     invoke-direct {v0, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerPopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
+    move-result-object p1
+
+    sget v0, Lcom/agc/Res$layout;->agc_ruler_window:I
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v0, v2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    move-result-object p1
+
+    const-string v0, "agc_ruler"
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
     move-result-object v0
 
-    sget v2, Lcom/agc/Res$layout;->agc_ruler_window:I
+    check-cast v0, Lcom/agc/asv/RulerView;
 
-    const/4 v3, 0x0
+    invoke-virtual {v0, p2}, Lcom/agc/asv/RulerView;->setOnValueChangeListener(Lcom/agc/asv/RulerView$OnValueChangeListener;)V
 
-    invoke-virtual {v0, v2, v3, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v0
-
-    const-string v1, "agc_ruler"
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/agc/asv/RulerView;
-
-    invoke-virtual {v1, p2}, Lcom/agc/asv/RulerView;->setOnValueChangeListener(Lcom/agc/asv/RulerView$OnValueChangeListener;)V
-
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerPopupWindow;->setContentView(Landroid/view/View;)V
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
     return-void
 .end method
 
 .method public static showUp(Landroid/view/View;Lcom/agc/asv/RulerView$OnValueChangeListener;)V
-    .locals 6
+    .locals 4
 
     sget-object v0, Lcom/agc/asv/RulerPopupWindow;->mWindow:Lcom/agc/asv/RulerPopupWindow;
 
@@ -80,31 +79,31 @@
     sput-object v0, Lcom/agc/asv/RulerPopupWindow;->mWindow:Lcom/agc/asv/RulerPopupWindow;
 
     :cond_0
-    const/4 v0, 0x2
+    const/4 p1, 0x2
 
-    new-array v0, v0, [I
+    new-array p1, p1, [I
 
-    invoke-virtual {p0, v0}, Landroid/view/View;->getLocationOnScreen([I)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    sget-object v1, Lcom/agc/asv/RulerPopupWindow;->mWindow:Lcom/agc/asv/RulerPopupWindow;
+    sget-object v0, Lcom/agc/asv/RulerPopupWindow;->mWindow:Lcom/agc/asv/RulerPopupWindow;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aget v3, v0, v2
+    aget v2, p1, v1
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    aget v4, v0, v4
+    aget p1, p1, v3
 
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
-    move-result v5
+    move-result v3
 
-    sub-int/2addr v4, v5
+    sub-int/2addr p1, v3
 
-    add-int/lit8 v4, v4, -0x14
+    add-int/lit8 p1, p1, -0x14
 
-    invoke-virtual {v1, p0, v2, v3, v4}, Lcom/agc/asv/RulerPopupWindow;->showAtLocation(Landroid/view/View;III)V
+    invoke-virtual {v0, p0, v1, v2, p1}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 .end method

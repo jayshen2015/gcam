@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/Log$Hander;
 .super Ljava/lang/Object;
-.source "Log.java"
 
 
 # annotations

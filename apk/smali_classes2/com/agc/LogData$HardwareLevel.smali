@@ -1,6 +1,5 @@
 .class public Lcom/agc/LogData$HardwareLevel;
 .super Ljava/lang/Object;
-.source "LogData.java"
 
 
 # annotations
@@ -15,7 +14,7 @@
 
 
 # static fields
-.field static levels:Ljava/util/Map;
+.field public static levels:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map<",
@@ -28,7 +27,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     new-instance v0, Lcom/agc/LogData$HardwareLevel$1;
@@ -90,18 +89,18 @@
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    return-object p0
 
     :catch_0
     move-exception v0
 
     invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    return-object v1
+    return-object p0
 .end method

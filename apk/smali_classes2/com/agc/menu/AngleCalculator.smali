@@ -1,6 +1,5 @@
 .class public Lcom/agc/menu/AngleCalculator;
 .super Ljava/lang/Object;
-.source "AngleCalculator.java"
 
 
 # instance fields
@@ -13,7 +12,7 @@
 
 # direct methods
 .method public constructor <init>(FFI)V
-    .locals 6
+    .locals 4
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,27 +50,27 @@
 
     iput-wide v2, p0, Lcom/agc/menu/AngleCalculator;->startAngleRadians:D
 
-    float-to-double v2, p2
+    float-to-double p1, p2
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->toRadians(D)D
+    invoke-static {p1, p2}, Ljava/lang/Math;->toRadians(D)D
 
-    move-result-wide v2
+    move-result-wide p1
 
     if-le p3, v1, :cond_1
 
     iget-wide v0, p0, Lcom/agc/menu/AngleCalculator;->startAngleRadians:D
 
-    sub-double v0, v2, v0
+    sub-double v0, p1, v0
 
-    add-int/lit8 v4, p3, -0x1
+    add-int/lit8 v2, p3, -0x1
 
-    int-to-double v4, v4
+    int-to-double v2, v2
 
-    div-double/2addr v0, v4
+    div-double/2addr v0, v2
 
     iput-wide v0, p0, Lcom/agc/menu/AngleCalculator;->averageAngleRadians:D
 
-    invoke-direct {p0, v2, v3, p3}, Lcom/agc/menu/AngleCalculator;->regulateAverageAngle(DI)V
+    invoke-direct {p0, p1, p2, p3}, Lcom/agc/menu/AngleCalculator;->regulateAverageAngle(DI)V
 
     :cond_1
     return-void
@@ -84,9 +83,9 @@
 
     iget-wide v2, p0, Lcom/agc/menu/AngleCalculator;->averageAngleRadians:D
 
-    add-int/lit8 v4, p1, -0x1
+    add-int/lit8 p1, p1, -0x1
 
-    int-to-double v4, v4
+    int-to-double v4, p1
 
     mul-double/2addr v2, v4
 
@@ -96,7 +95,7 @@
 .end method
 
 .method private regulateAverageAngle(DI)V
-    .locals 6
+    .locals 4
 
     iget-boolean v0, p0, Lcom/agc/menu/AngleCalculator;->angleStartEqualsEnd:Z
 
@@ -104,27 +103,27 @@
 
     iget-wide v0, p0, Lcom/agc/menu/AngleCalculator;->startAngleRadians:D
 
-    cmpl-double v0, v0, p1
+    cmpl-double p1, v0, p1
 
-    if-nez v0, :cond_1
+    if-nez p1, :cond_1
+
+    int-to-double p1, p3
 
     const-wide v0, 0x401921fb54442d18L    # 6.283185307179586
 
-    int-to-double v2, p3
+    div-double/2addr v0, p1
 
-    div-double/2addr v0, v2
+    iget-wide p1, p0, Lcom/agc/menu/AngleCalculator;->averageAngleRadians:D
 
-    iget-wide v2, p0, Lcom/agc/menu/AngleCalculator;->averageAngleRadians:D
+    const-wide/16 v2, 0x0
 
-    const-wide/16 v4, 0x0
+    cmpg-double p1, p1, v2
 
-    cmpg-double v2, v2, v4
+    if-gez p1, :cond_0
 
-    if-gez v2, :cond_0
+    neg-double p1, v0
 
-    neg-double v2, v0
-
-    iput-wide v2, p0, Lcom/agc/menu/AngleCalculator;->averageAngleRadians:D
+    iput-wide p1, p0, Lcom/agc/menu/AngleCalculator;->averageAngleRadians:D
 
     goto :goto_0
 
@@ -151,35 +150,31 @@
 
     cmpl-double v2, v2, v4
 
-    if-nez v2, :cond_0
-
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    int-to-double v4, p1
+    if-nez v2, :cond_0
 
-    mul-double/2addr v2, v4
+    int-to-double v2, p1
 
-    double-to-int v2, v2
+    mul-double/2addr v0, v2
 
-    mul-int/2addr v2, p2
+    double-to-int p1, v0
+
+    mul-int/2addr p1, p2
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
+    int-to-double p1, p1
 
-    move-result-wide v2
+    mul-double/2addr v0, p1
 
-    int-to-double v4, p1
-
-    mul-double/2addr v2, v4
-
-    double-to-int v2, v2
+    double-to-int p1, v0
 
     :goto_0
-    return v2
+    return p1
 .end method
 
 .method public getMoveY(II)I
@@ -195,33 +190,29 @@
 
     cmpl-double v2, v2, v4
 
-    if-nez v2, :cond_0
-
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    int-to-double v4, p1
+    if-nez v2, :cond_0
 
-    mul-double/2addr v2, v4
+    int-to-double v2, p1
 
-    double-to-int v2, v2
+    mul-double/2addr v0, v2
 
-    mul-int/2addr v2, p2
+    double-to-int p1, v0
+
+    mul-int/2addr p1, p2
 
     goto :goto_0
 
     :cond_0
-    invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
+    int-to-double p1, p1
 
-    move-result-wide v2
+    mul-double/2addr v0, p1
 
-    int-to-double v4, p1
-
-    mul-double/2addr v2, v4
-
-    double-to-int v2, v2
+    double-to-int p1, v0
 
     :goto_0
-    return v2
+    return p1
 .end method

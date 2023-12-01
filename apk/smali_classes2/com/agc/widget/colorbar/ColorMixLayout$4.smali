@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/colorbar/ColorMixLayout$4;
 .super Ljava/lang/Object;
-.source "ColorMixLayout.java"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+.field public final synthetic this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/colorbar/ColorMixLayout;)V
+.method public constructor <init>(Lcom/agc/widget/colorbar/ColorMixLayout;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$4;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;

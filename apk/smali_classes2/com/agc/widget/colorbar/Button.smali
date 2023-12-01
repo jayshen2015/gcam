@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/colorbar/Button;
 .super Lcom/agc/widget/OptionButton;
-.source "Button.java"
 
 
 # direct methods
@@ -27,73 +26,73 @@
 .end method
 
 .method private showDialog(Landroid/content/Context;)V
-    .locals 7
+    .locals 6
 
     new-instance v0, Landroid/app/Dialog;
 
     invoke-direct {v0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    const/4 v1, 0x1
+    const/4 p1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/app/Dialog;->requestWindowFeature(I)Z
+    invoke-virtual {v0, p1}, Landroid/app/Dialog;->requestWindowFeature(I)Z
 
-    sget v2, Lcom/agc/Res$layout;->agc_dialog_color_mix:I
+    sget v1, Lcom/agc/Res$layout;->agc_dialog_color_mix:I
 
-    invoke-virtual {v0, v2}, Landroid/app/Dialog;->setContentView(I)V
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
-    sget v2, Lcom/agc/Res$id;->agc_color_mix_layout:I
+    sget v1, Lcom/agc/Res$id;->agc_color_mix_layout:I
 
-    invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/agc/widget/colorbar/ColorMixLayout;
-
-    new-instance v3, Lcom/agc/widget/colorbar/Button$1;
-
-    invoke-direct {v3, p0, v0}, Lcom/agc/widget/colorbar/Button$1;-><init>(Lcom/agc/widget/colorbar/Button;Landroid/app/Dialog;)V
-
-    invoke-virtual {v2, v3}, Lcom/agc/widget/colorbar/ColorMixLayout;->setOnColorListener(Lcom/agc/widget/colorbar/OnColorPickerListener;)V
-
-    const/4 v3, 0x0
-
-    invoke-static {v3}, Lcom/agc/ColorTransform;->onColorSelceted(I)[F
-
-    move-result-object v4
-
-    aget v5, v4, v3
-
-    float-to-int v5, v5
-
-    aget v1, v4, v1
-
-    const/4 v6, 0x2
-
-    aget v6, v4, v6
-
-    invoke-virtual {v2, v3, v5, v1, v6}, Lcom/agc/widget/colorbar/ColorMixLayout;->setDefaultValue(IIFF)V
-
-    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
-    if-eqz v1, :cond_0
+    check-cast v1, Lcom/agc/widget/colorbar/ColorMixLayout;
 
-    new-instance v5, Landroid/graphics/drawable/ColorDrawable;
+    new-instance v2, Lcom/agc/widget/colorbar/Button$1;
 
-    invoke-direct {v5, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v2, p0, v0}, Lcom/agc/widget/colorbar/Button$1;-><init>(Lcom/agc/widget/colorbar/Button;Landroid/app/Dialog;)V
 
-    invoke-virtual {v1, v5}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v2}, Lcom/agc/widget/colorbar/ColorMixLayout;->setOnColorListener(Lcom/agc/widget/colorbar/OnColorPickerListener;)V
 
-    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    const/4 v2, 0x0
+
+    invoke-static {v2}, Lcom/agc/ColorTransform;->onColorSelceted(I)[F
 
     move-result-object v3
 
-    const/4 v5, 0x0
+    aget v4, v3, v2
 
-    iput v5, v3, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
+    float-to-int v4, v4
 
-    invoke-virtual {v1, v3}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    aget p1, v3, p1
+
+    const/4 v5, 0x2
+
+    aget v3, v3, v5
+
+    invoke-virtual {v1, v2, v4, p1, v3}, Lcom/agc/widget/colorbar/ColorMixLayout;->setDefaultValue(IIFF)V
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    new-instance v1, Landroid/graphics/drawable/ColorDrawable;
+
+    invoke-direct {v1, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    invoke-virtual {p1, v1}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    iput v2, v1, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
+
+    invoke-virtual {p1, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
     :cond_0
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
@@ -154,15 +153,13 @@
 
     invoke-direct {v6, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v6, p0, Lcom/agc/widget/colorbar/Button;->items:Ljava/util/List;
+    iput-object v6, p0, Lcom/agc/widget/OptionButton;->items:Ljava/util/List;
 
     invoke-direct {p0}, Lcom/agc/widget/colorbar/Button;->isCustom()I
 
     move-result v1
 
-    iput v1, p0, Lcom/agc/widget/colorbar/Button;->selectedIndex:I
-
-    iget v1, p0, Lcom/agc/widget/colorbar/Button;->selectedIndex:I
+    iput v1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
     if-lez v1, :cond_0
 
@@ -174,7 +171,7 @@
     move v1, v9
 
     :goto_0
-    invoke-virtual {p0, v1}, Lcom/agc/widget/colorbar/Button;->setChecked(Z)V
+    invoke-virtual {p0, v1}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     const-string v1, "pref_show_cct_button_key"
 
@@ -187,13 +184,11 @@
     move v9, v0
 
     :cond_1
-    move v0, v9
+    if-nez v9, :cond_2
 
-    if-nez v0, :cond_2
+    const/16 v0, 0x8
 
-    const/16 v1, 0x8
-
-    invoke-virtual {p0, v1}, Lcom/agc/widget/colorbar/Button;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     :cond_2
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
@@ -210,19 +205,19 @@
 .end method
 
 .method public onClickPopItem(I)V
-    .locals 1
+    .locals 0
 
     invoke-direct {p0}, Lcom/agc/widget/colorbar/Button;->isCustom()I
 
-    move-result v0
+    move-result p1
 
-    invoke-super {p0, v0}, Lcom/agc/widget/OptionButton;->onClickPopItem(I)V
+    invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->onClickPopItem(I)V
 
-    invoke-virtual {p0}, Lcom/agc/widget/colorbar/Button;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-direct {p0, v0}, Lcom/agc/widget/colorbar/Button;->showDialog(Landroid/content/Context;)V
+    invoke-direct {p0, p1}, Lcom/agc/widget/colorbar/Button;->showDialog(Landroid/content/Context;)V
 
     return-void
 .end method

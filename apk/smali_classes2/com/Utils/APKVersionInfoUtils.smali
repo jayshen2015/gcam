@@ -1,6 +1,5 @@
 .class public Lcom/Utils/APKVersionInfoUtils;
 .super Ljava/lang/Object;
-.source "APKVersionInfoUtils.java"
 
 
 # direct methods
@@ -13,25 +12,25 @@
 .end method
 
 .method public static getShortVersionName(Landroid/content/Context;)Ljava/lang/String;
-    .locals 3
+    .locals 2
 
     invoke-static {p0}, Lcom/Utils/APKVersionInfoUtils;->getVersionName(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "(\\d+\\.\\d+).*"
+    const-string v0, "(\\d+\\.\\d+).*"
 
-    const-string v2, "$1"
+    const-string v1, "$1"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static getVersionCode(Landroid/content/Context;)I
-    .locals 4
+    .locals 2
 
     const/4 v0, 0x0
 
@@ -42,64 +41,58 @@
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p0
 
-    const/4 v3, 0x0
+    invoke-virtual {v1, p0, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    move-result-object p0
 
-    move-result-object v1
-
-    iget v1, v1, Landroid/content/pm/PackageInfo;->versionCode:I
+    iget v0, p0, Landroid/content/pm/PackageInfo;->versionCode:I
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move v0, v1
 
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception p0
 
-    invoke-virtual {v1}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+    invoke-virtual {p0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
 
     :goto_0
     return v0
 .end method
 
 .method public static getVersionName(Landroid/content/Context;)Ljava/lang/String;
-    .locals 4
-
-    const-string v0, ""
+    .locals 2
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object p0
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    invoke-virtual {v0, p0, v1}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
 
-    move-result-object v1
+    move-result-object p0
 
-    iget-object v1, v1, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
+    iget-object p0, p0, Landroid/content/pm/PackageInfo;->versionName:Ljava/lang/String;
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-object v0, v1
 
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception p0
 
-    invoke-virtual {v1}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+    invoke-virtual {p0}, Landroid/content/pm/PackageManager$NameNotFoundException;->printStackTrace()V
+
+    const-string p0, ""
 
     :goto_0
-    return-object v0
+    return-object p0
 .end method

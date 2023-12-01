@@ -1,6 +1,5 @@
 .class public LMetadataConverterUtil;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 
 # direct methods

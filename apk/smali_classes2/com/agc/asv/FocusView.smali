@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/FocusView;
 .super Landroid/widget/FrameLayout;
-.source "FocusView.java"
 
 
 # direct methods
@@ -57,217 +56,216 @@
 .end method
 
 .method public static execCommands(Landroid/content/Context;)V
-    .locals 14
+    .locals 6
 
-    move-object v0, p0
+    check-cast p0, Landroid/app/Activity;
 
-    check-cast v0, Landroid/app/Activity;
+    invoke-virtual {p0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
+    move-result-object p0
 
-    move-result-object v0
+    invoke-interface {p0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
-    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+    move-result-object p0
 
-    move-result-object v0
+    invoke-virtual {p0}, Landroid/view/Display;->getRotation()I
 
-    invoke-virtual {v0}, Landroid/view/Display;->getRotation()I
+    move-result v0
 
-    move-result v1
+    new-instance v1, Landroid/util/DisplayMetrics;
 
-    new-instance v2, Landroid/util/DisplayMetrics;
+    invoke-direct {v1}, Landroid/util/DisplayMetrics;-><init>()V
 
-    invoke-direct {v2}, Landroid/util/DisplayMetrics;-><init>()V
+    invoke-virtual {p0, v1}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
 
-    invoke-virtual {v0, v2}, Landroid/view/Display;->getRealMetrics(Landroid/util/DisplayMetrics;)V
+    iget p0, v1, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    iget v3, v2, Landroid/util/DisplayMetrics;->widthPixels:I
-
-    iget v4, v2, Landroid/util/DisplayMetrics;->heightPixels:I
+    iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v2
 
-    const-string v6, "navigation_bar_height"
+    const-string v3, "navigation_bar_height"
 
-    const-string v7, "dimen"
+    const-string v4, "dimen"
 
-    const-string v8, "android"
+    const-string v5, "android"
 
-    invoke-virtual {v5, v6, v7, v8}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v2, v3, v4, v5}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v6
+    move-result v3
 
-    if-eqz v6, :cond_0
+    if-eqz v3, :cond_0
 
-    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v6
+    move-result v3
 
     :cond_0
-    div-int/lit8 v7, v3, 0x2
+    div-int/lit8 p0, p0, 0x2
 
-    div-int/lit8 v8, v4, 0x2
+    div-int/lit8 v1, v1, 0x2
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "input tap "
+    const-string v4, "input tap "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v10, " "
+    const-string v4, " "
 
-    if-nez v1, :cond_1
+    if-nez v0, :cond_1
 
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    sub-int v10, v8, v6
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    goto :goto_1
-
-    :cond_1
-    const/4 v11, 0x3
-
-    if-eq v11, v1, :cond_2
-
-    sub-int v11, v7, v6
-
-    goto :goto_0
-
-    :cond_2
-    add-int v11, v7, v6
+    sub-int/2addr v1, v3
 
     :goto_0
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    :goto_1
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    const-string v11, "TouchPoint"
-
-    invoke-static {v11, v10}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
-
-    :try_start_0
-    new-instance v11, Ljava/io/DataOutputStream;
-
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
-
-    move-result-object v12
-
-    const-string v13, "sh"
-
-    invoke-virtual {v12, v13}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
-
-    move-result-object v12
-
-    invoke-direct {v11, v12}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    new-instance v12, Ljava/lang/StringBuilder;
-
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    const-string v13, "\n"
-
-    invoke-virtual {v12, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v12
-
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v11, v12}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
-
-    invoke-virtual {v11}, Ljava/io/DataOutputStream;->flush()V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     goto :goto_2
 
-    :catch_0
-    move-exception v11
+    :cond_1
+    const/4 v5, 0x3
 
-    invoke-virtual {v11}, Ljava/io/IOException;->printStackTrace()V
+    if-eq v5, v0, :cond_2
+
+    sub-int/2addr p0, v3
+
+    goto :goto_1
+
+    :cond_2
+    add-int/2addr p0, v3
+
+    :goto_1
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_0
 
     :goto_2
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "TouchPoint"
+
+    invoke-static {v0, p0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    :try_start_0
+    new-instance v0, Ljava/io/DataOutputStream;
+
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+
+    move-result-object v1
+
+    const-string v2, "sh"
+
+    invoke-virtual {v1, v2}, Ljava/lang/Runtime;->exec(Ljava/lang/String;)Ljava/lang/Process;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Process;->getOutputStream()Ljava/io/OutputStream;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string v1, "\n"
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Ljava/io/DataOutputStream;->writeBytes(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/DataOutputStream;->flush()V
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_3
+
+    :catch_0
+    move-exception p0
+
+    invoke-virtual {p0}, Ljava/io/IOException;->printStackTrace()V
+
+    :goto_3
     return-void
 .end method
 
 
 # virtual methods
 .method public init(Landroid/content/Context;)V
-    .locals 3
+    .locals 1
 
-    invoke-virtual {p0}, Lcom/agc/asv/FocusView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    sget v1, Lcom/agc/Res$layout;->agc_ruler_window:I
+    sget v0, Lcom/agc/Res$layout;->agc_ruler_window:I
 
-    invoke-static {v0, v1, p0}, Lcom/agc/asv/FocusView;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-static {p1, v0, p0}, Landroid/widget/FrameLayout;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    const-string v0, "agc_ruler"
+    const-string p1, "agc_ruler"
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/FocusView;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lcom/agc/asv/RulerView;
+    check-cast p1, Lcom/agc/asv/RulerView;
 
-    new-instance v1, Lcom/agc/asv/FocusView$1;
+    new-instance v0, Lcom/agc/asv/FocusView$1;
 
-    invoke-direct {v1, p0}, Lcom/agc/asv/FocusView$1;-><init>(Lcom/agc/asv/FocusView;)V
+    invoke-direct {v0, p0}, Lcom/agc/asv/FocusView$1;-><init>(Lcom/agc/asv/FocusView;)V
 
-    invoke-virtual {v0, v1}, Lcom/agc/asv/RulerView;->setOnValueChangeListener(Lcom/agc/asv/RulerView$OnValueChangeListener;)V
+    invoke-virtual {p1, v0}, Lcom/agc/asv/RulerView;->setOnValueChangeListener(Lcom/agc/asv/RulerView$OnValueChangeListener;)V
 
-    const-string v1, "pref_manual_focus_enabled"
+    const-string p1, "pref_manual_focus_enabled"
 
-    invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v1
+    move-result p1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    if-lez v1, :cond_0
+    if-lez p1, :cond_0
 
-    const/4 v1, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    move p1, v0
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz p1, :cond_1
 
     goto :goto_1
 
     :cond_1
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
     :goto_1
-    invoke-virtual {p0, v2}, Lcom/agc/asv/FocusView;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     return-void
 .end method

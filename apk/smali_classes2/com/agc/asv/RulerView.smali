@@ -1,6 +1,5 @@
 .class public Lcom/agc/asv/RulerView;
 .super Landroid/view/View;
-.source "RulerView.java"
 
 
 # annotations
@@ -62,7 +61,7 @@
 
 .field private tempValue:F
 
-.field vib:Landroid/os/Vibrator;
+.field public vib:Landroid/os/Vibrator;
 
 
 # direct methods
@@ -87,55 +86,55 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 2
+    .locals 1
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    const/high16 v0, 0x42480000    # 50.0f
+    const/high16 p3, 0x42480000    # 50.0f
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mSelectorValue:F
+    iput p3, p0, Lcom/agc/asv/RulerView;->mSelectorValue:F
 
-    const/high16 v0, 0x42c80000    # 100.0f
+    const/high16 p3, 0x42c80000    # 100.0f
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mMaxValue:F
+    iput p3, p0, Lcom/agc/asv/RulerView;->mMaxValue:F
 
-    const/4 v0, 0x0
+    const/4 p3, 0x0
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mMinValue:F
+    iput p3, p0, Lcom/agc/asv/RulerView;->mMinValue:F
 
-    const/high16 v1, 0x40000000    # 2.0f
+    const/high16 v0, 0x40000000    # 2.0f
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mPerValue:F
+    iput v0, p0, Lcom/agc/asv/RulerView;->mPerValue:F
 
-    const/high16 v1, 0x40a00000    # 5.0f
+    const/high16 v0, 0x40a00000    # 5.0f
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
+    iput v0, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
 
-    const/high16 v1, 0x40800000    # 4.0f
+    const/high16 v0, 0x40800000    # 4.0f
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
+    iput v0, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
 
-    const/high16 v1, 0x41f00000    # 30.0f
+    const/high16 v0, 0x41f00000    # 30.0f
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mLineMidHeight:F
+    iput v0, p0, Lcom/agc/asv/RulerView;->mLineMidHeight:F
 
-    const/high16 v1, 0x41880000    # 17.0f
+    const/high16 v0, 0x41880000    # 17.0f
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mLineMinHeight:F
+    iput v0, p0, Lcom/agc/asv/RulerView;->mLineMinHeight:F
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Lcom/agc/asv/RulerView;->mAlphaEnable:Z
+    iput-boolean v0, p0, Lcom/agc/asv/RulerView;->mAlphaEnable:Z
 
-    const v1, -0x777778
+    const v0, -0x777778
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mLineColor:I
+    iput v0, p0, Lcom/agc/asv/RulerView;->mLineColor:I
 
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mMiddLineColor:I
+    iput v0, p0, Lcom/agc/asv/RulerView;->mMiddLineColor:I
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->tempValue:F
+    iput p3, p0, Lcom/agc/asv/RulerView;->tempValue:F
 
     invoke-virtual {p0, p1, p2}, Lcom/agc/asv/RulerView;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
@@ -157,9 +156,9 @@
 
     iget v1, p0, Lcom/agc/asv/RulerView;->mMaxOffset:I
 
-    int-to-float v2, v1
+    int-to-float v1, v1
 
-    cmpg-float v2, v0, v2
+    cmpg-float v2, v0, v1
 
     const/4 v3, 0x1
 
@@ -167,25 +166,7 @@
 
     if-gtz v2, :cond_0
 
-    int-to-float v0, v1
-
-    iput v0, p0, Lcom/agc/asv/RulerView;->mOffset:F
-
-    iput v4, p0, Lcom/agc/asv/RulerView;->mMove:I
-
-    iget-object v0, p0, Lcom/agc/asv/RulerView;->mScroller:Landroid/widget/Scroller;
-
-    invoke-virtual {v0, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v1, 0x0
-
-    cmpl-float v0, v0, v1
-
-    if-ltz v0, :cond_1
-
+    :goto_0
     iput v1, p0, Lcom/agc/asv/RulerView;->mOffset:F
 
     iput v4, p0, Lcom/agc/asv/RulerView;->mMove:I
@@ -194,8 +175,19 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
 
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-ltz v0, :cond_1
+
+    goto :goto_0
+
     :cond_1
-    :goto_0
+    :goto_1
     iget v0, p0, Lcom/agc/asv/RulerView;->mMinValue:F
 
     iget v1, p0, Lcom/agc/asv/RulerView;->mOffset:F
@@ -230,7 +222,7 @@
 
     iput v0, p0, Lcom/agc/asv/RulerView;->mSelectorValue:F
 
-    invoke-virtual {p0}, Lcom/agc/asv/RulerView;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method
@@ -250,17 +242,16 @@
 
     iget v1, p0, Lcom/agc/asv/RulerView;->mMaxOffset:I
 
-    int-to-float v2, v1
+    int-to-float v1, v1
 
-    cmpg-float v2, v0, v2
+    cmpg-float v2, v0, v1
 
     if-gtz v2, :cond_0
 
-    int-to-float v0, v1
+    :goto_0
+    iput v1, p0, Lcom/agc/asv/RulerView;->mOffset:F
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mOffset:F
-
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     const/4 v1, 0x0
@@ -269,10 +260,10 @@
 
     if-ltz v0, :cond_1
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mOffset:F
+    goto :goto_0
 
     :cond_1
-    :goto_0
+    :goto_1
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/agc/asv/RulerView;->mLastX:I
@@ -329,7 +320,7 @@
 
     invoke-direct {p0}, Lcom/agc/asv/RulerView;->notifyValueChange()V
 
-    invoke-virtual {p0}, Lcom/agc/asv/RulerView;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method
@@ -369,11 +360,11 @@
 
     iget-object v2, p0, Lcom/agc/asv/RulerView;->mScroller:Landroid/widget/Scroller;
 
+    float-to-int v5, v0
+
     const/4 v3, 0x0
 
     const/4 v4, 0x0
-
-    float-to-int v5, v0
 
     const/4 v6, 0x0
 
@@ -392,35 +383,35 @@
 .end method
 
 .method private getFontHeight(Landroid/graphics/Paint;)F
-    .locals 3
+    .locals 1
 
     invoke-virtual {p1}, Landroid/graphics/Paint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, v0, Landroid/graphics/Paint$FontMetrics;->descent:F
+    iget v0, p1, Landroid/graphics/Paint$FontMetrics;->descent:F
 
-    iget v2, v0, Landroid/graphics/Paint$FontMetrics;->ascent:F
+    iget p1, p1, Landroid/graphics/Paint$FontMetrics;->ascent:F
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v0, p1
 
-    return v1
+    return v0
 .end method
 
 .method public static myfloat(F)I
-    .locals 2
+    .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    mul-float/2addr v0, p0
+    mul-float/2addr p0, v0
 
-    const/high16 v1, 0x3f000000    # 0.5f
+    const/high16 v0, 0x3f000000    # 0.5f
 
-    add-float/2addr v0, v1
+    add-float/2addr p0, v0
 
-    float-to-int v0, v0
+    float-to-int p0, p0
 
-    return v0
+    return p0
 .end method
 
 .method private notifyValueChange()V
@@ -521,281 +512,256 @@
     return-void
 .end method
 
-.method protected init(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 4
+.method public init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 2
 
-    const-string v0, "zkk---"
+    const-string p2, "zkk---"
 
-    const-string v1, "init"
+    const-string v0, "init"
 
-    invoke-static {v0, v1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p2, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    new-instance v0, Landroid/widget/Scroller;
+    new-instance p2, Landroid/widget/Scroller;
 
-    invoke-direct {v0, p1}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Landroid/widget/Scroller;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/agc/asv/RulerView;->mScroller:Landroid/widget/Scroller;
+    iput-object p2, p0, Lcom/agc/asv/RulerView;->mScroller:Landroid/widget/Scroller;
 
-    const-string v0, "vibrator"
+    const-string p2, "vibrator"
 
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Landroid/os/Vibrator;
+    check-cast p1, Landroid/os/Vibrator;
 
-    iput-object v0, p0, Lcom/agc/asv/RulerView;->vib:Landroid/os/Vibrator;
+    iput-object p1, p0, Lcom/agc/asv/RulerView;->vib:Landroid/os/Vibrator;
 
-    const/high16 v0, 0x41c80000    # 25.0f
+    const/high16 p1, 0x41c80000    # 25.0f
 
-    invoke-static {v0}, Lcom/agc/asv/RulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/RulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
+    iput p1, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
 
-    const/high16 v0, 0x40800000    # 4.0f
+    const/high16 p1, 0x40800000    # 4.0f
 
-    invoke-static {v0}, Lcom/agc/asv/RulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/RulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
+    iput p1, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
 
-    const/high16 v0, 0x42480000    # 50.0f
+    const/high16 p1, 0x42480000    # 50.0f
 
-    invoke-static {v0}, Lcom/agc/asv/RulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/RulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mLineMidHeight:F
+    iput p1, p0, Lcom/agc/asv/RulerView;->mLineMidHeight:F
 
-    const/high16 v0, 0x41f00000    # 30.0f
+    const/high16 p1, 0x41f00000    # 30.0f
 
-    invoke-static {v0}, Lcom/agc/asv/RulerView;->myfloat(F)I
+    invoke-static {p1}, Lcom/agc/asv/RulerView;->myfloat(F)I
 
-    move-result v0
+    move-result p1
 
-    int-to-float v0, v0
+    int-to-float p1, p1
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mLineMinHeight:F
+    iput p1, p0, Lcom/agc/asv/RulerView;->mLineMinHeight:F
 
-    invoke-virtual {p0}, Lcom/agc/asv/RulerView;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
+    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledMinimumFlingVelocity()I
 
-    move-result v0
+    move-result p1
 
-    iput v0, p0, Lcom/agc/asv/RulerView;->mMinVelocity:I
+    iput p1, p0, Lcom/agc/asv/RulerView;->mMinVelocity:I
 
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance p1, Landroid/graphics/Paint;
 
-    const/4 v1, 0x1
+    const/4 p2, 0x1
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
+    iput-object p1, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
+    iget v0, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    iget v2, p0, Lcom/agc/asv/RulerView;->mLineColor:I
+    iget v0, p0, Lcom/agc/asv/RulerView;->mLineColor:I
 
-    invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance p1, Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
+    iput-object p1, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
+    iget p2, p0, Lcom/agc/asv/RulerView;->mLineWidth:F
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget-object v0, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
+    iget-object p1, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mMiddLineColor:I
+    iget p2, p0, Lcom/agc/asv/RulerView;->mMiddLineColor:I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    iget v0, p0, Lcom/agc/asv/RulerView;->mSelectorValue:F
+    iget p1, p0, Lcom/agc/asv/RulerView;->mSelectorValue:F
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mMinValue:F
+    iget p2, p0, Lcom/agc/asv/RulerView;->mMinValue:F
 
-    iget v2, p0, Lcom/agc/asv/RulerView;->mMaxValue:F
+    iget v0, p0, Lcom/agc/asv/RulerView;->mMaxValue:F
 
-    iget v3, p0, Lcom/agc/asv/RulerView;->mPerValue:F
+    iget v1, p0, Lcom/agc/asv/RulerView;->mPerValue:F
 
-    invoke-virtual {p0, v0, v1, v2, v3}, Lcom/agc/asv/RulerView;->setValue(FFFF)V
+    invoke-virtual {p0, p1, p2, v0, v1}, Lcom/agc/asv/RulerView;->setValue(FFFF)V
 
     return-void
 .end method
 
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method public onDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    const/4 v0, 0x0
+    iget v0, p0, Lcom/agc/asv/RulerView;->mWidth:I
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mWidth:I
+    div-int/lit8 v0, v0, 0x2
 
-    div-int/lit8 v1, v1, 0x2
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     :goto_0
-    iget v3, p0, Lcom/agc/asv/RulerView;->mTotalLine:I
+    iget v2, p0, Lcom/agc/asv/RulerView;->mTotalLine:I
 
-    if-ge v2, v3, :cond_5
+    if-ge v1, v2, :cond_5
 
-    int-to-float v3, v1
+    int-to-float v2, v0
 
-    iget v4, p0, Lcom/agc/asv/RulerView;->mOffset:F
+    iget v3, p0, Lcom/agc/asv/RulerView;->mOffset:F
 
-    add-float/2addr v3, v4
+    add-float/2addr v3, v2
 
-    int-to-float v4, v2
+    int-to-float v4, v1
 
     iget v5, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
 
     mul-float/2addr v4, v5
 
-    add-float/2addr v3, v4
+    add-float v8, v3, v4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    cmpg-float v4, v3, v4
+    cmpg-float v3, v8, v3
 
-    if-ltz v4, :cond_4
+    if-ltz v3, :cond_4
 
-    iget v4, p0, Lcom/agc/asv/RulerView;->mWidth:I
+    iget v3, p0, Lcom/agc/asv/RulerView;->mWidth:I
 
-    int-to-float v4, v4
+    int-to-float v3, v3
 
-    cmpl-float v4, v3, v4
+    cmpl-float v3, v8, v3
 
-    if-lez v4, :cond_0
+    if-lez v3, :cond_0
 
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
-    rem-int/lit8 v4, v2, 0x5
+    rem-int/lit8 v3, v1, 0x5
 
-    const/high16 v5, 0x437f0000    # 255.0f
+    const/high16 v4, 0x437f0000    # 255.0f
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    if-nez v4, :cond_2
+    if-nez v3, :cond_2
 
-    iget v4, p0, Lcom/agc/asv/RulerView;->mLineMidHeight:F
+    iget v9, p0, Lcom/agc/asv/RulerView;->mLineMidHeight:F
 
-    iget-boolean v7, p0, Lcom/agc/asv/RulerView;->mAlphaEnable:Z
+    iget-boolean v3, p0, Lcom/agc/asv/RulerView;->mAlphaEnable:Z
 
-    if-eqz v7, :cond_1
+    if-eqz v3, :cond_1
 
-    int-to-float v7, v1
+    sub-float v3, v8, v2
 
-    sub-float v7, v3, v7
+    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+    move-result v3
 
-    move-result v7
+    div-float/2addr v3, v2
 
-    int-to-float v8, v1
+    sub-float/2addr v5, v3
 
-    div-float/2addr v7, v8
+    mul-float/2addr v5, v4
 
-    sub-float/2addr v6, v7
+    float-to-int v2, v5
 
-    mul-float/2addr v5, v6
+    iget-object v3, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
 
-    float-to-int v0, v5
-
-    iget-object v5, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_1
-    const/4 v7, 0x0
-
     iget-object v10, p0, Lcom/agc/asv/RulerView;->mMiddleLinePaint:Landroid/graphics/Paint;
-
-    move-object v5, p1
-
-    move v6, v3
-
-    move v8, v3
-
-    move v9, v4
-
-    invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     goto :goto_1
 
     :cond_2
-    iget v4, p0, Lcom/agc/asv/RulerView;->mLineMinHeight:F
+    iget v9, p0, Lcom/agc/asv/RulerView;->mLineMinHeight:F
 
-    iget-boolean v7, p0, Lcom/agc/asv/RulerView;->mAlphaEnable:Z
+    iget-boolean v3, p0, Lcom/agc/asv/RulerView;->mAlphaEnable:Z
 
-    if-eqz v7, :cond_3
+    if-eqz v3, :cond_3
 
-    int-to-float v7, v1
+    sub-float v3, v8, v2
 
-    sub-float v7, v3, v7
+    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+    move-result v3
 
-    move-result v7
+    div-float/2addr v3, v2
 
-    int-to-float v8, v1
+    sub-float/2addr v5, v3
 
-    div-float/2addr v7, v8
+    mul-float/2addr v5, v4
 
-    sub-float/2addr v6, v7
+    float-to-int v2, v5
 
-    mul-float/2addr v5, v6
+    iget-object v3, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
 
-    float-to-int v0, v5
-
-    iget-object v5, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
-
-    invoke-virtual {v5, v0}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     :cond_3
-    const/4 v7, 0x0
-
     iget-object v10, p0, Lcom/agc/asv/RulerView;->mLinePaint:Landroid/graphics/Paint;
+
+    :goto_1
+    const/4 v7, 0x0
 
     move-object v5, p1
 
-    move v6, v3
-
-    move v8, v3
-
-    move v9, v4
+    move v6, v8
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     :cond_4
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
+    :goto_2
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
@@ -803,8 +769,8 @@
     return-void
 .end method
 
-.method protected onSizeChanged(IIII)V
-    .locals 2
+.method public onSizeChanged(IIII)V
+    .locals 0
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
@@ -816,46 +782,46 @@
 
     iput p2, p0, Lcom/agc/asv/RulerView;->mHeight:I
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "onSizeChanged,mWidth="
+    const-string p2, "onSizeChanged,mWidth="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mWidth:I
+    iget p2, p0, Lcom/agc/asv/RulerView;->mWidth:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, ",mHeight="
+    const-string p2, ",mHeight="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mHeight:I
+    iget p2, p0, Lcom/agc/asv/RulerView;->mHeight:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
 
     :cond_0
     return-void
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 5
+    .locals 3
 
     const-string v0, "zkk---"
 
@@ -888,20 +854,20 @@
 
     invoke-virtual {v2, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    const/4 v2, 0x0
+    const/4 p1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     packed-switch v0, :pswitch_data_0
 
     goto :goto_0
 
     :pswitch_0
-    iget v2, p0, Lcom/agc/asv/RulerView;->mLastX:I
+    iget p1, p0, Lcom/agc/asv/RulerView;->mLastX:I
 
-    sub-int/2addr v2, v1
+    sub-int/2addr p1, v1
 
-    iput v2, p0, Lcom/agc/asv/RulerView;->mMove:I
+    iput p1, p0, Lcom/agc/asv/RulerView;->mMove:I
 
     invoke-direct {p0}, Lcom/agc/asv/RulerView;->changeMoveAndValue()V
 
@@ -912,23 +878,23 @@
 
     invoke-direct {p0}, Lcom/agc/asv/RulerView;->countVelocityTracker()V
 
-    return v2
+    return p1
 
     :pswitch_2
-    iget-object v4, p0, Lcom/agc/asv/RulerView;->mScroller:Landroid/widget/Scroller;
+    iget-object v0, p0, Lcom/agc/asv/RulerView;->mScroller:Landroid/widget/Scroller;
 
-    invoke-virtual {v4, v3}, Landroid/widget/Scroller;->forceFinished(Z)V
+    invoke-virtual {v0, v2}, Landroid/widget/Scroller;->forceFinished(Z)V
 
     iput v1, p0, Lcom/agc/asv/RulerView;->mLastX:I
 
-    iput v2, p0, Lcom/agc/asv/RulerView;->mMove:I
-
-    nop
+    iput p1, p0, Lcom/agc/asv/RulerView;->mMove:I
 
     :goto_0
     iput v1, p0, Lcom/agc/asv/RulerView;->mLastX:I
 
-    return v3
+    return v2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0
@@ -948,7 +914,7 @@
 .end method
 
 .method public setValue(FFFF)V
-    .locals 4
+    .locals 2
 
     iput p1, p0, Lcom/agc/asv/RulerView;->mSelectorValue:F
 
@@ -958,105 +924,105 @@
 
     const/high16 v0, 0x41200000    # 10.0f
 
-    mul-float v1, p4, v0
+    mul-float/2addr p4, v0
 
-    float-to-int v1, v1
+    float-to-int p4, p4
 
-    int-to-float v1, v1
+    int-to-float p4, p4
 
-    iput v1, p0, Lcom/agc/asv/RulerView;->mPerValue:F
+    iput p4, p0, Lcom/agc/asv/RulerView;->mPerValue:F
 
-    mul-float v2, p3, v0
+    mul-float/2addr p3, v0
 
-    mul-float v3, p2, v0
+    mul-float v1, p2, v0
 
-    sub-float/2addr v2, v3
+    sub-float/2addr p3, v1
 
-    div-float/2addr v2, v1
+    div-float/2addr p3, p4
 
-    float-to-int v2, v2
+    float-to-int p3, p3
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 p3, p3, 0x1
 
-    iput v2, p0, Lcom/agc/asv/RulerView;->mTotalLine:I
+    iput p3, p0, Lcom/agc/asv/RulerView;->mTotalLine:I
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 p3, p3, -0x1
 
-    neg-int v2, v2
+    neg-int p3, p3
 
-    int-to-float v2, v2
+    int-to-float p3, p3
 
-    iget v3, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
+    iget v1, p0, Lcom/agc/asv/RulerView;->mLineSpaceWidth:F
 
-    mul-float/2addr v2, v3
+    mul-float/2addr p3, v1
 
-    float-to-int v2, v2
+    float-to-int p3, p3
 
-    iput v2, p0, Lcom/agc/asv/RulerView;->mMaxOffset:I
+    iput p3, p0, Lcom/agc/asv/RulerView;->mMaxOffset:I
 
-    sub-float v2, p2, p1
+    sub-float/2addr p2, p1
 
-    div-float/2addr v2, v1
+    div-float/2addr p2, p4
 
-    mul-float/2addr v2, v3
+    mul-float/2addr p2, v1
 
-    mul-float/2addr v2, v0
+    mul-float/2addr p2, v0
 
-    iput v2, p0, Lcom/agc/asv/RulerView;->mOffset:F
+    iput p2, p0, Lcom/agc/asv/RulerView;->mOffset:F
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "mOffset--           "
+    const-string p2, "mOffset--           "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mOffset:F
+    iget p2, p0, Lcom/agc/asv/RulerView;->mOffset:F
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, "         =====mMaxOffset    "
+    const-string p2, "         =====mMaxOffset    "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mMaxOffset:I
+    iget p2, p0, Lcom/agc/asv/RulerView;->mMaxOffset:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, "  mTotalLine  "
+    const-string p2, "  mTotalLine  "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    iget v1, p0, Lcom/agc/asv/RulerView;->mTotalLine:I
+    iget p2, p0, Lcom/agc/asv/RulerView;->mTotalLine:I
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, "zkk==="
+    const-string p2, "zkk==="
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
+    invoke-static {p2, p1}, Lcom/agc/Log;->d(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    invoke-virtual {p0}, Lcom/agc/asv/RulerView;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/agc/asv/RulerView;->setVisibility(I)V
+    invoke-virtual {p0, p1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

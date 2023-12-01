@@ -1,6 +1,5 @@
 .class public Lcom/agc/Log;
 .super Ljava/lang/Object;
-.source "Log.java"
 
 
 # annotations
@@ -12,18 +11,14 @@
 
 
 # static fields
-.field private static TAG:Ljava/lang/String;
+.field private static TAG:Ljava/lang/String; = "AGC"
 
-.field static handers:[Lcom/agc/Log$Hander;
+.field public static handers:[Lcom/agc/Log$Hander;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
-
-    const-string v0, "AGC"
-
-    sput-object v0, Lcom/agc/Log;->TAG:Ljava/lang/String;
 
     const/4 v0, 0x0
 
@@ -43,787 +38,787 @@
 .end method
 
 .method public static d(D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;[D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;[F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;[I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;[Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Ljava/lang/Object;[Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string p1, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d(Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d([D)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d([F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d([I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d([Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static d([Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "d"
+    const-string v0, "d"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;[D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;[F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;[I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;[Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Ljava/lang/Object;[Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string p1, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e(Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e([D)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e([F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e([I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e([Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static e([Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "e"
+    const-string v0, "e"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static getAppContext()Landroid/content/Context;
@@ -842,22 +837,22 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Application;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v1
+    return-object v0
 
     :catch_0
     move-exception v0
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static getApplication()Landroid/app/Application;
@@ -886,10 +881,6 @@
 
     const/4 v1, 0x0
 
-    move-object v2, v1
-
-    check-cast v2, [Ljava/lang/Object;
-
     invoke-virtual {v0, v1, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -900,404 +891,402 @@
 .end method
 
 .method public static i(D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;[D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;[F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;[I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;[Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Ljava/lang/Object;[Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string p1, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i(Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i([D)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i([F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i([I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i([Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static i([Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "i"
+    const-string v0, "i"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
-.method static log(Ljava/lang/String;Ljava/lang/String;)I
-    .locals 3
+.method public static log(Ljava/lang/String;Ljava/lang/String;)I
+    .locals 2
 
     :try_start_0
-    invoke-static {}, Lcom/agc/fw/FloatManager;->getInstance()Lcom/agc/fw/FloatManager;
-
-    move-result-object v0
+    sget-object v0, Lcom/agc/Debug;->debugView:Lcom/agc/fw/FloatManager;
 
     invoke-virtual {v0, p0, p1}, Lcom/agc/fw/FloatManager;->log(Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
@@ -1309,9 +1298,9 @@
     move-exception v0
 
     :goto_0
-    nop
-
     invoke-static {p0, p1}, Lcom/agc/CrashHandler;->writeLog(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     const/4 v0, -0x1
 
@@ -1321,7 +1310,6 @@
 
     sparse-switch v1, :sswitch_data_0
 
-    :cond_0
     goto :goto_1
 
     :sswitch_0
@@ -1331,8 +1319,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_0
 
+    goto :goto_1
+
+    :cond_0
     const/4 v0, 0x4
 
     goto :goto_1
@@ -1344,8 +1335,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_1
 
+    goto :goto_1
+
+    :cond_1
     const/4 v0, 0x3
 
     goto :goto_1
@@ -1357,8 +1351,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_2
 
+    goto :goto_1
+
+    :cond_2
     const/4 v0, 0x2
 
     goto :goto_1
@@ -1370,8 +1367,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_3
 
+    goto :goto_1
+
+    :cond_3
     const/4 v0, 0x1
 
     goto :goto_1
@@ -1383,8 +1383,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-nez v1, :cond_4
 
+    goto :goto_1
+
+    :cond_4
     const/4 v0, 0x0
 
     :goto_1
@@ -1398,74 +1401,72 @@
 
     invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    const-string v2, ": "
+    const-string v1, ": "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 
     :pswitch_0
-    sget-object v0, Lcom/agc/Log;->TAG:Ljava/lang/String;
+    sget-object p0, Lcom/agc/Log;->TAG:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 
     :pswitch_1
-    sget-object v0, Lcom/agc/Log;->TAG:Ljava/lang/String;
+    sget-object p0, Lcom/agc/Log;->TAG:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p0, p1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 
     :pswitch_2
-    sget-object v0, Lcom/agc/Log;->TAG:Ljava/lang/String;
+    sget-object p0, Lcom/agc/Log;->TAG:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p0, p1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 
     :pswitch_3
-    sget-object v0, Lcom/agc/Log;->TAG:Ljava/lang/String;
+    sget-object p0, Lcom/agc/Log;->TAG:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 
     :pswitch_4
-    sget-object v0, Lcom/agc/Log;->TAG:Ljava/lang/String;
+    sget-object p0, Lcom/agc/Log;->TAG:Ljava/lang/String;
 
-    invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
-
-    nop
+    return p0
 
     :sswitch_data_0
     .sparse-switch
@@ -1509,9 +1510,9 @@
 
     if-nez p0, :cond_0
 
-    const-string v0, "<null>"
+    const-string p0, "<null>"
 
-    return-object v0
+    return-object p0
 
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1528,108 +1529,96 @@
 
     if-eqz v0, :cond_1
 
-    move-object v0, p0
+    check-cast p0, [I
 
-    check-cast v0, [I
+    invoke-static {p0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 
     :cond_1
     instance-of v0, p0, [F
 
     if-eqz v0, :cond_2
 
-    move-object v0, p0
+    check-cast p0, [F
 
-    check-cast v0, [F
+    invoke-static {p0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 
     :cond_2
     instance-of v0, p0, [D
 
     if-eqz v0, :cond_3
 
-    move-object v0, p0
+    check-cast p0, [D
 
-    check-cast v0, [D
+    invoke-static {p0}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([D)Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 
     :cond_3
     instance-of v0, p0, [C
 
     if-eqz v0, :cond_4
 
-    move-object v0, p0
+    check-cast p0, [C
 
-    check-cast v0, [C
+    invoke-static {p0}, Ljava/util/Arrays;->toString([C)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([C)Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 
     :cond_4
     instance-of v0, p0, [Z
 
     if-eqz v0, :cond_5
 
-    move-object v0, p0
+    check-cast p0, [Z
 
-    check-cast v0, [Z
+    invoke-static {p0}, Ljava/util/Arrays;->toString([Z)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([Z)Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 
     :cond_5
     instance-of v0, p0, [Ljava/lang/Object;
 
     if-eqz v0, :cond_6
 
-    move-object v0, p0
+    check-cast p0, [Ljava/lang/Object;
 
-    check-cast v0, [Ljava/lang/Object;
+    invoke-static {p0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object p0
 
-    move-result-object v0
-
-    return-object v0
+    return-object p0
 
     :cond_6
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 
     :cond_7
     invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
-    .locals 2
+    .locals 1
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1637,813 +1626,813 @@
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, " "
+    const-string v0, " "
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
     invoke-static {p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static v(D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;[D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;[F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;[I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;[Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Ljava/lang/Object;[Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string p1, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v(Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v([D)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v([F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v([I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v([Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static v([Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "v"
+    const-string v0, "v"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;J)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {p0, v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;[D)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;[F)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;[I)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;[Ljava/lang/Object;)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Ljava/lang/Object;[Z)I
-    .locals 2
+    .locals 0
 
     invoke-static {p0, p1}, Lcom/agc/Log;->toString(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string p1, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {p1, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w(Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-static {v0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w([D)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w([F)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w([I)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w([Ljava/lang/Object;)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static w([Z)I
-    .locals 2
+    .locals 1
 
     invoke-static {p0}, Lcom/agc/Log;->toString(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    const-string v1, "w"
+    const-string v0, "w"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->log(Ljava/lang/String;Ljava/lang/String;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method

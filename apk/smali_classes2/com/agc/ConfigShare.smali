@@ -1,6 +1,5 @@
 .class public Lcom/agc/ConfigShare;
 .super Ljava/lang/Object;
-.source "ConfigShare.java"
 
 
 # direct methods
@@ -33,7 +32,7 @@
 .end method
 
 .method public exportConfig(I)Ljava/util/Map;
-    .locals 1
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -44,11 +43,11 @@
         }
     .end annotation
 
-    new-instance v0, Ljava/util/HashMap;
+    new-instance p1, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
 
-    return-object v0
+    return-object p1
 .end method
 
 .method public importConfig(Ljava/util/Map;I)V

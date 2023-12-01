@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/CenterSeekBar;
 .super Landroid/view/View;
-.source "CenterSeekBar.java"
 
 
 # annotations
@@ -26,21 +25,21 @@
 
 .field private mFlag:I
 
-.field mMaxHeight:I
+.field public mMaxHeight:I
 
-.field mMaxWidth:I
+.field public mMaxWidth:I
 
-.field mMinHeight:I
+.field public mMinHeight:I
 
-.field mMinWidth:I
+.field public mMinWidth:I
 
-.field protected mPaddingBottom:I
+.field public mPaddingBottom:I
 
-.field protected mPaddingLeft:I
+.field public mPaddingLeft:I
 
-.field protected mPaddingRight:I
+.field public mPaddingRight:I
 
-.field protected mPaddingTop:I
+.field public mPaddingTop:I
 
 .field private mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -68,7 +67,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     const-class v0, Lcom/agc/widget/CenterSeekBar;
@@ -103,7 +102,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 6
+    .locals 4
 
     invoke-direct {p0, p1, p2, p3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -137,144 +136,144 @@
 
     invoke-virtual {p1, p2, v3, p3, p3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v3
+    move-result-object p1
 
-    sget v4, Lcom/agc/R$styleable;->CenterSeekBar_thumb:I
+    sget p2, Lcom/agc/R$styleable;->CenterSeekBar_thumb:I
 
-    invoke-virtual {v3, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v4
+    move-result-object p2
 
-    iput-object v4, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
-    sget v4, Lcom/agc/R$styleable;->CenterSeekBar_progressDrawable:I
+    sget p2, Lcom/agc/R$styleable;->CenterSeekBar_progressDrawable:I
 
-    invoke-virtual {v3, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v4
+    move-result-object p2
 
-    iput-object v4, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-nez v4, :cond_0
+    if-nez p2, :cond_0
 
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object p2
 
-    sget v5, Lcom/agc/R$drawable;->seekbar_progress:I
+    sget p3, Lcom/agc/R$drawable;->seekbar_progress:I
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v4
+    move-result-object p2
 
-    iput-object v4, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     :cond_0
-    sget v4, Lcom/agc/R$styleable;->CenterSeekBar_backgroundDrawable:I
+    sget p2, Lcom/agc/R$styleable;->CenterSeekBar_backgroundDrawable:I
 
-    invoke-virtual {v3, v4}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v4
+    move-result-object p2
 
-    iput-object v4, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    if-nez v4, :cond_1
+    if-nez p2, :cond_1
 
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object p2
 
-    sget v5, Lcom/agc/R$drawable;->seekbar_background:I
+    sget p3, Lcom/agc/R$drawable;->seekbar_background:I
 
-    invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p2, p3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v4
+    move-result-object p2
 
-    iput-object v4, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     :cond_1
-    iget-wide v4, p0, Lcom/agc/widget/CenterSeekBar;->initProgress:D
+    iget-wide p2, p0, Lcom/agc/widget/CenterSeekBar;->initProgress:D
 
-    cmpl-double v0, v4, v0
+    cmpl-double v0, p2, v0
 
     if-eqz v0, :cond_2
 
-    iput-wide v4, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
+    iput-wide p2, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
     goto :goto_0
 
     :cond_2
-    sget v0, Lcom/agc/R$styleable;->CenterSeekBar_seekBarProgress:I
+    sget p2, Lcom/agc/R$styleable;->CenterSeekBar_seekBarProgress:I
 
-    invoke-virtual {v3, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p1, p2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v0
+    move-result p2
 
-    int-to-double v0, v0
+    int-to-double p2, p2
 
-    iput-wide v0, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
+    iput-wide p2, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
-    sget v0, Lcom/agc/R$styleable;->CenterSeekBar_min:I
+    sget p2, Lcom/agc/R$styleable;->CenterSeekBar_min:I
 
-    invoke-virtual {v3, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p1, p2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v0
+    move-result p2
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
 
-    sget v0, Lcom/agc/R$styleable;->CenterSeekBar_max:I
+    sget p2, Lcom/agc/R$styleable;->CenterSeekBar_max:I
 
-    invoke-virtual {v3, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {p1, p2, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v0
+    move-result p2
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
 
     :goto_0
-    iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v0
+    move-result p2
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarHeight:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarHeight:I
 
-    iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v0
+    move-result p2
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
 
-    iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v0
+    move-result p2
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumbHeight:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbHeight:I
 
-    iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
+    iget-object p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v0
+    move-result p2
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
 
-    const/16 v0, 0x28
+    const/16 p2, 0x28
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumbTextHeight:I
+    iput p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbTextHeight:I
 
-    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected drawableStateChanged()V
+.method public drawableStateChanged()V
     .locals 2
 
     invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
@@ -289,7 +288,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->getDrawableState()[I
+    invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
 
     move-result-object v1
 
@@ -299,7 +298,7 @@
 
     if-eqz v1, :cond_0
 
-    invoke-virtual {p0, v0}, Lcom/agc/widget/CenterSeekBar;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Landroid/view/View;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
 
     :cond_0
     return-void
@@ -337,7 +336,7 @@
     return-wide v0
 .end method
 
-.method protected declared-synchronized onDraw(Landroid/graphics/Canvas;)V
+.method public declared-synchronized onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
     monitor-enter p0
@@ -415,7 +414,7 @@
 
     invoke-virtual {v3, v2, v5, v0, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_0
     div-int/lit8 v3, v2, 0x2
@@ -446,11 +445,12 @@
 
     div-int/lit8 v5, v5, 0x2
 
+    :goto_0
     add-int/2addr v1, v5
 
     invoke-virtual {v3, v0, v4, v2, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     iget-object v3, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
@@ -479,11 +479,9 @@
 
     div-int/lit8 v5, v5, 0x2
 
-    add-int/2addr v1, v5
+    goto :goto_0
 
-    invoke-virtual {v3, v0, v4, v2, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    :goto_0
+    :goto_1
     iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -492,25 +490,23 @@
 
     iget-wide v1, p0, Lcom/agc/widget/CenterSeekBar;->mThumbCenterPosition:D
 
-    double-to-int v3, v1
-
-    iget v4, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
-
-    div-int/lit8 v5, v4, 0x2
-
-    sub-int/2addr v3, v5
-
-    const/4 v5, 0x0
-
     double-to-int v1, v1
 
-    div-int/lit8 v4, v4, 0x2
+    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
 
-    add-int/2addr v1, v4
+    div-int/lit8 v3, v2, 0x2
+
+    sub-int v3, v1, v3
+
+    div-int/lit8 v2, v2, 0x2
+
+    add-int/2addr v1, v2
 
     iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbHeight:I
 
-    invoke-virtual {v0, v3, v5, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    const/4 v4, 0x0
+
+    invoke-virtual {v0, v3, v4, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
@@ -530,8 +526,8 @@
     throw p1
 .end method
 
-.method protected onMeasure(II)V
-    .locals 12
+.method public onMeasure(II)V
+    .locals 7
 
     iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mProgressDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -551,118 +547,121 @@
     move-result v1
 
     :goto_0
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
     if-eqz v0, :cond_1
 
-    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mMinWidth:I
+    iget v3, p0, Lcom/agc/widget/CenterSeekBar;->mMinWidth:I
 
-    iget v6, p0, Lcom/agc/widget/CenterSeekBar;->mMaxWidth:I
+    iget v4, p0, Lcom/agc/widget/CenterSeekBar;->mMaxWidth:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v7
+    move-result v5
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
 
-    move-result v6
+    move-result v4
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v3
 
-    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mMinHeight:I
+    iget v4, p0, Lcom/agc/widget/CenterSeekBar;->mMinHeight:I
 
-    iget v6, p0, Lcom/agc/widget/CenterSeekBar;->mMaxHeight:I
+    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mMaxHeight:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v7
+    move-result v0
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
+    invoke-static {v5, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result v6
+    move-result v0
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
+    move-result v0
 
-    invoke-static {v1, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
-
-    :cond_1
-    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingLeft:I
-
-    iget v6, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingRight:I
-
-    add-int/2addr v5, v6
-
-    add-int/2addr v3, v5
-
-    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingTop:I
-
-    iget v6, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingBottom:I
-
-    add-int/2addr v5, v6
-
-    add-int/2addr v4, v5
-
-    invoke-static {v3, p1, v2}, Lcom/agc/widget/CenterSeekBar;->resolveSizeAndState(III)I
-
-    move-result v5
-
-    iput v5, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
-
-    invoke-static {v4, p2, v2}, Lcom/agc/widget/CenterSeekBar;->resolveSizeAndState(III)I
-
-    move-result v2
-
-    iput v2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarHeight:I
-
-    iget-wide v6, p0, Lcom/agc/widget/CenterSeekBar;->initProgress:D
-
-    const-wide/high16 v8, -0x4010000000000000L    # -1.0
-
-    cmpl-double v2, v6, v8
-
-    if-eqz v2, :cond_2
-
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
-
-    int-to-double v8, v2
-
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
-
-    int-to-double v10, v2
-
-    move-object v5, p0
-
-    invoke-virtual/range {v5 .. v11}, Lcom/agc/widget/CenterSeekBar;->setProgress(DDD)V
+    move-result v0
 
     goto :goto_1
 
-    :cond_2
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+    :cond_1
+    move v0, v2
 
-    div-int/lit8 v2, v2, 0x2
-
-    int-to-double v5, v2
-
-    iput-wide v5, p0, Lcom/agc/widget/CenterSeekBar;->mThumbCenterPosition:D
+    move v3, v0
 
     :goto_1
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+    iget v1, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingLeft:I
 
-    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
+    iget v4, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingRight:I
 
-    add-int/2addr v2, v5
+    add-int/2addr v1, v4
 
-    iget v5, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarHeight:I
+    add-int/2addr v3, v1
 
-    invoke-virtual {p0, v2, v5}, Lcom/agc/widget/CenterSeekBar;->setMeasuredDimension(II)V
+    iget v1, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingTop:I
+
+    iget v4, p0, Lcom/agc/widget/CenterSeekBar;->mPaddingBottom:I
+
+    add-int/2addr v1, v4
+
+    add-int/2addr v0, v1
+
+    invoke-static {v3, p1, v2}, Landroid/view/View;->resolveSizeAndState(III)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+
+    invoke-static {v0, p2, v2}, Landroid/view/View;->resolveSizeAndState(III)I
+
+    move-result p1
+
+    iput p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarHeight:I
+
+    iget-wide v1, p0, Lcom/agc/widget/CenterSeekBar;->initProgress:D
+
+    const-wide/high16 p1, -0x4010000000000000L    # -1.0
+
+    cmpl-double p1, v1, p1
+
+    if-eqz p1, :cond_2
+
+    iget p1, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
+
+    int-to-double v3, p1
+
+    iget p1, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
+
+    int-to-double v5, p1
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v6}, Lcom/agc/widget/CenterSeekBar;->setProgress(DDD)V
+
+    goto :goto_2
+
+    :cond_2
+    iget p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+
+    div-int/lit8 p1, p1, 0x2
+
+    int-to-double p1, p1
+
+    iput-wide p1, p0, Lcom/agc/widget/CenterSeekBar;->mThumbCenterPosition:D
+
+    :goto_2
+    iget p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+
+    iget p2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
+
+    add-int/2addr p1, p2
+
+    iget p2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarHeight:I
+
+    invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
 .end method
@@ -676,53 +675,36 @@
 
     const/4 v1, 0x1
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz v0, :cond_7
+
+    if-eq v0, v1, :cond_6
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_0
 
     goto/16 :goto_2
 
-    :pswitch_0
+    :cond_0
     iget v0, p0, Lcom/agc/widget/CenterSeekBar;->mFlag:I
 
-    if-ne v0, v1, :cond_4
+    if-ne v0, v1, :cond_5
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
-
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
-
-    div-int/lit8 v2, v2, 0x2
-
-    int-to-float v2, v2
-
-    cmpg-float v0, v0, v2
-
-    if-gtz v0, :cond_0
-
-    const/4 v0, 0x0
-
-    goto :goto_0
-
-    :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
 
     iget v3, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
 
-    div-int/lit8 v3, v3, 0x2
+    div-int/2addr v3, v2
 
-    sub-int/2addr v2, v3
+    int-to-float v3, v3
 
-    int-to-float v2, v2
+    cmpg-float v0, v0, v3
 
-    cmpl-float v0, v0, v2
+    if-gtz v0, :cond_1
 
-    if-ltz v0, :cond_1
-
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/4 p1, 0x0
 
     goto :goto_0
 
@@ -731,170 +713,176 @@
 
     move-result v0
 
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
+    iget v3, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
 
-    div-int/lit8 v2, v2, 0x2
+    iget v4, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
 
-    int-to-float v2, v2
+    div-int/2addr v4, v2
 
-    sub-float/2addr v0, v2
+    sub-int/2addr v3, v4
 
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+    int-to-float v3, v3
 
-    move-result v0
+    cmpl-float v0, v0, v3
 
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+    if-ltz v0, :cond_2
+
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    goto :goto_0
+
+    :cond_2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    move-result p1
+
+    iget v0, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
+
+    div-int/2addr v0, v2
+
+    int-to-float v0, v0
+
+    sub-float/2addr p1, v0
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget v0, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
 
     iget v3, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v0, v3
 
-    int-to-float v2, v2
+    int-to-float v0, v0
 
-    div-float/2addr v0, v2
+    div-float/2addr p1, v0
 
     :goto_0
-    iget v2, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
+    iget v0, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
 
     iget v3, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
 
-    sub-int v4, v2, v3
+    sub-int v4, v0, v3
 
-    int-to-float v4, v4
+    int-to-float v5, v4
 
-    mul-float/2addr v4, v0
+    mul-float/2addr v5, p1
 
-    float-to-double v4, v4
+    float-to-double v5, v5
 
-    iget v6, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
+    iget p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
 
     iget v7, p0, Lcom/agc/widget/CenterSeekBar;->mThumbWidth:I
 
-    sub-int/2addr v6, v7
+    sub-int/2addr p1, v7
 
-    int-to-double v8, v6
+    int-to-double v8, p1
 
-    mul-double/2addr v8, v4
+    mul-double/2addr v8, v5
 
-    sub-int v6, v2, v3
-
-    int-to-double v10, v6
+    int-to-double v10, v4
 
     div-double/2addr v8, v10
 
-    div-int/lit8 v7, v7, 0x2
+    div-int/2addr v7, v2
 
-    int-to-double v6, v7
+    int-to-double v10, v7
 
-    add-double/2addr v8, v6
+    add-double/2addr v8, v10
 
     iput-wide v8, p0, Lcom/agc/widget/CenterSeekBar;->mThumbCenterPosition:D
 
-    int-to-double v6, v3
+    int-to-double v2, v3
 
-    add-double/2addr v6, v4
+    add-double v7, v5, v2
 
-    iput-wide v6, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
+    iput-wide v7, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
-    int-to-double v8, v2
+    int-to-double v9, v0
 
-    cmpl-double v8, v4, v8
+    cmpl-double p1, v5, v9
 
-    if-lez v8, :cond_2
+    if-lez p1, :cond_3
 
-    int-to-double v2, v2
-
-    iput-wide v2, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
+    iput-wide v9, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
     goto :goto_1
 
-    :cond_2
-    int-to-double v8, v3
+    :cond_3
+    cmpg-double p1, v7, v2
 
-    cmpg-double v2, v6, v8
-
-    if-gez v2, :cond_3
-
-    int-to-double v2, v3
+    if-gez p1, :cond_4
 
     iput-wide v2, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
-    :cond_3
-    :goto_1
-    iget-object v2, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarChangeListener:Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
-
-    if-eqz v2, :cond_4
-
-    iget-wide v6, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
-
-    invoke-interface {v2, p0, v6, v7, v1}, Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;->onProgressChanged(Lcom/agc/widget/CenterSeekBar;DZ)V
-
     :cond_4
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->invalidate()V
+    :goto_1
+    iget-object p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarChangeListener:Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
 
-    goto :goto_2
+    if-eqz p1, :cond_5
 
-    :pswitch_1
-    const/4 v0, 0x0
+    iget-wide v2, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
-    invoke-virtual {p0, v0}, Lcom/agc/widget/CenterSeekBar;->setPressed(Z)V
-
-    const/16 v0, 0xc
-
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mMinHeight:I
-
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->invalidate()V
-
-    iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarChangeListener:Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
-
-    if-eqz v0, :cond_6
-
-    invoke-interface {v0, p0}, Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;->onStopTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
-
-    goto :goto_2
-
-    :pswitch_2
-    iput v1, p0, Lcom/agc/widget/CenterSeekBar;->mFlag:I
-
-    const/16 v0, 0x28
-
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->mMinHeight:I
-
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->invalidate()V
-
-    invoke-virtual {p0, v1}, Lcom/agc/widget/CenterSeekBar;->setPressed(Z)V
-
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_5
-
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v0
-
-    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+    invoke-interface {p1, p0, v2, v3, v1}, Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;->onProgressChanged(Lcom/agc/widget/CenterSeekBar;DZ)V
 
     :cond_5
-    iget-object v0, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarChangeListener:Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    if-eqz v0, :cond_6
-
-    invoke-interface {v0, p0}, Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;->onStartTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
+    goto :goto_2
 
     :cond_6
+    const/4 p1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPressed(Z)V
+
+    const/16 p1, 0xc
+
+    iput p1, p0, Lcom/agc/widget/CenterSeekBar;->mMinHeight:I
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    iget-object p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarChangeListener:Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
+
+    if-eqz p1, :cond_9
+
+    invoke-interface {p1, p0}, Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;->onStopTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
+
+    goto :goto_2
+
+    :cond_7
+    iput v1, p0, Lcom/agc/widget/CenterSeekBar;->mFlag:I
+
+    const/16 p1, 0x28
+
+    iput p1, p0, Lcom/agc/widget/CenterSeekBar;->mMinHeight:I
+
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    invoke-virtual {p0, v1}, Landroid/view/View;->setPressed(Z)V
+
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_8
+
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object p1
+
+    invoke-interface {p1, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    :cond_8
+    iget-object p1, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarChangeListener:Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;
+
+    if-eqz p1, :cond_9
+
+    invoke-interface {p1, p0}, Lcom/agc/widget/CenterSeekBar$OnSeekBarChangeListener;->onStartTrackingTouch(Lcom/agc/widget/CenterSeekBar;)V
+
+    :cond_9
     :goto_2
     return v1
-
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 .method public setMaxProgress(I)V
@@ -922,38 +910,38 @@
 .end method
 
 .method public setProgress(DDD)V
-    .locals 7
+    .locals 4
 
     iget v0, p0, Lcom/agc/widget/CenterSeekBar;->mSeekBarWidth:I
 
-    int-to-double v1, v0
+    int-to-double v0, v0
 
-    const-wide/high16 v3, -0x4010000000000000L    # -1.0
+    const-wide/high16 v2, -0x4010000000000000L    # -1.0
 
-    cmpl-double v1, v1, v3
+    cmpl-double v2, v0, v2
 
-    if-nez v1, :cond_0
+    if-nez v2, :cond_0
 
     iput-wide p1, p0, Lcom/agc/widget/CenterSeekBar;->initProgress:D
 
-    double-to-int v0, p3
+    double-to-int p1, p3
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
+    iput p1, p0, Lcom/agc/widget/CenterSeekBar;->maxProgress:I
 
-    double-to-int v0, p5
+    double-to-int p1, p5
 
-    iput v0, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
+    iput p1, p0, Lcom/agc/widget/CenterSeekBar;->minProgress:I
 
     return-void
 
     :cond_0
-    cmpg-double v1, p1, p3
+    cmpg-double v2, p1, p3
 
-    if-gez v1, :cond_1
+    if-gez v2, :cond_1
 
-    cmpl-double v1, p1, p5
+    cmpl-double v2, p1, p5
 
-    if-lez v1, :cond_1
+    if-lez v2, :cond_1
 
     iput-wide p1, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
@@ -963,19 +951,17 @@
     iput-wide p5, p0, Lcom/agc/widget/CenterSeekBar;->progress:D
 
     :goto_0
-    sub-double v1, p1, p5
+    sub-double/2addr p1, p5
 
-    int-to-double v3, v0
+    mul-double/2addr p1, v0
 
-    mul-double/2addr v3, v1
+    sub-double/2addr p3, p5
 
-    sub-double v5, p3, p5
+    div-double/2addr p1, p3
 
-    div-double/2addr v3, v5
+    iput-wide p1, p0, Lcom/agc/widget/CenterSeekBar;->mThumbCenterPosition:D
 
-    iput-wide v3, p0, Lcom/agc/widget/CenterSeekBar;->mThumbCenterPosition:D
-
-    invoke-virtual {p0}, Lcom/agc/widget/CenterSeekBar;->postInvalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
 
     return-void
 .end method

@@ -1,6 +1,5 @@
 .class final Lgo/Universe$proxyerror;
 .super Ljava/lang/Exception;
-.source "Universe.java"
 
 # interfaces
 .implements Lgo/Seq$Proxy;
@@ -13,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
+    accessFlags = 0x19
     name = "proxyerror"
 .end annotation
 
@@ -23,7 +22,7 @@
 
 
 # direct methods
-.method constructor <init>(I)V
+.method public constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V

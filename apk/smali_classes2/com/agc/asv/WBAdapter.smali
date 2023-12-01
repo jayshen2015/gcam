@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/WBAdapter;
 .super Lcom/agc/asv/CommonAdapter;
-.source "CommonAdapter.java"
 
 
 # annotations
@@ -34,35 +33,35 @@
 
 # virtual methods
 .method public getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 3
+    .locals 1
 
-    iget-object v0, p0, Lcom/agc/asv/WBAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lcom/agc/asv/CommonAdapter;->mContext:Landroid/content/Context;
 
-    sget v1, Lcom/agc/Res$layout;->agc_asv_pop_list_item:I
+    sget p3, Lcom/agc/Res$layout;->agc_asv_pop_list_item:I
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-static {p2, p3, v0}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object p2
 
-    const-string v1, "agc_tv"
+    const-string p3, "agc_tv"
 
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+    invoke-virtual {p2, p3}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object p3
 
-    check-cast v1, Lcom/agc/asv/WB;
+    check-cast p3, Lcom/agc/asv/WB;
 
-    iget-object v2, p0, Lcom/agc/asv/WBAdapter;->mList:Ljava/util/List;
+    iget-object v0, p0, Lcom/agc/asv/CommonAdapter;->mList:Ljava/util/List;
 
-    invoke-interface {v2, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p1
 
-    check-cast v2, Lcom/agc/asv/WBModel;
+    check-cast p1, Lcom/agc/asv/WBModel;
 
-    invoke-virtual {v1, v2}, Lcom/agc/asv/WB;->setWBModel(Lcom/agc/asv/WBModel;)V
+    invoke-virtual {p3, p1}, Lcom/agc/asv/WB;->setWBModel(Lcom/agc/asv/WBModel;)V
 
-    return-object v0
+    return-object p2
 .end method

@@ -1,6 +1,5 @@
 .class public final Lorg/lsposed/hiddenapibypass/Helper$Executable;
 .super Lorg/lsposed/hiddenapibypass/Helper$AccessibleObject;
-.source "Helper.java"
 
 
 # annotations

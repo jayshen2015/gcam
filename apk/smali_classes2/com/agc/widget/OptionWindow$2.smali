@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/OptionWindow$2;
 .super Ljava/lang/Object;
-.source "OptionWindow.java"
 
 # interfaces
 .implements Landroid/widget/AdapterView$OnItemLongClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/OptionWindow;
+.field public final synthetic this$0:Lcom/agc/widget/OptionWindow;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/OptionWindow;)V
+.method public constructor <init>(Lcom/agc/widget/OptionWindow;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
@@ -35,7 +34,7 @@
 
 # virtual methods
 .method public onItemLongClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)Z
-    .locals 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -48,46 +47,46 @@
 
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/widget/OptionButton;->vibrate(Landroid/content/Context;)V
+    invoke-static {p1}, Lcom/agc/widget/OptionButton;->vibrate(Landroid/content/Context;)V
 
-    iget-object v0, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-static {v0}, Lcom/agc/widget/OptionWindow;->access$000(Lcom/agc/widget/OptionWindow;)Ljava/util/List;
+    invoke-static {p1}, Lcom/agc/widget/OptionWindow;->access$000(Lcom/agc/widget/OptionWindow;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lcom/agc/widget/OptionButton$OptionButtonItem;
+    check-cast p1, Lcom/agc/widget/OptionButton$OptionButtonItem;
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p2, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-static {v1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
+    invoke-static {p2}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
 
-    move-result-object v1
+    move-result-object p2
 
-    if-eqz v1, :cond_0
+    if-eqz p2, :cond_0
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p2, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-static {v1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
+    invoke-static {p2}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
 
-    move-result-object v1
+    move-result-object p2
 
-    iget v2, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->value:I
+    iget p1, p1, Lcom/agc/widget/OptionButton$OptionButtonItem;->value:I
 
-    invoke-interface {v1, v2}, Lcom/agc/widget/OptionWindow$OnPopItemClickListener;->onLongClickPopItem(I)V
+    invoke-interface {p2, p1}, Lcom/agc/widget/OptionWindow$OnPopItemClickListener;->onLongClickPopItem(I)V
 
     :cond_0
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$2;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-virtual {v1}, Lcom/agc/widget/OptionWindow;->dismiss()V
+    invoke-virtual {p1}, Lcom/agc/widget/OptionWindow;->dismiss()V
 
-    const/4 v1, 0x0
+    const/4 p1, 0x0
 
-    return v1
+    return p1
 .end method

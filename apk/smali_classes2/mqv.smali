@@ -1,6 +1,5 @@
 .class final Lmqv;
 .super Landroid/hardware/camera2/CameraDevice$StateCallback;
-.source "SourceFile"
 
 
 # instance fields

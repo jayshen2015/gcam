@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/colorbar/ColorMixLayout$1;
 .super Ljava/lang/Object;
-.source "ColorMixLayout.java"
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+.field public final synthetic this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/colorbar/ColorMixLayout;)V
+.method public constructor <init>(Lcom/agc/widget/colorbar/ColorMixLayout;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
@@ -35,15 +34,29 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 5
+    .locals 4
 
-    iget-object v0, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+    iget-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
-    invoke-static {v0}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
+    invoke-static {p1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
 
-    move-result-object v0
+    move-result-object p1
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+
+    invoke-static {p1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$100(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/ColorSliderBar;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    iget-object p1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
+
+    invoke-static {p1}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
+
+    move-result-object p1
 
     iget-object v0, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
@@ -51,13 +64,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
-
-    invoke-static {v0}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$000(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/OnColorPickerListener;
-
-    move-result-object v0
+    iget v0, v0, Lcom/agc/widget/colorbar/ColorSliderBar;->barColor:I
 
     iget-object v1, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
@@ -65,7 +72,7 @@
 
     move-result-object v1
 
-    iget v1, v1, Lcom/agc/widget/colorbar/ColorSliderBar;->barColor:I
+    iget v1, v1, Lcom/agc/widget/colorbar/ColorSliderBar;->mHueValue:F
 
     iget-object v2, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
@@ -73,7 +80,7 @@
 
     move-result-object v2
 
-    iget v2, v2, Lcom/agc/widget/colorbar/ColorSliderBar;->mHueValue:F
+    iget v2, v2, Lcom/agc/widget/colorbar/ColorSliderBar;->mSaturationValue:F
 
     iget-object v3, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
 
@@ -81,17 +88,9 @@
 
     move-result-object v3
 
-    iget v3, v3, Lcom/agc/widget/colorbar/ColorSliderBar;->mSaturationValue:F
+    iget v3, v3, Lcom/agc/widget/colorbar/ColorSliderBar;->mLuminanceValue:F
 
-    iget-object v4, p0, Lcom/agc/widget/colorbar/ColorMixLayout$1;->this$0:Lcom/agc/widget/colorbar/ColorMixLayout;
-
-    invoke-static {v4}, Lcom/agc/widget/colorbar/ColorMixLayout;->access$100(Lcom/agc/widget/colorbar/ColorMixLayout;)Lcom/agc/widget/colorbar/ColorSliderBar;
-
-    move-result-object v4
-
-    iget v4, v4, Lcom/agc/widget/colorbar/ColorSliderBar;->mLuminanceValue:F
-
-    invoke-interface {v0, v1, v2, v3, v4}, Lcom/agc/widget/colorbar/OnColorPickerListener;->onColorDone(IFFF)V
+    invoke-interface {p1, v0, v1, v2, v3}, Lcom/agc/widget/colorbar/OnColorPickerListener;->onColorDone(IFFF)V
 
     :cond_0
     return-void

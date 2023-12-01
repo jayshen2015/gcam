@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/WBPopupWindow$1;
 .super Ljava/lang/Object;
-.source "WBPopupWindow.java"
 
 # interfaces
 .implements Landroid/widget/AdapterView$OnItemClickListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/WBPopupWindow;
+.field public final synthetic this$0:Lcom/agc/asv/WBPopupWindow;
 
-.field final synthetic val$adapter:Lcom/agc/asv/WBAdapter;
+.field public final synthetic val$adapter:Lcom/agc/asv/WBAdapter;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/WBPopupWindow;Lcom/agc/asv/WBAdapter;)V
+.method public constructor <init>(Lcom/agc/asv/WBPopupWindow;Lcom/agc/asv/WBAdapter;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,7 +43,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 6
+    .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -55,107 +54,107 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/agc/asv/WBPopupWindow$1;->this$0:Lcom/agc/asv/WBPopupWindow;
+    iget-object p1, p0, Lcom/agc/asv/WBPopupWindow$1;->this$0:Lcom/agc/asv/WBPopupWindow;
 
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object p4
 
-    invoke-virtual {v0, v1}, Lcom/agc/asv/WBPopupWindow;->vibrate(Landroid/content/Context;)V
+    invoke-virtual {p1, p4}, Lcom/agc/asv/WBPopupWindow;->vibrate(Landroid/content/Context;)V
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "click item="
+    const-string p4, "click item="
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-static {v0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    invoke-static {p1}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
 
-    instance-of v0, p2, Lcom/agc/asv/WB;
+    instance-of p1, p2, Lcom/agc/asv/WB;
 
-    if-eqz v0, :cond_2
+    if-eqz p1, :cond_2
 
-    iget-object v0, p0, Lcom/agc/asv/WBPopupWindow$1;->val$adapter:Lcom/agc/asv/WBAdapter;
+    iget-object p1, p0, Lcom/agc/asv/WBPopupWindow$1;->val$adapter:Lcom/agc/asv/WBAdapter;
 
-    invoke-virtual {v0, p3}, Lcom/agc/asv/WBAdapter;->getItem(I)Ljava/lang/Object;
+    invoke-virtual {p1, p3}, Lcom/agc/asv/CommonAdapter;->getItem(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lcom/agc/asv/WBModel;
+    check-cast p1, Lcom/agc/asv/WBModel;
 
-    iget-object v1, p0, Lcom/agc/asv/WBPopupWindow$1;->val$adapter:Lcom/agc/asv/WBAdapter;
+    iget-object p2, p0, Lcom/agc/asv/WBPopupWindow$1;->val$adapter:Lcom/agc/asv/WBAdapter;
 
-    iget-object v1, v1, Lcom/agc/asv/WBAdapter;->mList:Ljava/util/List;
+    iget-object p2, p2, Lcom/agc/asv/CommonAdapter;->mList:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object p2
 
     :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result p3
 
-    const/4 v3, 0x1
+    const/4 p4, 0x1
 
-    if-eqz v2, :cond_1
+    if-eqz p3, :cond_1
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object p3
 
-    check-cast v2, Lcom/agc/asv/WBModel;
+    check-cast p3, Lcom/agc/asv/WBModel;
 
-    iget-object v4, v2, Lcom/agc/asv/WBModel;->wbType:Lcom/agc/asv/WB$WBType;
+    iget-object p5, p3, Lcom/agc/asv/WBModel;->wbType:Lcom/agc/asv/WB$WBType;
 
-    iget-object v5, v0, Lcom/agc/asv/WBModel;->wbType:Lcom/agc/asv/WB$WBType;
+    iget-object v0, p1, Lcom/agc/asv/WBModel;->wbType:Lcom/agc/asv/WB$WBType;
 
-    if-ne v4, v5, :cond_0
+    if-ne p5, v0, :cond_0
 
     goto :goto_1
 
     :cond_0
-    const/4 v3, 0x0
+    const/4 p4, 0x0
 
     :goto_1
-    iput-boolean v3, v2, Lcom/agc/asv/WBModel;->isChecked:Z
+    iput-boolean p4, p3, Lcom/agc/asv/WBModel;->isChecked:Z
 
     goto :goto_0
 
     :cond_1
-    iget-object v1, p0, Lcom/agc/asv/WBPopupWindow$1;->val$adapter:Lcom/agc/asv/WBAdapter;
+    iget-object p2, p0, Lcom/agc/asv/WBPopupWindow$1;->val$adapter:Lcom/agc/asv/WBAdapter;
 
-    invoke-virtual {v1}, Lcom/agc/asv/WBAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p2}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    iget-object v1, p0, Lcom/agc/asv/WBPopupWindow$1;->this$0:Lcom/agc/asv/WBPopupWindow;
+    iget-object p2, p0, Lcom/agc/asv/WBPopupWindow$1;->this$0:Lcom/agc/asv/WBPopupWindow;
 
-    invoke-static {v1}, Lcom/agc/asv/WBPopupWindow;->access$000(Lcom/agc/asv/WBPopupWindow;)Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
+    invoke-static {p2}, Lcom/agc/asv/WBPopupWindow;->access$000(Lcom/agc/asv/WBPopupWindow;)Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
 
-    move-result-object v1
+    move-result-object p2
 
-    if-eqz v1, :cond_2
+    if-eqz p2, :cond_2
 
-    iput-boolean v3, v0, Lcom/agc/asv/WBModel;->isChecked:Z
+    iput-boolean p4, p1, Lcom/agc/asv/WBModel;->isChecked:Z
 
-    iget-object v1, p0, Lcom/agc/asv/WBPopupWindow$1;->this$0:Lcom/agc/asv/WBPopupWindow;
+    iget-object p2, p0, Lcom/agc/asv/WBPopupWindow$1;->this$0:Lcom/agc/asv/WBPopupWindow;
 
-    invoke-static {v1}, Lcom/agc/asv/WBPopupWindow;->access$000(Lcom/agc/asv/WBPopupWindow;)Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
+    invoke-static {p2}, Lcom/agc/asv/WBPopupWindow;->access$000(Lcom/agc/asv/WBPopupWindow;)Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
 
-    move-result-object v1
+    move-result-object p2
 
-    invoke-interface {v1, v0}, Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;->onClickPopItem(Lcom/agc/asv/WBModel;)V
+    invoke-interface {p2, p1}, Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;->onClickPopItem(Lcom/agc/asv/WBModel;)V
 
     :cond_2
     return-void

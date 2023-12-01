@@ -1,6 +1,5 @@
 .class public Lgo/Seq;
 .super Ljava/lang/Object;
-.source "Seq.java"
 
 
 # annotations
@@ -26,11 +25,11 @@
 
 .field public static final nullRef:Lgo/Seq$Ref;
 
-.field static final tracker:Lgo/Seq$RefTracker;
+.field public static final tracker:Lgo/Seq$RefTracker;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 3
 
     const-string v0, "GoSeq"
@@ -82,7 +81,7 @@
     return-void
 .end method
 
-.method static synthetic access$000()Ljava/util/logging/Logger;
+.method public static synthetic access$000()Ljava/util/logging/Logger;
     .locals 1
 
     sget-object v0, Lgo/Seq;->log:Ljava/util/logging/Logger;
@@ -90,7 +89,7 @@
     return-object v0
 .end method
 
-.method static decRef(I)V
+.method public static decRef(I)V
     .locals 1
 
     sget-object v0, Lgo/Seq;->tracker:Lgo/Seq$RefTracker;
@@ -100,7 +99,7 @@
     return-void
 .end method
 
-.method static native destroyRef(I)V
+.method public static native destroyRef(I)V
 .end method
 
 .method public static getRef(I)Lgo/Seq$Ref;
@@ -110,19 +109,19 @@
 
     invoke-virtual {v0, p0}, Lgo/Seq$RefTracker;->get(I)Lgo/Seq$Ref;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 .end method
 
 .method public static incGoObjectRef(Lgo/Seq$GoObject;)I
-    .locals 1
+    .locals 0
 
     invoke-interface {p0}, Lgo/Seq$GoObject;->incRefnum()I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static native incGoRef(ILgo/Seq$GoObject;)V
@@ -135,9 +134,9 @@
 
     invoke-virtual {v0, p0}, Lgo/Seq$RefTracker;->inc(Ljava/lang/Object;)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method public static incRefnum(I)V
@@ -161,7 +160,7 @@
     return-void
 .end method
 
-.method static native setContext(Ljava/lang/Object;)V
+.method public static native setContext(Ljava/lang/Object;)V
 .end method
 
 .method public static touch()V
@@ -171,7 +170,7 @@
 .end method
 
 .method public static trackGoRef(ILgo/Seq$GoObject;)V
-    .locals 3
+    .locals 2
 
     if-gtz p0, :cond_0
 
@@ -182,27 +181,27 @@
     return-void
 
     :cond_0
-    new-instance v0, Ljava/lang/RuntimeException;
+    new-instance p1, Ljava/lang/RuntimeException;
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "trackGoRef called with Java refnum "
+    const-string v1, "trackGoRef called with Java refnum "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v0
+    throw p1
 .end method

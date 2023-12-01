@@ -1,6 +1,5 @@
 .class Lcom/agc/menu/SectorMenuButton$1;
 .super Ljava/lang/Object;
-.source "SectorMenuButton.java"
 
 # interfaces
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/menu/SectorMenuButton;
+.field public final synthetic this$0:Lcom/agc/menu/SectorMenuButton;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/menu/SectorMenuButton;)V
+.method public constructor <init>(Lcom/agc/menu/SectorMenuButton;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/menu/SectorMenuButton$1;->this$0:Lcom/agc/menu/SectorMenuButton;
@@ -43,7 +42,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Lcom/agc/menu/SectorMenuButton;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+    invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
     iget-object v0, p0, Lcom/agc/menu/SectorMenuButton$1;->this$0:Lcom/agc/menu/SectorMenuButton;
 

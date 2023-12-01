@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/ShadowPopup$OnBottomSheetShowListener;
 .super Ljava/lang/Object;
-.source "ShadowPopup.java"
 
 
 # annotations

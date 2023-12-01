@@ -1,6 +1,5 @@
 .class public final Lnag;
 .super Ljava/lang/Object;
-.source "SourceFile"
 
 # interfaces
 .implements Lnah;
@@ -236,7 +235,7 @@
 
     sget-object v1, Lnat;->a:Lnat;
 
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lnat;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -642,7 +641,7 @@
 
     iget-object v0, p0, Lnag;->b:Lphz;
 
-    invoke-virtual {v0}, Ljava/util/AbstractCollection;->size()I
+    invoke-virtual {v0}, Lphz;->size()I
 
     move-result v0
 

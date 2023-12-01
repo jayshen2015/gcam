@@ -1,6 +1,5 @@
 .class public interface abstract Landroid/preference/LibraryPreference$CallBack;
 .super Ljava/lang/Object;
-.source "LibraryPreference.java"
 
 
 # annotations

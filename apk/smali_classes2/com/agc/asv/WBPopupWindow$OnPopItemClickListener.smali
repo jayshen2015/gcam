@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/asv/WBPopupWindow$OnPopItemClickListener;
 .super Ljava/lang/Object;
-.source "WBPopupWindow.java"
 
 
 # annotations

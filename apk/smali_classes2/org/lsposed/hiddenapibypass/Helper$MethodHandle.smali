@@ -1,6 +1,5 @@
 .class public Lorg/lsposed/hiddenapibypass/Helper$MethodHandle;
 .super Ljava/lang/Object;
-.source "Helper.java"
 
 
 # annotations
@@ -15,11 +14,11 @@
 
 
 # instance fields
-.field protected final artFieldOrMethod:J
+.field public final artFieldOrMethod:J
 
 .field private cachedSpreadInvoker:Lorg/lsposed/hiddenapibypass/Helper$MethodHandle;
 
-.field protected final handleKind:I
+.field public final handleKind:I
 
 .field private nominalType:Ljava/lang/invoke/MethodType;
 

@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
 .super Ljava/lang/Object;
-.source "OptionWindow.java"
 
 
 # annotations

@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/ScaleImageView$1;
 .super Ljava/lang/Object;
-.source "ScaleImageView.java"
 
 # interfaces
 .implements Landroid/view/View$OnTouchListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/asv/ScaleImageView;
+.field public final synthetic this$0:Lcom/agc/asv/ScaleImageView;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/ScaleImageView;)V
+.method public constructor <init>(Lcom/agc/asv/ScaleImageView;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
@@ -35,88 +34,73 @@
 
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 4
+    .locals 3
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v0
+    move-result p1
 
-    const-wide/16 v1, 0x64
+    const-wide/16 v0, 0x64
 
-    packed-switch v0, :pswitch_data_0
+    if-eqz p1, :cond_1
 
-    goto :goto_0
+    const/4 v2, 0x1
 
-    :pswitch_0
-    iget-object v0, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
+    if-eq p1, v2, :cond_0
 
-    invoke-virtual {v0}, Lcom/agc/asv/ScaleImageView;->animate()Landroid/view/ViewPropertyAnimator;
+    goto :goto_1
 
-    move-result-object v0
+    :cond_0
+    iget-object p1, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    invoke-virtual {p1}, Landroid/widget/ImageButton;->animate()Landroid/view/ViewPropertyAnimator;
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
+    move-result-object p1
 
-    move-result-object v0
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1, v2}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v0
-
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
+    move-result-object p1
 
     goto :goto_0
 
-    :pswitch_1
-    iget-object v0, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
+    :cond_1
+    iget-object p1, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
 
-    invoke-virtual {v0}, Lcom/agc/asv/ScaleImageView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1}, Landroid/widget/ImageButton;->animate()Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v0
-
-    invoke-static {}, Lcom/agc/asv/ScaleImageView;->access$000()F
-
-    move-result v3
-
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object v0
+    move-result-object p1
 
     invoke-static {}, Lcom/agc/asv/ScaleImageView;->access$000()F
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v0, v3}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p1, v2}, Landroid/view/ViewPropertyAnimator;->scaleX(F)Landroid/view/ViewPropertyAnimator;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-static {}, Lcom/agc/asv/ScaleImageView;->access$000()F
 
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    nop
+    move-result v2
 
     :goto_0
-    iget-object v0, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
+    invoke-virtual {p1, v2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
-    invoke-virtual {v0, p2}, Lcom/agc/asv/ScaleImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    move-result-object p1
 
-    move-result v0
+    invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    return v0
+    move-result-object p1
 
-    nop
+    invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    :goto_1
+    iget-object p1, p0, Lcom/agc/asv/ScaleImageView$1;->this$0:Lcom/agc/asv/ScaleImageView;
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageButton;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+
+    return p1
 .end method

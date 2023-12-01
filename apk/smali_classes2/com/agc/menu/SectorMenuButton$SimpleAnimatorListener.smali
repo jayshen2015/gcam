@@ -1,6 +1,5 @@
 .class Lcom/agc/menu/SectorMenuButton$SimpleAnimatorListener;
 .super Ljava/lang/Object;
-.source "SectorMenuButton.java"
 
 # interfaces
 .implements Landroid/animation/Animator$AnimatorListener;
@@ -12,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "SimpleAnimatorListener"
 .end annotation
 
@@ -26,7 +25,7 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Lcom/agc/menu/SectorMenuButton$1;)V
+.method public synthetic constructor <init>(Lcom/agc/menu/SectorMenuButton$1;)V
     .locals 0
 
     invoke-direct {p0}, Lcom/agc/menu/SectorMenuButton$SimpleAnimatorListener;-><init>()V

@@ -1,6 +1,5 @@
 .class Lcom/agc/asv/AgcSeekbarDialog$1$1;
 .super Ljava/lang/Object;
-.source "AgcSeekbarDialog.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$1:Lcom/agc/asv/AgcSeekbarDialog$1;
+.field public final synthetic this$1:Lcom/agc/asv/AgcSeekbarDialog$1;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/asv/AgcSeekbarDialog$1;)V
+.method public constructor <init>(Lcom/agc/asv/AgcSeekbarDialog$1;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/asv/AgcSeekbarDialog$1$1;->this$1:Lcom/agc/asv/AgcSeekbarDialog$1;

@@ -1,6 +1,5 @@
 .class public interface abstract Lcom/gcam/simple/filechooser/ChooserDialog$Result;
 .super Ljava/lang/Object;
-.source "ChooserDialog.java"
 
 
 # annotations

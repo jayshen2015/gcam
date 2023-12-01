@@ -480,6 +480,10 @@
 
     check-cast p1, Landroid/util/Range;
 
+    invoke-static {p1}, LAGC;->getSensorInfoExposureTimeRange(Landroid/util/Range;)Landroid/util/Range;
+
+    move-result-object p1
+
     iget-object v0, v1, Liyk;->d:Lfll;
 
     sget-object v2, Lfmi;->d:Lflm;

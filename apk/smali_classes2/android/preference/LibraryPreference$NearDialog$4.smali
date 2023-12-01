@@ -1,6 +1,5 @@
 .class Landroid/preference/LibraryPreference$NearDialog$4;
 .super Ljava/lang/Object;
-.source "LibraryPreference.java"
 
 # interfaces
 .implements Landroid/view/View$OnFocusChangeListener;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic val$ctx:Landroid/content/Context;
+.field public final synthetic val$ctx:Landroid/content/Context;
 
-.field final synthetic val$titleText:Landroid/widget/EditText;
+.field public final synthetic val$titleText:Landroid/widget/EditText;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/EditText;Landroid/content/Context;)V
+.method public constructor <init>(Landroid/widget/EditText;Landroid/content/Context;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -44,15 +43,15 @@
 
 # virtual methods
 .method public onFocusChange(Landroid/view/View;Z)V
-    .locals 2
+    .locals 0
 
-    iget-object v0, p0, Landroid/preference/LibraryPreference$NearDialog$4;->val$titleText:Landroid/widget/EditText;
+    iget-object p1, p0, Landroid/preference/LibraryPreference$NearDialog$4;->val$titleText:Landroid/widget/EditText;
 
-    new-instance v1, Landroid/preference/LibraryPreference$NearDialog$4$1;
+    new-instance p2, Landroid/preference/LibraryPreference$NearDialog$4$1;
 
-    invoke-direct {v1, p0}, Landroid/preference/LibraryPreference$NearDialog$4$1;-><init>(Landroid/preference/LibraryPreference$NearDialog$4;)V
+    invoke-direct {p2, p0}, Landroid/preference/LibraryPreference$NearDialog$4$1;-><init>(Landroid/preference/LibraryPreference$NearDialog$4;)V
 
-    invoke-virtual {v0, v1}, Landroid/widget/EditText;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p1, p2}, Landroid/widget/EditText;->post(Ljava/lang/Runnable;)Z
 
     return-void
 .end method

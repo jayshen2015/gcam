@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/ApertureButton;
 .super Lcom/agc/widget/OptionButton;
-.source "ApertureButton.java"
 
 
 # direct methods
@@ -51,7 +50,7 @@
 
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/agc/widget/ApertureButton;->iconPadding:I
+    iput v0, p0, Lcom/agc/widget/OptionButton;->iconPadding:I
 
     new-instance v1, Ljava/util/ArrayList;
 
@@ -87,7 +86,7 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    iput-object v1, p0, Lcom/agc/widget/ApertureButton;->items:Ljava/util/List;
+    iput-object v1, p0, Lcom/agc/widget/OptionButton;->items:Ljava/util/List;
 
     const-string v1, "pref_aperture_key"
 
@@ -95,26 +94,24 @@
 
     move-result v1
 
-    iput v1, p0, Lcom/agc/widget/ApertureButton;->selectedIndex:I
-
-    iget v1, p0, Lcom/agc/widget/ApertureButton;->selectedIndex:I
+    iput v1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
     if-lez v1, :cond_0
 
     move v0, v6
 
     :cond_0
-    invoke-virtual {p0, v0}, Lcom/agc/widget/ApertureButton;->setChecked(Z)V
+    invoke-virtual {p0, v0}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 
     return-void
 .end method
 
-.method protected onAttachedToWindow()V
+.method public onAttachedToWindow()V
     .locals 1
 
-    invoke-super {p0}, Lcom/agc/widget/OptionButton;->onAttachedToWindow()V
+    invoke-super {p0}, Landroid/widget/ImageButton;->onAttachedToWindow()V
 
     const-string v0, "pref_saperture_key"
 
@@ -126,34 +123,34 @@
 
     const/16 v0, 0x8
 
-    invoke-virtual {p0, v0}, Lcom/agc/widget/ApertureButton;->setVisibility(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setVisibility(I)V
 
     :cond_0
     return-void
 .end method
 
 .method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
-    .locals 1
+    .locals 0
 
     invoke-super {p0, p1, p2}, Lcom/agc/widget/OptionButton;->onCheckedChanged(Landroid/widget/CompoundButton;Z)V
 
-    const-string v0, "pref_aperture_key"
+    const-string p1, "pref_aperture_key"
 
-    invoke-static {v0, p2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
+    invoke-static {p1, p2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    iget v0, p0, Lcom/agc/widget/ApertureButton;->selectedIndex:I
+    iget p1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/agc/widget/ApertureButton;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     return-void
 .end method
@@ -167,19 +164,19 @@
 
     invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
-    iget v0, p0, Lcom/agc/widget/ApertureButton;->selectedIndex:I
+    iget p1, p0, Lcom/agc/widget/OptionButton;->selectedIndex:I
 
-    if-lez v0, :cond_0
+    if-lez p1, :cond_0
 
-    const/4 v0, 0x1
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 p1, 0x0
 
     :goto_0
-    invoke-virtual {p0, v0}, Lcom/agc/widget/ApertureButton;->setChecked(Z)V
+    invoke-virtual {p0, p1}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
     invoke-static {}, Lcom/Globals;->onReInit()V
 

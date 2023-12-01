@@ -1,6 +1,5 @@
 .class public Lcom/custom/focus/RotSeek;
 .super Landroid/view/View;
-.source "RotSeek.java"
 
 
 # instance fields
@@ -94,15 +93,15 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/custom/focus/RotSeek;)I
-    .locals 1
+.method public static synthetic access$000(Lcom/custom/focus/RotSeek;)I
+    .locals 0
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->currentValue:I
+    iget p0, p0, Lcom/custom/focus/RotSeek;->currentValue:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$002(Lcom/custom/focus/RotSeek;I)I
+.method public static synthetic access$002(Lcom/custom/focus/RotSeek;I)I
     .locals 0
 
     iput p1, p0, Lcom/custom/focus/RotSeek;->currentValue:I
@@ -110,23 +109,23 @@
     return p1
 .end method
 
-.method static synthetic access$100(Lcom/custom/focus/RotSeek;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
-    .locals 1
+.method public static synthetic access$100(Lcom/custom/focus/RotSeek;)Landroid/widget/SeekBar$OnSeekBarChangeListener;
+    .locals 0
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+    iget-object p0, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    return-object v0
+    return-object p0
 .end method
 
-.method static synthetic access$200(Lcom/custom/focus/RotSeek;)Z
-    .locals 1
+.method public static synthetic access$200(Lcom/custom/focus/RotSeek;)Z
+    .locals 0
 
-    iget-boolean v0, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
+    iget-boolean p0, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$202(Lcom/custom/focus/RotSeek;Z)Z
+.method public static synthetic access$202(Lcom/custom/focus/RotSeek;Z)Z
     .locals 0
 
     iput-boolean p1, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
@@ -134,15 +133,15 @@
     return p1
 .end method
 
-.method static synthetic access$300(Lcom/custom/focus/RotSeek;)I
-    .locals 1
+.method public static synthetic access$300(Lcom/custom/focus/RotSeek;)I
+    .locals 0
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
+    iget p0, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$320(Lcom/custom/focus/RotSeek;I)I
+.method public static synthetic access$320(Lcom/custom/focus/RotSeek;I)I
     .locals 1
 
     iget v0, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
@@ -154,15 +153,15 @@
     return v0
 .end method
 
-.method static synthetic access$400(Lcom/custom/focus/RotSeek;)I
-    .locals 1
+.method public static synthetic access$400(Lcom/custom/focus/RotSeek;)I
+    .locals 0
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
+    iget p0, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$402(Lcom/custom/focus/RotSeek;I)I
+.method public static synthetic access$402(Lcom/custom/focus/RotSeek;I)I
     .locals 0
 
     iput p1, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
@@ -170,7 +169,7 @@
     return p1
 .end method
 
-.method static synthetic access$408(Lcom/custom/focus/RotSeek;)I
+.method public static synthetic access$408(Lcom/custom/focus/RotSeek;)I
     .locals 2
 
     iget v0, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
@@ -182,7 +181,7 @@
     return v0
 .end method
 
-.method static synthetic access$410(Lcom/custom/focus/RotSeek;)I
+.method public static synthetic access$410(Lcom/custom/focus/RotSeek;)I
     .locals 2
 
     iget v0, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
@@ -194,124 +193,124 @@
     return v0
 .end method
 
-.method static synthetic access$500(Lcom/custom/focus/RotSeek;)I
-    .locals 1
+.method public static synthetic access$500(Lcom/custom/focus/RotSeek;)I
+    .locals 0
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->realMax:I
+    iget p0, p0, Lcom/custom/focus/RotSeek;->realMax:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$600(Lcom/custom/focus/RotSeek;)I
-    .locals 1
+.method public static synthetic access$600(Lcom/custom/focus/RotSeek;)I
+    .locals 0
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->realMin:I
+    iget p0, p0, Lcom/custom/focus/RotSeek;->realMin:I
 
-    return v0
+    return p0
 .end method
 
-.method static synthetic access$700(Lcom/custom/focus/RotSeek;)[Ljava/lang/String;
-    .locals 1
+.method public static synthetic access$700(Lcom/custom/focus/RotSeek;)[Ljava/lang/String;
+    .locals 0
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
+    iget-object p0, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
 
-    return-object v0
+    return-object p0
 .end method
 
 .method private convertDpiToPixel(I)F
-    .locals 3
-
-    int-to-float v0, p1
-
-    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    const/4 v2, 0x1
-
-    invoke-static {v2, v0, v1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method private getSignedDistance(II)I
-    .locals 1
-
-    sub-int v0, p1, p2
-
-    return v0
-.end method
-
-.method private init(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .locals 2
 
-    new-instance v0, Landroid/os/Handler;
+    int-to-float p1, p1
 
-    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+    invoke-virtual {p0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
-    iput-object v0, p0, Lcom/custom/focus/RotSeek;->handler:Landroid/os/Handler;
+    move-result-object v0
 
-    new-instance v0, Landroid/graphics/Paint;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+    move-result-object v0
 
     const/4 v1, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-static {v1, p1, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+    move-result p1
 
-    const/4 v1, -0x1
+    return p1
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+.method private getSignedDistance(II)I
+    .locals 0
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+    sub-int/2addr p1, p2
 
-    sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+    return p1
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+.method private init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .locals 0
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+    new-instance p1, Landroid/os/Handler;
 
-    sget-object v1, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
+    invoke-direct {p1}, Landroid/os/Handler;-><init>()V
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
+    iput-object p1, p0, Lcom/custom/focus/RotSeek;->handler:Landroid/os/Handler;
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->textsize:I
+    new-instance p1, Landroid/graphics/Paint;
 
-    invoke-direct {p0, v0}, Lcom/custom/focus/RotSeek;->convertDpiToPixel(I)F
+    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
-    move-result v0
+    iput-object p1, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
 
-    float-to-int v0, v0
+    const/4 p2, 0x1
 
-    iput v0, p0, Lcom/custom/focus/RotSeek;->textsize:I
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->currentValue:I
+    iget-object p1, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
 
-    const/4 v1, 0x0
+    const/4 p2, -0x1
 
-    invoke-virtual {p0, v0, v1}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
+
+    iget-object p1, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+
+    sget-object p2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    iget-object p1, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+
+    sget-object p2, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
+
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setTextAlign(Landroid/graphics/Paint$Align;)V
+
+    iget p1, p0, Lcom/custom/focus/RotSeek;->textsize:I
+
+    invoke-direct {p0, p1}, Lcom/custom/focus/RotSeek;->convertDpiToPixel(I)F
+
+    move-result p1
+
+    float-to-int p1, p1
+
+    iput p1, p0, Lcom/custom/focus/RotSeek;->textsize:I
+
+    iget p1, p0, Lcom/custom/focus/RotSeek;->currentValue:I
+
+    const/4 p2, 0x0
+
+    invoke-virtual {p0, p1, p2}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
 
     return-void
 .end method
 
 .method private switchAlpha(I)I
-    .locals 1
+    .locals 0
 
-    rsub-int/lit8 v0, p1, 0xa
+    rsub-int/lit8 p1, p1, 0xa
 
-    mul-int/lit8 v0, v0, 0x19
+    mul-int/lit8 p1, p1, 0x19
 
-    return v0
+    return p1
 .end method
 
 
@@ -345,7 +344,7 @@
 .end method
 
 .method public SetStringValues([Ljava/lang/String;)V
-    .locals 4
+    .locals 3
 
     iput-object p1, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
 
@@ -357,29 +356,29 @@
 
     iput v1, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
 
-    array-length v2, p1
+    array-length p1, p1
 
-    mul-int/2addr v2, v1
+    mul-int/2addr p1, v1
 
-    add-int/2addr v2, v1
+    add-int/2addr p1, v1
 
-    iput v2, p0, Lcom/custom/focus/RotSeek;->allItemsHeight:I
+    iput p1, p0, Lcom/custom/focus/RotSeek;->allItemsHeight:I
 
-    neg-int v3, v0
+    neg-int v2, v0
 
-    div-int/lit8 v3, v3, 0x2
+    div-int/lit8 v2, v2, 0x2
 
     div-int/lit8 v1, v1, 0x2
 
-    sub-int/2addr v3, v1
+    sub-int/2addr v2, v1
 
-    iput v3, p0, Lcom/custom/focus/RotSeek;->realMin:I
+    iput v2, p0, Lcom/custom/focus/RotSeek;->realMin:I
 
     div-int/lit8 v0, v0, 0x2
 
-    sub-int/2addr v2, v0
+    sub-int/2addr p1, v0
 
-    iput v2, p0, Lcom/custom/focus/RotSeek;->realMax:I
+    iput p1, p0, Lcom/custom/focus/RotSeek;->realMax:I
 
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->redraw()V
 
@@ -387,7 +386,7 @@
 .end method
 
 .method public checkifCurrentValueHasChanged()V
-    .locals 4
+    .locals 2
 
     iget v0, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
 
@@ -410,28 +409,28 @@
 
     iput v0, p0, Lcom/custom/focus/RotSeek;->currentValue:I
 
-    iget-object v1, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+    iget-object v0, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    const/4 v2, 0x4
+    const/4 v1, 0x4
 
-    invoke-virtual {p0, v2}, Lcom/custom/focus/RotSeek;->performHapticFeedback(I)Z
+    invoke-virtual {p0, v1}, Landroid/view/View;->performHapticFeedback(I)Z
 
-    if-eqz v1, :cond_1
+    if-eqz v0, :cond_1
 
-    iget-object v2, p0, Lcom/custom/focus/RotSeek;->handler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/custom/focus/RotSeek;->handler:Landroid/os/Handler;
 
-    new-instance v3, Lcom/custom/focus/RotSeek$1;
+    new-instance v1, Lcom/custom/focus/RotSeek$1;
 
-    invoke-direct {v3, p0}, Lcom/custom/focus/RotSeek$1;-><init>(Lcom/custom/focus/RotSeek;)V
+    invoke-direct {v1, p0}, Lcom/custom/focus/RotSeek$1;-><init>(Lcom/custom/focus/RotSeek;)V
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_1
     return-void
 .end method
 
 .method public getLensInfoFocusDistance()F
-    .locals 4
+    .locals 3
 
     const-string v0, "pref_minimum_focus_distance_key"
 
@@ -450,70 +449,70 @@
     :cond_0
     invoke-static {}, Lcom/Utils/Lens;->getCurrentCamera()Lcom/agc/Camera;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {}, Lagc/Agc;->isXiaomi13Pro()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "3"
+    const-string v2, "3"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_1
+    if-eqz v1, :cond_1
 
-    const v2, 0x413a0be8
+    const v0, 0x413a0be8
 
-    return v2
+    return v0
 
     :cond_1
-    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "2"
+    const-string v2, "2"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_2
+    if-eqz v1, :cond_2
 
-    const v2, 0x41eb4b4a
+    const v0, 0x41eb4b4a
 
-    return v2
+    return v0
 
     :cond_2
-    invoke-virtual {v1}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string v3, "7"
+    const-string v2, "7"
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    const v2, 0x4112c9fc
+    const v0, 0x4112c9fc
 
-    return v2
+    return v0
 
     :cond_3
-    invoke-virtual {v1}, Lcom/agc/Camera;->getMinimumFocusDistance()F
+    invoke-virtual {v0}, Lcom/agc/Camera;->getMinimumFocusDistance()F
 
-    move-result v2
+    move-result v0
 
-    return v2
+    return v0
 .end method
 
 .method public getProgress()I
@@ -538,8 +537,8 @@
     return-void
 .end method
 
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 13
+.method public onDraw(Landroid/graphics/Canvas;)V
+    .locals 12
 
     const-string v0, "pref_manual_focus_slider_key"
 
@@ -595,81 +594,77 @@
 
     invoke-direct {p0, v3}, Lcom/custom/focus/RotSeek;->switchAlpha(I)I
 
-    move-result v6
+    move-result v3
 
-    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setAlpha(I)V
+    invoke-virtual {v5, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    iget-object v5, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+    iget-object v3, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    iget v5, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
+    iget v3, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
 
-    mul-int v6, v5, v0
+    mul-int v5, v3, v0
 
-    iget v7, p0, Lcom/custom/focus/RotSeek;->textsize:I
+    iget v6, p0, Lcom/custom/focus/RotSeek;->textsize:I
 
-    add-int/2addr v6, v7
+    add-int/2addr v5, v6
 
-    iget v8, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
+    iget v7, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
 
-    add-int/2addr v6, v8
+    add-int/2addr v5, v7
 
-    div-int/lit8 v5, v5, 0x2
+    div-int/lit8 v3, v3, 0x2
 
-    add-int/2addr v6, v5
+    add-int/2addr v5, v3
 
-    div-int/lit8 v7, v7, 0x2
+    div-int/lit8 v6, v6, 0x2
 
-    sub-int/2addr v6, v7
+    sub-int/2addr v5, v6
 
-    iget v5, p0, Lcom/custom/focus/RotSeek;->viewWidth:I
+    iget v3, p0, Lcom/custom/focus/RotSeek;->viewWidth:I
 
-    int-to-float v5, v5
+    int-to-float v3, v3
 
     invoke-direct {p0, v4}, Lcom/custom/focus/RotSeek;->convertDpiToPixel(I)F
 
     move-result v4
 
-    sub-float v8, v5, v4
+    sub-float v7, v3, v4
 
-    iget v4, p0, Lcom/custom/focus/RotSeek;->textsize:I
+    iget v3, p0, Lcom/custom/focus/RotSeek;->textsize:I
 
-    div-int/lit8 v5, v4, 0x2
+    div-int/lit8 v3, v3, 0x2
 
-    sub-int v5, v6, v5
+    sub-int v3, v5, v3
 
-    int-to-float v9, v5
+    int-to-float v10, v3
 
-    iget v5, p0, Lcom/custom/focus/RotSeek;->viewWidth:I
+    iget v3, p0, Lcom/custom/focus/RotSeek;->viewWidth:I
 
-    add-int/lit8 v5, v5, -0x14
+    add-int/lit8 v3, v3, -0x14
 
-    int-to-float v10, v5
+    int-to-float v9, v3
 
-    div-int/lit8 v4, v4, 0x2
+    iget-object v11, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
 
-    sub-int v4, v6, v4
+    move-object v6, p1
 
-    int-to-float v11, v4
+    move v8, v10
 
-    iget-object v12, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
-
-    move-object v7, p1
-
-    invoke-virtual/range {v7 .. v12}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual/range {v6 .. v11}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     if-eqz v2, :cond_1
 
-    const/high16 v4, 0x42a00000    # 80.0f
+    int-to-float v3, v5
 
-    int-to-float v5, v6
+    iget-object v4, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
 
-    iget-object v7, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
+    const/high16 v5, 0x42a00000    # 80.0f
 
-    invoke-virtual {p1, v2, v4, v5, v7}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v2, v5, v3, v4}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
     :cond_1
     add-int/lit8 v0, v0, 0x1
@@ -701,44 +696,38 @@
 
     iget v0, p0, Lcom/custom/focus/RotSeek;->viewHeight:I
 
-    div-int/lit8 v1, v0, 0x2
-
-    iget v2, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
-
-    div-int/lit8 v4, v2, 0x2
-
-    add-int/2addr v1, v4
-
-    int-to-float v4, v1
-
-    iget v1, p0, Lcom/custom/focus/RotSeek;->viewWidth:I
-
-    int-to-float v5, v1
-
     div-int/lit8 v0, v0, 0x2
 
-    div-int/lit8 v2, v2, 0x2
+    iget v1, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
 
-    add-int/2addr v0, v2
+    div-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v0, v1
 
     int-to-float v6, v0
+
+    iget v0, p0, Lcom/custom/focus/RotSeek;->viewWidth:I
+
+    int-to-float v5, v0
 
     iget-object v7, p0, Lcom/custom/focus/RotSeek;->paint:Landroid/graphics/Paint;
 
     move-object v2, p1
+
+    move v4, v6
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     return-void
 
     :cond_3
-    invoke-virtual {p0, v1}, Lcom/custom/focus/RotSeek;->setVisibility(I)V
+    invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
 
-.method protected onSizeChanged(IIII)V
-    .locals 4
+.method public onSizeChanged(IIII)V
+    .locals 1
 
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
 
@@ -746,45 +735,45 @@
 
     iput p2, p0, Lcom/custom/focus/RotSeek;->viewHeight:I
 
-    div-int/lit8 v0, p2, 0x14
+    div-int/lit8 p1, p2, 0x14
 
-    iput v0, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
+    iput p1, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
 
-    iget-object v1, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
+    iget-object p3, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
 
-    array-length v1, v1
+    array-length p3, p3
 
-    mul-int/2addr v1, v0
+    mul-int/2addr p3, p1
 
-    add-int/2addr v1, v0
+    add-int/2addr p3, p1
 
-    iput v1, p0, Lcom/custom/focus/RotSeek;->allItemsHeight:I
+    iput p3, p0, Lcom/custom/focus/RotSeek;->allItemsHeight:I
 
-    neg-int v2, p2
+    neg-int p4, p2
 
-    div-int/lit8 v2, v2, 0x2
+    div-int/lit8 p4, p4, 0x2
 
-    div-int/lit8 v3, v0, 0x2
+    div-int/lit8 v0, p1, 0x2
 
-    sub-int/2addr v2, v3
+    sub-int/2addr p4, v0
 
-    iput v2, p0, Lcom/custom/focus/RotSeek;->realMin:I
+    iput p4, p0, Lcom/custom/focus/RotSeek;->realMin:I
 
-    div-int/lit8 v2, p2, 0x2
+    div-int/lit8 p2, p2, 0x2
 
-    sub-int/2addr v1, v2
+    sub-int/2addr p3, p2
 
-    mul-int/lit8 v0, v0, 0x2
+    mul-int/lit8 p1, p1, 0x2
 
-    sub-int/2addr v1, v0
+    sub-int/2addr p3, p1
 
-    iput v1, p0, Lcom/custom/focus/RotSeek;->realMax:I
+    iput p3, p0, Lcom/custom/focus/RotSeek;->realMax:I
 
-    iget v0, p0, Lcom/custom/focus/RotSeek;->currentValue:I
+    iget p1, p0, Lcom/custom/focus/RotSeek;->currentValue:I
 
-    const/4 v1, 0x0
+    const/4 p2, 0x0
 
-    invoke-virtual {p0, v0, v1}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
+    invoke-virtual {p0, p1, p2}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
 
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->redraw()V
 
@@ -792,211 +781,202 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 6
-
-    const/4 v0, 0x1
+    .locals 5
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_a
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    if-eq v0, v2, :cond_4
 
-    packed-switch v1, :pswitch_data_0
+    const/4 v4, 0x2
 
-    const/4 v0, 0x0
+    if-eq v0, v4, :cond_0
 
     goto/16 :goto_0
 
-    :pswitch_0
-    iget-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
-
-    if-nez v1, :cond_1
-
-    iget v1, p0, Lcom/custom/focus/RotSeek;->startY:I
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    invoke-direct {p0, v1, v3}, Lcom/custom/focus/RotSeek;->getSignedDistance(II)I
-
-    move-result v1
-
-    move v3, v1
-
-    const/16 v5, 0xb
-
-    if-gt v1, v5, :cond_0
-
-    const/16 v1, -0xb
-
-    if-ge v3, v1, :cond_1
-
     :cond_0
-    iput-boolean v4, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
-
-    iget-object v1, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
-
-    if-eqz v1, :cond_1
-
-    invoke-interface {v1, v2}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStartTrackingTouch(Landroid/widget/SeekBar;)V
-
-    :cond_1
-    iget-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
-
-    if-eqz v1, :cond_2
-
-    iget v1, p0, Lcom/custom/focus/RotSeek;->startY:I
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v2
-
-    float-to-int v2, v2
-
-    invoke-direct {p0, v1, v2}, Lcom/custom/focus/RotSeek;->getSignedDistance(II)I
-
-    move-result v1
-
-    iput v1, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
-
-    iget v2, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
-
-    sub-int/2addr v2, v1
-
-    mul-int/lit8 v1, v2, -0x1
-
-    iget v3, p0, Lcom/custom/focus/RotSeek;->realMax:I
-
-    if-ge v1, v3, :cond_2
-
-    iget v3, p0, Lcom/custom/focus/RotSeek;->realMin:I
-
-    if-le v1, v3, :cond_2
-
-    iput v2, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
-
-    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->checkifCurrentValueHasChanged()V
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    iput v3, p0, Lcom/custom/focus/RotSeek;->startY:I
-
-    :cond_2
     iget-boolean v0, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
 
-    goto :goto_0
+    if-nez v0, :cond_2
 
-    :pswitch_1
-    iget-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
+    iget v0, p0, Lcom/custom/focus/RotSeek;->startY:I
 
-    if-eqz v1, :cond_8
-
-    iput-boolean v3, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
-
-    iget-object v1, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
-
-    if-eqz v1, :cond_3
-
-    invoke-interface {v1, v2}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStopTrackingTouch(Landroid/widget/SeekBar;)V
-
-    :cond_3
-    const/4 v0, 0x0
-
-    iget v1, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
-
-    if-lez v1, :cond_4
-
-    const/16 v2, 0xa
-
-    if-gt v1, v2, :cond_5
-
-    :cond_4
-    if-gez v1, :cond_6
-
-    const/16 v2, -0xa
-
-    if-ge v1, v2, :cond_6
-
-    :cond_5
-    iput-boolean v4, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
-
-    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->handleAutoScroll()V
-
-    :cond_6
-    iget v1, p0, Lcom/custom/focus/RotSeek;->currentValue:I
-
-    invoke-virtual {p0, v1, v4}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
-
-    const-string v1, "pref_focus_toggle_mode_key"
-
-    invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
-
-    move-result v1
-
-    if-nez v1, :cond_7
-
-    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lcom/agc/asv/FocusView;->execCommands(Landroid/content/Context;)V
-
-    goto :goto_0
-
-    :cond_7
-    invoke-static {}, Lcom/Globals;->onReInit()V
-
-    goto :goto_0
-
-    :pswitch_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
 
     float-to-int v1, v1
 
-    iput v1, p0, Lcom/custom/focus/RotSeek;->startY:I
+    invoke-direct {p0, v0, v1}, Lcom/custom/focus/RotSeek;->getSignedDistance(II)I
 
-    iput-boolean v3, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
+    move-result v0
 
-    nop
+    const/16 v1, 0xb
+
+    if-gt v0, v1, :cond_1
+
+    const/16 v1, -0xb
+
+    if-ge v0, v1, :cond_2
+
+    :cond_1
+    iput-boolean v2, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
+
+    iget-object v0, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+
+    if-eqz v0, :cond_2
+
+    invoke-interface {v0, v3}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStartTrackingTouch(Landroid/widget/SeekBar;)V
+
+    :cond_2
+    iget-boolean v0, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
+
+    if-eqz v0, :cond_3
+
+    iget v0, p0, Lcom/custom/focus/RotSeek;->startY:I
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result v1
+
+    float-to-int v1, v1
+
+    invoke-direct {p0, v0, v1}, Lcom/custom/focus/RotSeek;->getSignedDistance(II)I
+
+    move-result v0
+
+    iput v0, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
+
+    iget v1, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
+
+    sub-int/2addr v1, v0
+
+    mul-int/lit8 v0, v1, -0x1
+
+    iget v2, p0, Lcom/custom/focus/RotSeek;->realMax:I
+
+    if-ge v0, v2, :cond_3
+
+    iget v2, p0, Lcom/custom/focus/RotSeek;->realMin:I
+
+    if-le v0, v2, :cond_3
+
+    iput v1, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
+
+    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->checkifCurrentValueHasChanged()V
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p1
+
+    float-to-int p1, p1
+
+    iput p1, p0, Lcom/custom/focus/RotSeek;->startY:I
+
+    :cond_3
+    iget-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
+
+    goto :goto_0
+
+    :cond_4
+    iget-boolean p1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
+
+    if-eqz p1, :cond_b
+
+    iput-boolean v1, p0, Lcom/custom/focus/RotSeek;->sliderMoving:Z
+
+    iget-object p1, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+
+    if-eqz p1, :cond_5
+
+    invoke-interface {p1, v3}, Landroid/widget/SeekBar$OnSeekBarChangeListener;->onStopTrackingTouch(Landroid/widget/SeekBar;)V
+
+    :cond_5
+    iget p1, p0, Lcom/custom/focus/RotSeek;->distanceInPixelFromLastSwipe:I
+
+    if-lez p1, :cond_6
+
+    const/16 v0, 0xa
+
+    if-gt p1, v0, :cond_7
+
+    :cond_6
+    if-gez p1, :cond_8
+
+    const/16 v0, -0xa
+
+    if-ge p1, v0, :cond_8
+
+    :cond_7
+    iput-boolean v2, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
+
+    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->handleAutoScroll()V
 
     :cond_8
+    iget p1, p0, Lcom/custom/focus/RotSeek;->currentValue:I
+
+    invoke-virtual {p0, p1, v2}, Lcom/custom/focus/RotSeek;->setProgress(IZ)V
+
+    const-string p1, "pref_focus_toggle_mode_key"
+
+    invoke-static {p1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result p1
+
+    if-nez p1, :cond_9
+
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lcom/agc/asv/FocusView;->execCommands(Landroid/content/Context;)V
+
+    goto :goto_0
+
+    :cond_9
+    invoke-static {}, Lcom/Globals;->onReInit()V
+
+    goto :goto_0
+
+    :cond_a
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p1
+
+    float-to-int p1, p1
+
+    iput p1, p0, Lcom/custom/focus/RotSeek;->startY:I
+
+    iput-boolean v1, p0, Lcom/custom/focus/RotSeek;->autoscroll:Z
+
+    :cond_b
+    move v1, v2
+
     :goto_0
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->redraw()V
 
-    return v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return v1
 .end method
 
 .method public redraw()V
     .locals 0
 
-    invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->invalidate()V
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
 .end method
 
 .method public setFocusString()V
-    .locals 12
+    .locals 11
 
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->getLensInfoFocusDistance()F
 
@@ -1012,58 +992,58 @@
 
     int-to-float v2, v1
 
-    div-float v2, v0, v2
+    div-float/2addr v0, v2
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "Auto,Inf,"
+    const-string v3, "Auto,Inf,"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    new-array v3, v1, [F
 
     const/4 v4, 0x0
 
-    new-array v5, v1, [F
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    move v6, v4
 
     :goto_0
-    const/4 v7, 0x0
-
-    const-string v8, ","
+    const-string v7, ","
 
     if-ge v6, v1, :cond_1
 
-    add-float/2addr v4, v2
+    add-float/2addr v5, v0
 
-    aput v4, v5, v6
+    aput v5, v3, v6
 
-    sget-object v9, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    sget-object v8, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    const/4 v10, 0x1
+    const/4 v9, 0x1
 
-    new-array v10, v10, [Ljava/lang/Object;
+    new-array v9, v9, [Ljava/lang/Object;
 
-    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v11
+    move-result-object v10
 
-    aput-object v11, v10, v7
+    aput-object v10, v9, v4
 
-    const-string v11, "%.2f"
+    const-string v10, "%.2f"
 
-    invoke-static {v9, v11, v10}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v8, v10, v9}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    const-string v10, "."
+    const-string v9, "."
 
-    invoke-virtual {v9, v8, v10}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v8, v7, v9}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v8
 
-    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     add-int/lit8 v6, v6, 0x1
 
@@ -1072,25 +1052,25 @@
     goto :goto_1
 
     :cond_0
-    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_0
 
     :cond_1
     :goto_1
-    iput-object v5, p0, Lcom/custom/focus/RotSeek;->FocusValue:[F
+    iput-object v3, p0, Lcom/custom/focus/RotSeek;->FocusValue:[F
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {v9, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {v0, v7}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    iput-object v8, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/custom/focus/RotSeek;->Values:[Ljava/lang/String;
 
-    iput v7, p0, Lcom/custom/focus/RotSeek;->currentValue:I
+    iput v4, p0, Lcom/custom/focus/RotSeek;->currentValue:I
 
     return-void
 .end method
@@ -1104,7 +1084,7 @@
 .end method
 
 .method public setProgress(IZ)V
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x2
 
@@ -1126,37 +1106,37 @@
 
     iput p1, p0, Lcom/custom/focus/RotSeek;->currentValue:I
 
-    iget v2, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
+    iget v1, p0, Lcom/custom/focus/RotSeek;->itemHeight:I
 
-    mul-int v3, v2, p1
+    mul-int/2addr p1, v1
 
-    div-int/2addr v2, v0
+    div-int/2addr v1, v0
 
-    add-int/2addr v3, v2
+    add-int/2addr p1, v1
 
     iget v0, p0, Lcom/custom/focus/RotSeek;->realMin:I
 
-    add-int/2addr v3, v0
+    add-int/2addr p1, v0
 
-    mul-int/lit8 v3, v3, -0x1
+    mul-int/lit8 p1, p1, -0x1
 
-    iput v3, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
+    iput p1, p0, Lcom/custom/focus/RotSeek;->currentPosToDraw:I
 
     invoke-virtual {p0}, Lcom/custom/focus/RotSeek;->redraw()V
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
+    iget-object p1, p0, Lcom/custom/focus/RotSeek;->mListener:Landroid/widget/SeekBar$OnSeekBarChangeListener;
 
-    if-eqz v0, :cond_1
+    if-eqz p1, :cond_1
 
     if-eqz p2, :cond_1
 
-    iget-object v0, p0, Lcom/custom/focus/RotSeek;->handler:Landroid/os/Handler;
+    iget-object p1, p0, Lcom/custom/focus/RotSeek;->handler:Landroid/os/Handler;
 
-    new-instance v2, Lcom/custom/focus/RotSeek$3;
+    new-instance p2, Lcom/custom/focus/RotSeek$3;
 
-    invoke-direct {v2, p0}, Lcom/custom/focus/RotSeek$3;-><init>(Lcom/custom/focus/RotSeek;)V
+    invoke-direct {p2, p0}, Lcom/custom/focus/RotSeek$3;-><init>(Lcom/custom/focus/RotSeek;)V
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     :cond_1
     return-void

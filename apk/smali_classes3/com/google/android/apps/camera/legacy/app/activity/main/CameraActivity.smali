@@ -136,15 +136,7 @@
 .method private refreshBrightness(F)V
     .locals 3
 
-    invoke-static {p0}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    const-string v1, "max_brigtness"
-
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getMaxBrigtness()Z
 
     move-result v0
 
@@ -216,6 +208,8 @@
     .locals 20
 
     move-object/from16 v0, p0
+
+    invoke-static {v0}, Lcom/agc/Debug;->showDebugView(Landroid/app/Activity;)V
 
     const v2, 0x64
 
@@ -923,6 +917,8 @@
 
 .method protected final onDestroy()V
     .locals 1
+
+    invoke-static {p0}, Lcom/agc/Debug;->destoryDebugView(Landroid/content/Context;)V
 
     iget-object v0, p0, Lcom/google/android/apps/camera/legacy/app/activity/main/CameraActivity;->w:Lfrh;
 

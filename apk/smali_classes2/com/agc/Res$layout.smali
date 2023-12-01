@@ -1,6 +1,5 @@
 .class public Lcom/agc/Res$layout;
 .super Ljava/lang/Object;
-.source "Res.java"
 
 
 # annotations
@@ -32,6 +31,8 @@
 .field public static final agc_first_run_education_view_layout:I
 
 .field public static final agc_focal_control:I
+
+.field public static final agc_fw_dialog_layout:I
 
 .field public static final agc_fw_list_item:I
 
@@ -71,7 +72,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 1
 
     const-string v0, "hide"
@@ -209,6 +210,14 @@
     move-result v0
 
     sput v0, Lcom/agc/Res$layout;->agc_fw_list_item:I
+
+    const-string v0, "agc_fw_dialog_layout"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_fw_dialog_layout:I
 
     const-string v0, "agc_patch_preference"
 

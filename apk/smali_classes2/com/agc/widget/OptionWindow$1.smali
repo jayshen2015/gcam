@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/OptionWindow$1;
 .super Ljava/lang/Object;
-.source "OptionWindow.java"
 
 # interfaces
 .implements Landroid/widget/AdapterView$OnItemClickListener;
@@ -12,17 +11,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/OptionWindow;
+.field public final synthetic this$0:Lcom/agc/widget/OptionWindow;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/OptionWindow;)V
+.method public constructor <init>(Lcom/agc/widget/OptionWindow;)V
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
@@ -35,7 +34,7 @@
 
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 3
+    .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,84 +45,82 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-static {v0}, Lcom/agc/widget/OptionWindow;->access$000(Lcom/agc/widget/OptionWindow;)Ljava/util/List;
+    invoke-static {p1}, Lcom/agc/widget/OptionWindow;->access$000(Lcom/agc/widget/OptionWindow;)Ljava/util/List;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-interface {v0, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object p1
 
-    check-cast v0, Lcom/agc/widget/OptionButton$OptionButtonItem;
+    check-cast p1, Lcom/agc/widget/OptionButton$OptionButtonItem;
 
-    iget v1, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->value:I
+    iget p3, p1, Lcom/agc/widget/OptionButton$OptionButtonItem;->value:I
 
-    iget-object v2, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p4, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-static {v2}, Lcom/agc/widget/OptionWindow;->access$100(Lcom/agc/widget/OptionWindow;)I
+    invoke-static {p4}, Lcom/agc/widget/OptionWindow;->access$100(Lcom/agc/widget/OptionWindow;)I
 
-    move-result v2
+    move-result p4
 
-    if-eq v1, v2, :cond_1
+    if-eq p3, p4, :cond_1
 
     invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object p2
 
-    invoke-static {v1}, Lcom/agc/widget/OptionButton;->vibrate(Landroid/content/Context;)V
+    invoke-static {p2}, Lcom/agc/widget/OptionButton;->vibrate(Landroid/content/Context;)V
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p2, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    iget v2, v0, Lcom/agc/widget/OptionButton$OptionButtonItem;->value:I
+    iget p1, p1, Lcom/agc/widget/OptionButton$OptionButtonItem;->value:I
 
-    invoke-static {v1, v2}, Lcom/agc/widget/OptionWindow;->access$102(Lcom/agc/widget/OptionWindow;I)I
+    invoke-static {p2, p1}, Lcom/agc/widget/OptionWindow;->access$102(Lcom/agc/widget/OptionWindow;I)I
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    iget-object v1, v1, Lcom/agc/widget/OptionWindow;->adapter:Lcom/agc/widget/OptionWindow$OptionAdapter;
+    iget-object p2, p1, Lcom/agc/widget/OptionWindow;->adapter:Lcom/agc/widget/OptionWindow$OptionAdapter;
 
-    iget-object v2, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    invoke-static {p1}, Lcom/agc/widget/OptionWindow;->access$100(Lcom/agc/widget/OptionWindow;)I
 
-    invoke-static {v2}, Lcom/agc/widget/OptionWindow;->access$100(Lcom/agc/widget/OptionWindow;)I
+    move-result p1
 
-    move-result v2
+    iput p1, p2, Lcom/agc/widget/OptionWindow$OptionAdapter;->selectedIndex:I
 
-    iput v2, v1, Lcom/agc/widget/OptionWindow$OptionAdapter;->selectedIndex:I
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p1, Lcom/agc/widget/OptionWindow;->adapter:Lcom/agc/widget/OptionWindow$OptionAdapter;
 
-    iget-object v1, v1, Lcom/agc/widget/OptionWindow;->adapter:Lcom/agc/widget/OptionWindow$OptionAdapter;
+    invoke-virtual {p1}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    invoke-virtual {v1}, Lcom/agc/widget/OptionWindow$OptionAdapter;->notifyDataSetChanged()V
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    invoke-static {p1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
 
-    invoke-static {v1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
+    move-result-object p1
 
-    move-result-object v1
+    if-eqz p1, :cond_0
 
-    if-eqz v1, :cond_0
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    invoke-static {p1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
 
-    invoke-static {v1}, Lcom/agc/widget/OptionWindow;->access$200(Lcom/agc/widget/OptionWindow;)Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
+    move-result-object p1
 
-    move-result-object v1
+    iget-object p2, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    iget-object v2, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    invoke-static {p2}, Lcom/agc/widget/OptionWindow;->access$100(Lcom/agc/widget/OptionWindow;)I
 
-    invoke-static {v2}, Lcom/agc/widget/OptionWindow;->access$100(Lcom/agc/widget/OptionWindow;)I
+    move-result p2
 
-    move-result v2
-
-    invoke-interface {v1, v2}, Lcom/agc/widget/OptionWindow$OnPopItemClickListener;->onClickPopItem(I)V
+    invoke-interface {p1, p2}, Lcom/agc/widget/OptionWindow$OnPopItemClickListener;->onClickPopItem(I)V
 
     :cond_0
-    iget-object v1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
+    iget-object p1, p0, Lcom/agc/widget/OptionWindow$1;->this$0:Lcom/agc/widget/OptionWindow;
 
-    invoke-virtual {v1}, Lcom/agc/widget/OptionWindow;->dismiss()V
+    invoke-virtual {p1}, Lcom/agc/widget/OptionWindow;->dismiss()V
 
     :cond_1
     return-void

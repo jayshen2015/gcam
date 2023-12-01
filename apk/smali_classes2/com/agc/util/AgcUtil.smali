@@ -1,10 +1,9 @@
 .class public Lcom/agc/util/AgcUtil;
 .super Ljava/lang/Object;
-.source "AgcUtil.java"
 
 
 # static fields
-.field static sharedPreferences:Landroid/content/SharedPreferences;
+.field public static sharedPreferences:Landroid/content/SharedPreferences;
 
 
 # direct methods
@@ -17,7 +16,7 @@
 .end method
 
 .method public static concat([Ljava/lang/Object;[Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 4
+    .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -52,63 +51,63 @@
 
     invoke-static {p0, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    array-length v1, p0
+    array-length p0, p0
 
-    array-length v3, p1
+    array-length v1, p1
 
-    invoke-static {p1, v2, v0, v1, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {p1, v2, v0, p0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     return-object v0
 .end method
 
 .method public static dp2px(Landroid/content/Context;F)I
-    .locals 3
+    .locals 0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object p0
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
+    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
 
-    mul-float v1, p1, v0
+    mul-float/2addr p1, p0
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 p0, 0x3f000000    # 0.5f
 
-    add-float/2addr v1, v2
+    add-float/2addr p1, p0
 
-    float-to-int v1, v1
+    float-to-int p0, p1
 
-    return v1
+    return p0
 .end method
 
 .method public static dp2sp(Landroid/content/Context;F)F
-    .locals 3
+    .locals 0
 
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v0
+    move-result-object p0
 
-    iget v0, v0, Landroid/util/DisplayMetrics;->scaledDensity:F
+    iget p0, p0, Landroid/util/DisplayMetrics;->scaledDensity:F
 
-    mul-float v1, p1, v0
+    mul-float/2addr p1, p0
 
-    const/high16 v2, 0x3f000000    # 0.5f
+    const/high16 p0, 0x3f000000    # 0.5f
 
-    add-float/2addr v1, v2
+    add-float/2addr p1, p0
 
-    float-to-int v1, v1
+    float-to-int p0, p1
 
-    int-to-float v1, v1
+    int-to-float p0, p0
 
-    return v1
+    return p0
 .end method
 
 .method public static getInt(Ljava/lang/String;I)I
@@ -120,9 +119,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 
     :cond_0
     return p1
@@ -137,9 +136,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p0
 
-    return-object v0
+    return-object p0
 
     :cond_0
     return-object p1
@@ -154,9 +153,9 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
-    move-result-object v0
+    move-result-object p0
 
-    sput-object v0, Lcom/agc/util/AgcUtil;->sharedPreferences:Landroid/content/SharedPreferences;
+    sput-object p0, Lcom/agc/util/AgcUtil;->sharedPreferences:Landroid/content/SharedPreferences;
 
     return-void
 .end method
@@ -174,9 +173,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -195,9 +194,9 @@
 
     invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     :cond_0
     return-void
@@ -222,37 +221,37 @@
 
     invoke-direct {v2, v3, v4}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    int-to-float v3, p1
+    int-to-float p1, p1
 
-    invoke-static {v0, v3}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {v0, p1}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
-    move-result v3
+    move-result p1
 
-    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+    iput p1, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    int-to-float v3, p3
+    int-to-float p1, p3
 
-    invoke-static {v0, v3}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {v0, p1}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
-    move-result v3
+    move-result p1
 
-    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
+    iput p1, v2, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    int-to-float v3, p2
+    int-to-float p1, p2
 
-    invoke-static {v0, v3}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {v0, p1}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
-    move-result v3
+    move-result p1
 
-    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
+    iput p1, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    int-to-float v3, p4
+    int-to-float p1, p4
 
-    invoke-static {v0, v3}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {v0, p1}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
-    move-result v3
+    move-result p1
 
-    iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
+    iput p1, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     invoke-virtual {p0, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
