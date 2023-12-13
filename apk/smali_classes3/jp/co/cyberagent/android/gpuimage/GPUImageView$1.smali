@@ -28,7 +28,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    .line 241
+    .prologue
+    .line 335
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$1;->val$waiter:Ljava/util/concurrent/Semaphore;
@@ -41,12 +42,36 @@
 
 # virtual methods
 .method public onGlobalLayout()V
-    .locals 1
+    .locals 2
 
-    .line 244
-    nop
+    .prologue
+    .line 338
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 247
+    const/16 v1, 0x10
+
+    if-ge v0, v1, :cond_0
+
+    .line 339
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
+
+    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    .line 343
+    :goto_0
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$1;->val$waiter:Ljava/util/concurrent/Semaphore;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
+
+    .line 344
+    return-void
+
+    .line 341
+    :cond_0
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -55,11 +80,5 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 249
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$1;->val$waiter:Ljava/util/concurrent/Semaphore;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
-
-    .line 250
-    return-void
+    goto :goto_0
 .end method

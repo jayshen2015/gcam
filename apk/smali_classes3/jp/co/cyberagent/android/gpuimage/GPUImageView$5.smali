@@ -26,7 +26,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    .line 284
+    .prologue
+    .line 383
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$5;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,13 +40,14 @@
 .method public run()V
     .locals 2
 
-    .line 288
+    .prologue
+    .line 387
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$5;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->removeViewAt(I)V
 
-    .line 289
+    .line 388
     return-void
 .end method

@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 156
+    .line 157
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,7 +40,7 @@
     .locals 11
     .param p1, "view"    # Landroid/view/View;
 
-    .line 159
+    .line 160
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -67,7 +67,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 161
+    .line 162
     :try_start_0
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
@@ -77,7 +77,7 @@
 
     move-result-object v0
 
-    .line 162
+    .line 163
     .local v0, "lutfile":Ljava/lang/String;
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -95,7 +95,7 @@
 
     move-result v1
 
-    .line 163
+    .line 164
     .local v1, "rate":F
     sget-object v2, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
@@ -103,7 +103,7 @@
 
     move-result-object v2
 
-    .line 164
+    .line 165
     .local v2, "bitmap":Landroid/graphics/Bitmap;
     const/16 v3, 0x5a
 
@@ -111,7 +111,7 @@
 
     move-result-object v4
 
-    .line 165
+    .line 166
     .end local v2    # "bitmap":Landroid/graphics/Bitmap;
     .local v4, "bitmap":Landroid/graphics/Bitmap;
     invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
@@ -124,18 +124,18 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 166
+    .line 167
     new-instance v2, Landroid/graphics/Matrix;
 
     invoke-direct {v2}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 167
+    .line 168
     .local v2, "matrix":Landroid/graphics/Matrix;
     const/high16 v3, 0x42b40000    # 90.0f
 
     invoke-virtual {v2, v3}, Landroid/graphics/Matrix;->postRotate(F)Z
 
-    .line 168
+    .line 169
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -160,14 +160,14 @@
     .local v3, "bitmap":Landroid/graphics/Bitmap;
     goto :goto_0
 
-    .line 165
+    .line 166
     .end local v2    # "matrix":Landroid/graphics/Matrix;
     .end local v3    # "bitmap":Landroid/graphics/Bitmap;
     .restart local v4    # "bitmap":Landroid/graphics/Bitmap;
     :cond_0
     move-object v3, v4
 
-    .line 170
+    .line 171
     .end local v4    # "bitmap":Landroid/graphics/Bitmap;
     .restart local v3    # "bitmap":Landroid/graphics/Bitmap;
     :goto_0
@@ -182,14 +182,14 @@
     .end local v3    # "bitmap":Landroid/graphics/Bitmap;
     goto :goto_1
 
-    .line 171
+    .line 172
     :catch_0
     move-exception v0
 
     :goto_1
     goto :goto_2
 
-    .line 173
+    .line 174
     :cond_1
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
@@ -199,12 +199,12 @@
 
     iput-wide v1, v0, Lnan/ren/activity/PreviewActivity;->lastClickTime:J
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$1;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p1, v0, Lnan/ren/activity/PreviewActivity;->lastClickView:Landroid/view/View;
 
-    .line 176
+    .line 177
     :goto_2
     return-void
 .end method

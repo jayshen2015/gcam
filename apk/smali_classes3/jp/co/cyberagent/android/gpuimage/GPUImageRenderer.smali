@@ -4,80 +4,84 @@
 
 # interfaces
 .implements Landroid/opengl/GLSurfaceView$Renderer;
+.implements Ljp/co/cyberagent/android/gpuimage/GLTextureView$Renderer;
 .implements Landroid/hardware/Camera$PreviewCallback;
 
 
 # static fields
-.field static final CUBE:[F
+.field public static final CUBE:[F
 
-.field public static final NO_IMAGE:I = -0x1
+.field private static final NO_IMAGE:I = -0x1
 
 
 # instance fields
-.field private mAddedPadding:I
+.field private addedPadding:I
 
-.field private mBackgroundBlue:F
+.field private backgroundBlue:F
 
-.field private mBackgroundGreen:F
+.field private backgroundGreen:F
 
-.field private mBackgroundRed:F
+.field private backgroundRed:F
 
-.field private mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+.field private filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-.field private mFlipHorizontal:Z
+.field private flipHorizontal:Z
 
-.field private mFlipVertical:Z
+.field private flipVertical:Z
 
-.field private final mGLCubeBuffer:Ljava/nio/FloatBuffer;
+.field private final glCubeBuffer:Ljava/nio/FloatBuffer;
 
-.field private mGLRgbBuffer:Ljava/nio/IntBuffer;
+.field private glRgbBuffer:Ljava/nio/IntBuffer;
 
-.field private final mGLTextureBuffer:Ljava/nio/FloatBuffer;
+.field private final glTextureBuffer:Ljava/nio/FloatBuffer;
 
-.field private mGLTextureId:I
+.field private glTextureId:I
 
-.field private mImageHeight:I
+.field private imageHeight:I
 
-.field private mImageWidth:I
+.field private imageWidth:I
 
-.field private mOutputHeight:I
+.field private outputHeight:I
 
-.field private mOutputWidth:I
+.field private outputWidth:I
 
-.field private mRotation:Ljp/co/cyberagent/android/gpuimage/Rotation;
+.field private rotation:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
-.field private final mRunOnDraw:Ljava/util/Queue;
+.field private final runOnDraw:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Queue<",
+            "Ljava/util/Queue",
+            "<",
             "Ljava/lang/Runnable;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private final mRunOnDrawEnd:Ljava/util/Queue;
+.field private final runOnDrawEnd:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Ljava/util/Queue<",
+            "Ljava/util/Queue",
+            "<",
             "Ljava/lang/Runnable;",
             ">;"
         }
     .end annotation
 .end field
 
-.field private mScaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+.field private scaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
 
-.field public final mSurfaceChangedWaiter:Ljava/lang/Object;
+.field public final surfaceChangedWaiter:Ljava/lang/Object;
 
-.field private mSurfaceTexture:Landroid/graphics/SurfaceTexture;
+.field private surfaceTexture:Landroid/graphics/SurfaceTexture;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 46
+    .prologue
+    .line 48
     const/16 v0, 0x8
 
     new-array v0, v0, [F
@@ -101,100 +105,105 @@
     .end array-data
 .end method
 
-.method public constructor <init>(Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+.method public constructor <init>(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
     .locals 3
-    .param p1, "filter"    # Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .param p1, "filter"    # Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    .line 80
+    .prologue
+    const/4 v2, 0x0
+
+    const/4 v1, 0x0
+
+    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 57
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceChangedWaiter:Ljava/lang/Object;
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceChangedWaiter:Ljava/lang/Object;
 
-    .line 57
+    .line 59
     const/4 v0, -0x1
 
-    iput v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureId:I
+    iput v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureId:I
 
-    .line 58
+    .line 60
     const/4 v0, 0x0
 
-    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
-
-    .line 74
-    sget-object v0, Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;->CENTER_CROP:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
-
-    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mScaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     .line 76
-    const/4 v0, 0x0
+    sget-object v0, Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;->CENTER_CROP:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
 
-    iput v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundRed:F
-
-    .line 77
-    iput v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundGreen:F
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->scaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
 
     .line 78
-    iput v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundBlue:F
+    iput v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundRed:F
 
-    .line 81
-    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .line 79
+    iput v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundGreen:F
 
-    .line 82
-    new-instance v0, Ljava/util/LinkedList;
-
-    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
-
-    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDraw:Ljava/util/Queue;
+    .line 80
+    iput v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundBlue:F
 
     .line 83
+    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
+
+    .line 84
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDrawEnd:Ljava/util/Queue;
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw:Ljava/util/Queue;
 
     .line 85
-    sget-object v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+    new-instance v0, Ljava/util/LinkedList;
 
-    array-length v1, v0
+    invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    mul-int/lit8 v1, v1, 0x4
-
-    invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
-
-    .line 86
-    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    move-result-object v1
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDrawEnd:Ljava/util/Queue;
 
     .line 87
-    invoke-virtual {v1}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
+    sget-object v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
 
-    move-result-object v1
+    array-length v0, v0
 
-    iput-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLCubeBuffer:Ljava/nio/FloatBuffer;
+    mul-int/lit8 v0, v0, 0x4
 
-    .line 88
-    invoke-virtual {v1, v0}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    const/4 v1, 0x0
+    .line 88
+    invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    invoke-virtual {v0, v1}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    .line 89
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glCubeBuffer:Ljava/nio/FloatBuffer;
 
     .line 90
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glCubeBuffer:Ljava/nio/FloatBuffer;
+
+    sget-object v1, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    invoke-virtual {v0, v1}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 92
     sget-object v0, Ljp/co/cyberagent/android/gpuimage/util/TextureRotationUtil;->TEXTURE_NO_ROTATION:[F
 
     array-length v0, v0
@@ -205,28 +214,28 @@
 
     move-result-object v0
 
-    .line 91
+    .line 93
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v0, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
+    invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 92
+    .line 94
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
 
     move-result-object v0
 
-    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureBuffer:Ljava/nio/FloatBuffer;
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureBuffer:Ljava/nio/FloatBuffer;
 
-    .line 93
-    sget-object v0, Ljp/co/cyberagent/android/gpuimage/Rotation;->NORMAL:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .line 95
+    sget-object v0, Ljp/co/cyberagent/android/gpuimage/util/Rotation;->NORMAL:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
-    invoke-virtual {p0, v0, v1, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setRotation(Ljp/co/cyberagent/android/gpuimage/Rotation;ZZ)V
+    invoke-virtual {p0, v0, v2, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setRotation(Ljp/co/cyberagent/android/gpuimage/util/Rotation;ZZ)V
 
-    .line 94
+    .line 96
     return-void
 .end method
 
@@ -234,8 +243,9 @@
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLRgbBuffer:Ljava/nio/IntBuffer;
+    .prologue
+    .line 46
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glRgbBuffer:Ljava/nio/IntBuffer;
 
     return-object v0
 .end method
@@ -244,8 +254,9 @@
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureId:I
+    .prologue
+    .line 46
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureId:I
 
     return v0
 .end method
@@ -255,8 +266,9 @@
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
     .param p1, "x1"    # I
 
-    .line 44
-    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureId:I
+    .prologue
+    .line 46
+    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureId:I
 
     return p1
 .end method
@@ -265,8 +277,9 @@
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageWidth:I
+    .prologue
+    .line 46
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageWidth:I
 
     return v0
 .end method
@@ -276,8 +289,9 @@
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
     .param p1, "x1"    # I
 
-    .line 44
-    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageWidth:I
+    .prologue
+    .line 46
+    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageWidth:I
 
     return p1
 .end method
@@ -287,8 +301,9 @@
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
     .param p1, "x1"    # I
 
-    .line 44
-    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageHeight:I
+    .prologue
+    .line 46
+    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageHeight:I
 
     return p1
 .end method
@@ -297,7 +312,8 @@
     .locals 0
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
+    .prologue
+    .line 46
     invoke-direct {p0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->adjustImageScaling()V
 
     return-void
@@ -307,8 +323,9 @@
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    .prologue
+    .line 46
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     return-object v0
 .end method
@@ -318,29 +335,32 @@
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
     .param p1, "x1"    # Landroid/graphics/SurfaceTexture;
 
-    .line 44
-    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    .prologue
+    .line 46
+    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     return-object p1
 .end method
 
-.method static synthetic access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+.method static synthetic access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .prologue
+    .line 46
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     return-object v0
 .end method
 
-.method static synthetic access$602(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+.method static synthetic access$602(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
     .locals 0
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
-    .param p1, "x1"    # Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .param p1, "x1"    # Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    .line 44
-    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .prologue
+    .line 46
+    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     return-object p1
 .end method
@@ -349,8 +369,9 @@
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputWidth:I
+    .prologue
+    .line 46
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputWidth:I
 
     return v0
 .end method
@@ -359,8 +380,9 @@
     .locals 1
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 44
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputHeight:I
+    .prologue
+    .line 46
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputHeight:I
 
     return v0
 .end method
@@ -370,8 +392,9 @@
     .param p0, "x0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
     .param p1, "x1"    # I
 
-    .line 44
-    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mAddedPadding:I
+    .prologue
+    .line 46
+    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addedPadding:I
 
     return p1
 .end method
@@ -381,368 +404,583 @@
     .param p1, "coordinate"    # F
     .param p2, "distance"    # F
 
-    .line 314
+    .prologue
+    .line 318
     const/4 v0, 0x0
 
     cmpl-float v0, p1, v0
 
     if-nez v0, :cond_0
 
-    move v0, p2
+    .end local p2    # "distance":F
+    :goto_0
+    return p2
 
-    goto :goto_0
-
+    .restart local p2    # "distance":F
     :cond_0
     const/high16 v0, 0x3f800000    # 1.0f
 
-    sub-float/2addr v0, p2
+    sub-float p2, v0, p2
 
-    :goto_0
-    return v0
+    goto :goto_0
 .end method
 
 .method private adjustImageScaling()V
-    .locals 24
+    .locals 19
 
-    .line 271
+    .prologue
+    .line 275
     move-object/from16 v0, p0
 
-    iget v1, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputWidth:I
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputWidth:I
 
-    int-to-float v1, v1
+    move/from16 v16, v0
 
-    .line 272
-    .local v1, "outputWidth":F
-    iget v2, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputHeight:I
+    move/from16 v0, v16
 
-    int-to-float v2, v2
+    int-to-float v8, v0
 
-    .line 273
-    .local v2, "outputHeight":F
-    iget-object v3, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRotation:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .line 276
+    .local v8, "outputWidth":F
+    move-object/from16 v0, p0
 
-    sget-object v4, Ljp/co/cyberagent/android/gpuimage/Rotation;->ROTATION_270:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputHeight:I
 
-    if-eq v3, v4, :cond_0
+    move/from16 v16, v0
 
-    iget-object v3, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRotation:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    move/from16 v0, v16
 
-    sget-object v4, Ljp/co/cyberagent/android/gpuimage/Rotation;->ROTATION_90:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    int-to-float v7, v0
 
-    if-ne v3, v4, :cond_1
+    .line 277
+    .local v7, "outputHeight":F
+    move-object/from16 v0, p0
 
-    .line 274
-    :cond_0
-    iget v3, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputHeight:I
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->rotation:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
-    int-to-float v1, v3
+    move-object/from16 v16, v0
 
-    .line 275
-    iget v3, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputWidth:I
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/util/Rotation;->ROTATION_270:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
-    int-to-float v2, v3
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    if-eq v0, v1, :cond_0
+
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->rotation:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
+
+    move-object/from16 v16, v0
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/util/Rotation;->ROTATION_90:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    if-ne v0, v1, :cond_1
 
     .line 278
-    :cond_1
-    iget v3, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageWidth:I
+    :cond_0
+    move-object/from16 v0, p0
 
-    int-to-float v3, v3
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputHeight:I
 
-    div-float v3, v1, v3
+    move/from16 v16, v0
+
+    move/from16 v0, v16
+
+    int-to-float v8, v0
 
     .line 279
-    .local v3, "ratio1":F
-    iget v4, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageHeight:I
+    move-object/from16 v0, p0
 
-    int-to-float v4, v4
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputWidth:I
 
-    div-float v4, v2, v4
+    move/from16 v16, v0
 
-    .line 280
-    .local v4, "ratio2":F
-    invoke-static {v3, v4}, Ljava/lang/Math;->max(FF)F
+    move/from16 v0, v16
 
-    move-result v5
+    int-to-float v7, v0
 
-    .line 281
-    .local v5, "ratioMax":F
-    iget v6, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageWidth:I
+    .line 282
+    :cond_1
+    move-object/from16 v0, p0
 
-    int-to-float v6, v6
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageWidth:I
 
-    mul-float/2addr v6, v5
+    move/from16 v16, v0
 
-    invoke-static {v6}, Ljava/lang/Math;->round(F)I
+    move/from16 v0, v16
+
+    int-to-float v0, v0
+
+    move/from16 v16, v0
+
+    div-float v9, v8, v16
+
+    .line 283
+    .local v9, "ratio1":F
+    move-object/from16 v0, p0
+
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageHeight:I
+
+    move/from16 v16, v0
+
+    move/from16 v0, v16
+
+    int-to-float v0, v0
+
+    move/from16 v16, v0
+
+    div-float v10, v7, v16
+
+    .line 284
+    .local v10, "ratio2":F
+    invoke-static {v9, v10}, Ljava/lang/Math;->max(FF)F
+
+    move-result v12
+
+    .line 285
+    .local v12, "ratioMax":F
+    move-object/from16 v0, p0
+
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageWidth:I
+
+    move/from16 v16, v0
+
+    move/from16 v0, v16
+
+    int-to-float v0, v0
+
+    move/from16 v16, v0
+
+    mul-float v16, v16, v12
+
+    invoke-static/range {v16 .. v16}, Ljava/lang/Math;->round(F)I
 
     move-result v6
 
-    .line 282
+    .line 286
     .local v6, "imageWidthNew":I
-    iget v7, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mImageHeight:I
+    move-object/from16 v0, p0
 
-    int-to-float v7, v7
+    iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->imageHeight:I
 
-    mul-float/2addr v7, v5
+    move/from16 v16, v0
 
-    invoke-static {v7}, Ljava/lang/Math;->round(F)I
+    move/from16 v0, v16
 
-    move-result v7
+    int-to-float v0, v0
 
-    .line 284
-    .local v7, "imageHeightNew":I
-    int-to-float v8, v6
+    move/from16 v16, v0
 
-    div-float/2addr v8, v1
+    mul-float v16, v16, v12
 
-    .line 285
-    .local v8, "ratioWidth":F
-    int-to-float v9, v7
+    invoke-static/range {v16 .. v16}, Ljava/lang/Math;->round(F)I
 
-    div-float/2addr v9, v2
-
-    .line 287
-    .local v9, "ratioHeight":F
-    sget-object v10, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+    move-result v5
 
     .line 288
-    .local v10, "cube":[F
-    iget-object v11, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRotation:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .local v5, "imageHeightNew":I
+    int-to-float v0, v6
 
-    iget-boolean v12, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFlipHorizontal:Z
+    move/from16 v16, v0
 
-    iget-boolean v13, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFlipVertical:Z
-
-    invoke-static {v11, v12, v13}, Ljp/co/cyberagent/android/gpuimage/util/TextureRotationUtil;->getRotation(Ljp/co/cyberagent/android/gpuimage/Rotation;ZZ)[F
-
-    move-result-object v11
+    div-float v13, v16, v8
 
     .line 289
-    .local v11, "textureCords":[F
-    iget-object v12, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mScaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+    .local v13, "ratioWidth":F
+    int-to-float v0, v5
 
-    sget-object v13, Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;->CENTER_CROP:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+    move/from16 v16, v0
 
-    const/16 v14, 0x8
+    div-float v11, v16, v7
 
-    const/16 v16, 0x6
+    .line 291
+    .local v11, "ratioHeight":F
+    sget-object v2, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    .line 292
+    .local v2, "cube":[F
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->rotation:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->flipHorizontal:Z
+
+    move/from16 v17, v0
+
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->flipVertical:Z
+
+    move/from16 v18, v0
+
+    invoke-static/range {v16 .. v18}, Ljp/co/cyberagent/android/gpuimage/util/TextureRotationUtil;->getRotation(Ljp/co/cyberagent/android/gpuimage/util/Rotation;ZZ)[F
+
+    move-result-object v14
+
+    .line 293
+    .local v14, "textureCords":[F
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->scaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+
+    move-object/from16 v16, v0
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;->CENTER_CROP:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v1, v17
+
+    if-ne v0, v1, :cond_2
+
+    .line 294
+    const/high16 v16, 0x3f800000    # 1.0f
+
+    const/high16 v17, 0x3f800000    # 1.0f
+
+    div-float v17, v17, v13
+
+    sub-float v16, v16, v17
+
+    const/high16 v17, 0x40000000    # 2.0f
+
+    div-float v3, v16, v17
+
+    .line 295
+    .local v3, "distHorizontal":F
+    const/high16 v16, 0x3f800000    # 1.0f
+
+    const/high16 v17, 0x3f800000    # 1.0f
+
+    div-float v17, v17, v11
+
+    sub-float v16, v16, v17
+
+    const/high16 v17, 0x40000000    # 2.0f
+
+    div-float v4, v16, v17
+
+    .line 296
+    .local v4, "distVertical":F
+    const/16 v16, 0x8
+
+    move/from16 v0, v16
+
+    new-array v15, v0, [F
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    aget v17, v14, v17
+
+    .line 297
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+
+    move-result v17
+
+    aput v17, v15, v16
+
+    const/16 v16, 0x1
+
+    const/16 v17, 0x1
+
+    aget v17, v14, v17
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v4}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+
+    move-result v17
+
+    aput v17, v15, v16
+
+    const/16 v16, 0x2
+
+    const/16 v17, 0x2
+
+    aget v17, v14, v17
+
+    .line 298
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+
+    move-result v17
+
+    aput v17, v15, v16
+
+    const/16 v16, 0x3
+
+    const/16 v17, 0x3
+
+    aget v17, v14, v17
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v4}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+
+    move-result v17
+
+    aput v17, v15, v16
+
+    const/16 v16, 0x4
+
+    const/16 v17, 0x4
+
+    aget v17, v14, v17
+
+    .line 299
+    move-object/from16 v0, p0
+
+    move/from16 v1, v17
+
+    invoke-direct {v0, v1, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+
+    move-result v17
+
+    aput v17, v15, v16
+
+    const/16 v16, 0x5
 
     const/16 v17, 0x5
 
-    const/16 v18, 0x4
+    aget v17, v14, v17
 
-    const/16 v19, 0x3
+    move-object/from16 v0, p0
 
-    const/16 v20, 0x2
+    move/from16 v1, v17
 
-    const/16 v21, 0x1
+    invoke-direct {v0, v1, v4}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
 
-    const/4 v15, 0x0
+    move-result v17
 
-    if-ne v12, v13, :cond_2
+    aput v17, v15, v16
 
-    .line 290
-    const/high16 v12, 0x3f800000    # 1.0f
+    const/16 v16, 0x6
 
-    div-float v13, v12, v8
+    const/16 v17, 0x6
 
-    sub-float v13, v12, v13
+    aget v17, v14, v17
 
-    const/high16 v22, 0x40000000    # 2.0f
+    .line 300
+    move-object/from16 v0, p0
 
-    div-float v13, v13, v22
+    move/from16 v1, v17
 
-    .line 291
-    .local v13, "distHorizontal":F
-    div-float v23, v12, v9
+    invoke-direct {v0, v1, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
 
-    sub-float v12, v12, v23
+    move-result v17
 
-    div-float v12, v12, v22
+    aput v17, v15, v16
 
-    .line 292
-    .local v12, "distVertical":F
-    new-array v14, v14, [F
+    const/16 v16, 0x7
 
-    move/from16 v22, v1
+    const/16 v17, 0x7
 
-    .end local v1    # "outputWidth":F
-    .local v22, "outputWidth":F
-    aget v1, v11, v15
+    aget v17, v14, v17
 
-    .line 293
-    invoke-direct {v0, v1, v13}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+    move-object/from16 v0, p0
 
-    move-result v1
+    move/from16 v1, v17
 
-    aput v1, v14, v15
+    invoke-direct {v0, v1, v4}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
 
-    aget v1, v11, v21
+    move-result v17
 
-    invoke-direct {v0, v1, v12}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
+    aput v17, v15, v16
 
-    move-result v1
-
-    aput v1, v14, v21
-
-    aget v1, v11, v20
-
-    .line 294
-    invoke-direct {v0, v1, v13}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
-
-    move-result v1
-
-    aput v1, v14, v20
-
-    aget v1, v11, v19
-
-    invoke-direct {v0, v1, v12}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
-
-    move-result v1
-
-    aput v1, v14, v19
-
-    aget v1, v11, v18
-
-    .line 295
-    invoke-direct {v0, v1, v13}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
-
-    move-result v1
-
-    aput v1, v14, v18
-
-    aget v1, v11, v17
-
-    invoke-direct {v0, v1, v12}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
-
-    move-result v1
-
-    aput v1, v14, v17
-
-    aget v1, v11, v16
-
-    .line 296
-    invoke-direct {v0, v1, v13}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
-
-    move-result v1
-
-    aput v1, v14, v16
-
-    const/4 v1, 0x7
-
-    aget v15, v11, v1
-
-    invoke-direct {v0, v15, v12}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->addDistance(FF)F
-
-    move-result v15
-
-    aput v15, v14, v1
-
-    move-object v11, v14
-
-    .line 298
-    .end local v12    # "distVertical":F
-    .end local v13    # "distHorizontal":F
-    goto :goto_0
-
-    .line 299
-    .end local v22    # "outputWidth":F
-    .restart local v1    # "outputWidth":F
-    :cond_2
-    move/from16 v22, v1
-
-    .end local v1    # "outputWidth":F
-    .restart local v22    # "outputWidth":F
-    new-array v1, v14, [F
-
-    sget-object v12, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
-
-    const/4 v13, 0x0
-
-    aget v14, v12, v13
-
-    div-float/2addr v14, v9
-
-    aput v14, v1, v13
-
-    aget v13, v12, v21
-
-    div-float/2addr v13, v8
-
-    aput v13, v1, v21
-
-    aget v13, v12, v20
-
-    div-float/2addr v13, v9
-
-    aput v13, v1, v20
-
-    aget v13, v12, v19
-
-    div-float/2addr v13, v8
-
-    aput v13, v1, v19
-
-    aget v13, v12, v18
-
-    div-float/2addr v13, v9
-
-    aput v13, v1, v18
-
-    aget v13, v12, v17
-
-    div-float/2addr v13, v8
-
-    aput v13, v1, v17
-
-    aget v13, v12, v16
-
-    div-float/2addr v13, v9
-
-    aput v13, v1, v16
-
-    const/4 v13, 0x7
-
-    aget v12, v12, v13
-
-    div-float/2addr v12, v8
-
-    aput v12, v1, v13
-
-    move-object v10, v1
-
-    .line 307
-    :goto_0
-    iget-object v1, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLCubeBuffer:Ljava/nio/FloatBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->clear()Ljava/nio/Buffer;
-
-    .line 308
-    iget-object v1, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLCubeBuffer:Ljava/nio/FloatBuffer;
-
-    invoke-virtual {v1, v10}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
-
-    move-result-object v1
-
-    const/4 v12, 0x0
-
-    invoke-virtual {v1, v12}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
-
-    .line 309
-    iget-object v1, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureBuffer:Ljava/nio/FloatBuffer;
-
-    invoke-virtual {v1}, Ljava/nio/FloatBuffer;->clear()Ljava/nio/Buffer;
-
-    .line 310
-    iget-object v1, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureBuffer:Ljava/nio/FloatBuffer;
-
-    invoke-virtual {v1, v11}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v12}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+    .end local v14    # "textureCords":[F
+    .local v15, "textureCords":[F
+    move-object v14, v15
 
     .line 311
+    .end local v3    # "distHorizontal":F
+    .end local v4    # "distVertical":F
+    .end local v15    # "textureCords":[F
+    .restart local v14    # "textureCords":[F
+    :goto_0
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glCubeBuffer:Ljava/nio/FloatBuffer;
+
+    move-object/from16 v16, v0
+
+    invoke-virtual/range {v16 .. v16}, Ljava/nio/FloatBuffer;->clear()Ljava/nio/Buffer;
+
+    .line 312
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glCubeBuffer:Ljava/nio/FloatBuffer;
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v2}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
+
+    move-result-object v16
+
+    const/16 v17, 0x0
+
+    invoke-virtual/range {v16 .. v17}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 313
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureBuffer:Ljava/nio/FloatBuffer;
+
+    move-object/from16 v16, v0
+
+    invoke-virtual/range {v16 .. v16}, Ljava/nio/FloatBuffer;->clear()Ljava/nio/Buffer;
+
+    .line 314
+    move-object/from16 v0, p0
+
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureBuffer:Ljava/nio/FloatBuffer;
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v0, v16
+
+    invoke-virtual {v0, v14}, Ljava/nio/FloatBuffer;->put([F)Ljava/nio/FloatBuffer;
+
+    move-result-object v16
+
+    const/16 v17, 0x0
+
+    invoke-virtual/range {v16 .. v17}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
+
+    .line 315
     return-void
+
+    .line 303
+    :cond_2
+    const/16 v16, 0x8
+
+    move/from16 v0, v16
+
+    new-array v2, v0, [F
+
+    .end local v2    # "cube":[F
+    const/16 v16, 0x0
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x0
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v11
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x1
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x1
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v13
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x2
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x2
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v11
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x3
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x3
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v13
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x4
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x4
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v11
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x5
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x5
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v13
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x6
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x6
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v11
+
+    aput v17, v2, v16
+
+    const/16 v16, 0x7
+
+    sget-object v17, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->CUBE:[F
+
+    const/16 v18, 0x7
+
+    aget v17, v17, v18
+
+    div-float v17, v17, v13
+
+    aput v17, v2, v16
+
+    .restart local v2    # "cube":[F
+    goto/16 :goto_0
 .end method
 
 .method private runAll(Ljava/util/Queue;)V
@@ -750,17 +988,19 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/Queue<",
+            "Ljava/util/Queue",
+            "<",
             "Ljava/lang/Runnable;",
             ">;)V"
         }
     .end annotation
 
-    .line 141
+    .prologue
+    .line 143
     .local p1, "queue":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Runnable;>;"
     monitor-enter p1
 
-    .line 142
+    .line 144
     :goto_0
     :try_start_0
     invoke-interface {p1}, Ljava/util/Queue;->isEmpty()Z
@@ -769,7 +1009,7 @@
 
     if-nez v0, :cond_0
 
-    .line 143
+    .line 145
     invoke-interface {p1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v0
@@ -780,14 +1020,7 @@
 
     goto :goto_0
 
-    .line 145
-    :cond_0
-    monitor-exit p1
-
-    .line 146
-    return-void
-
-    .line 145
+    .line 147
     :catchall_0
     move-exception v0
 
@@ -796,6 +1029,15 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+
+    :cond_0
+    :try_start_1
+    monitor-exit p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 148
+    return-void
 .end method
 
 
@@ -803,22 +1045,24 @@
 .method public deleteImage()V
     .locals 1
 
-    .line 209
+    .prologue
+    .line 213
     new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$4;
 
     invoke-direct {v0, p0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$4;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)V
 
     invoke-virtual {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw(Ljava/lang/Runnable;)V
 
-    .line 219
+    .line 223
     return-void
 .end method
 
 .method protected getFrameHeight()I
     .locals 1
 
-    .line 267
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputHeight:I
+    .prologue
+    .line 271
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputHeight:I
 
     return v0
 .end method
@@ -826,17 +1070,19 @@
 .method protected getFrameWidth()I
     .locals 1
 
-    .line 263
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputWidth:I
+    .prologue
+    .line 267
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputWidth:I
 
     return v0
 .end method
 
-.method public getRotation()Ljp/co/cyberagent/android/gpuimage/Rotation;
+.method public getRotation()Ljp/co/cyberagent/android/gpuimage/util/Rotation;
     .locals 1
 
-    .line 335
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRotation:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .prologue
+    .line 339
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->rotation:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
     return-object v0
 .end method
@@ -844,8 +1090,9 @@
 .method public isFlippedHorizontally()Z
     .locals 1
 
-    .line 339
-    iget-boolean v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFlipHorizontal:Z
+    .prologue
+    .line 343
+    iget-boolean v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->flipHorizontal:Z
 
     return v0
 .end method
@@ -853,8 +1100,9 @@
 .method public isFlippedVertically()Z
     .locals 1
 
-    .line 343
-    iget-boolean v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFlipVertical:Z
+    .prologue
+    .line 347
+    iget-boolean v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->flipVertical:Z
 
     return v0
 .end method
@@ -863,42 +1111,88 @@
     .locals 4
     .param p1, "gl"    # Ljavax/microedition/khronos/opengles/GL10;
 
-    .line 118
+    .prologue
+    .line 120
     const/16 v0, 0x4100
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glClear(I)V
 
-    .line 119
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDraw:Ljava/util/Queue;
-
-    invoke-direct {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runAll(Ljava/util/Queue;)V
-
-    .line 120
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
-
-    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureId:I
-
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLCubeBuffer:Ljava/nio/FloatBuffer;
-
-    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLTextureBuffer:Ljava/nio/FloatBuffer;
-
-    invoke-virtual {v0, v1, v2, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->onDraw(ILjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)V
-
     .line 121
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDrawEnd:Ljava/util/Queue;
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw:Ljava/util/Queue;
 
     invoke-direct {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runAll(Ljava/util/Queue;)V
 
     .line 122
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceTexture:Landroid/graphics/SurfaceTexture;
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
+
+    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureId:I
+
+    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glCubeBuffer:Ljava/nio/FloatBuffer;
+
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glTextureBuffer:Ljava/nio/FloatBuffer;
+
+    invoke-virtual {v0, v1, v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->onDraw(ILjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)V
+
+    .line 123
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDrawEnd:Ljava/util/Queue;
+
+    invoke-direct {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runAll(Ljava/util/Queue;)V
+
+    .line 124
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v0, :cond_0
 
-    .line 123
+    .line 125
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceTexture:Landroid/graphics/SurfaceTexture;
+
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
 
-    .line 125
+    .line 127
     :cond_0
+    return-void
+.end method
+
+.method public onPreviewFrame([BII)V
+    .locals 1
+    .param p1, "data"    # [B
+    .param p2, "width"    # I
+    .param p3, "height"    # I
+
+    .prologue
+    .line 157
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glRgbBuffer:Ljava/nio/IntBuffer;
+
+    if-nez v0, :cond_0
+
+    .line 158
+    mul-int v0, p2, p3
+
+    invoke-static {v0}, Ljava/nio/IntBuffer;->allocate(I)Ljava/nio/IntBuffer;
+
+    move-result-object v0
+
+    iput-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->glRgbBuffer:Ljava/nio/IntBuffer;
+
+    .line 160
+    :cond_0
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw:Ljava/util/Queue;
+
+    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 161
+    new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;
+
+    invoke-direct {v0, p0, p1, p2, p3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;[BII)V
+
+    invoke-virtual {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw(Ljava/lang/Runnable;)V
+
+    .line 175
+    :cond_1
     return-void
 .end method
 
@@ -907,53 +1201,25 @@
     .param p1, "data"    # [B
     .param p2, "camera"    # Landroid/hardware/Camera;
 
-    .line 150
+    .prologue
+    .line 152
     invoke-virtual {p2}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
+
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
-
-    move-result-object v0
-
-    .line 151
+    .line 153
     .local v0, "previewSize":Landroid/hardware/Camera$Size;
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLRgbBuffer:Ljava/nio/IntBuffer;
-
-    if-nez v1, :cond_0
-
-    .line 152
     iget v1, v0, Landroid/hardware/Camera$Size;->width:I
 
     iget v2, v0, Landroid/hardware/Camera$Size;->height:I
 
-    mul-int/2addr v1, v2
-
-    invoke-static {v1}, Ljava/nio/IntBuffer;->allocate(I)Ljava/nio/IntBuffer;
-
-    move-result-object v1
-
-    iput-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mGLRgbBuffer:Ljava/nio/IntBuffer;
+    invoke-virtual {p0, p1, v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->onPreviewFrame([BII)V
 
     .line 154
-    :cond_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDraw:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->isEmpty()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 155
-    new-instance v1, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;
-
-    invoke-direct {v1, p0, p1, v0, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;[BLandroid/hardware/Camera$Size;Landroid/hardware/Camera;)V
-
-    invoke-virtual {p0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw(Ljava/lang/Runnable;)V
-
-    .line 171
-    :cond_1
     return-void
 .end method
 
@@ -963,60 +1229,61 @@
     .param p2, "width"    # I
     .param p3, "height"    # I
 
-    .line 105
-    iput p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputWidth:I
-
-    .line 106
-    iput p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mOutputHeight:I
-
-    .line 107
+    .prologue
     const/4 v0, 0x0
 
-    invoke-static {v0, v0, p2, p3}, Landroid/opengl/GLES20;->glViewport(IIII)V
+    .line 107
+    iput p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputWidth:I
 
     .line 108
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    iput p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->outputHeight:I
 
-    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->getProgram()I
+    .line 109
+    invoke-static {v0, v0, p2, p3}, Landroid/opengl/GLES20;->glViewport(IIII)V
+
+    .line 110
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
+
+    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->getProgram()I
 
     move-result v0
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-    .line 109
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
-
-    invoke-virtual {v0, p2, p3}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->onOutputSizeChanged(II)V
-
-    .line 110
-    invoke-direct {p0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->adjustImageScaling()V
-
     .line 111
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceChangedWaiter:Ljava/lang/Object;
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    monitor-enter v0
+    invoke-virtual {v0, p2, p3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->onOutputSizeChanged(II)V
 
     .line 112
-    :try_start_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mSurfaceChangedWaiter:Ljava/lang/Object;
-
-    invoke-virtual {v1}, Ljava/lang/Object;->notifyAll()V
+    invoke-direct {p0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->adjustImageScaling()V
 
     .line 113
-    monitor-exit v0
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceChangedWaiter:Ljava/lang/Object;
+
+    monitor-enter v1
 
     .line 114
+    :try_start_0
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->surfaceChangedWaiter:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 115
+    monitor-exit v1
+
+    .line 116
     return-void
 
-    .line 113
+    .line 115
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public onSurfaceCreated(Ljavax/microedition/khronos/opengles/GL10;Ljavax/microedition/khronos/egl/EGLConfig;)V
@@ -1024,28 +1291,29 @@
     .param p1, "unused"    # Ljavax/microedition/khronos/opengles/GL10;
     .param p2, "config"    # Ljavax/microedition/khronos/egl/EGLConfig;
 
-    .line 98
-    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundRed:F
+    .prologue
+    .line 100
+    iget v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundRed:F
 
-    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundGreen:F
+    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundGreen:F
 
-    iget v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundBlue:F
+    iget v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundBlue:F
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-static {v0, v1, v2, v3}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
-    .line 99
+    .line 101
     const/16 v0, 0xb71
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glDisable(I)V
 
-    .line 100
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFilter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .line 102
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->init()V
+    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->ifNeedInit()V
 
-    .line 101
+    .line 103
     return-void
 .end method
 
@@ -1053,64 +1321,66 @@
     .locals 2
     .param p1, "runnable"    # Ljava/lang/Runnable;
 
-    .line 347
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDraw:Ljava/util/Queue;
+    .prologue
+    .line 351
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw:Ljava/util/Queue;
 
-    monitor-enter v0
+    monitor-enter v1
 
-    .line 348
+    .line 352
     :try_start_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDraw:Ljava/util/Queue;
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw:Ljava/util/Queue;
 
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 349
-    monitor-exit v0
+    .line 353
+    monitor-exit v1
 
-    .line 350
+    .line 354
     return-void
 
-    .line 349
+    .line 353
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method protected runOnDrawEnd(Ljava/lang/Runnable;)V
     .locals 2
     .param p1, "runnable"    # Ljava/lang/Runnable;
 
-    .line 353
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDrawEnd:Ljava/util/Queue;
+    .prologue
+    .line 357
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDrawEnd:Ljava/util/Queue;
 
-    monitor-enter v0
+    monitor-enter v1
 
-    .line 354
+    .line 358
     :try_start_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRunOnDrawEnd:Ljava/util/Queue;
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDrawEnd:Ljava/util/Queue;
 
-    invoke-interface {v1, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
-    .line 355
-    monitor-exit v0
+    .line 359
+    monitor-exit v1
 
-    .line 356
+    .line 360
     return-void
 
-    .line 355
+    .line 359
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method
 
 .method public setBackgroundColor(FFF)V
@@ -1119,31 +1389,33 @@
     .param p2, "green"    # F
     .param p3, "blue"    # F
 
-    .line 135
-    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundRed:F
-
-    .line 136
-    iput p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundGreen:F
-
+    .prologue
     .line 137
-    iput p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mBackgroundBlue:F
+    iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundRed:F
 
     .line 138
+    iput p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundGreen:F
+
+    .line 139
+    iput p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->backgroundBlue:F
+
+    .line 140
     return-void
 .end method
 
-.method public setFilter(Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+.method public setFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
     .locals 1
-    .param p1, "filter"    # Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .param p1, "filter"    # Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    .line 192
+    .prologue
+    .line 196
     new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;
 
-    invoke-direct {v0, p0, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+    invoke-direct {v0, p0, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 
     invoke-virtual {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw(Ljava/lang/Runnable;)V
 
-    .line 206
+    .line 210
     return-void
 .end method
 
@@ -1151,12 +1423,13 @@
     .locals 1
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
-    .line 222
+    .prologue
+    .line 226
     const/4 v0, 0x1
 
     invoke-virtual {p0, p1, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setImageBitmap(Landroid/graphics/Bitmap;Z)V
 
-    .line 223
+    .line 227
     return-void
 .end method
 
@@ -1165,13 +1438,15 @@
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
     .param p2, "recycle"    # Z
 
-    .line 226
+    .prologue
+    .line 230
     if-nez p1, :cond_0
 
-    .line 227
+    .line 260
+    :goto_0
     return-void
 
-    .line 230
+    .line 234
     :cond_0
     new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$5;
 
@@ -1179,53 +1454,55 @@
 
     invoke-virtual {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw(Ljava/lang/Runnable;)V
 
-    .line 256
-    return-void
+    goto :goto_0
 .end method
 
-.method public setRotation(Ljp/co/cyberagent/android/gpuimage/Rotation;)V
+.method public setRotation(Ljp/co/cyberagent/android/gpuimage/util/Rotation;)V
     .locals 0
-    .param p1, "rotation"    # Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .param p1, "rotation"    # Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
-    .line 323
-    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mRotation:Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .prologue
+    .line 327
+    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->rotation:Ljp/co/cyberagent/android/gpuimage/util/Rotation;
 
-    .line 324
+    .line 328
     invoke-direct {p0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->adjustImageScaling()V
 
-    .line 325
-    return-void
-.end method
-
-.method public setRotation(Ljp/co/cyberagent/android/gpuimage/Rotation;ZZ)V
-    .locals 0
-    .param p1, "rotation"    # Ljp/co/cyberagent/android/gpuimage/Rotation;
-    .param p2, "flipHorizontal"    # Z
-    .param p3, "flipVertical"    # Z
-
     .line 329
-    iput-boolean p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFlipHorizontal:Z
-
-    .line 330
-    iput-boolean p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mFlipVertical:Z
-
-    .line 331
-    invoke-virtual {p0, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setRotation(Ljp/co/cyberagent/android/gpuimage/Rotation;)V
-
-    .line 332
     return-void
 .end method
 
-.method public setRotationCamera(Ljp/co/cyberagent/android/gpuimage/Rotation;ZZ)V
+.method public setRotation(Ljp/co/cyberagent/android/gpuimage/util/Rotation;ZZ)V
     .locals 0
-    .param p1, "rotation"    # Ljp/co/cyberagent/android/gpuimage/Rotation;
+    .param p1, "rotation"    # Ljp/co/cyberagent/android/gpuimage/util/Rotation;
     .param p2, "flipHorizontal"    # Z
     .param p3, "flipVertical"    # Z
 
-    .line 319
-    invoke-virtual {p0, p1, p3, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setRotation(Ljp/co/cyberagent/android/gpuimage/Rotation;ZZ)V
+    .prologue
+    .line 333
+    iput-boolean p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->flipHorizontal:Z
 
-    .line 320
+    .line 334
+    iput-boolean p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->flipVertical:Z
+
+    .line 335
+    invoke-virtual {p0, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setRotation(Ljp/co/cyberagent/android/gpuimage/util/Rotation;)V
+
+    .line 336
+    return-void
+.end method
+
+.method public setRotationCamera(Ljp/co/cyberagent/android/gpuimage/util/Rotation;ZZ)V
+    .locals 0
+    .param p1, "rotation"    # Ljp/co/cyberagent/android/gpuimage/util/Rotation;
+    .param p2, "flipHorizontal"    # Z
+    .param p3, "flipVertical"    # Z
+
+    .prologue
+    .line 323
+    invoke-virtual {p0, p1, p3, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setRotation(Ljp/co/cyberagent/android/gpuimage/util/Rotation;ZZ)V
+
+    .line 324
     return-void
 .end method
 
@@ -1233,10 +1510,11 @@
     .locals 0
     .param p1, "scaleType"    # Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
 
-    .line 259
-    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->mScaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
+    .prologue
+    .line 263
+    iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->scaleType:Ljp/co/cyberagent/android/gpuimage/GPUImage$ScaleType;
 
-    .line 260
+    .line 264
     return-void
 .end method
 
@@ -1244,13 +1522,14 @@
     .locals 1
     .param p1, "camera"    # Landroid/hardware/Camera;
 
-    .line 174
+    .prologue
+    .line 178
     new-instance v0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;
 
     invoke-direct {v0, p0, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Landroid/hardware/Camera;)V
 
     invoke-virtual {p0, v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->runOnDraw(Ljava/lang/Runnable;)V
 
-    .line 189
+    .line 193
     return-void
 .end method

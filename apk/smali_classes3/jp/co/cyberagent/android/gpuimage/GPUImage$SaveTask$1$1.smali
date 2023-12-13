@@ -28,7 +28,8 @@
     .locals 0
     .param p1, "this$2"    # Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;
 
-    .line 471
+    .prologue
+    .line 535
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1$1;->this$2:Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;
 
     iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1$1;->val$uri:Landroid/net/Uri;
@@ -43,7 +44,8 @@
 .method public run()V
     .locals 2
 
-    .line 475
+    .prologue
+    .line 539
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1$1;->this$2:Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;
 
     iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;->this$1:Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;
@@ -56,6 +58,6 @@
 
     invoke-interface {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage$OnPictureSavedListener;->onPictureSaved(Landroid/net/Uri;)V
 
-    .line 476
+    .line 540
     return-void
 .end method

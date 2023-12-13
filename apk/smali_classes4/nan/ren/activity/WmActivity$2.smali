@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 146
+    .line 148
     iput-object p1, p0, Lnan/ren/activity/WmActivity$2;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
     .locals 2
     .param p1, "view"    # Landroid/view/View;
 
-    .line 149
+    .line 151
     iget-object v0, p0, Lnan/ren/activity/WmActivity$2;->this$0:Lnan/ren/activity/WmActivity;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lnan/ren/activity/WmActivity;->selectPic(I)V
 
-    .line 150
+    .line 152
     const/4 v0, 0x0
 
     return v0

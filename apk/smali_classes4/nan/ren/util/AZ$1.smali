@@ -1,6 +1,6 @@
 .class Lnan/ren/util/AZ$1;
 .super Ljava/lang/Object;
-.source "MyWeb.java"
+.source "AZ.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/util/AZ;
 
-    .line 63
+    .line 28
     iput-object p1, p0, Lnan/ren/util/AZ$1;->this$0:Lnan/ren/util/AZ;
 
     iput-object p2, p0, Lnan/ren/util/AZ$1;->val$color:Ljava/lang/String;
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 2
 
-    .line 66
+    .line 31
     iget-object v0, p0, Lnan/ren/util/AZ$1;->this$0:Lnan/ren/util/AZ;
 
     iget-object v0, v0, Lnan/ren/util/AZ;->target:Landroid/view/View;
@@ -54,9 +54,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 67
+    .line 32
     invoke-static {}, Lnan/ren/util/PopDialog;->close()V
 
-    .line 68
+    .line 33
     return-void
 .end method

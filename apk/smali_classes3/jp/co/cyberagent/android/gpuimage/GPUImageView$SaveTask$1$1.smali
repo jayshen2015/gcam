@@ -28,7 +28,8 @@
     .locals 0
     .param p1, "this$2"    # Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1;
 
-    .line 450
+    .prologue
+    .line 567
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1$1;->this$2:Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1;
 
     iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1$1;->val$uri:Landroid/net/Uri;
@@ -43,12 +44,13 @@
 .method public run()V
     .locals 2
 
-    .line 454
+    .prologue
+    .line 571
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1$1;->this$2:Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1;
 
     iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask$1;->this$1:Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask;
 
-    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask;)Ljp/co/cyberagent/android/gpuimage/GPUImageView$OnPictureSavedListener;
+    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask;->access$200(Ljp/co/cyberagent/android/gpuimage/GPUImageView$SaveTask;)Ljp/co/cyberagent/android/gpuimage/GPUImageView$OnPictureSavedListener;
 
     move-result-object v0
 
@@ -56,6 +58,6 @@
 
     invoke-interface {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageView$OnPictureSavedListener;->onPictureSaved(Landroid/net/Uri;)V
 
-    .line 455
+    .line 572
     return-void
 .end method

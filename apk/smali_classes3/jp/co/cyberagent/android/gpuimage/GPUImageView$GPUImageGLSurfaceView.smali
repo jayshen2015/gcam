@@ -23,13 +23,14 @@
     .locals 0
     .param p2, "context"    # Landroid/content/Context;
 
-    .line 357
+    .prologue
+    .line 455
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$GPUImageGLSurfaceView;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    .line 358
+    .line 456
     invoke-direct {p0, p2}, Landroid/opengl/GLSurfaceView;-><init>(Landroid/content/Context;)V
 
-    .line 359
+    .line 457
     return-void
 .end method
 
@@ -38,13 +39,14 @@
     .param p2, "context"    # Landroid/content/Context;
     .param p3, "attrs"    # Landroid/util/AttributeSet;
 
-    .line 361
+    .prologue
+    .line 459
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$GPUImageGLSurfaceView;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    .line 362
+    .line 460
     invoke-direct {p0, p2, p3}, Landroid/opengl/GLSurfaceView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 363
+    .line 461
     return-void
 .end method
 
@@ -55,47 +57,48 @@
     .param p1, "widthMeasureSpec"    # I
     .param p2, "heightMeasureSpec"    # I
 
-    .line 367
+    .prologue
+    const/high16 v2, 0x40000000    # 2.0f
+
+    .line 465
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$GPUImageGLSurfaceView;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->mForceSize:Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->forceSize:Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;
 
     if-eqz v0, :cond_0
 
-    .line 368
+    .line 466
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$GPUImageGLSurfaceView;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->mForceSize:Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;
+    iget-object v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->forceSize:Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;
 
     iget v0, v0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;->width:I
 
-    const/high16 v1, 0x40000000    # 2.0f
-
-    invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v0, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$GPUImageGLSurfaceView;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$GPUImageGLSurfaceView;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    iget-object v2, v2, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->mForceSize:Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;
+    iget-object v1, v1, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->forceSize:Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;
 
-    iget v2, v2, Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;->height:I
+    iget v1, v1, Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;->height:I
 
-    .line 369
-    invoke-static {v2, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    .line 467
+    invoke-static {v1, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v1
 
-    .line 368
+    .line 466
     invoke-super {p0, v0, v1}, Landroid/opengl/GLSurfaceView;->onMeasure(II)V
 
-    goto :goto_0
+    .line 471
+    :goto_0
+    return-void
 
-    .line 371
+    .line 469
     :cond_0
     invoke-super {p0, p1, p2}, Landroid/opengl/GLSurfaceView;->onMeasure(II)V
 
-    .line 373
-    :goto_0
-    return-void
+    goto :goto_0
 .end method

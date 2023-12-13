@@ -419,7 +419,7 @@
 
     move-result-object v6
 
-    const-string v7, "AGC."
+    const-string v7, "AGC"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

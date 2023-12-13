@@ -26,7 +26,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 209
+    .prologue
+    .line 213
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$4;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,32 +40,33 @@
 .method public run()V
     .locals 4
 
-    .line 213
-    const/4 v0, 0x1
+    .prologue
+    const/4 v3, 0x1
 
-    new-array v1, v0, [I
+    const/4 v2, 0x0
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$4;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+    .line 217
+    new-array v0, v3, [I
 
-    .line 214
-    invoke-static {v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)I
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$4;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    move-result v2
+    .line 218
+    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)I
 
-    const/4 v3, 0x0
+    move-result v1
 
-    aput v2, v1, v3
+    aput v1, v0, v2
 
-    .line 213
-    invoke-static {v0, v1, v3}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
+    .line 217
+    invoke-static {v3, v0, v2}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 216
+    .line 220
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$4;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$102(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;I)I
 
-    .line 217
+    .line 221
     return-void
 .end method

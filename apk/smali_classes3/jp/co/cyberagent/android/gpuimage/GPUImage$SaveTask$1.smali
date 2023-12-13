@@ -26,7 +26,8 @@
     .locals 0
     .param p1, "this$1"    # Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;
 
-    .line 467
+    .prologue
+    .line 531
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;->this$1:Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +42,8 @@
     .param p1, "path"    # Ljava/lang/String;
     .param p2, "uri"    # Landroid/net/Uri;
 
-    .line 470
+    .prologue
+    .line 534
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;->this$1:Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;
 
     invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;->access$200(Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;)Ljp/co/cyberagent/android/gpuimage/GPUImage$OnPictureSavedListener;
@@ -50,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 471
+    .line 535
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask$1;->this$1:Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;
 
     invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;->access$300(Ljp/co/cyberagent/android/gpuimage/GPUImage$SaveTask;)Landroid/os/Handler;
@@ -63,7 +65,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 479
+    .line 543
     :cond_0
     return-void
 .end method

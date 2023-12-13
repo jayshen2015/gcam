@@ -26,15 +26,16 @@
     .param p1, "width"    # I
     .param p2, "height"    # I
 
-    .line 350
+    .prologue
+    .line 448
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 351
+    .line 449
     iput p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;->width:I
 
-    .line 352
+    .line 450
     iput p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$Size;->height:I
 
-    .line 353
+    .line 451
     return-void
 .end method

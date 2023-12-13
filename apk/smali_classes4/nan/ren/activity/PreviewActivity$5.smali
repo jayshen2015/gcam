@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 420
+    .line 421
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$5;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$5;->val$textView:Landroid/widget/TextView;
@@ -46,7 +46,7 @@
     .param p2, "i"    # I
     .param p3, "b"    # Z
 
-    .line 423
+    .line 424
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$5;->val$textView:Landroid/widget/TextView;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -87,7 +87,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 424
+    .line 425
     return-void
 .end method
 
@@ -95,7 +95,7 @@
     .locals 0
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .line 426
+    .line 427
     return-void
 .end method
 
@@ -103,7 +103,7 @@
     .locals 2
     .param p1, "seekBar"    # Landroid/widget/SeekBar;
 
-    .line 429
+    .line 430
     invoke-virtual {p1}, Landroid/widget/SeekBar;->getProgress()I
 
     move-result v0
@@ -124,11 +124,11 @@
 
     sput v0, Lnan/ren/activity/PreviewActivity;->lut_intensit:F
 
-    .line 430
+    .line 431
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$5;->this$0:Lnan/ren/activity/PreviewActivity;
 
     invoke-virtual {v0}, Lnan/ren/activity/PreviewActivity;->show()V
 
-    .line 431
+    .line 432
     return-void
 .end method

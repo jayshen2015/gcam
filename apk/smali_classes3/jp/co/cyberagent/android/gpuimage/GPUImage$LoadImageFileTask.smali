@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field private final mImageFile:Ljava/io/File;
+.field private final imageFile:Ljava/io/File;
 
 .field final synthetic this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
@@ -26,16 +26,17 @@
     .param p2, "gpuImage"    # Ljp/co/cyberagent/android/gpuimage/GPUImage;
     .param p3, "file"    # Ljava/io/File;
 
-    .line 536
+    .prologue
+    .line 602
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    .line 537
+    .line 603
     invoke-direct {p0, p1, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageTask;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImage;Ljp/co/cyberagent/android/gpuimage/GPUImage;)V
 
-    .line 538
-    iput-object p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->mImageFile:Ljava/io/File;
+    .line 604
+    iput-object p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->imageFile:Ljava/io/File;
 
-    .line 539
+    .line 605
     return-void
 .end method
 
@@ -45,8 +46,9 @@
     .locals 1
     .param p1, "options"    # Landroid/graphics/BitmapFactory$Options;
 
-    .line 543
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->mImageFile:Ljava/io/File;
+    .prologue
+    .line 609
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->imageFile:Ljava/io/File;
 
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -60,72 +62,74 @@
 .end method
 
 .method protected getImageOrientation()I
-    .locals 3
+    .locals 5
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 548
+    .prologue
+    const/4 v2, 0x0
+
+    .line 614
     new-instance v0, Landroid/media/ExifInterface;
 
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->mImageFile:Ljava/io/File;
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageFileTask;->imageFile:Ljava/io/File;
 
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    invoke-direct {v0, v1}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 549
+    .line 615
     .local v0, "exif":Landroid/media/ExifInterface;
-    const-string v1, "Orientation"
+    const-string v3, "Orientation"
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
+    invoke-virtual {v0, v3, v4}, Landroid/media/ExifInterface;->getAttributeInt(Ljava/lang/String;I)I
 
     move-result v1
 
-    .line 550
+    .line 616
     .local v1, "orientation":I
-    const/4 v2, 0x0
+    packed-switch v1, :pswitch_data_0
 
-    sparse-switch v1, :sswitch_data_0
-
-    .line 560
+    .line 626
+    :goto_0
+    :pswitch_0
     return v2
 
-    .line 558
-    :sswitch_0
-    const/16 v2, 0x10e
-
-    return v2
-
-    .line 554
-    :sswitch_1
+    .line 620
+    :pswitch_1
     const/16 v2, 0x5a
 
-    return v2
+    goto :goto_0
 
-    .line 556
-    :sswitch_2
+    .line 622
+    :pswitch_2
     const/16 v2, 0xb4
 
-    return v2
+    goto :goto_0
 
-    .line 552
-    :sswitch_3
-    return v2
+    .line 624
+    :pswitch_3
+    const/16 v2, 0x10e
 
-    nop
+    goto :goto_0
 
-    :sswitch_data_0
-    .sparse-switch
-        0x1 -> :sswitch_3
-        0x3 -> :sswitch_2
-        0x6 -> :sswitch_1
-        0x8 -> :sswitch_0
-    .end sparse-switch
+    .line 616
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_3
+    .end packed-switch
 .end method

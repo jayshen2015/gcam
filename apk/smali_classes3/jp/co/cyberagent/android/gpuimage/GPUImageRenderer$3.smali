@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setFilter(Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+    value = Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->setFilter(Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,18 +20,19 @@
 # instance fields
 .field final synthetic this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-.field final synthetic val$filter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+.field final synthetic val$filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
 
 # direct methods
-.method constructor <init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)V
+.method constructor <init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)V
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 192
+    .prologue
+    .line 196
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->val$filter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->val$filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,54 +44,55 @@
 .method public run()V
     .locals 4
 
-    .line 196
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+    .prologue
+    .line 200
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     move-result-object v0
 
-    .line 197
-    .local v0, "oldFilter":Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    .line 201
+    .local v0, "oldFilter":Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
     iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->val$filter:Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->val$filter:Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    invoke-static {v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$602(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$602(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    .line 198
+    .line 202
     if-eqz v0, :cond_0
 
-    .line 199
-    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->destroy()V
+    .line 203
+    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->destroy()V
 
-    .line 201
+    .line 205
     :cond_0
     iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->init()V
+    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->ifNeedInit()V
 
-    .line 202
+    .line 206
     iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->getProgram()I
+    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->getProgram()I
 
     move-result v1
 
     invoke-static {v1}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-    .line 203
+    .line 207
     iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$600(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     move-result-object v1
 
@@ -106,8 +108,8 @@
 
     move-result v3
 
-    invoke-virtual {v1, v2, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->onOutputSizeChanged(II)V
+    invoke-virtual {v1, v2, v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->onOutputSizeChanged(II)V
 
-    .line 204
+    .line 208
     return-void
 .end method

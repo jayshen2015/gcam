@@ -26,7 +26,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    .line 252
+    .prologue
+    .line 347
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,14 +40,26 @@
 .method public run()V
     .locals 4
 
-    .line 256
+    .prologue
+    .line 351
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
+
+    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImageView;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 352
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     new-instance v1, Ljp/co/cyberagent/android/gpuimage/GPUImageView$LoadingView;
 
     iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    invoke-virtual {v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->getContext()Landroid/content/Context;
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
+
+    invoke-virtual {v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->getContext()Landroid/content/Context;
 
     move-result-object v3
 
@@ -54,15 +67,16 @@
 
     invoke-virtual {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->addView(Landroid/view/View;)V
 
-    .line 258
+    .line 355
+    :cond_0
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImageView;)Landroid/opengl/GLSurfaceView;
+    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageView;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImageView;)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/opengl/GLSurfaceView;->requestLayout()V
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 259
+    .line 356
     return-void
 .end method

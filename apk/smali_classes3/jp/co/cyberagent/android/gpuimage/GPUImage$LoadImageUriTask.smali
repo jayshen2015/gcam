@@ -15,9 +15,9 @@
 
 
 # instance fields
-.field private final mUri:Landroid/net/Uri;
-
 .field final synthetic this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+
+.field private final uri:Landroid/net/Uri;
 
 
 # direct methods
@@ -26,132 +26,191 @@
     .param p2, "gpuImage"    # Ljp/co/cyberagent/android/gpuimage/GPUImage;
     .param p3, "uri"    # Landroid/net/Uri;
 
-    .line 495
+    .prologue
+    .line 559
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    .line 496
+    .line 560
     invoke-direct {p0, p1, p2}, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageTask;-><init>(Ljp/co/cyberagent/android/gpuimage/GPUImage;Ljp/co/cyberagent/android/gpuimage/GPUImage;)V
 
-    .line 497
-    iput-object p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->mUri:Landroid/net/Uri;
+    .line 561
+    iput-object p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
 
-    .line 498
+    .line 562
     return-void
 .end method
 
 
 # virtual methods
 .method protected decode(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-    .locals 3
+    .locals 6
     .param p1, "options"    # Landroid/graphics/BitmapFactory$Options;
 
-    .line 504
-    const/4 v0, 0x0
+    .prologue
+    const/4 v2, 0x0
 
+    .line 568
     :try_start_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->mUri:Landroid/net/Uri;
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
 
-    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    const-string v2, "http"
+    const-string v4, "http"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-nez v1, :cond_1
+    if-nez v3, :cond_0
 
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->mUri:Landroid/net/Uri;
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
 
-    invoke-virtual {v1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    const-string v2, "https"
+    const-string v4, "https"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_0
+    if-eqz v3, :cond_1
 
-    goto :goto_0
-
-    .line 507
+    .line 569
     :cond_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+    new-instance v3, Ljava/net/URL;
 
-    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Landroid/content/Context;
+    iget-object v4, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
 
-    move-result-object v1
+    invoke-virtual {v4}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    move-result-object v4
 
-    move-result-object v1
+    invoke-direct {v3, v4}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->mUri:Landroid/net/Uri;
-
-    invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
+    invoke-virtual {v3}, Ljava/net/URL;->openStream()Ljava/io/InputStream;
 
     move-result-object v1
 
+    .line 575
     .local v1, "inputStream":Ljava/io/InputStream;
-    goto :goto_1
-
-    .line 505
-    .end local v1    # "inputStream":Ljava/io/InputStream;
-    :cond_1
     :goto_0
-    new-instance v1, Ljava/net/URL;
+    const/4 v3, 0x0
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->mUri:Landroid/net/Uri;
-
-    invoke-virtual {v2}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-static {v1, v3, p1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    invoke-direct {v1, v2}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    .line 579
+    .end local v1    # "inputStream":Ljava/io/InputStream;
+    :goto_1
+    return-object v2
 
-    invoke-virtual {v1}, Ljava/net/URL;->openStream()Ljava/io/InputStream;
+    .line 570
+    :cond_1
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
+
+    invoke-virtual {v3}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "/android_asset/"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 571
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+
+    invoke-static {v3}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v3
+
+    iget-object v4, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
+
+    invoke-virtual {v4}, Landroid/net/Uri;->getPath()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "/android_asset/"
+
+    invoke-virtual {v5}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 509
     .restart local v1    # "inputStream":Ljava/io/InputStream;
-    :goto_1
-    invoke-static {v1, v0, p1}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    goto :goto_0
 
-    move-result-object v0
+    .line 573
+    .end local v1    # "inputStream":Ljava/io/InputStream;
+    :cond_2
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+
+    invoke-static {v3}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v3
+
+    iget-object v4, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
+
+    invoke-virtual {v3, v4}, Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    return-object v0
+    move-result-object v1
 
-    .line 510
+    .restart local v1    # "inputStream":Ljava/io/InputStream;
+    goto :goto_0
+
+    .line 576
     .end local v1    # "inputStream":Ljava/io/InputStream;
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    .line 511
-    .local v1, "e":Ljava/lang/Exception;
-    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
+    .line 577
+    .local v0, "e":Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 513
-    .end local v1    # "e":Ljava/lang/Exception;
-    return-object v0
+    goto :goto_1
 .end method
 
 .method protected getImageOrientation()I
-    .locals 7
+    .locals 9
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/IOException;
         }
     .end annotation
 
-    .line 518
+    .prologue
+    const/4 v8, 0x1
+
+    const/4 v3, 0x0
+
+    const/4 v7, 0x0
+
+    .line 584
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Landroid/content/Context;
@@ -160,61 +219,51 @@
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    move-result-object v1
-
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->mUri:Landroid/net/Uri;
-
-    const-string v0, "orientation"
-
-    filled-new-array {v0}, [Ljava/lang/String;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v6, 0x0
-
-    invoke-virtual/range {v1 .. v6}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
     move-result-object v0
 
-    .line 521
-    .local v0, "cursor":Landroid/database/Cursor;
-    const/4 v1, 0x0
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$LoadImageUriTask;->uri:Landroid/net/Uri;
 
-    if-eqz v0, :cond_1
+    new-array v2, v8, [Ljava/lang/String;
 
-    invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
+    const-string v4, "orientation"
 
-    move-result v2
+    aput-object v4, v2, v7
 
-    const/4 v3, 0x1
+    move-object v4, v3
 
-    if-eq v2, v3, :cond_0
+    move-object v5, v3
+
+    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v6
+
+    .line 587
+    .local v6, "cursor":Landroid/database/Cursor;
+    if-eqz v6, :cond_0
+
+    invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
+
+    move-result v0
+
+    if-eq v0, v8, :cond_1
+
+    .line 594
+    :cond_0
+    :goto_0
+    return v7
+
+    .line 591
+    :cond_1
+    invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
+
+    .line 592
+    invoke-interface {v6, v7}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v7
+
+    .line 593
+    .local v7, "orientation":I
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
-
-    .line 525
-    :cond_0
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
-
-    .line 526
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v1
-
-    .line 527
-    .local v1, "orientation":I
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    .line 528
-    return v1
-
-    .line 522
-    .end local v1    # "orientation":I
-    :cond_1
-    :goto_0
-    return v1
 .end method

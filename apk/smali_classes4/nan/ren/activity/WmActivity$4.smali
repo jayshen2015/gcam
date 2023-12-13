@@ -26,7 +26,7 @@
     .param p3, "arg1"    # I
     .param p4, "arg2"    # Ljava/util/List;
 
-    .line 381
+    .line 383
     iput-object p1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
@@ -42,20 +42,20 @@
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 391
+    .line 393
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getDropDownView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 392
+    .line 394
     .local v0, "textView":Landroid/widget/TextView;
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v1, v0}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 393
+    .line 395
     return-object v0
 .end method
 
@@ -65,24 +65,24 @@
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 384
+    .line 386
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 385
+    .line 387
     .local v0, "textView":Landroid/widget/TextView;
     sget v1, Lnan/ren/activity/WmActivity;->text_color:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 386
+    .line 388
     iget-object v1, p0, Lnan/ren/activity/WmActivity$4;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v1, v0}, Lnan/ren/activity/WmActivity;->setTextSize(Ljava/lang/Object;)V
 
-    .line 387
+    .line 389
     return-object v0
 .end method

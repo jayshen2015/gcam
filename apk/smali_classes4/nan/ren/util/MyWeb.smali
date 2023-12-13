@@ -11,7 +11,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 21
+    .line 10
     const-string v0, "https://www.1kat.cn/"
 
     sput-object v0, Lnan/ren/util/MyWeb;->baseUrl:Ljava/lang/String;
@@ -22,7 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 20
+    .line 9
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
     .locals 4
     .param p0, "et"    # Landroid/widget/EditText;
 
-    .line 24
+    .line 13
     invoke-virtual {p0}, Landroid/widget/EditText;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -43,7 +43,7 @@
 
     move-result-object v0
 
-    .line 25
+    .line 14
     .local v0, "colorWeb":Landroid/webkit/WebView;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 26
+    .line 15
     new-instance v1, Lnan/ren/util/AZ;
 
     invoke-direct {v1, p0, v0}, Lnan/ren/util/AZ;-><init>(Landroid/view/View;Landroid/webkit/WebView;)V
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 16
     return-object v0
 .end method
 
@@ -92,7 +92,7 @@
     .locals 4
     .param p0, "et"    # Landroid/widget/EditText;
 
-    .line 31
+    .line 20
     invoke-virtual {p0}, Landroid/widget/EditText;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -103,7 +103,7 @@
 
     move-result-object v0
 
-    .line 32
+    .line 21
     .local v0, "webView":Landroid/webkit/WebView;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -135,7 +135,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 33
+    .line 22
     new-instance v1, Lnan/ren/util/AZ;
 
     invoke-direct {v1, p0, v0}, Lnan/ren/util/AZ;-><init>(Landroid/view/View;Landroid/webkit/WebView;)V
@@ -144,7 +144,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 23
     return-object v0
 .end method
 
@@ -152,7 +152,7 @@
     .locals 4
     .param p0, "imageButton"    # Landroid/widget/ImageButton;
 
-    .line 39
+    .line 28
     invoke-virtual {p0}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -163,7 +163,7 @@
 
     move-result-object v0
 
-    .line 40
+    .line 29
     .local v0, "webView":Landroid/webkit/WebView;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -195,7 +195,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 41
+    .line 30
     new-instance v1, Lnan/ren/util/AZ;
 
     invoke-direct {v1, p0, v0}, Lnan/ren/util/AZ;-><init>(Landroid/view/View;Landroid/webkit/WebView;)V
@@ -204,7 +204,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 42
+    .line 31
     return-object v0
 .end method
 
@@ -212,7 +212,7 @@
     .locals 4
     .param p0, "spinner"    # Landroid/widget/Spinner;
 
-    .line 47
+    .line 36
     invoke-virtual {p0}, Landroid/widget/Spinner;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -223,7 +223,7 @@
 
     move-result-object v0
 
-    .line 48
+    .line 37
     .local v0, "webView":Landroid/webkit/WebView;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -255,7 +255,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
-    .line 49
+    .line 38
     new-instance v1, Lnan/ren/util/AZ;
 
     invoke-direct {v1, p0, v0}, Lnan/ren/util/AZ;-><init>(Landroid/view/View;Landroid/webkit/WebView;)V
@@ -264,6 +264,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 39
     return-object v0
 .end method

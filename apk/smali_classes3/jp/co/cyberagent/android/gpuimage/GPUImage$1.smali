@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    value = Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;Z)Landroid/graphics/Bitmap;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    .line 284
+    .prologue
+    .line 357
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,47 +40,48 @@
 .method public run()V
     .locals 2
 
-    .line 288
+    .prologue
+    .line 361
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
+
+    move-result-object v1
+
+    monitor-enter v1
+
+    .line 362
+    :try_start_0
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+
+    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
     move-result-object v0
 
-    monitor-enter v0
+    invoke-virtual {v0}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;->destroy()V
 
-    .line 289
-    :try_start_0
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+    .line 363
+    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
 
-    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
+    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilter;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;->destroy()V
+    invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 290
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImage$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImage;
+    .line 364
+    monitor-exit v1
 
-    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImage;)Ljp/co/cyberagent/android/gpuimage/GPUImageFilter;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Object;->notify()V
-
-    .line 291
-    monitor-exit v0
-
-    .line 292
+    .line 365
     return-void
 
-    .line 291
+    .line 364
     :catchall_0
-    move-exception v1
+    move-exception v0
 
-    monitor-exit v0
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v1
+    throw v0
 .end method

@@ -28,7 +28,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
-    .line 264
+    .prologue
+    .line 362
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$3;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageView;
 
     iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$3;->val$waiter:Ljava/util/concurrent/Semaphore;
@@ -43,11 +44,12 @@
 .method public run()V
     .locals 1
 
-    .line 267
+    .prologue
+    .line 365
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageView$3;->val$waiter:Ljava/util/concurrent/Semaphore;
 
     invoke-virtual {v0}, Ljava/util/concurrent/Semaphore;->release()V
 
-    .line 268
+    .line 366
     return-void
 .end method

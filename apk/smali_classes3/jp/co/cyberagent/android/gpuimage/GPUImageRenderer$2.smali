@@ -28,7 +28,8 @@
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 174
+    .prologue
+    .line 178
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
@@ -41,69 +42,68 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 5
 
-    .line 177
-    const/4 v0, 0x1
+    .prologue
+    const/4 v2, 0x1
 
-    new-array v1, v0, [I
+    const/4 v4, 0x0
 
-    .line 178
+    .line 181
+    new-array v1, v2, [I
+
+    .line 182
     .local v1, "textures":[I
-    const/4 v2, 0x0
+    invoke-static {v2, v1, v4}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    invoke-static {v0, v1, v2}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
-
-    .line 179
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+    .line 183
+    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     new-instance v3, Landroid/graphics/SurfaceTexture;
 
-    aget v2, v1, v2
+    aget v4, v1, v4
 
-    invoke-direct {v3, v2}, Landroid/graphics/SurfaceTexture;-><init>(I)V
+    invoke-direct {v3, v4}, Landroid/graphics/SurfaceTexture;-><init>(I)V
 
-    invoke-static {v0, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$502(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Landroid/graphics/SurfaceTexture;)Landroid/graphics/SurfaceTexture;
+    invoke-static {v2, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$502(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;Landroid/graphics/SurfaceTexture;)Landroid/graphics/SurfaceTexture;
 
-    .line 181
+    .line 185
     :try_start_0
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
+    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-static {v2}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$500(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Landroid/graphics/SurfaceTexture;
+    invoke-static {v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$500(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Landroid/graphics/SurfaceTexture;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v2}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
+    invoke-virtual {v2, v3}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 182
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
+    .line 186
+    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-virtual {v0, v2}, Landroid/hardware/Camera;->setPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
+    invoke-virtual {v2, v3}, Landroid/hardware/Camera;->setPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
 
-    .line 183
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
+    .line 187
+    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$2;->val$camera:Landroid/hardware/Camera;
 
-    invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
+    invoke-virtual {v2}, Landroid/hardware/Camera;->startPreview()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 186
-    goto :goto_0
+    .line 191
+    :goto_0
+    return-void
 
-    .line 184
+    .line 188
     :catch_0
     move-exception v0
 
-    .line 185
+    .line 189
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    .line 187
-    .end local v0    # "e":Ljava/io/IOException;
-    :goto_0
-    return-void
+    goto :goto_0
 .end method

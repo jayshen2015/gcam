@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->onPreviewFrame([BLandroid/hardware/Camera;)V
+    value = Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->onPreviewFrame([BII)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,26 +20,27 @@
 # instance fields
 .field final synthetic this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-.field final synthetic val$camera:Landroid/hardware/Camera;
-
 .field final synthetic val$data:[B
 
-.field final synthetic val$previewSize:Landroid/hardware/Camera$Size;
+.field final synthetic val$height:I
+
+.field final synthetic val$width:I
 
 
 # direct methods
-.method constructor <init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;[BLandroid/hardware/Camera$Size;Landroid/hardware/Camera;)V
+.method constructor <init>(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;[BII)V
     .locals 0
     .param p1, "this$0"    # Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 155
+    .prologue
+    .line 161
     iput-object p1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     iput-object p2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$data:[B
 
-    iput-object p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
+    iput p3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$width:I
 
-    iput-object p4, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$camera:Landroid/hardware/Camera;
+    iput p4, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$height:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,22 +50,18 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 5
 
-    .line 158
+    .prologue
+    .line 164
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$data:[B
 
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
+    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$width:I
 
-    iget v1, v1, Landroid/hardware/Camera$Size;->width:I
-
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
-
-    iget v2, v2, Landroid/hardware/Camera$Size;->height:I
+    iget v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$height:I
 
     iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    .line 159
     invoke-static {v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljava/nio/IntBuffer;
 
     move-result-object v3
@@ -73,74 +70,64 @@
 
     move-result-object v3
 
-    .line 158
     invoke-static {v0, v1, v2, v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageNativeLibrary;->YUVtoRBGA([BII[I)V
 
-    .line 160
+    .line 165
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljava/nio/IntBuffer;
+    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+
+    invoke-static {v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$000(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)Ljava/nio/IntBuffer;
 
     move-result-object v1
 
-    iget-object v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
+    iget v2, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$width:I
 
-    iget-object v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
+    iget v3, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$height:I
 
-    invoke-static {v3}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)I
+    iget-object v4, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    move-result v3
+    invoke-static {v4}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$100(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)I
 
-    invoke-static {v1, v2, v3}, Ljp/co/cyberagent/android/gpuimage/OpenGlUtils;->loadTexture(Ljava/nio/IntBuffer;Landroid/hardware/Camera$Size;I)I
+    move-result v4
+
+    invoke-static {v1, v2, v3, v4}, Ljp/co/cyberagent/android/gpuimage/util/OpenGlUtils;->loadTexture(Ljava/nio/IntBuffer;III)I
 
     move-result v1
 
     invoke-static {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$102(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;I)I
 
-    .line 161
-    iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$camera:Landroid/hardware/Camera;
-
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$data:[B
-
-    invoke-virtual {v0, v1}, Landroid/hardware/Camera;->addCallbackBuffer([B)V
-
-    .line 163
+    .line 167
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$200(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)I
 
     move-result v0
 
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
-
-    iget v1, v1, Landroid/hardware/Camera$Size;->width:I
+    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$width:I
 
     if-eq v0, v1, :cond_0
 
-    .line 164
+    .line 168
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
-
-    iget v1, v1, Landroid/hardware/Camera$Size;->width:I
+    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$width:I
 
     invoke-static {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$202(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;I)I
 
-    .line 165
+    .line 169
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
-    iget-object v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$previewSize:Landroid/hardware/Camera$Size;
-
-    iget v1, v1, Landroid/hardware/Camera$Size;->height:I
+    iget v1, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->val$height:I
 
     invoke-static {v0, v1}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$302(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;I)I
 
-    .line 166
+    .line 170
     iget-object v0, p0, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer$1;->this$0:Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;
 
     invoke-static {v0}, Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;->access$400(Ljp/co/cyberagent/android/gpuimage/GPUImageRenderer;)V
 
-    .line 168
+    .line 172
     :cond_0
     return-void
 .end method

@@ -7,19 +7,21 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 21
-    const-string v0, "gpuimage-library"
+    .prologue
+    .line 23
+    const-string v0, "yuv-decoder"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
-    .line 22
+    .line 24
     return-void
 .end method
 
 .method public constructor <init>()V
     .locals 0
 
-    .line 19
+    .prologue
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,4 +31,7 @@
 .end method
 
 .method public static native YUVtoRBGA([BII[I)V
+.end method
+
+.method public static native adjustBitmap(Landroid/graphics/Bitmap;)V
 .end method
