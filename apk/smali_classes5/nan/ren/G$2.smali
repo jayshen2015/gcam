@@ -1,4 +1,4 @@
-.class Lnan/ren/G$1;
+.class Lnan/ren/G$2;
 .super Ljava/lang/Object;
 .source "G.java"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/G;->medianFilter(Ljava/io/File;)V
+    value = Lnan/ren/G;->medianFilter2(Ljava/io/File;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,17 +20,13 @@
 # instance fields
 .field final synthetic val$absolutePath:Ljava/lang/String;
 
-.field final synthetic val$handler:Landroid/os/Handler;
-
 
 # direct methods
-.method constructor <init>(Landroid/os/Handler;Ljava/lang/String;)V
+.method constructor <init>(Ljava/lang/String;)V
     .locals 0
 
-    .line 209
-    iput-object p1, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
-
-    iput-object p2, p0, Lnan/ren/G$1;->val$absolutePath:Ljava/lang/String;
+    .line 289
+    iput-object p1, p0, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,15 +38,15 @@
 .method public run()V
     .locals 3
 
-    .line 212
+    .line 292
     sget v0, Lcom/Globals;->sHdr_process:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 213
-    iget-object v0, p0, Lnan/ren/G$1;->val$handler:Landroid/os/Handler;
+    .line 293
+    sget-object v0, Lnan/ren/G;->handler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x64
 
@@ -58,19 +54,19 @@
 
     goto :goto_0
 
-    .line 215
+    .line 295
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    new-instance v1, Lnan/ren/G$1$1;
+    new-instance v1, Lnan/ren/G$2$1;
 
-    invoke-direct {v1, p0}, Lnan/ren/G$1$1;-><init>(Lnan/ren/G$1;)V
+    invoke-direct {v1, p0}, Lnan/ren/G$2$1;-><init>(Lnan/ren/G$2;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 282
+    .line 350
     :goto_0
     return-void
 .end method

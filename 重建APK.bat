@@ -83,6 +83,6 @@ del /F /Q  "%BP%\%apkname%.R.apk"
 java -jar  signapk.jar sign\%pkg%.x509.pem sign\%pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
 del /F /Q  "%BP%\%apkname%.RO.apk"
 echo -------------------[End Build %pkg%]--------------------
-call d:\un\unload.bat
+scp D:\un\gcam8.8\apk\build\AGC8*.apk root@10.254.10.150:/tmp/sjs/
 
 EXIT /B 0

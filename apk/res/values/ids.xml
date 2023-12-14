@@ -594,6 +594,8 @@
     <item type="id" name="text1" />
     <item type="id" name="txt_size" />
     <item type="id" name="txt_date" />
+    <item type="id" name="tv_title" />
+    <item type="id" name="sw_enable" />
     <item type="id" name="color_mix_layout" />
     <item type="id" name="tv_thumb_hint" />
     <item type="id" name="tv_value_hint" />
@@ -613,8 +615,6 @@
     <item type="id" name="agc_fw_item_text" />
     <item type="id" name="input_label" />
     <item type="id" name="input_text" />
-    <item type="id" name="tv_title" />
-    <item type="id" name="sw_enable" />
     <item type="id" name="color_mix_root" />
     <item type="id" name="color_mix_ll_overried" />
     <item type="id" name="agc_color_checked" />

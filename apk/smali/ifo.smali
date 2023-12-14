@@ -113,13 +113,10 @@
     move-result v4
 
     invoke-virtual {v1, v4}, Lifq;->j(I)V
-	
 
-    #const v4, 0x7f060054
+    const v4, 0x7f060054
 
-    #invoke-virtual {p1, v4, v5}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-    invoke-static {p1},  Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-virtual {p1, v4, v5}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v4
 

@@ -45,9 +45,9 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
-    const/4 v0, 0x0
+    const/high16 v0, 0x3f800000    # 1.0f
 
     sput v0, Lcom/ColorTune;->WB1:F
 
@@ -55,23 +55,23 @@
 
     sput v0, Lcom/ColorTune;->WB3:F
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    sput v0, Lcom/ColorTune;->WB_Offset:F
 
-    sput v1, Lcom/ColorTune;->WB_Offset:F
+    sput v0, Lcom/ColorTune;->WB_Intensity:F
 
-    sput v1, Lcom/ColorTune;->WB_Intensity:F
+    sput v0, Lcom/ColorTune;->satGlo:F
 
-    sput v1, Lcom/ColorTune;->satGlo:F
+    sput v0, Lcom/ColorTune;->satR:F
 
-    sput v1, Lcom/ColorTune;->satR:F
+    sput v0, Lcom/ColorTune;->satG:F
 
-    sput v1, Lcom/ColorTune;->satG:F
+    sput v0, Lcom/ColorTune;->satB:F
 
-    sput v1, Lcom/ColorTune;->satB:F
+    sput v0, Lcom/ColorTune;->satY:F
 
-    sput v1, Lcom/ColorTune;->satY:F
+    sput v0, Lcom/ColorTune;->satC:F
 
-    sput v1, Lcom/ColorTune;->satC:F
+    const/4 v0, 0x0
 
     sput v0, Lcom/ColorTune;->hueGlo:F
 

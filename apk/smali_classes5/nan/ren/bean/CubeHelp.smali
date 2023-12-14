@@ -21,7 +21,7 @@
     .param p3, "size"    # I
     .param p4, "array"    # [[F
 
-    .line 81
+    .line 82
     mul-int v0, p3, p2
 
     add-int/2addr v0, p1
@@ -30,7 +30,7 @@
 
     add-int/2addr v0, p0
 
-    .line 82
+    .line 83
     .local v0, "index":I
     aget-object v1, p4, v0
 
@@ -44,50 +44,50 @@
     .param p2, "green"    # I
     .param p3, "blue"    # I
 
-    .line 123
+    .line 124
     if-gez p1, :cond_0
 
     neg-int p1, p1
 
-    .line 124
+    .line 125
     :cond_0
     if-gez p2, :cond_1
 
     neg-int p2, p2
 
-    .line 125
+    .line 126
     :cond_1
     if-gez p3, :cond_2
 
     neg-int p3, p3
 
-    .line 126
+    .line 127
     :cond_2
     const/4 v0, 0x0
 
-    .line 127
+    .line 128
     .local v0, "newPixel":I
     add-int/2addr v0, p0
 
-    .line 128
-    shl-int/lit8 v0, v0, 0x8
-
     .line 129
-    add-int/2addr v0, p1
+    shl-int/lit8 v0, v0, 0x8
 
     .line 130
-    shl-int/lit8 v0, v0, 0x8
+    add-int/2addr v0, p1
 
     .line 131
-    add-int/2addr v0, p2
-
-    .line 132
     shl-int/lit8 v0, v0, 0x8
 
+    .line 132
+    add-int/2addr v0, p2
+
     .line 133
-    add-int/2addr v0, p3
+    shl-int/lit8 v0, v0, 0x8
 
     .line 134
+    add-int/2addr v0, p3
+
+    .line 135
     return v0
 .end method
 
@@ -213,7 +213,7 @@
     .local v12, "line":Ljava/lang/String;
     if-eqz v0, :cond_5
 
-    .line 44
+    .line 45
     :try_start_2
     invoke-virtual {v12}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -221,7 +221,7 @@
 
     move-object v12, v0
 
-    .line 45
+    .line 46
     invoke-virtual {v12}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -230,13 +230,13 @@
 
     goto :goto_0
 
-    .line 46
+    .line 47
     :cond_2
     invoke-virtual {v12, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
-    .line 47
+    .line 48
     .local v0, "sc":C
     const/16 v13, 0x2e
 
@@ -254,7 +254,7 @@
 
     if-gt v0, v13, :cond_4
 
-    .line 48
+    .line 49
     :cond_3
     invoke-virtual {v12}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -264,13 +264,13 @@
 
     move-result-object v13
 
-    .line 49
+    .line 50
     .local v13, "values":[Ljava/lang/String;
     array-length v14, v13
 
     if-ne v14, v11, :cond_4
 
-    .line 50
+    .line 51
     new-array v14, v11, [F
 
     aget-object v15, v13, v5
@@ -301,21 +301,21 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 51
+    .line 52
     add-int/lit8 v10, v10, 0x1
 
-    .line 56
+    .line 57
     .end local v0    # "sc":C
     .end local v13    # "values":[Ljava/lang/String;
     :cond_4
     :goto_1
     goto :goto_0
 
-    .line 54
+    .line 55
     :catch_0
     move-exception v0
 
-    .line 55
+    .line 56
     .local v0, "ex":Ljava/lang/Exception;
     :try_start_3
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
@@ -323,24 +323,24 @@
     .end local v0    # "ex":Ljava/lang/Exception;
     goto :goto_1
 
-    .line 58
+    .line 59
     :cond_5
     invoke-virtual {v7}, Ljava/io/BufferedReader;->close()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
 
-    .line 62
+    .line 63
     .end local v7    # "reader":Ljava/io/BufferedReader;
     .end local v8    # "sizeLine":Ljava/lang/String;
     .end local v10    # "i":I
     .end local v12    # "line":Ljava/lang/String;
     goto :goto_2
 
-    .line 59
+    .line 60
     :catch_1
     move-exception v0
 
-    .line 60
+    .line 61
     .restart local v0    # "ex":Ljava/lang/Exception;
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -370,10 +370,10 @@
 
     invoke-static {v7}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 61
+    .line 62
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 63
+    .line 64
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
@@ -384,7 +384,7 @@
 
     move-result-object v0
 
-    .line 64
+    .line 65
     .local v0, "lutBit":Landroid/graphics/Bitmap;
     const/4 v7, 0x0
 
@@ -394,28 +394,28 @@
 
     if-ge v7, v8, :cond_8
 
-    .line 65
+    .line 66
     const/4 v9, 0x0
 
     .local v9, "ig":I
     :goto_4
     if-ge v9, v8, :cond_7
 
-    .line 66
+    .line 67
     const/4 v10, 0x0
 
     .local v10, "ib":I
     :goto_5
     if-ge v10, v8, :cond_6
 
-    .line 67
+    .line 68
     rem-int/lit8 v11, v10, 0x8
 
     mul-int/2addr v11, v8
 
     add-int/2addr v11, v7
 
-    .line 68
+    .line 69
     .local v11, "x":I
     div-int/lit8 v12, v10, 0x8
 
@@ -431,7 +431,7 @@
 
     add-int/2addr v12, v9
 
-    .line 69
+    .line 70
     .local v12, "y":I
     int-to-float v13, v7
 
@@ -451,7 +451,7 @@
 
     move-result-object v8
 
-    .line 70
+    .line 71
     .local v8, "value":[F
     aget v13, v8, v5
 
@@ -485,11 +485,11 @@
 
     move-result v4
 
-    .line 71
+    .line 72
     .local v4, "rgb":I
     invoke-virtual {v0, v11, v12, v4}, Landroid/graphics/Bitmap;->setPixel(III)V
 
-    .line 66
+    .line 67
     .end local v4    # "rgb":I
     .end local v8    # "value":[F
     .end local v11    # "x":I
@@ -502,7 +502,7 @@
 
     goto :goto_5
 
-    .line 65
+    .line 66
     .end local v10    # "ib":I
     :cond_6
     add-int/lit8 v9, v9, 0x1
@@ -513,7 +513,7 @@
 
     goto :goto_4
 
-    .line 64
+    .line 65
     .end local v9    # "ig":I
     :cond_7
     add-int/lit8 v7, v7, 0x1
@@ -522,15 +522,12 @@
 
     goto :goto_3
 
-    .line 75
+    .line 76
     .end local v7    # "ir":I
     :cond_8
     const/4 v3, 0x0
 
-    .line 76
-    invoke-static {}, Ljava/lang/System;->gc()V
-
-    .line 77
+    .line 78
     return-object v0
 .end method
 
@@ -540,7 +537,7 @@
     .param p1, "b"    # F
     .param p2, "t"    # F
 
-    .line 85
+    .line 86
     mul-float v0, p1, p2
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -562,7 +559,7 @@
     .param p3, "size"    # I
     .param p4, "array"    # [[F
 
-    .line 89
+    .line 90
     move/from16 v0, p3
 
     move-object/from16 v1, p4
@@ -581,7 +578,7 @@
 
     double-to-int v2, v2
 
-    .line 90
+    .line 91
     .local v2, "ir":I
     add-int/lit8 v3, v0, -0x2
 
@@ -597,7 +594,7 @@
 
     double-to-int v3, v3
 
-    .line 91
+    .line 92
     .local v3, "ig":I
     add-int/lit8 v4, v0, -0x2
 
@@ -613,7 +610,7 @@
 
     double-to-int v4, v4
 
-    .line 92
+    .line 93
     .local v4, "ib":I
     add-int/lit8 v5, v0, -0x2
 
@@ -625,7 +622,7 @@
 
     rem-float/2addr v5, v6
 
-    .line 93
+    .line 94
     .local v5, "fr":F
     add-int/lit8 v7, v0, -0x2
 
@@ -635,7 +632,7 @@
 
     rem-float/2addr v7, v6
 
-    .line 94
+    .line 95
     .local v7, "fg":F
     add-int/lit8 v8, v0, -0x2
 
@@ -645,13 +642,13 @@
 
     rem-float/2addr v8, v6
 
-    .line 95
+    .line 96
     .local v8, "fb":F
     invoke-static {v2, v3, v4, v0, v1}, Lnan/ren/bean/CubeHelp;->__lookup(IIII[[F)[F
 
     move-result-object v6
 
-    .line 96
+    .line 97
     .local v6, "v000":[F
     add-int/lit8 v9, v4, 0x1
 
@@ -659,7 +656,7 @@
 
     move-result-object v9
 
-    .line 97
+    .line 98
     .local v9, "v001":[F
     add-int/lit8 v10, v3, 0x1
 
@@ -667,7 +664,7 @@
 
     move-result-object v10
 
-    .line 98
+    .line 99
     .local v10, "v010":[F
     add-int/lit8 v11, v3, 0x1
 
@@ -677,7 +674,7 @@
 
     move-result-object v11
 
-    .line 99
+    .line 100
     .local v11, "v011":[F
     add-int/lit8 v12, v2, 0x1
 
@@ -685,7 +682,7 @@
 
     move-result-object v12
 
-    .line 100
+    .line 101
     .local v12, "v100":[F
     add-int/lit8 v13, v2, 0x1
 
@@ -695,7 +692,7 @@
 
     move-result-object v13
 
-    .line 101
+    .line 102
     .local v13, "v101":[F
     add-int/lit8 v14, v2, 0x1
 
@@ -705,7 +702,7 @@
 
     move-result-object v14
 
-    .line 102
+    .line 103
     .local v14, "v110":[F
     add-int/lit8 v15, v2, 0x1
 
@@ -725,13 +722,13 @@
 
     move-result-object v2
 
-    .line 103
+    .line 104
     .local v2, "v111":[F
     const/4 v3, 0x3
 
     new-array v3, v3, [F
 
-    .line 104
+    .line 105
     .local v3, "res":[F
     const/4 v15, 0x0
 
@@ -741,12 +738,12 @@
 
     if-ge v15, v0, :cond_0
 
-    .line 105
+    .line 106
     aget v0, v6, v15
 
     aget v1, v9, v15
 
-    .line 107
+    .line 108
     invoke-static {v0, v1, v8}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v0
@@ -759,12 +756,12 @@
     .local v18, "ib":I
     aget v4, v11, v15
 
-    .line 108
+    .line 109
     invoke-static {v1, v4, v8}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v1
 
-    .line 106
+    .line 107
     invoke-static {v0, v1, v7}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v0
@@ -773,7 +770,7 @@
 
     aget v4, v13, v15
 
-    .line 112
+    .line 113
     invoke-static {v1, v4, v8}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v1
@@ -786,24 +783,24 @@
     .local v19, "v000":[F
     aget v6, v2, v15
 
-    .line 113
+    .line 114
     invoke-static {v4, v6, v8}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v4
 
-    .line 111
+    .line 112
     invoke-static {v1, v4, v7}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v1
 
-    .line 105
+    .line 106
     invoke-static {v0, v1, v5}, Lnan/ren/bean/CubeHelp;->lerp(FFF)F
 
     move-result v0
 
     aput v0, v3, v15
 
-    .line 104
+    .line 105
     add-int/lit8 v15, v15, 0x1
 
     move/from16 v0, p3
@@ -816,7 +813,7 @@
 
     goto :goto_0
 
-    .line 119
+    .line 120
     .end local v15    # "i":I
     .end local v18    # "ib":I
     .end local v19    # "v000":[F

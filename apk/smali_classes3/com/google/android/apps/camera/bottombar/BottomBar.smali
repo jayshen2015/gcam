@@ -815,24 +815,18 @@
 .method private inflate(Landroid/content/Context;)V
     .locals 9
 
-    #const-string v0, "layout_inflater"
+    const-string v0, "layout_inflater"
 
-    #invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    #move-result-object p1
+    move-result-object p1
 
-    #check-cast p1, Landroid/view/LayoutInflater;
+    check-cast p1, Landroid/view/LayoutInflater;
 
-    # sget v0, Lcom/google/android/apps/camera/bottombar/R$layout;->bottom_bar_layout:I
-	
-    #invoke-static {}, Lnan/ren/G;->getBottomBarLayout()I
-	
-    #move-result v0
+    sget v0, Lcom/google/android/apps/camera/bottombar/R$layout;->bottom_bar_layout:I
 
-    #invoke-virtual {p1, v0, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {p1, v0, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
-    invoke-static {p1,p0}, Lnan/ren/G;->getBottomBarLayout(Landroid/content/Context;Landroid/view/ViewGroup;)Landroid/view/View;
-    
     move-result-object p1
 
     invoke-static {p1}, Ljew;->o(Landroid/view/View;)Ljew;

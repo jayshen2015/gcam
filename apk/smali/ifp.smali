@@ -1232,9 +1232,7 @@
 
     invoke-virtual {v2, v5}, Lifq;->j(I)V
 
-    #invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-    invoke-static {v1},  Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v5
 
@@ -1325,9 +1323,7 @@
 
     invoke-virtual {v2, v11}, Lifq;->m(I)V
 
-    #invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-    invoke-static {v1},  Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v5
 
@@ -1566,17 +1562,13 @@
 
     invoke-virtual {v2, v11}, Lifq;->m(I)V
 
-    #invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-    invoke-static {v1},  Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v5
 
     invoke-virtual {v2, v5}, Lifq;->n(I)V
 
-    #invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-    invoke-static {v1},  Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v5
 
@@ -1728,9 +1720,7 @@
 
     invoke-virtual {v2, v5}, Lifq;->j(I)V
 
-    #invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
-	
-    invoke-static {v1},  Lnan/ren/G;->getShutterColor(Landroid/content/res/Resources;)I
+    invoke-virtual {v1, v7, v4}, Landroid/content/res/Resources;->getColor(ILandroid/content/res/Resources$Theme;)I
 
     move-result v5
 
