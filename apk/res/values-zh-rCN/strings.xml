@@ -1948,5 +1948,4 @@ SM8150 = 32770, SM8250 = 40962"</string>
     <string name="shortcut_nightsight_long_label">夜视模式</string>
     <string name="shortcut_nightsight_short_label">夜视</string>
     <string name="brightness">亮度设置(值越小图像越亮)</string>
-
 </resources>

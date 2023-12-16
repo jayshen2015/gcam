@@ -1002,11 +1002,6 @@
 
     .line 432
     :cond_2
-	
-	#iget-object v2, p0, Lorg/opencv/android/CameraBridgeViewBase;->mCacheBitmap:Landroid/graphics/Bitmap;
-	
-	#invoke-static {v2}, Lnan/ren/G;->initCameraBit(Landroid/graphics/Bitmap;)V
-	
     iget v2, p0, Lorg/opencv/android/CameraBridgeViewBase;->mScale:F
 
     const/4 v4, 0x0

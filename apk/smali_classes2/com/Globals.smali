@@ -1080,29 +1080,65 @@
     .locals 1
 	invoke-static {p0}, Lnan/ren/G;->medianFilter(Ljava/io/File;)V
     return-void
-.end method	
+.end method
+
 .method public static medianFilter2(Ljava/io/File;)V
-    .locals 5
+    .locals 8
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v1, Landroid/os/Handler;
+    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/16 v2, 0x2e
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v2
+
+    const/4 v3, -0x1
+
+    if-ne v2, v3, :cond_0
+
+    const-string v3, ""
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    :goto_0
+    const-string v4, ".dng"
+
+    invoke-virtual {v3, v4}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_1
+
+    return-void
+
+    :cond_1
+    new-instance v4, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
-    move-result-object v2
+    move-result-object v5
 
-    invoke-direct {v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    invoke-direct {v4, v5}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
-    new-instance v2, Lcom/Globals$1;
+    new-instance v5, Lcom/Globals$1;
 
-    invoke-direct {v2, v1, v0}, Lcom/Globals$1;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
+    invoke-direct {v5, v4, v0}, Lcom/Globals$1;-><init>(Landroid/os/Handler;Ljava/lang/String;)V
 
-    const-wide/16 v3, 0x64
+    const-wide/16 v6, 0x64
 
-    invoke-virtual {v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v4, v5, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

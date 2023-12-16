@@ -70,6 +70,7 @@
     <string name="advice_dirty_lens_popup_text">"Ní bhíonn smearadh ar lionsaí éasca i gcónaí le feiceáil agus is féidir leo teacht ó mhéarloirg, ola nó salachar.
 
 Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
+    <item type="string" name="APKTOOL_DUMMY_69" />
     <string name="advice_scene_distance_message">Ar ais chun fócas a fheabhsú</string>
     <string name="ae_af_lock_label">Glas Nochtadh agus Fócais</string>
     <string name="af_ae_lock">glas AF/AE</string>
@@ -81,8 +82,14 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="af_off_near_acc_desc">Glasáil Fócas Near</string>
     <string name="af_off_near_desc">In aice le</string>
     <string name="af_on_acc_desc">Cumasaigh uathfhócas</string>
+    <item type="string" name="APKTOOL_DUMMY_75" />
     <string name="af_on_option_desc">Uathoibríoch</string>
+    <item type="string" name="APKTOOL_DUMMY_77" />
     <string name="af_option_desc">Fócas</string>
+    <item type="string" name="APKTOOL_DUMMY_79" />
+    <item type="string" name="APKTOOL_DUMMY_7a" />
+    <item type="string" name="APKTOOL_DUMMY_7b" />
+    <item type="string" name="APKTOOL_DUMMY_7c" />
     <string name="app_name">Ceamara</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="aspect_ratio_desc">Cóimheas</string>
@@ -96,10 +103,15 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="astro_off_desc">Díchumasaithe</string>
     <string name="astro_option_desc">Roghanna Réaltfhótagrafaíochta</string>
     <string name="astro_photo_url">https://www.gstatic.com/aiux/gca/astro/astro_edu.jpg</string>
+    <item type="string" name="APKTOOL_DUMMY_8a" />
     <string name="astrophotography_edu_title">Réaltfhótagrafaíocht</string>
     <string name="astrophotography_suggestion_text">Bain triail as Réaltfhótagrafaíocht</string>
+    <item type="string" name="APKTOOL_DUMMY_8d" />
+    <item type="string" name="APKTOOL_DUMMY_8e" />
+    <item type="string" name="APKTOOL_DUMMY_8f" />
     <string name="autotimer_tutorial_body">Faigh isteach an pictiúr agus aoibh gháire nó grimace chun pictiúir a ghlacadh go huathoibríoch. Tapáil an cnaipe chun tús a chur leis.</string>
     <string name="autotimer_tutorial_title">Glac pictiúir le meangadh gáire</string>
+    <item type="string" name="APKTOOL_DUMMY_92" />
     <string name="beta_label_text">Beta</string>
     <string name="bottom_center">Ionad bun</string>
     <string name="bottom_left">Bun ar chlé</string>
@@ -109,14 +121,48 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="brightness_ev_announcement">Tá an gile anois %1$s</string>
     <string name="brightness_knob_accessibility_description">Cnaipe Gile</string>
     <string name="brightness_knob_tooltip_description">Coigeartaigh gile</string>
+    <item type="string" name="APKTOOL_DUMMY_9c" />
     <string name="burst_description">Tapáil ar an gcnaipe pléasctha chun na seatanna is fearr</string>
     <string name="burst_name">Smartburst</string>
+    <item type="string" name="APKTOOL_DUMMY_9f" />
+    <item type="string" name="APKTOOL_DUMMY_a0" />
+    <item type="string" name="APKTOOL_DUMMY_a1" />
+    <item type="string" name="APKTOOL_DUMMY_a2" />
+    <item type="string" name="APKTOOL_DUMMY_a3" />
+    <item type="string" name="APKTOOL_DUMMY_a4" />
+    <item type="string" name="APKTOOL_DUMMY_a5" />
+    <item type="string" name="APKTOOL_DUMMY_a6" />
+    <item type="string" name="APKTOOL_DUMMY_a7" />
+    <item type="string" name="APKTOOL_DUMMY_a8" />
+    <item type="string" name="APKTOOL_DUMMY_a9" />
+    <item type="string" name="APKTOOL_DUMMY_aa" />
+    <item type="string" name="APKTOOL_DUMMY_ab" />
+    <item type="string" name="APKTOOL_DUMMY_ac" />
+    <item type="string" name="APKTOOL_DUMMY_ad" />
+    <item type="string" name="APKTOOL_DUMMY_ae" />
+    <item type="string" name="APKTOOL_DUMMY_af" />
+    <item type="string" name="APKTOOL_DUMMY_b0" />
+    <item type="string" name="APKTOOL_DUMMY_b1" />
+    <item type="string" name="APKTOOL_DUMMY_b2" />
+    <item type="string" name="APKTOOL_DUMMY_b3" />
+    <item type="string" name="APKTOOL_DUMMY_b4" />
+    <item type="string" name="APKTOOL_DUMMY_b5" />
+    <item type="string" name="APKTOOL_DUMMY_b6" />
+    <item type="string" name="APKTOOL_DUMMY_b7" />
+    <item type="string" name="APKTOOL_DUMMY_b8" />
+    <item type="string" name="APKTOOL_DUMMY_b9" />
+    <item type="string" name="APKTOOL_DUMMY_ba" />
+    <item type="string" name="APKTOOL_DUMMY_bb" />
     <string name="cam_flash_auto">Uathoibríoch</string>
     <string name="cam_flash_ns">Fís Oíche</string>
     <string name="cam_flash_off">Díchumasaithe</string>
     <string name="cam_flash_off_alt">Tada</string>
     <string name="cam_flash_on">Ar</string>
     <string name="cam_flash_on_alt">Flash</string>
+    <item type="string" name="APKTOOL_DUMMY_c2" />
+    <item type="string" name="APKTOOL_DUMMY_c3" />
+    <item type="string" name="APKTOOL_DUMMY_c4" />
+    <item type="string" name="APKTOOL_DUMMY_c5" />
     <string name="camera_fallback_close_app">Dún aip</string>
     <string name="camera_hal_version_message">Leagan córais ceamara %s</string>
     <string name="camera_id_back_desc">Athraigh go dtí an ceamara tosaigh</string>
@@ -127,22 +173,36 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="camera_issue_title">Tharla earráid</string>
     <string name="camera_menu_settings_label">@string/mode_settings</string>
     <string name="camera_permissions_error_title">Ceadanna riachtanacha</string>
+    <item type="string" name="APKTOOL_DUMMY_d0" />
+    <item type="string" name="APKTOOL_DUMMY_d1" />
+    <item type="string" name="APKTOOL_DUMMY_d2" />
+    <item type="string" name="APKTOOL_DUMMY_d3" />
     <string name="cancel_button">Cealaigh</string>
     <string name="cancel_button_description">Cealaigh</string>
     <string name="cancel_panorama">Cualaigh Lánléargas</string>
     <string name="cancel_photo_sphere">Caith Sféar na nGrianghraf</string>
+    <item type="string" name="APKTOOL_DUMMY_d8" />
     <string name="cant_save_photo_dialog_message">Níl cead ag an gceamara sábháil chuig an suíomh seo.</string>
     <string name="cant_save_photo_dialog_title">Ní féidir an grianghraf a shábháil</string>
+    <item type="string" name="APKTOOL_DUMMY_db" />
+    <item type="string" name="APKTOOL_DUMMY_dc" />
     <string name="catshark_on_chip">Fís Oíche</string>
     <string name="catshark_timer_disabled_chip">Tá an t-amadóir cumasaithe. Díchumasaíodh fís oíche.</string>
     <string name="catshark_toggle_education_1">Cuir fís oíche ar siúl/as</string>
+    <item type="string" name="APKTOOL_DUMMY_e0" />
     <string name="catshark_toggle_education_3">Tá fís na hoíche múchta</string>
+    <item type="string" name="APKTOOL_DUMMY_e2" />
     <string name="catshark_toggle_off_desc">Cuir fís oíche ar siúl</string>
     <string name="catshark_toggle_on_desc">Díchumasaigh Fís Oíche</string>
     <string name="center">Ionad</string>
+    <item type="string" name="APKTOOL_DUMMY_e6" />
+    <item type="string" name="APKTOOL_DUMMY_e7" />
+    <item type="string" name="APKTOOL_DUMMY_e8" />
     <string name="cheetah_description">Taifead gníomh a thógann tamall fada – abair, luí na gréine – i bhfíseán a sheintear i níos lú ama</string>
     <string name="cinematic_movements_description">Moill ar panning do ghutháin le haghaidh seatanna cineamatacha a bhfuil cuma ghairmiúil orthu.</string>
     <string name="cinematic_movements_name">Pana Pictiúrlann</string>
+    <item type="string" name="APKTOOL_DUMMY_ec" />
+    <item type="string" name="APKTOOL_DUMMY_ed" />
     <string name="common_google_play_services_enable_button">Cumasaigh</string>
     <string name="common_google_play_services_enable_text">" Ní oibreoidh %1$s mura bhfuil tú cumasaithe do sheirbhísí Google Play."</string>
     <string name="common_google_play_services_enable_title">Cumasaigh Seirbhísí Google Play</string>
@@ -157,13 +217,26 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="common_google_play_services_update_text">" Ní bheidh %1$s ag rith mura nuashonraíonn tú Seirbhísí Google Play."</string>
     <string name="common_google_play_services_update_title">Nuashonraigh Seirbhísí Google Play</string>
     <string name="common_google_play_services_updating_text">" Ní bheidh %1$s ag rith gan Google Play Services, atá á nuashonrú faoi láthair."</string>
+    <item type="string" name="APKTOOL_DUMMY_fc" />
+    <item type="string" name="APKTOOL_DUMMY_fd" />
+    <item type="string" name="APKTOOL_DUMMY_fe" />
+    <item type="string" name="APKTOOL_DUMMY_ff" />
     <string name="complicationDrawable_noDataText">--</string>
     <string name="complicationDrawable_textTypeface">sans-serif-comhdhlúite</string>
     <string name="complicationDrawable_titleTypeface">sans-serif-comhdhlúite</string>
+    <item type="string" name="APKTOOL_DUMMY_103" />
+    <item type="string" name="APKTOOL_DUMMY_104" />
+    <item type="string" name="APKTOOL_DUMMY_105" />
+    <item type="string" name="APKTOOL_DUMMY_106" />
+    <item type="string" name="APKTOOL_DUMMY_107" />
     <string name="connect_internet_for_examples">Ceangail leis an Idirlíon chun samplaí a fheiceáil</string>
+    <item type="string" name="APKTOOL_DUMMY_109" />
+    <item type="string" name="APKTOOL_DUMMY_10a" />
     <string name="contact_us">Déan teagmháil linn</string>
     <string name="continue_anyway">Lean ar aghaidh mar sin féin</string>
     <string name="copy">Cóipeáil</string>
+    <item type="string" name="APKTOOL_DUMMY_10e" />
+    <item type="string" name="APKTOOL_DUMMY_10f" />
     <string name="cuttleface_capturing_first">Coinnigh fós</string>
     <string name="cuttlefish_almost_stable_text">Cobhsaigh guthán le haghaidh réaltfhótagrafaíochta</string>
     <string name="cuttlefish_capture_text_1">Ag gabháil níos mó solais</string>
@@ -175,25 +248,44 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="cuttlefish_name">Fís Oíche</string>
     <string name="cuttlefish_stable_text">Réalphotagrafaíocht Cumasaithe</string>
     <string name="cuttlefish_zoom_advice_text">Súmáil isteach go 1x le haghaidh réaltfhótagrafaíochta</string>
+    <item type="string" name="APKTOOL_DUMMY_11b" />
     <string name="cvv_download_desc">Íoslódáil an físeán</string>
     <string name="cvv_play_desc">Seinn Físeán</string>
     <string name="deblur_fusion">Geamhú Aghaidhe</string>
     <string name="deblur_fusion_description">Rinne an ceamara na aghaidheanna sa ghrianghraf seo níos éadroime go huathoibríoch.</string>
     <string name="default_desc">Spás Stórála Réamhshocraithe</string>
     <string name="default_title">Gailearaí na nGrianghraf</string>
+    <item type="string" name="APKTOOL_DUMMY_122" />
+    <item type="string" name="APKTOOL_DUMMY_123" />
+    <item type="string" name="APKTOOL_DUMMY_124" />
     <string name="detailed_face_announcement">%1$d aghaidh. %2$s. %3$s.</string>
+    <item type="string" name="APKTOOL_DUMMY_126" />
+    <item type="string" name="APKTOOL_DUMMY_127" />
+    <item type="string" name="APKTOOL_DUMMY_128" />
     <string name="device_out_of_storage_body">Níl go leor stórais ar fáil chun leanúint ar aghaidh ag gabháil. Is féidir leat spás a shaoradh san aip Files.</string>
     <string name="device_out_of_storage_title">Gléas as stóras</string>
+    <item type="string" name="APKTOOL_DUMMY_12b" />
+    <item type="string" name="APKTOOL_DUMMY_12c" />
     <string name="dialog_cancel">Cealaigh</string>
     <string name="dialog_dismiss">Ruig</string>
+    <item type="string" name="APKTOOL_DUMMY_12f" />
+    <item type="string" name="APKTOOL_DUMMY_130" />
     <string name="dialog_ok">OK</string>
     <string name="dialog_ok_cased">OK</string>
+    <item type="string" name="APKTOOL_DUMMY_133" />
+    <item type="string" name="APKTOOL_DUMMY_134" />
+    <item type="string" name="APKTOOL_DUMMY_135" />
+    <item type="string" name="APKTOOL_DUMMY_136" />
     <string name="dialog_title_warning">Rabhadh</string>
     <string name="dialog_vr_core_not_enabled">Seans nach bhfeidhmeoidh an aip seo i gceart gan Google VR Services a chumasú. Cumasaigh é i socruithe do ghutháin roimh leanúint ar aghaidh.</string>
     <string name="dialog_vr_core_not_installed">Seans nach bhfeidhmeoidh an aip seo i gceart gan Google VR Services. Suiteáil Google VR Services ón Play Store le do thoil roimh leanúint ar aghaidh.</string>
+    <item type="string" name="APKTOOL_DUMMY_13a" />
+    <item type="string" name="APKTOOL_DUMMY_13b" />
     <string name="dnd_access_needed_info">Chun fógraí a chur ar sos agus físeáin á dtaifeadadh, cumasaigh Ná Cuir Isteach ar rochtain sna socruithe.</string>
     <string name="dogfood_description">Ar fáil ar Dogfood amháin. Ná roinn le do thoil. Féach go/pixel-photo-shared.</string>
     <string name="dogfood_name">Ná roinn</string>
+    <item type="string" name="APKTOOL_DUMMY_13f" />
+    <item type="string" name="APKTOOL_DUMMY_140" />
     <string name="double_tap_edu_url">https://www.gstatic.com/aiux/gca/doubletap/Camera_Edu_Hardware_Shortcut_ZOOM_V07.gif</string>
     <string name="double_tap_launch_bottomsheet_got_it">OK</string>
     <string name="double_tap_launch_bottomsheet_text">Brúigh an cnaipe cumhachta faoi dhó go tapa chun an ceamara a oscailt. Chun pictiúr a ghlacadh, brúigh an cnaipe toirt aníos.</string>
@@ -202,18 +294,50 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="double_tap_switch_camera">Athraigh Ceamara</string>
     <string name="double_tap_zoom">Súmáil</string>
     <string name="downloading_updates">Nuashonrú á íosluchtú (%d%%)</string>
+    <item type="string" name="APKTOOL_DUMMY_149" />
+    <item type="string" name="APKTOOL_DUMMY_14a" />
     <string name="education_swipe_toast_message">Swipe go Roghanna</string>
     <string name="enable_stabilization_tooltip">Cumasaigh cobhsú físeáin sna socruithe</string>
+    <item type="string" name="APKTOOL_DUMMY_14d" />
+    <item type="string" name="APKTOOL_DUMMY_14e" />
+    <item type="string" name="APKTOOL_DUMMY_14f" />
+    <item type="string" name="APKTOOL_DUMMY_150" />
+    <item type="string" name="APKTOOL_DUMMY_151" />
+    <item type="string" name="APKTOOL_DUMMY_152" />
+    <item type="string" name="APKTOOL_DUMMY_153" />
+    <item type="string" name="APKTOOL_DUMMY_154" />
+    <item type="string" name="APKTOOL_DUMMY_155" />
+    <item type="string" name="APKTOOL_DUMMY_156" />
+    <item type="string" name="APKTOOL_DUMMY_157" />
+    <item type="string" name="APKTOOL_DUMMY_158" />
     <string name="error_permissions_keyguard_updated">Chun Ceamara a úsáid, díghlasáil do ghléas agus cumasaigh ceadanna Ceamara, Micreafón agus Stórála</string>
     <string name="error_permissions_updated">Chun Ceamara a úsáid, cumasaigh ceadanna Ceamara, Micreafón agus Stórála.</string>
+    <item type="string" name="APKTOOL_DUMMY_15b" />
     <string name="ev_announcement">Is é %1$s</string>
     <string name="ev_reset_button_accessibility_description">Athshocraigh Cnaipe Nochta</string>
+    <item type="string" name="APKTOOL_DUMMY_15e" />
+    <item type="string" name="APKTOOL_DUMMY_15f" />
+    <item type="string" name="APKTOOL_DUMMY_160" />
+    <item type="string" name="APKTOOL_DUMMY_161" />
+    <item type="string" name="APKTOOL_DUMMY_162" />
+    <item type="string" name="APKTOOL_DUMMY_163" />
+    <item type="string" name="APKTOOL_DUMMY_164" />
+    <item type="string" name="APKTOOL_DUMMY_165" />
+    <item type="string" name="APKTOOL_DUMMY_166" />
+    <item type="string" name="APKTOOL_DUMMY_167" />
+    <item type="string" name="APKTOOL_DUMMY_168" />
+    <item type="string" name="APKTOOL_DUMMY_169" />
+    <item type="string" name="APKTOOL_DUMMY_16a" />
     <string name="expand_button_title">Ardchéim</string>
+    <item type="string" name="APKTOOL_DUMMY_16c" />
     <string name="exposure_knob_description">Cnaipe Nochta</string>
+    <item type="string" name="APKTOOL_DUMMY_16e" />
     <string name="ext_mic_desc">Micreafón seachtrach</string>
     <string name="ext_mic_off_acc_desc">Úsáid micreafón gutháin</string>
+    <item type="string" name="APKTOOL_DUMMY_171" />
     <string name="ext_mic_off_option_desc">Díchumasaithe</string>
     <string name="ext_mic_on_acc_desc">Úsáid micreafón seachtrach</string>
+    <item type="string" name="APKTOOL_DUMMY_174" />
     <string name="ext_mic_on_option_desc">Ar</string>
     <string name="ext_mic_options_desc">Roghanna seachtracha micreafón</string>
     <string name="external_bluetooth_mic_connected">Micreafón Bluetooth ceangailte. Tapáil an tsaighead le hathrú.</string>
@@ -238,17 +362,29 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="faceretouch_on_light_option_desc">Subtle</string>
     <string name="faceretouch_on_strong_acc_desc">Astouchtú aghaidhe bog</string>
     <string name="faceretouch_on_strong_option_desc">Smooth</string>
+    <item type="string" name="APKTOOL_DUMMY_18d" />
     <string name="feedback_description_empty" />
+    <item type="string" name="APKTOOL_DUMMY_18f" />
     <string name="first_run_done">Déanta</string>
     <string name="first_run_title">Ar aghaidh de réir réamhshocraithe</string>
     <string name="fisheye_accessibility_peek">Grianghraf Fisheye tógtha</string>
+    <item type="string" name="APKTOOL_DUMMY_193" />
     <string name="flash_auto_desc">Autoflash</string>
     <string name="flash_chip_text">Flash</string>
     <string name="flash_desc">Flash</string>
     <string name="flash_ns_desc">Fís Oíche</string>
+    <item type="string" name="APKTOOL_DUMMY_198" />
     <string name="flash_off_desc">Flash as</string>
+    <item type="string" name="APKTOOL_DUMMY_19a" />
     <string name="flash_on_desc">Flash ar</string>
     <string name="flash_options_desc">Roghanna Flash</string>
+    <item type="string" name="APKTOOL_DUMMY_19d" />
+    <item type="string" name="APKTOOL_DUMMY_19e" />
+    <item type="string" name="APKTOOL_DUMMY_19f" />
+    <item type="string" name="APKTOOL_DUMMY_1a0" />
+    <item type="string" name="APKTOOL_DUMMY_1a1" />
+    <item type="string" name="APKTOOL_DUMMY_1a2" />
+    <item type="string" name="APKTOOL_DUMMY_1a3" />
     <string name="four_by_three">Íomhá iomlán (4:3)</string>
     <string name="four_by_three_desc">íomhá iomlán ceithre agus trí</string>
     <string name="fps_24">24</string>
@@ -259,6 +395,8 @@ Glan do lionsa chun cáilíocht grianghraf níos fearr a fháil."</string>
     <string name="fps_60_desc">60 fráma in aghaidh an tsoicind</string>
     <string name="fps_auto">Uathoibríoch</string>
     <string name="fps_auto_desc">Frámaí uathoibríocha in aghaidh an tsoicind</string>
+    <item type="string" name="APKTOOL_DUMMY_1ae" />
+    <item type="string" name="APKTOOL_DUMMY_1af" />
     <string name="fps_option_desc">Frámaí/soicind</string>
     <string name="fps_options_desc">Roghanna frámaí in aghaidh an tsoicind</string>
     <string name="frequent_faces_info">"Nuair a ghlacann tú grianghraif Top Shot nó nuair a thapálann tú agus nuair a choinníonn tú in Top Shot, tugann Aghaidheanna Coitianta tosaíocht do na daoine is mó a ngrianghrafann tú.
@@ -275,14 +413,33 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="frequent_faces_learn_more">Foghlaim tuilleadh</string>
     <string name="frequent_faces_off">Díchumasaithe</string>
     <string name="frequent_faces_on">Ar</string>
+    <item type="string" name="APKTOOL_DUMMY_1b6" />
+    <item type="string" name="APKTOOL_DUMMY_1b7" />
     <string name="gcam_HDR_plus_enhanced_processing">Cuireadh grianghraf feabhsaithe le HDR+</string>
+    <item type="string" name="APKTOOL_DUMMY_1b9" />
+    <item type="string" name="APKTOOL_DUMMY_1ba" />
+    <item type="string" name="APKTOOL_DUMMY_1bb" />
+    <item type="string" name="APKTOOL_DUMMY_1bc" />
+    <item type="string" name="APKTOOL_DUMMY_1bd" />
+    <item type="string" name="APKTOOL_DUMMY_1be" />
+    <item type="string" name="APKTOOL_DUMMY_1bf" />
+    <item type="string" name="APKTOOL_DUMMY_1c0" />
     <string name="go_to_photos_btn_text">Téigh go Google Photos</string>
+    <item type="string" name="APKTOOL_DUMMY_1cc" />
     <string name="go_to_playstore_button">Téigh chuig Play Store</string>
     <string name="go_to_vr_listeners_settings_button">Téigh go Socruithe</string>
+    <item type="string" name="APKTOOL_DUMMY_1cf" />
+    <item type="string" name="APKTOOL_DUMMY_1d0" />
     <string name="grid_mode_four_by_four">4 x 4</string>
     <string name="grid_mode_golden_ratio">Cóimheas Órga</string>
     <string name="grid_mode_off">Gan eangach</string>
     <string name="grid_mode_three_by_three">3 x 3</string>
+    <item type="string" name="APKTOOL_DUMMY_1d5" />
+    <item type="string" name="APKTOOL_DUMMY_1d6" />
+    <item type="string" name="APKTOOL_DUMMY_1d7" />
+    <item type="string" name="APKTOOL_DUMMY_1d8" />
+    <item type="string" name="APKTOOL_DUMMY_1d9" />
+    <item type="string" name="APKTOOL_DUMMY_1da" />
     <string name="hdr_desc">HDR+</string>
     <string name="hdr_enhanced">Feabhsaithe</string>
     <string name="hdr_enhanced_desc">HDR+ feabhsaithe</string>
@@ -290,8 +447,23 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="hdr_off_desc">HDR+ as</string>
     <string name="hdr_on">Cumasaithe</string>
     <string name="hdr_on_desc">HDR+ cumasaithe</string>
+    <item type="string" name="APKTOOL_DUMMY_1e2" />
+    <item type="string" name="APKTOOL_DUMMY_1e3" />
+    <item type="string" name="APKTOOL_DUMMY_1e4" />
     <string name="hdr_plus_options_desc">Roghanna HDR+</string>
+    <item type="string" name="APKTOOL_DUMMY_1e6" />
+    <item type="string" name="APKTOOL_DUMMY_1e7" />
+    <item type="string" name="APKTOOL_DUMMY_1e8" />
+    <item type="string" name="APKTOOL_DUMMY_1e9" />
+    <item type="string" name="APKTOOL_DUMMY_1ea" />
+    <item type="string" name="APKTOOL_DUMMY_1eb" />
     <string name="hfr_record_speed">%1$d/%2$d×</string>
+    <item type="string" name="APKTOOL_DUMMY_1ed" />
+    <item type="string" name="APKTOOL_DUMMY_1ee" />
+    <item type="string" name="APKTOOL_DUMMY_1ef" />
+    <item type="string" name="APKTOOL_DUMMY_1f0" />
+    <item type="string" name="APKTOOL_DUMMY_1f1" />
+    <item type="string" name="APKTOOL_DUMMY_1f2" />
     <string name="hit_target_to_start">Chun tosú, coinnigh an pointe laistigh den chiorcal</string>
     <string name="horizontal_panorama_accessibility_peek">Lánléargas cothrománach tógtha</string>
     <string name="icon_content_description">Deilbhín dialóige</string>
@@ -303,6 +475,8 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="illumination_on_option_desc">Ar</string>
     <string name="illumination_options_desc">Roghanna Selfie Flash Lighting</string>
     <string name="image_intent_label">Ceamara</string>
+    <item type="string" name="APKTOOL_DUMMY_1fe" />
+    <item type="string" name="APKTOOL_DUMMY_1ff" />
     <string name="imax_audio_recording_desc">Taifeadadh fuaime</string>
     <string name="imax_disable_audio_recording">Díchumasaithe</string>
     <string name="imax_disable_audio_recording_desc">Díchumasaíodh taifeadadh fuaime</string>
@@ -317,6 +491,7 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="imax_too_much_horizontal_tilt">Iompaigh guthán ón bportráid go dtí pana cothrománach.</string>
     <string name="imax_too_much_vertical_tilt">Cuir an guthán go dtí an tírdhreach le haghaidh panála ingearach.</string>
     <string name="imax_vertical_hint">Bain triail as panáil ingearach trí rothlú go dtí an tírdhreach</string>
+    <item type="string" name="APKTOOL_DUMMY_20e" />
     <string name="infopane_got_it">Fuair ​​sé</string>
     <string name="infopane_learn_more">Foghlaim tuilleadh</string>
     <string name="installing_updates_dialog_message">Fan cúpla soicind le do thoil agus muid ag cur na dteagmháil deiridh ar do cheamara</string>
@@ -324,13 +499,34 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="installing_updates_notification_text">Ní féidir ceamara a úsáid agus nuashonruithe á shuiteáil</string>
     <string name="installing_updates_notification_title">Nuashonruithe Ceamara á Shuiteáil…</string>
     <string name="internet_required">Idirlíon ag teastáil</string>
+    <item type="string" name="APKTOOL_DUMMY_216" />
+    <item type="string" name="APKTOOL_DUMMY_217" />
+    <item type="string" name="APKTOOL_DUMMY_218" />
     <string name="iris_talkback_label_contact">Cruthaigh teagmhálaí do %s</string>
+    <item type="string" name="APKTOOL_DUMMY_21a" />
+    <item type="string" name="APKTOOL_DUMMY_21b" />
+    <item type="string" name="APKTOOL_DUMMY_21c" />
+    <item type="string" name="APKTOOL_DUMMY_21d" />
+    <item type="string" name="APKTOOL_DUMMY_21e" />
+    <item type="string" name="APKTOOL_DUMMY_21f" />
+    <item type="string" name="APKTOOL_DUMMY_220" />
+    <item type="string" name="APKTOOL_DUMMY_221" />
+    <item type="string" name="APKTOOL_DUMMY_222" />
     <string name="item_view_role_description">Treoir</string>
+    <item type="string" name="APKTOOL_DUMMY_224" />
     <string name="kepler_edu_text">{count, plural, =1{Fan # nóiméad ar a laghad chun imeacht ama chomh maith le grianghraf a ghabháil.} eile{Fan # nóiméad ar a laghad chun imeacht ama a ghabháil chomh maith le grianghraf .}}</string>
+    <item type="string" name="APKTOOL_DUMMY_226" />
     <string name="label_add_social_apps">Cuir Aipeanna Sóisialta Leis</string>
+    <item type="string" name="APKTOOL_DUMMY_228" />
     <string name="label_social_share_setting">Socrú Comhroinnte Sóisialta</string>
+    <item type="string" name="APKTOOL_DUMMY_22a" />
+    <item type="string" name="APKTOOL_DUMMY_22b" />
     <string name="learn_more">Foghlaim tuilleadh</string>
     <string name="left">Ar chlé</string>
+    <item type="string" name="APKTOOL_DUMMY_22e" />
+    <item type="string" name="APKTOOL_DUMMY_22f" />
+    <item type="string" name="APKTOOL_DUMMY_230" />
+    <item type="string" name="APKTOOL_DUMMY_231" />
     <string name="locked_mode_before_recording">Cuir tús leis an taifeadadh chun radharc a ghlasáil</string>
     <string name="locked_mode_exit_message">Díchumasaíodh an cobhsú faoi ghlas</string>
     <string name="locked_mode_will_exit_warning">Coinnigh díreach an guthán</string>
@@ -346,36 +542,89 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="longshot_edu_panel_zoom">Tarraing suas chun zúmáil</string>
     <string name="longshot_edu_panel_zoom_landscape">Tarraing ar chlé chun zúmáil</string>
     <string name="longshot_edu_panel_zoom_reverse_landscape">Tarraing ar dheis chun zúmáil</string>
+    <item type="string" name="APKTOOL_DUMMY_241" />
+    <item type="string" name="APKTOOL_DUMMY_242" />
+    <item type="string" name="APKTOOL_DUMMY_243" />
+    <item type="string" name="APKTOOL_DUMMY_244" />
+    <item type="string" name="APKTOOL_DUMMY_245" />
+    <item type="string" name="APKTOOL_DUMMY_246" />
+    <item type="string" name="APKTOOL_DUMMY_247" />
+    <item type="string" name="APKTOOL_DUMMY_248" />
+    <item type="string" name="APKTOOL_DUMMY_249" />
+    <item type="string" name="APKTOOL_DUMMY_24a" />
+    <item type="string" name="APKTOOL_DUMMY_24b" />
+    <item type="string" name="APKTOOL_DUMMY_24c" />
+    <item type="string" name="APKTOOL_DUMMY_24d" />
+    <item type="string" name="APKTOOL_DUMMY_24e" />
+    <item type="string" name="APKTOOL_DUMMY_24f" />
+    <item type="string" name="APKTOOL_DUMMY_250" />
+    <item type="string" name="APKTOOL_DUMMY_251" />
+    <item type="string" name="APKTOOL_DUMMY_252" />
+    <item type="string" name="APKTOOL_DUMMY_253" />
+    <item type="string" name="APKTOOL_DUMMY_254" />
+    <item type="string" name="APKTOOL_DUMMY_255" />
+    <item type="string" name="APKTOOL_DUMMY_256" />
+    <item type="string" name="APKTOOL_DUMMY_257" />
+    <item type="string" name="APKTOOL_DUMMY_258" />
+    <item type="string" name="APKTOOL_DUMMY_259" />
+    <item type="string" name="APKTOOL_DUMMY_25a" />
     <string name="makeup_desc">Makeup</string>
     <string name="makeup_makeup1_desc">Makeup1</string>
     <string name="makeup_makeup2_desc">Makeup2</string>
     <string name="makeup_makeup3_desc">Makeup3</string>
     <string name="makeup_off_desc">Díchumasaithe</string>
+    <item type="string" name="APKTOOL_DUMMY_260" />
     <string name="manual_controls">Rialuithe Láimhe</string>
     <string name="mars_desc">Spás stórála ag baint úsáid as glas scáileáin an ghléis</string>
+    <item type="string" name="APKTOOL_DUMMY_263" />
     <string name="mars_learn_more">Foghlaim tuilleadh</string>
     <string name="mars_menu_title">Sábháil go</string>
     <string name="mars_not_available">Ní féidir sábháil san fhillteán faoi ghlas</string>
     <string name="mars_not_available_reason_account">Níl an ghné seo ar fáil do do chuntas Grianghraif</string>
     <string name="mars_not_available_reason_work_profile">Níl an ghné seo ar fáil le haghaidh próifílí oibre nó gléasanna lánbhainistithe</string>
     <string name="mars_title">Fillteán faoi ghlas</string>
+    <item type="string" name="APKTOOL_DUMMY_26a" />
+    <item type="string" name="APKTOOL_DUMMY_26b" />
+    <item type="string" name="APKTOOL_DUMMY_26c" />
+    <item type="string" name="APKTOOL_DUMMY_26d" />
     <string name="material_clock_display_divider">:</string>
+    <item type="string" name="APKTOOL_DUMMY_26f" />
+    <item type="string" name="APKTOOL_DUMMY_270" />
+    <item type="string" name="APKTOOL_DUMMY_271" />
+    <item type="string" name="APKTOOL_DUMMY_272" />
+    <item type="string" name="APKTOOL_DUMMY_273" />
+    <item type="string" name="APKTOOL_DUMMY_279" />
+    <item type="string" name="APKTOOL_DUMMY_27a" />
+    <item type="string" name="APKTOOL_DUMMY_27b" />
+    <item type="string" name="APKTOOL_DUMMY_27c" />
+    <item type="string" name="APKTOOL_DUMMY_27d" />
+    <item type="string" name="APKTOOL_DUMMY_27e" />
+    <item type="string" name="APKTOOL_DUMMY_27f" />
+    <item type="string" name="APKTOOL_DUMMY_280" />
+    <item type="string" name="APKTOOL_DUMMY_281" />
     <string name="max_face_announcement">Ar a laghad %1$d aghaidh.</string>
     <string name="mcfly_current_image_content_description">Réamhamharc íomhá McFly reatha.</string>
     <string name="mcfly_export_hdr_shot_button_text">Easpórtáil Gabháil HDR</string>
     <string name="mcfly_export_shot_button_text">Easpórtáil Grianghraf</string>
     <string name="media_accessibility_peek">Gabháil tógtha</string>
     <string name="media_processing_content_description">Próiseáil Meáin</string>
+    <item type="string" name="APKTOOL_DUMMY_288" />
     <string name="menu_help_button_announce">Foghlaim tuilleadh faoi %s</string>
     <string name="menu_open_announce">%1$s roghanna. Fuinneog aníos. %2$s sa liosta.</string>
     <string name="menu_selected_accessibility_announce">Athraigh go %s</string>
+    <item type="string" name="APKTOOL_DUMMY_28c" />
+    <item type="string" name="APKTOOL_DUMMY_28d" />
+    <item type="string" name="APKTOOL_DUMMY_28e" />
     <string name="mic_input_desc">Micreafón</string>
+    <item type="string" name="APKTOOL_DUMMY_290" />
     <string name="mic_input_ext_bluetooth_connecting">Bluetooth á nascadh</string>
+    <item type="string" name="APKTOOL_DUMMY_292" />
     <string name="mic_input_ext_wired_acc_desc">Micreafón Sreangaithe</string>
     <string name="mic_input_ext_wired_desc">Micreafón Sreangaithe</string>
     <string name="mic_input_options_desc">Roghanna Micreafóin</string>
     <string name="mic_input_phone_acc_desc">Micreafón Teileafóin</string>
     <string name="mic_input_phone_desc">Micreafón Fón</string>
+    <item type="string" name="APKTOOL_DUMMY_298" />
     <string name="micro_auto">Uathoibríoch</string>
     <string name="micro_auto_desc">Uathshot Barr</string>
     <string name="micro_desc">Roghanna Barr Shot</string>
@@ -383,13 +632,16 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="micro_off_desc">Grianghraf barr múchta</string>
     <string name="micro_on">Ar</string>
     <string name="micro_on_desc">Grianghraf is fearr cumasaithe</string>
+    <item type="string" name="APKTOOL_DUMMY_2a0" />
     <string name="micro_option_desc">Príomhghrianghraf</string>
     <string name="micro_tutorial_text">Nuair atá Top Shot cumasaithe, áiríonn an Pixel físeán gearr chun níos mó den nóiméad a ghabháil. Molann Pixel freisin chuimhneacháin nó frámaí ar fiú iad a shábháil.</string>
     <string name="micro_tutorial_title">Príomhghrianghraf</string>
+    <item type="string" name="APKTOOL_DUMMY_2a4" />
     <string name="moblur_action_acc_desc">Pan Gníomhaíochta</string>
     <string name="moblur_action_edu_animation_acc">Beochan Éifeacht Pan Gníomhaíochta</string>
     <string name="moblur_action_edu_desc">Díríonn sé ar ábhar atá ag gluaiseacht agus cuireann sé geamhú cruthaitheach leis an gcúlra. Coinnigh do cheamara fós nó lean an t-ábhar chun éifeacht na gluaisne a fháil.</string>
     <string name="moblur_action_edu_photo_acc">Grianghraf Éifeacht Phanna Gníomhaíochta Samplach</string>
+    <item type="string" name="APKTOOL_DUMMY_2a9" />
     <string name="moblur_action_title">Pan Action</string>
     <string name="moblur_action_url1">https://www.gstatic.com/aiux/gca/xyz/abc1.png</string>
     <string name="moblur_action_url2">https://www.gstatic.com/aiux/gca/xyz/abc2.png</string>
@@ -398,6 +650,7 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="moblur_landscape_edu_animation_acc">Beochan Éifeacht Nochta Fada</string>
     <string name="moblur_landscape_edu_desc">Cuirtear geamhú cruthaitheach le réada atá ag gluaiseacht sa radharc. Coinnigh do cheamara fós chun grianghraif a bhfuil cuma ghairmiúil orthu a ghabháil gan tripod.</string>
     <string name="moblur_landscape_edu_photo_acc">Grianghraf samplach den iarmhairt fhada nochta</string>
+    <item type="string" name="APKTOOL_DUMMY_2b2" />
     <string name="moblur_landscape_title">Nochtadh Fada</string>
     <string name="moblur_landscape_url1">https://www.gstatic.com/aiux/gca/xyz/abc4.png</string>
     <string name="moblur_landscape_url2">https://www.gstatic.com/aiux/gca/xyz/abc5.png</string>
@@ -417,6 +670,7 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="mode_motion_blur_desc">Athraigh go mód gluaisne</string>
     <string name="mode_ornament">Clós Súgartha</string>
     <string name="mode_ornament_desc">Athraigh go Mód Clós Imeartha</string>
+    <item type="string" name="APKTOOL_DUMMY_2c6" />
     <string name="mode_panorama">Lánléargas</string>
     <string name="mode_panorama_desc">Athraigh go mód Panorama</string>
     <string name="mode_photobooth">Photobooth</string>
@@ -433,6 +687,8 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="mode_video_desc">Athraigh go físcheamara</string>
     <string name="mode_video_slomo">Gluaisne mall</string>
     <string name="mode_video_slomo_desc">Athraigh go mód gluaisne moille</string>
+    <item type="string" name="APKTOOL_DUMMY_2d7" />
+    <item type="string" name="APKTOOL_DUMMY_2d8" />
     <string name="modes">Módanna</string>
     <string name="more_light_desc">Tuilleadh solais</string>
     <string name="more_light_options_desc">Tuilleadh roghanna solais</string>
@@ -451,21 +707,72 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="motion_photos_video_caption">Is féidir leat an grianghraf aonair is fearr leat a roghnú freisin.</string>
     <string name="motion_photos_video_content_description">Físeán a thaispeánann conas is féidir grianghraif a shábháil ó Shot Barr</string>
     <string name="motion_photos_video_url">https://www.gstatic.com/aiux/gca/motionphotos/frame-selection-340x270.gif</string>
+    <item type="string" name="APKTOOL_DUMMY_2eb" />
+    <item type="string" name="APKTOOL_DUMMY_2ec" />
+    <item type="string" name="APKTOOL_DUMMY_2ed" />
+    <item type="string" name="APKTOOL_DUMMY_2ee" />
+    <item type="string" name="APKTOOL_DUMMY_2ef" />
+    <item type="string" name="APKTOOL_DUMMY_2f0" />
+    <item type="string" name="APKTOOL_DUMMY_2f1" />
+    <item type="string" name="APKTOOL_DUMMY_2f2" />
+    <item type="string" name="APKTOOL_DUMMY_2f3" />
+    <item type="string" name="APKTOOL_DUMMY_2f4" />
+    <item type="string" name="APKTOOL_DUMMY_2f5" />
+    <item type="string" name="APKTOOL_DUMMY_2f6" />
+    <item type="string" name="APKTOOL_DUMMY_2f7" />
+    <item type="string" name="APKTOOL_DUMMY_2f8" />
+    <item type="string" name="APKTOOL_DUMMY_2f9" />
+    <item type="string" name="APKTOOL_DUMMY_2fa" />
+    <item type="string" name="APKTOOL_DUMMY_2fb" />
+    <item type="string" name="APKTOOL_DUMMY_2fc" />
+    <item type="string" name="APKTOOL_DUMMY_2fd" />
+    <item type="string" name="APKTOOL_DUMMY_2fe" />
+    <item type="string" name="APKTOOL_DUMMY_2ff" />
+    <item type="string" name="APKTOOL_DUMMY_300" />
+    <item type="string" name="APKTOOL_DUMMY_301" />
+    <item type="string" name="APKTOOL_DUMMY_302" />
+    <item type="string" name="APKTOOL_DUMMY_303" />
+    <item type="string" name="APKTOOL_DUMMY_304" />
+    <item type="string" name="APKTOOL_DUMMY_305" />
+    <item type="string" name="APKTOOL_DUMMY_306" />
+    <item type="string" name="APKTOOL_DUMMY_307" />
+    <item type="string" name="APKTOOL_DUMMY_308" />
+    <item type="string" name="APKTOOL_DUMMY_309" />
+    <item type="string" name="APKTOOL_DUMMY_30a" />
+    <item type="string" name="APKTOOL_DUMMY_30b" />
+    <item type="string" name="APKTOOL_DUMMY_30c" />
+    <item type="string" name="APKTOOL_DUMMY_30d" />
+    <item type="string" name="APKTOOL_DUMMY_30e" />
     <string name="new_version_available">Tá nuashonrú ar fáil don Cheamara</string>
+    <item type="string" name="APKTOOL_DUMMY_310" />
+    <item type="string" name="APKTOOL_DUMMY_311" />
+    <item type="string" name="APKTOOL_DUMMY_312" />
     <string name="not_enough_motion_chip">Gluaisne neamhleor</string>
+    <item type="string" name="APKTOOL_DUMMY_314" />
     <string name="not_set">Gan socrú</string>
     <string name="notification_enter_power_saving_mode">Laghdú scáileáin chun cumhacht a shábháil</string>
     <string name="notification_enter_power_saving_mode_stage_2">Fós ag taifeadadh. Scáileán maolaithe chun cumhacht a shábháil.</string>
+    <item type="string" name="APKTOOL_DUMMY_318" />
+    <item type="string" name="APKTOOL_DUMMY_319" />
     <string name="notification_static_recording_af_locked">Glasáil AF</string>
     <string name="notification_update_channel_name">Nuashonruithe Ceamara</string>
     <string name="ok">Ceart go leor, fuair sé</string>
+    <item type="string" name="APKTOOL_DUMMY_31d" />
+    <item type="string" name="APKTOOL_DUMMY_31e" />
+    <item type="string" name="APKTOOL_DUMMY_31f" />
+    <item type="string" name="APKTOOL_DUMMY_320" />
     <string name="open_source_licenses">Ceadúnais Foinse Oscailte</string>
+    <item type="string" name="APKTOOL_DUMMY_322" />
+    <item type="string" name="APKTOOL_DUMMY_323" />
+    <item type="string" name="APKTOOL_DUMMY_324" />
+    <item type="string" name="APKTOOL_DUMMY_325" />
     <string name="options_menu_button_desc">Oscail roghchlár roghanna</string>
     <string name="options_menu_close_desc">Dún an roghchlár roghanna</string>
     <string name="options_menu_disabled">Díchumasaithe</string>
     <string name="options_menu_disabled_desc">Roghanna díchumasaithe</string>
     <string name="options_menu_gear_desc">Socruithe Ceamara</string>
     <string name="options_menu_title">Roghanna</string>
+    <item type="string" name="APKTOOL_DUMMY_32c" />
     <string name="pano_orientation_fisheye">cloth_fisheye</string>
     <string name="pano_orientation_horizontal">éadach_cothrománach</string>
     <string name="pano_orientation_photosphere">éadach_photosphere</string>
@@ -485,15 +792,20 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="panorama_wide">Uillinn leathan</string>
     <string name="panorama_wide_desc">Fótasféar leathan-uillinn</string>
     <string name="password_toggle_content_description">Taispeáin an pasfhocal</string>
+    <item type="string" name="APKTOOL_DUMMY_340" />
     <string name="pause_video">Cuir an físeán ar sos</string>
     <string name="pause_video_recording">Cuir taifeadadh ar sos</string>
     <string name="phone_moved_fast_chip">Bain triail as do ghuthán a bhogadh beagán níos moille</string>
     <string name="photo">Grianghraf</string>
     <string name="photo_accessibility_peek">Grianghraf tógtha</string>
+    <item type="string" name="APKTOOL_DUMMY_34a" />
+    <item type="string" name="APKTOOL_DUMMY_34b" />
     <string name="photo_date_content_description">Grianghraf tógtha ag %s</string>
     <string name="photo_description">Grianghraf</string>
     <string name="photo_name">Grianghraf</string>
     <string name="photo_processing">Próiseáil</string>
+    <item type="string" name="APKTOOL_DUMMY_350" />
+    <item type="string" name="APKTOOL_DUMMY_351" />
     <string name="photos_disabled_message">Chun do ghrianghraif agus do mheáin a fheiceáil, cumasaigh Google Photos sna Socruithe.</string>
     <string name="photos_disabled_title">Grianghraif díchumasaithe</string>
     <string name="photos_required_message">Chun do ghrianghraif agus do mheáin a fheiceáil, suiteáil Google Photos ón Play Store.</string>
@@ -507,19 +819,24 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="photosphere_calibration_step_two">2. Rothlaigh suas nó síos chun an chéad phointe eile a ailíniú</string>
     <string name="photosphere_date_content_description">Tógadh Réimse na nGrianghraf ag %s</string>
     <string name="photosphere_description">Tarraing chun féachaint ar ghrianghraf idirghníomhach</string>
+    <item type="string" name="APKTOOL_DUMMY_35d" />
     <string name="photosphere_fisheye_confirm_dialog">Níl do shúil éisc críochnaithe, próiseáil ar aon nós?</string>
     <string name="photosphere_name">Sféar na nGrianghraf</string>
     <string name="photosphere_no_back_camera">Ár leithscéal, níl ceamara cúil ag do ghléas</string>
     <string name="photosphere_type">Cineál</string>
     <string name="photosphere_type_desc">Cuir isteach fótasféar</string>
+    <item type="string" name="APKTOOL_DUMMY_363" />
+    <item type="string" name="APKTOOL_DUMMY_364" />
     <string name="play_store_button">Play Store</string>
     <string name="play_video">Seinn Físeán</string>
+    <item type="string" name="APKTOOL_DUMMY_367" />
     <string name="portrait_description">Cuirtear éifeachtaí leis chun portráidí a bhfuil cuma ghairmiúil orthu</string>
     <string name="portrait_name">Portráid</string>
     <string name="portrait_notification_tap_to_focus">Tapáil chun díriú</string>
     <string name="portrait_suggestion_text">Bain triail as mód Portráide</string>
     <string name="pref_audio_zoom_summary">Méadaíonn súmáil ábhair an fhuaim agus laghdaítear torann cúlra</string>
     <string name="pref_audio_zoom_title">Súmáil Fuaime</string>
+    <item type="string" name="APKTOOL_DUMMY_36e" />
     <string name="pref_camera_coach_summary">leideanna agus uirlisí ar an scáileán ar nós leibhéalóirí agus leideanna fócais</string>
     <string name="pref_camera_coach_title">Leideanna Frámaithe</string>
     <string name="pref_camera_custom_hotkeys_summary">Roghnaigh eochracha te chun gníomhartha ceamara a rialú.</string>
@@ -527,18 +844,40 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="pref_camera_dirty_lens_summary">"Taispeánann sé rabhadh nuair a d'fhéadfadh an lionsa a bheith ró-salach le pictiúir ar ardchaighdeán a thógáil. Is féidir cabhrú leis an lionsa a ghlanadh."</string>
     <string name="pref_camera_dirty_lens_title">Taispeáin Rabhadh Lionsa Salach</string>
     <string name="pref_camera_double_tap_action_title">Gníomh tapála dúbailte</string>
+    <item type="string" name="APKTOOL_DUMMY_376" />
+    <item type="string" name="APKTOOL_DUMMY_377" />
+    <item type="string" name="APKTOOL_DUMMY_378" />
     <string name="pref_camera_frequent_faces_title">Aghaidh Coitianta</string>
     <string name="pref_camera_gestures_title">Gothaí</string>
+    <item type="string" name="APKTOOL_DUMMY_37b" />
+    <item type="string" name="APKTOOL_DUMMY_37c" />
+    <item type="string" name="APKTOOL_DUMMY_37d" />
+    <item type="string" name="APKTOOL_DUMMY_37e" />
+    <item type="string" name="APKTOOL_DUMMY_37f" />
+    <item type="string" name="APKTOOL_DUMMY_380" />
+    <item type="string" name="APKTOOL_DUMMY_381" />
+    <item type="string" name="APKTOOL_DUMMY_382" />
+    <item type="string" name="APKTOOL_DUMMY_383" />
+    <item type="string" name="APKTOOL_DUMMY_384" />
+    <item type="string" name="APKTOOL_DUMMY_385" />
+    <item type="string" name="APKTOOL_DUMMY_386" />
     <string name="pref_camera_lens_subtitle">Aidhm do cheamara chun téacs a aistriú, scanadh cóid QR agus níos mó</string>
     <string name="pref_camera_lens_subtitle_legacy">Amharc ar do cheamara chun cóid QR, doiciméid agus eile a scanadh</string>
     <string name="pref_camera_lens_subtitle_p21">Amharc ar do cheamara chun cóid QR agus barrachóid a scanadh</string>
     <string name="pref_camera_lens_title">Leideanna Google Lens</string>
     <string name="pref_camera_mirror_image_title">Sábháil selfie mar a bhreathnaítear air</string>
     <string name="pref_camera_picturesize_default">Taifeach iomlán</string>
+    <item type="string" name="APKTOOL_DUMMY_38d" />
+    <item type="string" name="APKTOOL_DUMMY_38e" />
+    <item type="string" name="APKTOOL_DUMMY_38f" />
     <string name="pref_camera_picturesize_medium">"Taifeach meánach
 (Úsáideann sé níos lú stórais)"</string>
+    <item type="string" name="APKTOOL_DUMMY_391" />
+    <item type="string" name="APKTOOL_DUMMY_392" />
+    <item type="string" name="APKTOOL_DUMMY_393" />
     <string name="pref_camera_save_location_summary">Is féidir le haipeanna eile féachaint ar ghrianghraif agus; faisnéis faoi shuíomh an fhíseáin</string>
     <string name="pref_camera_save_location_title">Sábháil suíomh</string>
+    <item type="string" name="APKTOOL_DUMMY_396" />
     <string name="pref_camera_selfie_mirror_image_summary">Sábháil grianghraif selfie mar a léirítear iad san amharcóir</string>
     <string name="pref_camera_settings_category">Socruithe Ceamara</string>
     <string name="pref_camera_shutter_command_title">Comhla</string>
@@ -553,6 +892,7 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="pref_camera_zoom_in_command_title">Súmáil isteach</string>
     <string name="pref_camera_zoom_out_command_title">Súmáil amach</string>
     <string name="pref_category_advanced">Advanced</string>
+    <item type="string" name="APKTOOL_DUMMY_3a5" />
     <string name="pref_category_storage">Stóráil an Ghléis</string>
     <string name="pref_countdown_indicator_summary">Blinks an solas ceamara cúil le linn an chomhaireamh síos lasc ama.</string>
     <string name="pref_countdown_indicator_title">Solas Amadóir</string>
@@ -562,6 +902,9 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="pref_dnd_access_needed_title">Ná Cuir isteach ar Rochtana ag Teastáil</string>
     <string name="pref_exposure_control">Nochtadh</string>
     <string name="pref_exposure_control_summary">Coigeartaigh Gile agus Scáthanna</string>
+    <item type="string" name="APKTOOL_DUMMY_3af" />
+    <item type="string" name="APKTOOL_DUMMY_3b0" />
+    <item type="string" name="APKTOOL_DUMMY_3b1" />
     <string name="pref_free_up_space">Saor suas spás</string>
     <string name="pref_free_up_space_summary">Glan stóras ar an ngléas seo. Tabharfaidh sé seo chuig an bhfeidhmchlár Comhaid thú.</string>
     <string name="pref_gestures_summary">%1$s, %2$s</string>
@@ -574,12 +917,34 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="pref_low_storage_mode_auto_disable">Múch nuair atá stóras ar fáil</string>
     <string name="pref_low_storage_mode_auto_disable_summary">Tá an Sábháil Stórála múchta nuair atá ar a laghad %d GB de stóras ar fáil ar do ghléas.</string>
     <string name="pref_low_storage_mode_summary">Chun an spás stórála a bharrfheabhsú, athróidh an Sábháil Stórála socruithe a úsáideann go leor stórais. Is féidir leis seo cáilíocht na híomhá nó an fhíse a laghdú.</string>
+    <item type="string" name="APKTOOL_DUMMY_3be" />
+    <item type="string" name="APKTOOL_DUMMY_3bf" />
+    <item type="string" name="APKTOOL_DUMMY_3c0" />
+    <item type="string" name="APKTOOL_DUMMY_3c1" />
+    <item type="string" name="APKTOOL_DUMMY_3c2" />
+    <item type="string" name="APKTOOL_DUMMY_3c3" />
     <string name="pref_raw_output_control_action_button">Féach ar Fhillteán RAW</string>
     <string name="pref_raw_output_control_summary">Taispeáin an rogha chun RAW+JPEG a chumasú san amharcóir. Déantar an comhad RAW (DNG) a shábháil ar leithligh, mar aon le sonraí ceamara inaitheanta, i bhfillteán gléis in Google Photos. Úsáideann sé stóras breise.</string>
     <string name="pref_raw_output_control_title">rialú RAW+JPEG</string>
     <string name="pref_storage_summary">%1$s, %2$s</string>
+    <item type="string" name="APKTOOL_DUMMY_3c8" />
+    <item type="string" name="APKTOOL_DUMMY_3c9" />
+    <item type="string" name="APKTOOL_DUMMY_3ca" />
+    <item type="string" name="APKTOOL_DUMMY_3cb" />
     <string name="pref_video_hevc">Stóráil físeáin go héifeachtach</string>
+    <item type="string" name="APKTOOL_DUMMY_3cd" />
+    <item type="string" name="APKTOOL_DUMMY_3ce" />
+    <item type="string" name="APKTOOL_DUMMY_3cf" />
+    <item type="string" name="APKTOOL_DUMMY_3d0" />
+    <item type="string" name="APKTOOL_DUMMY_3d1" />
+    <item type="string" name="APKTOOL_DUMMY_3d2" />
+    <item type="string" name="APKTOOL_DUMMY_3d3" />
+    <item type="string" name="APKTOOL_DUMMY_3d4" />
+    <item type="string" name="APKTOOL_DUMMY_3d5" />
     <string name="pref_video_quality_large">mór</string>
+    <item type="string" name="APKTOOL_DUMMY_3d7" />
+    <item type="string" name="APKTOOL_DUMMY_3d8" />
+    <item type="string" name="APKTOOL_DUMMY_3d9" />
     <string name="pref_video_stabilization">Cobhsú Físeáin</string>
     <string name="pref_video_stabilization_summary">Laghdaigh croitheadh ​​​​ceamara chun físeáin a dhéanamh níos míne. Beidh radharc méadaithe mar thoradh air seo.</string>
     <string name="pref_white_balance_control">Iarmhéid Bán</string>
@@ -592,6 +957,7 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="preference_volume_key_shutter">comhla</string>
     <string name="preference_volume_key_volume">rud ar bith</string>
     <string name="preference_volume_key_zoom">zoom</string>
+    <item type="string" name="APKTOOL_DUMMY_3e6" />
     <string name="preferences_license_title">Ceadúnais Foinse Oscailte</string>
     <string name="preparing_updates">Nuashonrú á ullmhú</string>
     <string name="primes_marker">Priomaí</string>
@@ -602,11 +968,24 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="processing_notification_channel">Próiseáil cúlra</string>
     <string name="processing_panorama">Lánléargas á Phróiseáil</string>
     <string name="processing_photo_sphere">Sféar na nGrianghraf á phróiseáil</string>
+    <item type="string" name="APKTOOL_DUMMY_3f1" />
+    <item type="string" name="APKTOOL_DUMMY_3f2" />
+    <item type="string" name="APKTOOL_DUMMY_3f3" />
     <string name="qr_unsupported">Cód QR</string>
+    <item type="string" name="APKTOOL_DUMMY_3f5" />
+    <item type="string" name="APKTOOL_DUMMY_3f6" />
+    <item type="string" name="APKTOOL_DUMMY_3f7" />
+    <item type="string" name="APKTOOL_DUMMY_3f8" />
+    <item type="string" name="APKTOOL_DUMMY_3f9" />
+    <item type="string" name="APKTOOL_DUMMY_3fa" />
+    <item type="string" name="APKTOOL_DUMMY_3fb" />
+    <item type="string" name="APKTOOL_DUMMY_3fc" />
     <string name="raw_desc">RAW</string>
     <string name="raw_output_desc">Roghanna Mód RAW</string>
     <string name="raw_output_off_desc">JPEG amháin</string>
     <string name="raw_output_on_desc">RAW + JPEG</string>
+    <item type="string" name="APKTOOL_DUMMY_401" />
+    <item type="string" name="APKTOOL_DUMMY_402" />
     <string name="record_location_notification">Sábháil suíomh</string>
     <string name="reduce_noise_when_talk_tooltip">Cuidíonn sé le torann nach dteastaíonn a laghdú agus tú ag caint</string>
     <string name="resume_video_recording">Lean ar Thaifeadadh</string>
@@ -618,6 +997,8 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="retouching_edu_image_light_desc">Portráid de dhuine a bhfuil athtouchtú aghaidh caolchúiseach curtha i bhfeidhm. Tá uigeacht an chraicinn beagán smoothed agus laghdaítear gnéithe craiceann cosúil le coinleach agus freckles ach fós le feiceáil.</string>
     <string name="retouching_edu_image_off_desc">Portráid de dhuine gan athtouchtú aghaidhe curtha i bhfeidhm. Níl a gcraiceann smoothed le Face Retouch.</string>
     <string name="retouching_edu_image_strong_desc">Grianghraf portráid de dhuine a bhfuil athtouchtú aghaidh bog curtha i bhfeidhm aige. Tá uigeacht an chraiceann smoothed go feiceálach agus b’fhéidir nach léir gnéithe craiceann ar nós freckles agus coinleach.</string>
+    <item type="string" name="APKTOOL_DUMMY_40e" />
+    <item type="string" name="APKTOOL_DUMMY_40f" />
     <string name="retouching_edu_title">Cuir atriall aghaidhe</string>
     <string name="review_button_description">Léirmheas</string>
     <string name="review_photo_description">Athbhreithnigh Grianghraf</string>
@@ -625,24 +1006,43 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
     <string name="rotate_ccw_description">Rothlaigh gléas tuathal</string>
     <string name="rotate_cw_description">Rothlaigh gléas deiseal</string>
     <string name="scan_document">Scan Doiciméad</string>
+    <item type="string" name="APKTOOL_DUMMY_417" />
+    <item type="string" name="APKTOOL_DUMMY_418" />
+    <item type="string" name="APKTOOL_DUMMY_419" />
     <string name="selfie_angle_bottom_sheet_description">Agus selfie á ghlacadh agat, bain triail as an gceamara a choinneáil díreach os cionn do shúile.</string>
     <string name="selfie_angle_bottom_sheet_setting_button">Díchumasaigh Leideanna sna Socruithe</string>
     <string name="selfie_angle_bottom_sheet_title">Tóg selfie iontach</string>
     <string name="selfie_angle_bottom_sheet_turn_off_button">Ruig</string>
     <string name="selfie_angle_message">Déan iarracht an ceamara a ardú go dtí uillinn eile</string>
+    <item type="string" name="APKTOOL_DUMMY_41f" />
+    <item type="string" name="APKTOOL_DUMMY_420" />
+    <item type="string" name="APKTOOL_DUMMY_421" />
     <string name="session_saving_image">Á shábháil…</string>
+    <item type="string" name="APKTOOL_DUMMY_423" />
     <string name="setting_camera_photo">Taifeach Grianghraf Ceamara</string>
     <string name="setting_composition">Cumadóireacht</string>
+    <item type="string" name="APKTOOL_DUMMY_426" />
     <string name="setting_general">Ginearálta</string>
     <string name="setting_google_feedback">Cuir isteach aiseolas</string>
     <string name="setting_google_help">Cabhair</string>
     <string name="setting_google_help_and_feedback">Cabhair &amp; Aiseolas</string>
     <string name="setting_grid_mode">Cineál Eangaí</string>
+    <item type="string" name="APKTOOL_DUMMY_42c" />
+    <item type="string" name="APKTOOL_DUMMY_42d" />
+    <item type="string" name="APKTOOL_DUMMY_42e" />
     <string name="setting_off">Díchumasaithe</string>
+    <item type="string" name="APKTOOL_DUMMY_430" />
+    <item type="string" name="APKTOOL_DUMMY_431" />
+    <item type="string" name="APKTOOL_DUMMY_432" />
+    <item type="string" name="APKTOOL_DUMMY_433" />
+    <item type="string" name="APKTOOL_DUMMY_434" />
     <string name="settings_button">Socruithe</string>
+    <item type="string" name="APKTOOL_DUMMY_436" />
     <string name="settings_changed_item_description">Má tá sé cumasaithe, athrófar socrú %s.</string>
+    <item type="string" name="APKTOOL_DUMMY_438" />
     <string name="settings_impacted_button">Socruithe le hathrú</string>
     <string name="settings_open_desc">Oscail Socruithe</string>
+    <item type="string" name="APKTOOL_DUMMY_43b" />
     <string name="setup_mars_description">Sábháil do ghrianghraif agus físeáin chuig spás stórála príobháideach in Google Photos ar do ghléas. Oscail an fillteán faoi ghlas ag baint úsáide as rogha glasála scáileáin an ghléis reatha.</string>
     <string name="setup_mars_title">Socraigh fillteán faoi ghlas</string>
     <string name="shadow_ev_announcement">Scáth anois %1$s</string>
@@ -651,7 +1051,9 @@ Ní bheidh aghaidheanna coitianta ar fáil agus grianghraif agus físeáin á s�
 íomhá"</string>
     <string name="shadow_knob_tooltip_with_tips_description">"Coigeartaigh páirteanna dorcha amháin
 den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
+    <item type="string" name="APKTOOL_DUMMY_442" />
     <string name="share_starting">Ag roinnt le %s…</string>
+    <item type="string" name="APKTOOL_DUMMY_444" />
     <string name="shared_camera_mode_chip_description">Ar ais go dtí an Ceamara</string>
     <string name="shared_camera_mode_name">Ceamara</string>
     <string name="shortcut_selfie_long_label">Tóg selfie</string>
@@ -660,6 +1062,7 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="shortcut_video_short_label">Físeán</string>
     <string name="sixteen_by_nine">Gearr Mór (16:9)</string>
     <string name="sixteen_by_nine_desc">leud a sé déag le naoi</string>
+    <item type="string" name="APKTOOL_DUMMY_44d" />
     <string name="social_share_off">Díchumasaithe</string>
     <string name="social_share_on">Ar</string>
     <string name="social_toast_activity_not_found">Ní féidir a roinnt le %s! Bain triail eile as.</string>
@@ -676,6 +1079,7 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="speech_enhance_off_desc">Feabhsú cainte múchta</string>
     <string name="speech_enhance_on">Ar</string>
     <string name="speech_enhance_on_desc">Feabhsú Cainte Cumasaithe</string>
+    <item type="string" name="APKTOOL_DUMMY_45e" />
     <string name="speed_up_ratio_no_translated">%sx</string>
     <string name="split_1213954198">gabháil chliste</string>
     <string name="split_141653832">Portráid agus gnéithe dúchasacha</string>
@@ -712,6 +1116,9 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="stabilization_title_enhanced">Réamhshocrú</string>
     <string name="stabilization_title_locking">Glais</string>
     <string name="stabilization_title_panning">Pana Pictiúrlann</string>
+    <item type="string" name="APKTOOL_DUMMY_483" />
+    <item type="string" name="APKTOOL_DUMMY_484" />
+    <item type="string" name="APKTOOL_DUMMY_485" />
     <string name="storage_estimate">%1$s nó %2$s</string>
     <string name="storage_low_warning_toast">Stóráil íseal. Tapáil chun</string>
     <string name="storage_remaining">%s fágtha</string>
@@ -730,25 +1137,39 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="storage_saver_settings_changed_detail_6">Déanfar físeáin a thaifeadadh in Iomlán HD (1080p)</string>
     <string name="storage_saver_settings_changed_detail_7">Taifeadfar físeáin ag 30 fráma in aghaidh an tsoicind</string>
     <string name="subject_moved_fast_chip">Bogadh an t-ábhar ró-thapa</string>
+    <item type="string" name="APKTOOL_DUMMY_498" />
     <string name="summary_collapsed_preference_list">%1$s, %2$s</string>
+    <item type="string" name="APKTOOL_DUMMY_49a" />
+    <item type="string" name="APKTOOL_DUMMY_49b" />
+    <item type="string" name="APKTOOL_DUMMY_49c" />
     <string name="tap_to_start">Chun tús a chur leis, tapáil an deilbhín thíos</string>
     <string name="terms_of_service">Téarmaí Seirbhíse</string>
     <string name="text_copied_to_clipboard">Cóipeáladh an téacs chuig an ngearrthaisce</string>
+    <item type="string" name="APKTOOL_DUMMY_4a0" />
+    <item type="string" name="APKTOOL_DUMMY_4a1" />
+    <item type="string" name="APKTOOL_DUMMY_4a2" />
+    <item type="string" name="APKTOOL_DUMMY_4a3" />
+    <item type="string" name="APKTOOL_DUMMY_4a4" />
     <string name="thermal_ev_controls_limited_chip_text">Tá an gléas ró-the. Tá srianta nochta teoranta.</string>
     <string name="thermal_flash_disabled_chip_text">Tá an gléas ró-the. Díchumasaíodh Flash.</string>
+    <item type="string" name="APKTOOL_DUMMY_4a7" />
     <string name="thermal_recording_disasbled_chip_text">Tá an gléas ró-the. Dún an ceamara go dtí go bhfuaraíonn an gléas síos.</string>
     <string name="thermal_recording_stopped_chip_text">Stopadh an taifeadadh. Dún an ceamara go dtí go bhfuaraíonn an gléas síos.</string>
     <string name="thermal_video_quality_chip_text">Tá an gléas ró-the. Seans go gcuirfear isteach ar cháilíocht an fhíseáin.</string>
     <string name="three_by_four">Immersive Gearr</string>
     <string name="three_by_four_desc">Barr tumtha</string>
+    <item type="string" name="APKTOOL_DUMMY_4ad" />
     <string name="time_difference_now">Anois</string>
     <string name="time_difference_short_days_and_hours">%1$s %2$s</string>
     <string name="time_difference_short_hours_and_minutes">%1$s %2$s</string>
+    <item type="string" name="APKTOOL_DUMMY_4b1" />
     <string name="timelapse_record_speed">%d×</string>
     <string name="timelapse_suggestion_text">Déan imeacht ama</string>
     <string name="timer_10_seconds">10 soicind</string>
+    <item type="string" name="APKTOOL_DUMMY_4b5" />
     <string name="timer_10_seconds_option_desc">Uamadóir 10 soicind</string>
     <string name="timer_3_seconds">3 soicind</string>
+    <item type="string" name="APKTOOL_DUMMY_4b8" />
     <string name="timer_3_seconds_option_desc">uaineadóir 3 soicind</string>
     <string name="timer_auto">Uathoibríoch</string>
     <string name="timer_auto_desc">Uath-amadóir</string>
@@ -756,9 +1177,12 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="timer_off">Díchumasaithe</string>
     <string name="timer_off_desc">Amadóir as</string>
     <string name="timer_options_desc">Roghanna Amadóir</string>
+    <item type="string" name="APKTOOL_DUMMY_4c0" />
+    <item type="string" name="APKTOOL_DUMMY_4c1" />
     <string name="toast_cannot_play_video">Ní féidir réamhamharc ar an gceamara. Bain triail as Grianghraif.</string>
     <string name="toast_motion_text">Príomhghrianghraf</string>
     <string name="toast_options">Roghanna</string>
+    <item type="string" name="APKTOOL_DUMMY_4c5" />
     <string name="too_fast">Ró-ghasta</string>
     <string name="tooltip_msg_hfr_record_speed_1_4x">Maith do spóirt</string>
     <string name="tooltip_msg_hfr_record_speed_1_8x">Go maith do ghluaiseachtaí gasta</string>
@@ -775,16 +1199,26 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="top_center">Ionad barr</string>
     <string name="top_left">Ar chlé ar bharr</string>
     <string name="top_right">Ar dheis ar bharr</string>
+    <item type="string" name="APKTOOL_DUMMY_4d6" />
+    <item type="string" name="APKTOOL_DUMMY_4d7" />
+    <item type="string" name="APKTOOL_DUMMY_4d8" />
     <string name="translate_tooltip_body">Aistrigh téacs láithreach nó faigh eolas faoi na rudaí a fheiceann tú</string>
     <string name="translate_tooltip_title">Aistriúchán beo agus tuilleadh</string>
     <string name="translate_tooltip_try_it">Bain triail as</string>
     <string name="try_speech_enhancement_tooltip">Bain triail as Feabhsú Cainte</string>
     <string name="try_stabilization_tooltip">Bain triail as cobhsú físeáin</string>
+    <item type="string" name="APKTOOL_DUMMY_4de" />
     <string name="turn_off_lsm_dialog_message">Chun an socrú seo a athrú, díchumasaigh Sábháil Stórála sna Socruithe.</string>
     <string name="turn_off_lsm_dialog_title">Múch Sábháil an Stórála?</string>
+    <item type="string" name="APKTOOL_DUMMY_4e1" />
+    <item type="string" name="APKTOOL_DUMMY_4e2" />
+    <item type="string" name="APKTOOL_DUMMY_4e3" />
+    <item type="string" name="APKTOOL_DUMMY_4e4" />
     <string name="update_camera_to_use_lens">Seiceáil le haghaidh nuashonruithe</string>
     <string name="update_failed_notification_text">Theip ar nuashonrú an cheamara. Comhdaigh fabht.</string>
     <string name="update_failed_notification_title">Nuashonrú Ceamara</string>
+    <item type="string" name="APKTOOL_DUMMY_4e8" />
+    <item type="string" name="APKTOOL_DUMMY_4e9" />
     <string name="update_ready_tap_restart">Tá an nuashonrú réidh. Tapáil chun atosú agus suiteáil.</string>
     <string name="v7_preference_off">OFF</string>
     <string name="v7_preference_on">AR</string>
@@ -798,10 +1232,13 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="vid_chip_recording_too_short">Físeán gan sábháil. Tá an t-am taifeadta ró-ghearr.</string>
     <string name="vid_chip_session_err">Níorbh fhéidir an físeán a thaifeadadh. Scoir den mhód físeáin agus bain triail eile as.</string>
     <string name="video_accessibility_peek">Físeán taifeadta</string>
+    <item type="string" name="APKTOOL_DUMMY_4f7" />
     <string name="video_control_play">Seinn Físeán</string>
     <string name="video_date_content_description">Físeán glactha ag %s</string>
+    <item type="string" name="APKTOOL_DUMMY_4fa" />
     <string name="video_intent_label">Físeán</string>
     <string name="video_mode_title">Gnáth</string>
+    <item type="string" name="APKTOOL_DUMMY_4fd" />
     <string name="video_recording_paused_indicator">SOSED %1$s</string>
     <string name="video_res">Taifeach</string>
     <string name="video_res_4k">4K (taifeach ultra-ard)</string>
@@ -810,7 +1247,9 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="video_res_fhd">HD Iomlán (1080p)</string>
     <string name="video_res_fhd_desc">1080p HD Iomlán</string>
     <string name="video_storage_full_error_free_up_space">Saor suas spás</string>
+    <item type="string" name="APKTOOL_DUMMY_506" />
     <string name="video_storage_full_error_recording_dialog_title">Ní féidir tuilleadh físeáin a thaifeadadh</string>
+    <item type="string" name="APKTOOL_DUMMY_508" />
     <string name="video_storage_max_duration_dialog_body">Tá an teorainn ré sroichte ag an bhfíseán.</string>
     <string name="video_storage_max_file_size_dialog_body">Tá teorainn 4GB bainte amach ag an bhfíseán.</string>
     <string name="view_in_settings_button">Téigh go Socruithe</string>
@@ -818,6 +1257,8 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="volume_key_shutter">Clóire</string>
     <string name="volume_key_volume">Imleabhar</string>
     <string name="volume_key_zoom">Súmáil</string>
+    <item type="string" name="APKTOOL_DUMMY_510" />
+    <item type="string" name="APKTOOL_DUMMY_511" />
     <string name="warm_light_on_with_flash">Soilfidh an scáileán</string>
     <string name="wb_accessibility_content_description_reset_button">Athshocraigh an Cnaipe Iarmhéid Bán</string>
     <string name="wb_accessibility_content_description_slider">Iarmhéid Bán</string>
@@ -827,8 +1268,36 @@ den íomhá. Tapáil chun tuilleadh a fhoghlaim"</string>
     <string name="wb_education_bottom_sheet_info">Chun an chaoi a dtaispeántar dathanna ar do ghléas a choigeartú, cuir an ceartúchán datha ar siúl.</string>
     <string name="wb_education_bottom_sheet_information_settings">Socruithe</string>
     <string name="wb_education_bottom_sheet_title">Iarmhéid Bán</string>
+    <item type="string" name="APKTOOL_DUMMY_51b" />
+    <item type="string" name="APKTOOL_DUMMY_51c" />
+    <item type="string" name="APKTOOL_DUMMY_51d" />
+    <item type="string" name="APKTOOL_DUMMY_51e" />
     <string name="wear_install_notification_toast">Cuir an socrú i gcrích ar an uaireadóir</string>
+    <item type="string" name="APKTOOL_DUMMY_520" />
+    <item type="string" name="APKTOOL_DUMMY_521" />
+    <item type="string" name="APKTOOL_DUMMY_522" />
+    <item type="string" name="APKTOOL_DUMMY_523" />
+    <item type="string" name="APKTOOL_DUMMY_524" />
+    <item type="string" name="APKTOOL_DUMMY_525" />
+    <item type="string" name="APKTOOL_DUMMY_526" />
+    <item type="string" name="APKTOOL_DUMMY_527" />
+    <item type="string" name="APKTOOL_DUMMY_528" />
+    <item type="string" name="APKTOOL_DUMMY_529" />
+    <item type="string" name="APKTOOL_DUMMY_52a" />
+    <item type="string" name="APKTOOL_DUMMY_52b" />
+    <item type="string" name="APKTOOL_DUMMY_52c" />
+    <item type="string" name="APKTOOL_DUMMY_52d" />
+    <item type="string" name="APKTOOL_DUMMY_52e" />
+    <item type="string" name="APKTOOL_DUMMY_52f" />
     <string name="wide_angle_accessibility_peek">Glacadh seat uillinn leathan</string>
+    <item type="string" name="APKTOOL_DUMMY_531" />
+    <item type="string" name="APKTOOL_DUMMY_532" />
+    <item type="string" name="APKTOOL_DUMMY_533" />
+    <item type="string" name="APKTOOL_DUMMY_534" />
+    <item type="string" name="APKTOOL_DUMMY_535" />
+    <item type="string" name="APKTOOL_DUMMY_536" />
+    <item type="string" name="APKTOOL_DUMMY_537" />
+    <item type="string" name="APKTOOL_DUMMY_538" />
     <string name="zoom_ffc_wide_tooltip">Súmáil amach le haghaidh selfies níos leithne</string>
     <string name="zoom_minus_desc">Laghdaigh</string>
     <string name="zoom_plus_desc">Súmáil isteach</string>
@@ -1161,4 +1630,10 @@ An fhormáid a úsáidtear chun an dath a stóráil le linn an ionchódaithe."</
     <string name="focus_lock_time_12">12 soicind.</string>
     <string name="focus_lock_time_16">16 soicind.</string>
     <string name="c2a_auto">Uathoibríoch</string>
+    <item type="string" name="APKTOOL_DUMMY_61" />
+    <item type="string" name="APKTOOL_DUMMY_62" />
+    <item type="string" name="APKTOOL_DUMMY_63" />
+    <item type="string" name="APKTOOL_DUMMY_64" />
+    <item type="string" name="APKTOOL_DUMMY_65" />
+    <item type="string" name="APKTOOL_DUMMY_66" />
 </resources>

@@ -330,7 +330,7 @@
     <item type="color" name="APKTOOL_DUMMY_186" />
     <item type="color" name="APKTOOL_DUMMY_187" />
     <item type="color" name="APKTOOL_DUMMY_188" />
-    <color name="gm3_ref_palette_dynamic_tertiary900">@*android:color/Indigo_700</color>
+    <color name="gm3_ref_palette_dynamic_tertiary900">#303F9F</color>
     <color name="gm3_ref_palette_error0">#ffffffff</color>
     <item type="color" name="APKTOOL_DUMMY_18b" />
     <item type="color" name="APKTOOL_DUMMY_18c" />
