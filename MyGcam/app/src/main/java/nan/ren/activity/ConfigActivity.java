@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
@@ -50,6 +51,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); // 隐藏标题栏
         setContentViewBySelf();
     }
 

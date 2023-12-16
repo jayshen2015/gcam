@@ -31,7 +31,7 @@ public class LutUtil {
         if(downDir!=null && downDir.exists()&&downDir.listFiles()!=null){
             for(File file : downDir.listFiles()){
                 if(file==null||!file.exists()||file.isFile())continue;
-                if(file.getName().startsWith("AGC.")) {
+                if(file.getName().startsWith("AGC")) {
                     List<File> tmpFiles=getLuts1(file.getAbsolutePath()+"/luts/");
                     if(tmpFiles!=null)list.addAll(tmpFiles);
                 }

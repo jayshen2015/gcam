@@ -19,6 +19,8 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Size;
 import com.Utils.Pref;
+import com.agc.util.AssetsUtil;
+
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -404,7 +406,10 @@ public class WaterMarkUtil {
 //        return AgcUtil.dp2px(CONTEXT,f);
 //    }
     public static Map getAllWmConfMap(){
-        JSONArray configList= getAllWmConfList2();
+        JSONArray configList= getAllWmConfList1();
+        if(configList==null||configList.isEmpty()){
+            configList= getAllWmConfList2();
+        }
         Map<String,JSONObject> configMap=new LinkedHashMap<>();
         if(configList==null||configList.isEmpty())return configMap;
         for (int i=0;i<configList.length();i++){
@@ -415,13 +420,14 @@ public class WaterMarkUtil {
         }
         return configMap;
     }
-
     /**
      * 将watermark.conf转换为JSON
      * @return
      */
-    public static JSONArray getAllWmConfList2(){
+    public static JSONArray getAllWmConfList1(){
         JSONArray result=new JSONArray();
+        JSONArray cfgArrInner=getWmConfigByFile(AssetsUtil.getAssetsFile(G.CONTEXT,"watermark.conf"));
+        if(cfgArrInner!=null) result.addAll(cfgArrInner);
         JSONArray cfgArr1=getWmConfigByFile(new File(G.BASE_AGC_PATH+"/watermark.conf"));
         if(cfgArr1!=null) result.addAll(cfgArr1);
         List<File> configListInDir =FileUtil.getChildList(G.WATERMARK_PATH);
@@ -430,6 +436,29 @@ public class WaterMarkUtil {
                 if(cfgFile!=null && cfgFile.getName().toLowerCase().endsWith(".conf")) {
                     JSONArray tmpCfg = getWmConfigByFile(cfgFile);
                     if(tmpCfg!=null) result.addAll(tmpCfg);
+                }
+            }
+        }
+        return result;
+    }
+    /**
+     * 将watermark.conf转换为JSON
+     * @return
+     */
+    public static JSONArray getAllWmConfList2(){
+        JSONArray result=new JSONArray();
+        File downloadPath=new File("/sdcard/Download");
+        for (File pF:downloadPath.listFiles()){
+            if(pF.isFile())continue;
+            if(pF.getName().toUpperCase().startsWith("AGC")){
+                File[] configListInDir =pF.listFiles();
+                if(configListInDir!=null){
+                    for (File cfgFile:configListInDir){
+                        if(cfgFile!=null && cfgFile.getName().toLowerCase().endsWith(".conf")) {
+                            JSONArray tmpCfg = getWmConfigByFile(cfgFile);
+                            if(tmpCfg!=null) result.addAll(tmpCfg);
+                        }
+                    }
                 }
             }
         }
@@ -699,6 +728,7 @@ public class WaterMarkUtil {
                     bitmap = picBit;
                 } else {
                     image=getTextByFormat(image,null,picExi);
+                    if(image.startsWith("logos/"))image=image.substring(6);
                     if (image.indexOf("/") < 0) {
                         bitmap = ImageUtil.getMyLogo(image);
                     } else {
@@ -926,7 +956,6 @@ public class WaterMarkUtil {
                         v = NUtil.getProp(attr.substring(6), "");
                     } else if (attr.toLowerCase().startsWith("$") && (v==null||v.toString().trim().isEmpty())) {
                         v = Pref.getStringValue(attr.substring(1), attr);
-
                     }
                     if(v==null){
                         v="";
@@ -1160,7 +1189,7 @@ public class WaterMarkUtil {
          return result==null?conf:result;
     }
 
-    static JSONObject initConfigCustomAndParams(JSONObject mainConf,JSONObject parentConf){
+     static JSONObject initConfigCustomAndParams(JSONObject mainConf,JSONObject parentConf){
         if(mainConf==null||mainConf.isEmpty())return mainConf;
         String wmConfigStr = mainConf.toString();
         String configName=parentConf.getString("name");
@@ -1171,7 +1200,10 @@ public class WaterMarkUtil {
                     JSONObject customObj=customArr.getJSONObject(i);
                     String key=customObj.getString("key");
                     if(ObjectUtil.isEmpty(key))continue;
-                    String value=Pref.getStringValue(configName+":"+key,customObj.getString("def",""));
+                    String dev=customObj.getString("def","");
+                    if(dev.startsWith("$os."))dev = NUtil.getProp(dev.substring(4), "");
+                    else if(dev.startsWith("$"))dev=Pref.getStringValue(dev.substring(1),"未设置");
+                    String value=Pref.getStringValue(configName+":"+key,dev);
                     wmConfigStr=wmConfigStr.replace("{" + key + "}",value);
                 }
             } catch (Exception ex) {   }

@@ -187,6 +187,22 @@ public class ExifInterfaceUtil {
         }
         try{exif.saveAttributes();}catch (Exception ex){}
     }
+
+    public static void copyExifInterface(String str, ExifInterface exifInterface, String str2) {
+        try {
+            ExifInterface exifInterface2 = new ExifInterface(str);
+            for (String str3 : ExifInterface_Field_List) {
+                String attribute = exifInterface.getAttribute(str3);
+                if (attribute != null && !attribute.trim().isEmpty()) {
+                    exifInterface2.setAttribute(str3, attribute);
+                }
+            }
+            exifInterface2.setAttribute("ImageDescription", str2);
+            saveExifInterface(exifInterface2);
+        } catch (Exception e) {
+        }
+    }
+
     public static void copyExifInterface(String filePath,String srcfile)  {
         try {
             copyExifInterface(filePath, new ExifInterface(srcfile));

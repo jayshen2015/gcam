@@ -17,6 +17,7 @@ import android.util.Size;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -85,6 +86,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); // 隐藏标题栏
         Intent intent=getIntent();
         srcImagePath=intent.getStringExtra("imagePath");
         configName=Pref.getStringValue("pref_watermark_type_key",DEF_TYPE_TXT);
@@ -139,7 +141,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
             iv = new ImageView(WmActivity.this);
             iv.setId(View.generateViewId());
             iv.setBackgroundColor(Color.parseColor("#11223344"));
-            rl.setPadding(0,0,0,0);
+            rl.setPadding(5,5,5,5);
             rl.addView(iv);
             //  rl.addView(getBottomView());
             gridLayout.addView(rl,0);
@@ -463,8 +465,13 @@ public class WmActivity extends Activity implements View.OnClickListener {
             JSONArray customs = wmConfig.getJSONArray("custom");
             for (int k = 0; k < customs.length(); k++) {
                 JSONObject o = customs.getJSONObject(k);
-                if (o.containsKey("key"))
-                    o.put("value", Pref.getStringValue(configName + ":" + o.getString("key"), o.getString("def", "")));
+                if (o.containsKey("key")) {
+                    String dev=o.getString("def","");
+                    if(dev.startsWith("$os."))dev = NUtil.getProp(dev.substring(4), "");
+                    else if(dev.startsWith("$"))dev=Pref.getStringValue(dev.substring(1),"未设置");
+                    o.put("def",dev);
+                    o.put("value", Pref.getStringValue(configName + ":" + o.getString("key"), dev));
+                }
                 customs.set(k, o);
             }
             custConfigView = getListEditView(customs, "该水印无需设置参数",2,ivHeight);
@@ -520,10 +527,15 @@ public class WmActivity extends Activity implements View.OnClickListener {
         Object tag=null;
         if(type.equalsIgnoreCase("image")){
             ImageButton selectLogoBtn=new ImageButton(this);
-            selectLogoBtn.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+            selectLogoBtn.setLayoutParams(new LinearLayout.LayoutParams(100,100));
             selectLogoBtn.setMinimumHeight(100);
             selectLogoBtn.setMinimumWidth(100);
-            selectLogoBtn.setImageDrawable(ImageUtil.bitmap2Drawable(ImageUtil.getMyLogo(v)));
+            selectLogoBtn.setMaxWidth(100);
+            selectLogoBtn.setMaxHeight(100);
+            Bitmap logtbt=ImageUtil.getMyLogo(v);
+            if(logtbt!=null){
+                selectLogoBtn.setImageDrawable(ImageUtil.bitmap2Drawable(ImageUtil.compressImageBySize(logtbt,new Size(-1,80))));
+            }
             selectLogoBtn.setTag(v);
             selectLogoBtn.setId(1000+View.generateViewId());
             selectLogoBtn.setOnClickListener(new View.OnClickListener() {

@@ -125,10 +125,13 @@ public class FileUtil {
         return null;
     }
     public static boolean writeFile(String fileName,String data){
+        return writeFile(fileName,data,false);
+    }
+    public static boolean writeFile(String fileName,String data,boolean append){
         FileOutputStream fout=null;
         try{
             //fout = openFileOutput(fileName, MODE_PRIVATE);
-            fout = new FileOutputStream(fileName,false);
+            fout = new FileOutputStream(fileName,append);
             byte [] bytes = data.getBytes();
             fout.write(bytes);
             fout.close();

@@ -18,6 +18,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
@@ -75,12 +76,10 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
 
     SeekBar rateSeekBar;
     int index=0;
-    static {
-        GRID_COLUMN_COUNT=Pref.MenuValue("my_lut_grid_column_cnt",2);
-        int widthPixels=G.RESOURCES.getDisplayMetrics().widthPixels;
-        int heightPixels=G.RESOURCES.getDisplayMetrics().heightPixels;
-        picSize=new Size((int)(widthPixels/GRID_COLUMN_COUNT)-30,(int)(0.9f*heightPixels/GRID_COLUMN_COUNT));
 
+    void initP(){
+        GRID_COLUMN_COUNT=Pref.MenuValue("my_lut_grid_column_cnt",2);
+        changeColumn(GRID_COLUMN_COUNT);
         dsp=G.RESOURCES.getDisplayMetrics().scaledDensity;
         fontSize= Pref.MenuValue("my_lut_preview_fontsize",fontSize);
         close_btn_height = (int)(  Pref.MenuValue("my_lut_preview_close_btn_height",close_btn_height) + 0.5);
@@ -96,13 +95,13 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
     }
 
     void changeColumn(int c){
-        if(GRID_COLUMN_COUNT==c)return;
-        GRID_COLUMN_COUNT=c;
-        pageSize=GRID_COLUMN_COUNT*4;
-        Pref.setMenuValue("my_lut_grid_column_cnt",c);
+        pageSize=c*4;
         int widthPixels=G.RESOURCES.getDisplayMetrics().widthPixels;
         int heightPixels=G.RESOURCES.getDisplayMetrics().heightPixels;
-        picSize=new Size((int)(widthPixels/GRID_COLUMN_COUNT)-30,(int)(0.9f*heightPixels/GRID_COLUMN_COUNT));
+        picSize=new Size((int)(widthPixels/c),(int)(0.9f*heightPixels/c));
+        if(GRID_COLUMN_COUNT==c)return;
+        Pref.setMenuValue("my_lut_grid_column_cnt",c);
+        GRID_COLUMN_COUNT=c;
         gridLayout.removeAllViews();
         gridLayout.setColumnCount(c);
         show();
@@ -110,9 +109,12 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
     @Override
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
+        requestWindowFeature(Window.FEATURE_NO_TITLE); // 隐藏标题栏
+
         Intent intent=getIntent();
         srcImagePath=intent.getStringExtra("imagePath");
         lutsFile =  LutUtil.getLuts();
+        initP();
         if(srcImagePath!=null && !srcImagePath.trim().isEmpty() && new File(srcImagePath).exists()){
             setContentViewBySelf(false);
             show();
@@ -136,7 +138,6 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
         index=0;
         int ps=Math.max(pageSize,(G.RESOURCES.getDisplayMetrics().heightPixels/imgLp.height)*GRID_COLUMN_COUNT);
         addPage(ps);
-
     }
 
     long lastClickTime=0;
@@ -175,7 +176,7 @@ public class PreviewActivity extends Activity implements ViewTreeObserver.OnScro
                     }
                 }
             });
-            rl.setPadding(0,0,0,0);
+            rl.setPadding(5,0,5,5);
             rl.addView(iv);
             rl.addView(getBottomView(lut,lut_intensit));
             rl.setLayoutParams(llLp);

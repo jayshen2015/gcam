@@ -2,6 +2,7 @@ package nan.ren.util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
@@ -142,6 +143,8 @@ public class ImageUtil {
         return compressImageWidthLength(bitmap,maxSize);// 压缩好比例大小后再进行质量压缩
     }
 
+
+
     public static Bitmap compressImageLess100(Bitmap image) {
         return compressImageWidthLength(image,100);
     }
@@ -211,6 +214,24 @@ public class ImageUtil {
         } catch (Exception e) {
             if(bos!=null)try{bos.close();}catch (Exception e2){}
         }
+    }
+
+    // 等比缩放图片
+    public static Bitmap compressImageBySize(Bitmap bm, Size size){
+        if(bm==null)return null;
+        // 获得图片的宽高
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        // 计算缩放比例
+        float scaleWidth = ((float) size.getWidth()) / width;
+        float scaleHeight = ((float) size.getHeight()) / height;
+        if(size.getWidth()<=0)scaleWidth=scaleHeight;
+        else scaleHeight=scaleWidth;
+        // 取得想要缩放的matrix参数
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        // 得到新的图片
+        return Bitmap.createBitmap(bm, 0, 0, width, height, matrix, true);
     }
 
     public static void saveBitmapFile(Bitmap bitmap,String savePath){

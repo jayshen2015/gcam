@@ -3,6 +3,7 @@ package nan.ren;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -24,22 +25,25 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.Globals;
+import com.Utils.Lens;
 import com.Utils.Pref;
 import com.agc.Camera;
 import com.agc.Library;
 import com.agc.Patch;
 import com.agc.Res;
+import com.agc.pref.ConfigLoader;
+import com.agc.util.AssetsUtil;
+import com.agc.util.ImageProcessing;
 import com.agc.widget.OptionButton;
 import com.agc.widget.OptionWindow;
 
 import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -47,8 +51,10 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.locks.Lock;
 
 import agc.Agc;
+import jp.co.cyberagent.android.gpuimage.BuildConfig;
 import jp.co.cyberagent.android.gpuimage.GPUImage;
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageGrayscaleFilter;
 import nan.ren.activity.PreviewActivity;
@@ -56,6 +62,7 @@ import nan.ren.bean.MySurfaceView;
 import nan.ren.button.SsljButton;
 import nan.ren.util.CameraUtil;
 import nan.ren.util.ExifInterfaceUtil;
+import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.JsonUtil;
 import nan.ren.util.LutUtil;
@@ -84,7 +91,6 @@ public class G {
     public static String WATERMARK_PATH;
 
     public static String CAMERA_PATH;
-
     final static Handler handler = new Handler(Looper.getMainLooper());
 
 
@@ -95,6 +101,9 @@ public class G {
         BASE_AGC_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion;
         BASE_AGC_PATH_WIDTH_NO_VERSION= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC";
         PACKAGE_NAME = CONTEXT.getPackageName();
+        if("com.agc.gcam.nanren".equals(PACKAGE_NAME)){
+            BASE_AGC_PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/GCAM";
+        }
         ICON_PATH=G.BASE_AGC_PATH+"/icons/";
         LOGO_PATH=G.BASE_AGC_PATH+"/logos/";
         TMP_PATH=G.BASE_AGC_PATH+"/.tmp/";
@@ -104,12 +113,41 @@ public class G {
         CONFIG_PATH=G.BASE_AGC_PATH+"/configs/";
         WATERMARK_PATH=G.BASE_AGC_PATH+"/watermarks/";
         CAMERA_PATH=Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)+"/Camera/";
-        if(Pref.MenuValue("pref_camera_sounds_key",-1)==-1) {
-            Pref.setMenuValue("pref_camera_sounds_key",0);
+        if(Pref.MenuValue("pref_camera_sounds_key",-1)==-1) Pref.setMenuValue("pref_camera_sounds_key",0);
+        if(Pref.MenuValue("pref_camera_recordlocation_key",-1)==-1) Pref.setMenuValue("pref_camera_recordlocation_key",0);
+        if(!"com.agc.gcam.nanren".equals(PACKAGE_NAME)) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    doFirstRun();
+                }
+            }).start();
         }
-        if(Pref.MenuValue("pref_camera_recordlocation_key",-1)==-1) {
-            Pref.setMenuValue("pref_camera_recordlocation_key",0);
+
+    }
+
+    static void doFirstRun(){
+        File firstInitFilt=new File(CONTEXT.getFilesDir().getAbsolutePath() + File.separator+".firstinit");
+        if(firstInitFilt.exists())return;
+        G.log(">>>>>do  firstInitFilt-----");
+        File tmpCfg=AssetsUtil.getAssetsFile(CONTEXT,"config.tmp");
+        String tmpCfgText= FileUtil.getFileText(tmpCfg.getAbsolutePath());
+        SharedPreferences.Editor editor= Pref.getAppSharedPreferences().edit();
+        for(String cid: Lens.getCameraIdList()){
+            for(String tStr:tmpCfgText.split("\n")){
+                int ksi=tStr.indexOf("\"")+1;
+                int kei=tStr.indexOf(">")-1;
+                int vei=tStr.indexOf("</string>");
+                String tKey=tStr.substring(ksi,kei).replace("{cid}",cid);
+                String tValue=tStr.substring(kei+2,vei);
+                editor.putString(tKey,tValue);
+            }
         }
+        editor.putString("pref_patch_profile_count_key","24");
+        editor.apply();
+        if(!firstInitFilt.getParentFile().exists())firstInitFilt.getParentFile().mkdirs();
+        FileUtil.writeFile(firstInitFilt.getAbsolutePath(),"ok",false);
+        Globals.onRestart();
 
     }
 
@@ -168,7 +206,7 @@ public class G {
     }
 
 
-    public static void  log(Object o){// 107572860  175609286
+    public static void  log(Object o){
         try {
             String msg= (o==null?"【Null】":JsonUtil.toJSONString(o));
             NUtil.log(msg);
@@ -178,8 +216,129 @@ public class G {
         catch (Throwable ex){ }
     }
 
+    public static void medianFilter(String file) {
+        String picPath=file;
+        if (Pref.MenuValue("pref_photo_watermark_key") == 1 && Pref.MenuValue("my_hide_wmbtn") == 0){
+            String wmTypeKey = Pref.getStringValue("pref_watermark_type_key", "0");
+            if (!"0".equals(wmTypeKey)&&!"1".equals(wmTypeKey)) {
+                picPath= WaterMarkUtil.addWaterMark(picPath,true);
+            }
+        }
+        if (Pref.MenuValue("my_preview_luts") == 1) {
+            Intent intent = new Intent(CONTEXT, PreviewActivity.class);
+            intent.putExtra("imagePath",picPath);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+            CONTEXT.startActivity(intent);
+        }
+    }
+
+    public static String doLut84(String str){
+
+        Agc.getImageExif(str, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR);
+        int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
+        if (auxPrefIntValue != 0) {
+            Agc.medianFilter(str, auxPrefIntValue);
+        }
+        String auxProfilePrefStringValue = Pref.getAuxProfilePrefStringValue("lib_lut_key");
+        float auxProfilePrefFloatValue = Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f);
+        if (!ObjectUtil.isEmpty(auxProfilePrefFloatValue)) {
+            Agc.processImageWithLUT(str, str, auxProfilePrefStringValue, auxProfilePrefFloatValue, "");
+        }
+        return str;
+    }
+
+    public static String doLut88(String str){
+        Agc.getImageExif(str, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR);
+        int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
+        if (auxPrefIntValue != 0) {
+            Agc.medianFilter(str, auxPrefIntValue);
+        }
+        ImageProcessing imageProcessing = new ImageProcessing();
+        imageProcessing.setSrcImage(str);
+        String libLutKey = Pref.getAuxProfilePrefStringValue("lib_lut_key");
+
+        if (!ObjectUtil.isEmpty(libLutKey) && !libLutKey.trim().equals("0")) {
+            String str2 = Environment.getExternalStorageDirectory() + Globals.lutPath + libLutKey;
+            if (new File(str2).exists()) {
+                imageProcessing.setLutParamters(str2, Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f));
+            }
+        }
+        imageProcessing.setBrightness(Pref.getAuxProfilePrefFloatValue("lib_gpu_brightness_key", 0));
+        imageProcessing.setExposure(Pref.getAuxProfilePrefFloatValue("lib_gpu_exposure_key", 0));
+        imageProcessing.setContrast(Pref.getAuxProfilePrefFloatValue("lib_gpu_contrast_key", 1.0f));
+        imageProcessing.setGamma(Pref.getAuxProfilePrefFloatValue("lib_gpu_gamma_key", 1.0f));
+        imageProcessing.setSaturation(Pref.getAuxProfilePrefFloatValue("lib_gpu_saturation_key", 1.0f));
+        if (Pref.MenuValue("lib_patch_profile_key") == 2) {
+            imageProcessing.setSaturation(1.25f);
+        }
+        imageProcessing.setHighlights(Pref.getAuxProfilePrefFloatValue("lib_gpu_highlights_key", 1.0f));
+        imageProcessing.setShadows(Pref.getAuxProfilePrefFloatValue("lib_gpu_shadows_key", 0));
+        imageProcessing.setVignetteStart(Pref.getAuxProfilePrefFloatValue("lib_gpu_vignette_start_key", 0));
+        imageProcessing.setVignetteEnd(Pref.getAuxProfilePrefFloatValue("lib_gpu_vignette_end_key", 0));
+        return imageProcessing.saveImageByLUT(false);
+    }
 
     public static void medianFilter(File file) {
+        final String absolutePath = file.getAbsolutePath();
+        if (absolutePath.toLowerCase().endsWith(".dng")) {
+            return;
+        }
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (Globals.sHdr_process == 1) {
+                    handler.postDelayed(this, 100L);
+                } else {
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                ExifInterface exifInterface = new ExifInterface(absolutePath);
+                                String saveImageByLUT = absolutePath;
+                                if(Globals.GcamVersion.equals("8.4")){
+                                    saveImageByLUT=doLut84(saveImageByLUT);
+                                }else{
+                                    saveImageByLUT=doLut88(saveImageByLUT);
+                                }
+                                if (Pref.MenuValue("pref_photo_watermark_key") == 1 && Pref.MenuValue("my_hide_wmbtn") == 0) {
+                                    boolean z2 = Pref.MenuValue("pref_watermark_bg_key") == 1;
+                                    String wmTypeKey = Pref.getStringValue("pref_watermark_type_key", "0");
+                                    if ("0".equals(wmTypeKey)) {
+                                        String stringValue = Pref.getStringValue("pref_watermark_title_key", BuildConfig.FLAVOR);
+                                        String stringValue2 = Pref.getStringValue("pref_watermark_logo_key");
+                                        stringValue2 = (stringValue2 == null || stringValue2.equals(BuildConfig.FLAVOR)) ? "agc88.png" : "agc88.png";
+                                        String str3 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + stringValue2;
+                                        if (!new File(str3).exists()) {
+                                            str3 = AssetsUtil.getAssetsFile(Globals.getAppContext(), "logos/" + stringValue2).getAbsolutePath();
+                                        }
+                                        Agc.drawWatermark(absolutePath, str3, stringValue, z2);
+                                    } else if ("1".equals(wmTypeKey)) {
+                                        Agc.drawTimeWaterMark(absolutePath);
+                                    }else{
+                                        WaterMarkUtil.addWaterMark(absolutePath,true);
+                                    }
+                                }
+                                if (saveImageByLUT.equals(absolutePath) && !Globals.GcamVersion.equals("8.4")){
+                                   ExifInterfaceUtil.copyExifInterface(saveImageByLUT, exifInterface, Globals.mParameters.toString());
+                                }
+                                if (Pref.MenuValue("my_preview_luts") == 1) {
+                                    Intent intent = new Intent(CONTEXT, PreviewActivity.class);
+                                    intent.putExtra("imagePath",absolutePath);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+                                    CONTEXT.startActivity(intent);
+                                }
+                            } catch (IOException e) {
+                                G.log("ExifInterface Error: " + e.getMessage());
+                            }
+                        }
+                    });
+                }
+            }
+        }, 100L);
+    }
+
+    public static void medianFilter2(File file) {
         final String absolutePath = file.getAbsolutePath();
         if(absolutePath.toLowerCase().endsWith(".dng"))return;
         handler.postDelayed(new Runnable() {
@@ -194,7 +353,7 @@ public class G {
                             try {
                                 ExifInterface exifInterface = new ExifInterface(absolutePath);
 
-                               // Agc.getImageExif(absolutePath, "", "", "", "");
+                                //Agc.getImageExif(absolutePath, "", "", "", "");
                                 int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
                                 if (auxPrefIntValue != 0) {
                                     Agc.medianFilter(absolutePath, auxPrefIntValue);
@@ -208,9 +367,22 @@ public class G {
                                 if (Pref.MenuValue("pref_photo_watermark_key") == 1 &&
                                     Pref.MenuValue("my_hide_wmbtn") == 0){
                                     String wmTypeName=Pref.getStringValue("pref_watermark_type_key","0");
+                                    G.log("wmTypeName:"+wmTypeName+"["+("0".equals(wmTypeName))+"]");
                                     if ("0".equals(wmTypeName)) {
-                                       // picPath= WaterMarkUtil.addWaterMark(picPath);
-                                        Agc.drawWatermark(picPath, Pref.getStringValue("pref_watermark_logo_key",G.LOGO_PATH+"agc88.png"), Pref.getStringValue("pref_watermark_title_key","未设置标题"), Pref.MenuValue("pref_watermark_bg_key",0)==0);
+                                        boolean bg=Pref.MenuValue("pref_watermark_bg_key",0)==0;
+                                        try {
+                                            String logoName = Pref.getStringValue("pref_watermark_logo_key", "agc88.png");
+                                            String logFile = G.LOGO_PATH + logoName;
+                                            if (!new File(logFile).exists()) {
+                                                logFile = AssetsUtil.getAssetsFile(Globals.getAppContext(), "logos/" + logoName).getAbsolutePath();
+                                            }
+
+                                            String title=Pref.getStringValue("pref_watermark_title_key", "未设置标题");
+                                         //   G.log("bg-log-title:"+bg+"-"+logFile+"-"+title);
+                                            Agc.drawWatermark(absolutePath, logFile,title , bg);
+                                        }catch (Exception ex){
+                                            ex.printStackTrace();
+                                        }
                                     }else if ("1".equals(wmTypeName)) {
                                         Agc.drawTimeWaterMark(picPath);
                                     }else{
@@ -220,7 +392,7 @@ public class G {
                                 }
                                 if (isPreviewLut) {
                                     Intent intent = new Intent(CONTEXT, PreviewActivity.class);
-                                    intent.putExtra("imagePath",picPath);
+                                    intent.putExtra("imagePath",absolutePath);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
                                     CONTEXT.startActivity(intent);
                                 }
@@ -439,8 +611,6 @@ public class G {
             gpuImage.setFilter(ggf);
             ImageUtil.saveBitmapFile(b,G.TMP_PATH+"Camera.jpg");
         }
-
         return gpuImage.getBitmapWithFilterApplied(b);
     }
-
 }

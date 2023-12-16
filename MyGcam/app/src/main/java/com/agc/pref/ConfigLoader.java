@@ -14,7 +14,9 @@ public class ConfigLoader {
        // show();
     }
 
-
+    public static void importConfig(Context context, String str,boolean igl) {
+//copyFile(str, getFileSharedPreferences(context).getPath());
+    }
     public static void importConfig(Context context, String str) {
 //copyFile(str, getFileSharedPreferences(context).getPath());
     }

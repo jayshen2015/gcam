@@ -55,8 +55,9 @@ public class JSONObject extends HashMap<String,Object> {
 
     public Double getDouble(String k,Double dv){
         Object o=get(k);
-        if(o==null)return dv;
-        return (Double) o;
+        if(ObjectUtil.isEmpty(o))return dv;
+        if(o instanceof Double) return (Double) o;
+        return Double.parseDouble(o.toString().trim());
     }
     public Double getDouble(String k){
         return getDouble(k,null);
@@ -64,8 +65,9 @@ public class JSONObject extends HashMap<String,Object> {
 
     public Integer getInt(String k,Integer dv){
         Object o=get(k);
-        if(o==null)return dv;
-        return (Integer) o;
+        if(ObjectUtil.isEmpty(o))return dv;
+        if(o instanceof Integer) return (Integer) o;
+        return Integer.parseInt(o.toString().trim());
     }
 
     public Integer getInt(String k){

@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light">
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Moli's blog</title>
+    <style>
+.stop{
+	overflow: hidden;
+}
+.start{
+	overflow: overlay;
+}
+</style>
+</head>
+<body style="overflow:hidden">
+<div id="cfg"><input style="width:calc(100% - 130px);" id="root"><input style="width:60px" id="no"><input type="button" style="width:50px" value="加载" onclick="doLoad()"></div>
+<div id="ctx" class="start" style="height:97vh;">
+</div>
+</body>
+</html>
+<script>
+//getFileText getFileList
+var root="/sdcard/download/mhp/"
+var no=100;
+var fileList;
+$("root").value=root;
+$("no").value=no;
+//$("root").style.width=document.body.clientWidth-110-50;
+var ctx=$("ctx");
+var lastTop=0;
+var nIndex=0;
+function doLoad (){
+	root=$("root").value.trim();if(!root.endsWith("/"))root=root+"/";
+	no=$("no").value.trim();
+	var listStr=android.getFileList(root+no);
+	fileList=JSON.parse(listStr);
+	nIndex=0;
+	show(5);
+}
+function show(cnt){
+	for(var i=0;i<cnt;i++){
+		 var img=document.createElement('img');
+		 var f=fileList[nIndex];
+		 var src=f;
+		 if(src.endsWith(".html")){
+			src=android.getFileText(root+no+"/"+src);
+			//console.log(">>>>>>src",src);
+		 }
+		 img.src=src;
+		 img.style.width="100%";
+		 ctx.appendChild(img);
+		 nIndex++;
+	}
+}
+function $(x){
+	return document.getElementById(x)||document.getElementsByName(x)[0];
+}
+
+function startGd(){
+	ctx.classList.add("start");
+	ctx.classList.remove("stop");
+	ctx.scrollTop=lastTop;
+}
+function stopGd(){
+	ctx.classList.remove("start");
+	ctx.classList.add("stop");
+	lastTop=ctx.scrollTop;
+}
+var gdFlag=1;
+ctx.onscroll=function(e){
+		console.log(ctx.scrollTop,"--",ctx.scrollHeight - ctx.clientHeight);
+		if (ctx.scrollTop >= (ctx.scrollHeight - ctx.clientHeight-1)&&gdFlag) {
+			stopGd();
+			gdFlag=0;
+			show(5);
+			setTimeout(function(){gdFlag=1;startGd();},500);
+		}
+};
+</script>

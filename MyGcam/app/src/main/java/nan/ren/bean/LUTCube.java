@@ -41,6 +41,7 @@ class CubeHelp{
             int i = 0;
             while ((line = reader.readLine()) != null) {
                 try {
+              //      System.out.println(">>>>>>>"+line);
                     line=line.trim();
                     if(line.length()<1)continue;
                     char sc=line.charAt(0);
@@ -73,7 +74,7 @@ class CubeHelp{
             }
         }
         array=null;
-        System.gc();
+      //  System.gc();
         return lutBit;
     }
 
