@@ -210,7 +210,7 @@
         }
     .end annotation
 
-    .line 148
+    .line 151
     const/4 v0, 0x0
 
     if-eqz p0, :cond_3
@@ -229,13 +229,13 @@
 
     goto :goto_1
 
-    .line 149
+    .line 152
     :cond_0
     invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
 
     move-result-object v1
 
-    .line 150
+    .line 153
     .local v1, "files":[Ljava/io/File;
     if-eqz v1, :cond_2
 
@@ -247,7 +247,7 @@
 
     goto :goto_0
 
-    .line 151
+    .line 154
     :cond_1
     new-instance v0, Ljava/util/ArrayList;
 
@@ -257,7 +257,7 @@
 
     invoke-direct {v0, v2}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 152
+    .line 155
     .local v0, "fileList":Ljava/util/List;
     new-instance v2, Lnan/ren/util/FileUtil$1;
 
@@ -265,16 +265,16 @@
 
     invoke-interface {v0, v2}, Ljava/util/List;->sort(Ljava/util/Comparator;)V
 
-    .line 168
+    .line 171
     return-object v0
 
-    .line 150
+    .line 153
     .end local v0    # "fileList":Ljava/util/List;
     :cond_2
     :goto_0
     return-object v0
 
-    .line 148
+    .line 151
     .end local v1    # "files":[Ljava/io/File;
     :cond_3
     :goto_1
@@ -295,7 +295,7 @@
         }
     .end annotation
 
-    .line 145
+    .line 148
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
@@ -594,50 +594,64 @@
 .end method
 
 .method public static writeFile(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 4
+    .locals 1
     .param p0, "fileName"    # Ljava/lang/String;
     .param p1, "data"    # Ljava/lang/String;
 
     .line 128
     const/4 v0, 0x0
 
+    invoke-static {p0, p1, v0}, Lnan/ren/util/FileUtil;->writeFile(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static writeFile(Ljava/lang/String;Ljava/lang/String;Z)Z
+    .locals 3
+    .param p0, "fileName"    # Ljava/lang/String;
+    .param p1, "data"    # Ljava/lang/String;
+    .param p2, "append"    # Z
+
     .line 131
-    .local v0, "fout":Ljava/io/FileOutputStream;
-    const/4 v1, 0x0
-
-    :try_start_0
-    new-instance v2, Ljava/io/FileOutputStream;
-
-    invoke-direct {v2, p0, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;Z)V
-
-    move-object v0, v2
-
-    .line 132
-    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v2
-
-    .line 133
-    .local v2, "bytes":[B
-    invoke-virtual {v0, v2}, Ljava/io/FileOutputStream;->write([B)V
+    const/4 v0, 0x0
 
     .line 134
+    .local v0, "fout":Ljava/io/FileOutputStream;
+    :try_start_0
+    new-instance v1, Ljava/io/FileOutputStream;
+
+    invoke-direct {v1, p0, p2}, Ljava/io/FileOutputStream;-><init>(Ljava/lang/String;Z)V
+
+    move-object v0, v1
+
+    .line 135
+    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v1
+
+    .line 136
+    .local v1, "bytes":[B
+    invoke-virtual {v0, v1}, Ljava/io/FileOutputStream;->write([B)V
+
+    .line 137
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 135
-    const/4 v1, 0x1
-
-    return v1
-
-    .line 136
-    .end local v2    # "bytes":[B
-    :catch_0
-    move-exception v2
-
     .line 138
-    .local v2, "e":Ljava/lang/Exception;
+    const/4 v2, 0x1
+
+    return v2
+
+    .line 139
+    .end local v1    # "bytes":[B
+    :catch_0
+    move-exception v1
+
+    .line 141
+    .local v1, "e":Ljava/lang/Exception;
     if-eqz v0, :cond_0
 
     :try_start_1
@@ -647,15 +661,17 @@
 
     goto :goto_0
 
-    .line 139
+    .line 142
     :catch_1
-    move-exception v3
+    move-exception v2
 
     :cond_0
     :goto_0
     nop
 
-    .line 141
-    .end local v2    # "e":Ljava/lang/Exception;
+    .line 144
+    .end local v1    # "e":Ljava/lang/Exception;
+    const/4 v1, 0x0
+
     return v1
 .end method
