@@ -61,16 +61,21 @@
     .param p1, "context"    # Landroid/content/Context;
 
     .line 33
-    invoke-super {p0, p1}, Lcom/agc/widget/GrayscaleButton;->init(Landroid/content/Context;)V
+    const/16 v0, 0xa
+
+    iput v0, p0, Lnan/ren/button/AJButton;->iconPadding:I
 
     .line 34
+    invoke-super {p0, p1}, Lcom/agc/widget/GrayscaleButton;->init(Landroid/content/Context;)V
+
+    .line 35
     new-instance v0, Lnan/ren/button/AJButton$1;
 
     invoke-direct {v0, p0}, Lnan/ren/button/AJButton$1;-><init>(Lnan/ren/button/AJButton;)V
 
     invoke-virtual {p0, v0}, Lnan/ren/button/AJButton;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 41
+    .line 42
     const-string v0, "my_hide_ajbtn"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
@@ -81,12 +86,12 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 42
+    .line 43
     const/16 v0, 0x8
 
     invoke-virtual {p0, v0}, Lnan/ren/button/AJButton;->setVisibility(I)V
 
-    .line 44
+    .line 45
     :cond_0
     return-void
 .end method
@@ -94,12 +99,12 @@
 .method showWmView()V
     .locals 3
 
-    .line 47
+    .line 48
     invoke-virtual {p0}, Lnan/ren/button/AJButton;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 48
+    .line 49
     .local v0, "c":Landroid/content/Context;
     new-instance v1, Landroid/content/Intent;
 
@@ -107,15 +112,15 @@
 
     invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 49
+    .line 50
     .local v1, "intent":Landroid/content/Intent;
     const/high16 v2, 0x10000000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 50
+    .line 51
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 51
+    .line 52
     return-void
 .end method

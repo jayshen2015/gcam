@@ -665,16 +665,19 @@
     .locals 5
     .param p0, "exi"    # Landroid/media/ExifInterface;
 
-    .line 149
+    .line 147
+    if-eqz p0, :cond_2
+
+    .line 148
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 150
+    .line 149
     .local v0, "latLon":[F
     invoke-virtual {p0, v0}, Landroid/media/ExifInterface;->getLatLong([F)Z
 
-    .line 151
+    .line 150
     const/4 v1, 0x0
 
     aget v2, v0, v1
@@ -695,7 +698,7 @@
 
     goto :goto_0
 
-    .line 153
+    .line 152
     :cond_0
     :try_start_0
     aget v2, v0, v2
@@ -718,18 +721,13 @@
 
     return-object v1
 
-    .line 154
+    .line 153
     :catch_0
     move-exception v1
 
-    .line 157
-    new-instance v1, Lnan/ren/util/JSONObject;
+    goto :goto_1
 
-    invoke-direct {v1}, Lnan/ren/util/JSONObject;-><init>()V
-
-    return-object v1
-
-    .line 151
+    .line 150
     :cond_1
     :goto_0
     new-instance v1, Lnan/ren/util/JSONObject;
@@ -737,6 +735,16 @@
     invoke-direct {v1}, Lnan/ren/util/JSONObject;-><init>()V
 
     return-object v1
+
+    .line 157
+    .end local v0    # "latLon":[F
+    :cond_2
+    :goto_1
+    new-instance v0, Lnan/ren/util/JSONObject;
+
+    invoke-direct {v0}, Lnan/ren/util/JSONObject;-><init>()V
+
+    return-object v0
 .end method
 
 .method public static getRegeo(Ljava/lang/Float;Ljava/lang/Float;)Lnan/ren/util/JSONObject;
