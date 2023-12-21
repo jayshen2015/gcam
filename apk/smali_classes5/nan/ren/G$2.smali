@@ -27,7 +27,7 @@
 .method constructor <init>(Landroid/os/Handler;Ljava/lang/String;)V
     .locals 0
 
-    .line 326
+    .line 319
     iput-object p1, p0, Lnan/ren/G$2;->val$handler:Landroid/os/Handler;
 
     iput-object p2, p0, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
@@ -42,14 +42,14 @@
 .method public run()V
     .locals 3
 
-    .line 329
+    .line 322
     sget v0, Lcom/Globals;->sHdr_process:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 330
+    .line 323
     iget-object v0, p0, Lnan/ren/G$2;->val$handler:Landroid/os/Handler;
 
     const-wide/16 v1, 0x64
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 332
+    .line 325
     :cond_0
     new-instance v0, Landroid/os/Handler;
 
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 378
+    .line 368
     :goto_0
     return-void
 .end method

@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 112
+    .line 109
     iput-object p1, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iput-object p2, p0, Lnan/ren/activity/WmActivity$1;->val$that:Lnan/ren/activity/WmActivity;
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 2
 
-    .line 116
+    .line 113
     :try_start_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -57,38 +57,33 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 120
+    .line 116
     goto :goto_0
 
-    .line 117
+    .line 114
     :catch_0
     move-exception v0
 
-    .line 118
+    .line 115
     .local v0, "ex":Ljava/lang/Exception;
     invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 119
-    const/4 v1, 0x0
-
-    sput-object v1, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
-
-    .line 121
+    .line 117
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     sget-object v0, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
     if-nez v0, :cond_0
 
-    .line 122
+    .line 118
     const-string v0, "\u6c34\u5370\u8bbe\u7f6e\u5931\u8d25\uff01\uff01"
 
     invoke-static {v0}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 123
+    .line 119
     return-void
 
-    .line 125
+    .line 121
     :cond_0
     sget-object v0, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
@@ -100,7 +95,7 @@
 
     sput-object v0, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
-    .line 129
+    .line 125
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     sget-object v1, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
@@ -111,7 +106,7 @@
 
     invoke-virtual {v0, v1}, Lnan/ren/activity/WmActivity;->drawImage(Landroid/graphics/drawable/Drawable;)V
 
-    .line 130
+    .line 126
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v0, v0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
@@ -120,7 +115,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 131
+    .line 127
     iget-object v0, p0, Lnan/ren/activity/WmActivity$1;->this$0:Lnan/ren/activity/WmActivity;
 
     iget-object v0, v0, Lnan/ren/activity/WmActivity;->saveButton:Landroid/widget/Button;
@@ -129,6 +124,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 132
+    .line 128
     return-void
 .end method

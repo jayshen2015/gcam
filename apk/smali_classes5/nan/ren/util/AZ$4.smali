@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/util/AZ;->addConfig(Ljava/lang/String;)V
+    value = Lnan/ren/util/AZ;->setImage(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lnan/ren/util/AZ;
 
-.field final synthetic val$cfNameTmp:Ljava/lang/String;
+.field final synthetic val$img:Ljava/lang/String;
 
 
 # direct methods
@@ -28,10 +28,10 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/util/AZ;
 
-    .line 109
+    .line 102
     iput-object p1, p0, Lnan/ren/util/AZ$4;->this$0:Lnan/ren/util/AZ;
 
-    iput-object p2, p0, Lnan/ren/util/AZ$4;->val$cfNameTmp:Ljava/lang/String;
+    iput-object p2, p0, Lnan/ren/util/AZ$4;->val$img:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,41 +41,78 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
-    .line 112
+    .line 105
     iget-object v0, p0, Lnan/ren/util/AZ$4;->this$0:Lnan/ren/util/AZ;
 
     iget-object v0, v0, Lnan/ren/util/AZ;->target:Landroid/view/View;
 
-    check-cast v0, Landroid/widget/Spinner;
+    iget-object v1, p0, Lnan/ren/util/AZ$4;->val$img:Ljava/lang/String;
 
-    invoke-virtual {v0}, Landroid/widget/Spinner;->getAdapter()Landroid/widget/SpinnerAdapter;
+    invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+    .line 106
+    iget-object v0, p0, Lnan/ren/util/AZ$4;->this$0:Lnan/ren/util/AZ;
+
+    iget-object v0, v0, Lnan/ren/util/AZ;->target:Landroid/view/View;
+
+    instance-of v0, v0, Landroid/widget/ImageButton;
+
+    if-eqz v0, :cond_0
+
+    .line 107
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lnan/ren/G;->LOGO_PATH:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/ArrayAdapter;
+    iget-object v1, p0, Lnan/ren/util/AZ$4;->val$img:Ljava/lang/String;
 
-    .line 113
-    .local v0, "adapter":Landroid/widget/ArrayAdapter;
-    iget-object v1, p0, Lnan/ren/util/AZ$4;->val$cfNameTmp:Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const/4 v2, 0x1
+    move-result-object v0
 
-    invoke-virtual {v0, v1, v2}, Landroid/widget/ArrayAdapter;->insert(Ljava/lang/Object;I)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 114
-    invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->notifyDataSetChanged()V
+    move-result-object v0
 
-    .line 115
+    new-instance v1, Landroid/util/Size;
+
+    const/4 v2, -0x1
+
+    const/16 v3, 0x50
+
+    invoke-direct {v1, v2, v3}, Landroid/util/Size;-><init>(II)V
+
+    invoke-static {v0, v1}, Lnan/ren/util/ImageUtil;->compressImage(Ljava/lang/String;Landroid/util/Size;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 108
+    .local v0, "btm":Landroid/graphics/Bitmap;
     iget-object v1, p0, Lnan/ren/util/AZ$4;->this$0:Lnan/ren/util/AZ;
 
     iget-object v1, v1, Lnan/ren/util/AZ;->target:Landroid/view/View;
 
-    check-cast v1, Landroid/widget/Spinner;
+    check-cast v1, Landroid/widget/ImageButton;
 
-    invoke-virtual {v1, v2}, Landroid/widget/Spinner;->setSelection(I)V
+    invoke-static {v0}, Lnan/ren/util/ImageUtil;->bitmap2Drawable(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Drawable;
 
-    .line 116
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 110
+    .end local v0    # "btm":Landroid/graphics/Bitmap;
+    :cond_0
+    invoke-static {}, Lnan/ren/util/PopDialog;->close()V
+
+    .line 111
     return-void
 .end method

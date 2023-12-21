@@ -1149,9 +1149,9 @@
 
     .line 254
     .local v0, "webView":Landroid/webkit/WebView;
-    new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
+    new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-direct {v1, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v1, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 

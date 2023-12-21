@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/util/AZ;->setColor(Ljava/lang/String;)V
+    value = Lnan/ren/util/AZ;->setDateFormat(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,7 +20,7 @@
 # instance fields
 .field final synthetic this$0:Lnan/ren/util/AZ;
 
-.field final synthetic val$color:Ljava/lang/String;
+.field final synthetic val$format:Ljava/lang/String;
 
 
 # direct methods
@@ -28,10 +28,10 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/util/AZ;
 
-    .line 28
+    .line 47
     iput-object p1, p0, Lnan/ren/util/AZ$1;->this$0:Lnan/ren/util/AZ;
 
-    iput-object p2, p0, Lnan/ren/util/AZ$1;->val$color:Ljava/lang/String;
+    iput-object p2, p0, Lnan/ren/util/AZ$1;->val$format:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,20 +43,20 @@
 .method public run()V
     .locals 2
 
-    .line 31
+    .line 50
     iget-object v0, p0, Lnan/ren/util/AZ$1;->this$0:Lnan/ren/util/AZ;
 
     iget-object v0, v0, Lnan/ren/util/AZ;->target:Landroid/view/View;
 
     check-cast v0, Landroid/widget/EditText;
 
-    iget-object v1, p0, Lnan/ren/util/AZ$1;->val$color:Ljava/lang/String;
+    iget-object v1, p0, Lnan/ren/util/AZ$1;->val$format:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 32
+    .line 51
     invoke-static {}, Lnan/ren/util/PopDialog;->close()V
 
-    .line 33
+    .line 52
     return-void
 .end method

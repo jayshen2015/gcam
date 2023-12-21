@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/G$2;
 
-    .line 332
+    .line 325
     iput-object p1, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,223 +39,191 @@
 .method public run()V
     .locals 12
 
-    .line 336
-    const-string v0, "agc88.png"
+    .line 329
+    const-string v0, "0"
 
-    const-string v1, ""
-
-    const-string v2, "0"
-
-    const-string v3, "8.4"
+    const-string v1, "8.4"
 
     :try_start_0
-    new-instance v4, Landroid/media/ExifInterface;
+    new-instance v2, Landroid/media/ExifInterface;
 
-    iget-object v5, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
+    iget-object v3, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
-    iget-object v5, v5, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
+    iget-object v3, v3, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
-    invoke-direct {v4, v5}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 337
-    .local v4, "exifInterface":Landroid/media/ExifInterface;
-    iget-object v5, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
+    .line 330
+    .local v2, "exifInterface":Landroid/media/ExifInterface;
+    iget-object v3, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
-    iget-object v5, v5, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
+    iget-object v3, v3, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
-    .line 338
-    .local v5, "saveImageByLUT":Ljava/lang/String;
-    sget-object v6, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+    .line 331
+    .local v3, "saveImageByLUT":Ljava/lang/String;
+    sget-object v4, Lcom/Globals;->GcamVersion:Ljava/lang/String;
 
-    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
-    .line 339
-    invoke-static {v5}, Lnan/ren/G;->doLut84(Ljava/lang/String;)Ljava/lang/String;
+    .line 332
+    invoke-static {v3}, Lnan/ren/G;->doLut84(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    move-object v5, v6
+    move-object v3, v4
 
     goto :goto_0
 
-    .line 340
+    .line 333
     :cond_0
-    sget-object v6, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+    sget-object v4, Lcom/Globals;->GcamVersion:Ljava/lang/String;
 
-    const-string v7, "8.8"
+    const-string v5, "8.8"
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_1
+    if-nez v4, :cond_1
 
-    .line 341
-    invoke-static {v5}, Lnan/ren/G;->doLut88(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v4, Lcom/Globals;->GcamVersion:Ljava/lang/String;
 
-    move-result-object v6
+    const-string v5, "9.1"
 
-    move-object v5, v6
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    goto :goto_0
+    move-result v4
 
-    .line 342
+    if-nez v4, :cond_1
+
+    sget-object v4, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    const-string v5, "9.2"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 334
     :cond_1
-    sget-object v6, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+    invoke-static {v3}, Lnan/ren/G;->doLut91(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v7, "9.1"
+    move-result-object v4
 
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-object v3, v4
 
-    move-result v6
-
-    if-eqz v6, :cond_2
-
-    .line 343
-    invoke-static {v5}, Lnan/ren/G;->doLut91(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    move-object v5, v6
-
-    .line 345
+    .line 336
     :cond_2
     :goto_0
-    const-string v6, "pref_photo_watermark_key"
+    const-string v4, "pref_photo_watermark_key"
 
-    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v4}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v4
 
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
-    if-ne v6, v7, :cond_8
+    if-ne v4, v5, :cond_7
 
-    const-string v6, "my_hide_wmbtn"
+    const-string v4, "my_hide_wmbtn"
 
-    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v4}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v4
 
-    if-nez v6, :cond_8
+    if-nez v4, :cond_7
 
-    .line 346
-    const-string v6, "pref_watermark_bg_key"
+    .line 337
+    const-string v4, "pref_watermark_bg_key"
 
-    invoke-static {v6}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {v4}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v4
 
-    if-ne v6, v7, :cond_3
+    if-ne v4, v5, :cond_3
 
-    move v6, v7
+    move v4, v5
 
     goto :goto_1
 
     :cond_3
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
-    .line 347
-    .local v6, "z2":Z
+    .line 338
+    .local v4, "bgFlag":Z
     :goto_1
-    const-string v8, "pref_watermark_type_key"
+    const-string v6, "pref_watermark_type_key"
 
-    invoke-static {v8, v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v6, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 339
+    .local v6, "wmTypeKey":Ljava/lang/String;
+    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    .line 340
+    const-string v0, "pref_watermark_title_key"
+
+    const-string v7, "\u672a\u8bbe\u7f6e"
+
+    invoke-static {v0, v7}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 341
+    .local v0, "titleTxt":Ljava/lang/String;
+    const-string v7, "pref_watermark_logo_key"
+
+    const-string v8, "agc88.png"
+
+    invoke-static {v7, v8}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 342
+    .local v7, "logoFile":Ljava/lang/String;
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v9, Lnan/ren/G;->LOGO_PATH:Ljava/lang/String;
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v8
 
-    .line 348
-    .local v8, "wmTypeKey":Ljava/lang/String;
-    invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result v2
+    move-result-object v8
 
-    if-eqz v2, :cond_6
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 349
-    const-string v2, "pref_watermark_title_key"
+    move-result-object v8
 
-    invoke-static {v2, v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 350
-    .local v2, "stringValue":Ljava/lang/String;
-    const-string v9, "pref_watermark_logo_key"
-
-    invoke-static {v9}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 351
-    .local v9, "stringValue2":Ljava/lang/String;
-    if-eqz v9, :cond_4
-
-    invoke-virtual {v9, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    .line 352
-    .end local v9    # "stringValue2":Ljava/lang/String;
-    .local v0, "stringValue2":Ljava/lang/String;
-    :cond_4
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v9, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
-
-    invoke-static {v9}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v9
-
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v9, "/AGC."
-
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    sget-object v9, Lcom/Globals;->GcamVersion:Ljava/lang/String;
-
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v9, "/logos/"
-
-    invoke-virtual {v1, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 353
-    .local v1, "str3":Ljava/lang/String;
+    .line 343
+    .local v8, "logoPath":Ljava/lang/String;
     new-instance v9, Ljava/io/File;
 
-    invoke-direct {v9, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v9, v8}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v9}, Ljava/io/File;->exists()Z
 
     move-result v9
 
-    if-nez v9, :cond_5
+    if-nez v9, :cond_4
 
-    .line 354
+    .line 344
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
     move-result-object v9
@@ -270,7 +238,7 @@
 
     move-result-object v10
 
-    invoke-virtual {v10, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v10
 
@@ -286,32 +254,32 @@
 
     move-result-object v9
 
-    move-object v1, v9
+    move-object v8, v9
 
-    .line 356
-    :cond_5
+    .line 346
+    :cond_4
     iget-object v9, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
     iget-object v9, v9, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
-    invoke-static {v9, v1, v2, v6}, Lagc/Agc;->drawWatermark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+    invoke-static {v9, v8, v0, v4}, Lagc/Agc;->drawWatermark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 357
-    .end local v0    # "stringValue2":Ljava/lang/String;
-    .end local v1    # "str3":Ljava/lang/String;
-    .end local v2    # "stringValue":Ljava/lang/String;
+    .line 347
+    .end local v0    # "titleTxt":Ljava/lang/String;
+    .end local v7    # "logoFile":Ljava/lang/String;
+    .end local v8    # "logoPath":Ljava/lang/String;
     goto :goto_2
 
-    :cond_6
+    :cond_5
     const-string v0, "1"
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_6
 
-    .line 358
+    .line 348
     iget-object v0, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
     iget-object v0, v0, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
@@ -320,99 +288,99 @@
 
     goto :goto_2
 
-    .line 360
-    :cond_7
+    .line 350
+    :cond_6
     iget-object v0, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
     iget-object v0, v0, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
-    invoke-static {v0, v7}, Lnan/ren/util/WaterMarkUtil;->addWaterMark(Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-static {v0, v5}, Lnan/ren/util/WaterMarkUtil;->addWaterMark(Ljava/lang/String;Z)Ljava/lang/String;
 
-    .line 363
-    .end local v6    # "z2":Z
-    .end local v8    # "wmTypeKey":Ljava/lang/String;
-    :cond_8
+    .line 353
+    .end local v4    # "bgFlag":Z
+    .end local v6    # "wmTypeKey":Ljava/lang/String;
+    :cond_7
     :goto_2
     iget-object v0, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
     iget-object v0, v0, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
-    invoke-virtual {v5, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_8
 
     sget-object v0, Lcom/Globals;->GcamVersion:Ljava/lang/String;
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_9
+    if-nez v0, :cond_8
 
-    .line 364
+    .line 354
     sget-object v0, Lcom/Globals;->mParameters:Lcom/Parameters;
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v5, v4, v0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;Ljava/lang/String;)V
+    invoke-static {v3, v2, v0}, Lnan/ren/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Landroid/media/ExifInterface;Ljava/lang/String;)V
 
-    .line 366
-    :cond_9
+    .line 356
+    :cond_8
     const-string v0, "my_preview_luts"
 
     invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
     move-result v0
 
-    if-ne v0, v7, :cond_a
+    if-ne v0, v5, :cond_9
 
-    .line 367
+    .line 357
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
-    const-class v2, Lnan/ren/activity/PreviewActivity;
+    const-class v4, Lnan/ren/activity/PreviewActivity;
 
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v0, v1, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 368
+    .line 358
     .local v0, "intent":Landroid/content/Intent;
     const-string v1, "imagePath"
 
-    iget-object v2, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
+    iget-object v4, p0, Lnan/ren/G$2$1;->this$0:Lnan/ren/G$2;
 
-    iget-object v2, v2, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
+    iget-object v4, v4, Lnan/ren/G$2;->val$absolutePath:Ljava/lang/String;
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 369
+    .line 359
     const/high16 v1, 0x10000000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 370
+    .line 360
     sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 374
+    .line 364
     .end local v0    # "intent":Landroid/content/Intent;
-    .end local v4    # "exifInterface":Landroid/media/ExifInterface;
-    .end local v5    # "saveImageByLUT":Ljava/lang/String;
-    :cond_a
+    .end local v2    # "exifInterface":Landroid/media/ExifInterface;
+    .end local v3    # "saveImageByLUT":Ljava/lang/String;
+    :cond_9
     goto :goto_3
 
-    .line 372
+    .line 362
     :catch_0
     move-exception v0
 
-    .line 373
+    .line 363
     .local v0, "e":Ljava/io/IOException;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -438,7 +406,7 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 375
+    .line 365
     .end local v0    # "e":Ljava/io/IOException;
     :goto_3
     return-void
