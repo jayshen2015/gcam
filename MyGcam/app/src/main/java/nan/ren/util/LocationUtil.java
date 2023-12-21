@@ -144,15 +144,15 @@ public class LocationUtil {
     }
 
     public static JSONObject getRegeo(ExifInterface exi){
-//        String lat = exi.getAttribute("GPSLatitude");
-//        String  lon = exi.getAttribute("GPSLongitude");
-        float[] latLon=new float[2];
-        exi.getLatLong(latLon);
-        if(latLon[0]==0||latLon[1]==0)return  new JSONObject();
-        try{
-            return getRegeo(latLon[1],latLon[0]);
-        }catch (Exception ex){
+        if(exi!=null) {
+            float[] latLon = new float[2];
+            exi.getLatLong(latLon);
+            if (latLon[0] == 0 || latLon[1] == 0) return new JSONObject();
+            try {
+                return getRegeo(latLon[1], latLon[0]);
+            } catch (Exception ex) {
 
+            }
         }
         return  new JSONObject();
     }

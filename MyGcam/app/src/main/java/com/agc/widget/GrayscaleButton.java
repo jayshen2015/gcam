@@ -49,6 +49,6 @@ public class GrayscaleButton  extends OptionButton {
     public void onClickPopItem(int i) {
         super.onClickPopItem(i);
         Pref.setMenuValue("pref_photo_grayscale_key", i);
-//       / Globals.onReInit();
+        Globals.onReInit();
     }
 }

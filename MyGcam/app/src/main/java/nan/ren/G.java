@@ -1,6 +1,5 @@
 package nan.ren;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,21 +7,14 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
-import android.hardware.camera2.CameraDevice;
-import android.hardware.camera2.CaptureRequest;
-import android.hardware.camera2.params.OutputConfiguration;
 import android.media.ExifInterface;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.preference.ListPreference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.view.LayoutInflater;
-import android.view.Surface;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
@@ -32,11 +24,11 @@ import android.widget.Toast;
 import com.Globals;
 import com.Utils.Lens;
 import com.Utils.Pref;
+import com.agc.AdvancedSettings;
 import com.agc.Camera;
 import com.agc.Library;
 import com.agc.Patch;
 import com.agc.Res;
-import com.agc.pref.ConfigLoader;
 import com.agc.util.AssetsUtil;
 import com.agc.util.ImageProcessing;
 import com.agc.widget.OptionButton;
@@ -51,15 +43,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.locks.Lock;
 
 import agc.Agc;
-import jp.co.cyberagent.android.gpuimage.BuildConfig;
-import jp.co.cyberagent.android.gpuimage.GPUImage;
-import jp.co.cyberagent.android.gpuimage.filter.GPUImageGrayscaleFilter;
 import nan.ren.activity.PreviewActivity;
-import nan.ren.bean.MySurfaceView;
-import nan.ren.button.SsljButton;
 import nan.ren.util.CameraUtil;
 import nan.ren.util.ExifInterfaceUtil;
 import nan.ren.util.FileUtil;
@@ -130,8 +116,8 @@ public class G {
         File firstInitFilt=new File(CONTEXT.getFilesDir().getAbsolutePath() + File.separator+".firstinit");
         if(firstInitFilt.exists())return;
         G.log(">>>>>do  firstInitFilt-----");
-        File tmpCfg=AssetsUtil.getAssetsFile(CONTEXT,"config.tmp");
-        String tmpCfgText= FileUtil.getFileText(tmpCfg.getAbsolutePath());
+        File file=AssetsUtil.getAssetsFile(Globals.getAppContext(),"config.tmp");
+        String tmpCfgText= FileUtil.getFileText(file.getAbsolutePath());
         SharedPreferences.Editor editor= Pref.getAppSharedPreferences().edit();
         for(String cid: Lens.getCameraIdList()){
             for(String tStr:tmpCfgText.split("\n")){
@@ -144,6 +130,7 @@ public class G {
             }
         }
         editor.putString("pref_patch_profile_count_key","24");
+        editor.putString("my_use_init_config","1");
         editor.apply();
         if(!firstInitFilt.getParentFile().exists())firstInitFilt.getParentFile().mkdirs();
         FileUtil.writeFile(firstInitFilt.getAbsolutePath(),"ok",false);
@@ -157,9 +144,17 @@ public class G {
     }
     public static void initIcon(ImageView iv,String fileName) {
         try {
-            Drawable extDrawable= ImageUtil.getOuterDrawable(G.ICON_PATH+fileName,true);
+            Drawable extDrawable = ImageUtil.getOuterDrawable(G.ICON_PATH+fileName,true);
             if(extDrawable==null && fileName.startsWith("agc_patch_profile_")){
-                extDrawable=ImageUtil.getOuterDrawable(G.ICON_PATH+fileName.replace("agc_patch_profile_", ""),true);
+                String fileOrder=fileName.replace("agc_patch_profile_","");
+                extDrawable=ImageUtil.getOuterDrawable(G.ICON_PATH+fileOrder,true);
+                if(extDrawable==null && Pref.MenuValue("my_use_init_config",0)==1){
+                    int i=((Integer.parseInt(fileOrder)-1)/3)+1;
+                    if("23".equals(fileOrder))i=9;
+                    else if("24".equals(fileOrder))i=10;
+                    G.log("fileName:"+fileName+",fileOrder:"+fileOrder+",Pic:myicons/"+i+".png");
+                    extDrawable=nan.ren.util.AssetsUtil.getAssetsDrawable("myicons/"+i+".png");
+                }
             }
             if(extDrawable==null) {
                 int identifier = G.RESOURCES.getIdentifier(fileName, "drawable", G.PACKAGE_NAME);
@@ -172,10 +167,8 @@ public class G {
             }
         }catch (Exception ex){
             G.log("getMyIcon error:"+fileName);
-            NUtil.dumpExceptionToSDCard(ex);
         }catch (Throwable ex){
             G.log("getMyIcon error:"+fileName);
-            NUtil.dumpExceptionToSDCard(ex);
         }
 
     }
@@ -233,8 +226,7 @@ public class G {
     }
 
     public static String doLut84(String str){
-
-        Agc.getImageExif(str, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR);
+        Agc.getImageExif(str, "", "", "", "");
         int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
         if (auxPrefIntValue != 0) {
             Agc.medianFilter(str, auxPrefIntValue);
@@ -247,36 +239,76 @@ public class G {
         return str;
     }
 
-    public static String doLut88(String str){
-        Agc.getImageExif(str, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR, BuildConfig.FLAVOR);
+//    public static String doLut88(String str){
+//        Agc.getImageExif(str, "", "", "", "");
+//        int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
+//        if (auxPrefIntValue != 0) {
+//            Agc.medianFilter(str, auxPrefIntValue);
+//        }
+//        ImageProcessing imageProcessing = new ImageProcessing();
+//        imageProcessing.setSrcImage(str);
+//        String libLutKey = Pref.getAuxProfilePrefStringValue("lib_lut_key");
+//
+//        if (!ObjectUtil.isEmpty(libLutKey) && !libLutKey.trim().equals("0")) {
+//            String str2 = Environment.getExternalStorageDirectory() + Globals.lutPath + libLutKey;
+//            if (new File(str2).exists()) {
+//                imageProcessing.setLutParamters(str2, Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f));
+//            }
+//        }
+//        imageProcessing.setBrightness(Pref.getAuxProfilePrefFloatValue("lib_gpu_brightness_key", 0));
+//        imageProcessing.setExposure(Pref.getAuxProfilePrefFloatValue("lib_gpu_exposure_key", 0));
+//        imageProcessing.setContrast(Pref.getAuxProfilePrefFloatValue("lib_gpu_contrast_key", 1.0f));
+//        imageProcessing.setGamma(Pref.getAuxProfilePrefFloatValue("lib_gpu_gamma_key", 1.0f));
+//        imageProcessing.setSaturation(Pref.getAuxProfilePrefFloatValue("lib_gpu_saturation_key", 1.0f));
+//        if (Pref.MenuValue("lib_patch_profile_key") == 2) {
+//            imageProcessing.setSaturation(1.25f);
+//        }
+//        imageProcessing.setHighlights(Pref.getAuxProfilePrefFloatValue("lib_gpu_highlights_key", 1.0f));
+//        imageProcessing.setShadows(Pref.getAuxProfilePrefFloatValue("lib_gpu_shadows_key", 0));
+//        imageProcessing.setVignetteStart(Pref.getAuxProfilePrefFloatValue("lib_gpu_vignette_start_key", 0));
+//        imageProcessing.setVignetteEnd(Pref.getAuxProfilePrefFloatValue("lib_gpu_vignette_end_key", 0));
+//        return imageProcessing.saveImageByLUT(false);
+//    }
+
+    public static String doLut91(String str){
+        Agc.getImageExif(str, "", "", "", "");
         int auxPrefIntValue = Pref.getAuxPrefIntValue("pref_dotfix_key");
         if (auxPrefIntValue != 0) {
             Agc.medianFilter(str, auxPrefIntValue);
         }
-        ImageProcessing imageProcessing = new ImageProcessing();
-        imageProcessing.setSrcImage(str);
-        String libLutKey = Pref.getAuxProfilePrefStringValue("lib_lut_key");
-
-        if (!ObjectUtil.isEmpty(libLutKey) && !libLutKey.trim().equals("0")) {
-            String str2 = Environment.getExternalStorageDirectory() + Globals.lutPath + libLutKey;
+        ImageProcessing imageProcessing = new ImageProcessing(str, AdvancedSettings.getJPGQuality("ImageProcessing"));
+        String auxProfilePrefStringValue = Pref.getAuxProfilePrefStringValue("lib_lut_key");
+        if (auxProfilePrefStringValue != null && !auxProfilePrefStringValue.equals("") && !auxProfilePrefStringValue.equals("0")) {
+            String str2 = G.LUT_PATH + auxProfilePrefStringValue;
             if (new File(str2).exists()) {
                 imageProcessing.setLutParamters(str2, Pref.getAuxProfilePrefFloatValue("lib_lut_intensity_key", 1.0f));
             }
         }
+        imageProcessing.setSharpness(Pref.getAuxProfilePrefFloatValue("lib_gpu_sharpness_key", 0));
         imageProcessing.setBrightness(Pref.getAuxProfilePrefFloatValue("lib_gpu_brightness_key", 0));
+        imageProcessing.setLuminanceThreshold(Pref.getAuxProfilePrefFloatValue("lib_gpu_luminance_threshold_key", 0));
         imageProcessing.setExposure(Pref.getAuxProfilePrefFloatValue("lib_gpu_exposure_key", 0));
         imageProcessing.setContrast(Pref.getAuxProfilePrefFloatValue("lib_gpu_contrast_key", 1.0f));
         imageProcessing.setGamma(Pref.getAuxProfilePrefFloatValue("lib_gpu_gamma_key", 1.0f));
         imageProcessing.setSaturation(Pref.getAuxProfilePrefFloatValue("lib_gpu_saturation_key", 1.0f));
-        if (Pref.MenuValue("lib_patch_profile_key") == 2) {
-            imageProcessing.setSaturation(1.25f);
+        if (Pref.MenuValue("lib_patch_profile_key") == 1) {
+            imageProcessing.setSaturation(2.0f);
         }
+        imageProcessing.setVibrance(Pref.getAuxProfilePrefFloatValue("lib_gpu_vibrance_key", 1.2f));
+        imageProcessing.setWbTemperature(Pref.getAuxProfilePrefFloatValue("lib_gpu_wb_temperature_key", 5000.0f));
+        imageProcessing.setWbTint(Pref.getAuxProfilePrefFloatValue("lib_gpu_wb_tint_key", 0));
+        imageProcessing.setRgbRed(Pref.getAuxProfilePrefFloatValue("lib_gpu_rgb_red_key", 0));
+        imageProcessing.setRgbGreen(Pref.getAuxProfilePrefFloatValue("lib_gpu_rgb_green_key", 0));
+        imageProcessing.setRgbBlue(Pref.getAuxProfilePrefFloatValue("lib_gpu_rgb_blue_key", 0));
+        imageProcessing.setHue(Pref.getAuxProfilePrefFloatValue("lib_gpu_hue_key", 90.0f));
         imageProcessing.setHighlights(Pref.getAuxProfilePrefFloatValue("lib_gpu_highlights_key", 1.0f));
         imageProcessing.setShadows(Pref.getAuxProfilePrefFloatValue("lib_gpu_shadows_key", 0));
         imageProcessing.setVignetteStart(Pref.getAuxProfilePrefFloatValue("lib_gpu_vignette_start_key", 0));
         imageProcessing.setVignetteEnd(Pref.getAuxProfilePrefFloatValue("lib_gpu_vignette_end_key", 0));
-        return imageProcessing.saveImageByLUT(false);
+        return  imageProcessing.saveImageByLUT(false);
     }
+
+
 
     public static void medianFilter(File file) {
         final String absolutePath = file.getAbsolutePath();
@@ -298,21 +330,20 @@ public class G {
                                 String saveImageByLUT = absolutePath;
                                 if(Globals.GcamVersion.equals("8.4")){
                                     saveImageByLUT=doLut84(saveImageByLUT);
-                                }else{
-                                    saveImageByLUT=doLut88(saveImageByLUT);
+                                }else if(Globals.GcamVersion.equals("8.8")||Globals.GcamVersion.equals("9.1") || Globals.GcamVersion.equals("9.2")){
+                                    saveImageByLUT=doLut91(saveImageByLUT);
                                 }
                                 if (Pref.MenuValue("pref_photo_watermark_key") == 1 && Pref.MenuValue("my_hide_wmbtn") == 0) {
-                                    boolean z2 = Pref.MenuValue("pref_watermark_bg_key") == 1;
+                                    boolean bgFlag = Pref.MenuValue("pref_watermark_bg_key") == 1;
                                     String wmTypeKey = Pref.getStringValue("pref_watermark_type_key", "0");
                                     if ("0".equals(wmTypeKey)) {
-                                        String stringValue = Pref.getStringValue("pref_watermark_title_key", BuildConfig.FLAVOR);
-                                        String stringValue2 = Pref.getStringValue("pref_watermark_logo_key");
-                                        stringValue2 = (stringValue2 == null || stringValue2.equals(BuildConfig.FLAVOR)) ? "agc88.png" : "agc88.png";
-                                        String str3 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS) + "/AGC." + Globals.GcamVersion + "/logos/" + stringValue2;
-                                        if (!new File(str3).exists()) {
-                                            str3 = AssetsUtil.getAssetsFile(Globals.getAppContext(), "logos/" + stringValue2).getAbsolutePath();
+                                        String titleTxt = Pref.getStringValue("pref_watermark_title_key", "未设置");
+                                        String logoFile = Pref.getStringValue("pref_watermark_logo_key","agc88.png");
+                                        String logoPath = G.LOGO_PATH + logoFile;
+                                        if (!new File(logoPath).exists()) {
+                                            logoPath = AssetsUtil.getAssetsFile(Globals.getAppContext(), "logos/" + logoFile).getAbsolutePath();
                                         }
-                                        Agc.drawWatermark(absolutePath, str3, stringValue, z2);
+                                        Agc.drawWatermark(absolutePath, logoPath, titleTxt, bgFlag);
                                     } else if ("1".equals(wmTypeKey)) {
                                         Agc.drawTimeWaterMark(absolutePath);
                                     }else{
@@ -376,9 +407,7 @@ public class G {
                                             if (!new File(logFile).exists()) {
                                                 logFile = AssetsUtil.getAssetsFile(Globals.getAppContext(), "logos/" + logoName).getAbsolutePath();
                                             }
-
                                             String title=Pref.getStringValue("pref_watermark_title_key", "未设置标题");
-                                         //   G.log("bg-log-title:"+bg+"-"+logFile+"-"+title);
                                             Agc.drawWatermark(absolutePath, logFile,title , bg);
                                         }catch (Exception ex){
                                             ex.printStackTrace();
@@ -452,24 +481,6 @@ public class G {
         }
         return  ( (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(bottom_bar_layout_id, vg);
     }
-//    private void inflate(Context context) {
-//        ltz o = ltz.o(((LayoutInflater) context.getSystemService("layout_inflater")).inflate(R.layout.bottom_bar_layout, this));
-//        this.shutterButton = (ShutterButton) o.f(R.id.shutter_button);
-//        this.shutterButtonProgressOverlay = (ShutterButtonProgressOverlay) o.f(R.id.shutter_progress_overlay);
-//        this.zoomLockView = (ZoomLockView) o.f(R.id.zoom_lock_view);
-//        this.pauseResumeButtonStub = (ViewStub) o.f(R.id.pause_resume_button_view_stub);
-//        this.cameraSwitchButton = (CameraSwitchButton) o.f(R.id.camera_switch_button);
-//        this.snapShotButtonStub = (ViewStub) o.f(R.id.snapshot_button_stub);
-//        this.thumbnailView = (RoundedThumbnailView) o.f(R.id.thumbnail_button);
-//        this.cancelButtonStub = (ViewStub) o.f(R.id.cancel_button_stub);
-//        this.leftSideCancelButtonStub = (ViewStub) o.f(R.id.left_side_cancel_button_view_stub);
-//        this.retakeButtonStub = (ViewStub) o.f(R.id.retake_button_view_stub);
-//        this.reviewPlayButtonStub = (ViewStub) o.f(R.id.review_play_button_view_stub);
-//        this.centerPlaceholder = (FrameLayout) o.f(R.id.center_placeholder);
-//        this.placeholders = new EnumMap(phm.q(SideButtonPosition.LEFT, (FrameLayout) o.f(R.id.left_placeholder), SideButtonPosition.CENTER_LEFT, (FrameLayout) o.f(R.id.center_left_placeholder), SideButtonPosition.CENTER_RIGHT, (FrameLayout) o.f(R.id.center_right_placeholder), SideButtonPosition.RIGHT, (FrameLayout) o.f(R.id.right_placeholder)));
-//        this.spaces = new EnumMap(phm.o(SideButtonPosition.LEFT, (Space) o.f(R.id.left_space), SideButtonPosition.RIGHT, (Space) o.f(R.id.right_space)));
-//        this.sideButtonContainers = new EnumMap(phm.o(SideButtonPosition.LEFT, (SideButtonContainer) o.f(R.id.left_placeholder_container), SideButtonPosition.RIGHT, (SideButtonContainer) o.f(R.id.right_placeholder_container)));
-//    }
 
 
     public static void loadLibrary(String str){
@@ -537,27 +548,7 @@ public class G {
 
     }
 
-    @SuppressLint("ResourceType")
-    public static SurfaceView igq(Context context , SurfaceHolder.Callback2 a, SurfaceHolder.Callback2 b){
 
-        SsljButton.myContext=context;
-        SurfaceView surfaceView=new MySurfaceView(context);
-        surfaceView.setId(View.generateViewId());
-        SurfaceHolder holder= surfaceView.getHolder();
-        holder.addCallback(a);
-        holder.addCallback(b);
-        G.log(surfaceView.getClass().getName()+" :init [id]:"+surfaceView.getId()+" [code]:"+ holder.getSurface().hashCode());
-        SsljButton.addSurfaceView(surfaceView);
-        return surfaceView;
-    }
-
-
-    public static void kiw(Object kkb,Surface surface){
-        Object g=myGet("g",kkb);
-        Object f=myGet("f",kkb),h=myGet("h",kkb);
-        Object a=myGet("a",f),l=myGet("l",h);
-        G.log("=== kiw to OutputConfiguration    kkb：("+ ("g:"+ObjectUtil.stringOf(g)+" a:"+ObjectUtil.stringOf(a)+" h:"+ObjectUtil.stringOf(h))+") surface:"+surface.hashCode() );
-    }
     static <T> T myGet(String fn,Object o){
         try {
             Class clazz = o.getClass();
@@ -578,39 +569,11 @@ public class G {
         return null;
     }
 
-    public static void addTarget(CaptureRequest.Builder builder,Surface surface){
-        G.log("=== addTarget cameraDevice   builder："+builder.hashCode()+" surface:"+surface.hashCode() );
-    }
 
     public static void init(Object o) {
         if(o==null)G.log("====init null ");
         else G.log("==== init :"+o.getClass().getName()+" |"+ObjectUtil.stringOf(o));
     }
 
-    //bmq
-    public static void handleMessage(Message message) {
-         int what=message.what;
-         Object obj=message.obj;
-         G.log("====handleMessage:"+what+"-"+(obj==null?"【null】": ObjectUtil.stringOf(obj.getClass().getName())));
-    }
 
-    public static List<OutputConfiguration> createCaptureSession(CameraDevice cameraDevice,List<OutputConfiguration> outs){
-        G.log("====createCaptureSession via SessionConfiguration : cameraDevice_name:"+cameraDevice.hashCode());
-        return SsljButton.createCaptureSession(cameraDevice,outs);
-    }
-
-    public static void setCameraDeviceAndBuild(CameraDevice cameraDevice, CaptureRequest.Builder builder,int i){
-        SsljButton.setCameraDeviceAndBuild(cameraDevice,builder,i);
-    }
-
-    static  GPUImage gpuImage;
-    private  static Bitmap filterByG(Bitmap b){
-        if(gpuImage==null){
-            gpuImage = new GPUImage(CONTEXT);
-            GPUImageGrayscaleFilter ggf=new GPUImageGrayscaleFilter();
-            gpuImage.setFilter(ggf);
-            ImageUtil.saveBitmapFile(b,G.TMP_PATH+"Camera.jpg");
-        }
-        return gpuImage.getBitmapWithFilterApplied(b);
-    }
 }

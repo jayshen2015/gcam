@@ -20,6 +20,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" tools:ignore="CoarseFineLocation" />
+
+    <!-- 向SD卡写入数据权限 -->
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"

@@ -5,5 +5,6 @@ public class OsUtil {
        return  NUtil.getProp("ro.miui.ui.version.code","").trim().length()>0;
     }
 
+
     //NUtil.getProp("ro.vendor.oplus.market.name",Build.MODEL)
 }

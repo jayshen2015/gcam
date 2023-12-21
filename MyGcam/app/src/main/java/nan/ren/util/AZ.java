@@ -1,6 +1,8 @@
 package nan.ren.util;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.util.Size;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
@@ -16,11 +18,41 @@ import java.io.File;
 import nan.ren.G;
 
 public  class AZ{
+
+    static String apiUrl="https://www.1kat.cn/";
     View target;
     WebView web;
     public AZ(View tg,WebView _wb){
         this.target=tg;
         this.web=_wb;
+    }
+    @JavascriptInterface
+    public String getData(String url){
+        JSONObject result=new JSONObject();
+        try {
+            String txt = HttpUtil.doGet(url.startsWith("http") ? url : apiUrl + url);
+            JSONObject data = new JSONObject(txt);
+            result.put("success",true);
+            result.put("data",data);
+        }catch (Exception ex){
+            result.put("success",false);
+            result.put("data",null);
+            result.put("msg",ex.getMessage());
+        }
+        return result.toString();
+    }
+    @JavascriptInterface
+    public void setDateFormat(String format){
+        if(target!=null){
+            ( (Activity)(target.getContext())).runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ((EditText)target).setText(format);
+                    PopDialog.close();
+                }
+            });
+
+        }
     }
     @JavascriptInterface
     public void setColor(String color){
@@ -72,7 +104,8 @@ public  class AZ{
                     public void run() {
                         target.setTag(img);
                         if (target instanceof ImageButton) {
-                            ((ImageButton) target).setImageDrawable(ImageUtil.bitmap2Drawable(ImageUtil.getMyLogo(img)));
+                            Bitmap btm=ImageUtil.compressImage(G.LOGO_PATH+img,new Size(-1,80));
+                            ((ImageButton) target).setImageDrawable(ImageUtil.bitmap2Drawable(btm));
                         }
                         PopDialog.close();
                     }

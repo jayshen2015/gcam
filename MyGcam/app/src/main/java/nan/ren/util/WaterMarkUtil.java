@@ -87,7 +87,7 @@ public class WaterMarkUtil {
             ExifInterface exb = null;
             try {
                 exb = new ExifInterface(absolutePath);
-                picinfo = getPicInfo(exb);
+                picinfo = getPicInfo(exb,false);
             } catch (IOException e) {
 
             }
@@ -241,7 +241,6 @@ public class WaterMarkUtil {
     }
     public static void WriteBitmapFile(String str, Bitmap bitmap) {
         try {
-
             File file=new File(str);
             BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(file));
             bitmap.compress(Bitmap.CompressFormat.JPEG, Pref.MenuValue("pref_qjpg_key",97), bufferedOutputStream);
@@ -290,44 +289,93 @@ public class WaterMarkUtil {
 //                    });
 //        }
     }
-
-
-    public static String getPicInfo(ExifInterface exifInterface) {
+    public static String[] getPicData(ExifInterface exifInterface) {
+        String[] picInfo=new String[4];
         try {
-            if(exifInterface==null)return "";
-            StringBuilder sb = new StringBuilder();
+            if(exifInterface==null)return picInfo;
             String fl = exifInterface.getAttribute("FocalLengthIn35mmFilm");
             if (fl!=null && !TextUtils.isEmpty(fl.trim())) {
-                sb.append(fl);
+                picInfo[0]=fl;
             }
-            if(sb.length()<1) {
+            if(ObjectUtil.isEmpty(picInfo[0])) {
                 fl = exifInterface.getAttribute("FocalLength");
                 if (!TextUtils.isEmpty(fl) && !fl.equals("")) {
                     String[] split = fl.split("/");
                     if (split.length >= 2) {
-                        sb.append(String.format(Locale.ROOT, "%.2f", Float.valueOf(Float.parseFloat(split[0]) / Float.parseFloat(split[1]))));
+                        picInfo[0]=String.format(Locale.ROOT, "%.2f", Float.valueOf(Float.parseFloat(split[0]) / Float.parseFloat(split[1])));
                     }
                 }
             }
-            sb.append("mm f/").append(exifInterface.getAttribute("FNumber")).append(" ");
+            picInfo[1]=exifInterface.getAttribute("FNumber");
             String ept=exifInterface.getAttribute("ExposureTime");
             if(ept!=null&&!ept.isEmpty()) {
                 double d = Double.parseDouble(ept);
                 if (d > 1.0d) {
-                    sb.append(String.format(Locale.ROOT, "%.2f", d));
+                    picInfo[2]=String.format(Locale.ROOT, "%.2f", d);
                 } else if (d >= 0.1d) {
-                    sb.append("1/").append(new DecimalFormat("#").format(1.0d / d));
+                    picInfo[2]="1/"+new DecimalFormat("#").format(1.0d / d);
                 } else {
-                    sb.append("1/").append(((int) (1.0d / d)));
+                    picInfo[2]="1/"+((int) (1.0d / d));
                 }
             }
-
-            sb.append(" ISO").append(exifInterface.getAttribute("ISOSpeedRatings"));
-            return sb.toString();
+            picInfo[3]=exifInterface.getAttribute("ISOSpeedRatings");
         } catch (Exception e) {
             e.printStackTrace();
-            return "";
         }
+
+        return picInfo;
+    }
+
+    public static String getPicInfo(ExifInterface exifInterface,boolean isCn) {
+
+            if(exifInterface==null)return "";
+            Object[] os=getPicData(exifInterface);
+            int empCnt=0;
+            if(ObjectUtil.isEmpty(os[0]))empCnt++;
+            if(ObjectUtil.isEmpty(os[1]))empCnt++;
+            if(ObjectUtil.isEmpty(os[2]))empCnt++;
+            if(ObjectUtil.isEmpty(os[3]))empCnt++;
+            if(empCnt>=2)return "";
+            if(!isCn) return String.format("%smm f/%s %ss ISO %s",os);
+            else return String.format("焦距 %smm  光圈 f/%s  曝光 %ss  ISO %s",os);
+
+//        try {
+//            if(exifInterface==null)return "";
+//            StringBuilder sb = new StringBuilder();
+//            String fl = exifInterface.getAttribute("FocalLengthIn35mmFilm");
+//            if (fl!=null && !TextUtils.isEmpty(fl.trim())) {
+//                sb.append(fl);
+//            }
+//            if(sb.length()<1) {
+//                fl = exifInterface.getAttribute("FocalLength");
+//                if (!TextUtils.isEmpty(fl) && !fl.equals("")) {
+//                    String[] split = fl.split("/");
+//                    if (split.length >= 2) {
+//                        sb.append(String.format(Locale.ROOT, "%.2f", Float.valueOf(Float.parseFloat(split[0]) / Float.parseFloat(split[1]))));
+//                    }
+//                }
+//            }
+//            sb.append("mm f/").append(exifInterface.getAttribute("FNumber")).append(" ");
+//            String ept=exifInterface.getAttribute("ExposureTime");
+//            if(ept!=null&&!ept.isEmpty()) {
+//                double d = Double.parseDouble(ept);
+//                if (d > 1.0d) {
+//                    sb.append(String.format(Locale.ROOT, "%.2f", d));
+//                } else if (d >= 0.1d) {
+//                    sb.append("1/").append(new DecimalFormat("#").format(1.0d / d));
+//                } else {
+//                    sb.append("1/").append(((int) (1.0d / d)));
+//                }
+//                sb.append("s");
+//            }
+//
+//            sb.append(" ISO").append(exifInterface.getAttribute("ISOSpeedRatings"));
+//            if(sb.length()<20)return "";
+//            return sb.toString();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return "";
+//        }
     }
     public static String getDateFormatInfo() {
         try {
@@ -393,7 +441,6 @@ public class WaterMarkUtil {
 
 //        Rect topRect = new Rect(0, 0, tempBitmapT.getWidth(), tempBitmapT.getHeight());
 //        Rect bottomRect  = new Rect(0, 0, tempBitmapB.getWidth(), tempBitmapB.getHeight());
-//
 //        Rect bottomRectT  = new Rect(0, tempBitmapT.getHeight()-tempBitmapB.getHeight(), width, tempBitmapT.getHeight());
         canvas.drawBitmap(tempBitmapT,0,0,null);
         canvas.drawBitmap(tempBitmapB,0,height-tempBitmapB.getHeight()-paddingBottom,null);
@@ -407,9 +454,9 @@ public class WaterMarkUtil {
 //    }
     public static Map getAllWmConfMap(){
         JSONArray configList= getAllWmConfList1();
-        if(configList==null||configList.isEmpty()){
-            configList= getAllWmConfList2();
-        }
+//        if(configList==null||configList.isEmpty()){
+//            configList= getAllWmConfList2();
+//        }
         Map<String,JSONObject> configMap=new LinkedHashMap<>();
         if(configList==null||configList.isEmpty())return configMap;
         for (int i=0;i<configList.length();i++){
@@ -426,10 +473,10 @@ public class WaterMarkUtil {
      */
     public static JSONArray getAllWmConfList1(){
         JSONArray result=new JSONArray();
-        JSONArray cfgArrInner=getWmConfigByFile(AssetsUtil.getAssetsFile(G.CONTEXT,"watermark.conf"));
+        JSONArray cfgArrInner=getWmConfigBytext(nan.ren.util.AssetsUtil.getAssetsFileText("watermark.conf"),"内置水印");
         if(cfgArrInner!=null) result.addAll(cfgArrInner);
-        JSONArray cfgArr1=getWmConfigByFile(new File(G.BASE_AGC_PATH+"/watermark.conf"));
-        if(cfgArr1!=null) result.addAll(cfgArr1);
+//        JSONArray cfgArr1=getWmConfigByFile(new File(G.BASE_AGC_PATH+"/watermark.conf"));
+//        if(cfgArr1!=null) result.addAll(cfgArr1);
         List<File> configListInDir =FileUtil.getChildList(G.WATERMARK_PATH);
         if(configListInDir!=null){
             for (File cfgFile:configListInDir){
@@ -464,13 +511,10 @@ public class WaterMarkUtil {
         }
        return result;
     }
-
-    static JSONArray getWmConfigByFile(File file){
-        if(file==null||!file.exists())return null;
-        String wmconf=FileUtil.getFileText(file.getAbsolutePath());
+    static JSONArray getWmConfigBytext(String wmconf,String defaultName){
         if(ObjectUtil.isEmpty(wmconf))return null;
         try{
-            String fileName=file.getName();
+            String fileName=defaultName;
             if(fileName.lastIndexOf(".")>0){
                 fileName=fileName.substring(0,fileName.lastIndexOf("."));
             }
@@ -488,15 +532,20 @@ public class WaterMarkUtil {
                     if(!cfg.hasIgnoreCase("name"))cfg.put("name",fileName+"-"+i);
                     cfgArr.set(i,cfg);
                 }catch (Exception ex){
-                    NUtil.toastL("水印文件["+file.getName()+":第"+(i+1)+"个配置]格式错误");
+                    NUtil.toastL("水印文件["+defaultName+":第"+(i+1)+"个配置]格式错误");
                 }
             }
             return cfgArr;
         }catch (Exception ex){
             ex.printStackTrace();
-            NUtil.toastL("水印文件["+file.getName()+"]格式错误");
+            NUtil.toastL("水印文件["+defaultName+"]格式错误");
         }
         return null;
+    }
+    static JSONArray getWmConfigByFile(File file){
+        if(file==null||!file.exists())return null;
+        String wmconf=FileUtil.getFileText(file.getAbsolutePath());
+        return getWmConfigBytext(wmconf,file.getName());
     }
 
 
@@ -626,8 +675,8 @@ public class WaterMarkUtil {
                         jihexx=new Integer[]{p.x,p.y,txtRect.width(),txtRect.height()};
                     }else if("image".equalsIgnoreCase(drawType)) {
                         Bitmap bitmap = (Bitmap)conf.get("bitmap");
-                        Point p=getPoint(conf,width,height,picBit.getWidth(),picBit.getHeight(),bitmap.getWidth(),bitmap.getHeight(),"x","y",paint);
-                        canvas.drawBitmap(bitmap,p.x+zx,p.y+zy,paint);
+                        Point p=getPoint(conf,width,height,picBit.getWidth(),picBit.getHeight(),bitmap==null?0:bitmap.getWidth(),bitmap==null?0:bitmap.getHeight(),"x","y",paint);
+                        if(bitmap!=null)canvas.drawBitmap(bitmap,p.x+zx,p.y+zy,paint);
                         jihexx=new Integer[]{p.x,p.y,bitmap.getWidth(),bitmap.getHeight()};
                     }else if("line".equalsIgnoreCase(drawType)){
                         Point p2=getPoint(conf,width,height,picBit.getWidth(),picBit.getHeight(),1,1,"x2","y2",paint);
@@ -739,15 +788,19 @@ public class WaterMarkUtil {
                 String sizeStr=conf.has("size")?conf.getString("size"):conf.getString("SIZE");
                 if(bitmap!=null && sizeStr!=null&&!sizeStr.trim().isEmpty()){
                     String[] sizeArr=sizeStr.indexOf("x")>-1?sizeStr.split("x"):sizeStr.split("X");
-                    if(sizeArr.length==2 &&(Integer.parseInt(sizeArr[0])>0||Integer.parseInt(sizeArr[1])>0)) {
+                    if(sizeArr.length==2 &&(Integer.parseInt(sizeArr[0])>=0||Integer.parseInt(sizeArr[1])>=0)) {
                         Size size = new Size(Integer.parseInt(sizeArr[0]), Integer.parseInt(sizeArr[1]));
                         int w = size.getWidth(), h = size.getHeight();
-                        if (w < 1) {
-                            w = (bitmap.getWidth() * size.getHeight()) / bitmap.getHeight();
-                        } else if (h < 1) {
-                            h = (bitmap.getHeight() * size.getWidth()) / bitmap.getWidth();
+                        if(w<=0&&h<=0){
+                            bitmap=null;
+                        }else {
+                            if (w < 1) {
+                                w = (bitmap.getWidth() * size.getHeight()) / bitmap.getHeight();
+                            } else if (h < 1) {
+                                h = (bitmap.getHeight() * size.getWidth()) / bitmap.getWidth();
+                            }
+                            bitmap = Bitmap.createScaledBitmap(bitmap, w, h, false);
                         }
-                        bitmap = Bitmap.createScaledBitmap(bitmap, w, h, false);
                     }
                 }
                 if(bitmap==null) {
@@ -821,10 +874,10 @@ public class WaterMarkUtil {
             while(keys.hasNext()){
                 String key=keys.next();
                 Integer[] xywh=JIHEXXMAP.get(key);
-                expres=expres.replace("{"+key+".x}",xywh[0]==null?"0":(xywh[0]+""))
-                        .replace("{"+key+".y}",xywh[1]==null?"1":(xywh[1]+""))
-                        .replace("{"+key+".w}",xywh[2]==null?"2":(xywh[2]+""))
-                        .replace("{"+key+".h}",xywh[3]==null?"3":(xywh[3]+""));
+                expres=expres.replace("{"+key+".x}",xywh[0]==null?"0":(xywh[0]>=0?(xywh[0]+""):("(0-"+xywh[0]+")")))
+                        .replace("{"+key+".y}",xywh[1]==null?"0":(xywh[1]>=0?(xywh[1]+""):("(0-"+xywh[1]+")")))
+                        .replace("{"+key+".w}",xywh[2]==null?"0":(xywh[2]>=0?(xywh[2]+""):("(0-"+xywh[2]+")")))
+                        .replace("{"+key+".h}",xywh[3]==null?"0":(xywh[3]>=0?(xywh[3]+""):("(0-"+xywh[3]+")")));
             }
         }
         expres = expres.replace("$w",  pw+"" );
@@ -839,6 +892,7 @@ public class WaterMarkUtil {
     static Integer getNumberByExpressionStr(String expres){
         int ind_jia=expres.indexOf("+"),ind_jian=expres.indexOf("-"),ind_chen=expres.indexOf("*"),ind_chu=expres.indexOf("/");
         if(ind_jian==-1&&ind_jia==-1&&ind_chen==-1&&ind_chu==-1) expres=expres+"+0";
+       // expres= expres.replace(")","+0)");
         return CalcUtil.executeExpression(expres).intValue();
     }
     static String getTextByFormat(String text,String format,ExifInterface exi){
@@ -851,6 +905,16 @@ public class WaterMarkUtil {
                 if(i<os.length-1)sb.append(",");
             }
             return sb.toString();
+        }else{
+            int len=format.split("%").length;
+            if(len>1) {
+                Object[] p=new Object[len-1];
+                int vl=os.length;
+                for(int i=0;i<p.length;i++){
+                    p[i]=os[i%vl];
+                }
+                return String.format(format,p);
+            }
         }
         return String.format(format,os);
     }
@@ -866,7 +930,7 @@ public class WaterMarkUtil {
                     attr="$"+attr;
                 }
                 if(attr.startsWith("$")) {
-                    v = exi.getAttribute(attr.substring(1));
+                    v = exi==null?"":exi.getAttribute(attr.substring(1));
                     if (attr.startsWith("$DateTime")) {
                         if(v==null||v.toString().trim().isEmpty())v=new Date();
                         else v = new android.icu.text.SimpleDateFormat("yyyy:MM:dd HH:mm:ss").parse(v.toString());
@@ -886,36 +950,60 @@ public class WaterMarkUtil {
                             v=0;
                         }
                     } else if (attr.equals("$GPSAltitude")) {
-                        v = exi.getAltitude(0);
+                        v = exi==null?"":exi.getAltitude(0);
                     }else if (attr.startsWith("$GPSLatitude") || attr.startsWith("$GPSLongitude")) {
                         if (attr.startsWith("$GPSLatitudeRef") || attr.startsWith("$GPSLongitudeRef")) {
                             if (attr.toLowerCase().endsWith("refcn")) {
-                                v = exi.getAttribute(attr.substring(0, attr.length() - 2));
+                                v = exi==null?"":exi.getAttribute(attr.substring(1, attr.length() - 2));
                                 if ("N".equals(v)) v = "北纬";
                                 else if ("S".equals(v)) v = "南纬";
                                 else if ("E".equals(v)) v = "东经";
                                 else if ("W".equals(v)) v = "西经";
                             }
-                        } else {
-                            v = exi.getAttribute(attr.substring(0, attr.length() - 1));
+                        } else  if (attr.endsWith("d") || attr.endsWith("f") ||attr.endsWith("m")){
+                            v = exi==null?"":exi.getAttribute(attr.substring(1, attr.length() - 1));
                             Integer[] dfm = LocationUtil.toDmsIntArr(v);
                             if (attr.toLowerCase().endsWith("d")) v = dfm[0];
                             else if (attr.toLowerCase().endsWith("f")) v = dfm[1];
                             else if (attr.toLowerCase().endsWith("m")) v = dfm[2];
                             else v = 0;
+                        }else{
+                            v = exi==null?"":exi.getAttribute(attr.substring(1));
                         }
                     } else if (attr.toLowerCase().startsWith("$gpslong")) {
-                        String gpslong = LocationUtil.toDmsString(exi.getAttribute("GPSLongitude"));
+                        String gpslong = exi==null?"": LocationUtil.toDmsString(exi.getAttribute("GPSLongitude"));
                         if (attr.toLowerCase().endsWith("cn")) {
                             gpslong = gpslong.replace("°", "度").replace("′", "分").replace("″", "秒");
                         }
                         v = gpslong;
                     } else if (attr.toLowerCase().startsWith("$gpslat")) {
-                        String lat = LocationUtil.toDmsString(exi.getAttribute("GPSLatitude"));
+                        String lat = exi==null?"":LocationUtil.toDmsString(exi.getAttribute("GPSLatitude"));
                         if (attr.toLowerCase().endsWith("cn")) {
                             lat = lat.replace("°", "度").replace("′", "分").replace("″", "秒");
                         }
                         v = lat;
+                    } else if (attr.toLowerCase().startsWith("$gpsinfo")) {
+                        if(exi!=null) {
+                            String lat =  LocationUtil.toDmsString(exi.getAttribute("GPSLatitude"));
+                            String gpslong =  LocationUtil.toDmsString(exi.getAttribute("GPSLongitude"));
+                            if(ObjectUtil.isEmpty(lat)||ObjectUtil.isEmpty(gpslong)){
+                                v="";
+                            }else {
+                                String latRef = exi.getAttribute("GPSLatitudeRef");
+                                String longRef = exi.getAttribute("GPSLongitudeRef");
+                                v = gpslong + " " + lat;
+                                if (attr.toLowerCase().endsWith("cn")) {
+                                    latRef = latRef.replace("N", "北纬").replace("S", "南纬");
+                                    longRef = longRef.replace("E", "东经").replace("W", "西经");
+                                    v = longRef + gpslong + " " + latRef + lat;
+                                    v = v.toString().replace("°", "度").replace("′", "分").replace("″", "秒");
+                                } else {
+                                    v = gpslong + longRef + " " + lat + latRef;
+                                }
+                            }
+                        }else {
+                            v="";
+                        }
                     } else if (attr.equalsIgnoreCase("$gpsaddress")) {
                         if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
                         v = GPSLOCAL.getString("address", "");
@@ -944,24 +1032,26 @@ public class WaterMarkUtil {
                         if (GPSLOCAL == null) GPSLOCAL = LocationUtil.getRegeo(exi);
                         v = GPSLOCAL.getString("city", "");
                     } else if (attr.toLowerCase().startsWith("$gpsalt")) {
-                        Double alt = exi.getAltitude(0);
+                        Double alt = exi==null?0:exi.getAltitude(0);
                         if (attr.toLowerCase().endsWith("cn")) {
                             v = alt.intValue() + "米";
                         } else {
                             v = alt.intValue();
                         }
                     } else if (attr.toLowerCase().startsWith("$picinfo")) {
-                        v = getPicInfo(exi);
+                        v = getPicInfo(exi,attr.toLowerCase().endsWith("cn"));
                     } else if (attr.toLowerCase().startsWith("$os.")) {
                         v = NUtil.getProp(attr.substring(6), "");
                     } else if (attr.toLowerCase().startsWith("$") && (v==null||v.toString().trim().isEmpty())) {
                         v = Pref.getStringValue(attr.substring(1), attr);
                     }
-                    if(v==null){
+                    if(v==null||(v.toString().trim().startsWith("$")&&v.toString().trim().length()>1)){
                         v="";
                     }
                 }
-            }catch (Exception ex){}
+            }catch (Exception ex){
+                G.log(">>>>>>>>>>>> watermark "+attr+":"+ex.getMessage());
+            }
             valueArr[i]=v;
         }
         return  valueArr;
@@ -988,6 +1078,7 @@ public class WaterMarkUtil {
     static  Paint invoke(Paint p,Method m,String v){
         try {
             if(m.getName().equals("setColor")){
+                if(!v.startsWith("#"))v="#"+v;
                 p.setColor(Color.parseColor(v));
             }else if(m.getName().equals("setARGB")){
                 String[] vs=v.trim().split(",");
@@ -1003,6 +1094,10 @@ public class WaterMarkUtil {
                     ||m.getName().equals("setTextScaleX")||m.getName().equals("setTextSize")
             ){
                 m.invoke(p, Integer.parseInt(v.trim()));
+                if(m.getName().equals("setStrokeWidth")&&v.trim().equals("0")){
+                    p.setAlpha(0);
+
+                }
             }else if(m.getName().equals("setAntiAlias") ||m.getName().equals("setDither")
                     ||m.getName().equals("setElegantTextHeight")||m.getName().equals("setFilterBitmap")
                     ||m.getName().equals("setFakeBoldText") ||m.getName().equals("setLinearText")
@@ -1082,6 +1177,7 @@ public class WaterMarkUtil {
                     int colorInt=-1;
                     try {
                         String color = vs[3].trim();
+                        if(color.length()==6||color.length()==8)color="#"+color;
                         if (color.startsWith("#")) {
                             colorInt = Color.parseColor(color);
                         } else {

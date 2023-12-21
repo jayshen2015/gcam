@@ -1,6 +1,9 @@
 package nan.ren.util;
+import com.agc.CrashHandler;
+
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -10,6 +13,9 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+
+import nan.ren.G;
+
 public class HttpUtil {
     private static long timeUpload = 0;
 
@@ -40,10 +46,18 @@ public class HttpUtil {
             if(httpURLConnection.getResponseCode() == 200 ){
                InputStream inputStream= httpURLConnection.getInputStream();
                if(!file.getParentFile().exists())file.getParentFile().mkdirs();
-               return  FileUtil.streamToFile(inputStream,file);
+               FileOutputStream fos = new FileOutputStream(file);
+                byte[] buffer = new byte[1024];
+                int len;
+                while ((len = inputStream.read(buffer)) != -1) {
+                    fos.write(buffer, 0, len);
+                }
+                return true;
+               // return  FileUtil.streamToFile(inputStream,file);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            G.log("download error:"+file.getName()+" Url:"+url+"error:"+e.getMessage());
+            NUtil.dumpExceptionToSDCard(e);
         }
         return false;
     }
@@ -56,7 +70,7 @@ public class HttpUtil {
             httpURLConnection.getOutputStream().write(getParams(hashMap).getBytes());
             return httpURLConnection.getResponseCode() == 200 ? new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream())).readLine() : "{ \"success\": false,\n   \"errorMsg\": \"后台服务器开小差了!\",\n     \"result\":{}}";
         } catch (Exception e) {
-            e.printStackTrace();
+            NUtil.dumpExceptionToSDCard(e);
             return "{ \"success\": false,\n   \"errorMsg\": \"后台服务器开小差了!\",\n     \"result\":{}}";
         }
     }

@@ -6,7 +6,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+
 public class MyWeb {
+//    static  String baseUrl="file:///android_asset/html/";
     static String baseUrl="https://www.1kat.cn/";
     @SuppressLint("JavascriptInterface")
     public static WebView popColor(EditText et){
@@ -36,6 +38,14 @@ public class MyWeb {
         WebView webView=ViewUtil.getWebView(spinner.getContext(),-2,-2);
         webView.loadUrl(baseUrl+"watermark.html?t="+System.currentTimeMillis());
         webView.addJavascriptInterface(new AZ(spinner,webView), "AZ");
+        return webView;
+    }
+
+    @SuppressLint("JavascriptInterface")
+    public static WebView popDataFormat(EditText et){
+        WebView webView=ViewUtil.getWebView(et.getContext(),-2,-2);
+        webView.loadUrl(baseUrl+"time.html?t="+System.currentTimeMillis());
+        webView.addJavascriptInterface(new AZ(et,webView), "AZ");
         return webView;
     }
 }

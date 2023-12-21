@@ -425,7 +425,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
         String[] lines=configTxt.split("\n");
         for(int i=0;i<lines.length;i++){
             String tmp=lines[i].trim();
-            if(tmp.indexOf("lib_profile_title_key_p")>=0) {//<string name="lib_profile_title_key_p26_3">酷灰质感</string>
+            if(tmp.indexOf("lib_profile_title_key_p")>=0) {
                 try {
                     String name = tmp.substring(tmp.indexOf("lib"), tmp.indexOf(">") - 1);
                     String txt = tmp.substring(tmp.indexOf(">") + 1, tmp.indexOf("</"));

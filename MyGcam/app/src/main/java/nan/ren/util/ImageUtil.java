@@ -44,6 +44,7 @@ public class ImageUtil {
         try {
             if(fileName==null||fileName.trim().length()<1)return null;
             if(fileName.startsWith("/"))return fileName;
+            if(fileName.startsWith("logos/"))fileName=fileName.substring(6);
             String logoPath = G.LOGO_PATH + fileName;
             if (!new File(logoPath).exists()) {
                 try {

@@ -33,7 +33,10 @@ public class ImageProcessing {
     private float shadows = 1;
     private float vignetteStart =1;
     private float vignetteEnd = 1;
-
+    public ImageProcessing() {
+    }
+    public ImageProcessing(String str, int i) {
+    }
     private Bitmap getLutBitMap(String str) {
         return null;//str.toLowerCase().endsWith(".png") ? ImageUtil.getBitMap(str) : CubeUtil.getLutBitMap(str);
     }
@@ -194,4 +197,47 @@ public class ImageProcessing {
     public void setVignetteStart(float f) {
         this.vignetteStart = f;
     }
+
+
+
+    public void setHue(float f) {
+     }
+
+    public void setLuminanceThreshold(float f) {
+     }
+
+    public void setRgbBlue(float f) {
+
+    }
+
+    public void setRgbGreen(float f) {
+
+    }
+
+    public void setRgbRed(float f) {
+
+    }
+
+
+    public void setSharpness(float f) {
+
+    }
+
+
+    public void setUnsharpIntensity(float f) {
+
+    }
+
+    public void setVibrance(float f) {
+
+    }
+
+    public void setWbTemperature(float f) {
+
+    }
+
+    public void setWbTint(float f) {
+
+    }
+
 }

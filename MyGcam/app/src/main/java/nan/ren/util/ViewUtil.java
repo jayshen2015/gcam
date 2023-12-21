@@ -251,7 +251,7 @@ public class ViewUtil {
 
     public static WebView getWebView(Context context,int w,int h){
         WebView webView=new WebView(context);
-        webView.setLayoutParams(new LinearLayout.LayoutParams(w,h));
+        webView.setLayoutParams(new ViewGroup.LayoutParams(w,h));
         webView.setWebViewClient(new WebViewClient(){
             @Override//// 强制在当前 WebView 中加载 url
             public boolean shouldOverrideUrlLoading(WebView view, String url) {

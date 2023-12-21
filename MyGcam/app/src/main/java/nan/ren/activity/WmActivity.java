@@ -68,7 +68,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
     static float dsp=1;
     static ViewGroup.LayoutParams btnlp;
     static Bitmap wmBitmap;
-    static int widthPixels,heightPixels;
+    static int widthPixels,heightPixels,webH;
     static int fontSize=30;
     static  String DEF_TYPE_TXT="==点此选择水印==";
 
@@ -80,6 +80,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
         btnlp=new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,image_title_height);
         widthPixels=G.RESOURCES.getDisplayMetrics().widthPixels;
         heightPixels=G.RESOURCES.getDisplayMetrics().heightPixels;
+        webH=(int)(heightPixels*0.7);
     }
 
     final static Handler handler = new Handler(Looper.getMainLooper());
@@ -103,34 +104,33 @@ public class WmActivity extends Activity implements View.OnClickListener {
         if(srcImagePath==null||srcImagePath.trim().isEmpty()) {
             drawImage(G.RESOURCES.getDrawable(Res.getDrawableID("agc_recover"),null));
             return;
+        }else{
+            WmActivity that=this;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        wmBitmap = getWaterMark(srcImagePath);
+                    }catch (Exception ex){
+                        ex.printStackTrace();
+                    }
+                    if(wmBitmap==null){
+                        NUtil.toastL("水印设置失败！！");
+                        return ;
+                    }
+                    wmBitmap=ImageUtil.compressImageWidthLength(wmBitmap,1024*2);
+                    //  int height=(widthPixels* wmBitmap.getHeight())/wmBitmap.getWidth();
+                    //  iv.setLayoutParams(new LinearLayout.LayoutParams( widthPixels,height));
+                    // iv.setImageDrawable(ImageUtil.bitmap2Drawable(bitmap));
+                    drawImage(ImageUtil.bitmap2Drawable(wmBitmap));
+                    saveButton.setOnClickListener(that);
+                    saveButton.setText("保存图片");
+                }
+            },50);
         }
         if(ObjectUtil.isEmpty(configName)||DEF_TYPE_TXT.equals(configName)) {
             NUtil.toastL("请选择水印配置");
-            return;
         }
-        WmActivity that=this;
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    wmBitmap = getWaterMark(srcImagePath);
-                }catch (Exception ex){
-                    ex.printStackTrace();
-                    wmBitmap=null;
-                }
-                if(wmBitmap==null){
-                    NUtil.toastL("水印设置失败！！");
-                    return ;
-                }
-                wmBitmap=ImageUtil.compressImageWidthLength(wmBitmap,1024*2);
-              //  int height=(widthPixels* wmBitmap.getHeight())/wmBitmap.getWidth();
-              //  iv.setLayoutParams(new LinearLayout.LayoutParams( widthPixels,height));
-               // iv.setImageDrawable(ImageUtil.bitmap2Drawable(bitmap));
-                drawImage(ImageUtil.bitmap2Drawable(wmBitmap));
-                saveButton.setOnClickListener(that);
-                saveButton.setText("保存图片");
-            }
-        },50);
 
     }
 
@@ -174,7 +174,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
             int paddingBottom=wmConfJson.getInt("paddingBottom",wmConfJson.getInt("paddingbottom",0));
             return WaterMarkUtil.mergeBitmap(decodeFile,waterMark,isInner,paddingBottom);
         }
-        return null;
+        return decodeFile;
     }
 
 
@@ -547,15 +547,16 @@ public class WmActivity extends Activity implements View.OnClickListener {
             });
             linearLayout.addView(selectLogoBtn);
             tag=selectLogoBtn;
-        }else  if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")){
+        }else  if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")||type.equalsIgnoreCase("date")){
             EditText editText=ViewUtil.getTextEdit(v,this);
+            editText.setMaxWidth(250);
             linearLayout.addView(editText);
             tag=editText;
         }else{
             linearLayout.addView(ViewUtil.getTextEdit(v,this));
         }
 
-        if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")||type.equalsIgnoreCase("image")) {
+        if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")||type.equalsIgnoreCase("image")||type.equalsIgnoreCase("date")) {
             Button onLineBtn = new Button(this);
             onLineBtn.setLayoutParams(new LinearLayout.LayoutParams(100,100));
             onLineBtn.setMaxHeight(100);
@@ -573,19 +574,18 @@ public class WmActivity extends Activity implements View.OnClickListener {
                 @Override
                 public void onClick(View view) {
                     if("color".equals(getTooltipText(view))){
-                        PopDialog.showView(WmActivity.this, MyWeb.popColor((EditText)view.getTag()), 300);
+                        PopDialog.showView(WmActivity.this, MyWeb.popColor((EditText)view.getTag()), webH);
                     }else if("font".equals(getTooltipText(view))){
-                        PopDialog.showView(WmActivity.this, MyWeb.popFont((EditText)view.getTag()), 300);
+                        PopDialog.showView(WmActivity.this, MyWeb.popFont((EditText)view.getTag()), webH);
                     }else if("image".equals(getTooltipText(view))){
-                        PopDialog.showView(WmActivity.this, MyWeb.popLogo((ImageButton)view.getTag()), 300);
+                        PopDialog.showView(WmActivity.this, MyWeb.popLogo((ImageButton)view.getTag()), webH);
+                    }else if("date".equals(getTooltipText(view))){
+                        PopDialog.showView(WmActivity.this, MyWeb.popDataFormat((EditText)view.getTag()),webH );
                     }
-
                 }
             });
             linearLayout.addView(onLineBtn);
         }
-
-
         return linearLayout;
     }
 

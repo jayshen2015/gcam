@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.View;
-
 import com.Utils.Pref;
 import com.agc.widget.GrayscaleButton;
+import com.agc.widget.OptionButton;
 
 import nan.ren.activity.WmActivity;
 
@@ -30,6 +30,7 @@ public class AJButton extends GrayscaleButton {
 
     @Override
     public void init(Context context) {
+        this.iconPadding = 10;
         super.init(context);
         this.setOnLongClickListener(new OnLongClickListener() {
             @Override
@@ -49,4 +50,5 @@ public class AJButton extends GrayscaleButton {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
         c.startActivity(intent);
     }
+
 }
