@@ -17,14 +17,14 @@
     .locals 2
     .param p0, "bitmap"    # Landroid/graphics/Bitmap;
 
-    .line 202
+    .line 203
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 203
+    .line 204
     :cond_0
     new-instance v0, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -40,7 +40,7 @@
     .param p0, "srcPath"    # Ljava/lang/String;
     .param p1, "size"    # Landroid/util/Size;
 
-    .line 120
+    .line 121
     invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
 
     move-result v0
@@ -70,7 +70,7 @@
     .param p1, "size"    # Landroid/util/Size;
     .param p2, "isMixWidth"    # Z
 
-    .line 123
+    .line 124
     const/16 v0, 0x64
 
     invoke-static {p0, p1, p2, v0}, Lnan/ren/util/ImageUtil;->compressImage(Ljava/lang/String;Landroid/util/Size;ZI)Landroid/graphics/Bitmap;
@@ -87,36 +87,36 @@
     .param p2, "isMixWidth"    # Z
     .param p3, "maxSize"    # I
 
-    .line 128
+    .line 129
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 130
+    .line 131
     .local v0, "newOpts":Landroid/graphics/BitmapFactory$Options;
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 131
+    .line 132
     invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 133
+    .line 134
     .local v1, "bitmap":Landroid/graphics/Bitmap;
     const/4 v2, 0x0
 
     iput-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 134
+    .line 135
     const/4 v2, 0x1
 
-    .line 135
+    .line 136
     .local v2, "be":I
     if-eqz p2, :cond_0
 
-    .line 136
+    .line 137
     iget v3, v0, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
@@ -129,7 +129,7 @@
     .local v3, "be":I
     goto :goto_0
 
-    .line 138
+    .line 139
     .end local v3    # "be":I
     .restart local v2    # "be":I
     :cond_0
@@ -141,7 +141,7 @@
 
     div-int/2addr v3, v4
 
-    .line 140
+    .line 141
     .end local v2    # "be":I
     .restart local v3    # "be":I
     :goto_0
@@ -149,16 +149,16 @@
 
     const/4 v3, 0x1
 
-    .line 141
+    .line 142
     :cond_1
     iput v3, v0, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
-    .line 142
+    .line 143
     invoke-static {p0, v0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 143
+    .line 144
     invoke-static {v1, p3}, Lnan/ren/util/ImageUtil;->compressImageWidthLength(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
 
     move-result-object v2
@@ -171,14 +171,14 @@
     .param p0, "image"    # Landroid/graphics/Bitmap;
     .param p1, "quality"    # I
 
-    .line 182
+    .line 183
     const/4 v0, 0x0
 
-    .line 183
+    .line 184
     .local v0, "baos":Ljava/io/ByteArrayOutputStream;
     const/4 v1, 0x0
 
-    .line 185
+    .line 186
     .local v1, "isBm":Ljava/io/ByteArrayInputStream;
     :try_start_0
     new-instance v2, Ljava/io/ByteArrayOutputStream;
@@ -187,12 +187,12 @@
 
     move-object v0, v2
 
-    .line 186
+    .line 187
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p0, v2, p1, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 187
+    .line 188
     new-instance v2, Ljava/io/ByteArrayInputStream;
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -203,7 +203,7 @@
 
     move-object v1, v2
 
-    .line 188
+    .line 189
     const/4 v2, 0x0
 
     invoke-static {v1, v2, v2}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -212,26 +212,26 @@
 
     move-object p0, v2
 
-    .line 189
+    .line 190
     invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
 
-    .line 190
+    .line 191
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 195
+    .line 196
     goto :goto_1
 
-    .line 191
+    .line 192
     :catch_0
     move-exception v2
 
-    .line 192
+    .line 193
     .local v2, "ex":Ljava/lang/Exception;
     invoke-static {v2}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 193
+    .line 194
     if-eqz v1, :cond_0
 
     :try_start_1
@@ -244,7 +244,7 @@
     :catch_1
     move-exception v3
 
-    .line 194
+    .line 195
     :cond_0
     :goto_0
     if-eqz v0, :cond_1
@@ -259,7 +259,7 @@
     :catch_2
     move-exception v3
 
-    .line 196
+    .line 197
     .end local v2    # "ex":Ljava/lang/Exception;
     :cond_1
     :goto_1
@@ -271,26 +271,26 @@
     .param p0, "bm"    # Landroid/graphics/Bitmap;
     .param p1, "size"    # Landroid/util/Size;
 
-    .line 221
+    .line 222
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 223
+    .line 224
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
 
-    .line 224
+    .line 225
     .local v0, "width":I
     invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v8
 
-    .line 226
+    .line 227
     .local v8, "height":I
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
@@ -302,7 +302,7 @@
 
     div-float/2addr v1, v2
 
-    .line 227
+    .line 228
     .local v1, "scaleWidth":F
     invoke-virtual {p1}, Landroid/util/Size;->getHeight()I
 
@@ -314,7 +314,7 @@
 
     div-float/2addr v2, v3
 
-    .line 228
+    .line 229
     .local v2, "scaleHeight":F
     invoke-virtual {p1}, Landroid/util/Size;->getWidth()I
 
@@ -330,7 +330,7 @@
 
     goto :goto_0
 
-    .line 229
+    .line 230
     :cond_1
     move v2, v1
 
@@ -338,7 +338,7 @@
 
     move v10, v2
 
-    .line 231
+    .line 232
     .end local v1    # "scaleWidth":F
     .end local v2    # "scaleHeight":F
     .local v9, "scaleWidth":F
@@ -350,11 +350,11 @@
 
     move-object v11, v1
 
-    .line 232
+    .line 233
     .local v11, "matrix":Landroid/graphics/Matrix;
     invoke-virtual {v11, v9, v10}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 234
+    .line 235
     const/4 v2, 0x0
 
     const/4 v3, 0x0
@@ -380,7 +380,7 @@
     .locals 1
     .param p0, "image"    # Landroid/graphics/Bitmap;
 
-    .line 149
+    .line 150
     const/16 v0, 0x64
 
     invoke-static {p0, v0}, Lnan/ren/util/ImageUtil;->compressImageWidthLength(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
@@ -395,14 +395,14 @@
     .param p0, "image"    # Landroid/graphics/Bitmap;
     .param p1, "maxLength"    # I
 
-    .line 153
+    .line 154
     const/4 v0, 0x0
 
-    .line 154
+    .line 155
     .local v0, "baos":Ljava/io/ByteArrayOutputStream;
     const/4 v1, 0x0
 
-    .line 156
+    .line 157
     .local v1, "isBm":Ljava/io/ByteArrayInputStream;
     :try_start_0
     new-instance v2, Ljava/io/ByteArrayOutputStream;
@@ -411,17 +411,17 @@
 
     move-object v0, v2
 
-    .line 157
+    .line 158
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v3, 0x64
 
     invoke-virtual {p0, v2, v3, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 159
+    .line 160
     const/16 v2, 0x5a
 
-    .line 160
+    .line 161
     .local v2, "options":I
     :goto_0
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
@@ -438,17 +438,17 @@
 
     if-lt v2, v3, :cond_0
 
-    .line 163
+    .line 164
     sget-object v3, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p0, v3, v2, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 165
+    .line 166
     add-int/lit8 v2, v2, -0xa
 
     goto :goto_0
 
-    .line 167
+    .line 168
     :cond_0
     new-instance v3, Ljava/io/ByteArrayInputStream;
 
@@ -460,7 +460,7 @@
 
     move-object v1, v3
 
-    .line 169
+    .line 170
     const/4 v3, 0x0
 
     invoke-static {v1, v3, v3}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -469,27 +469,27 @@
 
     move-object p0, v3
 
-    .line 171
+    .line 172
     invoke-virtual {v1}, Ljava/io/ByteArrayInputStream;->close()V
 
-    .line 172
+    .line 173
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 177
+    .line 178
     .end local v2    # "options":I
     goto :goto_2
 
-    .line 173
+    .line 174
     :catch_0
     move-exception v2
 
-    .line 174
+    .line 175
     .local v2, "ex":Ljava/lang/Exception;
     invoke-static {v2}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 175
+    .line 176
     if-eqz v1, :cond_1
 
     :try_start_1
@@ -502,7 +502,7 @@
     :catch_1
     move-exception v3
 
-    .line 176
+    .line 177
     :cond_1
     :goto_1
     if-eqz v0, :cond_2
@@ -517,7 +517,7 @@
     :catch_2
     move-exception v3
 
-    .line 178
+    .line 179
     .end local v2    # "ex":Ljava/lang/Exception;
     :cond_2
     :goto_2
@@ -528,7 +528,7 @@
     .locals 4
     .param p0, "path"    # Ljava/lang/String;
 
-    .line 243
+    .line 244
     const/4 v0, 0x0
 
     :try_start_0
@@ -540,13 +540,13 @@
 
     return-object v0
 
-    .line 244
+    .line 245
     :cond_0
     invoke-static {p0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 245
+    .line 246
     .local v1, "decodeFile":Landroid/graphics/Bitmap;
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
@@ -556,15 +556,15 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 246
+    .line 247
     return-object v1
 
-    .line 247
+    .line 248
     .end local v1    # "decodeFile":Landroid/graphics/Bitmap;
     :catch_0
     move-exception v1
 
-    .line 248
+    .line 249
     .local v1, "ex":Ljava/lang/Exception;
     return-object v0
 .end method
@@ -573,7 +573,7 @@
     .locals 5
     .param p0, "filename"    # Ljava/lang/String;
 
-    .line 111
+    .line 112
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     sget-object v1, Lnan/ren/G;->PACKAGE_NAME:Ljava/lang/String;
@@ -584,11 +584,11 @@
 
     move-result v0
 
-    .line 112
+    .line 113
     .local v0, "identifier":I
     if-nez v0, :cond_0
 
-    .line 113
+    .line 114
     sget-object v1, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     const-string v3, "agc_lib_patcher"
@@ -599,7 +599,7 @@
 
     move-result v0
 
-    .line 115
+    .line 116
     :cond_0
     const/4 v1, 0x0
 
@@ -613,7 +613,7 @@
 
     return-object v1
 
-    .line 116
+    .line 117
     :cond_1
     return-object v1
 .end method
@@ -622,12 +622,12 @@
     .locals 6
     .param p0, "fileName"    # Ljava/lang/String;
 
-    .line 73
+    .line 74
     const-string v0, "agc_patch_profile_"
 
     const/4 v1, 0x0
 
-    .line 74
+    .line 75
     .local v1, "extDrawable":Landroid/graphics/drawable/Drawable;
     const/4 v2, 0x1
 
@@ -663,19 +663,19 @@
 
     goto :goto_0
 
-    .line 88
+    .line 89
     .end local v1    # "extDrawable":Landroid/graphics/drawable/Drawable;
     :catchall_0
     move-exception v0
 
     goto :goto_2
 
-    .line 74
+    .line 75
     .restart local v1    # "extDrawable":Landroid/graphics/drawable/Drawable;
     :catch_0
     move-exception v4
 
-    .line 76
+    .line 77
     :goto_0
     if-nez v1, :cond_0
 
@@ -686,7 +686,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 77
+    .line 78
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -724,7 +724,7 @@
     .local v0, "extDrawable":Landroid/graphics/drawable/Drawable;
     goto :goto_1
 
-    .line 79
+    .line 80
     .end local v0    # "extDrawable":Landroid/graphics/drawable/Drawable;
     .restart local v1    # "extDrawable":Landroid/graphics/drawable/Drawable;
     :catch_1
@@ -734,10 +734,10 @@
     :goto_1
     nop
 
-    .line 80
+    .line 81
     if-nez v1, :cond_1
 
-    .line 81
+    .line 82
     :try_start_2
     invoke-static {p0}, Lnan/ren/util/ImageUtil;->getInnerDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -750,28 +750,28 @@
 
     goto :goto_3
 
-    .line 89
+    .line 90
     .end local v1    # "extDrawable":Landroid/graphics/drawable/Drawable;
     .local v0, "ex":Ljava/lang/Throwable;
     :goto_2
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 90
+    .line 91
     return-object v3
 
-    .line 85
+    .line 86
     .end local v0    # "ex":Ljava/lang/Throwable;
     :catch_2
     move-exception v0
 
-    .line 86
+    .line 87
     .local v0, "ex":Ljava/lang/Exception;
     invoke-static {v0}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 87
+    .line 88
     return-object v3
 
-    .line 84
+    .line 85
     .end local v0    # "ex":Ljava/lang/Exception;
     .restart local v1    # "extDrawable":Landroid/graphics/drawable/Drawable;
     :cond_1
@@ -783,7 +783,7 @@
     .locals 2
     .param p0, "fileName"    # Ljava/lang/String;
 
-    .line 61
+    .line 62
     const/4 v0, 0x0
 
     :try_start_0
@@ -800,27 +800,27 @@
 
     return-object v0
 
-    .line 65
+    .line 66
     :catchall_0
     move-exception v1
 
-    .line 66
+    .line 67
     .local v1, "ex":Ljava/lang/Throwable;
     invoke-static {v1}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 67
+    .line 68
     return-object v0
 
-    .line 62
+    .line 63
     .end local v1    # "ex":Ljava/lang/Throwable;
     :catch_0
     move-exception v1
 
-    .line 63
+    .line 64
     .local v1, "ex":Ljava/lang/Exception;
     invoke-static {v1}, Lnan/ren/util/NUtil;->dumpExceptionToSDCard(Ljava/lang/Throwable;)V
 
-    .line 64
+    .line 65
     return-object v0
 .end method
 
@@ -829,80 +829,62 @@
     .param p0, "fileName"    # Ljava/lang/String;
 
     .line 45
-    const/4 v0, 0x0
+    const-string v0, "logos/"
 
-    if-eqz p0, :cond_3
+    const/4 v1, 0x0
+
+    if-eqz p0, :cond_4
 
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v2
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    if-ge v1, v2, :cond_0
+    if-ge v2, v3, :cond_0
 
     goto :goto_2
 
     .line 46
     :cond_0
-    const-string v1, "/"
+    const-string v2, "/"
 
-    invoke-virtual {p0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v2
 
-    if-eqz v1, :cond_1
+    if-eqz v2, :cond_1
 
     return-object p0
 
     .line 47
     :cond_1
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v2
 
-    sget-object v2, Lnan/ren/G;->LOGO_PATH:Ljava/lang/String;
+    if-eqz v2, :cond_2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x6
 
-    move-result-object v1
+    invoke-virtual {p0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    move-object p0, v2
 
     .line 48
-    .local v1, "logoPath":Ljava/lang/String;
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {v2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-
-    if-nez v0, :cond_2
-
-    .line 50
-    :try_start_1
-    sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
-
+    :cond_2
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "logos/"
+    sget-object v3, Lnan/ren/G;->LOGO_PATH:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -916,7 +898,41 @@
 
     move-result-object v2
 
-    invoke-static {v0, v2}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    .line 49
+    .local v2, "logoPath":Ljava/lang/String;
+    new-instance v3, Ljava/io/File;
+
+    invoke-direct {v3, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/io/File;->exists()Z
+
+    move-result v1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
+
+    if-nez v1, :cond_3
+
+    .line 51
+    :try_start_1
+    sget-object v1, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1, v0}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
@@ -926,9 +942,9 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    move-object v1, v0
+    move-object v2, v0
 
-    .line 51
+    .line 52
     :goto_0
     goto :goto_1
 
@@ -937,32 +953,32 @@
 
     goto :goto_0
 
-    .line 53
-    :cond_2
-    :goto_1
-    return-object v1
-
     .line 54
-    .end local v1    # "logoPath":Ljava/lang/String;
-    :catch_1
-    move-exception v1
+    :cond_3
+    :goto_1
+    return-object v2
 
     .line 55
-    .local v1, "ex":Ljava/lang/Exception;
-    return-object v0
+    .end local v2    # "logoPath":Ljava/lang/String;
+    :catch_1
+    move-exception v0
+
+    .line 56
+    .local v0, "ex":Ljava/lang/Exception;
+    return-object v1
 
     .line 45
-    .end local v1    # "ex":Ljava/lang/Exception;
-    :cond_3
+    .end local v0    # "ex":Ljava/lang/Exception;
+    :cond_4
     :goto_2
-    return-object v0
+    return-object v1
 .end method
 
 .method public static getOuterDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 1
     .param p0, "filePath"    # Ljava/lang/String;
 
-    .line 94
+    .line 95
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lnan/ren/util/ImageUtil;->getOuterDrawable(Ljava/lang/String;Z)Landroid/graphics/drawable/Drawable;
@@ -977,16 +993,16 @@
     .param p0, "filePath"    # Ljava/lang/String;
     .param p1, "checkPx"    # Z
 
-    .line 98
+    .line 99
     const-string v0, ".png"
 
     move-object v1, p0
 
-    .line 99
+    .line 100
     .local v1, "myFilePath":Ljava/lang/String;
     if-eqz p1, :cond_0
 
-    .line 100
+    .line 101
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -996,7 +1012,7 @@
 
     move-result-object v2
 
-    .line 101
+    .line 102
     .local v2, "tmpStr":Ljava/lang/String;
     invoke-virtual {v2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
@@ -1020,7 +1036,7 @@
 
     if-nez v3, :cond_0
 
-    .line 102
+    .line 103
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1039,7 +1055,7 @@
 
     move-object v1, v0
 
-    .line 104
+    .line 105
     .end local v2    # "tmpStr":Ljava/lang/String;
     :cond_0
     invoke-static {v1}, Landroid/graphics/drawable/Drawable;->createFromPath(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -1050,12 +1066,12 @@
 
     return-object v0
 
-    .line 105
+    .line 106
     .end local v1    # "myFilePath":Ljava/lang/String;
     :catch_0
     move-exception v0
 
-    .line 106
+    .line 107
     .local v0, "ex":Ljava/lang/Exception;
     const/4 v1, 0x0
 
@@ -1126,12 +1142,12 @@
     .param p0, "bitmap"    # Landroid/graphics/Bitmap;
     .param p1, "savePath"    # Ljava/lang/String;
 
-    .line 238
+    .line 239
     const/16 v0, 0x64
 
     invoke-static {p0, p1, v0}, Lnan/ren/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
 
-    .line 239
+    .line 240
     return-void
 .end method
 
@@ -1141,16 +1157,16 @@
     .param p1, "savePath"    # Ljava/lang/String;
     .param p2, "quality"    # I
 
-    .line 207
+    .line 208
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 208
+    .line 209
     .local v0, "file":Ljava/io/File;
     const/4 v1, 0x0
 
-    .line 210
+    .line 211
     .local v1, "bos":Ljava/io/BufferedOutputStream;
     :try_start_0
     new-instance v2, Ljava/io/BufferedOutputStream;
@@ -1163,27 +1179,27 @@
 
     move-object v1, v2
 
-    .line 211
+    .line 212
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     invoke-virtual {p0, v2, p2, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 212
+    .line 213
     invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->flush()V
 
-    .line 213
+    .line 214
     invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 216
+    .line 217
     goto :goto_0
 
-    .line 214
+    .line 215
     :catch_0
     move-exception v2
 
-    .line 215
+    .line 216
     .local v2, "e":Ljava/lang/Exception;
     if-eqz v1, :cond_0
 
@@ -1197,7 +1213,7 @@
     :catch_1
     move-exception v3
 
-    .line 217
+    .line 218
     .end local v2    # "e":Ljava/lang/Exception;
     :cond_0
     :goto_0
