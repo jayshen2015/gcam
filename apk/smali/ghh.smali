@@ -1039,7 +1039,13 @@
 
     if-nez v4, :cond_1b
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x0
+
+    new-instance v2, Lcom/google/googlex/gcam/Gcam;
+
+    invoke-direct {v2, v0, v1}, Lcom/google/googlex/gcam/Gcam;-><init>(J)V
+
+    move-object v0, v2
 
     goto :goto_9
 

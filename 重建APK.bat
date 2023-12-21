@@ -4,7 +4,7 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC9.1.24_V6.1
+set apkname=AGC9.1.24_V7.2
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 java.exe -jar "apktool-cli.jar" if "sign/framework-res.apk"

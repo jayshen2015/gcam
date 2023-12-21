@@ -5,6 +5,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/agc/Res$attr;,
         Lcom/agc/Res$id;,
         Lcom/agc/Res$string;,
         Lcom/agc/Res$layout;
@@ -108,6 +109,18 @@
     const-string p0, ""
 
     return-object p0
+.end method
+
+.method public static getAttrID(Ljava/lang/String;)I
+    .locals 1
+
+    const-string v0, "attr"
+
+    invoke-static {p0, v0}, Lcom/agc/Res;->getID(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result p0
+
+    return p0
 .end method
 
 .method public static getColorAccent(Landroid/content/Context;)I

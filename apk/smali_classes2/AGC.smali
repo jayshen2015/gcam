@@ -945,7 +945,7 @@
 .method public static getCaptureResultKey(Lndu;)Ljava/lang/Integer;
     .locals 1
 
-    invoke-static {}, Lagc/Agc;->noNeedFixLens()Z
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
     move-result v0
 
@@ -1398,7 +1398,7 @@
 .end method
 
 .method public static mergeSetting(Lcom/google/googlex/gcam/ShotParams;)V
-    .locals 9
+    .locals 7
 
     invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
@@ -1417,170 +1417,162 @@
 
     const/4 v1, 0x1
 
-    add-int/lit8 v6, v0, -0x1
+    sub-int/2addr v0, v1
 
-    sput v6, Lcom/agc/LogData$Device;->merge:I
+    sput v0, Lcom/agc/LogData$Device;->merge:I
 
     invoke-static {}, Lcom/agc/LogData$Device;->log()V
 
-    const-string v0, "lib_hardmerge_key"
+    const-string v2, "lib_hardmerge_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefStringValue(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/Utils/Pref;->getAuxPrefStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+    invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
 
-    move-result v2
+    move-result v3
 
-    const/4 v8, 0x0
+    const/4 v4, 0x0
 
-    if-nez v2, :cond_2
+    if-nez v3, :cond_2
 
-    const-string v2, "Off"
+    const-string v3, "Off"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v0
+    move-result v3
 
-    if-eqz v0, :cond_1
+    if-eqz v3, :cond_1
 
     goto :goto_0
 
     :cond_1
-    move v0, v8
+    move v3, v4
 
     goto :goto_1
 
     :cond_2
     :goto_0
-    move v0, v1
+    move v3, v1
 
     :goto_1
-    if-nez v0, :cond_3
+    if-nez v3, :cond_3
 
-    const-string p0, "Use libpatch merge method"
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
-    invoke-static {p0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
+    move-result-object v2
 
-    return-void
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    sput v2, Lcom/agc/LogData$Device;->merge:I
+
+    invoke-static {}, Lcom/agc/LogData$Device;->log()V
 
     :cond_3
     invoke-static {}, Lagc/Agc;->getSMode()I
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_4
+    if-nez v2, :cond_4
 
-    sget-object v0, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lflu;->T:Lflm;
-
-    :goto_2
-    invoke-virtual {v0, v2}, Lfnc;->l(Lflm;)Z
-
-    move-result v0
-
-    goto :goto_3
-
-    :cond_4
-    const/4 v2, 0x2
-
-    if-ne v0, v2, :cond_5
-
-    sget-object v0, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lfmh;->C:Lflm;
-
-    goto :goto_2
-
-    :cond_5
-    const/4 v2, 0x4
-
-    if-ne v0, v2, :cond_6
-
-    sget-object v0, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lflu;->S:Lflm;
-
-    goto :goto_2
-
-    :cond_6
-    move v0, v8
-
-    :goto_3
     sget-object v2, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v3, Lflu;->ab:Lflm;
+    sget-object v3, Lflu;->T:Lflm;
 
+    :goto_2
     invoke-virtual {v2, v3}, Lfnc;->l(Lflm;)Z
 
     move-result v2
 
-    sget-object v3, LAGC;->gcaConfig:Lfnc;
+    goto :goto_3
 
-    sget-object v4, Lflu;->Z:Lflm;
+    :cond_4
+    const/4 v3, 0x2
 
-    invoke-virtual {v3, v4}, Lfnc;->l(Lflm;)Z
+    if-ne v2, v3, :cond_5
 
-    move-result v3
+    sget-object v2, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v4, LAGC;->gcaConfig:Lfnc;
+    sget-object v3, Lfmh;->C:Lflm;
 
-    sget-object v5, Lflu;->RR:Lflm;
+    goto :goto_2
 
-    invoke-virtual {v4, v5}, Lfnc;->l(Lflm;)Z
+    :cond_5
+    const/4 v3, 0x4
 
-    move-result v5
+    if-ne v2, v3, :cond_6
 
-    invoke-static {}, Lcom/agc/LensSettings;->getImageFormat()I
+    sget-object v2, LAGC;->gcaConfig:Lfnc;
 
-    move-result v7
+    sget-object v3, Lflu;->S:Lflm;
 
-    move v4, v0
+    goto :goto_2
 
-    invoke-static/range {v2 .. v7}, Lagc/Agc;->mergeMethod(ZZZZII)I
+    :cond_6
+    move v2, v4
 
-    move-result v2
+    :goto_3
+    sget v3, LAGC;->rawFormat:I
 
-    const/4 v3, -0x1
+    const/16 v5, 0x25
 
-    if-eq v2, v3, :cond_7
+    if-ne v3, v5, :cond_7
 
-    iget-wide v3, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v3, v4, p0, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
-
-    :cond_7
-    iget-wide v3, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    if-nez v2, :cond_8
-
-    invoke-static {v3, v4, p0, v8}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     goto :goto_4
 
-    :cond_8
-    invoke-static {v3, v4, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    :cond_7
+    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v5, v6, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     :goto_4
+    if-ltz v0, :cond_8
+
+    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v5, v6, p0, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+
+    if-ne v0, v1, :cond_8
+
+    sget v3, LAGC;->rawFormat:I
+
+    const/16 v5, 0x20
+
+    if-ne v3, v5, :cond_8
+
+    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v5, v6, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+
+    :cond_8
     const/4 v3, 0x3
 
-    if-ne v2, v3, :cond_9
+    if-ne v0, v3, :cond_9
 
-    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v2, v3, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v5, v6, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    iget-wide v3, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v3, v4, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     goto :goto_5
 
     :cond_9
-    iget-wide v1, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v1, v2, p0, v8}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v0, v1, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     :goto_5
-    invoke-static {p0, v0}, LAGC;->setShasta(Lcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {p0, v2}, LAGC;->setShasta(Lcom/google/googlex/gcam/ShotParams;Z)V
 
     return-void
 .end method
@@ -2319,7 +2311,7 @@
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v1, Lflw;->c:Lflm;
+    sget-object v1, Lflk;->c:Lflm;
 
     invoke-virtual {v0, v1, v4}, Lfnc;->u(Lflm;Z)V
 
@@ -2586,7 +2578,7 @@
 .end method
 
 .method public static setShasta(Lcom/google/googlex/gcam/ShotParams;Z)V
-    .locals 3
+    .locals 4
 
     const-string v0, "pref_shasta_key"
 
@@ -2594,71 +2586,45 @@
 
     move-result v0
 
-    sget v1, LAGC;->rawFormat:I
-
-    const/16 v2, 0x25
-
-    if-ne v1, v2, :cond_2
-
     const/4 v1, 0x0
 
     cmpl-float v1, v0, v1
 
-    if-ltz v1, :cond_2
+    if-ltz v1, :cond_1
 
-    if-nez v1, :cond_0
+    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    sget-object v0, LAGC;->gcaConfig:Lfnc;
+    invoke-static {v2, v3, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
-    sget-object v1, Lflu;->U:Lflm;
+    sget-object p1, LAGC;->gcaConfig:Lfnc;
 
-    invoke-virtual {v0, v1}, Lfnc;->h(Lflm;)Lj$/util/Optional;
+    sget-object v2, Lflu;->shastaForce:Lflm;
 
-    move-result-object v0
+    invoke-virtual {p1, v2}, Lfnc;->l(Lflm;)Z
 
-    invoke-virtual {v0}, Lj$/util/Optional;->isPresent()Z
+    move-result p1
 
-    move-result v1
+    if-eqz p1, :cond_0
 
-    if-eqz v1, :cond_1
+    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-virtual {v0}, Lj$/util/Optional;->get()Ljava/lang/Object;
+    const/4 p1, 0x1
 
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Float;
-
-    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
-
-    move-result v0
-
-    sput v0, LAGC;->sensorGreenSplit:F
-
-    goto :goto_0
+    invoke-static {v2, v3, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     :cond_0
-    sget v1, LAGC;->sensorGreenSplit:F
+    if-lez v1, :cond_1
 
-    mul-float/2addr v1, v0
+    sget p1, LAGC;->sensorGreenSplit:F
 
-    sput v1, LAGC;->sensorGreenSplit:F
+    mul-float/2addr p1, v0
+
+    sput p1, LAGC;->sensorGreenSplit:F
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_factor_set(JLcom/google/googlex/gcam/ShotParams;F)V
 
     :cond_1
-    :goto_0
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    sget v2, LAGC;->sensorGreenSplit:F
-
-    invoke-static {v0, v1, p0, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_factor_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    :cond_2
     return-void
 .end method

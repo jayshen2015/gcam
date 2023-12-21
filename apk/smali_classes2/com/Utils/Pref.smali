@@ -1659,52 +1659,8 @@
 .end method
 
 .method private static handleCustomLogical(Landroid/content/SharedPreferences;Ljava/lang/String;)V
-    .locals 3
+    .locals 0
 
-    const-string p0, "pref_hdrnet_key"
-
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
-
-    move-result p0
-
-    const/4 p1, 0x0
-
-    const/4 v0, 0x1
-
-    if-ne p0, v0, :cond_0
-
-    move v1, v0
-
-    goto :goto_0
-
-    :cond_0
-    move v1, p1
-
-    :goto_0
-    const-string v2, "hdrnet_enabled"
-
-    invoke-static {v2, v1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
-
-    if-ne p0, v0, :cond_1
-
-    move p1, v0
-
-    :cond_1
-    const-string v0, "camera.chameleon.enabled"
-
-    invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Z)V
-
-    const-string p1, "pref_chameleon_control_key"
-
-    invoke-static {p1, p0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
-
-    :cond_2
     return-void
 .end method
 

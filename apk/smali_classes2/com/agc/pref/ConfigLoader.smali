@@ -355,7 +355,7 @@
 
     invoke-static {p1, v1}, Lcom/agc/pref/ConfigLoader;->copyFile(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-static {v1, p2}, Lagc/Agc;->preferenceLoadProcess(Ljava/lang/String;Z)I
+    invoke-static {p1, v1, p2}, Lagc/Agc;->preferenceLoadProcess(Ljava/lang/String;Ljava/lang/String;Z)I
 
     sget-object p1, Lcom/agc/pref/ConfigLoader;->blackListKey:[Ljava/lang/String;
 
@@ -456,7 +456,7 @@
 .end method
 
 .method private show()V
-    .locals 11
+    .locals 12
 
     const-string v0, "pref_xml_path_key"
 
@@ -525,57 +525,65 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const/4 v1, 0x1
+    const-string v1, "xml_file_name"
 
-    new-array v4, v1, [I
+    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 
-    const/4 v6, -0x1
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    move-result v1
+
+    const/4 v4, 0x1
+
+    new-array v6, v4, [I
 
     const/4 v7, 0x0
 
-    aput v6, v4, v7
+    aput v1, v6, v7
 
-    new-instance v6, Landroid/widget/ArrayAdapter;
+    new-instance v8, Landroid/widget/ArrayAdapter;
 
-    iget-object v8, p0, Lcom/agc/pref/ConfigLoader;->context:Landroid/content/Context;
+    iget-object v1, p0, Lcom/agc/pref/ConfigLoader;->context:Landroid/content/Context;
 
     const v9, 0x1090005
 
-    invoke-direct {v6, v8, v9, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
+    invoke-direct {v8, v1, v9, v0}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;ILjava/util/List;)V
 
-    new-instance v8, Landroid/app/AlertDialog$Builder;
+    new-instance v1, Landroid/app/AlertDialog$Builder;
 
     iget-object v9, p0, Lcom/agc/pref/ConfigLoader;->context:Landroid/content/Context;
 
-    invoke-direct {v8, v9}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v9}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     invoke-static {v2}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v8, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-direct {p0}, Lcom/agc/pref/ConfigLoader;->getTitleView()Landroid/view/View;
 
-    move-result-object v8
-
-    invoke-virtual {v2, v8}, Landroid/app/AlertDialog$Builder;->setCustomTitle(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
-
     move-result-object v2
 
-    aget v7, v4, v7
+    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setCustomTitle(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
-    new-instance v8, Lcom/agc/pref/ConfigLoader$2;
+    move-result-object v1
 
-    invoke-direct {v8, p0, v4}, Lcom/agc/pref/ConfigLoader$2;-><init>(Lcom/agc/pref/ConfigLoader;[I)V
+    aget v2, v6, v7
 
-    invoke-virtual {v2, v6, v7, v8}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems(Landroid/widget/ListAdapter;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    new-instance v7, Lcom/agc/pref/ConfigLoader$2;
 
-    move-result-object v2
+    invoke-direct {v7, p0, v6}, Lcom/agc/pref/ConfigLoader$2;-><init>(Lcom/agc/pref/ConfigLoader;[I)V
 
-    invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v8, v2, v7}, Landroid/app/AlertDialog$Builder;->setSingleChoiceItems(Landroid/widget/ListAdapter;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v4}, Landroid/app/AlertDialog$Builder;->setCancelable(Z)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
@@ -585,11 +593,11 @@
 
     move-result-object v2
 
-    new-instance v7, Lcom/agc/pref/ConfigLoader$1;
+    new-instance v4, Lcom/agc/pref/ConfigLoader$1;
 
-    invoke-direct {v7, p0, v4, v0, v5}, Lcom/agc/pref/ConfigLoader$1;-><init>(Lcom/agc/pref/ConfigLoader;[ILjava/util/List;Ljava/io/File;)V
+    invoke-direct {v4, p0, v6, v0, v5}, Lcom/agc/pref/ConfigLoader$1;-><init>(Lcom/agc/pref/ConfigLoader;[ILjava/util/List;Ljava/io/File;)V
 
-    invoke-virtual {v1, v2, v7}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v2, v4}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
 
@@ -615,37 +623,39 @@
 
     invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-virtual {v8}, Landroid/app/AlertDialog;->show()V
+    invoke-virtual {v9}, Landroid/app/AlertDialog;->show()V
 
     const/4 v1, -0x3
 
-    invoke-virtual {v8, v1}, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
+    invoke-virtual {v9, v1}, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
 
-    move-result-object v9
+    move-result-object v10
 
-    new-instance v10, Lcom/agc/pref/ConfigLoader$3;
+    new-instance v11, Lcom/agc/pref/ConfigLoader$3;
 
-    move-object v1, v10
+    move-object v1, v11
 
     move-object v2, p0
 
-    move-object v3, v4
+    move-object v3, v6
 
     move-object v4, v0
 
-    move-object v7, v8
+    move-object v6, v8
+
+    move-object v7, v9
 
     invoke-direct/range {v1 .. v7}, Lcom/agc/pref/ConfigLoader$3;-><init>(Lcom/agc/pref/ConfigLoader;[ILjava/util/List;Ljava/io/File;Landroid/widget/ArrayAdapter;Landroid/app/AlertDialog;)V
 
-    invoke-virtual {v9, v10}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v10, v11}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     new-instance v1, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v1}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
-    invoke-virtual {v8}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v9}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
@@ -671,7 +681,7 @@
 
     if-le v0, v3, :cond_1
 
-    invoke-virtual {v8}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {v9}, Landroid/app/AlertDialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 

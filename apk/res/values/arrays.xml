@@ -122,6 +122,24 @@
         <item>10.0</item>
         <item>Off (as in library)</item>
     </string-array>
+    <string-array name="sharpen_entries">
+        <item>OFF</item>
+        <item>@string/frames_off</item>
+        <item>@string/images_qua_on</item>
+        <item>@string/images_qua_plus</item>
+        <item>@string/extreme</item>
+        <item>@string/ultra</item>
+        <item>Off (as in library)</item>
+    </string-array>
+    <string-array name="sharpen_entryvalues">
+        <item>0</item>
+        <item>2</item>
+        <item>6</item>
+        <item>12</item>
+        <item>25</item>
+        <item>32</item>
+        <item>Off (as in library)</item>
+    </string-array>
     <string-array name="lib_hex_entries">
         <item>-10.0</item>
         <item>-3.0</item>
@@ -369,14 +387,6 @@
         <item>0</item>
         <item>Off (as in library)</item>
     </string-array>
-    <string-array name="lib_global_only_off_entries">
-        <item>@string/all_default_off</item>
-        <item>Off (as in library)</item>
-    </string-array>
-    <string-array name="lib_global_only_off_entryvalues">
-        <item>0</item>
-        <item>Off (as in library)</item>
-    </string-array>
     <string-array name="pref_camera_picturesize_entries">
         <item>@string/pref_camera_picturesize_default</item>
         <item>@string/pref_camera_picturesize_medium</item>
@@ -415,6 +425,14 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string-array name="lib_global_only_off_entries">
+        <item>@string/all_default_off</item>
+        <item>Off (as in library)</item>
+    </string-array>
+    <string-array name="lib_global_only_off_entryvalues">
+        <item>0</item>
+        <item>Off (as in library)</item>
+    </string-array>
     <string-array name="lib_global_only_on_entries">
         <item>@string/all_default_on</item>
         <item>Off (as in library)</item>
@@ -422,6 +440,18 @@
     <string-array name="lib_global_only_on_entryvalues">
         <item>1</item>
         <item>Off (as in library)</item>
+    </string-array>
+    <string-array name="pref_volume_action_entries">
+        <item>@string/volume_key_shutter</item>
+        <item>@string/volume_key_zoom</item>
+        <item>@string/volume_key_volume</item>
+        <item>@string/volume_key_off</item>
+    </string-array>
+    <string-array name="pref_volume_action_entryvalues">
+        <item>@string/preference_volume_key_shutter</item>
+        <item>@string/preference_volume_key_zoom</item>
+        <item>@string/preference_volume_key_volume</item>
+        <item>@string/preference_volume_key_off</item>
     </string-array>
     <string-array name="lib_zero_to_two_entries">
         <item>0.0</item>
@@ -489,17 +519,36 @@
         <item>3.0</item>
         <item>Off (as in library)</item>
     </string-array>
-    <string-array name="pref_volume_action_entries">
-        <item>@string/volume_key_shutter</item>
-        <item>@string/volume_key_zoom</item>
-        <item>@string/volume_key_volume</item>
-        <item>@string/volume_key_off</item>
+    <string-array name="storage_saver_settings_changed">
+        <item>@string/storage_saver_settings_changed_1</item>
+        <item>@string/storage_saver_settings_changed_2</item>
+        <item>@string/storage_saver_settings_changed_3</item>
+        <item>@string/storage_saver_settings_changed_4</item>
+        <item>@string/storage_saver_settings_changed_5</item>
+        <item>@string/storage_saver_settings_changed_6</item>
+        <item>@string/storage_saver_settings_changed_7</item>
     </string-array>
-    <string-array name="pref_volume_action_entryvalues">
-        <item>@string/preference_volume_key_shutter</item>
-        <item>@string/preference_volume_key_zoom</item>
-        <item>@string/preference_volume_key_volume</item>
-        <item>@string/preference_volume_key_off</item>
+    <string-array name="storage_saver_settings_changed_detail">
+        <item>@string/storage_saver_settings_changed_detail_1</item>
+        <item>@string/storage_saver_settings_changed_detail_2</item>
+        <item>@string/storage_saver_settings_changed_detail_3</item>
+        <item>@string/storage_saver_settings_changed_detail_4</item>
+        <item>@string/storage_saver_settings_changed_detail_5</item>
+        <item>@string/storage_saver_settings_changed_detail_6</item>
+        <item>@string/storage_saver_settings_changed_detail_7</item>
+    </string-array>
+    <string-array name="storage_saver_settings_changed_detail_default_res">
+        <item>@string/storage_saver_settings_changed_detail_1</item>
+        <item>@string/storage_saver_settings_changed_detail_2</item>
+        <item>@string/storage_saver_settings_changed_detail_3</item>
+        <item>@string/storage_saver_settings_changed_detail_4_default_res</item>
+        <item>@string/storage_saver_settings_changed_detail_5</item>
+        <item>@string/storage_saver_settings_changed_detail_6</item>
+        <item>@string/storage_saver_settings_changed_detail_7</item>
+    </string-array>
+    <string-array name="trusted_certificates">
+        <item>4BA713DFECE93D47572DC5E845A7A82C4A891F2F</item>
+        <item>24BB24C05E47E0AEFA68A58A766179D9B613A600</item>
     </string-array>
     <string-array name="lib_0_to_5_entries">
         <item>0</item>
@@ -557,37 +606,6 @@
         <item>500</item>
         <item>1000</item>
         <item>Off (as in library)</item>
-    </string-array>
-    <string-array name="storage_saver_settings_changed">
-        <item>@string/storage_saver_settings_changed_1</item>
-        <item>@string/storage_saver_settings_changed_2</item>
-        <item>@string/storage_saver_settings_changed_3</item>
-        <item>@string/storage_saver_settings_changed_4</item>
-        <item>@string/storage_saver_settings_changed_5</item>
-        <item>@string/storage_saver_settings_changed_6</item>
-        <item>@string/storage_saver_settings_changed_7</item>
-    </string-array>
-    <string-array name="storage_saver_settings_changed_detail">
-        <item>@string/storage_saver_settings_changed_detail_1</item>
-        <item>@string/storage_saver_settings_changed_detail_2</item>
-        <item>@string/storage_saver_settings_changed_detail_3</item>
-        <item>@string/storage_saver_settings_changed_detail_4</item>
-        <item>@string/storage_saver_settings_changed_detail_5</item>
-        <item>@string/storage_saver_settings_changed_detail_6</item>
-        <item>@string/storage_saver_settings_changed_detail_7</item>
-    </string-array>
-    <string-array name="storage_saver_settings_changed_detail_default_res">
-        <item>@string/storage_saver_settings_changed_detail_1</item>
-        <item>@string/storage_saver_settings_changed_detail_2</item>
-        <item>@string/storage_saver_settings_changed_detail_3</item>
-        <item>@string/storage_saver_settings_changed_detail_4_default_res</item>
-        <item>@string/storage_saver_settings_changed_detail_5</item>
-        <item>@string/storage_saver_settings_changed_detail_6</item>
-        <item>@string/storage_saver_settings_changed_detail_7</item>
-    </string-array>
-    <string-array name="trusted_certificates">
-        <item>4BA713DFECE93D47572DC5E845A7A82C4A891F2F</item>
-        <item>24BB24C05E47E0AEFA68A58A766179D9B613A600</item>
     </string-array>
     <string-array name="lib_zero_to_thirty_entries">
         <item>0.000</item>
@@ -1964,7 +1982,7 @@
     <string-array name="action_entryvalues">
         <item>android.media.action.STILL_IMAGE_CAMERA</item>
         <item>android.media.action.PORTRAIT</item>
-        <item>android.media.action.LONG_EXPOSURE</item>
+        <item>android.media.action.NIGHTSIGHT</item>
     </string-array>
     <string-array name="pref_watermark_logo_entries">
         <item>@string/pref_watermark_logo_agc_8.8</item>
@@ -1990,6 +2008,7 @@
         <item>@string/pref_watermark_logo_zte</item>
         <item>@string/pref_watermark_logo_poco</item>
         <item>@string/pref_watermark_logo_nuoio</item>
+        <item>@string/pref_watermark_logo_nothing</item>
     </string-array>
     <string-array name="pref_watermark_logo_entryvalues">
         <item>agc88.png</item>
@@ -2015,6 +2034,7 @@
         <item>zte.png</item>
         <item>poco.png</item>
         <item>nuoio.png</item>
+        <item>nothing.png</item>
     </string-array>
     <string-array name="pref_watermark_bg_entries">
         <item>@string/pref_card_background_white</item>
@@ -5712,18 +5732,12 @@
     </string-array>
     <string-array name="lib_hex_downsample_factor_entries">
         <item>(Default)</item>
-        <item>@string/all_default_off</item>
-        <item>1 (Original Resolution)</item>
-        <item>2 (Half Resolution)</item>
-        <item>3 (1/3rd Resolution)</item>
+        <item>Minimal</item>
         <item>Off (as in library)</item>
     </string-array>
     <string-array name="lib_hex_downsample_factor_entryvalues">
         <item>0</item>
-        <item>-1</item>
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
         <item>Off (as in library)</item>
     </string-array>
     <string-array name="lib_hex_dframeswithtetm_entries">

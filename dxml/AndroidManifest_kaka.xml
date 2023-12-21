@@ -19,8 +19,6 @@
             <data android:mimeType="video/*"/>
         </intent>
         <package android:name="com.google.android.apps.camera.poseidon"/>
-        <package android:name="com.google.vr.apps.ornament"/>
-        <package android:name="com.google.ar.core"/>
         <package android:name="com.google.android.apps.photos"/>
         <intent>
             <action android:name="android.intent.action.VIEW"/>

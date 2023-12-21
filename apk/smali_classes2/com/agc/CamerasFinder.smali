@@ -765,14 +765,28 @@
 
     const-string p2, "Tele"
 
-    goto :goto_0
-
-    :cond_2
-    const-string p2, "Main"
-
     :goto_0
     invoke-virtual {v0, p2}, Lcom/agc/Camera;->setName(Ljava/lang/String;)V
 
+    goto :goto_1
+
+    :cond_2
+    invoke-virtual {v0}, Lcom/agc/Camera;->isLogical()Z
+
+    move-result p2
+
+    if-eqz p2, :cond_3
+
+    const-string p2, "(Logical) Main"
+
+    goto :goto_0
+
+    :cond_3
+    const-string p2, "Main"
+
+    goto :goto_0
+
+    :goto_1
     invoke-interface {p1, v0}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -1370,7 +1384,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_c
+    if-eqz v6, :cond_e
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1438,28 +1452,42 @@
     goto :goto_3
 
     :cond_8
-    invoke-virtual {v7}, Lcom/agc/Camera;->getAeModes()[I
+    invoke-virtual {v7}, Lcom/agc/Camera;->isFront()Z
 
-    move-result-object v8
+    move-result v8
 
-    array-length v8, v8
+    if-eqz v8, :cond_a
 
-    if-gt v8, v9, :cond_5
-
-    invoke-static {}, Lagc/Agc;->isSamsDevice()Z
+    invoke-virtual {v7}, Lcom/agc/Camera;->isLogical()Z
 
     move-result v8
 
     if-eqz v8, :cond_9
 
-    goto :goto_5
+    const-string v8, "(Logical) Front"
+
+    goto :goto_4
 
     :cond_9
-    invoke-virtual {v7}, Lcom/agc/Camera;->isFront()Z
+    const-string v8, "Front"
+
+    goto :goto_4
+
+    :cond_a
+    invoke-static {}, Lagc/Agc;->isSamsDevice()Z
 
     move-result v8
 
     if-eqz v8, :cond_b
+
+    goto :goto_5
+
+    :cond_b
+    invoke-virtual {v7}, Lcom/agc/Camera;->isFront()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_d
 
     invoke-virtual {v7}, Lcom/agc/Camera;->getSensorSize()Landroid/util/SizeF;
 
@@ -1479,7 +1507,7 @@
 
     cmpg-float v8, v8, v9
 
-    if-lez v8, :cond_b
+    if-lez v8, :cond_d
 
     invoke-virtual {v7}, Lcom/agc/Camera;->getAngleOfView()D
 
@@ -1491,26 +1519,26 @@
 
     cmpg-double v8, v8, v10
 
-    if-gtz v8, :cond_a
+    if-gtz v8, :cond_c
 
     goto :goto_6
 
-    :cond_a
+    :cond_c
     :goto_5
     const-string v8, "Wide"
 
     goto :goto_4
 
-    :cond_b
+    :cond_d
     :goto_6
     const-string v8, "Depth/Portrait"
 
     goto :goto_4
 
-    :cond_c
+    :cond_e
     const/high16 v1, 0x3f800000    # 1.0f
 
-    if-eqz v2, :cond_d
+    if-eqz v2, :cond_f
 
     invoke-virtual {v2}, Lcom/agc/Camera;->getFocalLength()F
 
@@ -1528,11 +1556,11 @@
 
     goto :goto_7
 
-    :cond_d
+    :cond_f
     move v3, v1
 
     :goto_7
-    if-eqz v4, :cond_e
+    if-eqz v4, :cond_10
 
     invoke-virtual {v4}, Lcom/agc/Camera;->getFocalLength()F
 
@@ -1548,7 +1576,7 @@
 
     div-float/2addr v1, v2
 
-    :cond_e
+    :cond_10
     iget-object v2, v0, Lcom/agc/CamerasFinder;->map:Ljava/util/Map;
 
     invoke-interface {v2}, Ljava/util/Map;->values()Ljava/util/Collection;
@@ -1564,7 +1592,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_10
+    if-eqz v4, :cond_12
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -1576,13 +1604,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_f
+    if-eqz v5, :cond_11
 
     move v5, v1
 
     goto :goto_9
 
-    :cond_f
+    :cond_11
     move v5, v3
 
     :goto_9
@@ -1590,7 +1618,7 @@
 
     goto :goto_8
 
-    :cond_10
+    :cond_12
     return-void
 .end method
 

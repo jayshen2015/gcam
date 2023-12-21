@@ -265,7 +265,7 @@
 .method public static showInViewFinder()Z
     .locals 2
 
-    invoke-static {}, Lagc/Agc;->useOriginalSwitch()Z
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
     move-result v0
 

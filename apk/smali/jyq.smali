@@ -84,7 +84,11 @@
 
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
-    const/16 v4, 0x50
+    const-string v4, "jyq"
+
+    invoke-static {v4}, Lcom/agc/AdvancedSettings;->getJPGQuality(Ljava/lang/String;)I
+
+    move-result v4
 
     invoke-virtual {v1, v2, v4, v3}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
     :try_end_2

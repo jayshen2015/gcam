@@ -5606,6 +5606,8 @@
 
     move-result v1
 
+    sput v1, LAGC;->rawFormat:I
+
     invoke-virtual {v0, v1}, Lqeg;->d(I)Z
 
     move-result v0
@@ -5642,8 +5644,6 @@
     invoke-interface {p2}, Lndu;->e()Ljava/lang/String;
 
     move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-static {v0}, Lnak;->b(Ljava/lang/String;)Lnak;
 

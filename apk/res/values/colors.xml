@@ -723,7 +723,7 @@
     <color name="mtrl_textinput_disabled_color">#1f000000</color>
     <color name="mtrl_textinput_focused_box_stroke_color">#00000000</color>
     <color name="mtrl_textinput_hovered_box_stroke_color">#de000000</color>
-    <color name="night_mode_idle_color">#ff1a1c18</color>
+    <color name="night_mode_idle_color">#fff37727</color>
     <color name="notification_chip_background_color">#db222222</color>
     <color name="notification_dot_color">?colorPrimary</color>
     <color name="notification_dot_stroke_color">@android:color/white</color>
@@ -815,7 +815,7 @@
     <color name="update_notification_icon_color">#ff4285f4</color>
     <color name="values_bar_background_color">#66000000</color>
     <color name="video_mode_color">#ffdb4437</color>
-    <color name="video_mode_idle_color">@color/google_red400</color>
+    <color name="video_mode_idle_color">#fff37727</color>
     <color name="videoplayer_progress_bar_color">@color/google_grey500</color>
     <color name="wear_material_almond">#fffcf7eb</color>
     <color name="wear_material_gray_500">#ff9aa0a6</color>

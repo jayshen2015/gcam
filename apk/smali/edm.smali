@@ -121,7 +121,7 @@
 
     sget-object v0, Ledm;->b:Llai;
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_8
 
     invoke-virtual {p0}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
@@ -133,7 +133,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_4
+    if-nez v2, :cond_7
 
     invoke-static {p0}, Ledm;->n(Landroid/content/Intent;)Z
 
@@ -157,13 +157,52 @@
     goto :goto_2
 
     :cond_1
+    const-string v2, "android.media.action.PORTRAIT"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    sget-object v0, Llai;->g:Llai;
+
+    goto :goto_2
+
+    :cond_2
+    const-string v2, "android.media.action.NIGHTSIGHT"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    sget-object v0, Llai;->m:Llai;
+
+    goto :goto_2
+
+    :cond_3
+    const-string v2, "android.media.action.TIME_LAPSE"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_4
+
+    sget-object v0, Llai;->n:Llai;
+
+    goto :goto_2
+
+    :cond_4
     const-string v2, "android.media.action.IMAGE_CAPTURE"
 
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_3
+    if-nez v2, :cond_6
 
     const-string v2, "android.media.action.IMAGE_CAPTURE_SECURE"
 
@@ -171,24 +210,24 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_5
 
     goto :goto_0
 
-    :cond_2
+    :cond_5
     invoke-static {v0, p0}, Ledm;->s(Llai;Landroid/content/Intent;)Llai;
 
     move-result-object v0
 
     goto :goto_2
 
-    :cond_3
+    :cond_6
     :goto_0
     sget-object v0, Llai;->h:Llai;
 
     goto :goto_2
 
-    :cond_4
+    :cond_7
     :goto_1
     sget-object v0, Llai;->c:Llai;
 
@@ -198,7 +237,7 @@
 
     goto :goto_2
 
-    :cond_5
+    :cond_8
     :goto_2
     return-object v0
 .end method

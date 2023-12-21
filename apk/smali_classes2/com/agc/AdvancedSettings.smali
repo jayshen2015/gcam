@@ -223,15 +223,12 @@
 
     const-string v0, "pref_qjpg_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    const/16 v1, 0x61
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-nez v0, :cond_0
-
-    const/16 v0, 0x61
-
-    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -457,6 +454,8 @@
     :cond_3
     if-eqz v0, :cond_4
 
+    sub-int/2addr v0, v1
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -552,15 +551,23 @@
 .method public static getTrackFocus(Z)Z
     .locals 3
 
-    invoke-static {}, Lagc/Agc;->needChangeTrackingFocus()Z
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
     move-result v0
 
     const/4 v1, 0x1
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_2
 
-    move v1, p0
+    sget-object v0, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    const-string v2, "9.1"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
 
     goto :goto_0
 
@@ -573,31 +580,47 @@
 
     if-ne v0, v1, :cond_1
 
-    goto :goto_0
+    goto :goto_1
 
     :cond_1
     const/4 v1, 0x0
 
+    goto :goto_1
+
+    :cond_2
     :goto_0
+    move v1, p0
+
+    :goto_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "Focus-Tracking in Photo/Portrait mode "
+    const-string v2, "Focus-Tracking "
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v0
+    move-result-object p0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v0, " => "
 
-    move-result-object v0
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {v0, p0}, Lcom/agc/Log;->w(Ljava/lang/Object;Z)I
+    move-result-object p0
+
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/agc/Log;->w(Ljava/lang/Object;)I
 
     return v1
 .end method

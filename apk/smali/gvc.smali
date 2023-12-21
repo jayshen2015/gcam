@@ -702,6 +702,10 @@
 
     move-result v12
 
+    invoke-static {v12}, Lcom/agc/AdvancedSettings;->getTrackFocus(Z)Z
+
+    move-result v12
+
     iget-object v2, v6, Lgvc;->a:Ljava/lang/Object;
 
     check-cast v1, Lhdj;

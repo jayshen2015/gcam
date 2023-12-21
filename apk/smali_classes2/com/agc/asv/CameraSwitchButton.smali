@@ -57,7 +57,7 @@
 
     iput-object v0, p0, Lcom/agc/asv/CameraSwitchButton;->onCheckedChange:Landroid/view/View$OnClickListener;
 
-    invoke-static {}, Lagc/Agc;->useOriginalSwitch()Z
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
     move-result v0
 

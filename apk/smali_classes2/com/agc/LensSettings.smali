@@ -295,20 +295,6 @@
     .end packed-switch
 .end method
 
-.method public static getBracketFrameCount()I
-    .locals 2
-
-    const-string v0, "pref_frame_count_bracket_key"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public static getCorrectionBlackLevelDynamic([F[F)[F
     .locals 5
 
@@ -724,6 +710,14 @@
 
     move-result-object v0
 
+    const-string v1, "lib_pref_model_key"
+
+    invoke-static {v1}, Lcom/Utils/Pref;->getAuxProfilePrefIntValue(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
     const-string v1, "pref_model_key"
 
     invoke-static {v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
@@ -734,23 +728,29 @@
 
     invoke-static {v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
 
-    move-result v2
-
-    :cond_0
-    if-lez v2, :cond_1
-
-    sub-int/2addr v2, p0
-
-    invoke-static {v2}, Lagc/Agc;->getDevice(I)Ljava/lang/String;
-
-    move-result-object p0
+    move-result v1
 
     goto :goto_0
 
+    :cond_0
+    move v1, v2
+
     :cond_1
+    :goto_0
+    if-lez v1, :cond_2
+
+    sub-int/2addr v1, p0
+
+    invoke-static {v1}, Lagc/Agc;->getDevice(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
+    :cond_2
     move-object p0, v0
 
-    :goto_0
+    :goto_1
     sput-object p0, Lcom/agc/LogData$Device;->model:Ljava/lang/String;
 
     invoke-static {}, Lcom/agc/LogData$Device;->log()V
@@ -1040,16 +1040,51 @@
     return v0
 .end method
 
-.method public static getMerge()I
-    .locals 1
+.method public static getMaxBracketingFrames()I
+    .locals 2
 
-    const-string v0, "pref_merge_key"
+    const-string v0, "pref_max_bracketing_frames_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
 
     move-result v0
 
     return v0
+.end method
+
+.method public static getMaxShortFrames()I
+    .locals 2
+
+    const-string v0, "pref_max_short_frames_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getMerge(I)I
+    .locals 2
+
+    const-string v0, "pref_merge_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    add-int/lit8 p0, v0, -0x1
+
+    :cond_0
+    return p0
 .end method
 
 .method public static getMicroVideo()I
@@ -1170,6 +1205,34 @@
     return v0
 .end method
 
+.method public static getMinBracketingFrames()I
+    .locals 2
+
+    const-string v0, "pref_min_bracketing_frames_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static getMinShortFrames()I
+    .locals 2
+
+    const-string v0, "pref_min_short_frames_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static getOverrideTargetFps()Z
     .locals 2
 
@@ -1268,6 +1331,35 @@
     return v0
 .end method
 
+.method public static getSabre(Z)Z
+    .locals 3
+
+    const-string v0, "pref_sabre_key"
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    if-eqz v0, :cond_1
+
+    if-ne v0, v2, :cond_0
+
+    move p0, v2
+
+    goto :goto_0
+
+    :cond_0
+    move p0, v1
+
+    :cond_1
+    :goto_0
+    return p0
+.end method
+
 .method public static getSensorInfoColorFilter(I)I
     .locals 1
 
@@ -1288,8 +1380,8 @@
     return p0
 .end method
 
-.method public static getShasta()I
-    .locals 1
+.method public static getShasta()Z
+    .locals 2
 
     const-string v0, "pref_shasta_key"
 
@@ -1297,7 +1389,17 @@
 
     move-result v0
 
-    return v0
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
 .end method
 
 .method public static getStreamConfig()I
@@ -1732,63 +1834,51 @@
 
     const-string v0, "pref_c2a_key"
 
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
+    const/4 v1, 0x0
 
-    move-result v1
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;I)I
 
-    if-nez v1, :cond_0
+    move-result v2
 
-    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    if-nez v2, :cond_0
 
-    move-result v1
+    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v2
 
     :cond_0
-    if-nez v1, :cond_1
-
-    invoke-static {}, Lagc/Agc;->isSupportLEVEL3()Z
-
-    move-result v0
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v0, 0x3
-
-    if-ne v1, v0, :cond_2
-
     const/4 v0, 0x1
 
-    goto :goto_0
+    if-eq v2, v0, :cond_1
 
-    :cond_2
-    const/4 v0, 0x0
+    move v1, v0
 
-    :goto_0
-    new-instance v1, Ljava/lang/StringBuilder;
+    :cond_1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const-string v2, "IsSupportLEVEL3 CameraID:"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {}, Lcom/Utils/Lens;->getCurrentCameraID()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->i(Ljava/lang/Object;Z)I
+    invoke-static {v0, v1}, Lcom/agc/Log;->i(Ljava/lang/Object;Z)I
 
-    return v0
+    return v1
 .end method
 
 .method public static needFixAWBGains()Z

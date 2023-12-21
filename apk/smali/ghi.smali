@@ -362,6 +362,10 @@
 
     if-eqz v0, :cond_0
 
+    sget-object v0, Llkv;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-eqz v0, :cond_0
+
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1

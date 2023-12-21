@@ -84,25 +84,31 @@
 
     invoke-direct {v0}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;-><init>()V
 
-    iget-boolean v1, p0, Lgfy;->a:Z
+    iget-wide v1, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
 
-    iget-wide v2, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+    iget-boolean v3, p0, Lgfy;->a:Z
 
-    invoke-static {v2, v3, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_shasta_zsl_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;Z)V
+    invoke-static {v1, v2, v0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_shasta_zsl_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;Z)V
 
     iget-object v1, p0, Lgfy;->b:Ljava/lang/Boolean;
 
     if-eqz v1, :cond_0
 
+    const-string v2, "Astro Mode"
+
+    invoke-static {v2}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v1
 
-    invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->d(Z)V
-
     goto :goto_0
 
     :cond_0
+    const-string v1, "Night Sight"
+
+    invoke-static {v1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+
     iget-object v1, p0, Lgfy;->m:Lfll;
 
     sget-object v2, Lflu;->aF:Lflm;
@@ -111,9 +117,9 @@
 
     move-result v1
 
+    :goto_0
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->d(Z)V
 
-    :goto_0
     iget-boolean v1, p0, Lgfy;->a:Z
 
     if-eqz v1, :cond_2
@@ -168,13 +174,9 @@
 
     sget-object v2, Lflu;->a:Lfln;
 
-    invoke-interface {v1}, Lfll;->c()V
+    iget-boolean v2, p0, Lgfy;->a:Z
 
-    iget-boolean v1, p0, Lgfy;->a:Z
-
-    if-eqz v1, :cond_3
-
-    iget-object v1, p0, Lgfy;->m:Lfll;
+    if-eqz v2, :cond_3
 
     sget-object v2, Lflu;->h:Lfln;
 
@@ -190,8 +192,7 @@
 
     iget-object v1, p0, Lgfy;->m:Lfll;
 
-    sget-object v2, Lflu;->h:Lfln;
-
+    :goto_1
     invoke-interface {v1, v2}, Lfll;->a(Lfln;)Lj$/util/Optional;
 
     move-result-object v1
@@ -206,41 +207,28 @@
 
     move-result v1
 
-    goto :goto_1
+    goto :goto_3
 
     :cond_3
     iget-boolean v1, p0, Lgfy;->c:Z
 
-    if-eqz v1, :cond_7
+    if-nez v1, :cond_4
 
-    iget-boolean v1, p0, Lgfy;->d:Z
+    const/4 v1, -0x1
 
-    if-eqz v1, :cond_4
-
-    iget-object v1, p0, Lgfy;->m:Lfll;
-
-    sget-object v2, Lflu;->f:Lfln;
-
-    invoke-interface {v1, v2}, Lfll;->a(Lfln;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    goto :goto_1
+    goto :goto_3
 
     :cond_4
-    iget-boolean v1, p0, Lgfy;->f:Z
+    iget-boolean v1, p0, Lgfy;->d:Z
 
     if-eqz v1, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    iget-boolean v1, p0, Lgfy;->f:Z
+
+    if-eqz v1, :cond_6
 
     iget-object v1, p0, Lgfy;->m:Lfll;
 
@@ -250,72 +238,28 @@
 
     sget-object v2, Lflu;->i:Lfln;
 
-    invoke-interface {v1, v2}, Lfll;->a(Lfln;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
     goto :goto_1
 
-    :cond_5
+    :cond_6
     iget-boolean v1, p0, Lgfy;->p:Z
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_7
 
     iget-object v1, p0, Lgfy;->m:Lfll;
 
     sget-object v2, Lfmk;->a:Lfln;
 
-    invoke-interface {v1, v2}, Lfll;->a(Lfln;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
     goto :goto_1
 
-    :cond_6
+    :cond_7
+    :goto_2
     iget-object v1, p0, Lgfy;->m:Lfll;
 
     sget-object v2, Lflu;->f:Lfln;
 
-    invoke-interface {v1, v2}, Lfll;->a(Lfln;)Lj$/util/Optional;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lj$/util/Optional;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/Integer;
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
     goto :goto_1
 
-    :cond_7
-    const/4 v1, -0x1
-
-    :goto_1
+    :goto_3
     iget-object v2, p0, Lgfy;->l:Lj$/util/Optional;
 
     invoke-virtual {v2}, Lj$/util/Optional;->isPresent()Z
@@ -398,15 +342,12 @@
 
     const/high16 v1, 0x7f800000    # Float.POSITIVE_INFINITY
 
-    goto :goto_2
+    goto :goto_4
 
     :cond_a
     const v1, 0x466a6000    # 15000.0f
 
-    :goto_2
-    invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->c(F)V
-
-    goto :goto_3
+    goto :goto_4
 
     :cond_b
     iget-boolean v1, p0, Lgfy;->h:Z
@@ -421,7 +362,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->b(F)V
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_c
     iget-boolean v1, p0, Lgfy;->f:Z
@@ -432,14 +373,15 @@
 
     invoke-interface {v1}, Lfll;->c()V
 
-    goto :goto_3
+    goto :goto_5
 
     :cond_d
     const v1, 0x45bb8000    # 6000.0f
 
+    :goto_4
     invoke-virtual {v0, v1}, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->c(F)V
 
-    :goto_3
+    :goto_5
     iget-object v1, p0, Lgfy;->k:Lj$/util/Optional;
 
     invoke-virtual {v1}, Lj$/util/Optional;->isPresent()Z
@@ -465,10 +407,6 @@
     cmp-long v1, v3, v5
 
     if-lez v1, :cond_e
-
-    iget-object v1, p0, Lgfy;->m:Lfll;
-
-    invoke-interface {v1}, Lfll;->c()V
 
     iget-boolean v1, p0, Lgfy;->d:Z
 
@@ -510,6 +448,50 @@
     invoke-static {v3, v4, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_default_max_bracketing_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
 
     :cond_f
+    invoke-static {}, Lcom/agc/LensSettings;->getMinBracketingFrames()I
+
+    move-result v1
+
+    if-eqz v1, :cond_10
+
+    iget-wide v3, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+
+    invoke-static {v3, v4, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_default_min_bracketing_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+
+    :cond_10
+    invoke-static {}, Lcom/agc/LensSettings;->getMaxBracketingFrames()I
+
+    move-result v1
+
+    if-eqz v1, :cond_11
+
+    iget-wide v3, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+
+    invoke-static {v3, v4, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_default_max_bracketing_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+
+    :cond_11
+    invoke-static {}, Lcom/agc/LensSettings;->getMinShortFrames()I
+
+    move-result v1
+
+    if-eqz v1, :cond_12
+
+    iget-wide v3, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+
+    invoke-static {v3, v4, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_default_min_short_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+
+    :cond_12
+    invoke-static {}, Lcom/agc/LensSettings;->getMaxShortFrames()I
+
+    move-result v1
+
+    if-eqz v1, :cond_13
+
+    iget-wide v3, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+
+    invoke-static {v3, v4, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_default_min_short_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+
+    :cond_13
     iget-object v1, p0, Lgfy;->o:Lggq;
 
     iget-object v3, p0, Lgfy;->n:Lgin;
@@ -518,41 +500,41 @@
 
     move-result v1
 
-    const/4 v3, 0x0
-
-    if-eqz v1, :cond_10
+    if-eqz v1, :cond_14
 
     iget-object v1, p0, Lgfy;->m:Lfll;
 
-    sget-object v4, Lflu;->aE:Lflm;
+    sget-object v3, Lflu;->aE:Lflm;
 
-    invoke-interface {v1, v4}, Lfll;->l(Lflm;)Z
+    invoke-interface {v1, v3}, Lfll;->l(Lflm;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_10
+    if-nez v1, :cond_15
 
-    goto :goto_4
-
-    :cond_10
+    :cond_14
     const/4 v2, 0x0
 
-    :goto_4
+    :cond_15
+    const-string v1, "includeUltraShortFrame"
+
+    invoke-static {v1, v2}, Lcom/agc/Log;->e(Ljava/lang/Object;Z)I
+
     iget-wide v3, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
 
     invoke-static {v3, v4, v0, v2}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_include_ultra_short_frame_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;Z)V
 
-    iget v1, p0, Lgfy;->i:F
+    iget-wide v1, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
 
-    iget-wide v2, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+    iget v3, p0, Lgfy;->i:F
 
-    invoke-static {v2, v3, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_exposure_time_override_ms_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;F)V
+    invoke-static {v1, v2, v0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_exposure_time_override_ms_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;F)V
 
-    iget v1, p0, Lgfy;->j:F
+    iget-wide v1, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
 
-    iget-wide v2, v0, Lcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;->a:J
+    iget v3, p0, Lgfy;->j:F
 
-    invoke-static {v2, v3, v0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_gain_override_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;F)V
+    invoke-static {v1, v2, v0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->BuildPayloadBurstSpecOptions_gain_override_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;F)V
 
     return-object v0
 .end method

@@ -36,98 +36,44 @@
     return-object v0
 .end method
 
-.method public static compressImageByQuality(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
-    .locals 3
-
-    const/4 v0, 0x0
-
-    :try_start_0
-    new-instance v1, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v1}, Ljava/io/ByteArrayOutputStream;-><init>()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
-
-    :try_start_1
-    sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
-
-    invoke-virtual {p0, v2, p1, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
-
-    new-instance p1, Ljava/io/ByteArrayInputStream;
-
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v2
-
-    invoke-direct {p1, v2}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    :try_start_2
-    invoke-static {p1, v0, v0}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;Landroid/graphics/Rect;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
-
-    move-result-object p0
-
-    invoke-virtual {p1}, Ljava/io/ByteArrayInputStream;->close()V
-
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
-
-    return-object p0
-
-    :catch_0
-    move-exception v0
-
-    move-object v0, p1
-
-    goto :goto_0
-
-    :catch_1
-    move-exception p1
-
-    goto :goto_0
-
-    :catch_2
-    move-exception p1
-
-    move-object v1, v0
-
-    :goto_0
-    if-eqz v0, :cond_0
-
-    :try_start_3
-    invoke-virtual {v0}, Ljava/io/ByteArrayInputStream;->close()V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
-
-    goto :goto_1
-
-    :catch_3
-    move-exception p1
-
-    :cond_0
-    :goto_1
-    if-eqz v1, :cond_1
-
-    :try_start_4
-    invoke-virtual {v1}, Ljava/io/ByteArrayOutputStream;->close()V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
-
-    return-object p0
-
-    :catch_4
-    move-exception p1
-
-    :cond_1
-    return-object p0
-.end method
-
 .method public static drawTextToBottom(Landroid/content/Context;Ljava/lang/String;)V
     .locals 0
 
     return-void
+.end method
+
+.method public static fromAgcBitmap(Lagc/Bitmap;)Landroid/graphics/Bitmap;
+    .locals 3
+
+    invoke-virtual {p0}, Lagc/Bitmap;->getWidth()J
+
+    move-result-wide v0
+
+    long-to-int v0, v0
+
+    invoke-virtual {p0}, Lagc/Bitmap;->getHeight()J
+
+    move-result-wide v1
+
+    long-to-int v1, v1
+
+    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lagc/Bitmap;->getPixel()[B
+
+    move-result-object p0
+
+    invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
+
+    move-result-object p0
+
+    invoke-virtual {v0, p0}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V
+
+    return-object v0
 .end method
 
 .method public static getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
@@ -156,14 +102,36 @@
     return-object p0
 .end method
 
-.method public static saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;)V
+.method public static getBitmapFromByte([B)Landroid/graphics/Bitmap;
     .locals 1
 
-    const/16 v0, 0x64
+    new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    invoke-static {p0, p1, v0}, Lcom/agc/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
+    invoke-direct {v0, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
-    return-void
+    invoke-static {v0}, Landroid/graphics/BitmapFactory;->decodeStream(Ljava/io/InputStream;)Landroid/graphics/Bitmap;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static getByteFromBitmap(Landroid/graphics/Bitmap;I)[B
+    .locals 2
+
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    sget-object v1, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
+
+    invoke-virtual {p0, v1, p1, v0}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
@@ -274,4 +242,48 @@
 
     :goto_0
     return-void
+.end method
+
+.method public static toAgcBitmap(Landroid/graphics/Bitmap;)Lagc/Bitmap;
+    .locals 7
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getRowBytes()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    mul-int/2addr v0, v1
+
+    invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/graphics/Bitmap;->copyPixelsToBuffer(Ljava/nio/Buffer;)V
+
+    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
+
+    move-result-object v6
+
+    new-instance v0, Lagc/Bitmap;
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    int-to-long v2, v1
+
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result p0
+
+    int-to-long v4, p0
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Lagc/Bitmap;-><init>(JJ[B)V
+
+    return-object v0
 .end method

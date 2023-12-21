@@ -205,6 +205,8 @@
 
 .field public static final s:Lfln;
 
+.field public static final shastaForce:Lflm;
+
 .field public static final t:Lfln;
 
 .field public static final u:Lfln;
@@ -221,7 +223,7 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static constructor <clinit>()V
     .locals 5
 
     new-instance v0, Lqaa;
@@ -310,9 +312,7 @@
 
     invoke-direct {v0}, Lqaa;-><init>()V
 
-    const/4 v1, 0x0
-
-    sget-object v1, Ljava/nio/channels/HpWg/IWCkMFOfL;->lOwU:Ljava/lang/String;
+    const-string v1, "camera.3a.debug_meta_last_frame"
 
     iput-object v1, v0, Lqaa;->a:Ljava/lang/Object;
 
@@ -751,6 +751,12 @@
     const-string v2, "camera.shasta.force"
 
     iput-object v2, v0, Lqaa;->a:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Lqaa;->p()Lflm;
+
+    move-result-object v0
+
+    sput-object v0, Lflu;->shastaForce:Lflm;
 
     new-instance v0, Lqaa;
 
@@ -1520,9 +1526,7 @@
 
     invoke-direct {v0}, Lqaa;-><init>()V
 
-    const/4 v2, 0x0
-
-    sget-object v2, Lcom/google/android/apps/camera/legacy/lightcycle/ui/cY/FMQCWhxv;->lXKAN:Ljava/lang/String;
+    const-string v2, "camera.include_ultra_short_frame"
 
     iput-object v2, v0, Lqaa;->a:Ljava/lang/Object;
 
@@ -1999,8 +2003,16 @@
     return-void
 .end method
 
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
 .method public static a(Lflp;Lfmw;)V
-    .locals 8
+    .locals 9
 
     sget-object v0, Lflu;->a:Lfln;
 
@@ -2020,13 +2032,17 @@
 
     const/4 v1, 0x0
 
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
     invoke-interface {p0, v0, v1}, Lflp;->u(Lflm;Z)V
 
     sget-object v0, Lflu;->A:Lflm;
 
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object v0, Lflu;->C:Lflm;
 
@@ -2034,11 +2050,11 @@
 
     sget-object v0, Lflu;->D:Lflm;
 
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object v0, Lflu;->E:Lflm;
 
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object v0, Lflu;->F:Lflm;
 
@@ -2046,71 +2062,17 @@
 
     sget-object v0, Lflu;->G:Lflm;
 
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object v0, Lflu;->H:Lflm;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-interface {p0, v0, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, v0, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object v0, Lflu;->b:Lfln;
 
-    const/4 v4, 0x2
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {p0, v0, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
-    sget-object v0, Lflu;->c:Lfln;
-
-    invoke-interface {p0, v0, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
-    sget-object v0, Lflu;->K:Lflm;
-
-    invoke-interface {p0, v0, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
-
-    sget-object v0, Lflu;->L:Lflm;
-
-    invoke-interface {p0, v0, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
-
-    sget-object v0, Lflu;->M:Lflm;
-
-    invoke-interface {p0, v0}, Lflp;->r(Lflm;)V
-
-    sget-object v0, Lflu;->N:Lflm;
-
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
-
-    sget-object v0, Lflu;->O:Lflm;
-
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
-
-    sget-object v0, Lflu;->e:Lfln;
-
-    const/4 v4, 0x7
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {p0, v0, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
-    sget-object v0, Lflu;->f:Lfln;
-
-    const/16 v4, 0xf
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {p0, v0, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
-    sget-object v0, Lflu;->d:Lfln;
-
-    const/16 v5, 0x9
+    const/4 v5, 0x2
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2118,15 +2080,69 @@
 
     invoke-interface {p0, v0, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
+    sget-object v0, Lflu;->c:Lfln;
+
+    invoke-interface {p0, v0, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object v0, Lflu;->K:Lflm;
+
+    invoke-interface {p0, v0, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+
+    sget-object v0, Lflu;->L:Lflm;
+
+    invoke-interface {p0, v0, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+
+    sget-object v0, Lflu;->M:Lflm;
+
+    invoke-interface {p0, v0}, Lflp;->r(Lflm;)V
+
+    sget-object v0, Lflu;->N:Lflm;
+
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
+
+    sget-object v0, Lflu;->O:Lflm;
+
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
+
+    sget-object v0, Lflu;->e:Lfln;
+
+    const/4 v5, 0x7
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-interface {p0, v0, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object v0, Lflu;->f:Lfln;
+
+    const/16 v5, 0xf
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-interface {p0, v0, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object v0, Lflu;->d:Lfln;
+
+    const/16 v6, 0x9
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-interface {p0, v0, v6}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
     sget-object v0, Lflu;->P:Lflm;
 
-    invoke-interface {p0, v0, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, v0, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object v0, Lflu;->Q:Lflm;
 
-    sget-object v6, Lfmw;->b:Lfmw;
+    sget-object v7, Lfmw;->b:Lfmw;
 
-    invoke-virtual {p1, v6}, Lfmw;->b(Lfmw;)Z
+    invoke-virtual {p1, v7}, Lfmw;->b(Lfmw;)Z
 
     move-result p1
 
@@ -2134,23 +2150,23 @@
 
     sget-object p1, Lflu;->S:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->T:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->U:Lflm;
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->h:Lfln;
 
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->g:Lfln;
 
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->V:Lflm;
 
@@ -2170,7 +2186,7 @@
 
     const-string v0, ""
 
-    invoke-interface {p0, p1, v0}, Lflp;->v(Lflm;Ljava/lang/String;)V
+    invoke-interface {p0, p1, v0}, Lflp;->w(Lflm;Ljava/lang/String;)V
 
     sget-object p1, Lflu;->Y:Lflm;
 
@@ -2182,7 +2198,7 @@
 
     sget-object p1, Lflu;->aa:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->ab:Lflm;
 
@@ -2194,31 +2210,31 @@
 
     sget-object p1, Lflu;->af:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->m:Lfln;
 
-    const/4 v6, -0x1
-
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    invoke-interface {p0, p1, v6}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
-    sget-object p1, Lflu;->ag:Lflm;
-
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
-
-    sget-object p1, Lflu;->n:Lfln;
-
-    const/16 v7, 0x300
+    const/4 v7, -0x1
 
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
     invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object p1, Lflu;->ag:Lflm;
+
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
+
+    sget-object p1, Lflu;->n:Lfln;
+
+    const/16 v8, 0x300
+
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-interface {p0, p1, v8}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->ah:Lflm;
 
@@ -2226,7 +2242,7 @@
 
     sget-object p1, Lflu;->I:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->ai:Lflm;
 
@@ -2234,61 +2250,61 @@
 
     sget-object p1, Lflu;->o:Lfln;
 
-    const/16 v7, 0xc
+    const/16 v8, 0xc
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v8}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->J:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aj:Lflm;
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    const/high16 v8, 0x3f800000    # 1.0f
 
-    invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v8}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->ak:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->k:Lfln;
 
-    const/16 v7, 0x42
+    const/16 v8, 0x42
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v8}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->l:Lfln;
 
-    const/16 v7, 0xa6
+    const/16 v8, 0xa6
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v8}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->ae:Lflm;
 
-    const v7, 0x3f428f5c    # 0.76f
+    const v8, 0x3f428f5c    # 0.76f
 
-    invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v8}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->ad:Lflm;
 
@@ -2296,97 +2312,97 @@
 
     sget-object p1, Lflu;->i:Lfln;
 
-    invoke-interface {p0, p1, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v6}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->am:Lflm;
 
-    const v5, -0x3fe66666    # -2.4f
+    const v6, -0x3fe66666    # -2.4f
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-interface {p0, p1, v5}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v6}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->an:Lflm;
 
-    const v5, -0x3feccccd    # -2.3f
+    const v6, -0x3feccccd    # -2.3f
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-interface {p0, p1, v5}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v6}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->ao:Lflm;
 
-    const/high16 v5, -0x40000000    # -2.0f
+    const/high16 v6, -0x40000000    # -2.0f
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-interface {p0, p1, v5}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v6}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->ap:Lflm;
 
-    const/high16 v7, -0x40200000    # -1.75f
+    const/high16 v8, -0x40200000    # -1.75f
 
-    invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v8}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aq:Lflm;
 
-    const/high16 v7, -0x3fc00000    # -3.0f
+    const/high16 v8, -0x3fc00000    # -3.0f
 
-    invoke-static {v7}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v8}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v8}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->ar:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->ax:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->al:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->j:Lfln;
 
-    const/16 v7, 0x7d0
+    const/16 v8, 0x7d0
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v8}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->aA:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aB:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->t:Lfln;
 
-    const/16 v7, 0x5dc
+    const/16 v8, 0x5dc
 
-    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v8}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->at:Lflm;
 
@@ -2394,35 +2410,49 @@
 
     sget-object p1, Lflu;->au:Lflm;
 
-    invoke-interface {p0, p1, v5}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v6}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->av:Lflm;
 
-    const v5, -0x3fb28f5c    # -3.21f
+    const v6, -0x3fb28f5c    # -3.21f
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-interface {p0, p1, v5}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v6}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aw:Lflm;
 
-    const v5, -0x3fb47ae1    # -3.18f
+    const v6, -0x3fb47ae1    # -3.18f
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v6}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v5
+    move-result-object v6
 
-    invoke-interface {p0, p1, v5}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v6}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->ay:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->r:Lfln;
 
-    const v5, 0x249f0
+    const v6, 0x249f0
+
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-interface {p0, p1, v6}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object p1, Lflu;->p:Lfln;
+
+    invoke-interface {p0, p1, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object p1, Lflu;->q:Lfln;
+
+    const/4 v5, 0x6
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -2430,43 +2460,29 @@
 
     invoke-interface {p0, p1, v5}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
-    sget-object p1, Lflu;->p:Lfln;
-
-    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
-    sget-object p1, Lflu;->q:Lfln;
-
-    const/4 v4, 0x6
-
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
-
     sget-object p1, Lflu;->az:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->s:Lfln;
 
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->aC:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aD:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->as:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aE:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aF:Lflm;
 
@@ -2474,11 +2490,11 @@
 
     sget-object p1, Lflu;->aG:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->w:Lfln;
 
-    invoke-interface {p0, p1, v6}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v7}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->aH:Lflm;
 
@@ -2486,15 +2502,15 @@
 
     sget-object p1, Lflu;->aI:Lflm;
 
-    invoke-interface {p0, p1, v0}, Lflp;->v(Lflm;Ljava/lang/String;)V
+    invoke-interface {p0, p1, v0}, Lflp;->w(Lflm;Ljava/lang/String;)V
 
     sget-object p1, Lflu;->aJ:Lflm;
 
-    invoke-interface {p0, p1, v0}, Lflp;->v(Lflm;Ljava/lang/String;)V
+    invoke-interface {p0, p1, v0}, Lflp;->w(Lflm;Ljava/lang/String;)V
 
     sget-object p1, Lflu;->u:Lfln;
 
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->aK:Lflm;
 
@@ -2502,63 +2518,59 @@
 
     sget-object p1, Lflu;->v:Lfln;
 
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v4}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->aN:Lflm;
 
-    const/4 v3, 0x0
+    const/4 v4, 0x0
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aO:Lflm;
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aP:Lflm;
 
-    const/high16 v3, -0x40800000    # -1.0f
+    const/high16 v4, -0x40800000    # -1.0f
 
-    invoke-static {v3}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aQ:Lflm;
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aR:Lflm;
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aS:Lflm;
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->aT:Lflm;
 
-    invoke-interface {p0, p1, v3}, Lflp;->t(Lflm;Ljava/lang/Float;)V
+    invoke-interface {p0, p1, v4}, Lflp;->t(Lflm;Ljava/lang/Float;)V
 
     sget-object p1, Lflu;->x:Lfln;
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v2}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->y:Lfln;
 
-    invoke-interface {p0, p1, v3}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-interface {p0, p1, v2}, Lflp;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object p1, Lflu;->aU:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aV:Lflm;
 
@@ -2566,7 +2578,7 @@
 
     sget-object p1, Lflu;->aW:Lflm;
 
-    invoke-interface {p0, p1, v0}, Lflp;->v(Lflm;Ljava/lang/String;)V
+    invoke-interface {p0, p1, v0}, Lflp;->w(Lflm;Ljava/lang/String;)V
 
     sget-object p1, Lflu;->aL:Lflm;
 
@@ -2582,7 +2594,7 @@
 
     sget-object p1, Lflu;->aY:Lflm;
 
-    invoke-interface {p0, p1, v2}, Lflp;->u(Lflm;Z)V
+    invoke-interface {p0, p1, v3}, Lflp;->u(Lflm;Z)V
 
     sget-object p1, Lflu;->aZ:Lflm;
 
@@ -2613,6 +2625,29 @@
     sget-object p1, Lflu;->bc:Lflm;
 
     invoke-interface {p0, p1}, Lflp;->r(Lflm;)V
+
+    invoke-static {}, Lcom/Utils/Lens;->getCurrentCamera()Lcom/agc/Camera;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/agc/Camera;->isRaw10Supported()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    move v1, v3
+
+    :cond_0
+    sget-object p1, Lflu;->shastaForce:Lflm;
+
+    invoke-interface {p0, p1, v1}, Lflp;->u(Lflm;Z)V
 
     return-void
 .end method

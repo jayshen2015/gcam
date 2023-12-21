@@ -88,7 +88,9 @@
 
     move-result v0
 
-    const v0, 0x1
+    invoke-static {v0}, Lcom/agc/AdvancedSettings;->getTrackFocus(Z)Z
+
+    move-result v0
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -670,8 +672,6 @@
     move-result-object v0
 
     return-object v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

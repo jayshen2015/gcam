@@ -43,6 +43,113 @@
     return-void
 .end method
 
+.method private static getLensName(Lcom/agc/Camera;IZ)Ljava/lang/String;
+    .locals 2
+
+    new-instance p2, Ljava/lang/StringBuilder;
+
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v0, "pref_lens_title_key_"
+
+    invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    invoke-static {p2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v1, ""
+
+    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p0}, Lcom/agc/Camera;->getName()Ljava/lang/String;
+
+    move-result-object p2
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1, p2}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_0
+    invoke-virtual {p0}, Lcom/agc/Camera;->getZoomScale()F
+
+    move-result p0
+
+    float-to-double p0, p0
+
+    const-wide/high16 v0, 0x4024000000000000L    # 10.0
+
+    mul-double/2addr p0, v0
+
+    invoke-static {p0, p1}, Ljava/lang/Math;->round(D)J
+
+    move-result-wide p0
+
+    long-to-double p0, p0
+
+    div-double/2addr p0, v0
+
+    double-to-float p0, p0
+
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    const-string p2, " ("
+
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    const-string p1, "x)"
+
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static getProfileTitle(ILjava/lang/String;)Ljava/lang/String;
     .locals 3
 
@@ -548,19 +655,15 @@
 .end method
 
 .method private static updateLens(Landroid/preference/PreferenceFragment;)V
-    .locals 13
+    .locals 10
 
-    invoke-static {}, Lcom/Utils/Lens;->getFilteredCameraIDs()Ljava/util/Set;
+    invoke-static {}, Lcom/Utils/Lens;->getAvailableLens()Ljava/util/List;
 
     move-result-object v0
 
-    const-string v1, "agc_lens_key"
+    invoke-static {}, Lcom/Utils/Lens;->getFilteredCameraIDs()Ljava/util/Set;
 
-    invoke-virtual {p0, v1}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/preference/PreferenceGroup;
+    move-result-object v1
 
     const/4 v2, 0x0
 
@@ -569,31 +672,23 @@
     :goto_0
     const/16 v4, 0x14
 
-    const-string v5, "x)"
-
-    const-string v6, "Front"
-
-    const-string v7, ""
-
-    const-wide/high16 v8, 0x4024000000000000L    # 10.0
-
-    if-ge v3, v4, :cond_4
+    if-ge v3, v4, :cond_3
 
     invoke-static {v3}, Lcom/Utils/Lens;->getAuxKeyString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v11, "agc_lens_key_"
+    const-string v6, "agc_lens_key_"
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v5
 
-    invoke-virtual {v10, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
@@ -605,169 +700,62 @@
 
     move-result-object v4
 
-    if-eqz v4, :cond_3
+    if-nez v4, :cond_0
 
-    invoke-static {v3}, Lcom/Utils/Lens;->getCamera(I)Lcom/agc/Camera;
-
-    move-result-object v10
-
-    if-eqz v10, :cond_2
-
-    invoke-virtual {v10}, Lcom/agc/Camera;->getId()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-interface {v0, v11}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_2
-
-    sget v11, Lcom/agc/Res$layout;->preference_with_margin:I
-
-    invoke-virtual {v4, v11}, Landroid/preference/Preference;->setLayoutResource(I)V
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "pref_lens_title_key_"
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v11}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-eqz v7, :cond_1
-
-    invoke-virtual {v10}, Lcom/agc/Camera;->isFront()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_0
-
-    goto :goto_1
+    goto :goto_2
 
     :cond_0
-    invoke-virtual {v10}, Lcom/agc/Camera;->getName()Ljava/lang/String;
+    invoke-static {v3}, Lcom/Utils/Lens;->getCamera(I)Lcom/agc/Camera;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_2
+
+    invoke-virtual {v5}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
     move-result-object v6
 
-    :goto_1
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v7, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v7, v6}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
-
-    move-object v11, v6
-
-    :cond_1
-    invoke-virtual {v10}, Lcom/agc/Camera;->isFront()Z
-
-    invoke-virtual {v10}, Lcom/agc/Camera;->getZoomScale()F
+    invoke-interface {v1, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v6
 
-    float-to-double v6, v6
+    if-nez v6, :cond_1
 
-    mul-double/2addr v6, v8
+    goto :goto_1
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->round(D)J
+    :cond_1
+    sget v6, Lcom/agc/Res$layout;->preference_with_margin:I
 
-    move-result-wide v6
+    invoke-virtual {v4, v6}, Landroid/preference/Preference;->setLayoutResource(I)V
 
-    long-to-double v6, v6
-
-    div-double/2addr v6, v8
-
-    double-to-float v6, v6
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v7, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, " ("
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-static {v5, v3, v2}, Lcom/agc/Preference;->getLensName(Lcom/agc/Camera;IZ)Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v6, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
+
+    const-string v6, "lens_summary"
+
+    invoke-static {v6}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v7, 0x1
+
+    new-array v7, v7, [Ljava/lang/Object;
+
+    invoke-virtual {v5}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    aput-object v5, v7, v2
 
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/preference/Preference;->setTitle(Ljava/lang/CharSequence;)V
-
-    const-string v5, "lens_summary"
-
-    invoke-static {v5}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/Object;
-
-    invoke-virtual {v10}, Lcom/agc/Camera;->getId()Ljava/lang/String;
-
-    move-result-object v7
-
-    aput-object v7, v6, v2
-
-    invoke-static {v5, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Landroid/preference/Preference;->setSummary(Ljava/lang/CharSequence;)V
 
-    goto :goto_2
-
-    :cond_2
-    sget v5, Lcom/agc/Res$layout;->hide:I
-
-    invoke-virtual {v4, v5}, Landroid/preference/Preference;->setLayoutResource(I)V
-
-    :goto_2
     new-instance v5, Landroid/content/Intent;
 
     invoke-virtual {p0}, Landroid/preference/PreferenceFragment;->getActivity()Landroid/app/Activity;
@@ -802,18 +790,20 @@
 
     invoke-virtual {v4, v5}, Landroid/preference/Preference;->setIntent(Landroid/content/Intent;)V
 
-    :cond_3
+    goto :goto_2
+
+    :cond_2
+    :goto_1
+    sget v5, Lcom/agc/Res$layout;->hide:I
+
+    invoke-virtual {v4, v5}, Landroid/preference/Preference;->setLayoutResource(I)V
+
+    :goto_2
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_0
 
-    :cond_4
-    invoke-virtual {p0, v1}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
-
-    invoke-static {}, Lcom/Utils/Lens;->getAvailableLens()Ljava/util/List;
-
-    move-result-object v0
-
+    :cond_3
     const-string v1, "pref_camera_id_list_key"
 
     invoke-virtual {p0, v1}, Landroid/preference/PreferenceFragment;->findPreference(Ljava/lang/CharSequence;)Landroid/preference/Preference;
@@ -839,7 +829,7 @@
 
     move-result v4
 
-    if-ge v2, v4, :cond_8
+    if-ge v2, v4, :cond_6
 
     invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -847,97 +837,91 @@
 
     check-cast v4, Lcom/agc/Camera;
 
-    if-nez v4, :cond_5
-
-    goto :goto_5
-
-    :cond_5
-    invoke-virtual {v4}, Lcom/agc/Camera;->isFront()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_6
-
-    move-object v10, v6
+    if-nez v4, :cond_4
 
     goto :goto_4
 
-    :cond_6
+    :cond_4
     invoke-virtual {v4}, Lcom/agc/Camera;->getName()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v5
 
-    :goto_4
-    invoke-virtual {v10, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string v6, ""
 
-    move-result v11
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-eqz v11, :cond_7
+    move-result v6
+
+    if-eqz v6, :cond_5
 
     invoke-virtual {v4}, Lcom/agc/Camera;->getType()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v5
 
-    :cond_7
+    :cond_5
     invoke-virtual {v4}, Lcom/agc/Camera;->getZoomScale()F
 
-    move-result v11
+    move-result v6
 
-    float-to-double v11, v11
+    float-to-double v6, v6
 
-    mul-double/2addr v11, v8
+    const-wide/high16 v8, 0x4024000000000000L    # 10.0
 
-    invoke-static {v11, v12}, Ljava/lang/Math;->round(D)J
+    mul-double/2addr v6, v8
 
-    move-result-wide v11
+    invoke-static {v6, v7}, Ljava/lang/Math;->round(D)J
 
-    long-to-double v11, v11
+    move-result-wide v6
 
-    div-double/2addr v11, v8
+    long-to-double v6, v6
 
-    double-to-float v11, v11
+    div-double/2addr v6, v8
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    double-to-float v6, v6
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v10
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v12, " (ID = "
+    move-result-object v5
 
-    invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v7, " (ID = "
 
-    move-result-object v10
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
 
     invoke-virtual {v4}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v7
 
-    invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v5
 
-    const-string v12, ") ("
+    const-string v7, ") ("
 
-    invoke-virtual {v10, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v5
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v5
 
-    invoke-virtual {v10, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, "x)"
 
-    move-result-object v10
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v5
 
-    move-result-object v10
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    aput-object v10, v1, v2
+    move-result-object v5
+
+    aput-object v5, v1, v2
 
     invoke-virtual {v4}, Lcom/agc/Camera;->getId()Ljava/lang/String;
 
@@ -945,12 +929,12 @@
 
     aput-object v4, v3, v2
 
-    :goto_5
+    :goto_4
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    :cond_8
+    :cond_6
     invoke-virtual {p0, v1}, Landroid/preference/MultiSelectListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
     invoke-virtual {p0, v3}, Landroid/preference/MultiSelectListPreference;->setEntryValues([Ljava/lang/CharSequence;)V

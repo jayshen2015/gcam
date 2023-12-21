@@ -86,7 +86,23 @@
 .method public static native drawWatermarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
+.method public static native drawWatermarkV2Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
 .method public static native drawWatermarkV3(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.end method
+
+.method public static native drawWatermarkV3Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method
 
 .method public static native experimentalKeys(I)V
@@ -206,9 +222,6 @@
 .method public static native isDefaultOpenHdrNet()Z
 .end method
 
-.method public static native isFilterRawCheck()Z
-.end method
-
 .method public static native isGoogleDevice()Z
 .end method
 
@@ -326,9 +339,6 @@
 .method public static native mergeMethod(ZZZZII)I
 .end method
 
-.method public static native needChangeTrackingFocus()Z
-.end method
-
 .method public static native needFixAWBGains()Z
 .end method
 
@@ -344,6 +354,9 @@
 .method public static native newAwb(ILjava/lang/String;FFLjava/lang/String;)V
 .end method
 
+.method public static native newBitmap(JJ[B)Lagc/Bitmap;
+.end method
+
 .method public static native newCamera(Ljava/lang/String;Ljava/lang/String;ZZFFFFFIIZZZLjava/lang/String;Ljava/lang/String;I)V
 .end method
 
@@ -354,18 +367,6 @@
 .end method
 
 .method public static native newNoiseModel(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;IFIID)V
-.end method
-
-.method public static native noNeedChangeLens()Z
-.end method
-
-.method public static native noNeedFilterLogicLens()Z
-.end method
-
-.method public static native noNeedFixLens()Z
-.end method
-
-.method public static native noNeedFixPortrait()Z
 .end method
 
 .method public static native onPreferenceChanged(Ljava/lang/String;Ljava/lang/String;)V
@@ -395,7 +396,7 @@
 .method public static native preferenceImport(Ljava/lang/String;Ljava/lang/String;)I
 .end method
 
-.method public static native preferenceLoadProcess(Ljava/lang/String;Z)I
+.method public static native preferenceLoadProcess(Ljava/lang/String;Ljava/lang/String;Z)I
 .end method
 
 .method public static native processImageWithLUT(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;FLjava/lang/String;)V
@@ -441,7 +442,4 @@
     .locals 0
 
     return-void
-.end method
-
-.method public static native useOriginalSwitch()Z
 .end method

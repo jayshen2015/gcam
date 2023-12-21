@@ -169,6 +169,10 @@
 
     move-result-object v1
 
+    invoke-static {v1}, Lcom/agc/net/NetworkUtil;->access$100(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
     const-string v2, "content"
 
     invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

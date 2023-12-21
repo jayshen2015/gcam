@@ -245,6 +245,10 @@
 
     invoke-direct {v7, v8}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
+    const/4 v8, 0x1
+
+    if-eqz v8, :cond_10
+
     iget-object v8, p0, Lixa;->i:Lrbe;
 
     sget-object v9, Lixg;->r:Lixg;
@@ -699,11 +703,9 @@
 
     :cond_f
     :goto_3
-    invoke-static {v14, v7, p0}, LAGC;->getEnumMap(ILjava/util/EnumMap;Lixa;)Ljava/util/EnumMap;
-
-    move-result-object v7
-
     return-object v7
+
+    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -712,4 +714,87 @@
         0x7 -> :sswitch_1
         0xc -> :sswitch_0
     .end sparse-switch
+
+    :cond_10
+    iget-object v6, p0, Lixa;->i:Lrbe;
+
+    iget-object v1, p0, Lixa;->k:Lrbe;
+
+    iget-object v2, p0, Lixa;->b:Lrbe;
+
+    iget-object v5, p0, Lixa;->h:Lrbe;
+
+    invoke-virtual {v0}, Llai;->ordinal()I
+
+    move-result v0
+
+    const/16 v8, 0xc
+
+    if-eq v0, v8, :cond_11
+
+    sget-object v0, Lixg;->r:Lixg;
+
+    invoke-interface {v6}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lmul;
+
+    invoke-interface {v7, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lixg;->a:Lixg;
+
+    invoke-interface {v1}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lmul;
+
+    invoke-interface {v7, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lixg;->l:Lixg;
+
+    invoke-interface {v2}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lmul;
+
+    invoke-interface {v7, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_4
+
+    :cond_11
+    sget-object v0, Lixg;->a:Lixg;
+
+    invoke-interface {v1}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lmul;
+
+    invoke-interface {v7, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lixg;->l:Lixg;
+
+    invoke-interface {v2}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lmul;
+
+    invoke-interface {v7, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, Lixg;->m:Lixg;
+
+    invoke-interface {v5}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Lmul;
+
+    invoke-interface {v7, v0, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :goto_4
+    return-object v7
 .end method

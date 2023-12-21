@@ -1,6 +1,5 @@
 .class public Lcom/agc/widget/OptionButton$OptionButtonItem;
 .super Ljava/lang/Object;
-.source "OptionButton.java"
 
 
 # annotations
@@ -15,15 +14,15 @@
 
 
 # instance fields
-.field color:I
+.field public color:I
 
-.field icon:Ljava/lang/String;
+.field public icon:Ljava/lang/String;
 
-.field final synthetic this$0:Lcom/agc/widget/OptionButton;
+.field public final synthetic this$0:Lcom/agc/widget/OptionButton;
 
-.field title:Ljava/lang/String;
+.field public title:Ljava/lang/String;
 
-.field value:I
+.field public value:I
 
 
 # direct methods

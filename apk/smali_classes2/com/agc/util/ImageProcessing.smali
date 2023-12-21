@@ -15,7 +15,13 @@
 
 .field private hue:F
 
+.field private imgBitmap:Landroid/graphics/Bitmap;
+
+.field private imgFile:Ljava/lang/String;
+
 .field private luminanceThreshold:F
+
+.field private lutBitmap:Landroid/graphics/Bitmap;
 
 .field private lutFile:Ljava/lang/String;
 
@@ -35,8 +41,6 @@
 
 .field private sharpness:F
 
-.field private srcImage:Ljava/lang/String;
-
 .field private unsharpIntensity:F
 
 .field private vibrance:F
@@ -51,7 +55,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Ljava/lang/String;I)V
     .locals 3
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -110,42 +114,860 @@
 
     iput v1, p0, Lcom/agc/util/ImageProcessing;->vignetteEnd:F
 
-    return-void
-.end method
+    if-eqz p1, :cond_1
 
-.method private getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
-    .locals 2
+    const-string v0, ""
 
-    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, ".png"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
+
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    iput-object p1, p0, Lcom/agc/util/ImageProcessing;->imgFile:Ljava/lang/String;
+
+    iput p2, p0, Lcom/agc/util/ImageProcessing;->quality:I
 
     invoke-static {p1}, Lcom/agc/util/ImageUtil;->getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
+    iput-object p1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    return-void
+
+    :cond_1
+    :goto_0
+    const-string p1, "imgFile not exists."
+
+    invoke-static {p1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+
+    return-void
+.end method
+
+.method private oneByOne()Landroid/graphics/Bitmap;
+    .locals 4
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    if-le v0, v1, :cond_0
+
+    sub-int/2addr v0, v1
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-static {v3, v0, v2, v1, v1}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
     goto :goto_0
 
     :cond_0
-    invoke-static {p1}, Lcom/agc/util/CubeUtil;->getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    sub-int/2addr v1, v0
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-static {v3, v2, v1, v0, v0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    :goto_0
+    return-object v0
+.end method
+
+.method private round()Landroid/graphics/Bitmap;
+    .locals 7
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    if-le v0, v1, :cond_0
+
+    sub-int/2addr v0, v1
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-static {v3, v0, v2, v1, v1}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    :cond_0
+    sub-int/2addr v1, v0
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-static {v3, v2, v1, v0, v0}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    :goto_0
+    new-instance v1, Landroid/graphics/Canvas;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v4
+
+    sget-object v5, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v3, v4, v5}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    new-instance v3, Landroid/graphics/Paint;
+
+    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
+
+    new-instance v4, Landroid/graphics/Rect;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v5
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v6
+
+    invoke-direct {v4, v2, v2, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+
+    invoke-virtual {v1, v2, v2, v2, v2}, Landroid/graphics/Canvas;->drawARGB(IIII)V
+
+    const v2, -0xbdbdbe
+
+    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setColor(I)V
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v2
+
+    div-int/lit8 v2, v2, 0x2
+
+    int-to-float v2, v2
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v5
+
+    div-int/lit8 v5, v5, 0x2
+
+    int-to-float v5, v5
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v6
+
+    div-int/lit8 v6, v6, 0x2
+
+    int-to-float v6, v6
+
+    invoke-virtual {v1, v2, v5, v6, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    new-instance v2, Landroid/graphics/PorterDuffXfermode;
+
+    sget-object v5, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v2, v5}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v3, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
+
+    invoke-virtual {v1, v0, v4, v4, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    return-object v0
+.end method
+
+.method private runBlur(I)Landroid/graphics/Bitmap;
+    .locals 5
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
+
+    move-result-object v3
+
+    invoke-static {v1}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
+
+    move-result-object v4
+
+    invoke-static {v1, v4}, Landroid/renderscript/ScriptIntrinsicBlur;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;
+
+    move-result-object v4
+
+    int-to-float p1, p1
+
+    invoke-virtual {v4, p1}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
+
+    invoke-virtual {v4, v2}, Landroid/renderscript/ScriptIntrinsicBlur;->setInput(Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v4, v3}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v3, v0}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v3}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v4}, Landroid/renderscript/ScriptIntrinsicBlur;->destroy()V
+
+    invoke-virtual {v1}, Landroid/renderscript/RenderScript;->destroy()V
+
+    return-object v0
+.end method
+
+.method private runHist()Landroid/graphics/Bitmap;
+    .locals 7
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    invoke-virtual {v2, v3, v4}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
+
+    move-result-object v3
+
+    invoke-static {v3, v2}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
+
+    move-result-object v5
+
+    invoke-static {v3, v5}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
+
+    move-result-object v5
+
+    new-instance v6, Lcom/postProcessing/ScriptC_histEq;
+
+    invoke-direct {v6, v3}, Lcom/postProcessing/ScriptC_histEq;-><init>(Landroid/renderscript/RenderScript;)V
+
+    mul-int/2addr v0, v1
+
+    invoke-virtual {v6, v0}, Lcom/postProcessing/ScriptC_histEq;->set_size(I)V
+
+    invoke-virtual {v6, v4, v5}, Lcom/postProcessing/ScriptC_histEq;->forEach_root(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v6}, Lcom/postProcessing/ScriptC_histEq;->invoke_createRemapArray()V
+
+    invoke-virtual {v6, v5, v4}, Lcom/postProcessing/ScriptC_histEq;->forEach_remaptoRGB(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v4, v2}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v4}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v5}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v6}, Landroid/renderscript/ScriptC;->destroy()V
+
+    invoke-virtual {v3}, Landroid/renderscript/RenderScript;->destroy()V
+
+    return-object v2
+.end method
+
+.method private runInvert()Landroid/graphics/Bitmap;
+    .locals 5
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
+
+    move-result-object v3
+
+    new-instance v4, Lcom/postProcessing/ScriptC_invert;
+
+    invoke-direct {v4, v1}, Lcom/postProcessing/ScriptC_invert;-><init>(Landroid/renderscript/RenderScript;)V
+
+    invoke-virtual {v4, v2, v3}, Lcom/postProcessing/ScriptC_invert;->forEach_invert(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v3, v0}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v3}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v4}, Landroid/renderscript/ScriptC;->destroy()V
+
+    invoke-virtual {v1}, Landroid/renderscript/RenderScript;->destroy()V
+
+    return-object v0
+.end method
+
+.method private runSharpen(I)Landroid/graphics/Bitmap;
+    .locals 5
+
+    int-to-float p1, p1
+
+    const v0, -0x43333333    # -0.025f
+
+    mul-float/2addr p1, v0
+
+    const v0, 0x3e4ccccd    # 0.2f
+
+    mul-float/2addr v0, p1
+
+    const/16 v1, 0x9
+
+    new-array v1, v1, [F
+
+    const/4 v2, 0x0
+
+    aput p1, v1, v2
+
+    const/4 v2, 0x1
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x2
+
+    aput p1, v1, v2
+
+    const/4 v2, 0x3
+
+    aput v0, v1, v2
+
+    const/high16 v2, 0x40800000    # 4.0f
+
+    mul-float v3, p1, v2
+
+    mul-float/2addr v2, v0
+
+    add-float/2addr v3, v2
+
+    neg-float v2, v3
+
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    add-float/2addr v2, v3
+
+    const/4 v3, 0x4
+
+    aput v2, v1, v3
+
+    const/4 v2, 0x5
+
+    aput v0, v1, v2
+
+    const/4 v2, 0x6
+
+    aput p1, v1, v2
+
+    const/4 v2, 0x7
+
+    aput v0, v1, v2
+
+    const/16 v0, 0x8
+
+    aput p1, v1, v0
+
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result p1
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {p1, v0, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object p1
 
-    :goto_0
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
+
+    move-result-object v0
+
+    invoke-static {v0}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/renderscript/ScriptIntrinsicConvolve3x3;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicConvolve3x3;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-static {v0, v3}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v3
+
+    invoke-static {v0, p1}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v3}, Landroid/renderscript/ScriptIntrinsicConvolve3x3;->setInput(Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v2, v1}, Landroid/renderscript/ScriptIntrinsicConvolve3x3;->setCoefficients([F)V
+
+    invoke-virtual {v2, v4}, Landroid/renderscript/ScriptIntrinsicConvolve3x3;->forEach(Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v4, p1}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v3}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v4}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v2}, Landroid/renderscript/ScriptIntrinsicConvolve3x3;->destroy()V
+
+    invoke-virtual {v0}, Landroid/renderscript/RenderScript;->destroy()V
+
     return-object p1
+.end method
+
+.method private runSmoothen(I)Landroid/graphics/Bitmap;
+    .locals 7
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
+    move-result-object v1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
+
+    move-result-object v1
+
+    invoke-static {v1, v0}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;)Landroid/renderscript/Allocation;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
+
+    move-result-object v3
+
+    invoke-static {v1, v3}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
+
+    move-result-object v3
+
+    new-instance v4, Lcom/postProcessing/ScriptC_median;
+
+    invoke-direct {v4, v1}, Lcom/postProcessing/ScriptC_median;-><init>(Landroid/renderscript/RenderScript;)V
+
+    int-to-float p1, p1
+
+    const/high16 v5, 0x42c80000    # 100.0f
+
+    div-float/2addr p1, v5
+
+    invoke-virtual {v4, p1}, Lcom/postProcessing/ScriptC_median;->set_strength(F)V
+
+    invoke-virtual {v4, v2}, Lcom/postProcessing/ScriptC_median;->set_input(Landroid/renderscript/Allocation;)V
+
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result p1
+
+    int-to-long v5, p1
+
+    invoke-virtual {v4, v5, v6}, Lcom/postProcessing/ScriptC_median;->set_width(J)V
+
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result p1
+
+    int-to-long v5, p1
+
+    invoke-virtual {v4, v5, v6}, Lcom/postProcessing/ScriptC_median;->set_height(J)V
+
+    invoke-virtual {v4, v2, v3}, Lcom/postProcessing/ScriptC_median;->forEach_median3(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V
+
+    invoke-virtual {v3, v0}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+
+    invoke-virtual {v2}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v3}, Landroid/renderscript/Allocation;->destroy()V
+
+    invoke-virtual {v4}, Landroid/renderscript/ScriptC;->destroy()V
+
+    invoke-virtual {v1}, Landroid/renderscript/RenderScript;->destroy()V
+
+    return-object v0
+.end method
+
+.method private runVignette(I)Landroid/graphics/Bitmap;
+    .locals 4
+
+    const/4 v0, 0x1
+
+    if-nez p1, :cond_0
+
+    move p1, v0
+
+    :cond_0
+    const-string v1, "pref_vignette_strengh_key"
+
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+
+    invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/graphics/Canvas;
+
+    invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    new-instance v2, Landroid/graphics/Paint;
+
+    invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v0, v3, v3, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_1
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v0
+
+    goto :goto_0
+
+    :cond_1
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    :goto_0
+    mul-int/lit8 v0, v0, 0x2
+
+    div-int/lit8 v0, v0, 0x64
+
+    mul-int/2addr v0, p1
+
+    div-int/lit8 v0, v0, 0x3
+
+    new-instance p1, Landroid/graphics/RectF;
+
+    new-instance v0, Landroid/graphics/Rect;
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v1
+
+    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v2
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    invoke-direct {p1, v0}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
+
+    new-instance p1, Landroid/graphics/RadialGradient;
+
+    const/4 p1, 0x0
+
+    throw p1
+.end method
+
+.method private sixteenByNine()Landroid/graphics/Bitmap;
+    .locals 5
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    mul-int/lit8 v2, v1, 0x9
+
+    goto :goto_0
+
+    :cond_0
+    mul-int/lit8 v2, v0, 0x9
+
+    :goto_0
+    div-int/lit8 v2, v2, 0x10
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    if-le v0, v1, :cond_1
+
+    sub-int/2addr v1, v2
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-static {v4, v3, v1, v0, v2}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_1
+    sub-int/2addr v0, v2
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-static {v4, v0, v3, v2, v1}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    :goto_1
+    return-object v0
+.end method
+
+.method private twentyOneByNine()Landroid/graphics/Bitmap;
+    .locals 5
+
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v0
+
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_0
+
+    mul-int/lit8 v2, v1, 0x9
+
+    goto :goto_0
+
+    :cond_0
+    mul-int/lit8 v2, v0, 0x9
+
+    :goto_0
+    div-int/lit8 v2, v2, 0x15
+
+    const/4 v3, 0x0
+
+    iget-object v4, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
+
+    if-le v0, v1, :cond_1
+
+    sub-int/2addr v1, v2
+
+    div-int/lit8 v1, v1, 0x2
+
+    invoke-static {v4, v3, v1, v0, v2}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    goto :goto_1
+
+    :cond_1
+    sub-int/2addr v0, v2
+
+    div-int/lit8 v0, v0, 0x2
+
+    invoke-static {v4, v0, v3, v2, v1}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    :goto_1
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public filterToBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+.method public filterToBitmap()Landroid/graphics/Bitmap;
     .locals 9
 
     const/4 v0, 0x0
@@ -163,29 +985,9 @@
 
     invoke-direct {v2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;-><init>()V
 
-    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
+    iget-object v3, p0, Lcom/agc/util/ImageProcessing;->lutBitmap:Landroid/graphics/Bitmap;
 
     const/4 v4, 0x1
-
-    if-eqz v3, :cond_0
-
-    const-string v5, ""
-
-    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_0
-
-    new-instance v3, Ljava/io/File;
-
-    iget-object v5, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
-
-    invoke-direct {v3, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
-
-    move-result v3
 
     if-eqz v3, :cond_0
 
@@ -193,11 +995,7 @@
 
     invoke-direct {v3}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;-><init>()V
 
-    iget-object v5, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
-
-    invoke-direct {p0, v5}, Lcom/agc/util/ImageProcessing;->getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v5
+    iget-object v5, p0, Lcom/agc/util/ImageProcessing;->lutBitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v3, v5}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageLookupFilter;->setBitmap(Landroid/graphics/Bitmap;)V
 
@@ -307,7 +1105,7 @@
     :cond_4
     iget v5, p0, Lcom/agc/util/ImageProcessing;->gamma:F
 
-    cmpl-float v5, v5, v6
+    cmpl-float v5, v5, v7
 
     if-eqz v5, :cond_5
 
@@ -326,9 +1124,13 @@
     move v3, v4
 
     :cond_5
-    iget v5, p0, Lcom/agc/util/ImageProcessing;->saturation:F
+    sget-object v5, Lcom/Globals;->mParameters:Lcom/Parameters;
 
-    cmpl-float v5, v5, v7
+    iget v8, p0, Lcom/agc/util/ImageProcessing;->saturation:F
+
+    iput v8, v5, Lcom/Parameters;->saturation:F
+
+    cmpl-float v5, v8, v7
 
     if-eqz v5, :cond_6
 
@@ -494,9 +1296,13 @@
     move v3, v4
 
     :cond_11
-    iget v5, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
+    sget-object v5, Lcom/Globals;->mParameters:Lcom/Parameters;
 
-    cmpl-float v5, v5, v6
+    iget v8, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
+
+    iput v8, v5, Lcom/Parameters;->sharpness:F
+
+    cmpl-float v5, v8, v6
 
     if-eqz v5, :cond_12
 
@@ -536,13 +1342,19 @@
     move v3, v4
 
     :cond_13
+    sget-object v5, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    iget v8, p0, Lcom/agc/util/ImageProcessing;->shadows:F
+
+    iput v8, v5, Lcom/Parameters;->shadows:F
+
     iget v5, p0, Lcom/agc/util/ImageProcessing;->highlights:F
 
-    cmpl-float v8, v5, v6
-
-    if-nez v8, :cond_14
-
     cmpl-float v5, v5, v7
+
+    if-nez v5, :cond_14
+
+    cmpl-float v5, v8, v6
 
     if-eqz v5, :cond_17
 
@@ -626,177 +1438,146 @@
 
     invoke-virtual {v2}, Ljp/co/cyberagent/android/gpuimage/filter/GPUImageFilterGroup;->destroy()V
 
-    if-nez v4, :cond_1a
+    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->imgBitmap:Landroid/graphics/Bitmap;
 
-    return-object v0
+    if-eqz v4, :cond_1a
+
+    invoke-virtual {v1, v2}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
 
     :cond_1a
-    invoke-virtual {v1, p1}, Ljp/co/cyberagent/android/gpuimage/GPUImage;->getBitmapWithFilterApplied(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    const-string v1, "isFiltered"
 
-    move-result-object p1
-
-    iget v1, p0, Lcom/agc/util/ImageProcessing;->quality:I
-
-    if-lez v1, :cond_1b
-
-    const/16 v2, 0x64
-
-    if-ge v1, v2, :cond_1b
-
-    invoke-static {p1, v1}, Lcom/agc/util/ImageUtil;->compressImageByQuality(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
-
-    move-result-object p1
+    invoke-static {v1, v4}, Lcom/agc/Log;->w(Ljava/lang/Object;Z)I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    if-nez v4, :cond_1b
+
+    return-object v0
+
     :cond_1b
-    return-object p1
+    return-object v2
 
     :catch_0
-    move-exception p1
+    move-exception v1
 
-    invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
     return-object v0
 .end method
 
 .method public saveImageByLUT(Z)Ljava/lang/String;
-    .locals 6
+    .locals 5
 
-    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->imgFile:Ljava/lang/String;
 
     if-eqz p1, :cond_0
 
-    new-instance v0, Ljava/io/File;
+    new-instance p1, Ljava/io/File;
 
-    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
+    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v2, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->imgFile:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    add-int/lit8 v3, v3, -0x4
+    add-int/lit8 v2, v2, -0x4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v2, v4, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
-
-    const-string v2, "_"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v0}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v5, "."
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-virtual {v3, v4, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/agc/util/ImageProcessing;->lutIntensity:F
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ".jpg"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v1, "_"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v4, "."
+
+    invoke-virtual {p1, v4}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+    move-result p1
+
+    invoke-virtual {v2, v3, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    iget v0, p0, Lcom/agc/util/ImageProcessing;->lutIntensity:F
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    const-string v0, ".jpg"
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     :cond_0
-    iget-object v1, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/agc/util/ImageProcessing;->filterToBitmap()Landroid/graphics/Bitmap;
 
-    invoke-static {v1}, Lcom/agc/util/ImageUtil;->getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
+    move-result-object p1
 
-    move-result-object v1
+    if-nez p1, :cond_1
 
-    invoke-virtual {p0, v1}, Lcom/agc/util/ImageProcessing;->filterToBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
-
-    return-object p1
+    return-object v0
 
     :cond_1
-    const/16 v2, 0x64
+    iget v1, p0, Lcom/agc/util/ImageProcessing;->quality:I
 
-    invoke-static {v1, v0, v2}, Lcom/agc/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
+    invoke-static {p1, v0, v1}, Lcom/agc/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
 
-    new-instance v1, Ljava/io/File;
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->imgFile:Ljava/lang/String;
 
-    invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v1}, Ljava/io/File;->exists()Z
+    move-result p1
 
-    move-result v2
+    if-nez p1, :cond_2
 
-    if-eqz v2, :cond_2
-
-    invoke-virtual {v1}, Ljava/io/File;->length()J
-
-    move-result-wide v1
-
-    const-wide/16 v3, 0x3e8
-
-    cmp-long v1, v1, v3
-
-    if-lez v1, :cond_2
-
-    if-eqz p1, :cond_2
-
-    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
+    iget-object p1, p0, Lcom/agc/util/ImageProcessing;->imgFile:Ljava/lang/String;
 
     invoke-static {v0, p1}, Lcom/agc/util/ExifInterfaceUtil;->copyExifInterface(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_0
-
     :cond_2
-    iget-object v0, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
-
-    :goto_0
     return-object v0
 .end method
 
@@ -857,19 +1638,37 @@
 .end method
 
 .method public setLutParamters(Ljava/lang/String;F)V
-    .locals 0
+    .locals 1
 
     iput-object p1, p0, Lcom/agc/util/ImageProcessing;->lutFile:Ljava/lang/String;
 
     iput p2, p0, Lcom/agc/util/ImageProcessing;->lutIntensity:F
 
-    return-void
-.end method
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-.method public setQuality(I)V
-    .locals 0
+    move-result-object p2
 
-    iput p1, p0, Lcom/agc/util/ImageProcessing;->quality:I
+    const-string v0, ".png"
+
+    invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    invoke-static {p1}, Lcom/agc/util/ImageUtil;->getBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p1}, Lcom/agc/util/CubeUtil;->getLutBitMap(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object p1
+
+    :goto_0
+    iput-object p1, p0, Lcom/agc/util/ImageProcessing;->lutBitmap:Landroid/graphics/Bitmap;
 
     return-void
 .end method
@@ -918,14 +1717,6 @@
     .locals 0
 
     iput p1, p0, Lcom/agc/util/ImageProcessing;->sharpness:F
-
-    return-void
-.end method
-
-.method public setSrcImage(Ljava/lang/String;)V
-    .locals 0
-
-    iput-object p1, p0, Lcom/agc/util/ImageProcessing;->srcImage:Ljava/lang/String;
 
     return-void
 .end method

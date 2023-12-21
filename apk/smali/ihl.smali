@@ -37,6 +37,8 @@
 
     const-string v2, "Unknown error while encoding imageToProcess"
 
+    invoke-static {v2}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+
     :try_start_0
     iget-object v0, v1, Lihl;->a:Lihm;
 

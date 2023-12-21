@@ -213,7 +213,28 @@
 .method public static final native AwbMetadata_state_set(JLcom/google/googlex/gcam/AwbMetadata;I)V
 .end method
 
+.method public static final native BuildPayloadBurstSpecOptions_default_max_bracketing_frames_get(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;)I
+.end method
+
 .method public static final native BuildPayloadBurstSpecOptions_default_max_bracketing_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+.end method
+
+.method public static final native BuildPayloadBurstSpecOptions_default_max_short_frames_get(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;)I
+.end method
+
+.method public static final native BuildPayloadBurstSpecOptions_default_max_short_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+.end method
+
+.method public static final native BuildPayloadBurstSpecOptions_default_min_bracketing_frames_get(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;)I
+.end method
+
+.method public static final native BuildPayloadBurstSpecOptions_default_min_bracketing_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
+.end method
+
+.method public static final native BuildPayloadBurstSpecOptions_default_min_short_frames_get(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;)I
+.end method
+
+.method public static final native BuildPayloadBurstSpecOptions_default_min_short_frames_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;I)V
 .end method
 
 .method public static final native BuildPayloadBurstSpecOptions_exposure_time_override_ms_set(JLcom/google/googlex/gcam/BuildPayloadBurstSpecOptions;F)V
@@ -1158,7 +1179,13 @@
 .method public static final native PortraitRequest_output_format_primary_set(JLcom/google/googlex/gcam/PortraitRequest;I)V
 .end method
 
+.method public static final native PortraitRequest_output_height_get(JLcom/google/googlex/gcam/PortraitRequest;)I
+.end method
+
 .method public static final native PortraitRequest_output_height_set(JLcom/google/googlex/gcam/PortraitRequest;I)V
+.end method
+
+.method public static final native PortraitRequest_output_width_get(JLcom/google/googlex/gcam/PortraitRequest;)I
 .end method
 
 .method public static final native PortraitRequest_output_width_set(JLcom/google/googlex/gcam/PortraitRequest;I)V
@@ -1479,10 +1506,19 @@
 .method public static final native ShotParams_save_merged_dng_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 .end method
 
+.method public static final native ShotParams_shasta_enabled_get(JLcom/google/googlex/gcam/ShotParams;)Z
+.end method
+
 .method public static final native ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 .end method
 
+.method public static final native ShotParams_shasta_factor_get(JLcom/google/googlex/gcam/ShotParams;)F
+.end method
+
 .method public static final native ShotParams_shasta_factor_set(JLcom/google/googlex/gcam/ShotParams;F)V
+.end method
+
+.method public static final native ShotParams_shasta_force_get(JLcom/google/googlex/gcam/ShotParams;)Z
 .end method
 
 .method public static final native ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V

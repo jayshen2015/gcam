@@ -241,20 +241,13 @@
 
     iput-boolean v3, v0, Lcom/agc/Camera;->isLogical:Z
 
-    if-eqz v3, :cond_2
-
-    const-string v3, "(Logical)"
-
-    iput-object v3, v0, Lcom/agc/Camera;->type:Ljava/lang/String;
-
-    :cond_2
     array-length v3, v2
 
-    if-le v3, v4, :cond_3
+    if-le v3, v4, :cond_2
 
     invoke-static {}, Lcom/agc/Camera;->googleDevicesIndividually()Z
 
-    :cond_3
+    :cond_2
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
