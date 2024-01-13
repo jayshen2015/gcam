@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import com.Utils.Pref;
 import com.agc.widget.GrayscaleButton;
-import com.agc.widget.OptionButton;
 
 import nan.ren.activity.WmActivity;
 

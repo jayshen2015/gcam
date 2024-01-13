@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.net.Uri;
@@ -44,6 +45,7 @@ import java.util.Map;
 
 import nan.ren.G;
 import nan.ren.util.ExifInterfaceUtil;
+import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.JSONArray;
 import nan.ren.util.JSONObject;
@@ -184,7 +186,6 @@ public class WmActivity extends Activity implements View.OnClickListener {
         if(saveButton==null) {
             saveButton = new Button(this);
             saveButton.setOnClickListener(this);
-          //  saveButton.setLayoutParams(btnlp);
             saveButton.setBackgroundColor(btn_bg_color);
             saveButton.setTextColor(text_color);
             saveButton.setGravity(Gravity.CENTER);
@@ -483,14 +484,6 @@ public class WmActivity extends Activity implements View.OnClickListener {
     }
 
     public  ViewGroup getListEditView(JSONArray customs, String emptyText, int columnCount,int ivHeight){
-//        LinearLayout linearLayout=new LinearLayout(this);
-//        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-//        linearLayout.setBackgroundColor(Color.parseColor("#cc212527"));
-//        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-//        ScrollView scrollView=new ScrollView(this);
-//        scrollView.setBackgroundColor(Color.parseColor("#cc212527"));
- //       NUtil.toastL((heightPixels)+":"+gridLayout.getBottom()+":"+gridLayout.getChildAt(gridLayout.getChildCount()-1).getBottom());
-//        scrollView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, heightPixels-ivHeight-close_btn_height));
         GridLayout gridLayout=new GridLayout(this);
         GridLayout.LayoutParams lp= new GridLayout.LayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         lp.setGravity(Gravity.CENTER_VERTICAL);
@@ -512,8 +505,6 @@ public class WmActivity extends Activity implements View.OnClickListener {
             tv.setGravity(Gravity.CENTER_VERTICAL);
             gridLayout.addView(tv);
         }
-//        scrollView.addView(gridLayout);
-       // linearLayout.addView(scrollView);
         return gridLayout;
     }
 
@@ -522,7 +513,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT ));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
         linearLayout.addView(ViewUtil.getTextView(custom.getString("title"),this));
-        String type=custom.getString("type","text");
+        String type=custom.getString("type","");
         String v=Pref.getStringValue(configName + ":" + custom.getString("key"), custom.getString("def", ""));
         Object tag=null;
         if(type.equalsIgnoreCase("image")){
@@ -553,10 +544,18 @@ public class WmActivity extends Activity implements View.OnClickListener {
             linearLayout.addView(editText);
             tag=editText;
         }else{
-            linearLayout.addView(ViewUtil.getTextEdit(v,this));
+            EditText editText=ViewUtil.getTextEdit(v,this);
+            String myFontName=Pref.getStringValue(configName + ":" + custom.getString("key")+"_font");
+            if(!ObjectUtil.isEmpty(myFontName) && FileUtil.exists(G.FONT_PATH+"/"+myFontName)){
+                Typeface typeface =Typeface.createFromFile(G.FONT_PATH+"/"+myFontName);
+                editText.setTypeface(typeface);
+                editText.setTag(myFontName);
+            }
+            linearLayout.addView(editText);
+            tag=editText;
         }
 
-        if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("font")||type.equalsIgnoreCase("image")||type.equalsIgnoreCase("date")) {
+        if(type.equalsIgnoreCase("color")||type.equalsIgnoreCase("text")||type.equalsIgnoreCase("font")||type.equalsIgnoreCase("image")||type.equalsIgnoreCase("date")) {
             Button onLineBtn = new Button(this);
             onLineBtn.setLayoutParams(new LinearLayout.LayoutParams(100,100));
             onLineBtn.setMaxHeight(100);
@@ -569,6 +568,7 @@ public class WmActivity extends Activity implements View.OnClickListener {
                 onLineBtn.setTooltipText(type);
             }
             onLineBtn.setText("在线");
+            if(type.equalsIgnoreCase("text"))onLineBtn.setText("字体");
             onLineBtn.setTextSize(10);
             onLineBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -576,6 +576,8 @@ public class WmActivity extends Activity implements View.OnClickListener {
                     if("color".equals(getTooltipText(view))){
                         PopDialog.showView(WmActivity.this, MyWeb.popColor((EditText)view.getTag()), webH);
                     }else if("font".equals(getTooltipText(view))){
+                        PopDialog.showView(WmActivity.this, MyWeb.popFont((EditText)view.getTag()), webH);
+                    }else if("text".equals(getTooltipText(view))){
                         PopDialog.showView(WmActivity.this, MyWeb.popFont((EditText)view.getTag()), webH);
                     }else if("image".equals(getTooltipText(view))){
                         PopDialog.showView(WmActivity.this, MyWeb.popLogo((ImageButton)view.getTag()), webH);
@@ -610,6 +612,11 @@ public class WmActivity extends Activity implements View.OnClickListener {
                     View v=vg.getChildAt(1);
                     if(v instanceof  ImageButton){
                         Pref.setMenuValue(configName+":"+key,v.getTag().toString());
+                    }else  if("text".equalsIgnoreCase(o.getString("type",""))){
+                        Pref.setMenuValue(configName+":"+key,((EditText)v).getText().toString());
+                        if(!ObjectUtil.isEmpty(v.getTag())){
+                            Pref.setMenuValue(configName+":"+key+"_font",ObjectUtil.stringOf(v.getTag()));
+                        }
                     }else {
                         Pref.setMenuValue(configName+":"+key,((EditText)v).getText().toString());
                     }

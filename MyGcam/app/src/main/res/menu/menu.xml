@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu  xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/my_menu">
+    <item android:icon="@drawable/abc_ic_go_search_api_material" android:tooltipText="1" android:title="上移"/>
+    <item android:icon="@drawable/abc_ic_clear_material" android:tooltipText="2" android:title="删除"/>
+    <item android:icon="@drawable/p" android:tooltipText="3" android:title="下移"/>
+</menu>

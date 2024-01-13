@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
@@ -47,6 +49,14 @@
         <activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>
         <activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
         <activity android:exported="true" android:name="nan.ren.activity.WebActivity"></activity>
+<!--        <activity android:exported="true" android:name="nan.ren.activity.PatchActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE"/>-->
+<!--                <data android:scheme="nanren" android:host="patch" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
 
     </application>
 

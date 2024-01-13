@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.Utils.Lens;
 import com.Utils.Pref;
 import com.agc.pref.ConfigLoader;
 
@@ -133,6 +132,7 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
 
     View getToolBarView(){
         int btnCount=4;
+        if(!G.isGcamApp())btnCount--;
         LinearLayout linearLayout=new LinearLayout(this);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,70));
         linearLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -146,8 +146,10 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
         linearLayout.addView(igMobile);
         linearLayout.addView(getSplitView(10));
         linearLayout.addView(getButton("合并","hebing",(screen_width/btnCount)/2-10));
-        linearLayout.addView(getSplitView(10));
-        linearLayout.addView(getButton("导入配置","import",screen_width/btnCount));
+        if(G.isGcamApp()) {
+            linearLayout.addView(getSplitView(10));
+            linearLayout.addView(getButton("导入配置", "import", screen_width / btnCount));
+        }
 
 //
 //        linearLayout.addView(getButton("选择主配置","mainCfg",screen_width/btnCount-10));
@@ -463,10 +465,5 @@ public class ConfigActivity extends Activity implements View.OnClickListener {
             igMobile.setTag("0");
             igMobile.setText("忽略机型(❌)");
         }
-    }
-    String[] getCameraIdList(){
-        String[] ids= Lens.getCameraIdList();
-        G.log(JsonUtil.toJSONString(ids));
-        return ids;
     }
 }

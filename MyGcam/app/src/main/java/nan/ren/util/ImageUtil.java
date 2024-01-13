@@ -1,22 +1,35 @@
 package nan.ren.util;
 
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Environment;
+import android.util.Base64;
 import android.util.Size;
 
 import com.Globals;
+import com.agc.util.AgcUtil;
 import com.agc.util.AssetsUtil;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
+import agc.Agc;
 import nan.ren.G;
 
 public class ImageUtil {
@@ -248,5 +261,58 @@ public class ImageUtil {
         }catch (Exception ex){
             return null;
         }
+    }
+    static int my_patch_icon_id=G.RESOURCES.getIdentifier("my_patch_icon", "drawable", G.PACKAGE_NAME);
+    public static Bitmap addNumber(String text){
+        try {
+            //int devicon = G.RESOURCES.getIdentifier("my_patch_icon", "drawable", G.PACKAGE_NAME);
+            Drawable drawable =  G.RESOURCES.getDrawable(my_patch_icon_id,null);
+            // 设置Drawable的大小
+            int width = drawable.getIntrinsicWidth();
+            int height = drawable.getIntrinsicHeight();
+            drawable.setBounds(0, 0, width, height);
+            // 创建一个Bitmap对象
+            Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            // 创建一个Canvas并与Bitmap关联
+            Canvas canvas = new Canvas(bitmap);
+            // 将Drawable绘制到Canvas上
+            drawable.draw(canvas);
+            Paint paint=new Paint();
+            paint.setColor(Color.parseColor("#FFFFFF"));
+            paint.setTypeface(Typeface.DEFAULT_BOLD);
+//            paint.setStyle(Paint.Style.STROKE); // 设置为空心
+//            paint.setStrokeWidth(5); // 设置线宽
+//            paint.setAntiAlias(true); // 抗锯齿
+//            int cx=width-25,cy=height-37,cr=22;
+//            canvas.drawCircle(cx,cy,cr,paint);
+//            paint.setColor(Color.parseColor("#773f3f3f"));
+//            paint.setStyle(Paint.Style.FILL);
+//            canvas.drawCircle(cx,cy,cr-5,paint);
+//            paint.setColor(Color.parseColor("#FFFFFF"));
+//            Rect rect=new Rect();
+ //             paint.setStrokeWidth(8); // 设置线宽
+//            paint.getTextBounds(text,0,text.length(),rect);
+            //paint.setFakeBoldText(true);
+            //paint.setTypeface(Typeface.create(Typeface.SERIF,Typeface.BOLD));
+            if(text.length()==1) {
+                paint.setTextSize(AgcUtil.dp2sp(G.CONTEXT,10));
+                canvas.drawText(text,  width - AgcUtil.dp2px(G.CONTEXT,11.4f) , height - AgcUtil.dp2px(G.CONTEXT,6.2f) , paint);
+            }else if(text.length()==2) {
+                paint.setTextSize(AgcUtil.dp2sp(G.CONTEXT,7.5f));
+                canvas.drawText(text, width - AgcUtil.dp2px(G.CONTEXT,13f) , height - AgcUtil.dp2px(G.CONTEXT,7f) , paint);
+            }else if(text.length()==3) {
+                paint.setTextSize(AgcUtil.dp2sp(G.CONTEXT,5.3f));
+                canvas.drawText(text, width - AgcUtil.dp2px(G.CONTEXT,13.2f) , height - AgcUtil.dp2px(G.CONTEXT,7.5f) , paint);
+            }
+            return bitmap;
+        }catch (Exception ex){
+            return null;
+        }
+    }
+    public static Bitmap base64ToBitmap(String base64) {
+        if(ObjectUtil.isEmpty(base64))return null;
+        if(base64.indexOf("base64,")>0)base64=base64.split("base64,")[1];
+       byte[] decodedBytes = Base64.decode(base64,Base64.DEFAULT);
+       return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.length);
     }
 }

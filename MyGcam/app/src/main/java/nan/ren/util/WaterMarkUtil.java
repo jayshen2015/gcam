@@ -1301,7 +1301,16 @@ public class WaterMarkUtil {
                     else if(dev.startsWith("$"))dev=Pref.getStringValue(dev.substring(1),"未设置");
                     String value=Pref.getStringValue(configName+":"+key,dev);
                     wmConfigStr=wmConfigStr.replace("{" + key + "}",value);
+                    if("text".equalsIgnoreCase(customObj.getString("type","text"))){
+                        String font=Pref.getStringValue(configName+":"+key+"_font");
+                        if(!ObjectUtil.isEmpty(font)){
+                            wmConfigStr=wmConfigStr.replace("{" + key + "_font}",font);
+                        }else{
+                            wmConfigStr=wmConfigStr.replace("{" + key + "_font}","DEFAULT");
+                        }
+                    }
                 }
+                G.log(customArr);
             } catch (Exception ex) {   }
         }
 

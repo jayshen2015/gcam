@@ -3,6 +3,7 @@ package nan.ren.util;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.icu.text.SimpleDateFormat;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ import nan.ren.G;
 public class NUtil {
     private static String PATH= G.BASE_AGC_PATH+"/logs/";
     private static String FILE_NAME="my_log";
-
+    private static String temp_file= Environment.getExternalStorageDirectory().getAbsolutePath()+"/.gc_temp.data";
 
     private static Class<?> SystemPropertiesClass =null;
     private static Method SystemPropertiesGetMethod = null;
@@ -213,6 +214,51 @@ public class NUtil {
                 .setTitle(title)//设置标题
                 .setMessage(msg).create();
         return dialog;
+    }
+    public static String getUKey(){
+        try {
+            JSONObject tempObj = getGUser();
+            if(tempObj==null||!tempObj.containsKey("uid")){
+                return ObjectUtil.EMPTY;
+            }
+            return tempObj.getString("uid",ObjectUtil.EMPTY);
+        }catch (Throwable e){
+            return ObjectUtil.EMPTY;
+        }
+    }
+    public static JSONObject getGUser(){
+        try{
+            JSONObject tempObj = FileUtil.getJson(temp_file);
+            if (tempObj == null) {
+                tempObj = new JSONObject();
+            }
+            return tempObj;
+        }catch (Throwable e){
+            return new JSONObject();
+        }
+    }
+    public static boolean setUKey(String key){
+        try {
+            JSONObject tempObj = FileUtil.getJson(temp_file);
+            if (tempObj == null) {
+                tempObj=new JSONObject();
+            }
+            if (!tempObj.containsKey("uid")) {
+                tempObj.put("uid",key);
+            }
+            return saveGUser(tempObj);
+        }catch (Throwable e){
+            return false;
+        }
+    }
+    public static boolean saveGUser(JSONObject user){
+        try {
+             String txt=user==null?"{}":user.toString();
+             FileUtil.writeFile(temp_file,txt,false);
+            return true;
+        }catch (Throwable e){
+            return false;
+        }
     }
 
 }

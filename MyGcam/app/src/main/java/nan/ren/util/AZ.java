@@ -2,6 +2,7 @@ package nan.ren.util;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.util.Size;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -10,11 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-
-import com.agc.net.NetworkUtil;
-
+import com.Globals;
+import com.Utils.Pref;
+import com.agc.Toast;
 import java.io.File;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import nan.ren.G;
 
 public  class AZ{
@@ -25,6 +30,21 @@ public  class AZ{
     public AZ(View tg,WebView _wb){
         this.target=tg;
         this.web=_wb;
+    }
+    @JavascriptInterface
+    public String post(String url,String json,String headers){
+        JSONObject headObj=null;
+        if(!ObjectUtil.isEmpty(headers)) {
+            try {
+                headObj = new JSONObject(headers);
+            } catch (Exception ex) {
+            }
+        }
+        return HttpUtil.doPost(url,json,headObj);
+    }
+    @JavascriptInterface
+    public String get(String url){
+        return HttpUtil.doGet(url.startsWith("http") ? url : apiUrl + url);
     }
     @JavascriptInterface
     public String getData(String url){
@@ -86,7 +106,9 @@ public  class AZ{
             ( (Activity)(target.getContext())).runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    ((EditText)target).setText(myFontName);
+                    Typeface typeface =Typeface.createFromFile(G.FONT_PATH+"/"+myFontName);
+                    ((EditText)target).setTypeface(typeface);
+                    ((EditText)target).setTag(myFontName);
                     PopDialog.close();
                 }
             });
@@ -119,7 +141,7 @@ public  class AZ{
     public void addConfig(String url){
         JSONObject config=null;
         try{
-            String configTxt= NetworkUtil.doGet(url);
+            String configTxt= HttpUtil.doGet(url);
             config= JsonUtil.jsonToObject(configTxt,JSONObject.class);
         }catch (Exception ex){
             ex.printStackTrace();
@@ -151,13 +173,179 @@ public  class AZ{
         }
         PopDialog.close();
     }
+
     @JavascriptInterface
-    public String[] getFileList(String path){
-        G.log(path);
-        System.out.println(path);
-        if(!FileUtil.exists(path))return new String[]{"aaa"};
+    public void addPatch(String... urls){
+        try{
+            if(urls==null||urls.length<1)return;
+            List<String> list=new ArrayList<>();
+            for(String url:urls) {
+                String data = HttpUtil.doGet(url);
+                if(ObjectUtil.isEmpty(data))continue;
+                list.add(data);
+            }
+            PatchUtil.xmlPatchToAllCamera(list);
+            Toast.show("d","添加完成！");
+           // if(target instanceof CfgButton) ((CfgButton)target).init();
+            Globals.onRestart();
+        }catch (Exception ex){
+           NUtil.dumpExceptionToSDCard(ex);
+        }
+        PopDialog.close();
+    }
+    @JavascriptInterface
+    public String insetPatch(String xml){
+        try{
+            if(ObjectUtil.isEmpty(xml))return ObjectUtil.EMPTY;
+            PatchUtil.xmlPatchToAllCamera(xml);
+            return "1";
+        }catch (Exception ex){
+            NUtil.dumpExceptionToSDCard(ex);
+        }
+        return ObjectUtil.EMPTY;
+    }
+    @JavascriptInterface
+    public String getFileList(String path){
+        String[] result=null;
+        path=path.replace("{BASE_AGC_PATH}",G.BASE_AGC_PATH);
+        if(!FileUtil.exists(path))return "";
         File file=new File(path);
-        if(file.isDirectory())return file.list();
-        return new String[]{file.getAbsolutePath()};
+        if(file.isDirectory())result= file.list();
+        else result= new String[]{file.getName()};
+        return JsonUtil.toJSONString(result);
+    }
+
+    @JavascriptInterface
+    public String getFileText(String path){
+        if(!FileUtil.exists(path))return null;
+        return FileUtil.getFileText(path);
+    }
+
+    @JavascriptInterface
+    public void throwError(String message) throws Exception {
+        throw new Exception(message);
+    }
+    @JavascriptInterface
+    public String getVersion(){
+        return Globals.GcamVersion+"_"+G.MY_VERSION;
+    }
+
+    @JavascriptInterface
+    public String queryPref(String filter){
+       Map map= Pref.getAppSharedPreferences().getAll();
+       if(ObjectUtil.isEmpty(filter)||"*".equals(filter.trim())) {
+           return JsonUtil.toJSONString(map);
+       }
+       Map result=new HashMap();
+       for(Object key:map.keySet()){
+           if(ObjectUtil.stringOf(key).indexOf(filter)>-1){
+               result.put(key,map.get(key));
+           }
+       }
+        return JsonUtil.toJSONString(result);
+    }
+    @JavascriptInterface
+    public String matchPref(String regex){
+        Map map= Pref.getAppSharedPreferences().getAll();
+        if(ObjectUtil.isEmpty(regex)||"*".equals(regex.trim())) {
+            return JsonUtil.toJSONString(map);
+        }
+        Map result=new HashMap();
+        for(Object key:map.keySet()){
+            if(ObjectUtil.stringOf(key).matches(regex)){
+                result.put(key,map.get(key));
+            }
+        }
+        return JsonUtil.toJSONString(result);
+    }
+    @JavascriptInterface
+    public void setPref(String k,String v){
+        if(ObjectUtil.isEmpty(k))return;
+        if(ObjectUtil.isEmpty(v))Pref.remove(k);
+        else {
+            if(JsonUtil.isJsonArray(v)){
+                Set<String> vSet=null;
+                try{vSet=JsonUtil.jsonToObject(v,Set.class);}catch (Exception ex){}
+                Pref.setMenuValue(k, vSet);
+            }else {
+                Pref.setMenuValue(k, v);
+            }
+        }
+    }
+    @JavascriptInterface
+    public String setPref(String json){
+        JSONObject jo= JsonUtil.str2JsonObject(json);
+        if(jo!=null&&!jo.isEmpty()){
+            PatchUtil.putAllPatch(jo);
+            return "1";
+        }else{
+            return "0";
+        }
+    }
+    @JavascriptInterface
+    public void Restart(){
+        Globals.onRestart();
+    }
+    @JavascriptInterface
+    public void toast(String msg){
+       NUtil.toastS(msg);
+    }
+    @JavascriptInterface
+    public void close(){
+        if(target==null){
+            if(web.getContext() instanceof Activity){
+                ( (Activity) web.getContext()).finish();
+                return;
+            }
+        }else {
+            PopDialog.close();
+        }
+    }
+
+    @JavascriptInterface
+    public void log(String log){
+        G.log(log);
+    }
+
+    @JavascriptInterface
+    public String getUkey(){
+        return NUtil.getUKey();
+    }
+    @JavascriptInterface
+    public String setUkey(String uid){
+        if(NUtil.setUKey(uid))return "1";
+        else return "0";
+    }
+
+    @JavascriptInterface
+    public String getUser(){
+        return NUtil.getGUser().toString();
+    }
+    @JavascriptInterface
+    public String saveUser(String userJson){
+        try{
+            JSONObject user=new JSONObject(userJson);
+            boolean flag=NUtil.saveGUser(user);
+            if(flag)return "1";
+        }catch (Throwable e){
+
+        }
+        return "0";
+
+    }
+
+
+    @JavascriptInterface
+    public String MD5(String str){
+        return JM.MD5(str);
+    }
+
+    @JavascriptInterface
+    public String encode(String str){
+        try {
+            return JM.compressToStr(str);
+        }catch (Exception ex){
+            return null;
+        }
     }
 }

@@ -83,6 +83,16 @@ public class FileUtil {
         return new File(fileName).exists();
     }
 
+    public static JSONObject getJson(String fileName){
+        try {
+            String jsonStr = getFileText(fileName);
+            if(ObjectUtil.isEmpty(jsonStr))return null;
+            return new JSONObject(jsonStr);
+        }catch (Throwable e){
+            return null;
+        }
+    }
+
     public static String getFileText(String fileName){
         if(!FileUtil.exists(fileName))return null;
         String res=null;

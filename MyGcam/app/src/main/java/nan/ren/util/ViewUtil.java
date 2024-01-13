@@ -1,11 +1,14 @@
 package nan.ren.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -19,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +30,8 @@ import androidx.annotation.Nullable;
 import com.Utils.Pref;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Map;
@@ -165,7 +171,7 @@ public class ViewUtil {
         setTextSize(field);
         field.setMinimumWidth(230);
         field.setImageDrawable(ImageUtil.getOuterDrawable(url));
-        field.setTag(url);
+        if(!ObjectUtil.isEmpty(url))field.setTag(url);
         return field;
     }
 
@@ -253,18 +259,58 @@ public class ViewUtil {
         WebView webView=new WebView(context);
         webView.setLayoutParams(new ViewGroup.LayoutParams(w,h));
         webView.setWebViewClient(new WebViewClient(){
-            @Override//// 强制在当前 WebView 中加载 url
+            @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
+                try {
+                    url=url==null?"":url.trim();
+                    if (!(url.toLowerCase().startsWith("http") || url.toLowerCase().startsWith("https"))) {
+                        if(url.startsWith("out:"))url="http:"+url.substring(4);
+                        else if(url.startsWith("outs:"))url="https:"+url.substring(5);
+                        Intent intent = new Intent();
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(url));
+                        context.startActivity(intent);
+                        return true;
+                    }
+                    view.loadUrl(url);
+                    return true;
+                } catch (Exception e) {
+                    // 防止没有安装的情况
+                    e.printStackTrace();
+                    Toast.makeText(context,"您所打开的第三方App未安装！",Toast.LENGTH_SHORT).show();
+                }
                 return true;
+            }
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView webView, String url) {
+                url=url==null?"":url.trim();
+                boolean inner=false;
+                if(url.indexOf("/my_sdcard_font_path/")>-1){
+                    url = G.FONT_PATH+url.substring(url.indexOf("/my_sdcard_font_path/")+21);
+                    inner=true;
+                }else if(url.toLowerCase().startsWith("/gbase/")){
+                    url = G.BASE_AGC_PATH+url.substring(5);
+                    inner=true;
+                }
+                if(inner && !ObjectUtil.isEmpty(url)){
+                    try {
+                        return new WebResourceResponse(
+                                "application/octet-stream",
+                                "UTF8", new FileInputStream(url)
+                        );
+                    }catch (Exception ex){
+                        return null;
+                    }
+                }
+                return super.shouldInterceptRequest(webView, url);
             }
         });
         WebSettings webSettings = webView.getSettings();
         //如果访问的页面中要与Javascript交互，则webview必须设置支持Javascript
         webSettings.setJavaScriptEnabled(true);
-//设置自适应屏幕
+        //设置自适应屏幕
         webSettings.setUseWideViewPort(true); //将图片调整到适合webview的大小
-        webSettings.setLoadWithOverviewMode(false); // 缩放至屏幕的大小
+        webSettings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
         //缩放操作
         webSettings.setSupportZoom(false); //支持缩放，默认为true。是下面那个的前提。
         webSettings.setBuiltInZoomControls(true); //设置内置的缩放控件。若为false，则该WebView不可缩放

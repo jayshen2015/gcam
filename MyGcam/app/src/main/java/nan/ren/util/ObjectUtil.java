@@ -8,6 +8,10 @@ import java.util.Map;
 
 public class ObjectUtil {
     public static String EMPTY="";
+    public static int intOf(Object o,int def){
+        if(o==null)return def;
+        return Integer.parseInt(stringOf(o));
+    }
     public static String stringOf(Object o,String def){
         if(o==null)return def;
         return  o.toString().trim();

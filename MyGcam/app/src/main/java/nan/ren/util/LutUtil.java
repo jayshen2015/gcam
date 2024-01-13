@@ -69,10 +69,14 @@ public class LutUtil {
        return filterToBitmap(src,lut,intensity,100);
     }
     public static Bitmap filterToBitmap(Bitmap src,String lut,float intensity,int quality){
+        return filterToBitmap(src,getLutBitMap(lut),intensity,quality);
+    }
+
+    public static Bitmap filterToBitmap(Bitmap src,Bitmap lutBitmap,float intensity,int quality){
         try {
             GPUImage gpuImage = new GPUImage(G.CONTEXT);
             GPUImageLookupFilter lutFilter = new GPUImageLookupFilter();
-            lutFilter.setBitmap(getLutBitMap(lut));
+            lutFilter.setBitmap(lutBitmap);
             lutFilter.setIntensity(intensity);
             gpuImage.setFilter(lutFilter);
             Bitmap resultBit = gpuImage.getBitmapWithFilterApplied(src);

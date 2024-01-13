@@ -1,9 +1,14 @@
 package nan.ren.util;
-import com.agc.CrashHandler;
+
+import android.os.Build;
+
+import com.Globals;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
@@ -20,19 +25,13 @@ public class HttpUtil {
     private static long timeUpload = 0;
 
 
-    public static String doGet(String str) {
+
+    public static String doGet(String url) {
         try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
+            HttpURLConnection httpURLConnection = getConn(url);
             httpURLConnection.setRequestMethod("GET");
             if(httpURLConnection.getResponseCode() == 200 ){
-                BufferedReader bufferedReader= new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
-                String tmp=bufferedReader.readLine();
-                StringBuffer sb=new StringBuffer();
-                while (tmp!=null) {
-                    sb.append(tmp);
-                    tmp=bufferedReader.readLine();
-                }
-                return sb.toString();
+                return getData(httpURLConnection);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,7 +40,7 @@ public class HttpUtil {
     }
     public static boolean download(String url, File file) {
         try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(url).openConnection();
+            HttpURLConnection httpURLConnection = getConn(url);
             httpURLConnection.setRequestMethod("GET");
             if(httpURLConnection.getResponseCode() == 200 ){
                InputStream inputStream= httpURLConnection.getInputStream();
@@ -62,20 +61,32 @@ public class HttpUtil {
         return false;
     }
 
-    public static String doPost(String str, HashMap<String, String> hashMap) {
+    public static String doPost(String url, HashMap<String, String> hashMap, HashMap<String, String> headers) {
+        return doPost(url,JsonUtil.toJSONString(hashMap),headers);
+    }
+
+    public static String doPost(String url, String data, Map headers) {
         try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
+            HttpURLConnection httpURLConnection = getConn(url);
             httpURLConnection.setRequestMethod("POST");
             httpURLConnection.setDoOutput(true);
-            httpURLConnection.getOutputStream().write(getParams(hashMap).getBytes());
-            return httpURLConnection.getResponseCode() == 200 ? new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream())).readLine() : "{ \"success\": false,\n   \"errorMsg\": \"后台服务器开小差了!\",\n     \"result\":{}}";
+            if(headers!=null&&!headers.isEmpty()){
+                for (Object k : headers.keySet()){
+                    httpURLConnection.setRequestProperty(ObjectUtil.stringOf(k),ObjectUtil.stringOf(headers.get(k)));
+                }
+            }
+            httpURLConnection.getOutputStream().write(data.getBytes());
+            return getData(httpURLConnection);
+
         } catch (Exception e) {
             NUtil.dumpExceptionToSDCard(e);
-            return "{ \"success\": false,\n   \"errorMsg\": \"后台服务器开小差了!\",\n     \"result\":{}}";
+            return null;
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    public static String doPost(String str, HashMap<String, String> hashMap) {
+        return doPost(str,hashMap,null);
+    }
     public static String encode(String str) {
         try {
             return URLEncoder.encode(str, StandardCharsets.UTF_8.toString());
@@ -94,5 +105,43 @@ public class HttpUtil {
             }
         }
         return jSONObject.toString();
+    }
+    static String getData(HttpURLConnection httpURLConnection){
+        InputStream is=null;
+        try{
+            is=httpURLConnection.getInputStream();
+        }catch (IOException ex){
+            is=httpURLConnection.getErrorStream();
+        }
+        BufferedReader bufferedReader=null;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(is));
+            String tmp = bufferedReader.readLine();
+            StringBuffer sb = new StringBuffer();
+            while (tmp != null) {
+                sb.append(tmp);
+                tmp = bufferedReader.readLine();
+            }
+            return sb.toString();
+        }catch (Exception ex){
+            return null;
+        }finally {
+            try {if(bufferedReader!=null)bufferedReader.close();}catch (Exception ex){}
+            try {if(is!=null)is.close();}catch (Exception ex){}
+        }
+
+    }
+    static HttpURLConnection getConn(String url){
+        try {
+            HttpURLConnection conn=   (HttpURLConnection) new URL(url).openConnection();
+            if(url.toLowerCase().indexOf("1kat.cn")>0) {
+                conn.setRequestProperty("ag_user_tk",NUtil.getUKey());
+                conn.setRequestProperty("ag_ver", Globals.GcamVersion+"_"+G.MY_VERSION);
+                conn.setRequestProperty("ag_devices", Build.DEVICE+"_"+Build.MODEL+"_"+Build.PRODUCT);
+            }
+            return conn;
+        }catch (Exception ex){
+            return null;
+        }
     }
 }

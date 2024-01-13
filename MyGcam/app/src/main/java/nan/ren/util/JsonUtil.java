@@ -1,6 +1,8 @@
 package nan.ren.util;
 import android.media.ExifInterface;
 
+import org.json.JSONException;
+
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -155,7 +157,20 @@ public class JsonUtil {
             return false;
         }
     }
-
+    public static JSONObject str2JsonObject(String json) {
+        try{
+            return jsonToObject(json,JSONObject.class);
+        }catch (Exception ex){
+            return null;
+        }
+    }
+    public static JSONArray str2JsonArray(String json) {
+        try{
+            return jsonToObject(json,JSONArray.class);
+        }catch (Exception ex){
+            return null;
+        }
+    }
     /**
      * 将json字符串转化为对象列表
      *
@@ -164,6 +179,7 @@ public class JsonUtil {
      * List<ActionEvent> eventList = JsonUtils.jsonToObject(jsonStr, new TypeReference<List<ActionEvent>>() {});
      * new TypeReference<List<ActionEvent>>() {} 创建了一个继承TypeReference>的匿名子类，在其构造函数中拿到了泛型对应Type
      */
+
     @SuppressWarnings("unchecked")
     public static <T> T jsonToObject(String json, TypeReference<T> typeReference) throws Exception {
         if (json == null || "".equals(json) || "".equals(json.trim())) {
@@ -260,6 +276,7 @@ public class JsonUtil {
             for (int i = 0; i < length; i++) {
                 set.add(jsonArray.get(i));
             }
+
             return (T) set;
         }
         if (Map.class.isAssignableFrom(tClazz)) {
@@ -496,6 +513,30 @@ public class JsonUtil {
         }
     }
 
+    public static boolean isJsonArray(String json){
+        if(!ObjectUtil.isEmpty(json) && json.startsWith("[") && json.endsWith("]")){
+            try{
+                new org.json.JSONArray(json);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isJsonObject(String json){
+        if(!ObjectUtil.isEmpty(json) && json.trim().startsWith("{") && json.trim().endsWith("}")){
+            try{
+                new org.json.JSONObject(json);
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
+        return false;
+    }
+
     public static Map jsonToMap(JSONObject jo){
         Iterator<String> it=jo.keySet().iterator();
         Map map=new HashMap<>();
@@ -541,5 +582,6 @@ public class JsonUtil {
             return null;
         }
     }
+
 
 }

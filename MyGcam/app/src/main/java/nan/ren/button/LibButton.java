@@ -15,6 +15,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.Globals;
+import com.Utils.Lens;
 import com.Utils.Pref;
 import com.agc.Library;
 import com.agc.widget.OptionButton;
@@ -26,6 +27,8 @@ import java.util.List;
 
 import nan.ren.G;
 import nan.ren.util.FileUtil;
+import nan.ren.util.ObjectUtil;
+import nan.ren.util.PatchUtil;
 
 public class LibButton extends OptionButton implements View.OnClickListener {
 
@@ -75,6 +78,7 @@ public class LibButton extends OptionButton implements View.OnClickListener {
         else this.selectedIndex = 1;
 
         setChecked(this.selectedIndex > 0);
+
         this.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -82,6 +86,7 @@ public class LibButton extends OptionButton implements View.OnClickListener {
                 return true;
             }
         });
+
         super.init(context);
 
     }
@@ -110,6 +115,9 @@ public class LibButton extends OptionButton implements View.OnClickListener {
         doChecked(i>0);
     }
     void showLibsDialog(){
+        String v1 = Pref.getAuxProfilePrefStringValue("lib_custom_lib_open_key");
+        String v2 =Pref.getStringValue("custom_lib_open_key");
+        G.log("libP:"+v1+",libC:"+v2);
 
         if(dialog==null) {
             dialog = new AlertDialog.Builder(getContext())
@@ -129,11 +137,6 @@ public class LibButton extends OptionButton implements View.OnClickListener {
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int i) {
-//                           if("gcastartup".equals(Pref.getStringValue("custom_lib_open_key","gcastartup"))){
-//                               checked(false);
-//                           }else{
-//                               checked(true);
-//                           }
                            dialog.dismiss();
                         }
                     }).create();
@@ -237,7 +240,9 @@ public class LibButton extends OptionButton implements View.OnClickListener {
 
     void loadLibrary(String filename){
         deleteMyGcamLib();
+        G.log("loadLibrary："+ ObjectUtil.stringOf(filename));
         if("gcastartup".equals(filename)){
+            PatchUtil.removeAllCustomLib(PatchUtil.getNowProfileNum());
             Pref.setMenuValue("custom_lib_open_key","gcastartup");
             Library.loadLibrary("gcastartup");
         }else {

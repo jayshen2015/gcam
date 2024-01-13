@@ -176,15 +176,15 @@ public class ExifInterfaceUtil {
 //            exif.setAttribute("ExifVersion","0220");
 //            exif.setAttribute("MakerNote","{\"PiFlag\":\"0\",\"nightFlag\":\"1\",\"nightMode\": \"0\",\"asdOut\": [\"0\"],\"apsAsdOut\": [\"7\"],\"apsAsdClsOut\": [\"7\", \"0\"],\"iso\": \"362\",\"expTime\": \"0\",\"fType\":\"48\",\"bkMode\":\"25\",\"aideblur\":\"0\",\"aisState\":\"0\"}");
         }
-        String pztitle=NUtil.getProfileTitle();
-        if(pztitle!=null) {
-         //   G.log("ProfileTitle:"+pztitle);
-//            exif.setAttribute(ExifInterface.TAG_MAKE, pztitle);
-            exif.setAttribute(ExifInterface.TAG_USER_COMMENT, pztitle);
-//            exif.setAttribute(ExifInterface.TAG_MAKER_NOTE, pztitle);
-//            exif.setAttribute(ExifInterface.TAG_ARTIST, pztitle);
-//            exif.setAttribute("Model",pztitle);
-        }
+//        String pztitle=NUtil.getProfileTitle();
+//        if(pztitle!=null) {
+//         //   G.log("ProfileTitle:"+pztitle);
+////            exif.setAttribute(ExifInterface.TAG_MAKE, pztitle);
+//            exif.setAttribute(ExifInterface.TAG_USER_COMMENT, pztitle);
+////            exif.setAttribute(ExifInterface.TAG_MAKER_NOTE, pztitle);
+////            exif.setAttribute(ExifInterface.TAG_ARTIST, pztitle);
+////            exif.setAttribute("Model",pztitle);
+//        }
         try{exif.saveAttributes();}catch (Exception ex){}
     }
 

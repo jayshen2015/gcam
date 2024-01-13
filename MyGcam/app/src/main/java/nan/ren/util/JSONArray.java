@@ -1,4 +1,6 @@
 package nan.ren.util;
+import org.json.JSONStringer;
+
 import java.util.ArrayList;
 
 public class JSONArray extends ArrayList<Object> {
@@ -10,6 +12,7 @@ public class JSONArray extends ArrayList<Object> {
         super();
         try {
             org.json.JSONArray ja = new org.json.JSONArray(json);
+
             for (int i=0;i<ja.length();i++){
                 Object o=ja.opt(i);
                 if(o==null)continue;

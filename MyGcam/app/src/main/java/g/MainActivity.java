@@ -1,10 +1,13 @@
 package g;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.app.Application;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,22 +15,30 @@ import android.provider.Settings;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageButton;
-import com.Globals;
 
 import java.util.Iterator;
+import java.util.List;
 
 import nan.ren.G;
 import nan.ren.activity.ConfigActivity;
+import nan.ren.activity.PatchActivity;
 import nan.ren.activity.PreviewActivity;
 import nan.ren.activity.WmActivity;
+import nan.ren.util.ActivityUtil;
 import nan.ren.util.FileUtil;
 import nan.ren.util.ImageUtil;
 import nan.ren.util.JSONArray;
 import nan.ren.util.JSONObject;
+import nan.ren.util.MyWeb;
+import nan.ren.util.NUtil;
 import nan.ren.util.ObjectUtil;
+import nan.ren.util.PermissionUtil;
+import nan.ren.util.PopDialog;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     GridLayout gridLayout;
@@ -36,13 +47,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Globals.context=getApplicationContext();
-        checkPermission();
+        registerActivityLifecycleCallbacks(ActivityUtil.lifecycleCallbacks);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+       // getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);// 全屏
         setContentView(R.layout.activity_main);
         gridLayout=findViewById(R.id.gridLayout);
         w=G.RESOURCES.getDisplayMetrics().widthPixels/3;
         h=Math.min(G.RESOURCES.getDisplayMetrics().heightPixels/3,w);
         initView();
+
+//        Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+//        Uri u=Uri.parse("package:"+getPackageName());
+//        intent.setData(u);
+//        startActivityForResult(intent, 1111);
+//        Intent intent = new Intent(this, PatchActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK );
+//        startActivity(intent);
     }
 
     @Override
@@ -81,6 +101,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 gridLayout.addView(ib);
             }
         }
+
+//
+//
+//        ImageButton imageButton=new ImageButton(this);
+//        imageButton.setImageBitmap(ImageUtil.addNumber("888"));
+//        imageButton.setLayoutParams(new ViewGroup.LayoutParams(w,h));
+//        imageButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                WebView w=  MyWeb.popPatch(imageButton);
+//                PopDialog.showWithView(MainActivity.this,w);
+//            }
+//        });
+//        gridLayout.addView(imageButton);
     }
 
     public void startActivity(JSONObject param){
@@ -133,38 +167,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
         return  new JSONArray(cfgTxt);
      }
 
-    private AlertDialog dialog;
-    private void checkPermission() {
-        //检查权限（NEED_PERMISSION）是否被授权 PackageManager.PERMISSION_GRANTED表示同意授权
-        if (Build.VERSION.SDK_INT > 30) {
-            if (!Environment.isExternalStorageManager()) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                    dialog = null;
-                }
-                dialog = new AlertDialog.Builder(this)
-                        .setTitle("提示")//设置标题
-                        .setMessage("请开启文件访问权限，否则无法正常使用本应用！")
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int i) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                try {
-                                    dialog.dismiss();
-                                    Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                                    startActivity(intent);
-                                } catch (Exception ex) {
-                                }
-                            }
-                        }).create();
-                dialog.show();
-            }
-        }
-    }
 
 }

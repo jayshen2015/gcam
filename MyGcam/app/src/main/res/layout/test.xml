@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:padding="2dp" android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:tag="agc_tv" android:background="@drawable/agc_option_bg" android:paddingTop="8dp" android:paddingBottom="8dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minWidth="80dp">
+        <ImageView android:tag="agc_option_iv" android:layout_width="28dp" android:layout_height="28dp" android:src="@drawable/agc_lib_patcher" android:layout_weight="1"/>
+        <TextView android:textSize="12sp" android:textColor="@android:color/white" android:tag="agc_option_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Button" android:layout_weight="1"/>
+        <LinearLayout android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tag="my_tb" android:gravity="center" android:orientation="horizontal">
+            <ImageView  android:tag="my_op_pre" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/p" android:layout_weight="1"/>
+            <ImageView android:layout_marginLeft="7dp" android:tag="my_op_remove" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/x" android:layout_weight="1"/>
+            <ImageView android:layout_marginLeft="7dp" android:tag="my_op_next" android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/n" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
