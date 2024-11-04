@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/AJButton;
 
-    .line 35
+    .line 34
     iput-object p1, p0, Lnan/ren/button/AJButton$1;->this$0:Lnan/ren/button/AJButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,12 +40,12 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 38
+    .line 37
     iget-object v0, p0, Lnan/ren/button/AJButton$1;->this$0:Lnan/ren/button/AJButton;
 
     invoke-virtual {v0}, Lnan/ren/button/AJButton;->showWmView()V
 
-    .line 39
+    .line 38
     const/4 v0, 0x1
 
     return v0

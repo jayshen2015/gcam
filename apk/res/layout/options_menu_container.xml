@@ -6,14 +6,15 @@
             <include layout="@layout/minibar" />
         </FrameLayout>
         <LinearLayout android:layout_gravity="center|right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-		
             <!--com.agc.widget.GrayscaleButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
             <com.agc.widget.WatermarkButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" /-->
+            <!--nan.ren.button.HexButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" /-->
             <nan.ren.button.LibButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
             <nan.ren.button.AJButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
             <nan.ren.button.WMButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
             <nan.ren.button.LutButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-			<com.agc.widget.PatchButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+			<nan.ren.button.CfgButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+			<!--com.agc.widget.PatchButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" /-->
         </LinearLayout>
     </FrameLayout>
     <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">

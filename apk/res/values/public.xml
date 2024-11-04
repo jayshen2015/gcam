@@ -9548,9 +9548,7 @@
 
 
 
-    <public type="drawable" name="agc_watermark_shortcuts" id="0x7f089424" />
-    <public type="drawable" name="my_lut" id="0x7f089425" />
-    <public type="drawable" name="my_lib" id="0x7f089426" />
+
 
     <public type="string" name="my_watermark_dateformat_enable_title" id="0x7f140f2f" />
     <public type="string" name="my_patch_profile_title" id="0x7f140f30" />
@@ -9602,7 +9600,22 @@
 	<public type="string" name="my_watermark_usecfg_title" id="0x7f140f55" />
 	<public type="string" name="my_delete_picture_ifuselut_title" id="0x7f140f56" />
 	<public type="string" name="my_upscale_enable_title" id="0x7f140f57" />
+	<public type="string" name="my_add_config_btn_title" id="0x7f140f58" />
+	<public type="string" name="my_hide_hexbtn_title" id="0x7f140f59" />
+	
+	
 	
 	<public type="layout" name="bottom_bar_layout2" id="0x7f0e0900" />
+    <public type="layout" name="my_chooser_patch_view" id="0x7f0e0901" />
+	
+	
+	
+	<public type="drawable" name="agc_watermark_shortcuts" id="0x7f089424" />
+    <public type="drawable" name="my_lut" id="0x7f089425" />
+    <public type="drawable" name="my_lib" id="0x7f089426" />
+	<public type="drawable" name="p" id="0x7f089427" />
+    <public type="drawable" name="n" id="0x7f089428" />
+    <public type="drawable" name="x" id="0x7f089429" />
+    <public type="drawable" name="my_hex" id="0x7f08942a" />
 	
 </resources>

@@ -4,7 +4,7 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC8.8.224_V8.2
+set apkname=AGC8.8_VOL07.1
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 :startA
@@ -43,10 +43,13 @@ if "%num%"=="4" (
 if "%num%"=="5" (
 	CALL :BuildApk  mtk
 ) 
+if "%num%"=="6" (
+	CALL :BuildApk  scan3d
+) 
 
 
 if "%num%"=="0" (
-	for %%i in (kaka;mtk;onep;samsung;dy) do CALL :BuildApk  %%i
+	for %%i in (kaka;mtk;onep;samsung;scan3d;dy) do CALL :BuildApk  %%i
 ) 
 
 if "%num%"=="" (
@@ -83,6 +86,6 @@ del /F /Q  "%BP%\%apkname%.R.apk"
 java -jar  signapk.jar sign\%pkg%.x509.pem sign\%pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
 del /F /Q  "%BP%\%apkname%.RO.apk"
 echo -------------------[End Build %pkg%]--------------------
-scp D:\un\gcam8.8\apk\build\AGC8*.apk root@10.254.10.150:/tmp/sjs/
+scp D:\un\gcam8.8\apk\build\AGC8*.apk root@192.168.0.145:/tmp/sjs/
 
 EXIT /B 0

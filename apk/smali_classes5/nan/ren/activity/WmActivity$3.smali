@@ -30,7 +30,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 225
+    .line 209
     iput-object p1, p0, Lnan/ren/activity/WmActivity$3;->this$0:Lnan/ren/activity/WmActivity;
 
     iput-object p2, p0, Lnan/ren/activity/WmActivity$3;->val$btn:Landroid/widget/Button;
@@ -45,9 +45,9 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 4
 
-    .line 229
+    .line 213
     :try_start_0
     iget-object v0, p0, Lnan/ren/activity/WmActivity$3;->this$0:Lnan/ren/activity/WmActivity;
 
@@ -55,21 +55,29 @@
 
     move-result-object v0
 
-    .line 230
+    .line 214
     .local v0, "newFile":Ljava/lang/String;
     sget-object v1, Lnan/ren/activity/WmActivity;->wmBitmap:Landroid/graphics/Bitmap;
 
-    invoke-static {v0, v1}, Lnan/ren/util/WaterMarkUtil;->WriteBitmapFile(Ljava/lang/String;Landroid/graphics/Bitmap;)V
+    const-string v2, "pref_qjpg_key"
+
+    const/16 v3, 0x61
+
+    invoke-static {v2, v3}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v2
+
+    invoke-static {v1, v0, v2}, Lnan/ren/util/ImageUtil;->saveBitmapFile(Landroid/graphics/Bitmap;Ljava/lang/String;I)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
 
-    .line 231
+    .line 215
     :try_start_1
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-static {v1}, Lnan/ren/util/WaterMarkUtil;->noticSysPhoto(Ljava/io/File;)V
+    invoke-static {v1}, Lnan/ren/util/OsUtil;->noticSysPhoto(Ljava/io/File;)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -78,7 +86,7 @@
     :catch_0
     move-exception v1
 
-    .line 232
+    .line 216
     :goto_0
     :try_start_2
     new-instance v1, Landroid/media/ExifInterface;
@@ -98,7 +106,7 @@
     :catch_1
     move-exception v1
 
-    .line 233
+    .line 217
     :goto_1
     :try_start_3
     iget-object v1, p0, Lnan/ren/activity/WmActivity$3;->val$btn:Landroid/widget/Button;
@@ -109,35 +117,35 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
 
-    .line 238
+    .line 222
     .end local v0    # "newFile":Ljava/lang/String;
     goto :goto_2
 
-    .line 234
+    .line 218
     :catch_2
     move-exception v0
 
-    .line 235
+    .line 219
     .local v0, "ex":Ljava/lang/Exception;
     const-string v1, "\u4fdd\u5b58\u5931\u8d25\u4e86\u3002\u3002"
 
     invoke-static {v1}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
 
-    .line 236
+    .line 220
     iget-object v1, p0, Lnan/ren/activity/WmActivity$3;->val$btn:Landroid/widget/Button;
 
     const-string v2, "\u4fdd\u5b58\u5931\u8d25"
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 237
+    .line 221
     iget-object v1, p0, Lnan/ren/activity/WmActivity$3;->val$btn:Landroid/widget/Button;
 
     iget-object v2, p0, Lnan/ren/activity/WmActivity$3;->val$that:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 239
+    .line 223
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_2
     return-void

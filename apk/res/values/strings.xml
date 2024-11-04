@@ -2287,5 +2287,7 @@ The format used to store the color when encoding."</string>
 	<string name="my_watermark_usecfg_title">使用水印配置文件打印</string>
 	<string name="my_delete_picture_ifuselut_title">配置使用lut时不保留原图</string>
 	<string name="my_upscale_enable_title">超分滑块</string>
+	<string name="my_add_config_btn_title">添加配置</string>
+	<string name="my_hide_hexbtn_title">隐藏Hex按钮</string>
 	
 </resources>

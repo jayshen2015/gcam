@@ -26,87 +26,11 @@
     return-void
 .end method
 
-.method static synthetic access$000(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-
-    invoke-static {p0}, Lcom/agc/net/NetworkUtil;->encode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
 
 .method private static canUpload()Z
-    .locals 8
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "canUpload="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v1
-
-    sget-wide v3, Lcom/agc/net/NetworkUtil;->timeUpload:J
-
-    sub-long/2addr v1, v3
-
-    const-wide/16 v3, 0x1388
-
-    cmp-long v1, v1, v3
-
-    const/4 v2, 0x1
-
-    const/4 v5, 0x0
-
-    if-lez v1, :cond_0
-
-    move v1, v2
-
-    goto :goto_0
-
-    :cond_0
-    move v1, v5
-
-    :goto_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/agc/Log;->d(Ljava/lang/Object;)I
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    sget-wide v6, Lcom/agc/net/NetworkUtil;->timeUpload:J
-
-    sub-long/2addr v0, v6
-
-    cmp-long v0, v0, v3
-
-    if-lez v0, :cond_1
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    sput-wide v0, Lcom/agc/net/NetworkUtil;->timeUpload:J
-
-    return v2
-
-    :cond_1
-    return v5
+    .locals 1 
+	const/4 v0, 0x0 
+    return v0
 .end method
 
 .method public static doGet(Ljava/lang/String;)Ljava/lang/String;
@@ -386,51 +310,13 @@
 .end method
 
 .method public static uploadLogs(Ljava/lang/String;)V
-    .locals 2
-
-    invoke-static {}, Lcom/agc/net/NetworkUtil;->canUpload()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/Thread;
-
-    new-instance v1, Lcom/agc/net/NetworkUtil$1;
-
-    invoke-direct {v1, p0}, Lcom/agc/net/NetworkUtil$1;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    .locals 0
 
     return-void
 .end method
 
 .method public static uploadTg(Ljava/lang/String;)V
-    .locals 2
-
-    invoke-static {}, Lcom/agc/net/NetworkUtil;->canUpload()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    return-void
-
-    :cond_0
-    new-instance v0, Ljava/lang/Thread;
-
-    new-instance v1, Lcom/agc/net/NetworkUtil$2;
-
-    invoke-direct {v1, p0}, Lcom/agc/net/NetworkUtil$2;-><init>(Ljava/lang/String;)V
-
-    invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
-
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    .locals 0 
 
     return-void
 .end method

@@ -6,7 +6,7 @@
         </intent>
     </shortcut>
 	<shortcut android:icon="@drawable/agc_watermark_shortcuts" android:enabled="true" android:shortcutId="add_watermark" android:shortcutShortLabel="@string/my_add_watermark_title" android:shortcutLongLabel="@string/my_add_watermark_title">
-        <intent android:targetPackage="org.codeaurora.snapcam" android:action="android.intent.action.MAIN" android:targetClass="nan.ren.activity.WmActivity">
+        <intent android:targetPackage="org.codeaurora.snapcam" android:action="android.intent.action.MAIN" android:targetClass="nan.ren.activity.Wm2Activity">
         </intent>
     </shortcut>
 	<shortcut android:icon="@drawable/agc_shortcuts_setting" android:enabled="true" android:shortcutId="hebing_config" android:shortcutShortLabel="@string/my_hebing_config_title" android:shortcutLongLabel="@string/my_hebing_config_title">

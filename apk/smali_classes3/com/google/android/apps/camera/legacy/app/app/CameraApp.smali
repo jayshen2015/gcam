@@ -914,6 +914,10 @@
     const-string v0, "GCA_App#onCreate"
 
     invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+	
+	sget-object v0, Lnan/ren/util/ActivityUtil;->lifecycleCallbacks:Landroid/app/Application$ActivityLifecycleCallbacks;
+	
+	invoke-virtual {v1, v0}, Lcom/google/android/apps/camera/legacy/app/app/CameraApp;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
     sget-object v0, Lcom/agc/Application;->lifecycle:Landroid/app/Application$ActivityLifecycleCallbacks;
 

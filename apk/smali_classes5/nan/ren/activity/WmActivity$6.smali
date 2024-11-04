@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lnan/ren/activity/WmActivity;->getViewByCustom(Lnan/ren/util/JSONObject;)Landroid/view/ViewGroup;
+    value = Lnan/ren/activity/WmActivity;->getViewByCfg(Lnan/ren/util/JSONObject;I)Landroid/view/ViewGroup;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,18 @@
 # instance fields
 .field final synthetic this$0:Lnan/ren/activity/WmActivity;
 
+.field final synthetic val$type:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Lnan/ren/activity/WmActivity;)V
+.method constructor <init>(Lnan/ren/activity/WmActivity;Ljava/lang/String;)V
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/WmActivity;
 
-    .line 541
+    .line 515
     iput-object p1, p0, Lnan/ren/activity/WmActivity$6;->this$0:Lnan/ren/activity/WmActivity;
+
+    iput-object p2, p0, Lnan/ren/activity/WmActivity$6;->val$type:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,43 +41,22 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 3
     .param p1, "view"    # Landroid/view/View;
 
-    .line 544
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lnan/ren/util/NUtil;->toastL(Ljava/lang/String;)V
-
-    .line 545
+    .line 518
     iget-object v0, p0, Lnan/ren/activity/WmActivity$6;->this$0:Lnan/ren/activity/WmActivity;
 
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
+    iget-object v1, p0, Lnan/ren/activity/WmActivity$6;->val$type:Ljava/lang/String;
 
-    move-result v1
+    invoke-static {v1, p1}, Lnan/ren/util/MyWeb;->popSettingCfg(Ljava/lang/String;Landroid/view/View;)Landroid/webkit/WebView;
 
-    invoke-virtual {v0, v1}, Lnan/ren/activity/WmActivity;->selectPic(I)V
+    move-result-object v1
 
-    .line 546
+    sget v2, Lnan/ren/activity/WmActivity;->webH:I
+
+    invoke-static {v0, v1, v2}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
+
+    .line 530
     return-void
 .end method

@@ -640,4 +640,5 @@
     <item type="id" name="center_right_button" />
     <item type="id" name="agc_view" />
     <item type="id" name="summary" />
+    <item type="id" name="my_menu" />
 </resources>

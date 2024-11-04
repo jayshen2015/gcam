@@ -38,12 +38,12 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 42
+    .line 38
     const/4 v0, 0x0
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->DEFAULT_TYPEFACE:Landroid/graphics/Typeface;
 
-    .line 43
+    .line 39
     const/4 v1, 0x2
 
     sput v1, Lnan/ren/util/WaterMarkUtil;->agc_wm_type_size:I
@@ -58,7 +58,7 @@
     .line 617
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1228
+    .line 1229
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->methodMap:Ljava/util/Map;
 
     return-void
@@ -67,7 +67,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 40
+    .line 37
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -78,13 +78,13 @@
     .param p0, "str"    # Ljava/lang/String;
     .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
-    .line 244
+    .line 240
     :try_start_0
     new-instance v0, Ljava/io/File;
 
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 245
+    .line 241
     .local v0, "file":Ljava/io/File;
     new-instance v1, Ljava/io/BufferedOutputStream;
 
@@ -94,7 +94,7 @@
 
     invoke-direct {v1, v2}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 246
+    .line 242
     .local v1, "bufferedOutputStream":Ljava/io/BufferedOutputStream;
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -108,28 +108,28 @@
 
     invoke-virtual {p1, v2, v3, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 247
+    .line 243
     invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->flush()V
 
-    .line 248
+    .line 244
     invoke-virtual {v1}, Ljava/io/BufferedOutputStream;->close()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 251
+    .line 247
     .end local v0    # "file":Ljava/io/File;
     .end local v1    # "bufferedOutputStream":Ljava/io/BufferedOutputStream;
     goto :goto_0
 
-    .line 249
+    .line 245
     :catch_0
     move-exception v0
 
-    .line 250
+    .line 246
     .local v0, "e":Ljava/io/IOException;
     invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    .line 252
+    .line 248
     .end local v0    # "e":Ljava/io/IOException;
     :goto_0
     return-void
@@ -139,7 +139,7 @@
     .locals 1
     .param p0, "absolutePath"    # Ljava/lang/String;
 
-    .line 59
+    .line 55
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lnan/ren/util/WaterMarkUtil;->addWaterMark(Ljava/lang/String;Z)Ljava/lang/String;
@@ -154,14 +154,14 @@
     .param p0, "absolutePath"    # Ljava/lang/String;
     .param p1, "userConfig"    # Z
 
-    .line 63
+    .line 59
     move-object/from16 v1, p0
 
     invoke-static/range {p0 .. p0}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 64
+    .line 60
     .local v0, "decodeFile":Landroid/graphics/Bitmap;
     const-string v2, ""
 
@@ -169,11 +169,11 @@
 
     return-object v2
 
-    .line 65
+    .line 61
     :cond_0
     move-object/from16 v3, p0
 
-    .line 66
+    .line 62
     .local v3, "savePath":Ljava/lang/String;
     invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -187,7 +187,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 67
+    .line 63
     const-string v4, "pref_qjpg_key"
 
     const/16 v6, 0x61
@@ -200,7 +200,7 @@
 
     move-result-object v0
 
-    .line 68
+    .line 64
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -241,20 +241,20 @@
 
     goto :goto_0
 
-    .line 66
+    .line 62
     :cond_1
     move-object v4, v3
 
     move-object v3, v0
 
-    .line 70
+    .line 66
     .end local v0    # "decodeFile":Landroid/graphics/Bitmap;
     .local v3, "decodeFile":Landroid/graphics/Bitmap;
     .local v4, "savePath":Ljava/lang/String;
     :goto_0
     const/4 v5, 0x0
 
-    .line 71
+    .line 67
     .local v5, "newBit":Landroid/graphics/Bitmap;
     const/4 v6, 0x0
 
@@ -262,18 +262,18 @@
 
     if-eqz p1, :cond_5
 
-    .line 72
+    .line 68
     invoke-static/range {p0 .. p0}, Lnan/ren/util/WaterMarkUtil;->getWaterMarkBitMapByWmConf(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 73
+    .line 69
     .local v0, "waterMark":Landroid/graphics/Bitmap;
     invoke-static {v3}, Lnan/ren/util/WaterMarkUtil;->getWmConfByBitMap(Landroid/graphics/Bitmap;)Lnan/ren/util/JSONObject;
 
     move-result-object v2
 
-    .line 74
+    .line 70
     .local v2, "wmConfJson":Lnan/ren/util/JSONObject;
     const-string v8, "onlywatermark"
 
@@ -304,17 +304,17 @@
     :cond_2
     move v8, v6
 
-    .line 75
+    .line 71
     .local v8, "onlyWaterMark":Z
     :goto_1
     if-eqz v8, :cond_3
 
-    .line 76
+    .line 72
     move-object v5, v0
 
     goto :goto_3
 
-    .line 78
+    .line 74
     :cond_3
     const-string v9, "isinner"
 
@@ -343,7 +343,7 @@
     :cond_4
     move v7, v6
 
-    .line 79
+    .line 75
     .local v7, "isInner":Z
     :goto_2
     const-string v9, "paddingbottom"
@@ -366,13 +366,13 @@
 
     move-result v6
 
-    .line 80
+    .line 76
     .local v6, "paddingBottom":I
     invoke-static {v3, v0, v7, v6}, Lnan/ren/util/WaterMarkUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ZI)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    .line 82
+    .line 78
     .end local v0    # "waterMark":Landroid/graphics/Bitmap;
     .end local v2    # "wmConfJson":Lnan/ren/util/JSONObject;
     .end local v6    # "paddingBottom":I
@@ -381,7 +381,7 @@
     :goto_3
     goto/16 :goto_b
 
-    .line 83
+    .line 79
     :cond_5
     const-string v0, "pref_watermark_logo_key"
 
@@ -391,7 +391,7 @@
 
     move-result-object v8
 
-    .line 84
+    .line 80
     .local v8, "logoFileName":Ljava/lang/String;
     const-string v0, "pref_watermark_bg_key"
 
@@ -411,7 +411,7 @@
     :goto_4
     move v9, v0
 
-    .line 85
+    .line 81
     .local v9, "z3":Z
     const-string v0, "pref_watermark_title_key"
 
@@ -419,15 +419,15 @@
 
     move-result-object v22
 
-    .line 86
+    .line 82
     .local v22, "title":Ljava/lang/String;
     const-string v10, ""
 
-    .line 87
+    .line 83
     .local v10, "picinfo":Ljava/lang/String;
     const/4 v11, 0x0
 
-    .line 89
+    .line 85
     .local v11, "exb":Landroid/media/ExifInterface;
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
@@ -436,7 +436,7 @@
 
     move-object v11, v0
 
-    .line 90
+    .line 86
     invoke-static {v11, v6}, Lnan/ren/util/WaterMarkUtil;->getPicInfo(Landroid/media/ExifInterface;Z)Ljava/lang/String;
 
     move-result-object v0
@@ -445,12 +445,12 @@
 
     move-object v10, v0
 
-    .line 93
+    .line 89
     move-object/from16 v23, v11
 
     goto :goto_5
 
-    .line 91
+    .line 87
     :catch_0
     move-exception v0
 
@@ -458,7 +458,7 @@
 
     move-object/from16 v23, v11
 
-    .line 94
+    .line 90
     .end local v10    # "picinfo":Ljava/lang/String;
     .end local v11    # "exb":Landroid/media/ExifInterface;
     .local v0, "picinfo":Ljava/lang/String;
@@ -472,7 +472,7 @@
 
     move-result v24
 
-    .line 95
+    .line 91
     .local v24, "waterMarkHeight":I
     const-string v10, "my_watermark_fontsize"
 
@@ -482,7 +482,7 @@
 
     move-result v15
 
-    .line 96
+    .line 92
     .local v15, "fontSize":I
     int-to-float v10, v15
 
@@ -498,7 +498,7 @@
 
     move-result v14
 
-    .line 97
+    .line 93
     .local v14, "secFontSize":I
     const-string v10, "my_watermark_location"
 
@@ -512,7 +512,7 @@
 
     move-result-object v2
 
-    .line 98
+    .line 94
     .local v2, "locationInfo":Ljava/lang/String;
     :cond_7
     const-string v10, "my_watermark_hide_altitude"
@@ -539,7 +539,7 @@
 
     if-eqz v10, :cond_8
 
-    .line 99
+    .line 95
     const-string v10, " "
 
     invoke-virtual {v2, v10}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
@@ -550,7 +550,7 @@
 
     move-result-object v2
 
-    .line 101
+    .line 97
     :cond_8
     const/high16 v10, -0x1000000
 
@@ -565,14 +565,14 @@
     :cond_9
     move v12, v11
 
-    .line 102
+    .line 98
     .local v12, "bgColor":I
     :goto_6
     if-eqz v9, :cond_a
 
     move v10, v11
 
-    .line 103
+    .line 99
     .local v10, "txtColor":I
     :cond_a
     if-lez v24, :cond_b
@@ -589,7 +589,7 @@
 
     move-result v11
 
-    .line 104
+    .line 100
     .local v11, "secTxtColor":I
     const-string v13, "my_watermark_bgcolor"
 
@@ -597,7 +597,7 @@
 
     move-result-object v25
 
-    .line 105
+    .line 101
     .local v25, "my_watermark_bgcolor":Ljava/lang/String;
     const-string v13, "my_watermark_txtcolor"
 
@@ -605,7 +605,7 @@
 
     move-result-object v26
 
-    .line 106
+    .line 102
     .local v26, "my_watermark_txtcolor":Ljava/lang/String;
     const-string v13, "my_watermark_sectxtcolor"
 
@@ -613,7 +613,7 @@
 
     move-result-object v27
 
-    .line 107
+    .line 103
     .local v27, "my_watermark_sectxtcolor":Ljava/lang/String;
     if-eqz v25, :cond_c
 
@@ -623,7 +623,7 @@
 
     if-nez v13, :cond_c
 
-    .line 108
+    .line 104
     invoke-static/range {v25 .. v25}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v12
@@ -632,7 +632,7 @@
 
     goto :goto_8
 
-    .line 109
+    .line 105
     :cond_c
     move/from16 v28, v12
 
@@ -647,7 +647,7 @@
 
     if-nez v12, :cond_d
 
-    .line 110
+    .line 106
     invoke-static/range {v26 .. v26}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v10
@@ -656,7 +656,7 @@
 
     goto :goto_9
 
-    .line 111
+    .line 107
     :cond_d
     move/from16 v29, v10
 
@@ -671,7 +671,7 @@
 
     if-nez v10, :cond_e
 
-    .line 112
+    .line 108
     invoke-static/range {v27 .. v27}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v11
@@ -680,7 +680,7 @@
 
     goto :goto_a
 
-    .line 114
+    .line 110
     :cond_e
     move/from16 v30, v11
 
@@ -691,13 +691,13 @@
 
     move-result-object v31
 
-    .line 115
+    .line 111
     .local v31, "dateformat":Ljava/lang/String;
     invoke-static {v8}, Lnan/ren/util/ImageUtil;->getMyLogo(Ljava/lang/String;)Landroid/graphics/Bitmap;
 
     move-result-object v32
 
-    .line 116
+    .line 112
     .local v32, "logoBt":Landroid/graphics/Bitmap;
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -741,7 +741,7 @@
 
     move-result-object v10
 
-    .line 117
+    .line 113
     .local v10, "waterMark":Landroid/graphics/Bitmap;
     if-gez v24, :cond_f
 
@@ -752,7 +752,7 @@
 
     move-result-object v5
 
-    .line 119
+    .line 115
     .end local v0    # "picinfo":Ljava/lang/String;
     .end local v2    # "locationInfo":Ljava/lang/String;
     .end local v8    # "logoFileName":Ljava/lang/String;
@@ -774,7 +774,7 @@
     :goto_b
     invoke-static {v4, v5}, Lnan/ren/util/WaterMarkUtil;->WriteBitmapFile(Ljava/lang/String;Landroid/graphics/Bitmap;)V
 
-    .line 120
+    .line 116
     return-object v4
 .end method
 
@@ -1106,7 +1106,7 @@
 .method public static getDateFormatInfo()Ljava/lang/String;
     .locals 4
 
-    .line 382
+    .line 381
     const-string v0, ""
 
     :try_start_0
@@ -1118,7 +1118,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 383
+    .line 382
     new-instance v1, Ljava/text/SimpleDateFormat;
 
     const-string v2, "my_watermark_dateformat"
@@ -1151,32 +1151,32 @@
 
     return-object v0
 
-    .line 385
+    .line 384
     :cond_0
     return-object v0
 
-    .line 386
+    .line 385
     :catch_0
     move-exception v1
 
-    .line 387
+    .line 386
     .local v1, "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 388
+    .line 387
     return-object v0
 .end method
 
 .method public static getDefaultTypeFace()Landroid/graphics/Typeface;
     .locals 2
 
-    .line 50
+    .line 46
     :try_start_0
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->DEFAULT_TYPEFACE:Landroid/graphics/Typeface;
 
     if-nez v0, :cond_0
 
-    .line 51
+    .line 47
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
@@ -1191,7 +1191,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->DEFAULT_TYPEFACE:Landroid/graphics/Typeface;
 
-    .line 52
+    .line 48
     :cond_0
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->DEFAULT_TYPEFACE:Landroid/graphics/Typeface;
     :try_end_0
@@ -1199,11 +1199,11 @@
 
     return-object v0
 
-    .line 53
+    .line 49
     :catch_0
     move-exception v0
 
-    .line 54
+    .line 50
     .local v0, "ex":Ljava/lang/Exception;
     sget-object v1, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
@@ -1214,18 +1214,18 @@
     .locals 3
     .param p0, "conf"    # Lnan/ren/util/JSONObject;
 
-    .line 1264
+    .line 1265
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1265
+    .line 1266
     :cond_0
     const/4 v0, 0x0
 
-    .line 1266
+    .line 1267
     .local v0, "result":Lnan/ren/util/JSONObject;
     const-string v1, "Horizontal"
 
@@ -1239,7 +1239,7 @@
 
     move-result-object v0
 
-    .line 1267
+    .line 1268
     :cond_1
     const-string v1, "horizontal"
 
@@ -1253,7 +1253,7 @@
 
     move-result-object v0
 
-    .line 1285
+    .line 1286
     :cond_2
     if-nez v0, :cond_3
 
@@ -1272,7 +1272,7 @@
     .locals 6
     .param p0, "expres"    # Ljava/lang/String;
 
-    .line 893
+    .line 894
     const-string v0, "+"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
@@ -1300,7 +1300,7 @@
 
     move-result v3
 
-    .line 894
+    .line 895
     .local v3, "ind_chu":I
     const/4 v4, -0x1
 
@@ -1330,7 +1330,7 @@
 
     move-result-object p0
 
-    .line 896
+    .line 897
     :cond_0
     invoke-static {p0}, Lnan/ren/util/CalcUtil;->executeExpression(Ljava/lang/String;)Ljava/lang/Double;
 
@@ -1357,7 +1357,7 @@
     .param p5, "w"    # I
     .param p6, "h"    # I
 
-    .line 871
+    .line 872
     const/4 v0, 0x0
 
     if-eqz p0, :cond_b
@@ -1386,7 +1386,7 @@
 
     goto/16 :goto_9
 
-    .line 872
+    .line 873
     :cond_0
     sget-object v1, Lnan/ren/util/WaterMarkUtil;->JIHEXXMAP:Ljava/util/Map;
 
@@ -1400,7 +1400,7 @@
 
     if-nez v1, :cond_9
 
-    .line 873
+    .line 874
     sget-object v1, Lnan/ren/util/WaterMarkUtil;->JIHEXXMAP:Ljava/util/Map;
 
     invoke-interface {v1}, Ljava/util/Map;->keySet()Ljava/util/Set;
@@ -1413,7 +1413,7 @@
 
     move-object v3, p0
 
-    .line 874
+    .line 875
     .end local p0    # "expres":Ljava/lang/String;
     .local v1, "keys":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     .local v3, "expres":Ljava/lang/String;
@@ -1424,14 +1424,14 @@
 
     if-eqz v4, :cond_a
 
-    .line 875
+    .line 876
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    .line 876
+    .line 877
     .local v4, "key":Ljava/lang/String;
     sget-object v5, Lnan/ren/util/WaterMarkUtil;->JIHEXXMAP:Ljava/util/Map;
 
@@ -1441,7 +1441,7 @@
 
     check-cast v5, [Ljava/lang/Integer;
 
-    .line 877
+    .line 878
     .local v5, "xywh":[Ljava/lang/Integer;
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -1557,7 +1557,7 @@
 
     move-result-object v8
 
-    .line 878
+    .line 879
     const/4 v12, 0x1
 
     aget-object v13, v5, v12
@@ -1644,7 +1644,7 @@
 
     move-result-object v8
 
-    .line 879
+    .line 880
     const/4 v12, 0x2
 
     aget-object v13, v5, v12
@@ -1731,7 +1731,7 @@
 
     move-result-object v7
 
-    .line 880
+    .line 881
     const/4 v8, 0x3
 
     aget-object v12, v5, v8
@@ -1794,12 +1794,12 @@
 
     move-result-object v3
 
-    .line 881
+    .line 882
     .end local v4    # "key":Ljava/lang/String;
     .end local v5    # "xywh":[Ljava/lang/Integer;
     goto/16 :goto_0
 
-    .line 883
+    .line 884
     .end local v1    # "keys":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     .end local v3    # "expres":Ljava/lang/String;
     .restart local p0    # "expres":Ljava/lang/String;
@@ -1833,7 +1833,7 @@
 
     move-result-object v0
 
-    .line 884
+    .line 885
     .end local v3    # "expres":Ljava/lang/String;
     .local v0, "expres":Ljava/lang/String;
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1860,7 +1860,7 @@
 
     move-result-object v0
 
-    .line 885
+    .line 886
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1885,7 +1885,7 @@
 
     move-result-object v0
 
-    .line 886
+    .line 887
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1910,7 +1910,7 @@
 
     move-result-object v0
 
-    .line 887
+    .line 888
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1935,7 +1935,7 @@
 
     move-result-object v0
 
-    .line 888
+    .line 889
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1960,14 +1960,14 @@
 
     move-result-object v0
 
-    .line 890
+    .line 891
     invoke-static {v0}, Lnan/ren/util/WaterMarkUtil;->getNumberByExpressionStr(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v2
 
     return-object v2
 
-    .line 871
+    .line 872
     .end local v0    # "expres":Ljava/lang/String;
     .restart local p0    # "expres":Ljava/lang/String;
     :cond_b
@@ -1995,7 +1995,7 @@
     .locals 6
     .param p0, "conf"    # Lnan/ren/util/JSONObject;
 
-    .line 1060
+    .line 1061
     if-eqz p0, :cond_4
 
     invoke-virtual {p0}, Lnan/ren/util/JSONObject;->isEmpty()Z
@@ -2006,7 +2006,7 @@
 
     goto :goto_2
 
-    .line 1061
+    .line 1062
     :cond_0
     invoke-virtual {p0}, Lnan/ren/util/JSONObject;->keySet()Ljava/util/Set;
 
@@ -2016,19 +2016,19 @@
 
     move-result-object v0
 
-    .line 1062
+    .line 1063
     .local v0, "nameIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     invoke-static {}, Lnan/ren/util/WaterMarkUtil;->getPaintPublicMethodList()Ljava/util/Map;
 
     move-result-object v1
 
-    .line 1063
+    .line 1064
     .local v1, "methodMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Method;>;"
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2}, Landroid/graphics/Paint;-><init>()V
 
-    .line 1064
+    .line 1065
     .local v2, "paint":Landroid/graphics/Paint;
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -2037,7 +2037,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 1066
+    .line 1067
     :try_start_0
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2045,7 +2045,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 1067
+    .line 1068
     .local v3, "name":Ljava/lang/String;
     invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -2057,14 +2057,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 1068
+    .line 1069
     const-string v4, ""
 
     invoke-virtual {p0, v3, v4}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1069
+    .line 1070
     .local v4, "v":Ljava/lang/String;
     const-string v5, "$"
 
@@ -2074,7 +2074,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 1070
+    .line 1071
     const/4 v5, 0x1
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -2087,7 +2087,7 @@
 
     move-object v4, v5
 
-    .line 1072
+    .line 1073
     :cond_1
     invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -2109,7 +2109,7 @@
 
     goto :goto_1
 
-    .line 1074
+    .line 1075
     .end local v3    # "name":Ljava/lang/String;
     .end local v4    # "v":Ljava/lang/String;
     :catch_0
@@ -2119,11 +2119,11 @@
     :goto_1
     goto :goto_0
 
-    .line 1076
+    .line 1077
     :cond_3
     return-object v2
 
-    .line 1060
+    .line 1061
     .end local v0    # "nameIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     .end local v1    # "methodMap":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Method;>;"
     .end local v2    # "paint":Landroid/graphics/Paint;
@@ -2146,14 +2146,14 @@
         }
     .end annotation
 
-    .line 1230
+    .line 1231
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->methodMap:Ljava/util/Map;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 1231
+    .line 1232
     :cond_0
     new-instance v0, Ljava/util/HashMap;
 
@@ -2161,14 +2161,14 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->methodMap:Ljava/util/Map;
 
-    .line 1232
+    .line 1233
     const-class v0, Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
 
     move-result-object v0
 
-    .line 1233
+    .line 1234
     .local v0, "methods":[Ljava/lang/reflect/Method;
     array-length v1, v0
 
@@ -2179,7 +2179,7 @@
 
     aget-object v3, v0, v2
 
-    .line 1234
+    .line 1235
     .local v3, "m":Ljava/lang/reflect/Method;
     invoke-virtual {v3}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -2189,7 +2189,7 @@
 
     move-result-object v4
 
-    .line 1235
+    .line 1236
     .local v4, "mn":Ljava/lang/String;
     const-string v5, "set"
 
@@ -2209,7 +2209,7 @@
 
     invoke-interface {v5, v6, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1233
+    .line 1234
     .end local v3    # "m":Ljava/lang/reflect/Method;
     .end local v4    # "mn":Ljava/lang/String;
     :cond_1
@@ -2217,7 +2217,7 @@
 
     goto :goto_0
 
-    .line 1237
+    .line 1238
     :cond_2
     sget-object v1, Lnan/ren/util/WaterMarkUtil;->methodMap:Ljava/util/Map;
 
@@ -2228,18 +2228,18 @@
     .locals 13
     .param p0, "exifInterface"    # Landroid/media/ExifInterface;
 
-    .line 293
+    .line 292
     const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 295
+    .line 294
     .local v0, "picInfo":[Ljava/lang/String;
     if-nez p0, :cond_0
 
     return-object v0
 
-    .line 296
+    .line 295
     :cond_0
     :try_start_0
     const-string v1, "FocalLengthIn35mmFilm"
@@ -2248,7 +2248,7 @@
 
     move-result-object v1
 
-    .line 297
+    .line 296
     .local v1, "fl":Ljava/lang/String;
     const/4 v2, 0x0
 
@@ -2264,10 +2264,10 @@
 
     if-nez v3, :cond_1
 
-    .line 298
+    .line 297
     aput-object v1, v0, v2
 
-    .line 300
+    .line 299
     :cond_1
     aget-object v3, v0, v2
 
@@ -2285,7 +2285,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 301
+    .line 300
     :try_start_1
     const-string v3, "FocalLength"
 
@@ -2295,7 +2295,7 @@
 
     move-object v1, v3
 
-    .line 302
+    .line 301
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -2310,20 +2310,20 @@
 
     if-nez v3, :cond_2
 
-    .line 303
+    .line 302
     const-string v3, "/"
 
     invoke-virtual {v1, v3}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 304
+    .line 303
     .local v3, "split":[Ljava/lang/String;
     array-length v7, v3
 
     if-lt v7, v5, :cond_2
 
-    .line 305
+    .line 304
     sget-object v7, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     new-array v8, v6, [Ljava/lang/Object;
@@ -2354,7 +2354,7 @@
 
     aput-object v7, v0, v2
 
-    .line 309
+    .line 308
     .end local v3    # "split":[Ljava/lang/String;
     :cond_2
     const-string v3, "FNumber"
@@ -2365,14 +2365,14 @@
 
     aput-object v3, v0, v6
 
-    .line 310
+    .line 309
     const-string v3, "ExposureTime"
 
     invoke-virtual {p0, v3}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 311
+    .line 310
     .local v3, "ept":Ljava/lang/String;
     if-eqz v3, :cond_5
 
@@ -2382,12 +2382,12 @@
 
     if-nez v7, :cond_5
 
-    .line 312
+    .line 311
     invoke-static {v3}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v7
 
-    .line 313
+    .line 312
     .local v7, "d":D
     const-wide/high16 v9, 0x3ff0000000000000L    # 1.0
 
@@ -2395,7 +2395,7 @@
 
     if-lez v11, :cond_3
 
-    .line 314
+    .line 313
     sget-object v9, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     new-array v6, v6, [Ljava/lang/Object;
@@ -2416,7 +2416,7 @@
 
     goto :goto_0
 
-    .line 315
+    .line 314
     :cond_3
     const-wide v11, 0x3fb999999999999aL    # 0.1
 
@@ -2426,7 +2426,7 @@
 
     if-ltz v2, :cond_4
 
-    .line 316
+    .line 315
     :try_start_2
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2460,7 +2460,7 @@
 
     goto :goto_0
 
-    .line 318
+    .line 317
     :cond_4
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -2484,7 +2484,7 @@
 
     aput-object v2, v0, v5
 
-    .line 321
+    .line 320
     .end local v7    # "d":D
     :cond_5
     :goto_0
@@ -2500,20 +2500,20 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 324
+    .line 323
     .end local v1    # "fl":Ljava/lang/String;
     .end local v3    # "ept":Ljava/lang/String;
     goto :goto_1
 
-    .line 322
+    .line 321
     :catch_0
     move-exception v1
 
-    .line 323
+    .line 322
     .local v1, "e":Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    .line 326
+    .line 325
     .end local v1    # "e":Ljava/lang/Exception;
     :goto_1
     return-object v0
@@ -2524,24 +2524,24 @@
     .param p0, "exifInterface"    # Landroid/media/ExifInterface;
     .param p1, "isCn"    # Z
 
-    .line 331
+    .line 330
     const-string v0, ""
 
     if-nez p0, :cond_0
 
     return-object v0
 
-    .line 332
+    .line 331
     :cond_0
     invoke-static {p0}, Lnan/ren/util/WaterMarkUtil;->getPicData(Landroid/media/ExifInterface;)[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 333
+    .line 332
     .local v1, "os":[Ljava/lang/Object;
     const/4 v2, 0x0
 
-    .line 334
+    .line 333
     .local v2, "empCnt":I
     const/4 v3, 0x0
 
@@ -2555,7 +2555,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 335
+    .line 334
     :cond_1
     const/4 v3, 0x1
 
@@ -2569,7 +2569,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 336
+    .line 335
     :cond_2
     const/4 v3, 0x2
 
@@ -2583,7 +2583,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 337
+    .line 336
     :cond_3
     const/4 v4, 0x3
 
@@ -2597,13 +2597,13 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 338
+    .line 337
     :cond_4
     if-lt v2, v3, :cond_5
 
     return-object v0
 
-    .line 339
+    .line 338
     :cond_5
     if-nez p1, :cond_6
 
@@ -2615,7 +2615,7 @@
 
     return-object v0
 
-    .line 340
+    .line 339
     :cond_6
     const-string v0, "\u7126\u8ddd %smm  \u5149\u5708 f/%s  \u66dd\u5149 %ss  ISO %s"
 
@@ -3208,7 +3208,7 @@
 
     iput v2, v1, Landroid/graphics/Point;->y:I
 
-    .line 866
+    .line 867
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_b
     return-object v1
@@ -3219,7 +3219,7 @@
     .param p0, "text"    # Ljava/lang/String;
     .param p1, "exi"    # Landroid/media/ExifInterface;
 
-    .line 922
+    .line 923
     move-object/from16 v1, p1
 
     const-string v2, "d"
@@ -3236,13 +3236,13 @@
 
     move-result-object v4
 
-    .line 923
+    .line 924
     .local v4, "textArr":[Ljava/lang/String;
     array-length v0, v4
 
     new-array v5, v0, [Ljava/lang/Object;
 
-    .line 924
+    .line 925
     .local v5, "valueArr":[Ljava/lang/Object;
     const/4 v0, 0x0
 
@@ -3254,10 +3254,10 @@
 
     if-ge v6, v0, :cond_44
 
-    .line 925
+    .line 926
     aget-object v0, v4, v6
 
-    .line 926
+    .line 927
     .local v0, "attr":Ljava/lang/String;
     const-string v7, ""
 
@@ -3272,13 +3272,13 @@
 
     move-result-object v8
 
-    .line 927
+    .line 928
     .end local v0    # "attr":Ljava/lang/String;
     .local v8, "attr":Ljava/lang/String;
     :goto_1
     move-object v9, v8
 
-    .line 929
+    .line 930
     .local v9, "v":Ljava/lang/Object;
     :try_start_0
     sget-object v0, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
@@ -3293,7 +3293,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 930
+    .line 931
     :try_start_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -3317,7 +3317,7 @@
 
     goto :goto_2
 
-    .line 1052
+    .line 1053
     :catch_0
     move-exception v0
 
@@ -3331,7 +3331,7 @@
 
     goto/16 :goto_1b
 
-    .line 932
+    .line 933
     :cond_1
     :goto_2
     :try_start_2
@@ -3341,7 +3341,7 @@
 
     if-eqz v0, :cond_42
 
-    .line 933
+    .line 934
     const/4 v0, 0x1
 
     if-nez v1, :cond_2
@@ -3364,7 +3364,7 @@
     :goto_3
     move-object v9, v11
 
-    .line 934
+    .line 935
     :try_start_3
     const-string v11, "$DateTime"
 
@@ -3376,7 +3376,7 @@
 
     if-eqz v11, :cond_5
 
-    .line 935
+    .line 936
     if-eqz v9, :cond_4
 
     :try_start_4
@@ -3396,7 +3396,7 @@
 
     goto :goto_4
 
-    .line 936
+    .line 937
     :cond_3
     new-instance v11, Landroid/icu/text/SimpleDateFormat;
 
@@ -3426,7 +3426,7 @@
 
     goto/16 :goto_15
 
-    .line 935
+    .line 936
     :cond_4
     :goto_4
     new-instance v11, Ljava/util/Date;
@@ -3449,7 +3449,7 @@
 
     goto/16 :goto_15
 
-    .line 937
+    .line 938
     :cond_5
     :try_start_5
     const-string v11, "$ExposureTime"
@@ -3462,7 +3462,7 @@
 
     if-eqz v11, :cond_9
 
-    .line 938
+    .line 939
     if-eqz v9, :cond_8
 
     :try_start_6
@@ -3480,7 +3480,7 @@
 
     if-nez v11, :cond_8
 
-    .line 939
+    .line 940
     invoke-virtual {v9}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v11
@@ -3489,7 +3489,7 @@
 
     move-result-wide v13
 
-    .line 940
+    .line 941
     .local v13, "d":D
     new-instance v11, Ljava/lang/StringBuilder;
 
@@ -3497,7 +3497,7 @@
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_11
 
-    .line 941
+    .line 942
     .local v11, "sb":Ljava/lang/StringBuilder;
     const-wide/high16 v15, 0x3ff0000000000000L    # 1.0
 
@@ -3505,7 +3505,7 @@
 
     if-lez v17, :cond_6
 
-    .line 942
+    .line 943
     :try_start_7
     sget-object v15, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -3542,7 +3542,7 @@
 
     goto :goto_5
 
-    .line 1052
+    .line 1053
     .end local v11    # "sb":Ljava/lang/StringBuilder;
     .end local v13    # "d":D
     :catch_1
@@ -3573,7 +3573,7 @@
     .restart local v18    # "textArr":[Ljava/lang/String;
     goto/16 :goto_1b
 
-    .line 943
+    .line 944
     .end local v18    # "textArr":[Ljava/lang/String;
     .restart local v4    # "textArr":[Ljava/lang/String;
     .restart local v11    # "sb":Ljava/lang/StringBuilder;
@@ -3591,7 +3591,7 @@
 
     if-ltz v4, :cond_7
 
-    .line 944
+    .line 945
     :try_start_9
     invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3624,7 +3624,7 @@
 
     goto :goto_5
 
-    .line 1052
+    .line 1053
     .end local v11    # "sb":Ljava/lang/StringBuilder;
     .end local v13    # "d":D
     .end local v20    # "valueArr":[Ljava/lang/Object;
@@ -3646,7 +3646,7 @@
     .restart local v21    # "i":I
     goto/16 :goto_1b
 
-    .line 946
+    .line 947
     .end local v20    # "valueArr":[Ljava/lang/Object;
     .end local v21    # "i":I
     .restart local v5    # "valueArr":[Ljava/lang/Object;
@@ -3672,13 +3672,13 @@
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 948
+    .line 949
     :goto_5
     invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 949
+    .line 950
     .end local v9    # "v":Ljava/lang/Object;
     .end local v11    # "sb":Ljava/lang/StringBuilder;
     .end local v13    # "d":D
@@ -3691,7 +3691,7 @@
 
     goto/16 :goto_15
 
-    .line 938
+    .line 939
     .end local v0    # "v":Ljava/lang/Object;
     .end local v18    # "textArr":[Ljava/lang/String;
     .end local v20    # "valueArr":[Ljava/lang/Object;
@@ -3707,7 +3707,7 @@
 
     move/from16 v21, v6
 
-    .line 950
+    .line 951
     .end local v4    # "textArr":[Ljava/lang/String;
     .end local v5    # "valueArr":[Ljava/lang/Object;
     .end local v6    # "i":I
@@ -3732,7 +3732,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1052
+    .line 1053
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :catch_4
@@ -3742,7 +3742,7 @@
 
     goto/16 :goto_1b
 
-    .line 952
+    .line 953
     .end local v18    # "textArr":[Ljava/lang/String;
     .end local v20    # "valueArr":[Ljava/lang/Object;
     .end local v21    # "i":I
@@ -3775,7 +3775,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 953
+    .line 954
     if-nez v1, :cond_a
 
     move-object v0, v7
@@ -3805,7 +3805,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 954
+    .line 955
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :cond_b
@@ -3839,7 +3839,7 @@
 
     goto/16 :goto_d
 
-    .line 973
+    .line 974
     :cond_c
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -3873,7 +3873,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 974
+    .line 975
     if-nez v1, :cond_d
 
     move-object v0, v7
@@ -3890,7 +3890,7 @@
 
     move-result-object v0
 
-    .line 975
+    .line 976
     .local v0, "gpslong":Ljava/lang/String;
     :goto_7
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -3903,7 +3903,7 @@
 
     if-eqz v2, :cond_e
 
-    .line 976
+    .line 977
     invoke-virtual {v0, v5, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v2
@@ -3920,11 +3920,11 @@
 
     move-object v0, v2
 
-    .line 978
+    .line 979
     :cond_e
     nop
 
-    .line 979
+    .line 980
     .end local v9    # "v":Ljava/lang/Object;
     .local v0, "v":Ljava/lang/Object;
     move-object v9, v0
@@ -3935,7 +3935,7 @@
 
     goto/16 :goto_15
 
-    .line 1052
+    .line 1053
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :catch_5
@@ -3945,7 +3945,7 @@
 
     goto/16 :goto_1b
 
-    .line 979
+    .line 980
     :cond_f
     :try_start_10
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -3971,7 +3971,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 980
+    .line 981
     if-nez v1, :cond_10
 
     move-object v0, v7
@@ -3988,7 +3988,7 @@
 
     move-result-object v0
 
-    .line 981
+    .line 982
     .local v0, "lat":Ljava/lang/String;
     :goto_8
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -4001,7 +4001,7 @@
 
     if-eqz v2, :cond_11
 
-    .line 982
+    .line 983
     invoke-virtual {v0, v5, v4}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v2
@@ -4016,11 +4016,11 @@
 
     move-object v0, v2
 
-    .line 984
+    .line 985
     :cond_11
     nop
 
-    .line 985
+    .line 986
     .end local v22    # "v":Ljava/lang/Object;
     .local v0, "v":Ljava/lang/Object;
     move-object v9, v0
@@ -4050,10 +4050,10 @@
 
     if-eqz v0, :cond_17
 
-    .line 986
+    .line 987
     if-eqz v1, :cond_16
 
-    .line 987
+    .line 988
     :try_start_13
     invoke-virtual {v1, v9}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
@@ -4063,7 +4063,7 @@
 
     move-result-object v0
 
-    .line 988
+    .line 989
     .local v0, "lat":Ljava/lang/String;
     invoke-virtual {v1, v11}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
@@ -4073,7 +4073,7 @@
 
     move-result-object v9
 
-    .line 989
+    .line 990
     .local v9, "gpslong":Ljava/lang/String;
     invoke-static {v0}, Lnan/ren/util/ObjectUtil;->isEmpty(Ljava/lang/Object;)Z
 
@@ -4089,7 +4089,7 @@
 
     goto/16 :goto_9
 
-    .line 992
+    .line 993
     :cond_13
     const-string v10, "GPSLatitudeRef"
 
@@ -4097,7 +4097,7 @@
 
     move-result-object v10
 
-    .line 993
+    .line 994
     .local v10, "latRef":Ljava/lang/String;
     const-string v11, "GPSLongitudeRef"
 
@@ -4105,7 +4105,7 @@
 
     move-result-object v11
 
-    .line 994
+    .line 995
     .local v11, "longRef":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -4129,7 +4129,7 @@
     :try_end_13
     .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_8
 
-    .line 995
+    .line 996
     .end local v22    # "v":Ljava/lang/Object;
     .local v1, "v":Ljava/lang/Object;
     move-object/from16 v17, v1
@@ -4147,7 +4147,7 @@
 
     if-eqz v1, :cond_14
 
-    .line 996
+    .line 997
     const-string v1, "\u5317\u7eac"
 
     invoke-virtual {v10, v6, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -4162,7 +4162,7 @@
 
     move-result-object v1
 
-    .line 997
+    .line 998
     .end local v10    # "latRef":Ljava/lang/String;
     .local v1, "latRef":Ljava/lang/String;
     const-string v2, "E"
@@ -4181,7 +4181,7 @@
 
     move-result-object v2
 
-    .line 998
+    .line 999
     .end local v11    # "longRef":Ljava/lang/String;
     .local v2, "longRef":Ljava/lang/String;
     new-instance v6, Ljava/lang/StringBuilder;
@@ -4214,7 +4214,7 @@
     :try_end_14
     .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_7
 
-    .line 999
+    .line 1000
     .end local v17    # "v":Ljava/lang/Object;
     .local v6, "v":Ljava/lang/Object;
     :try_start_15
@@ -4240,7 +4240,7 @@
     .local v4, "v":Ljava/lang/Object;
     goto :goto_a
 
-    .line 1052
+    .line 1053
     .end local v0    # "lat":Ljava/lang/String;
     .end local v1    # "latRef":Ljava/lang/String;
     .end local v2    # "longRef":Ljava/lang/String;
@@ -4258,7 +4258,7 @@
 
     goto/16 :goto_1b
 
-    .line 1001
+    .line 1002
     .end local v6    # "v":Ljava/lang/Object;
     .restart local v0    # "lat":Ljava/lang/String;
     .restart local v9    # "gpslong":Ljava/lang/String;
@@ -4303,7 +4303,7 @@
     .restart local v4    # "v":Ljava/lang/Object;
     goto :goto_a
 
-    .line 1052
+    .line 1053
     .end local v0    # "lat":Ljava/lang/String;
     .end local v4    # "v":Ljava/lang/Object;
     .end local v9    # "gpslong":Ljava/lang/String;
@@ -4321,7 +4321,7 @@
 
     goto/16 :goto_1b
 
-    .line 990
+    .line 991
     .end local v17    # "v":Ljava/lang/Object;
     .restart local v0    # "lat":Ljava/lang/String;
     .restart local v9    # "gpslong":Ljava/lang/String;
@@ -4330,7 +4330,7 @@
     :goto_9
     move-object v4, v7
 
-    .line 1004
+    .line 1005
     .end local v0    # "lat":Ljava/lang/String;
     .end local v9    # "gpslong":Ljava/lang/String;
     .end local v22    # "v":Ljava/lang/Object;
@@ -4346,7 +4346,7 @@
 
     goto/16 :goto_15
 
-    .line 1005
+    .line 1006
     .end local v4    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_16
@@ -4364,7 +4364,7 @@
     .local v0, "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1007
+    .line 1008
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_17
@@ -4377,7 +4377,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 1008
+    .line 1009
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_18
@@ -4388,7 +4388,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1009
+    .line 1010
     :cond_18
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4410,7 +4410,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1010
+    .line 1011
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_19
@@ -4422,7 +4422,7 @@
 
     if-eqz v0, :cond_1b
 
-    .line 1011
+    .line 1012
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_1a
@@ -4433,7 +4433,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1012
+    .line 1013
     :cond_1a
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4455,7 +4455,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1013
+    .line 1014
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_1b
@@ -4467,7 +4467,7 @@
 
     if-eqz v0, :cond_1d
 
-    .line 1014
+    .line 1015
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_1c
@@ -4478,7 +4478,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1015
+    .line 1016
     :cond_1c
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4500,7 +4500,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1016
+    .line 1017
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_1d
@@ -4512,7 +4512,7 @@
 
     if-eqz v0, :cond_1f
 
-    .line 1017
+    .line 1018
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_1e
@@ -4523,7 +4523,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1018
+    .line 1019
     :cond_1e
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4545,7 +4545,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1019
+    .line 1020
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_1f
@@ -4557,7 +4557,7 @@
 
     if-eqz v0, :cond_21
 
-    .line 1020
+    .line 1021
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_20
@@ -4568,7 +4568,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1021
+    .line 1022
     :cond_20
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4590,7 +4590,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1022
+    .line 1023
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_21
@@ -4602,7 +4602,7 @@
 
     if-eqz v0, :cond_23
 
-    .line 1023
+    .line 1024
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_22
@@ -4613,7 +4613,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1024
+    .line 1025
     :cond_22
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4635,7 +4635,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1025
+    .line 1026
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_23
@@ -4647,7 +4647,7 @@
 
     if-eqz v0, :cond_25
 
-    .line 1026
+    .line 1027
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_24
@@ -4658,7 +4658,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1027
+    .line 1028
     :cond_24
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4680,7 +4680,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1028
+    .line 1029
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_25
@@ -4692,7 +4692,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 1029
+    .line 1030
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_26
@@ -4703,7 +4703,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1030
+    .line 1031
     :cond_26
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4725,7 +4725,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1031
+    .line 1032
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_27
@@ -4737,7 +4737,7 @@
 
     if-eqz v0, :cond_29
 
-    .line 1032
+    .line 1033
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
     if-nez v0, :cond_28
@@ -4748,7 +4748,7 @@
 
     sput-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
-    .line 1033
+    .line 1034
     :cond_28
     sget-object v0, Lnan/ren/util/WaterMarkUtil;->GPSLOCAL:Lnan/ren/util/JSONObject;
 
@@ -4770,7 +4770,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1034
+    .line 1035
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_29
@@ -4788,7 +4788,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 1035
+    .line 1036
     move-object/from16 v1, p1
 
     if-nez v1, :cond_2a
@@ -4810,7 +4810,7 @@
 
     move-result-object v0
 
-    .line 1036
+    .line 1037
     .local v0, "alt":Ljava/lang/Double;
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -4822,7 +4822,7 @@
 
     if-eqz v2, :cond_2b
 
-    .line 1037
+    .line 1038
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4849,7 +4849,7 @@
     .local v2, "v":Ljava/lang/Object;
     goto :goto_c
 
-    .line 1039
+    .line 1040
     .end local v2    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_2b
@@ -4861,7 +4861,7 @@
 
     move-result-object v2
 
-    .line 1041
+    .line 1042
     .end local v0    # "alt":Ljava/lang/Double;
     .end local v22    # "v":Ljava/lang/Object;
     .restart local v2    # "v":Ljava/lang/Object;
@@ -4891,7 +4891,7 @@
 
     if-eqz v0, :cond_2d
 
-    .line 1042
+    .line 1043
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -4914,7 +4914,7 @@
     .local v0, "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1043
+    .line 1044
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_2d
@@ -4930,7 +4930,7 @@
 
     if-eqz v0, :cond_2e
 
-    .line 1044
+    .line 1045
     const/4 v0, 0x6
 
     invoke-virtual {v8, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
@@ -4951,7 +4951,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1045
+    .line 1046
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_2e
@@ -4983,7 +4983,7 @@
 
     if-eqz v0, :cond_30
 
-    .line 1046
+    .line 1047
     :cond_2f
     const/4 v0, 0x1
 
@@ -5003,7 +5003,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 1045
+    .line 1046
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_30
@@ -5011,7 +5011,7 @@
 
     goto/16 :goto_14
 
-    .line 1052
+    .line 1053
     :catch_8
     move-exception v0
 
@@ -5039,7 +5039,7 @@
 
     goto/16 :goto_19
 
-    .line 954
+    .line 955
     :cond_31
     move-object/from16 v16, v2
 
@@ -5047,7 +5047,7 @@
 
     move-object v2, v10
 
-    .line 955
+    .line 956
     .end local v9    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :goto_d
@@ -5075,7 +5075,7 @@
 
     goto/16 :goto_12
 
-    .line 963
+    .line 964
     :cond_32
     move-object/from16 v5, v16
 
@@ -5107,7 +5107,7 @@
 
     goto :goto_f
 
-    .line 971
+    .line 972
     :cond_33
     if-nez v1, :cond_34
 
@@ -5133,7 +5133,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto/16 :goto_15
 
-    .line 964
+    .line 965
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_35
@@ -5166,7 +5166,7 @@
     :goto_10
     move-object v10, v0
 
-    .line 965
+    .line 966
     .end local v22    # "v":Ljava/lang/Object;
     .local v10, "v":Ljava/lang/Object;
     :try_start_1b
@@ -5174,7 +5174,7 @@
 
     move-result-object v0
 
-    .line 966
+    .line 967
     .local v0, "dfm":[Ljava/lang/Integer;
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -5194,7 +5194,7 @@
     .restart local v4    # "v":Ljava/lang/Object;
     goto :goto_11
 
-    .line 967
+    .line 968
     .end local v4    # "v":Ljava/lang/Object;
     .restart local v10    # "v":Ljava/lang/Object;
     :cond_37
@@ -5218,7 +5218,7 @@
     .restart local v4    # "v":Ljava/lang/Object;
     goto :goto_11
 
-    .line 968
+    .line 969
     .end local v4    # "v":Ljava/lang/Object;
     .restart local v10    # "v":Ljava/lang/Object;
     :cond_38
@@ -5238,7 +5238,7 @@
     .restart local v4    # "v":Ljava/lang/Object;
     goto :goto_11
 
-    .line 969
+    .line 970
     .end local v4    # "v":Ljava/lang/Object;
     .restart local v10    # "v":Ljava/lang/Object;
     :cond_39
@@ -5250,7 +5250,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_1b} :catch_b
 
-    .line 970
+    .line 971
     .end local v0    # "dfm":[Ljava/lang/Integer;
     .end local v10    # "v":Ljava/lang/Object;
     .restart local v4    # "v":Ljava/lang/Object;
@@ -5259,7 +5259,7 @@
 
     goto :goto_15
 
-    .line 1052
+    .line 1053
     .end local v4    # "v":Ljava/lang/Object;
     .restart local v10    # "v":Ljava/lang/Object;
     :catch_b
@@ -5269,13 +5269,13 @@
 
     goto/16 :goto_1b
 
-    .line 955
+    .line 956
     .end local v10    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_3a
     move-object/from16 v5, v16
 
-    .line 956
+    .line 957
     :goto_12
     :try_start_1c
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -5290,7 +5290,7 @@
 
     if-eqz v0, :cond_3f
 
-    .line 957
+    .line 958
     if-nez v1, :cond_3b
 
     move-object v0, v7
@@ -5319,7 +5319,7 @@
     :goto_13
     move-object v9, v0
 
-    .line 958
+    .line 959
     .end local v22    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :try_start_1d
@@ -5337,7 +5337,7 @@
     .local v0, "v":Ljava/lang/Object;
     goto :goto_15
 
-    .line 959
+    .line 960
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :cond_3c
@@ -5357,7 +5357,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto :goto_15
 
-    .line 960
+    .line 961
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :cond_3d
@@ -5377,7 +5377,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto :goto_15
 
-    .line 961
+    .line 962
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v9    # "v":Ljava/lang/Object;
     :cond_3e
@@ -5397,7 +5397,7 @@
     .restart local v0    # "v":Ljava/lang/Object;
     goto :goto_15
 
-    .line 1048
+    .line 1049
     .end local v0    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :cond_3f
@@ -5444,20 +5444,20 @@
 
     goto :goto_16
 
-    .line 1052
+    .line 1053
     :catch_c
     move-exception v0
 
     goto :goto_1b
 
-    .line 1049
+    .line 1050
     :cond_41
     :goto_16
     move-object v9, v7
 
     goto :goto_1a
 
-    .line 1052
+    .line 1053
     .end local v9    # "v":Ljava/lang/Object;
     .restart local v22    # "v":Ljava/lang/Object;
     :catch_d
@@ -5521,7 +5521,7 @@
     .restart local v22    # "v":Ljava/lang/Object;
     goto :goto_1b
 
-    .line 932
+    .line 933
     .end local v18    # "textArr":[Ljava/lang/String;
     .end local v20    # "valueArr":[Ljava/lang/Object;
     .end local v21    # "i":I
@@ -5539,7 +5539,7 @@
 
     move-object v5, v2
 
-    .line 1054
+    .line 1055
     .end local v4    # "textArr":[Ljava/lang/String;
     .end local v5    # "valueArr":[Ljava/lang/Object;
     .end local v6    # "i":I
@@ -5550,7 +5550,7 @@
     :goto_1a
     goto :goto_1c
 
-    .line 1052
+    .line 1053
     .end local v18    # "textArr":[Ljava/lang/String;
     .end local v20    # "valueArr":[Ljava/lang/Object;
     .end local v21    # "i":I
@@ -5568,7 +5568,7 @@
 
     move-object v5, v2
 
-    .line 1053
+    .line 1054
     .end local v4    # "textArr":[Ljava/lang/String;
     .end local v5    # "valueArr":[Ljava/lang/Object;
     .end local v6    # "i":I
@@ -5611,12 +5611,12 @@
 
     invoke-static {v2}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 1055
+    .line 1056
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_1c
     aput-object v9, v20, v21
 
-    .line 924
+    .line 925
     .end local v8    # "attr":Ljava/lang/String;
     .end local v9    # "v":Ljava/lang/Object;
     add-int/lit8 v6, v21, 0x1
@@ -5638,7 +5638,7 @@
     :cond_44
     move-object/from16 v20, v5
 
-    .line 1057
+    .line 1058
     .end local v5    # "valueArr":[Ljava/lang/Object;
     .end local v6    # "i":I
     .restart local v20    # "valueArr":[Ljava/lang/Object;
@@ -5651,7 +5651,7 @@
     .param p1, "format"    # Ljava/lang/String;
     .param p2, "exi"    # Landroid/media/ExifInterface;
 
-    .line 899
+    .line 900
     if-eqz p0, :cond_7
 
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -5666,13 +5666,13 @@
 
     goto :goto_3
 
-    .line 900
+    .line 901
     :cond_0
     invoke-static {p0, p2}, Lnan/ren/util/WaterMarkUtil;->getTextArray(Ljava/lang/String;Landroid/media/ExifInterface;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 901
+    .line 902
     .local v0, "os":[Ljava/lang/Object;
     const/4 v1, 0x1
 
@@ -5690,7 +5690,7 @@
 
     goto :goto_1
 
-    .line 909
+    .line 910
     :cond_1
     const-string v2, "%"
 
@@ -5700,20 +5700,20 @@
 
     array-length v2, v2
 
-    .line 910
+    .line 911
     .local v2, "len":I
     if-le v2, v1, :cond_3
 
-    .line 911
+    .line 912
     add-int/lit8 v1, v2, -0x1
 
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 912
+    .line 913
     .local v1, "p":[Ljava/lang/Object;
     array-length v3, v0
 
-    .line 913
+    .line 914
     .local v3, "vl":I
     const/4 v4, 0x0
 
@@ -5723,19 +5723,19 @@
 
     if-ge v4, v5, :cond_2
 
-    .line 914
+    .line 915
     rem-int v5, v4, v3
 
     aget-object v5, v0, v5
 
     aput-object v5, v1, v4
 
-    .line 913
+    .line 914
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 916
+    .line 917
     .end local v4    # "i":I
     :cond_2
     invoke-static {p1, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
@@ -5744,7 +5744,7 @@
 
     return-object v4
 
-    .line 919
+    .line 920
     .end local v1    # "p":[Ljava/lang/Object;
     .end local v2    # "len":I
     .end local v3    # "vl":I
@@ -5755,14 +5755,14 @@
 
     return-object v1
 
-    .line 902
+    .line 903
     :cond_4
     :goto_1
     new-instance v2, Ljava/lang/StringBuffer;
 
     invoke-direct {v2}, Ljava/lang/StringBuffer;-><init>()V
 
-    .line 903
+    .line 904
     .local v2, "sb":Ljava/lang/StringBuffer;
     const/4 v3, 0x0
 
@@ -5772,12 +5772,12 @@
 
     if-ge v3, v4, :cond_6
 
-    .line 904
+    .line 905
     aget-object v4, v0, v3
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/Object;)Ljava/lang/StringBuffer;
 
-    .line 905
+    .line 906
     array-length v4, v0
 
     sub-int/2addr v4, v1
@@ -5788,13 +5788,13 @@
 
     invoke-virtual {v2, v4}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
-    .line 903
+    .line 904
     :cond_5
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_2
 
-    .line 907
+    .line 908
     .end local v3    # "i":I
     :cond_6
     invoke-virtual {v2}, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
@@ -5803,7 +5803,7 @@
 
     return-object v1
 
-    .line 899
+    .line 900
     .end local v0    # "os":[Ljava/lang/Object;
     .end local v2    # "sb":Ljava/lang/StringBuffer;
     :cond_7
@@ -5827,18 +5827,18 @@
     .locals 3
     .param p0, "conf"    # Lnan/ren/util/JSONObject;
 
-    .line 1241
+    .line 1242
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 1242
+    .line 1243
     :cond_0
     const/4 v0, 0x0
 
-    .line 1243
+    .line 1244
     .local v0, "result":Lnan/ren/util/JSONObject;
     const-string v1, "Vertical"
 
@@ -5854,7 +5854,7 @@
 
     goto :goto_0
 
-    .line 1244
+    .line 1245
     :cond_1
     const-string v1, "vertical"
 
@@ -5868,7 +5868,7 @@
 
     move-result-object v0
 
-    .line 1261
+    .line 1262
     :cond_2
     :goto_0
     if-nez v0, :cond_3
@@ -5897,7 +5897,7 @@
     .param p8, "waterMarkHeight"    # I
     .param p9, "fontSize"    # I
 
-    .line 125
+    .line 121
     if-lez p8, :cond_0
 
     const-string v0, "#ffb7b7b7"
@@ -5914,7 +5914,7 @@
 
     move v7, v0
 
-    .line 126
+    .line 122
     .local v7, "secTxtColor":I
     move-object v0, p0
 
@@ -5958,7 +5958,7 @@
     .param p10, "fontSize"    # F
     .param p11, "secFontSize"    # F
 
-    .line 138
+    .line 134
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -5982,19 +5982,19 @@
     :cond_0
     const/4 v8, 0x0
 
-    .line 139
+    .line 135
     .local v8, "isInner":Z
     :goto_0
     invoke-static/range {p9 .. p9}, Ljava/lang/Math;->abs(I)I
 
     move-result v9
 
-    .line 140
+    .line 136
     .end local p9    # "waterMarkHeight":I
     .local v9, "waterMarkHeight":I
     const/4 v10, 0x0
 
-    .line 141
+    .line 137
     .local v10, "t":I
     if-eqz v4, :cond_1
 
@@ -6010,7 +6010,7 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    .line 142
+    .line 138
     :cond_1
     if-eqz p3, :cond_2
 
@@ -6026,25 +6026,25 @@
 
     add-int/lit8 v10, v10, 0x1
 
-    .line 144
+    .line 140
     :cond_2
     new-instance v11, Landroid/graphics/Paint;
 
     invoke-direct {v11}, Landroid/graphics/Paint;-><init>()V
 
-    .line 145
+    .line 141
     .local v11, "bgPaint":Landroid/graphics/Paint;
     new-instance v12, Landroid/graphics/Paint;
 
     invoke-direct {v12, v7}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 146
+    .line 142
     .local v12, "txtPaint":Landroid/graphics/Paint;
     new-instance v13, Landroid/graphics/Paint;
 
     invoke-direct {v13, v7}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 147
+    .line 143
     .local v13, "secTxtPaint":Landroid/graphics/Paint;
     const-string v14, "my_watermark_padding_left"
 
@@ -6056,26 +6056,26 @@
 
     int-to-float v15, v14
 
-    .line 148
+    .line 144
     .local v15, "qianhou":F
     const/high16 v20, 0x41200000    # 10.0f
 
-    .line 149
+    .line 145
     .local v20, "shangxia":F
     move/from16 v14, p6
 
     invoke-virtual {v12, v14}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 150
+    .line 146
     invoke-virtual {v12, v6}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 151
+    .line 147
     invoke-virtual {v12, v7}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 152
+    .line 148
     invoke-virtual {v12, v7}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 153
+    .line 149
     if-nez v8, :cond_3
 
     sget-object v0, Landroid/graphics/Typeface;->DEFAULT_BOLD:Landroid/graphics/Typeface;
@@ -6084,37 +6084,37 @@
 
     goto :goto_1
 
-    .line 154
+    .line 150
     :cond_3
     sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v12, v0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 156
+    .line 152
     :goto_1
     move/from16 v7, p7
 
     invoke-virtual {v13, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 157
+    .line 153
     move/from16 v7, p11
 
     invoke-virtual {v13, v7}, Landroid/graphics/Paint;->setTextSize(F)V
 
-    .line 158
+    .line 154
     const/4 v0, 0x1
 
     invoke-virtual {v13, v0}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 159
+    .line 155
     invoke-virtual {v13, v0}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 160
+    .line 156
     sget-object v0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v13, v0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 162
+    .line 158
     if-nez v8, :cond_4
 
     move/from16 v7, p5
@@ -6123,7 +6123,7 @@
 
     goto :goto_2
 
-    .line 163
+    .line 159
     :cond_4
     move/from16 v7, p5
 
@@ -6135,23 +6135,23 @@
 
     invoke-virtual {v11, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 164
+    .line 160
     :goto_2
     const/4 v0, 0x1
 
     invoke-virtual {v11, v0}, Landroid/graphics/Paint;->setDither(Z)V
 
-    .line 165
+    .line 161
     invoke-virtual {v11, v0}, Landroid/graphics/Paint;->setFilterBitmap(Z)V
 
-    .line 167
+    .line 163
     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v5, v9, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v7
 
-    .line 168
+    .line 164
     .local v7, "createBitmap":Landroid/graphics/Bitmap;
     new-instance v0, Landroid/graphics/Canvas;
 
@@ -6159,7 +6159,7 @@
 
     move-object/from16 v21, v0
 
-    .line 169
+    .line 165
     .local v21, "canvas":Landroid/graphics/Canvas;
     new-instance v0, Landroid/graphics/Rect;
 
@@ -6169,7 +6169,7 @@
 
     move-object v14, v0
 
-    .line 170
+    .line 166
     .local v14, "rect":Landroid/graphics/Rect;
     move-object/from16 v22, v7
 
@@ -6180,7 +6180,7 @@
     .local v22, "createBitmap":Landroid/graphics/Bitmap;
     invoke-virtual {v7, v14, v11}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 171
+    .line 167
     div-int/lit8 v0, v9, 0x2
 
     int-to-float v0, v0
@@ -6191,7 +6191,7 @@
 
     add-float v21, v0, v18
 
-    .line 176
+    .line 172
     .local v21, "middleY":F
     const/4 v0, 0x0
 
@@ -6204,7 +6204,7 @@
     .local v19, "C":Landroid/graphics/Point;
     const/16 v23, 0x0
 
-    .line 177
+    .line 173
     .local v23, "D":Landroid/graphics/Point;
     move-object/from16 v24, v0
 
@@ -6214,7 +6214,7 @@
 
     if-ge v10, v0, :cond_5
 
-    .line 178
+    .line 174
     new-instance v0, Landroid/graphics/Point;
 
     move/from16 v26, v9
@@ -6243,7 +6243,7 @@
     .restart local v0    # "A":Landroid/graphics/Point;
     goto :goto_3
 
-    .line 180
+    .line 176
     .end local v0    # "A":Landroid/graphics/Point;
     .end local v26    # "waterMarkHeight":I
     .end local v27    # "bgPaint":Landroid/graphics/Paint;
@@ -6263,7 +6263,7 @@
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 181
+    .line 177
     .local v0, "titleRect":Landroid/graphics/Rect;
     invoke-virtual/range {p0 .. p0}, Ljava/lang/String;->length()I
 
@@ -6273,12 +6273,12 @@
 
     invoke-virtual {v12, v1, v11, v9, v0}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 182
+    .line 178
     new-instance v9, Landroid/graphics/Rect;
 
     invoke-direct {v9}, Landroid/graphics/Rect;-><init>()V
 
-    .line 183
+    .line 179
     .local v9, "dateFormatRect":Landroid/graphics/Rect;
     move-object/from16 v28, v14
 
@@ -6290,7 +6290,7 @@
 
     invoke-virtual {v13, v4, v11, v14, v9}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 184
+    .line 180
     invoke-virtual {v9}, Landroid/graphics/Rect;->height()I
 
     move-result v11
@@ -6303,7 +6303,7 @@
 
     add-float/2addr v11, v14
 
-    .line 185
+    .line 181
     .local v11, "dateFormatY":F
     new-instance v14, Landroid/graphics/Point;
 
@@ -6339,7 +6339,7 @@
 
     move-object v0, v14
 
-    .line 186
+    .line 182
     .end local v24    # "A":Landroid/graphics/Point;
     .local v0, "A":Landroid/graphics/Point;
     new-instance v9, Landroid/graphics/Point;
@@ -6364,7 +6364,7 @@
 
     move-object/from16 v9, v30
 
-    .line 189
+    .line 185
     .end local v18    # "B":Landroid/graphics/Point;
     .end local v29    # "dateFormatRect":Landroid/graphics/Rect;
     .end local v30    # "A":Landroid/graphics/Point;
@@ -6378,7 +6378,7 @@
 
     move-object v14, v0
 
-    .line 190
+    .line 186
     .local v14, "picInfoRect":Landroid/graphics/Rect;
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->length()I
 
@@ -6392,7 +6392,7 @@
     .local v24, "isInner":Z
     invoke-virtual {v12, v3, v8, v0, v14}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 191
+    .line 187
     invoke-virtual {v14}, Landroid/graphics/Rect;->width()I
 
     move-result v0
@@ -6403,7 +6403,7 @@
 
     sub-float v8, v0, v15
 
-    .line 192
+    .line 188
     .local v8, "picInfoX":F
     if-eqz p3, :cond_7
 
@@ -6431,13 +6431,13 @@
     :goto_5
     move-object/from16 v29, v0
 
-    .line 193
+    .line 189
     .local v29, "lastText":Ljava/lang/String;
     const/4 v0, 0x1
 
     if-ge v10, v0, :cond_8
 
-    .line 194
+    .line 190
     new-instance v0, Landroid/graphics/Point;
 
     move/from16 v30, v10
@@ -6464,7 +6464,7 @@
     .local v0, "C":Landroid/graphics/Point;
     goto :goto_6
 
-    .line 196
+    .line 192
     .end local v0    # "C":Landroid/graphics/Point;
     .end local v30    # "t":I
     .restart local v10    # "t":I
@@ -6478,7 +6478,7 @@
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 197
+    .line 193
     .local v0, "secInfoRect":Landroid/graphics/Rect;
     invoke-virtual/range {v29 .. v29}, Ljava/lang/String;->length()I
 
@@ -6492,7 +6492,7 @@
     .local v10, "lastText":Ljava/lang/String;
     invoke-virtual {v13, v10, v2, v6, v0}, Landroid/graphics/Paint;->getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
 
-    .line 198
+    .line 194
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v2
@@ -6503,7 +6503,7 @@
 
     sub-float/2addr v2, v15
 
-    .line 199
+    .line 195
     .local v2, "secInfoX":F
     invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
 
@@ -6517,7 +6517,7 @@
 
     add-float v6, v6, v18
 
-    .line 200
+    .line 196
     .local v6, "secInfoY":F
     move-object/from16 v18, v0
 
@@ -6551,7 +6551,7 @@
 
     invoke-direct {v0, v5, v8}, Landroid/graphics/Point;-><init>(II)V
 
-    .line 201
+    .line 197
     .end local v19    # "C":Landroid/graphics/Point;
     .local v0, "C":Landroid/graphics/Point;
     new-instance v5, Landroid/graphics/Point;
@@ -6574,7 +6574,7 @@
 
     move-object/from16 v2, v29
 
-    .line 204
+    .line 200
     .end local v6    # "secInfoY":F
     .end local v18    # "secInfoRect":Landroid/graphics/Rect;
     .end local v23    # "D":Landroid/graphics/Point;
@@ -6595,7 +6595,7 @@
     .local v0, "sxyStart":F
     const/4 v6, 0x0
 
-    .line 205
+    .line 201
     .local v6, "sxyEnd":F
     if-eqz v11, :cond_9
 
@@ -6607,7 +6607,7 @@
 
     move-result v6
 
-    .line 206
+    .line 202
     :cond_9
     if-eqz v5, :cond_a
 
@@ -6619,13 +6619,13 @@
 
     move-result v6
 
-    .line 207
+    .line 203
     :cond_a
     iget v8, v2, Landroid/graphics/Point;->x:I
 
     int-to-float v8, v8
 
-    .line 208
+    .line 204
     .local v8, "lf":F
     if-eqz v5, :cond_b
 
@@ -6652,7 +6652,7 @@
     :cond_b
     move-object/from16 v23, v2
 
-    .line 209
+    .line 205
     .end local v2    # "C":Landroid/graphics/Point;
     .restart local v23    # "C":Landroid/graphics/Point;
     :goto_7
@@ -6666,7 +6666,7 @@
 
     add-float v6, v21, v2
 
-    .line 210
+    .line 206
     :cond_c
     if-nez v11, :cond_e
 
@@ -6681,7 +6681,7 @@
 
     goto :goto_9
 
-    .line 211
+    .line 207
     :cond_e
     :goto_8
     const-string v2, "my_watermark_padding_top"
@@ -6690,7 +6690,7 @@
 
     move-result v2
 
-    .line 212
+    .line 208
     .local v2, "paddingTop":I
     move-object/from16 v18, v14
 
@@ -6700,14 +6700,14 @@
 
     add-float/2addr v6, v14
 
-    .line 213
+    .line 209
     int-to-float v14, v2
 
     sub-float/2addr v0, v14
 
     move v2, v0
 
-    .line 216
+    .line 212
     .end local v0    # "sxyStart":F
     .local v2, "sxyStart":F
     :goto_9
@@ -6729,7 +6729,7 @@
     :goto_a
     invoke-virtual {v7, v1, v0, v14, v12}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 217
+    .line 213
     if-eqz v11, :cond_10
 
     iget v0, v11, Landroid/graphics/Point;->x:I
@@ -6738,22 +6738,22 @@
 
     invoke-virtual {v7, v4, v0, v6, v13}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 218
+    .line 214
     :cond_10
     invoke-virtual {v7, v3, v8, v2, v12}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 219
+    .line 215
     if-eqz v5, :cond_11
 
     invoke-virtual {v7, v10, v8, v6, v13}, Landroid/graphics/Canvas;->drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
 
-    .line 220
+    .line 216
     :cond_11
     move-object/from16 v14, p1
 
     if-eqz v14, :cond_16
 
-    .line 221
+    .line 217
     mul-float v0, v15, v17
 
     sub-float v0, v8, v0
@@ -6766,7 +6766,7 @@
 
     sub-float v1, v0, v1
 
-    .line 222
+    .line 218
     .local v1, "logoX":F
     sub-float v0, v2, p10
 
@@ -6788,7 +6788,7 @@
 
     add-float v3, v0, v20
 
-    .line 223
+    .line 219
     .local v3, "logoY":F
     const-string v0, "my_watermark_logo_point_ft"
 
@@ -6798,7 +6798,7 @@
 
     move-result-object v4
 
-    .line 224
+    .line 220
     .local v4, "logoFt":Ljava/lang/String;
     if-eqz v4, :cond_12
 
@@ -6818,14 +6818,14 @@
     .local v25, "D":Landroid/graphics/Point;
     if-le v0, v5, :cond_13
 
-    .line 225
+    .line 221
     const-string v5, ","
 
     invoke-virtual {v4, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 227
+    .line 223
     .local v5, "xy":[Ljava/lang/String;
     const/16 v16, 0x0
 
@@ -6840,7 +6840,7 @@
 
     add-float/2addr v1, v0
 
-    .line 228
+    .line 224
     const/4 v0, 0x1
 
     aget-object v0, v5, v0
@@ -6857,20 +6857,20 @@
 
     goto :goto_b
 
-    .line 229
+    .line 225
     :catch_0
     move-exception v0
 
     :goto_b
     goto :goto_c
 
-    .line 224
+    .line 220
     .end local v25    # "D":Landroid/graphics/Point;
     .local v5, "D":Landroid/graphics/Point;
     :cond_12
     move-object/from16 v25, v5
 
-    .line 231
+    .line 227
     .end local v5    # "D":Landroid/graphics/Point;
     .restart local v25    # "D":Landroid/graphics/Point;
     :cond_13
@@ -6879,10 +6879,10 @@
 
     invoke-virtual {v7, v14, v1, v3, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 232
+    .line 228
     if-nez v24, :cond_15
 
-    .line 233
+    .line 229
     const-string v0, "my_watermark_line_width"
 
     const/4 v5, 0x3
@@ -6891,16 +6891,16 @@
 
     move-result v0
 
-    .line 234
+    .line 230
     .local v0, "lineWidth":I
     if-lez v0, :cond_14
 
-    .line 235
+    .line 231
     int-to-float v5, v0
 
     invoke-virtual {v13, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 236
+    .line 232
     sub-float v5, v8, v15
 
     sub-float v16, v2, p10
@@ -6931,7 +6931,7 @@
 
     goto :goto_d
 
-    .line 234
+    .line 230
     .end local v29    # "picInfoRect":Landroid/graphics/Rect;
     .end local v32    # "qianhou":F
     .restart local v15    # "qianhou":F
@@ -6947,7 +6947,7 @@
     .restart local v32    # "qianhou":F
     goto :goto_d
 
-    .line 232
+    .line 228
     .end local v0    # "lineWidth":I
     .end local v29    # "picInfoRect":Landroid/graphics/Rect;
     .end local v32    # "qianhou":F
@@ -6964,7 +6964,7 @@
     .restart local v32    # "qianhou":F
     goto :goto_d
 
-    .line 220
+    .line 216
     .end local v1    # "logoX":F
     .end local v3    # "logoY":F
     .end local v4    # "logoFt":Ljava/lang/String;
@@ -6981,7 +6981,7 @@
 
     move-object/from16 v29, v18
 
-    .line 240
+    .line 236
     .end local v5    # "D":Landroid/graphics/Point;
     .end local v15    # "qianhou":F
     .end local v18    # "picInfoRect":Landroid/graphics/Rect;
@@ -7006,7 +7006,7 @@
     .param p9, "waterMarkHeight"    # I
     .param p10, "fontSize"    # I
 
-    .line 132
+    .line 128
     move/from16 v0, p10
 
     int-to-float v11, v0
@@ -9150,7 +9150,7 @@
     .locals 2
     .param p0, "type"    # I
 
-    .line 45
+    .line 41
     sget v0, Lnan/ren/util/WaterMarkUtil;->agc_wm_type_size:I
 
     sub-int v0, p0, v0
@@ -9165,281 +9165,431 @@
 .end method
 
 .method static initConfigCustomAndParams(Lnan/ren/util/JSONObject;Lnan/ren/util/JSONObject;)Lnan/ren/util/JSONObject;
-    .locals 13
+    .locals 18
     .param p0, "mainConf"    # Lnan/ren/util/JSONObject;
     .param p1, "parentConf"    # Lnan/ren/util/JSONObject;
 
-    .line 1289
-    const-string v0, ""
+    .line 1290
+    move-object/from16 v1, p0
 
-    if-eqz p0, :cond_a
+    move-object/from16 v2, p1
 
-    invoke-virtual {p0}, Lnan/ren/util/JSONObject;->isEmpty()Z
+    const-string v0, "text"
 
-    move-result v1
+    const-string v3, ":"
 
-    if-eqz v1, :cond_0
+    const-string v4, ""
+
+    if-eqz v1, :cond_c
+
+    invoke-virtual/range {p0 .. p0}, Lnan/ren/util/JSONObject;->isEmpty()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_0
 
     goto/16 :goto_6
 
-    .line 1290
-    :cond_0
-    invoke-virtual {p0}, Lnan/ren/util/JSONObject;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
     .line 1291
-    .local v1, "wmConfigStr":Ljava/lang/String;
-    const-string v2, "name"
+    :cond_0
+    invoke-virtual/range {p0 .. p0}, Lnan/ren/util/JSONObject;->toString()Ljava/lang/String;
 
-    invoke-virtual {p1, v2}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
+    move-result-object v5
 
     .line 1292
-    .local v2, "configName":Ljava/lang/String;
-    const-string v3, "custom"
+    .local v5, "wmConfigStr":Ljava/lang/String;
+    const-string v6, "name"
 
-    invoke-virtual {p1, v3}, Lnan/ren/util/JSONObject;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v6}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v4
+    move-result-object v6
 
-    const-string v5, "}"
+    .line 1293
+    .local v6, "configName":Ljava/lang/String;
+    const-string v7, "custom"
 
-    const-string v6, "{"
-
-    const/4 v7, 0x1
-
-    if-eqz v4, :cond_5
-
-    .line 1294
-    :try_start_0
-    invoke-virtual {p1, v3}, Lnan/ren/util/JSONObject;->getJSONArray(Ljava/lang/String;)Lnan/ren/util/JSONArray;
-
-    move-result-object v3
-
-    .line 1295
-    .local v3, "customArr":Lnan/ren/util/JSONArray;
-    const/4 v4, 0x0
-
-    .local v4, "i":I
-    :goto_0
-    invoke-virtual {v3}, Lnan/ren/util/JSONArray;->length()I
+    invoke-virtual {v2, v7}, Lnan/ren/util/JSONObject;->containsKey(Ljava/lang/Object;)Z
 
     move-result v8
 
-    if-ge v4, v8, :cond_4
+    const-string v9, "}"
+
+    const/4 v10, 0x1
+
+    const-string v11, "{"
+
+    if-eqz v8, :cond_7
+
+    .line 1295
+    :try_start_0
+    invoke-virtual {v2, v7}, Lnan/ren/util/JSONObject;->getJSONArray(Ljava/lang/String;)Lnan/ren/util/JSONArray;
+
+    move-result-object v7
 
     .line 1296
-    invoke-virtual {v3, v4}, Lnan/ren/util/JSONArray;->getJSONObject(I)Lnan/ren/util/JSONObject;
+    .local v7, "customArr":Lnan/ren/util/JSONArray;
+    const/4 v8, 0x0
 
-    move-result-object v8
+    .local v8, "i":I
+    :goto_0
+    invoke-virtual {v7}, Lnan/ren/util/JSONArray;->length()I
+
+    move-result v12
+
+    if-ge v8, v12, :cond_6
 
     .line 1297
-    .local v8, "customObj":Lnan/ren/util/JSONObject;
-    const-string v9, "key"
+    invoke-virtual {v7, v8}, Lnan/ren/util/JSONArray;->getJSONObject(I)Lnan/ren/util/JSONObject;
 
-    invoke-virtual {v8, v9}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v9
+    move-result-object v12
 
     .line 1298
-    .local v9, "key":Ljava/lang/String;
-    invoke-static {v9}, Lnan/ren/util/ObjectUtil;->isEmpty(Ljava/lang/Object;)Z
+    .local v12, "customObj":Lnan/ren/util/JSONObject;
+    const-string v13, "key"
 
-    move-result v10
+    invoke-virtual {v12, v13}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    if-eqz v10, :cond_1
-
-    goto :goto_2
+    move-result-object v13
 
     .line 1299
-    :cond_1
-    const-string v10, "def"
+    .local v13, "key":Ljava/lang/String;
+    invoke-static {v13}, Lnan/ren/util/ObjectUtil;->isEmpty(Ljava/lang/Object;)Z
 
-    invoke-virtual {v8, v10, v0}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result v14
 
-    move-result-object v10
+    if-eqz v14, :cond_1
+
+    move-object/from16 v16, v0
+
+    move-object/from16 v17, v3
+
+    goto/16 :goto_2
 
     .line 1300
-    .local v10, "dev":Ljava/lang/String;
-    const-string v11, "$os."
+    :cond_1
+    const-string v14, "def"
 
-    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v12, v14, v4}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v11
+    move-result-object v14
 
-    if-eqz v11, :cond_2
+    .line 1301
+    .local v14, "dev":Ljava/lang/String;
+    const-string v15, "$os."
 
-    const/4 v11, 0x4
+    invoke-virtual {v14, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-virtual {v10, v11}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    move-result v15
 
-    move-result-object v11
+    if-eqz v15, :cond_2
 
-    invoke-static {v11, v0}, Lnan/ren/util/NUtil;->getProp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    const/4 v15, 0x4
 
-    move-result-object v11
+    invoke-virtual {v14, v15}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-object v10, v11
+    move-result-object v15
+
+    invoke-static {v15, v4}, Lnan/ren/util/NUtil;->getProp(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    move-object v14, v15
 
     goto :goto_1
 
-    .line 1301
-    :cond_2
-    const-string v11, "$"
-
-    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v11
-
-    if-eqz v11, :cond_3
-
-    invoke-virtual {v10, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v11
-
-    const-string v12, "\u672a\u8bbe\u7f6e"
-
-    invoke-static {v11, v12}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    move-object v10, v11
-
     .line 1302
-    :cond_3
-    :goto_1
-    new-instance v11, Ljava/lang/StringBuilder;
+    :cond_2
+    const-string v15, "$"
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v14, v15}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v15
 
-    move-result-object v11
+    if-eqz v15, :cond_3
 
-    const-string v12, ":"
+    invoke-virtual {v14, v10}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v15
 
-    move-result-object v11
+    const-string v10, "\u672a\u8bbe\u7f6e"
 
-    invoke-virtual {v11, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v15, v10}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v11, v10}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
+    move-object v14, v10
 
     .line 1303
-    .local v11, "value":Ljava/lang/String;
-    new-instance v12, Ljava/lang/StringBuilder;
+    :cond_3
+    :goto_1
+    new-instance v10, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v12, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-virtual {v12, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v10
 
-    invoke-virtual {v1, v12, v11}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-static {v10, v14}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v10
+
+    .line 1304
+    .local v10, "value":Ljava/lang/String;
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v15, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v5, v15, v10}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v15
+
+    move-object v5, v15
+
+    .line 1305
+    const-string v15, "type"
+
+    invoke-virtual {v12, v15, v0}, Lnan/ren/util/JSONObject;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v15
+
+    invoke-virtual {v0, v15}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_5
+
+    .line 1306
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v15, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    move-object/from16 v16, v0
+
+    const-string v0, "_font"
+
+    invoke-virtual {v15, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1307
+    .local v0, "font":Ljava/lang/String;
+    invoke-static {v0}, Lnan/ren/util/ObjectUtil;->isEmpty(Ljava/lang/Object;)Z
+
+    move-result v15
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-object v1, v12
+    move-object/from16 v17, v3
 
-    .line 1295
-    .end local v8    # "customObj":Lnan/ren/util/JSONObject;
-    .end local v9    # "key":Ljava/lang/String;
-    .end local v10    # "dev":Ljava/lang/String;
-    .end local v11    # "value":Ljava/lang/String;
-    :goto_2
-    add-int/lit8 v4, v4, 0x1
+    const-string v3, "_font}"
 
-    goto :goto_0
+    if-nez v15, :cond_4
 
-    .end local v3    # "customArr":Lnan/ren/util/JSONArray;
-    .end local v4    # "i":I
+    .line 1308
+    :try_start_1
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v15, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v5, v3, v0}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object v5, v3
+
+    goto :goto_2
+
+    .line 1310
     :cond_4
-    goto :goto_3
+    new-instance v15, Ljava/lang/StringBuilder;
+
+    invoke-direct {v15}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v15, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v15
+
+    invoke-virtual {v15, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v15, "DEFAULT"
+
+    invoke-virtual {v5, v3, v15}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v3
+
+    move-object v5, v3
+
+    goto :goto_2
 
     .line 1305
+    .end local v0    # "font":Ljava/lang/String;
+    :cond_5
+    move-object/from16 v16, v0
+
+    move-object/from16 v17, v3
+
+    .line 1296
+    .end local v10    # "value":Ljava/lang/String;
+    .end local v12    # "customObj":Lnan/ren/util/JSONObject;
+    .end local v13    # "key":Ljava/lang/String;
+    .end local v14    # "dev":Ljava/lang/String;
+    :goto_2
+    add-int/lit8 v8, v8, 0x1
+
+    move-object/from16 v0, v16
+
+    move-object/from16 v3, v17
+
+    const/4 v10, 0x1
+
+    goto/16 :goto_0
+
+    .line 1314
+    .end local v8    # "i":I
+    :cond_6
+    invoke-static {v7}, Lnan/ren/G;->log(Ljava/lang/Object;)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+
+    .end local v7    # "customArr":Lnan/ren/util/JSONArray;
+    goto :goto_3
+
+    .line 1315
     :catch_0
     move-exception v0
 
     :goto_3
     nop
 
-    .line 1308
-    :cond_5
+    .line 1318
+    :cond_7
     const/4 v0, 0x0
 
-    .line 1309
+    .line 1319
     .local v0, "paramObj":Lnan/ren/util/JSONObject;
     const-string v3, "param"
 
-    invoke-virtual {p1, v3}, Lnan/ren/util/JSONObject;->has(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_6
-
-    .line 1310
-    invoke-virtual {p1, v3}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
-
-    move-result-object v0
-
-    .line 1312
-    :cond_6
-    invoke-virtual {p0, v3}, Lnan/ren/util/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v2, v3}, Lnan/ren/util/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v4
 
     if-eqz v4, :cond_8
 
-    .line 1313
-    if-nez v0, :cond_7
+    .line 1320
+    invoke-virtual {v2, v3}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
 
-    invoke-virtual {p0, v3}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
+    move-result-object v0
+
+    .line 1322
+    :cond_8
+    invoke-virtual {v1, v3}, Lnan/ren/util/JSONObject;->has(Ljava/lang/String;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_a
+
+    .line 1323
+    if-nez v0, :cond_9
+
+    invoke-virtual {v1, v3}, Lnan/ren/util/JSONObject;->getJSONObject(Ljava/lang/String;)Lnan/ren/util/JSONObject;
 
     move-result-object v0
 
     goto :goto_4
 
-    .line 1314
-    :cond_7
-    invoke-virtual {v0, v0, v7}, Lnan/ren/util/JSONObject;->addAll(Lnan/ren/util/JSONObject;Z)Lnan/ren/util/JSONObject;
+    .line 1324
+    :cond_9
+    const/4 v3, 0x1
 
-    .line 1316
-    :cond_8
+    invoke-virtual {v0, v0, v3}, Lnan/ren/util/JSONObject;->addAll(Lnan/ren/util/JSONObject;Z)Lnan/ren/util/JSONObject;
+
+    .line 1326
+    :cond_a
     :goto_4
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_b
 
     invoke-virtual {v0}, Lnan/ren/util/JSONObject;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_b
 
-    .line 1317
+    .line 1327
     invoke-virtual {v0}, Lnan/ren/util/JSONObject;->keySet()Ljava/util/Set;
 
     move-result-object v3
@@ -9448,29 +9598,29 @@
 
     move-result-object v3
 
-    .line 1318
+    .line 1328
     .local v3, "keyIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
     :goto_5
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v4
 
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_b
 
-    .line 1319
+    .line 1329
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Ljava/lang/String;
 
-    .line 1320
+    .line 1330
     .local v4, "key":Ljava/lang/String;
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -9478,7 +9628,7 @@
 
     move-result-object v7
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v7
 
@@ -9490,30 +9640,30 @@
 
     move-result-object v8
 
-    invoke-virtual {v1, v7, v8}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v5, v7, v8}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v5
 
-    .line 1321
+    .line 1331
     .end local v4    # "key":Ljava/lang/String;
     goto :goto_5
 
-    .line 1323
+    .line 1333
     .end local v3    # "keyIt":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/String;>;"
-    :cond_9
+    :cond_b
     new-instance v3, Lnan/ren/util/JSONObject;
 
-    invoke-direct {v3, v1}, Lnan/ren/util/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v5}, Lnan/ren/util/JSONObject;-><init>(Ljava/lang/String;)V
 
     return-object v3
 
-    .line 1289
+    .line 1290
     .end local v0    # "paramObj":Lnan/ren/util/JSONObject;
-    .end local v1    # "wmConfigStr":Ljava/lang/String;
-    .end local v2    # "configName":Ljava/lang/String;
-    :cond_a
+    .end local v5    # "wmConfigStr":Ljava/lang/String;
+    .end local v6    # "configName":Ljava/lang/String;
+    :cond_c
     :goto_6
-    return-object p0
+    return-object v1
 .end method
 
 .method static initTextAndImages(Lnan/ren/util/JSONArray;Lnan/ren/util/JSONObject;Landroid/media/ExifInterface;Landroid/graphics/Bitmap;)Lnan/ren/util/JSONArray;
@@ -10350,7 +10500,7 @@
     .param p1, "m"    # Ljava/lang/reflect/Method;
     .param p2, "v"    # Ljava/lang/String;
 
-    .line 1080
+    .line 1081
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
@@ -10378,7 +10528,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 1081
+    .line 1082
     :try_start_1
     invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -10406,7 +10556,7 @@
 
     move-object v3, v0
 
-    .line 1082
+    .line 1083
     .end local p2    # "v":Ljava/lang/String;
     .local v3, "v":Ljava/lang/String;
     :cond_0
@@ -10421,13 +10571,13 @@
 
     goto/16 :goto_20
 
-    .line 1215
+    .line 1216
     :catch_0
     move-exception v0
 
     goto/16 :goto_21
 
-    .line 1083
+    .line 1084
     .end local v3    # "v":Ljava/lang/String;
     .restart local p2    # "v":Ljava/lang/String;
     :cond_1
@@ -10458,7 +10608,7 @@
 
     if-eqz v5, :cond_6
 
-    .line 1084
+    .line 1085
     :try_start_4
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -10468,7 +10618,7 @@
 
     move-result-object v0
 
-    .line 1085
+    .line 1086
     .local v0, "vs":[Ljava/lang/String;
     new-array v4, v7, [Ljava/lang/Integer;
 
@@ -10496,7 +10646,7 @@
 
     aput-object v5, v4, v8
 
-    .line 1086
+    .line 1087
     .local v4, "is":[Ljava/lang/Integer;
     array-length v5, v0
 
@@ -10518,7 +10668,7 @@
 
     aput-object v5, v4, v12
 
-    .line 1087
+    .line 1088
     :cond_2
     array-length v5, v0
 
@@ -10540,7 +10690,7 @@
 
     aput-object v5, v4, v11
 
-    .line 1088
+    .line 1089
     :cond_3
     array-length v5, v0
 
@@ -10562,7 +10712,7 @@
 
     aput-object v5, v4, v10
 
-    .line 1089
+    .line 1090
     :cond_4
     array-length v5, v0
 
@@ -10584,7 +10734,7 @@
 
     aput-object v5, v4, v8
 
-    .line 1090
+    .line 1091
     :cond_5
     aget-object v5, v4, v12
 
@@ -10612,7 +10762,7 @@
 
     invoke-virtual {v1, v5, v6, v7, v8}, Landroid/graphics/Paint;->setARGB(IIII)V
 
-    .line 1091
+    .line 1092
     .end local v0    # "vs":[Ljava/lang/String;
     .end local v4    # "is":[Ljava/lang/Integer;
     goto/16 :goto_20
@@ -10649,7 +10799,7 @@
 
     if-nez v5, :cond_5a
 
-    .line 1092
+    .line 1093
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10674,7 +10824,7 @@
 
     if-nez v5, :cond_5a
 
-    .line 1093
+    .line 1094
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10697,7 +10847,7 @@
 
     if-nez v5, :cond_5a
 
-    .line 1094
+    .line 1095
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10724,7 +10874,7 @@
 
     goto/16 :goto_1f
 
-    .line 1101
+    .line 1102
     :cond_7
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -10755,7 +10905,7 @@
 
     if-nez v5, :cond_57
 
-    .line 1102
+    .line 1103
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10780,7 +10930,7 @@
 
     if-nez v5, :cond_57
 
-    .line 1103
+    .line 1104
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10805,7 +10955,7 @@
 
     if-nez v5, :cond_57
 
-    .line 1104
+    .line 1105
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10830,7 +10980,7 @@
 
     if-nez v5, :cond_57
 
-    .line 1105
+    .line 1106
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10845,7 +10995,7 @@
 
     goto/16 :goto_1c
 
-    .line 1108
+    .line 1109
     :cond_8
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -10874,7 +11024,7 @@
 
     if-nez v5, :cond_56
 
-    .line 1109
+    .line 1110
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v5
@@ -10889,7 +11039,7 @@
 
     goto/16 :goto_1b
 
-    .line 1112
+    .line 1113
     :cond_9
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -10919,7 +11069,7 @@
 
     if-eqz v5, :cond_14
 
-    .line 1113
+    .line 1114
     :try_start_8
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -10933,7 +11083,7 @@
 
     move-object v3, v0
 
-    .line 1114
+    .line 1115
     .end local p2    # "v":Ljava/lang/String;
     .restart local v3    # "v":Ljava/lang/String;
     :try_start_9
@@ -10945,12 +11095,12 @@
 
     if-eqz v0, :cond_12
 
-    .line 1115
+    .line 1116
     invoke-virtual {v3, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1116
+    .line 1117
     .restart local v0    # "vs":[Ljava/lang/String;
     array-length v4, v0
 
@@ -10958,10 +11108,10 @@
 
     if-le v4, v5, :cond_13
 
-    .line 1117
+    .line 1118
     const/4 v4, 0x0
 
-    .line 1118
+    .line 1119
     .local v4, "blur":Landroid/graphics/BlurMaskFilter$Blur;
     aget-object v6, v0, v5
 
@@ -10995,7 +11145,7 @@
 
     goto/16 :goto_2
 
-    .line 1119
+    .line 1120
     :cond_a
     const/4 v5, 0x2
 
@@ -11033,7 +11183,7 @@
 
     goto :goto_1
 
-    .line 1120
+    .line 1121
     :cond_b
     const/4 v5, 0x2
 
@@ -11071,7 +11221,7 @@
 
     goto :goto_0
 
-    .line 1121
+    .line 1122
     :cond_c
     const/4 v2, 0x2
 
@@ -11114,7 +11264,7 @@
 
     goto :goto_3
 
-    .line 1120
+    .line 1121
     :cond_e
     :goto_0
     sget-object v2, Landroid/graphics/BlurMaskFilter$Blur;->OUTER:Landroid/graphics/BlurMaskFilter$Blur;
@@ -11123,7 +11273,7 @@
 
     goto :goto_3
 
-    .line 1119
+    .line 1120
     :cond_f
     :goto_1
     sget-object v2, Landroid/graphics/BlurMaskFilter$Blur;->SOLID:Landroid/graphics/BlurMaskFilter$Blur;
@@ -11132,19 +11282,19 @@
 
     goto :goto_3
 
-    .line 1118
+    .line 1119
     :cond_10
     :goto_2
     sget-object v2, Landroid/graphics/BlurMaskFilter$Blur;->NORMAL:Landroid/graphics/BlurMaskFilter$Blur;
 
     move-object v4, v2
 
-    .line 1122
+    .line 1123
     :cond_11
     :goto_3
     if-eqz v4, :cond_13
 
-    .line 1123
+    .line 1124
     new-instance v2, Landroid/graphics/BlurMaskFilter;
 
     const/4 v5, 0x1
@@ -11161,13 +11311,13 @@
 
     invoke-direct {v2, v5, v4}, Landroid/graphics/BlurMaskFilter;-><init>(FLandroid/graphics/BlurMaskFilter$Blur;)V
 
-    .line 1124
+    .line 1125
     .local v2, "maskFilter":Landroid/graphics/BlurMaskFilter;
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
 
     goto :goto_4
 
-    .line 1127
+    .line 1128
     .end local v0    # "vs":[Ljava/lang/String;
     .end local v2    # "maskFilter":Landroid/graphics/BlurMaskFilter;
     .end local v4    # "blur":Landroid/graphics/BlurMaskFilter$Blur;
@@ -11180,7 +11330,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 1128
+    .line 1129
     invoke-virtual {v3, v7}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
@@ -11201,7 +11351,7 @@
 
     move-result-object v0
 
-    .line 1129
+    .line 1130
     .local v0, "vs1":[Ljava/lang/String;
     invoke-virtual {v3, v10}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -11219,7 +11369,7 @@
 
     move-result-object v2
 
-    .line 1130
+    .line 1131
     .local v2, "vs2":[Ljava/lang/String;
     const/4 v4, 0x3
 
@@ -11255,7 +11405,7 @@
 
     aput v6, v4, v5
 
-    .line 1140
+    .line 1141
     .local v4, "direction":[F
     new-instance v5, Landroid/graphics/EmbossMaskFilter;
 
@@ -11285,13 +11435,13 @@
 
     invoke-direct {v5, v4, v6, v7, v8}, Landroid/graphics/EmbossMaskFilter;-><init>([FFFF)V
 
-    .line 1141
+    .line 1142
     .local v5, "emboss":Landroid/graphics/EmbossMaskFilter;
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setMaskFilter(Landroid/graphics/MaskFilter;)Landroid/graphics/MaskFilter;
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_1
 
-    .line 1142
+    .line 1143
     nop
 
     .end local v0    # "vs1":[Ljava/lang/String;
@@ -11300,12 +11450,12 @@
     .end local v5    # "emboss":Landroid/graphics/EmbossMaskFilter;
     goto :goto_5
 
-    .line 1127
+    .line 1128
     :cond_13
     :goto_4
     nop
 
-    .line 1215
+    .line 1216
     :goto_5
     move-object/from16 v2, p1
 
@@ -11318,7 +11468,7 @@
 
     goto/16 :goto_21
 
-    .line 1143
+    .line 1144
     .end local v3    # "v":Ljava/lang/String;
     .restart local p2    # "v":Ljava/lang/String;
     :cond_14
@@ -11337,7 +11487,7 @@
 
     if-eqz v5, :cond_18
 
-    .line 1144
+    .line 1145
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -11350,7 +11500,7 @@
 
     move-object v2, v0
 
-    .line 1145
+    .line 1146
     .end local p2    # "v":Ljava/lang/String;
     .local v2, "v":Ljava/lang/String;
     :try_start_b
@@ -11360,7 +11510,7 @@
 
     if-eqz v0, :cond_15
 
-    .line 1146
+    .line 1147
     new-instance v0, Landroid/graphics/CornerPathEffect;
 
     invoke-virtual {v2, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
@@ -11377,11 +11527,11 @@
 
     invoke-direct {v0, v3}, Landroid/graphics/CornerPathEffect;-><init>(F)V
 
-    .line 1147
+    .line 1148
     .local v0, "cornerPathEffect":Landroid/graphics/CornerPathEffect;
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 1148
+    .line 1149
     nop
 
     .end local v0    # "cornerPathEffect":Landroid/graphics/CornerPathEffect;
@@ -11394,12 +11544,12 @@
 
     if-eqz v0, :cond_16
 
-    .line 1149
+    .line 1150
     invoke-virtual {v2, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1150
+    .line 1151
     .local v0, "vs":[Ljava/lang/String;
     new-instance v3, Landroid/graphics/DiscretePathEffect;
 
@@ -11421,11 +11571,11 @@
 
     invoke-direct {v3, v4, v5}, Landroid/graphics/DiscretePathEffect;-><init>(FF)V
 
-    .line 1151
+    .line 1152
     .local v3, "discretePathEffect":Landroid/graphics/DiscretePathEffect;
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
 
-    .line 1152
+    .line 1153
     nop
 
     .end local v0    # "vs":[Ljava/lang/String;
@@ -11441,7 +11591,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 1153
+    .line 1154
     invoke-virtual {v2, v7}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v0
@@ -11458,7 +11608,7 @@
 
     move-result-object v0
 
-    .line 1154
+    .line 1155
     .local v0, "v1":Ljava/lang/String;
     invoke-virtual {v2, v10}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
@@ -11472,7 +11622,7 @@
 
     move-result-object v3
 
-    .line 1155
+    .line 1156
     .local v3, "v2":Ljava/lang/String;
     new-instance v4, Landroid/graphics/DashPathEffect;
 
@@ -11486,16 +11636,16 @@
 
     invoke-direct {v4, v5, v6}, Landroid/graphics/DashPathEffect;-><init>([FF)V
 
-    .line 1156
+    .line 1157
     .local v4, "dashPathEffect":Landroid/graphics/DashPathEffect;
     invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setPathEffect(Landroid/graphics/PathEffect;)Landroid/graphics/PathEffect;
     :try_end_b
     .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_2
 
-    .line 1157
+    .line 1158
     nop
 
-    .line 1215
+    .line 1216
     .end local v0    # "v1":Ljava/lang/String;
     .end local v3    # "v2":Ljava/lang/String;
     .end local v4    # "dashPathEffect":Landroid/graphics/DashPathEffect;
@@ -11516,7 +11666,7 @@
 
     goto/16 :goto_21
 
-    .line 1158
+    .line 1159
     .end local v2    # "v":Ljava/lang/String;
     .restart local p2    # "v":Ljava/lang/String;
     :cond_18
@@ -11533,7 +11683,7 @@
 
     if-eqz v4, :cond_1f
 
-    .line 1159
+    .line 1160
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -11562,7 +11712,7 @@
 
     goto :goto_8
 
-    .line 1160
+    .line 1161
     :cond_19
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11592,7 +11742,7 @@
 
     goto :goto_7
 
-    .line 1161
+    .line 1162
     :cond_1a
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11630,7 +11780,7 @@
 
     goto/16 :goto_20
 
-    .line 1160
+    .line 1161
     :cond_1d
     :goto_7
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
@@ -11641,7 +11791,7 @@
 
     goto/16 :goto_20
 
-    .line 1159
+    .line 1160
     :cond_1e
     :goto_8
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
@@ -11652,7 +11802,7 @@
 
     goto/16 :goto_20
 
-    .line 1162
+    .line 1163
     :cond_1f
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -11670,7 +11820,7 @@
 
     if-eqz v4, :cond_26
 
-    .line 1163
+    .line 1164
     :try_start_d
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11700,7 +11850,7 @@
 
     goto :goto_a
 
-    .line 1164
+    .line 1165
     :cond_20
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11728,7 +11878,7 @@
 
     goto :goto_9
 
-    .line 1165
+    .line 1166
     :cond_21
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11766,7 +11916,7 @@
 
     goto/16 :goto_20
 
-    .line 1164
+    .line 1165
     :cond_24
     :goto_9
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
@@ -11777,7 +11927,7 @@
 
     goto/16 :goto_20
 
-    .line 1163
+    .line 1164
     :cond_25
     :goto_a
     sget-object v0, Landroid/graphics/Paint$Cap;->BUTT:Landroid/graphics/Paint$Cap;
@@ -11788,7 +11938,7 @@
 
     goto/16 :goto_20
 
-    .line 1166
+    .line 1167
     :cond_26
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -11806,7 +11956,7 @@
 
     if-eqz v4, :cond_2d
 
-    .line 1167
+    .line 1168
     :try_start_e
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11834,7 +11984,7 @@
 
     goto :goto_c
 
-    .line 1168
+    .line 1169
     :cond_27
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11862,7 +12012,7 @@
 
     goto :goto_b
 
-    .line 1169
+    .line 1170
     :cond_28
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11898,7 +12048,7 @@
 
     goto/16 :goto_20
 
-    .line 1168
+    .line 1169
     :cond_2b
     :goto_b
     sget-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
@@ -11909,7 +12059,7 @@
 
     goto/16 :goto_20
 
-    .line 1167
+    .line 1168
     :cond_2c
     :goto_c
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
@@ -11920,7 +12070,7 @@
 
     goto/16 :goto_20
 
-    .line 1170
+    .line 1171
     :cond_2d
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -11932,7 +12082,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 1171
+    .line 1172
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -11959,7 +12109,7 @@
 
     goto :goto_e
 
-    .line 1172
+    .line 1173
     :cond_2e
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -11987,7 +12137,7 @@
 
     goto :goto_d
 
-    .line 1173
+    .line 1174
     :cond_2f
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -12023,7 +12173,7 @@
 
     goto/16 :goto_20
 
-    .line 1172
+    .line 1173
     :cond_32
     :goto_d
     sget-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
@@ -12034,7 +12184,7 @@
 
     goto/16 :goto_20
 
-    .line 1171
+    .line 1172
     :cond_33
     :goto_e
     sget-object v0, Landroid/graphics/Paint$Join;->MITER:Landroid/graphics/Paint$Join;
@@ -12045,7 +12195,7 @@
 
     goto/16 :goto_20
 
-    .line 1174
+    .line 1175
     :cond_34
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -12059,14 +12209,14 @@
 
     if-eqz v0, :cond_39
 
-    .line 1175
+    .line 1176
     invoke-virtual {v3, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
     move-object v2, v0
 
-    .line 1176
+    .line 1177
     .local v2, "vs":[Ljava/lang/String;
     if-eqz v2, :cond_38
 
@@ -12078,10 +12228,10 @@
 
     if-ne v0, v4, :cond_38
 
-    .line 1177
+    .line 1178
     const/4 v4, -0x1
 
-    .line 1179
+    .line 1180
     .local v4, "colorInt":I
     const/4 v0, 0x3
 
@@ -12092,7 +12242,7 @@
 
     move-result-object v0
 
-    .line 1180
+    .line 1181
     .local v0, "color":Ljava/lang/String;
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
@@ -12129,7 +12279,7 @@
 
     move-object v0, v5
 
-    .line 1181
+    .line 1182
     :cond_36
     invoke-virtual {v0, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -12137,7 +12287,7 @@
 
     if-eqz v5, :cond_37
 
-    .line 1182
+    .line 1183
     invoke-static {v0}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v5
@@ -12146,7 +12296,7 @@
 
     goto :goto_f
 
-    .line 1184
+    .line 1185
     :cond_37
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -12158,7 +12308,7 @@
 
     goto :goto_f
 
-    .line 1186
+    .line 1187
     .end local v0    # "color":Ljava/lang/String;
     :catch_3
     move-exception v0
@@ -12166,7 +12316,7 @@
     :goto_f
     nop
 
-    .line 1187
+    .line 1188
     const/4 v5, 0x0
 
     :try_start_10
@@ -12206,7 +12356,7 @@
 
     invoke-virtual {v1, v0, v5, v6, v4}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 1189
+    .line 1190
     .end local v2    # "vs":[Ljava/lang/String;
     .end local v4    # "colorInt":I
     :cond_38
@@ -12227,7 +12377,7 @@
 
     if-eqz v0, :cond_40
 
-    .line 1190
+    .line 1191
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -12256,7 +12406,7 @@
 
     goto :goto_11
 
-    .line 1191
+    .line 1192
     :cond_3a
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -12286,7 +12436,7 @@
 
     goto :goto_10
 
-    .line 1192
+    .line 1193
     :cond_3b
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -12324,7 +12474,7 @@
 
     goto/16 :goto_20
 
-    .line 1191
+    .line 1192
     :cond_3e
     :goto_10
     sget-object v0, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
@@ -12335,7 +12485,7 @@
 
     goto/16 :goto_20
 
-    .line 1190
+    .line 1191
     :cond_3f
     :goto_11
     sget-object v0, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
@@ -12346,7 +12496,7 @@
 
     goto/16 :goto_20
 
-    .line 1193
+    .line 1194
     :cond_40
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
@@ -12360,10 +12510,10 @@
 
     if-eqz v0, :cond_55
 
-    .line 1194
+    .line 1195
     const/4 v0, 0x0
 
-    .line 1195
+    .line 1196
     .local v0, "type":I
     invoke-virtual/range {p2 .. p2}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -12373,7 +12523,7 @@
 
     move-result-object v4
 
-    .line 1196
+    .line 1197
     .local v4, "vs":[Ljava/lang/String;
     array-length v5, v4
 
@@ -12381,7 +12531,7 @@
 
     if-le v5, v6, :cond_48
 
-    .line 1197
+    .line 1198
     aget-object v5, v4, v6
 
     invoke-virtual {v5}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -12412,7 +12562,7 @@
 
     goto/16 :goto_14
 
-    .line 1199
+    .line 1200
     :cond_41
     const/4 v5, 0x1
 
@@ -12448,7 +12598,7 @@
 
     goto :goto_13
 
-    .line 1201
+    .line 1202
     :cond_42
     const/4 v5, 0x1
 
@@ -12484,7 +12634,7 @@
 
     goto :goto_12
 
-    .line 1203
+    .line 1204
     :cond_43
     const/4 v5, 0x1
 
@@ -12518,52 +12668,52 @@
 
     if-eqz v5, :cond_49
 
-    .line 1204
+    .line 1205
     :cond_44
     const/4 v0, 0x3
 
     goto :goto_15
 
-    .line 1201
+    .line 1202
     :cond_45
     move-object/from16 v6, v16
 
-    .line 1202
+    .line 1203
     :goto_12
     const/4 v0, 0x2
 
     goto :goto_15
 
-    .line 1199
+    .line 1200
     :cond_46
     move-object/from16 v6, v16
 
-    .line 1200
+    .line 1201
     :goto_13
     const/4 v0, 0x1
 
     goto :goto_15
 
-    .line 1197
+    .line 1198
     :cond_47
     move-object/from16 v6, v16
 
-    .line 1198
+    .line 1199
     :goto_14
     const/4 v0, 0x0
 
     goto :goto_15
 
-    .line 1196
+    .line 1197
     :cond_48
     move-object/from16 v6, v16
 
-    .line 1206
+    .line 1207
     :cond_49
     :goto_15
     const/4 v5, 0x0
 
-    .line 1207
+    .line 1208
     .local v5, "tf":Landroid/graphics/Typeface;
     const/4 v7, 0x0
 
@@ -12597,7 +12747,7 @@
 
     goto/16 :goto_19
 
-    .line 1208
+    .line 1209
     :cond_4a
     const/4 v7, 0x0
 
@@ -12631,7 +12781,7 @@
 
     goto/16 :goto_18
 
-    .line 1209
+    .line 1210
     :cond_4b
     const/4 v7, 0x0
 
@@ -12665,7 +12815,7 @@
 
     goto :goto_17
 
-    .line 1210
+    .line 1211
     :cond_4c
     const/4 v2, 0x0
 
@@ -12699,7 +12849,7 @@
 
     goto :goto_16
 
-    .line 1211
+    .line 1212
     :cond_4d
     const/4 v2, 0x0
 
@@ -12765,7 +12915,7 @@
 
     goto :goto_1a
 
-    .line 1210
+    .line 1211
     :cond_4e
     :goto_16
     sget-object v2, Landroid/graphics/Typeface;->SERIF:Landroid/graphics/Typeface;
@@ -12778,7 +12928,7 @@
 
     goto :goto_1a
 
-    .line 1209
+    .line 1210
     :cond_4f
     :goto_17
     sget-object v2, Landroid/graphics/Typeface;->SANS_SERIF:Landroid/graphics/Typeface;
@@ -12791,7 +12941,7 @@
 
     goto :goto_1a
 
-    .line 1208
+    .line 1209
     :cond_50
     :goto_18
     sget-object v2, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
@@ -12804,7 +12954,7 @@
 
     goto :goto_1a
 
-    .line 1207
+    .line 1208
     :cond_51
     :goto_19
     invoke-static {}, Lnan/ren/util/WaterMarkUtil;->getDefaultTypeFace()Landroid/graphics/Typeface;
@@ -12817,7 +12967,7 @@
 
     move-object v5, v2
 
-    .line 1212
+    .line 1213
     :cond_52
     :goto_1a
     if-nez v5, :cond_53
@@ -12834,7 +12984,7 @@
 
     move-object v5, v2
 
-    .line 1213
+    .line 1214
     :cond_53
     if-eqz v5, :cond_54
 
@@ -12845,7 +12995,7 @@
 
     goto/16 :goto_20
 
-    .line 1193
+    .line 1194
     .end local v0    # "type":I
     .end local v4    # "vs":[Ljava/lang/String;
     .end local v5    # "tf":Landroid/graphics/Typeface;
@@ -12854,7 +13004,7 @@
 
     goto/16 :goto_20
 
-    .line 1111
+    .line 1112
     :cond_56
     :goto_1b
     const/4 v2, 0x1
@@ -12886,7 +13036,7 @@
 
     goto :goto_20
 
-    .line 1215
+    .line 1216
     :catch_4
     move-exception v0
 
@@ -12894,7 +13044,7 @@
 
     goto :goto_21
 
-    .line 1107
+    .line 1108
     :cond_57
     :goto_1c
     const/4 v4, 0x1
@@ -12947,7 +13097,7 @@
 
     goto :goto_20
 
-    .line 1096
+    .line 1097
     :cond_5a
     :goto_1f
     const/4 v4, 0x1
@@ -12972,7 +13122,7 @@
 
     invoke-virtual {v2, v1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1097
+    .line 1098
     invoke-virtual/range {p1 .. p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
     move-result-object v0
@@ -12993,14 +13143,14 @@
 
     if-eqz v0, :cond_5b
 
-    .line 1098
+    .line 1099
     const/4 v4, 0x0
 
     invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setAlpha(I)V
     :try_end_11
     .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_5
 
-    .line 1215
+    .line 1216
     .end local p2    # "v":Ljava/lang/String;
     .local v3, "v":Ljava/lang/String;
     :cond_5b
@@ -13056,7 +13206,7 @@
 
     invoke-static {v4}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 1216
+    .line 1217
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_22
     return-object v1
@@ -13067,7 +13217,7 @@
     .param p0, "path"    # Ljava/lang/String;
     .param p1, "uri"    # Landroid/net/Uri;
 
-    .line 261
+    .line 260
     return-void
 .end method
 
@@ -13077,10 +13227,10 @@
     .param p1, "bottomBitmap"    # Landroid/graphics/Bitmap;
     .param p2, "isInner"    # Z
 
-    .line 405
+    .line 404
     const/4 v0, 0x0
 
-    invoke-static {p0, p1, p2, v0}, Lnan/ren/util/WaterMarkUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ZI)Landroid/graphics/Bitmap;
+    invoke-static {p0, p1, p2, v0}, Lnan/ren/util/ImageUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ZI)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -13088,246 +13238,17 @@
 .end method
 
 .method public static mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ZI)Landroid/graphics/Bitmap;
-    .locals 10
+    .locals 1
     .param p0, "topBitmap"    # Landroid/graphics/Bitmap;
     .param p1, "bottomBitmap"    # Landroid/graphics/Bitmap;
     .param p2, "isInner"    # Z
     .param p3, "paddingBottom"    # I
 
-    .line 416
-    const/4 v0, 0x0
+    .line 414
+    invoke-static {p0, p1, p2, p3}, Lnan/ren/util/ImageUtil;->mergeBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ZI)Landroid/graphics/Bitmap;
 
-    if-eqz p0, :cond_7
+    move-result-object v0
 
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
-
-    move-result v1
-
-    if-nez v1, :cond_7
-
-    if-eqz p1, :cond_7
-
-    .line 417
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    goto/16 :goto_4
-
-    .line 420
-    :cond_0
-    const/4 v1, 0x0
-
-    .line 421
-    .local v1, "width":I
-    const/4 v2, 0x1
-
-    .line 422
-    .local v2, "isBaseMax":Z
-    if-eqz v2, :cond_2
-
-    .line 423
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    if-le v3, v4, :cond_1
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    goto :goto_0
-
-    :cond_1
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    :goto_0
-    move v1, v3
-
-    goto :goto_2
-
-    .line 425
-    :cond_2
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v4
-
-    if-ge v3, v4, :cond_3
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    goto :goto_1
-
-    :cond_3
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    :goto_1
-    move v1, v3
-
-    .line 427
-    :goto_2
-    move-object v3, p0
-
-    .line 428
-    .local v3, "tempBitmapT":Landroid/graphics/Bitmap;
-    move-object v4, p1
-
-    .line 430
-    .local v4, "tempBitmapB":Landroid/graphics/Bitmap;
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v5
-
-    const/4 v6, 0x0
-
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    if-eq v5, v1, :cond_4
-
-    .line 431
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v7
-
-    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v5, v7
-
-    int-to-float v7, v1
-
-    mul-float/2addr v5, v7
-
-    float-to-int v5, v5
-
-    invoke-static {p0, v1, v5, v6}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v3
-
-    goto :goto_3
-
-    .line 432
-    :cond_4
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v5
-
-    if-eq v5, v1, :cond_5
-
-    .line 433
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v7
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    div-float/2addr v5, v7
-
-    int-to-float v7, v1
-
-    mul-float/2addr v5, v7
-
-    float-to-int v5, v5
-
-    invoke-static {p1, v1, v5, v6}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v4
-
-    .line 436
-    :cond_5
-    :goto_3
-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v5
-
-    .line 437
-    .local v5, "height":I
-    if-nez p2, :cond_6
-
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v6
-
-    add-int/2addr v5, v6
-
-    .line 439
-    :cond_6
-    sget-object v6, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v1, v5, v6}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v6
-
-    .line 440
-    .local v6, "bitmap":Landroid/graphics/Bitmap;
-    new-instance v7, Landroid/graphics/Canvas;
-
-    invoke-direct {v7, v6}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 445
-    .local v7, "canvas":Landroid/graphics/Canvas;
-    const/4 v8, 0x0
-
-    invoke-virtual {v7, v3, v8, v8, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 446
-    invoke-virtual {v4}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v9
-
-    sub-int v9, v5, v9
-
-    sub-int/2addr v9, p3
-
-    int-to-float v9, v9
-
-    invoke-virtual {v7, v4, v8, v9, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 449
-    return-object v6
-
-    .line 418
-    .end local v1    # "width":I
-    .end local v2    # "isBaseMax":Z
-    .end local v3    # "tempBitmapT":Landroid/graphics/Bitmap;
-    .end local v4    # "tempBitmapB":Landroid/graphics/Bitmap;
-    .end local v5    # "height":I
-    .end local v6    # "bitmap":Landroid/graphics/Bitmap;
-    .end local v7    # "canvas":Landroid/graphics/Canvas;
-    :cond_7
-    :goto_4
     return-object v0
 .end method
 
@@ -13335,14 +13256,14 @@
     .locals 4
     .param p0, "file"    # Ljava/io/File;
 
-    .line 255
+    .line 254
     sget-object v0, Lnan/ren/G;->CONTEXT:Landroid/content/Context;
 
     const/4 v1, 0x1
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 257
+    .line 256
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v2
@@ -13361,10 +13282,25 @@
 
     invoke-direct {v3}, Lnan/ren/util/WaterMarkUtil$$ExternalSyntheticLambda0;-><init>()V
 
-    .line 255
+    .line 254
     invoke-static {v0, v1, v2, v3}, Landroid/media/MediaScannerConnection;->scanFile(Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V
 
-    .line 291
+    .line 290
+    return-void
+.end method
+
+.method public static noticSysPhoto(Ljava/lang/String;)V
+    .locals 1
+    .param p0, "file"    # Ljava/lang/String;
+
+    .line 251
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-static {v0}, Lnan/ren/util/WaterMarkUtil;->noticSysPhoto(Ljava/io/File;)V
+
+    .line 252
     return-void
 .end method
 
@@ -13372,7 +13308,7 @@
     .locals 4
     .param p0, "v"    # Ljava/lang/String;
 
-    .line 1220
+    .line 1221
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -13383,13 +13319,13 @@
 
     move-result-object v0
 
-    .line 1221
+    .line 1222
     .local v0, "vs":[Ljava/lang/String;
     array-length v1, v0
 
     new-array v1, v1, [F
 
-    .line 1222
+    .line 1223
     .local v1, "fs":[F
     const/4 v2, 0x0
 
@@ -13399,7 +13335,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 1223
+    .line 1224
     aget-object v3, v0, v2
 
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -13412,12 +13348,12 @@
 
     aput v3, v1, v2
 
-    .line 1222
+    .line 1223
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 1225
+    .line 1226
     .end local v2    # "i":I
     :cond_0
     return-object v1

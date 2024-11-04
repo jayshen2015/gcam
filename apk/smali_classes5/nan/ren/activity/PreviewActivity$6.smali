@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 507
+    .line 504
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$6;->this$0:Lnan/ren/activity/PreviewActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 .method public run()V
     .locals 3
 
-    .line 510
+    .line 507
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$6;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iget v0, v0, Lnan/ren/activity/PreviewActivity;->lw:F
@@ -66,7 +66,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 512
+    .line 509
     :try_start_0
     sget-object v0, Lnan/ren/activity/PreviewActivity;->tempPicBigMap:Landroid/graphics/Bitmap;
 
@@ -74,11 +74,11 @@
 
     move-result-object v0
 
-    .line 513
+    .line 510
     .local v0, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_0
 
-    .line 514
+    .line 511
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$6;->this$0:Lnan/ren/activity/PreviewActivity;
 
     new-instance v2, Lnan/ren/activity/PreviewActivity$6$1;
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 518
+    .line 515
     .end local v0    # "d":Landroid/graphics/drawable/Drawable;
     :catch_0
     move-exception v0
@@ -100,7 +100,7 @@
     :goto_0
     nop
 
-    .line 520
+    .line 517
     :cond_1
     return-void
 .end method
