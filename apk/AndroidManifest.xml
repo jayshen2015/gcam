@@ -390,6 +390,7 @@
 	
         <activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>        
 		<activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>
+		<activity android:exported="true" android:name="nan.ren.activity.Wm2Activity"></activity>
 		<activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
 		<activity android:exported="true" android:name="nan.ren.activity.PatchActivity">
             <intent-filter>
