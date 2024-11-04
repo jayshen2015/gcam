@@ -7473,18 +7473,6 @@
     <public type="drawable" name="agc_patch_disable" id="0x7f08075d" />
     <public type="drawable" name="agc_patch_ka" id="0x7f08075e" />
     <public type="drawable" name="agc_patch_ka_day" id="0x7f08075f" />
-    <public type="drawable" name="agc_patch_profile_1" id="0x7f080760" />
-    <public type="drawable" name="agc_patch_profile_10" id="0x7f080761" />
-    <public type="drawable" name="agc_patch_profile_11" id="0x7f080762" />
-    <public type="drawable" name="agc_patch_profile_12" id="0x7f080763" />
-    <public type="drawable" name="agc_patch_profile_2" id="0x7f080764" />
-    <public type="drawable" name="agc_patch_profile_3" id="0x7f080765" />
-    <public type="drawable" name="agc_patch_profile_4" id="0x7f080766" />
-    <public type="drawable" name="agc_patch_profile_5" id="0x7f080767" />
-    <public type="drawable" name="agc_patch_profile_6" id="0x7f080768" />
-    <public type="drawable" name="agc_patch_profile_7" id="0x7f080769" />
-    <public type="drawable" name="agc_patch_profile_8" id="0x7f08076a" />
-    <public type="drawable" name="agc_patch_profile_9" id="0x7f08076b" />
     <public type="drawable" name="agc_pin" id="0x7f08076c" />
     <public type="drawable" name="agc_raw" id="0x7f08076d" />
     <public type="drawable" name="agc_raw_off" id="0x7f08076e" />
@@ -13798,4 +13786,15 @@
 	<public type="string" name="my_upscale_enable_title" id="0x7f140f57" />
 	
 	<public type="layout" name="bottom_bar_layout2" id="0x7f0e0900" />
+    <public type="layout" name="my_chooser_patch_view" id="0x7f0e0901" />
+	
+	 
+	
+	<public type="drawable" name="agc_watermark_shortcuts" id="0x7f089424" />
+    <public type="drawable" name="my_lut" id="0x7f089425" />
+    <public type="drawable" name="my_lib" id="0x7f089426" />
+	<public type="drawable" name="p" id="0x7f089427" />
+    <public type="drawable" name="n" id="0x7f089428" />
+    <public type="drawable" name="x" id="0x7f089429" />
+    <public type="drawable" name="my_hex" id="0x7f08942a" />
 </resources>

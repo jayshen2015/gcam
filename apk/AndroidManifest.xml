@@ -365,8 +365,18 @@
         </service>
         <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
         <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
-        <activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>        
+		
+		<activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>        
 		<activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>
 		<activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
+		<activity android:exported="true" android:name="nan.ren.activity.PatchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />                
+				<category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="nanren" android:host="patch" />
+                <data android:scheme="nanren" android:host="web" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

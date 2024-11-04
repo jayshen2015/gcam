@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 34
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,16 +20,16 @@
     .param p2, "tag"    # Ljava/lang/String;
     .param p3, "w"    # I
 
-    .line 206
+    .line 218
     new-instance v0, Landroid/widget/Button;
 
     invoke-direct {v0, p0}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
 
-    .line 207
+    .line 219
     .local v0, "button":Landroid/widget/Button;
     invoke-virtual {v0, p2}, Landroid/widget/Button;->setTag(Ljava/lang/Object;)V
 
-    .line 208
+    .line 220
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v2, -0x2
@@ -38,18 +38,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 209
+    .line 221
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setGravity(I)V
 
-    .line 210
+    .line 222
     invoke-virtual {v0, p1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 211
+    .line 223
     invoke-static {v0}, Lnan/ren/util/ViewUtil;->setTextSize(Ljava/lang/Object;)V
 
-    .line 212
+    .line 224
     return-object v0
 .end method
 
@@ -59,12 +59,12 @@
     .param p1, "value"    # Ljava/lang/Object;
     .param p2, "context"    # Landroid/content/Context;
 
-    .line 142
+    .line 154
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 143
+    .line 155
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -74,26 +74,26 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 144
+    .line 156
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 145
+    .line 157
     invoke-static {p0, p2}, Lnan/ren/util/ViewUtil;->getTextView(Ljava/lang/String;Landroid/content/Context;)Landroid/widget/TextView;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 146
+    .line 158
     invoke-static {p1, p2}, Lnan/ren/util/ViewUtil;->getTextEdit(Ljava/lang/Object;Landroid/content/Context;)Landroid/widget/EditText;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 147
+    .line 159
     return-object v0
 .end method
 
@@ -102,31 +102,38 @@
     .param p0, "url"    # Ljava/lang/String;
     .param p1, "context"    # Landroid/content/Context;
 
-    .line 164
+    .line 176
     new-instance v0, Landroid/widget/ImageButton;
 
     invoke-direct {v0, p1}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;)V
 
-    .line 165
+    .line 177
     .local v0, "field":Landroid/widget/ImageButton;
     invoke-static {v0}, Lnan/ren/util/ViewUtil;->setTextSize(Ljava/lang/Object;)V
 
-    .line 166
+    .line 178
     const/16 v1, 0xe6
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setMinimumWidth(I)V
 
-    .line 167
+    .line 179
     invoke-static {p0}, Lnan/ren/util/ImageUtil;->getOuterDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageButton;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 168
+    .line 180
+    invoke-static {p0}, Lnan/ren/util/ObjectUtil;->isEmpty(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
     invoke-virtual {v0, p0}, Landroid/widget/ImageButton;->setTag(Ljava/lang/Object;)V
 
-    .line 169
+    .line 181
+    :cond_0
     return-object v0
 .end method
 
@@ -134,12 +141,12 @@
     .locals 3
     .param p0, "context"    # Landroid/content/Context;
 
-    .line 299
+    .line 399
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 300
+    .line 400
     .local v0, "imageView":Landroid/widget/ImageView;
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
@@ -149,7 +156,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 301
+    .line 401
     return-object v0
 .end method
 
@@ -157,12 +164,12 @@
     .locals 3
     .param p0, "context"    # Landroid/content/Context;
 
-    .line 291
+    .line 391
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 292
+    .line 392
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -172,7 +179,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 293
+    .line 393
     const-string v1, "#cc212527"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -181,17 +188,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 294
+    .line 394
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 295
+    .line 395
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 296
+    .line 396
     return-object v0
 .end method
 
@@ -202,7 +209,7 @@
     .param p2, "emptyText"    # Ljava/lang/String;
     .param p3, "columnCount"    # I
 
-    .line 70
+    .line 82
     invoke-interface {p1}, Ljava/util/List;->toArray()[Ljava/lang/Object;
 
     move-result-object v0
@@ -221,12 +228,12 @@
     .param p2, "emptyText"    # Ljava/lang/String;
     .param p3, "columnCount"    # I
 
-    .line 73
+    .line 85
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 74
+    .line 86
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -236,7 +243,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 75
+    .line 87
     const-string v1, "#cc212527"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -245,17 +252,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 76
+    .line 88
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 77
+    .line 89
     new-instance v3, Landroid/widget/ScrollView;
 
     invoke-direct {v3, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 78
+    .line 90
     .local v3, "scrollView":Landroid/widget/ScrollView;
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
@@ -265,12 +272,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 79
+    .line 91
     new-instance v4, Landroid/widget/GridLayout;
 
     invoke-direct {v4, p0}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;)V
 
-    .line 80
+    .line 92
     .local v4, "gridLayout":Landroid/widget/GridLayout;
     new-instance v5, Landroid/widget/GridLayout$LayoutParams;
 
@@ -280,26 +287,26 @@
 
     invoke-direct {v5, v6}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 81
+    .line 93
     .local v5, "lp":Landroid/widget/GridLayout$LayoutParams;
     const/16 v6, 0x10
 
     invoke-virtual {v5, v6}, Landroid/widget/GridLayout$LayoutParams;->setGravity(I)V
 
-    .line 82
+    .line 94
     invoke-virtual {v4, v5}, Landroid/widget/GridLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 83
+    .line 95
     invoke-virtual {v4, p3}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 84
+    .line 96
     if-eqz p1, :cond_0
 
     array-length v7, p1
 
     if-lez v7, :cond_0
 
-    .line 85
+    .line 97
     array-length v2, p1
 
     :goto_0
@@ -307,7 +314,7 @@
 
     aget-object v6, p1, v1
 
-    .line 86
+    .line 98
     .local v6, "v":Ljava/lang/Object;
     invoke-static {v6}, Lnan/ren/util/ViewUtil;->getObjectTitle(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -321,11 +328,11 @@
 
     move-result-object v7
 
-    .line 87
+    .line 99
     .local v7, "view":Landroid/view/ViewGroup;
     invoke-virtual {v7, v6}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    .line 88
+    .line 100
     sget-object v8, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
     invoke-virtual {v8}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
@@ -338,53 +345,53 @@
 
     invoke-virtual {v7, v8}, Landroid/view/ViewGroup;->setMinimumWidth(I)V
 
-    .line 89
+    .line 101
     invoke-virtual {v4, v7}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 85
+    .line 97
     .end local v6    # "v":Ljava/lang/Object;
     .end local v7    # "view":Landroid/view/ViewGroup;
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 92
+    .line 104
     :cond_0
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 93
+    .line 105
     .local v1, "tv":Landroid/widget/TextView;
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 94
+    .line 106
     const/16 v7, 0x96
 
     invoke-virtual {v1, v7}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 95
+    .line 107
     new-instance v8, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v8, v2, v7}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 96
+    .line 108
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 97
+    .line 109
     invoke-virtual {v4, v1}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 99
+    .line 111
     .end local v1    # "tv":Landroid/widget/TextView;
     :cond_1
     invoke-virtual {v3, v4}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 100
+    .line 112
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 101
+    .line 113
     return-object v0
 .end method
 
@@ -395,12 +402,12 @@
     .param p2, "emptyText"    # Ljava/lang/String;
     .param p3, "itemClick"    # Landroid/view/View$OnClickListener;
 
-    .line 104
+    .line 116
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 105
+    .line 117
     .local v0, "linearLayout":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -428,7 +435,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 106
+    .line 118
     const-string v1, "#cc212527"
 
     invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -437,17 +444,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 107
+    .line 119
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 108
+    .line 120
     new-instance v2, Landroid/widget/ScrollView;
 
     invoke-direct {v2, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 109
+    .line 121
     .local v2, "scrollView":Landroid/widget/ScrollView;
     new-instance v4, Landroid/view/ViewGroup$LayoutParams;
 
@@ -455,12 +462,12 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/ScrollView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 110
+    .line 122
     new-instance v4, Landroid/widget/GridLayout;
 
     invoke-direct {v4, p0}, Landroid/widget/GridLayout;-><init>(Landroid/content/Context;)V
 
-    .line 111
+    .line 123
     .local v4, "gridLayout":Landroid/widget/GridLayout;
     new-instance v5, Landroid/widget/GridLayout$LayoutParams;
 
@@ -470,22 +477,22 @@
 
     invoke-direct {v5, v6}, Landroid/widget/GridLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 112
+    .line 124
     .local v5, "lp":Landroid/widget/GridLayout$LayoutParams;
     invoke-virtual {v5, v1}, Landroid/widget/GridLayout$LayoutParams;->setGravity(I)V
 
-    .line 113
+    .line 125
     invoke-virtual {v4, v5}, Landroid/widget/GridLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 114
+    .line 126
     invoke-virtual {v4, v1}, Landroid/widget/GridLayout;->setColumnCount(I)V
 
-    .line 115
+    .line 127
     const/16 v1, 0x14
 
     invoke-virtual {v4, v1, v1, v1, v1}, Landroid/widget/GridLayout;->setPadding(IIII)V
 
-    .line 116
+    .line 128
     const/16 v1, 0x10
 
     const/16 v6, 0x96
@@ -496,7 +503,7 @@
 
     if-lez v7, :cond_0
 
-    .line 117
+    .line 129
     array-length v7, p1
 
     const/4 v8, 0x0
@@ -506,13 +513,13 @@
 
     aget-object v9, p1, v8
 
-    .line 118
+    .line 130
     .local v9, "v":Ljava/lang/Object;
     new-instance v10, Landroid/widget/TextView;
 
     invoke-direct {v10, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 119
+    .line 131
     .local v10, "tv":Landroid/widget/TextView;
     invoke-static {v9}, Lnan/ren/util/ViewUtil;->getObjectTitle(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -520,70 +527,70 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 120
+    .line 132
     invoke-virtual {v10, v9}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 121
+    .line 133
     invoke-virtual {v10, v6}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 122
+    .line 134
     new-instance v11, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v11, v3, v6}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 123
+    .line 135
     invoke-virtual {v10, p3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 124
+    .line 136
     invoke-virtual {v10, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 125
+    .line 137
     invoke-virtual {v4, v10}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 117
+    .line 129
     .end local v9    # "v":Ljava/lang/Object;
     .end local v10    # "tv":Landroid/widget/TextView;
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_0
 
-    .line 128
+    .line 140
     :cond_0
     new-instance v7, Landroid/widget/TextView;
 
     invoke-direct {v7, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 129
+    .line 141
     .local v7, "tv":Landroid/widget/TextView;
     invoke-virtual {v7, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 130
+    .line 142
     invoke-virtual {v7, v6}, Landroid/widget/TextView;->setMinHeight(I)V
 
-    .line 131
+    .line 143
     new-instance v8, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-direct {v8, v3, v6}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 132
+    .line 144
     invoke-virtual {v7, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 133
+    .line 145
     invoke-virtual {v4, v7}, Landroid/widget/GridLayout;->addView(Landroid/view/View;)V
 
-    .line 135
+    .line 147
     .end local v7    # "tv":Landroid/widget/TextView;
     :cond_1
     invoke-virtual {v2, v4}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 136
+    .line 148
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 137
+    .line 149
     return-object v0
 .end method
 
@@ -591,18 +598,18 @@
     .locals 5
     .param p0, "p"    # Ljava/lang/Object;
 
-    .line 36
+    .line 48
     if-nez p0, :cond_0
 
     sget-object v0, Lnan/ren/util/ObjectUtil;->EMPTY:Ljava/lang/String;
 
     return-object v0
 
-    .line 37
+    .line 49
     :cond_0
     move-object v0, p0
 
-    .line 38
+    .line 50
     .local v0, "o":Ljava/lang/Object;
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -614,46 +621,46 @@
 
     if-eqz v1, :cond_1
 
-    .line 39
+    .line 51
     const/4 v1, 0x0
 
     invoke-static {p0, v1}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 41
+    .line 53
     :cond_1
     instance-of v1, v0, Ljava/lang/Number;
 
     if-eqz v1, :cond_2
 
-    .line 42
+    .line 54
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 43
+    .line 55
     :cond_2
     instance-of v1, v0, Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_3
 
-    .line 44
+    .line 56
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     return-object v1
 
-    .line 45
+    .line 57
     :cond_3
     instance-of v1, v0, Ljava/io/File;
 
     if-eqz v1, :cond_4
 
-    .line 46
+    .line 58
     move-object v1, v0
 
     check-cast v1, Ljava/io/File;
@@ -662,18 +669,18 @@
 
     goto :goto_0
 
-    .line 47
+    .line 59
     :cond_4
     instance-of v1, v0, Ljava/util/Map;
 
     if-eqz v1, :cond_a
 
-    .line 48
+    .line 60
     move-object v1, v0
 
     check-cast v1, Ljava/util/Map;
 
-    .line 49
+    .line 61
     .local v1, "t":Ljava/util/Map;
     const-string v2, "title"
 
@@ -695,7 +702,7 @@
 
     return-object v2
 
-    .line 50
+    .line 62
     :cond_5
     const-string v2, "TITLE"
 
@@ -715,7 +722,7 @@
 
     return-object v2
 
-    .line 51
+    .line 63
     :cond_6
     const-string v2, "name"
 
@@ -735,7 +742,7 @@
 
     return-object v2
 
-    .line 52
+    .line 64
     :cond_7
     const-string v2, "NAME"
 
@@ -755,7 +762,7 @@
 
     return-object v2
 
-    .line 53
+    .line 65
     :cond_8
     const-string v2, "text"
 
@@ -775,7 +782,7 @@
 
     return-object v2
 
-    .line 54
+    .line 66
     :cond_9
     const-string v2, "TEXT"
 
@@ -795,7 +802,7 @@
 
     return-object v2
 
-    .line 56
+    .line 68
     .end local v1    # "t":Ljava/util/Map;
     :cond_a
     :goto_0
@@ -810,14 +817,14 @@
     .locals 4
     .param p0, "p"    # Ljava/lang/Object;
 
-    .line 59
+    .line 71
     if-nez p0, :cond_0
 
     const/4 v0, 0x0
 
     return-object v0
 
-    .line 60
+    .line 72
     :cond_0
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -839,7 +846,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 61
+    .line 73
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Ljava/lang/reflect/Array;->get(Ljava/lang/Object;I)Ljava/lang/Object;
@@ -852,18 +859,18 @@
 
     return-object v0
 
-    .line 62
+    .line 74
     :cond_1
     instance-of v0, p0, Ljava/util/Map;
 
     if-eqz v0, :cond_3
 
-    .line 63
+    .line 75
     move-object v0, p0
 
     check-cast v0, Ljava/util/Map;
 
-    .line 64
+    .line 76
     .local v0, "t":Ljava/util/Map;
     const-string v2, "VALUE"
 
@@ -883,7 +890,7 @@
 
     return-object v1
 
-    .line 65
+    .line 77
     :cond_2
     const-string v2, "value"
 
@@ -903,7 +910,7 @@
 
     return-object v1
 
-    .line 67
+    .line 79
     .end local v0    # "t":Ljava/util/Map;
     :cond_3
     invoke-static {p0, v1}, Lnan/ren/util/ObjectUtil;->stringOf(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;
@@ -918,20 +925,20 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "data"    # Ljava/util/List;
 
-    .line 233
+    .line 245
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v0
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 234
+    .line 246
     .local v0, "dataArr":[Ljava/lang/Object;
     invoke-interface {p1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 235
+    .line 247
     invoke-static {p0, p1}, Lnan/ren/util/ViewUtil;->getSpinner(Landroid/content/Context;Ljava/util/List;)Landroid/widget/Spinner;
 
     move-result-object v1
@@ -945,12 +952,12 @@
     .param p1, "data"    # Ljava/util/List;
     .param p2, "def"    # Ljava/lang/Object;
 
-    .line 216
+    .line 228
     invoke-static {p0, p1}, Lnan/ren/util/ViewUtil;->getSpinner(Landroid/content/Context;Ljava/util/List;)Landroid/widget/Spinner;
 
     move-result-object v0
 
-    .line 217
+    .line 229
     .local v0, "temp":Landroid/widget/Spinner;
     if-eqz p2, :cond_0
 
@@ -962,7 +969,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 218
+    .line 230
     :cond_0
     return-object v0
 .end method
@@ -972,12 +979,12 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "data"    # [Ljava/lang/Object;
 
-    .line 238
+    .line 250
     new-instance v0, Landroid/widget/Spinner;
 
     invoke-direct {v0, p0}, Landroid/widget/Spinner;-><init>(Landroid/content/Context;)V
 
-    .line 239
+    .line 251
     .local v0, "spinner":Landroid/widget/Spinner;
     new-instance v1, Lnan/ren/util/ViewUtil$1;
 
@@ -985,16 +992,16 @@
 
     invoke-direct {v1, p0, v2, p1}, Lnan/ren/util/ViewUtil$1;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
-    .line 247
+    .line 259
     .local v1, "spinnerAdapter":Landroid/widget/ArrayAdapter;
     const v2, 0x1090009
 
     invoke-virtual {v1, v2}, Landroid/widget/ArrayAdapter;->setDropDownViewResource(I)V
 
-    .line 248
+    .line 260
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setAdapter(Landroid/widget/SpinnerAdapter;)V
 
-    .line 249
+    .line 261
     return-object v0
 .end method
 
@@ -1004,18 +1011,18 @@
     .param p1, "data"    # [Ljava/lang/Object;
     .param p2, "def"    # Ljava/lang/Object;
 
-    .line 221
+    .line 233
     invoke-static {p0, p1}, Lnan/ren/util/ViewUtil;->getSpinner(Landroid/content/Context;[Ljava/lang/Object;)Landroid/widget/Spinner;
 
     move-result-object v0
 
-    .line 222
+    .line 234
     .local v0, "temp":Landroid/widget/Spinner;
     if-eqz p2, :cond_1
 
     if-eqz p1, :cond_1
 
-    .line 223
+    .line 235
     const/4 v1, 0x0
 
     .local v1, "i":I
@@ -1024,7 +1031,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 224
+    .line 236
     const/4 v2, 0x0
 
     aget-object v2, p1, v2
@@ -1035,19 +1042,19 @@
 
     if-eqz v2, :cond_0
 
-    .line 225
+    .line 237
     invoke-virtual {v0, v1}, Landroid/widget/Spinner;->setSelection(I)V
 
-    .line 226
+    .line 238
     return-object v0
 
-    .line 223
+    .line 235
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 230
+    .line 242
     .end local v1    # "i":I
     :cond_1
     return-object v0
@@ -1058,12 +1065,12 @@
     .param p0, "context"    # Landroid/content/Context;
     .param p1, "w"    # I
 
-    .line 201
+    .line 213
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 202
+    .line 214
     .local v0, "l2":Landroid/widget/LinearLayout;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -1073,7 +1080,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 203
+    .line 215
     return-object v0
 .end method
 
@@ -1082,12 +1089,12 @@
     .param p0, "value"    # Ljava/lang/Object;
     .param p1, "context"    # Landroid/content/Context;
 
-    .line 156
+    .line 168
     new-instance v0, Landroid/widget/EditText;
 
     invoke-direct {v0, p1}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    .line 157
+    .line 169
     .local v0, "field":Landroid/widget/EditText;
     if-nez p0, :cond_0
 
@@ -1103,15 +1110,15 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 158
+    .line 170
     invoke-static {v0}, Lnan/ren/util/ViewUtil;->setTextSize(Ljava/lang/Object;)V
 
-    .line 159
+    .line 171
     const/16 v1, 0xe6
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setMinWidth(I)V
 
-    .line 160
+    .line 172
     return-object v0
 .end method
 
@@ -1120,19 +1127,19 @@
     .param p0, "label"    # Ljava/lang/String;
     .param p1, "context"    # Landroid/content/Context;
 
-    .line 150
+    .line 162
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 151
+    .line 163
     .local v0, "tv":Landroid/widget/TextView;
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 152
+    .line 164
     invoke-static {v0}, Lnan/ren/util/ViewUtil;->setTextSize(Ljava/lang/Object;)V
 
-    .line 153
+    .line 165
     return-object v0
 .end method
 
@@ -1142,12 +1149,12 @@
     .param p1, "w"    # I
     .param p2, "h"    # I
 
-    .line 253
+    .line 265
     new-instance v0, Landroid/webkit/WebView;
 
     invoke-direct {v0, p0}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
 
-    .line 254
+    .line 266
     .local v0, "webView":Landroid/webkit/WebView;
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
@@ -1155,62 +1162,65 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 255
+    .line 267
     new-instance v1, Lnan/ren/util/ViewUtil$2;
 
-    invoke-direct {v1}, Lnan/ren/util/ViewUtil$2;-><init>()V
+    invoke-direct {v1, p0}, Lnan/ren/util/ViewUtil$2;-><init>(Landroid/content/Context;)V
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 262
+    .line 361
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
 
     move-result-object v1
 
-    .line 264
+    .line 362
     .local v1, "webSettings":Landroid/webkit/WebSettings;
     const/4 v2, 0x1
 
+    invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
+
+    .line 364
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 266
+    .line 366
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V
 
-    .line 267
+    .line 367
+    invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
+
+    .line 369
     const/4 v3, 0x0
 
-    invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
-
-    .line 269
     invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setSupportZoom(Z)V
 
-    .line 270
+    .line 370
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setBuiltInZoomControls(Z)V
 
-    .line 271
+    .line 371
     invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setDisplayZoomControls(Z)V
 
-    .line 279
+    .line 379
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setCacheMode(I)V
 
-    .line 280
+    .line 380
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V
 
-    .line 281
+    .line 381
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
 
-    .line 282
+    .line 382
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V
 
-    .line 283
+    .line 383
     const-string v3, "utf-8"
 
     invoke-virtual {v1, v3}, Landroid/webkit/WebSettings;->setDefaultTextEncodingName(Ljava/lang/String;)V
 
-    .line 284
+    .line 384
     invoke-virtual {v1, v2}, Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V
 
-    .line 287
+    .line 387
     return-object v0
 .end method
 
@@ -1218,12 +1228,12 @@
     .locals 1
     .param p0, "o"    # Ljava/lang/Object;
 
-    .line 173
+    .line 185
     const/16 v0, 0x1e
 
     invoke-static {p0, v0}, Lnan/ren/util/ViewUtil;->setTextSize(Ljava/lang/Object;I)V
 
-    .line 174
+    .line 186
     return-void
 .end method
 
@@ -1232,12 +1242,12 @@
     .param p0, "o"    # Ljava/lang/Object;
     .param p1, "fontSize"    # I
 
-    .line 177
+    .line 189
     if-nez p0, :cond_0
 
     return-void
 
-    .line 178
+    .line 190
     :cond_0
     sget-object v0, Lnan/ren/G;->RESOURCES:Landroid/content/res/Resources;
 
@@ -1247,7 +1257,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->scaledDensity:F
 
-    .line 179
+    .line 191
     .local v0, "dsp":F
     const-string v1, "my_dsp"
 
@@ -1255,13 +1265,13 @@
 
     move-result v1
 
-    .line 180
+    .line 192
     .local v1, "dsp_flag":I
     move-object v2, p0
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 181
+    .line 193
     .local v2, "tv":Landroid/widget/TextView;
     const/4 v3, 0x1
 
@@ -1275,7 +1285,7 @@
 
     goto :goto_0
 
-    .line 182
+    .line 194
     :cond_1
     if-ne v1, v3, :cond_2
 
@@ -1285,7 +1295,7 @@
 
     goto :goto_0
 
-    .line 183
+    .line 195
     :cond_2
     const/4 v4, 0x2
 
@@ -1299,7 +1309,7 @@
 
     goto :goto_0
 
-    .line 185
+    .line 197
     :cond_3
     instance-of v4, p0, Landroid/widget/Button;
 
@@ -1307,7 +1317,7 @@
 
     goto :goto_0
 
-    .line 188
+    .line 200
     :cond_4
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1315,28 +1325,28 @@
 
     if-lt v4, v5, :cond_5
 
-    .line 189
+    .line 201
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V
 
-    .line 193
+    .line 205
     :cond_5
     :goto_0
     instance-of v4, p0, Landroid/widget/Button;
 
     if-eqz v4, :cond_6
 
-    .line 194
+    .line 206
     move-object v4, p0
 
     check-cast v4, Landroid/widget/Button;
 
-    .line 195
+    .line 207
     .local v4, "btn":Landroid/widget/Button;
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5, v3, v5, v3}, Landroid/widget/Button;->setPadding(IIII)V
 
-    .line 198
+    .line 210
     .end local v4    # "btn":Landroid/widget/Button;
     :cond_6
     return-void

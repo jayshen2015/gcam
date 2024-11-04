@@ -26,7 +26,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/button/WMButton;
 
-    .line 88
+    .line 81
     iput-object p1, p0, Lnan/ren/button/WMButton$3;->this$0:Lnan/ren/button/WMButton;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,18 +41,18 @@
     .param p1, "dialog"    # Landroid/content/DialogInterface;
     .param p2, "i"    # I
 
-    .line 91
+    .line 84
     iget-object v0, p0, Lnan/ren/button/WMButton$3;->this$0:Lnan/ren/button/WMButton;
 
     invoke-virtual {v0}, Lnan/ren/button/WMButton;->getSelect()Landroid/widget/TextView;
 
     move-result-object v0
 
-    .line 92
+    .line 85
     .local v0, "view":Landroid/widget/TextView;
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 86
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v1
@@ -67,16 +67,16 @@
 
     goto :goto_0
 
-    .line 95
+    .line 88
     :cond_0
     const-string v1, "getSelect view is null "
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 97
+    .line 90
     :goto_0
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
-    .line 98
+    .line 91
     return-void
 .end method

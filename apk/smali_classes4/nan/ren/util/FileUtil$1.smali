@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 155
+    .line 212
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
     .param p1, "f1"    # Ljava/io/File;
     .param p2, "f2"    # Ljava/io/File;
 
-    .line 159
+    .line 216
     const/4 v0, 0x1
 
     :try_start_0
@@ -51,13 +51,13 @@
 
     move-result-object v1
 
-    .line 160
+    .line 217
     .local v1, "fn1":Ljava/lang/String;
     invoke-virtual {p2}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 161
+    .line 218
     .local v2, "fn2":Ljava/lang/String;
     const/4 v3, 0x0
 
@@ -69,7 +69,7 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 162
+    .line 219
     invoke-virtual {v2}, Ljava/lang/String;->length()I
 
     move-result v4
@@ -78,7 +78,7 @@
 
     return v0
 
-    .line 163
+    .line 220
     :cond_0
     invoke-virtual {v1, v3}, Ljava/lang/String;->charAt(I)C
 
@@ -104,26 +104,26 @@
 
     return v4
 
-    .line 161
+    .line 218
     :cond_1
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 165
+    .line 222
     .end local v3    # "i":I
     :cond_2
     const/4 v0, -0x1
 
     return v0
 
-    .line 166
+    .line 223
     .end local v1    # "fn1":Ljava/lang/String;
     .end local v2    # "fn2":Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 167
+    .line 224
     .local v1, "ex":Ljava/lang/Exception;
     return v0
 .end method
@@ -131,7 +131,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 155
+    .line 212
     check-cast p1, Ljava/io/File;
 
     check-cast p2, Ljava/io/File;

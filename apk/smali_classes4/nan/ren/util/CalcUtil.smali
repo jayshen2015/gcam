@@ -839,7 +839,7 @@
     .line 232
     sget-object v0, Ljava/lang/System;->out:Ljava/io/PrintStream;
 
-    const-string v1, " -100 + 1"
+    const-string v1, "1"
 
     invoke-static {v1}, Lnan/ren/util/CalcUtil;->executeExpression(Ljava/lang/String;)Ljava/lang/Double;
 

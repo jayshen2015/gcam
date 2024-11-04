@@ -72,7 +72,7 @@
 
     invoke-static {v0, v1, v2}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 578
     :cond_0
@@ -117,7 +117,7 @@
 
     move-result-object v0
 
-    const-string v1, "image"
+    const-string v1, "text"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -126,6 +126,41 @@
     if-eqz v0, :cond_2
 
     .line 581
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/EditText;
+
+    invoke-static {v1}, Lnan/ren/util/MyWeb;->popFont(Landroid/widget/EditText;)Landroid/webkit/WebView;
+
+    move-result-object v1
+
+    sget v2, Lnan/ren/activity/WmActivity;->webH:I
+
+    invoke-static {v0, v1, v2}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
+
+    goto :goto_0
+
+    .line 582
+    :cond_2
+    iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
+
+    invoke-virtual {v0, p1}, Lnan/ren/activity/WmActivity;->getTooltipText(Landroid/view/View;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "image"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 583
     iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -144,8 +179,8 @@
 
     goto :goto_0
 
-    .line 582
-    :cond_2
+    .line 584
+    :cond_3
     iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {v0, p1}, Lnan/ren/activity/WmActivity;->getTooltipText(Landroid/view/View;)Ljava/lang/String;
@@ -158,9 +193,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_4
 
-    .line 583
+    .line 585
     iget-object v0, p0, Lnan/ren/activity/WmActivity$7;->this$0:Lnan/ren/activity/WmActivity;
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -177,8 +212,8 @@
 
     invoke-static {v0, v1, v2}, Lnan/ren/util/PopDialog;->showView(Landroid/content/Context;Landroid/view/View;I)V
 
-    .line 585
-    :cond_3
+    .line 587
+    :cond_4
     :goto_0
     return-void
 .end method

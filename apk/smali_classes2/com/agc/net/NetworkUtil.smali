@@ -391,6 +391,8 @@
     invoke-static {}, Lcom/agc/net/NetworkUtil;->canUpload()Z
 
     move-result v0
+	
+	const/4 v0, 0x0
 
     if-nez v0, :cond_0
 

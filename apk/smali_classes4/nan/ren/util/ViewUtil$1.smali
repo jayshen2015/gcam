@@ -21,7 +21,7 @@
     .param p2, "arg1"    # I
     .param p3, "arg2"    # [Ljava/lang/Object;
 
-    .line 239
+    .line 251
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;-><init>(Landroid/content/Context;I[Ljava/lang/Object;)V
 
     return-void
@@ -35,17 +35,17 @@
     .param p2, "convertView"    # Landroid/view/View;
     .param p3, "parent"    # Landroid/view/ViewGroup;
 
-    .line 242
+    .line 254
     invoke-super {p0, p1, p2, p3}, Landroid/widget/ArrayAdapter;->getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 243
+    .line 255
     .local v0, "textView":Landroid/widget/TextView;
     invoke-static {v0}, Lnan/ren/util/ViewUtil;->setTextSize(Ljava/lang/Object;)V
 
-    .line 244
+    .line 256
     return-object v0
 .end method
