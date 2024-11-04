@@ -1338,6 +1338,8 @@
     invoke-static {p0}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
     :goto_0
+    invoke-static {}, Lcom/agc/widget/PatchButton;->updateOverridePref()V
+
     return-void
 .end method
 

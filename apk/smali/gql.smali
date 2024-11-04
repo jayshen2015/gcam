@@ -1290,6 +1290,10 @@
 
     const/4 v7, 0x2
 
+    invoke-static {v7}, LAGC;->getNoiseMode(I)I
+
+    move-result v7
+
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -1326,6 +1330,14 @@
     if-ne v13, v7, :cond_5
 
     sget-object v4, Landroid/hardware/camera2/CaptureRequest;->EDGE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v7}, LAGC;->getEdgeMode(I)I
+
+    move-result v7
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v10
 
     invoke-static {v4, v10}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
 

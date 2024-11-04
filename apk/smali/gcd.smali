@@ -111,10 +111,6 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/agc/AdvancedSettings;->getTrackFocus(Z)Z
-
-    move-result v1
-
     if-eqz v1, :cond_1
 
     invoke-virtual {v3}, Lnau;->k()Lnat;

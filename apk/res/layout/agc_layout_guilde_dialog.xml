@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#33000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_guide" android:layout_width="56.0dip" android:layout_height="56.0dip" android:layout_marginLeft="20.0dip" android:layout_marginBottom="200.0dip" android:src="@drawable/ic_gtool_link" android:layout_alignParentBottom="true" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginBottom="20.0dip" android:src="@drawable/agc_lut_guide_line_1" android:layout_above="@id/iv_guide" />
+    <TextView android:textSize="20.0sp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:text="Tap to get Toolkit LUT list" android:layout_above="@id/tv_tap" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="17.0sp" android:textColor="@color/white" android:id="@id/tv_tap" android:background="@drawable/agc_white_corner_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="100.0dip" android:text="Got it" android:layout_above="@id/iv_guide" android:layout_centerHorizontal="true" android:paddingHorizontal="15.0dip" android:paddingVertical="5.0dip" />
+</RelativeLayout>

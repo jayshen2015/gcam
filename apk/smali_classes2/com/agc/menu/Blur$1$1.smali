@@ -1,6 +1,5 @@
 .class Lcom/agc/menu/Blur$1$1;
 .super Ljava/lang/Object;
-.source "Blur.java"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,19 +11,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$1:Lcom/agc/menu/Blur$1;
+.field public final synthetic this$1:Lcom/agc/menu/Blur$1;
 
-.field final synthetic val$blurred:Landroid/graphics/Bitmap;
+.field public final synthetic val$blurred:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/menu/Blur$1;Landroid/graphics/Bitmap;)V
+.method public constructor <init>(Lcom/agc/menu/Blur$1;Landroid/graphics/Bitmap;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {

@@ -3,7 +3,11 @@
 
 
 # instance fields
-.field public denoise:F
+.field public configFilename:Ljava/lang/String;
+
+.field public configID:Ljava/lang/String;
+
+.field public configNickname:Ljava/lang/String;
 
 .field public faceCount:I
 
@@ -13,7 +17,15 @@
 
 .field public hasGainMap:Z
 
+.field public lutFilename:Ljava/lang/String;
+
+.field public lutID:Ljava/lang/String;
+
 .field public mCameraID:Ljava/lang/String;
+
+.field public profileID:Ljava/lang/String;
+
+.field public profileName:Ljava/lang/String;
 
 .field public saturation:F
 
@@ -144,13 +156,37 @@
 
     iput v1, v0, Lcom/Parameters;->sharpness:F
 
-    iget v1, p0, Lcom/Parameters;->denoise:F
-
-    iput v1, v0, Lcom/Parameters;->denoise:F
-
     iget v1, p0, Lcom/Parameters;->focalLength:F
 
     iput v1, v0, Lcom/Parameters;->focalLength:F
+
+    iget-object v1, p0, Lcom/Parameters;->lutID:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->lutID:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/Parameters;->lutFilename:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->lutFilename:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/Parameters;->configID:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->configID:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/Parameters;->configFilename:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->configFilename:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/Parameters;->configNickname:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->configNickname:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/Parameters;->profileID:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->profileID:Ljava/lang/String;
+
+    iget-object v1, p0, Lcom/Parameters;->profileName:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/Parameters;->profileName:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -162,31 +198,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "parameters:\n\n HasGainMap="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-boolean v1, p0, Lcom/Parameters;->hasGainMap:Z
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n FrameCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/Parameters;->frameCount:I
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n CameraID="
+    const-string v1, "CameraID="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -198,99 +210,103 @@
 
     move-result-object v0
 
-    const-string v1, "\n Saturation="
+    const-string v1, "\nFrameCount="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/Parameters;->saturation:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/Parameters;->FltFormat(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n Shadows="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/Parameters;->shadows:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/Parameters;->FltFormat(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n Sharpness="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/Parameters;->sharpness:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/Parameters;->FltFormat(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n Denoise="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/Parameters;->denoise:F
-
-    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v1
-
-    invoke-direct {p0, v1}, Lcom/Parameters;->FltFormat(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n FaceCount="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget v1, p0, Lcom/Parameters;->faceCount:I
+    iget v1, p0, Lcom/Parameters;->frameCount:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    const-string v1, "\n Version="
+    const-string v1, "\nconfigID="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->configID:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nlutID="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->lutID:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nlutFilename="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->lutFilename:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nconfigFilename="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->configFilename:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nconfigNickname="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->configNickname:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nprofileID="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->profileID:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nprofileName="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/Parameters;->profileName:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, "\nVersion="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

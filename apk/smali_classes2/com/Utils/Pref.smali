@@ -143,6 +143,7 @@
 
     move-result-object p0
 
+    :try_start_0
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -152,8 +153,15 @@
     invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     return p0
+
+    :catch_0
+    move-exception p0
+
+    invoke-virtual {p0}, Ljava/lang/Exception;->printStackTrace()V
 
     :cond_1
     return p1
@@ -203,6 +211,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lcom/Utils/Pref;->handleShadowPref(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic access$600(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/Utils/Pref;->handleNoiseModel(Landroid/content/SharedPreferences;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -727,6 +743,11 @@
 
     sub-int/2addr v0, v1
 
+    if-gez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -763,6 +784,7 @@
 
     move-result-object p0
 
+    :goto_0
     return-object p0
 .end method
 
@@ -1212,6 +1234,12 @@
 
     if-eqz p0, :cond_0
 
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide p1
@@ -1242,6 +1270,12 @@
     move-result-object p0
 
     if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
@@ -1281,6 +1315,43 @@
     const/16 v0, 0x10
 
     invoke-static {p0, v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;I)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method public static getIntValue(Ljava/lang/String;I)I
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    move-result p1
+
+    :cond_0
+    return p1
+.end method
+
+.method public static getIntValue(Ljava/lang/String;)J
+    .locals 2
+
+    const-wide/16 v0, 0x0
+
+    invoke-static {p0, v0, v1}, Lcom/Utils/Pref;->getLongValue(Ljava/lang/String;J)J
 
     move-result-wide v0
 
@@ -1420,6 +1491,12 @@
     move-result-object p0
 
     if-eqz p0, :cond_0
+
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
 
     invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
@@ -1721,6 +1798,292 @@
 
     :cond_1
     :goto_0
+    return-void
+.end method
+
+.method private static handleNoiseModel(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+    .locals 5
+
+    const-string v0, "pref_noise_model_key"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    const-string v0, "0"
+
+    invoke-interface {p0, p1, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object v0, p0
+
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    const-string p0, ""
+
+    goto :goto_1
+
+    :catch_0
+    move-exception p1
+
+    new-instance p1, Ljava/io/File;
+
+    sget-object v0, Lcom/Globals;->noiseFolder:Ljava/io/File;
+
+    invoke-direct {p1, v0, p0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object p0
+
+    :goto_1
+    invoke-virtual {p0}, Ljava/lang/String;->isEmpty()Z
+
+    move-result p1
+
+    if-nez p1, :cond_1
+
+    invoke-static {p0}, Lagc/Agc;->updateNoiseModelPref(Ljava/lang/String;)V
+
+    const/4 p0, 0x0
+
+    const-string p1, "A"
+
+    invoke-static {p0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "as_r_key"
+
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    invoke-static {v0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v1
+
+    invoke-static {v1, v2}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "as_gr_key"
+
+    invoke-static {v2, v1}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v1, 0x2
+
+    invoke-static {v1, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v2
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "as_gb_key"
+
+    invoke-static {v3, v2}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v2, 0x3
+
+    invoke-static {v2, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v3, "as_b_key"
+
+    invoke-static {v3, p1}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string p1, "B"
+
+    invoke-static {p0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "bs_r_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "bs_gr_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v1, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "bs_gb_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v2, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v3, "bs_b_key"
+
+    invoke-static {v3, p1}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string p1, "C"
+
+    invoke-static {p0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "co_r_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "co_gr_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v1, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "co_gb_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v2, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v3, "co_b_key"
+
+    invoke-static {v3, p1}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string p1, "D"
+
+    invoke-static {p0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v4, "do_r_key"
+
+    invoke-static {v4, v3}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v3
+
+    invoke-static {v3, v4}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "do_gr_key"
+
+    invoke-static {v3, v0}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v1, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "do_gb_key"
+
+    invoke-static {v1, v0}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-static {v2, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide v0
+
+    invoke-static {v0, v1}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v0, "do_b_key"
+
+    invoke-static {v0, p1}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string p1, "ISO"
+
+    invoke-static {p0, p1}, Lagc/Agc;->getUpdateNoiseModelPref(ILjava/lang/String;)D
+
+    move-result-wide p0
+
+    invoke-static {p0, p1}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string p1, "nr_isostep_key"
+
+    invoke-static {p1, p0}, Lcom/Utils/Pref;->setAuxPrefValue(Ljava/lang/String;Ljava/lang/String;)V
+
+    :cond_1
     return-void
 .end method
 

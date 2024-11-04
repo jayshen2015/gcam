@@ -81,7 +81,9 @@
 
     move-object/from16 v2, p1
 
-    invoke-static {v2}, Lcom/Globals;->metadataValue(Lndu;)V
+    iget-object v3, v1, Lebj;->b:Lnah;
+
+    invoke-static {v2, v3}, Lcom/Globals;->metadataValue(Lndu;Lnah;)V
 
     sget-object v0, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_MODE:Landroid/hardware/camera2/CaptureResult$Key;
 

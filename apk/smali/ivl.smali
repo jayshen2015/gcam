@@ -225,6 +225,7 @@
 
     if-eqz v1, :cond_3
 
+    :try_start_0
     invoke-virtual {p1}, Landroid/location/Location;->hasMslAltitudeAccuracy()Z
 
     move-result v1
@@ -254,7 +255,10 @@
     invoke-virtual {v0, v1}, Lphc;->h(Ljava/lang/Object;)V
 
     goto :goto_2
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    :catchall_0
     :cond_3
     sget-object v1, Livl;->a:Lpma;
 

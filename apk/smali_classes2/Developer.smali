@@ -199,11 +199,7 @@
 
     const/4 p0, 0x0
 
-    invoke-interface {p1, p3, p0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    invoke-interface {p1, p3, p0}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
 
     move-result p0
 
@@ -308,11 +304,11 @@
 
     const/4 p0, 0x0
 
-    invoke-interface {p1, p3, p0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, p3, p0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result-object p0
+    move-result p0
 
-    invoke-static {p0}, Ljava/lang/Integer;->decode(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p4
 
@@ -411,13 +407,13 @@
 
     if-eqz p0, :cond_0
 
-    const/4 p0, 0x0
+    const-wide/16 v1, 0x0
 
-    invoke-interface {p1, p3, p0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p1, p3, v1, v2}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-object p0
+    move-result-wide v1
 
-    invoke-static {p0}, Ljava/lang/Long;->decode(Ljava/lang/String;)Ljava/lang/Long;
+    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p4
 
@@ -578,7 +574,7 @@
     return-void
 .end method
 
-.method public static GetListPrefInt(Landroid/preference/PreferenceScreen;Landroid/content/SharedPreferences;Ljava/util/List;Ljava/lang/String;Ljava/lang/Integer;Ljava/util/Set;Ljava/util/Set;)V
+.method public static GetListPrefInt(Landroid/preference/PreferenceScreen;Landroid/content/SharedPreferences;Ljava/util/List;Ljava/lang/String;ILjava/util/Set;Ljava/util/Set;)V
     .locals 6
 
     new-instance v0, Landroid/preference/ListPreference;
@@ -635,73 +631,59 @@
 
     move-result-object p5
 
+    move v2, v3
+
     :goto_1
     invoke-interface {p5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v4
 
-    if-eqz v2, :cond_2
+    if-eqz v4, :cond_2
 
     invoke-interface {p5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Ljava/lang/Integer;
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
-
-    move-result-object v2
+    move-result-object v4
 
     invoke-interface {p6}, Ljava/util/Set;->isEmpty()Z
 
-    move-result v4
+    move-result v5
 
-    if-eqz v4, :cond_1
+    if-eqz v5, :cond_1
 
-    aput-object v2, p0, v3
+    aput-object v4, p0, v2
 
     :cond_1
-    aput-object v2, v1, v3
+    aput-object v4, v1, v2
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
     :cond_2
-    invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
-
-    invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
-
-    move-result p5
-
-    if-eqz p5, :cond_3
-
-    const/4 p4, 0x0
-
-    invoke-interface {p1, p3, p4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p4
-
-    invoke-static {p4}, Ljava/lang/Integer;->decode(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object p4
-
-    :cond_3
-    invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
-
-    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
-
     invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setTitle(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0, p3}, Landroid/preference/ListPreference;->setDialogTitle(Ljava/lang/CharSequence;)V
 
-    if-eqz p4, :cond_4
+    invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setEntries([Ljava/lang/CharSequence;)V
 
-    invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0, v1}, Landroid/preference/ListPreference;->setEntryValues([Ljava/lang/CharSequence;)V
+
+    invoke-interface {p1, p3}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result p0
 
-    invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    if-eqz p0, :cond_3
+
+    invoke-interface {p1, p3, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result p4
+
+    :cond_3
+    invoke-static {p4}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object p0
 
@@ -709,12 +691,6 @@
 
     const-string p0, "%s"
 
-    goto :goto_2
-
-    :cond_4
-    const-string p0, "auto"
-
-    :goto_2
     invoke-virtual {v0, p0}, Landroid/preference/ListPreference;->setSummary(Ljava/lang/CharSequence;)V
 
     sget p0, Lcom/agc/Res$layout;->preference_with_margin:I
@@ -782,7 +758,7 @@
 .end method
 
 .method public static GetSpecificPreference(Landroid/preference/PreferenceScreen;Landroid/content/SharedPreferences;Ljava/util/List;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 7
+    .locals 10
 
     if-nez p4, :cond_0
 
@@ -791,30 +767,54 @@
     :cond_0
     sget v0, LDeveloper;->switchHidden:I
 
-    if-eqz v0, :cond_1
+    const/4 v1, 0x1
 
-    instance-of v0, p4, Ljava/lang/Boolean;
+    const/4 v2, 0x2
 
-    if-nez v0, :cond_1
+    if-eq v0, v1, :cond_1
+
+    if-ne v0, v2, :cond_2
+
+    :cond_1
+    instance-of v1, p4, Ljava/lang/Boolean;
+
+    if-nez v1, :cond_2
 
     return-void
 
-    :cond_1
-    instance-of v0, p4, Ljava/lang/Integer;
+    :cond_2
+    const/4 v1, 0x3
 
-    if-eqz v0, :cond_3
+    if-ne v0, v1, :cond_3
 
-    check-cast p5, Lfln;
+    move-object v0, p3
 
-    iget-object v5, p5, Lfln;->c:Lphz;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v5}, Lphz;->size()I
+    invoke-interface {p1, v0}, Landroid/content/SharedPreferences;->contains(Ljava/lang/String;)Z
 
     move-result v0
 
-    const/4 v1, 0x2
+    if-nez v0, :cond_3
 
-    if-gt v0, v1, :cond_2
+    return-void
+
+    :cond_3
+    instance-of v0, p4, Ljava/lang/Integer;
+
+    if-eqz v0, :cond_5
+
+    check-cast p5, Lfln;
+
+    iget-object v9, p5, Lfln;->options:Lphz;
+
+    iget-object v8, p5, Lfln;->c:Lphz;
+
+    invoke-virtual {v8}, Lphz;->size()I
+
+    move-result p5
+
+    if-gt p5, v2, :cond_4
 
     check-cast p3, Ljava/lang/String;
 
@@ -824,31 +824,31 @@
 
     return-void
 
-    :cond_2
-    move-object v3, p3
+    :cond_4
+    move-object v6, p3
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v6, Ljava/lang/String;
 
-    move-object v4, p4
+    check-cast p4, Ljava/lang/Integer;
 
-    check-cast v4, Ljava/lang/Integer;
+    invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
 
-    iget-object v6, p5, Lfln;->options:Lphz;
+    move-result v7
 
-    move-object v0, p0
+    move-object v3, p0
 
-    move-object v1, p1
+    move-object v4, p1
 
-    move-object v2, p2
+    move-object v5, p2
 
-    invoke-static/range {v0 .. v6}, LDeveloper;->GetListPrefInt(Landroid/preference/PreferenceScreen;Landroid/content/SharedPreferences;Ljava/util/List;Ljava/lang/String;Ljava/lang/Integer;Ljava/util/Set;Ljava/util/Set;)V
+    invoke-static/range {v3 .. v9}, LDeveloper;->GetListPrefInt(Landroid/preference/PreferenceScreen;Landroid/content/SharedPreferences;Ljava/util/List;Ljava/lang/String;ILjava/util/Set;Ljava/util/Set;)V
 
     goto :goto_1
 
-    :cond_3
+    :cond_5
     instance-of p5, p4, Ljava/lang/Float;
 
-    if-eqz p5, :cond_4
+    if-eqz p5, :cond_6
 
     check-cast p3, Ljava/lang/String;
 
@@ -858,17 +858,17 @@
 
     goto :goto_1
 
-    :cond_4
+    :cond_6
     instance-of p5, p4, Ljava/lang/String;
 
-    if-eqz p5, :cond_5
+    if-eqz p5, :cond_7
 
     goto :goto_0
 
-    :cond_5
+    :cond_7
     instance-of p5, p4, Ljava/lang/Boolean;
 
-    if-eqz p5, :cond_6
+    if-eqz p5, :cond_8
 
     check-cast p3, Ljava/lang/String;
 
@@ -882,10 +882,10 @@
 
     goto :goto_1
 
-    :cond_6
+    :cond_8
     instance-of p5, p4, Ljava/lang/Character;
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_9
 
     :goto_0
     check-cast p3, Ljava/lang/String;
@@ -896,10 +896,10 @@
 
     goto :goto_1
 
-    :cond_7
+    :cond_9
     instance-of p5, p4, Ljava/lang/Long;
 
-    if-eqz p5, :cond_8
+    if-eqz p5, :cond_a
 
     check-cast p3, Ljava/lang/String;
 
@@ -907,7 +907,7 @@
 
     invoke-static {p0, p1, p2, p3, p4}, LDeveloper;->GetEditTextPrefLong(Landroid/preference/PreferenceScreen;Landroid/content/SharedPreferences;Ljava/util/List;Ljava/lang/String;Ljava/lang/Long;)V
 
-    :cond_8
+    :cond_a
     :goto_1
     return-void
 .end method
@@ -966,27 +966,30 @@
 
     sget p0, LDeveloper;->switchHidden:I
 
-    if-eqz p0, :cond_2
-
-    if-eqz p4, :cond_1
-
     const/4 p1, 0x1
 
-    if-eq p0, p1, :cond_2
-
-    :cond_1
-    if-nez p4, :cond_3
+    if-eq p0, p1, :cond_1
 
     if-ne p0, v1, :cond_3
 
+    :cond_1
+    if-eqz p4, :cond_2
+
+    if-eq p0, p1, :cond_3
+
     :cond_2
+    if-nez p4, :cond_4
+
+    if-ne p0, v1, :cond_4
+
+    :cond_3
     new-instance p0, Lgut;
 
     invoke-direct {p0, p3, v0}, Lgut;-><init>(Ljava/lang/String;Landroid/preference/Preference;)V
 
     invoke-interface {p2, p0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_3
+    :cond_4
     return-void
 .end method
 

@@ -39,6 +39,18 @@
 
     invoke-virtual {p1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
+    const-string p1, "donate_btn"
+
+    invoke-static {p1}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
+
+    move-result p1
+
+    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
     const-string p1, "telegram_btn"
 
     invoke-static {p1}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
@@ -83,7 +95,7 @@
 
     const-string v2, "android.intent.action.VIEW"
 
-    if-eq v0, v1, :cond_2
+    if-eq v0, v1, :cond_3
 
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
@@ -104,13 +116,60 @@
 
     move-result v0
 
-    const-string v1, "telegram_btn"
+    const-string v1, "donate_btn"
 
     invoke-static {v1}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
 
     move-result v1
 
     if-ne v0, v1, :cond_1
+
+    new-instance p1, Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-class v1, Lcom/google/android/apps/camera/legacy/app/settings/CameraSettingsActivity;
+
+    invoke-direct {p1, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string v0, "pref_screen_extra"
+
+    const-string v1, "pref_screen_about_us_key"
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const-string v0, "pref_about_us_title"
+
+    invoke-static {v0}, Lcom/agc/Res;->getStringID(Ljava/lang/String;)I
+
+    move-result v0
+
+    const-string v1, "pref_screen_title"
+
+    invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_2
+
+    :cond_1
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+
+    move-result v0
+
+    const-string v1, "telegram_btn"
+
+    invoke-static {v1}, Lcom/agc/Res;->getIdID(Ljava/lang/String;)I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_2
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -128,7 +187,7 @@
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result p1
@@ -139,7 +198,7 @@
 
     move-result v0
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v0, :cond_4
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -157,7 +216,7 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
@@ -176,6 +235,7 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    :cond_3
+    :cond_4
+    :goto_2
     return-void
 .end method

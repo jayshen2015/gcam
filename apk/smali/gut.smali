@@ -474,14 +474,6 @@
 .method public static b(Landroid/content/Context;)V
     .locals 2
 
-    const-class v0, Lcom/google/android/apps/camera/prewarm/NoOpPrewarmService;
-
-    new-instance v1, Landroid/content/Intent;
-
-    invoke-direct {v1, p0, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    invoke-virtual {p0, v1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
     return-void
 .end method
 
@@ -1088,6 +1080,8 @@
 
     iget-object v0, p0, Lgut;->a:Ljava/lang/Object;
 
+    check-cast v0, Lnai;
+
     invoke-interface {v0, p1}, Lnai;->d(Ljava/lang/String;)Lnak;
 
     move-result-object p1
@@ -1095,6 +1089,8 @@
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     iget-object v0, p0, Lgut;->a:Ljava/lang/Object;
+
+    check-cast v0, Lnai;
 
     invoke-interface {v0, p1}, Lnai;->a(Lnak;)Lnah;
 

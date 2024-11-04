@@ -119,6 +119,8 @@
     :cond_0
     invoke-virtual {p0, v9}, Lcom/agc/widget/OptionButton;->setChecked(Z)V
 
+    invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setLongClickable(Z)V
+
     invoke-super {p0, p1}, Lcom/agc/widget/OptionButton;->init(Landroid/content/Context;)V
 
     return-void
@@ -156,4 +158,33 @@
     invoke-static {v0, p1}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;I)V
 
     return-void
+.end method
+
+.method public onLongClick()Z
+    .locals 2
+
+    :try_start_0
+    new-instance v0, Lcom/agc/widget/dialog/watermark/WatermarkSettingDialog;
+
+    invoke-virtual {p0}, Landroid/widget/ImageButton;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/agc/widget/dialog/watermark/WatermarkSettingDialog;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
+
+    :goto_0
+    const/4 v0, 0x1
+
+    return v0
 .end method

@@ -525,7 +525,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    const-string v1, "xml_file_name"
+    const-string v1, "pref_config_filename_key"
 
     invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
 

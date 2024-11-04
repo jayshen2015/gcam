@@ -422,6 +422,10 @@
 
     const-string v12, "level"
 
+    invoke-static {v10}, LAGC;->getCamcorderLevelFix(I)I
+
+    move-result v10
+
     invoke-virtual {v9, v12, v10}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     :cond_1

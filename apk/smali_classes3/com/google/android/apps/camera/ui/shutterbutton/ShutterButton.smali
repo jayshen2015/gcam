@@ -2216,13 +2216,22 @@
 .method protected drawableStateChanged()V
     .locals 4
 
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getMotion()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    :cond_0
     invoke-super {p0}, Liu;->drawableStateChanged()V
 
     invoke-virtual {p0}, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->isPressed()Z
 
     move-result v0
 
-    if-nez v0, :cond_0
+    if-nez v0, :cond_1
 
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->isLongPressInProgress:Ljava/util/concurrent/atomic/AtomicBoolean;
 
@@ -2234,29 +2243,29 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->listener:Lkug;
-
-    if-eqz v1, :cond_0
-
-    invoke-interface {v1}, Lkug;->onShutterButtonLongPressRelease()V
-
-    :cond_0
-    iget-boolean v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->oldPressed:Z
-
-    if-eq v0, v1, :cond_2
+    if-eqz v1, :cond_1
 
     iget-object v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->listener:Lkug;
 
     if-eqz v1, :cond_1
 
-    invoke-interface {v1, v0}, Lkug;->onShutterButtonPressedStateChanged(Z)V
+    invoke-interface {v1}, Lkug;->onShutterButtonLongPressRelease()V
 
     :cond_1
-    iput-boolean v0, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->oldPressed:Z
+    iget-boolean v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->oldPressed:Z
+
+    if-eq v0, v1, :cond_3
+
+    iget-object v1, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->listener:Lkug;
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v1, v0}, Lkug;->onShutterButtonPressedStateChanged(Z)V
 
     :cond_2
+    iput-boolean v0, p0, Lcom/google/android/apps/camera/ui/shutterbutton/ShutterButton;->oldPressed:Z
+
+    :cond_3
     return-void
 .end method
 

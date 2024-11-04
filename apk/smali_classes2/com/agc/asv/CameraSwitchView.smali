@@ -109,7 +109,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_6
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -118,6 +118,38 @@
     move-object v10, v2
 
     check-cast v10, Lcom/agc/Camera;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "pref_lens_title_short_key_"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v10}, Lcom/agc/Camera;->getId()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/Utils/Lens;->getAuxKey(Ljava/lang/String;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v10}, Lcom/agc/Camera;->getZoomScale()F
 
     new-instance v11, Lcom/agc/asv/CameraMultipleModel;
 
@@ -129,43 +161,38 @@
 
     move-result-object v5
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string v3, ""
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    move-result v6
+
+    if-nez v6, :cond_2
+
+    goto :goto_3
+
+    :cond_2
     invoke-virtual {v10}, Lcom/agc/Camera;->getZoomScale()F
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, "x"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
+    :goto_3
+    move-object v6, v2
 
     invoke-virtual {v10}, Lcom/agc/Camera;->isFront()Z
 
     move-result v2
 
-    if-eqz v2, :cond_2
+    if-eqz v2, :cond_3
 
-    const-string v2, "agc_flip"
+    const-string v3, "agc_flip"
 
-    goto :goto_3
-
-    :cond_2
-    const-string v2, ""
-
-    :goto_3
-    invoke-static {v2}, Lcom/agc/Res;->getDrawableID(Ljava/lang/String;)I
+    :cond_3
+    invoke-static {v3}, Lcom/agc/Res;->getDrawableID(Ljava/lang/String;)I
 
     move-result v7
 
@@ -181,11 +208,11 @@
 
     move-result v2
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
     iget-boolean v2, p0, Lcom/agc/asv/CameraSwitchView;->isShowFront:Z
 
-    if-eqz v2, :cond_4
+    if-eqz v2, :cond_5
 
     iget-object v2, p0, Lcom/agc/asv/CameraSwitchView;->list:Ljava/util/ArrayList;
 
@@ -193,18 +220,18 @@
 
     goto :goto_4
 
-    :cond_3
+    :cond_4
     iget-object v2, p0, Lcom/agc/asv/CameraSwitchView;->list:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1, v11}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    :cond_4
+    :cond_5
     :goto_4
     add-int/lit8 v9, v9, 0x1
 
     goto :goto_2
 
-    :cond_5
+    :cond_6
     const/high16 v0, 0x42480000    # 50.0f
 
     invoke-static {p1, v0}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
@@ -265,7 +292,7 @@
 .method public static showInViewFinder()Z
     .locals 2
 
-    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+    invoke-static {}, Lagc/Agc;->isPixel()Z
 
     move-result v0
 

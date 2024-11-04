@@ -217,7 +217,7 @@
 .end method
 
 .method public static handleIntent(Landroid/app/Activity;)V
-    .locals 5
+    .locals 4
 
     invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
@@ -239,34 +239,30 @@
     :cond_1
     invoke-static {p0, v0}, Lcom/agc/pref/PathUtil;->getPath(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-nez v1, :cond_2
+    if-nez v0, :cond_2
 
     return-void
 
     :cond_2
-    const-string v2, "agc_config_import_from"
+    const-string v1, "agc_config_import_from"
 
-    invoke-static {v2}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    new-array v3, v3, [Ljava/lang/Object;
+    new-array v2, v2, [Ljava/lang/Object;
 
-    invoke-static {p0, v0}, Lcom/agc/pref/PathUtil;->getPath(Landroid/content/Context;Landroid/net/Uri;)Ljava/lang/String;
+    const/4 v3, 0x0
 
-    move-result-object v0
+    aput-object v0, v2, v3
 
-    const/4 v4, 0x0
+    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    aput-object v0, v3, v4
-
-    invoke-static {v2, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
+    move-result-object v1
 
     new-instance v2, Landroid/app/AlertDialog$Builder;
 
@@ -282,9 +278,9 @@
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v2, v1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v2, "dialog_cancel"
 
@@ -294,9 +290,9 @@
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v0
+    move-result-object v1
 
     const-string v2, "agc_config_load_title"
 
@@ -306,19 +302,23 @@
 
     new-instance v3, Lcom/agc/pref/ConfigImport$2;
 
-    invoke-direct {v3, p0, v1}, Lcom/agc/pref/ConfigImport$2;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
+    invoke-direct {v3, p0, v0}, Lcom/agc/pref/ConfigImport$2;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
 
-    invoke-virtual {v0, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v0
+    move-result-object v1
 
-    new-instance v2, Lcom/agc/pref/ConfigImport$1;
+    const-string v2, "load"
 
-    invoke-direct {v2, p0, v1}, Lcom/agc/pref/ConfigImport$1;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/agc/Res;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string p0, "Load"
+    move-result-object v2
 
-    invoke-virtual {v0, p0, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    new-instance v3, Lcom/agc/pref/ConfigImport$1;
+
+    invoke-direct {v3, p0, v0}, Lcom/agc/pref/ConfigImport$1;-><init>(Landroid/app/Activity;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p0
 

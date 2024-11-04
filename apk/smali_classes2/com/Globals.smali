@@ -296,13 +296,9 @@
 
     sget-object v0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
-    invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    const-string v1, "Google"
 
-    move-result-object v0
-
-    const-string v1, "GOOGLE"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -440,9 +436,9 @@
 .method public static experimentalKeys(I)V
     .locals 1
 
-    const-string v0, "AGC experimentalKeys"
+    const-string v0, "experimentalKeys"
 
-    invoke-static {v0, p0}, Lcom/agc/Log;->i(Ljava/lang/Object;I)I
+    invoke-static {v0, p0}, Lcom/agc/Log;->w(Ljava/lang/Object;I)I
 
     invoke-static {p0}, Lagc/Agc;->experimentalKeys(I)V
 
@@ -1008,6 +1004,14 @@
     invoke-static {v0}, Lcom/Utils/Lens;->setAuxKey(I)V
 
     :cond_0
+    sget-object v1, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lcom/Parameters;->mCameraID:Ljava/lang/String;
+
     sget-object v1, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
@@ -1036,14 +1040,6 @@
 
     invoke-static {v1}, Lagc/Agc;->configFilePath(Ljava/lang/String;)V
 
-    sget-object v1, Lcom/Globals;->mParameters:Lcom/Parameters;
-
-    invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, v1, Lcom/Parameters;->mCameraID:Ljava/lang/String;
-
     invoke-static {v0}, Lcom/Utils/Lens;->getCameraID(I)Ljava/lang/String;
 
     move-result-object v0
@@ -1066,42 +1062,144 @@
 
     invoke-static {v0}, Lagc/Agc;->setCachePath(Ljava/lang/String;)V
 
+    const/4 v0, 0x4
+
+    const-string v1, "MiSans-Demibold.ttf"
+
+    const-string v2, "MiSans-Regular.ttf"
+
+    const-string v3, "DS-Digital-Bold.ttf"
+
+    const-string v4, "bathukanget.ttf"
+
+    filled-new-array {v1, v2, v3, v4}, [Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    :goto_0
+    if-ge v2, v0, :cond_3
+
+    aget-object v3, v1, v2
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v5, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
+
+    invoke-static {v5}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "/AGC."
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "/fonts/"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    new-instance v5, Ljava/io/File;
+
+    invoke-direct {v5, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Ljava/io/File;->exists()Z
+
+    move-result v5
+
+    if-nez v5, :cond_1
+
     invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
 
-    move-result-object v0
+    move-result-object v4
 
-    const-string v1, "fonts/MiSans-Demibold.ttf"
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
+    const-string v6, "fonts/"
 
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+    move-result-object v5
 
-    move-result-object v0
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "fonts/MiSans-Regular.ttf"
+    move-result-object v3
 
-    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-static {v4, v3}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
-    invoke-static {}, Lcom/Globals;->getAppContext()Landroid/content/Context;
+    move-result-object v3
 
-    move-result-object v0
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    const-string v1, "fonts/DS-Digital-Bold.ttf"
+    move-result-object v4
 
-    invoke-static {v0, v1}, Lcom/agc/util/AssetsUtil;->getAssetsFile(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
+    :cond_1
+    new-instance v3, Ljava/io/File;
 
-    move-result-object v0
+    invoke-direct {v3, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
+    move-result v3
+
+    if-nez v3, :cond_2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, " not exists"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
+
+    :cond_2
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_0
+
+    :cond_3
     invoke-static {}, Lcom/Globals;->initMenuValue()V
 
     invoke-static {}, Lcom/Globals;->initInfoPage()V
@@ -1136,6 +1234,24 @@
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "AGC"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    sget-object v2, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string v2, " "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
 
     sget-object v2, Lcom/Version;->version:Ljava/lang/String;
 
@@ -1239,7 +1355,7 @@
 .end method
 
 .method public static initMenuValue()V
-    .locals 3
+    .locals 5
 
     const-string v0, "AGC initMenuValue"
 
@@ -1267,21 +1383,9 @@
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
-    const-string v0, "pref_video_stabilization_key"
-
-    const/4 v2, 0x0
-
-    invoke-static {v0, v2}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
-
     const-string v0, "pref_camera_hdrplus_option_available_key"
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
-
-    const-string v0, "pref_camera_hdr_plus_key"
-
-    const-string v2, "on"
-
-    invoke-static {v0, v2}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
@@ -1291,13 +1395,25 @@
 
     invoke-static {v2, v0}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
-    const-string v0, "pref_ois_key"
+    invoke-static {}, Lagc/Agc;->isSonyDevice()Z
 
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+    move-result v0
 
-    const-string v0, "pref_ois_data_key"
+    xor-int/2addr v0, v1
 
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+    const-string v2, "pref_ois_key"
+
+    invoke-static {v2, v0}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+
+    invoke-static {}, Lagc/Agc;->isSonyDevice()Z
+
+    move-result v0
+
+    xor-int/2addr v0, v1
+
+    const-string v2, "pref_ois_data_key"
+
+    invoke-static {v2, v0}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
     const-string v0, "pref_vibro_key"
 
@@ -1311,38 +1427,127 @@
 
     invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
 
-    const-string v0, "pref_pckstream_viewfinder"
+    sget-object v0, Lcom/Globals;->mParameters:Lcom/Parameters;
 
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+    const-string v2, "pref_config_id_key"
 
-    const-string v0, "pref_pckstream_raw_hdrplus"
+    const-string v3, ""
 
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+    invoke-static {v2, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, "pref_pckstream_yuv_analysis"
+    move-result-object v2
 
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultStringValue(Ljava/lang/String;I)V
+    iput-object v2, v0, Lcom/Parameters;->configID:Ljava/lang/String;
 
-    sget-object v0, Lcom/Globals;->GcamVersion:Ljava/lang/String;
+    sget-object v0, Lcom/Globals;->mParameters:Lcom/Parameters;
 
-    const-string v1, "8.4"
+    const-string v2, "pref_config_filename_key"
 
-    if-eq v0, v1, :cond_0
+    invoke-static {v2, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v1, "8.5"
+    move-result-object v2
 
-    if-ne v0, v1, :cond_1
+    iput-object v2, v0, Lcom/Parameters;->configFilename:Ljava/lang/String;
+
+    sget-object v0, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    const-string v2, "pref_config_nickname_key"
+
+    invoke-static {v2, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iput-object v2, v0, Lcom/Parameters;->configNickname:Ljava/lang/String;
+
+    const-string v0, "lib_patch_profile_key"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v2}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
+
+    move-result v0
+
+    const/4 v2, 0x2
+
+    if-eqz v0, :cond_2
+
+    if-eq v0, v1, :cond_1
+
+    if-eq v0, v2, :cond_0
+
+    const-string v1, "lib_profile_title_key"
+
+    invoke-static {v1}, Lcom/Utils/Pref;->getAuxProfilePrefStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_3
+
+    add-int/lit8 v0, v0, -0x2
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Profile"
+
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    goto :goto_0
 
     :cond_0
-    const-string v0, "camera.cuttle.glpreview"
+    const-string v1, "KaDay"
 
-    invoke-static {v0}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->setDefaultValue(Ljava/lang/String;Z)V
+    goto :goto_0
 
     :cond_1
+    const-string v1, "KaNight"
+
+    goto :goto_0
+
+    :cond_2
+    const-string v1, "Default"
+
+    :cond_3
+    :goto_0
+    sub-int/2addr v0, v2
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v2, Lcom/Globals;->mParameters:Lcom/Parameters;
+
+    iput-object v0, v2, Lcom/Parameters;->profileID:Ljava/lang/String;
+
+    iput-object v1, v2, Lcom/Parameters;->profileName:Ljava/lang/String;
+
     return-void
 .end method
 
@@ -1371,13 +1576,6 @@
 .end method
 
 .method public static medianFilter(Ljava/io/File;)V
-    .locals 1
-	invoke-static {p0}, Lnan/ren/G;->medianFilter(Ljava/io/File;)V
-    return-void
-.end method
-
-
-.method public static medianFilter2(Ljava/io/File;)V
     .locals 4
 
     invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -1419,13 +1617,23 @@
 .end method
 
 .method public static metadataValue(Lndu;)V
-    .locals 9
+    .locals 1
+
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lcom/Globals;->metadataValue(Lndu;Lnah;)V
+
+    return-void
+.end method
+
+.method public static metadataValue(Lndu;Lnah;)V
+    .locals 10
 
     invoke-static {}, Lcom/agc/AdvancedSettings;->isShowDebugData()Z
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_6
 
     new-instance v0, Ljava/util/LinkedHashMap;
 
@@ -1581,9 +1789,7 @@
 
     move-result-object v2
 
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v2
 
@@ -1591,24 +1797,153 @@
 
     invoke-virtual {v0, v3, v2}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v2, Landroid/hardware/camera2/CaptureResult;->SENSOR_NEUTRAL_COLOR_POINT:Landroid/hardware/camera2/CaptureResult$Key;
+    const/4 v2, 0x2
 
-    invoke-interface {p0, v2}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    if-eqz p1, :cond_2
 
-    move-result-object v2
+    sget-object v3, Landroid/hardware/camera2/CaptureResult;->SENSOR_DYNAMIC_WHITE_LEVEL:Landroid/hardware/camera2/CaptureResult$Key;
 
-    check-cast v2, [Landroid/util/Rational;
+    invoke-interface {p0, v3}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    sget-object v5, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_INFO_WHITE_LEVEL:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p1, v5}, Lnah;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object v5
+
+    new-array v6, v2, [Ljava/lang/Object;
+
+    aput-object v3, v6, v4
+
+    aput-object v5, v6, v1
+
+    const-string v3, "D:%d I:%d"
+
+    invoke-static {v3, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string v5, "WHITE_LEVEL"
+
+    invoke-virtual {v0, v5, v3}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v3, Landroid/hardware/camera2/CaptureResult;->SENSOR_DYNAMIC_BLACK_LEVEL:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, v3}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, [F
+
+    const/4 v5, 0x4
+
+    new-array v6, v5, [Ljava/lang/String;
+
+    if-eqz v3, :cond_0
+
+    move v7, v4
+
+    :goto_0
+    if-ge v7, v5, :cond_0
+
+    aget v8, v3, v7
+
+    invoke-static {v8}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
+
+    move-result-object v8
+
+    aput-object v8, v6, v7
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    new-array v3, v5, [Ljava/lang/String;
+
+    sget-object v7, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_BLACK_LEVEL_PATTERN:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    invoke-interface {p1, v7}, Lnah;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/hardware/camera2/params/BlackLevelPattern;
+
+    if-eqz p1, :cond_1
+
+    move v7, v4
+
+    :goto_1
+    if-ge v7, v5, :cond_1
+
+    rem-int/lit8 v8, v7, 0x2
+
+    div-int/lit8 v9, v7, 0x2
+
+    invoke-virtual {p1, v8, v9}, Landroid/hardware/camera2/params/BlackLevelPattern;->getOffsetForIndex(II)I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    invoke-static {v8}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
+
+    move-result-object v8
+
+    aput-object v8, v3, v7
+
+    add-int/lit8 v7, v7, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    new-array p1, v2, [Ljava/lang/Object;
+
+    const-string v5, ","
+
+    invoke-static {v5, v6}, Landroid/preference/PatchPreference$$ExternalSyntheticBackport0;->m(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v6
+
+    aput-object v6, p1, v4
+
+    invoke-static {v5, v3}, Landroid/preference/PatchPreference$$ExternalSyntheticBackport0;->m(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v3
+
+    aput-object v3, p1, v1
+
+    const-string v3, "[%s] [%s]"
+
+    invoke-static {v3, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object p1
+
+    const-string v3, "BLACK_LEVEL"
+
+    invoke-virtual {v0, v3, p1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_2
+    sget-object p1, Landroid/hardware/camera2/CaptureResult;->SENSOR_NEUTRAL_COLOR_POINT:Landroid/hardware/camera2/CaptureResult$Key;
+
+    invoke-interface {p0, p1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, [Landroid/util/Rational;
 
     const/4 v3, 0x3
 
-    if-nez v2, :cond_0
+    if-nez p1, :cond_3
 
-    new-array v2, v3, [Landroid/util/Rational;
+    new-array p1, v3, [Landroid/util/Rational;
 
     move v5, v4
 
-    :goto_0
-    if-ge v5, v3, :cond_0
+    :goto_2
+    if-ge v5, v3, :cond_3
 
     new-instance v6, Landroid/util/Rational;
 
@@ -1618,16 +1953,16 @@
 
     invoke-direct {v6, v7, v8}, Landroid/util/Rational;-><init>(II)V
 
-    aput-object v6, v2, v5
+    aput-object v6, p1, v5
 
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_0
+    goto :goto_2
 
-    :cond_0
+    :cond_3
     new-array v5, v3, [F
 
-    aget-object v6, v2, v4
+    aget-object v6, p1, v4
 
     invoke-virtual {v6}, Landroid/util/Rational;->floatValue()F
 
@@ -1635,7 +1970,7 @@
 
     aput v6, v5, v4
 
-    aget-object v6, v2, v1
+    aget-object v6, p1, v1
 
     invoke-virtual {v6}, Landroid/util/Rational;->floatValue()F
 
@@ -1643,17 +1978,15 @@
 
     aput v6, v5, v1
 
-    const/4 v6, 0x2
+    aget-object p1, p1, v2
 
-    aget-object v2, v2, v6
+    invoke-virtual {p1}, Landroid/util/Rational;->floatValue()F
 
-    invoke-virtual {v2}, Landroid/util/Rational;->floatValue()F
+    move-result p1
 
-    move-result v2
+    aput p1, v5, v2
 
-    aput v2, v5, v6
-
-    new-array v2, v3, [Ljava/lang/Object;
+    new-array p1, v3, [Ljava/lang/Object;
 
     aget v3, v5, v4
 
@@ -1661,7 +1994,7 @@
 
     move-result-object v3
 
-    aput-object v3, v2, v4
+    aput-object v3, p1, v4
 
     aget v3, v5, v1
 
@@ -1669,120 +2002,120 @@
 
     move-result-object v3
 
-    aput-object v3, v2, v1
+    aput-object v3, p1, v1
 
-    aget v1, v5, v6
+    aget v1, v5, v2
 
     invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v1
 
-    aput-object v1, v2, v6
+    aput-object v1, p1, v2
 
     const-string v1, "%.3f %.3f %.3f"
 
-    invoke-static {v1, v2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v1, p1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    const-string v2, "White Point"
+    const-string v1, "White Point"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, p1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object p1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AF_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, [Landroid/hardware/camera2/params/MeteringRectangle;
+    check-cast p1, [Landroid/hardware/camera2/params/MeteringRectangle;
 
-    invoke-static {v1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    const-string v2, "W AF_RECT"
+    const-string v1, "W AF_RECT"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, p1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object p1, Landroid/hardware/camera2/CaptureResult;->CONTROL_AE_REGIONS:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object p1
 
-    check-cast v1, [Landroid/hardware/camera2/params/MeteringRectangle;
+    check-cast p1, [Landroid/hardware/camera2/params/MeteringRectangle;
 
-    invoke-static {v1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p1
 
-    const-string v2, "I AE_RECT"
+    const-string v1, "I AE_RECT"
 
-    invoke-virtual {v0, v2, v1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, p1}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v1, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
+    sget-object p1, Landroid/hardware/camera2/CaptureResult;->STATISTICS_FACES:Landroid/hardware/camera2/CaptureResult$Key;
 
-    invoke-interface {p0, v1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lndu;->d(Landroid/hardware/camera2/CaptureResult$Key;)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, [Landroid/hardware/camera2/params/Face;
 
-    sget-object v1, Lcom/Globals;->mParameters:Lcom/Parameters;
+    sget-object p1, Lcom/Globals;->mParameters:Lcom/Parameters;
 
+    array-length v1, p0
+
+    iput v1, p1, Lcom/Parameters;->faceCount:I
+
+    array-length p1, p0
+
+    if-eqz p1, :cond_5
+
+    array-length p1, p0
+
+    new-array p1, p1, [Landroid/graphics/Rect;
+
+    move v1, v4
+
+    :goto_3
     array-length v2, p0
 
-    iput v2, v1, Lcom/Parameters;->faceCount:I
+    if-ge v1, v2, :cond_4
 
-    array-length v1, p0
+    aget-object v2, p0, v4
 
-    if-eqz v1, :cond_2
+    invoke-virtual {v2}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
 
-    array-length v1, p0
+    move-result-object v2
 
-    new-array v1, v1, [Landroid/graphics/Rect;
+    aput-object v2, p1, v1
 
-    move v2, v4
+    add-int/lit8 v1, v1, 0x1
 
-    :goto_1
-    array-length v3, p0
+    goto :goto_3
 
-    if-ge v2, v3, :cond_1
-
-    aget-object v3, p0, v4
-
-    invoke-virtual {v3}, Landroid/hardware/camera2/params/Face;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {v1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
+    :cond_4
+    invoke-static {p1}, Ljava/util/Arrays;->deepToString([Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
-    const-string v1, "I AF_FACE"
+    const-string p1, "I AF_FACE"
 
-    invoke-virtual {v0, v1, p0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, p0}, Ljava/util/LinkedHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :cond_2
+    :cond_5
     sget-object p0, Lcom/agc/Debug;->focusView:Lcom/agc/fw/FloatManager;
 
     invoke-static {v0}, Lcom/Globals;->createTextFrom(Ljava/util/Map;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p1
 
-    const-string v1, "I"
+    const-string v0, "I"
 
-    invoke-virtual {p0, v1, v0}, Lcom/agc/fw/FloatManager;->log(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v0, p1}, Lcom/agc/fw/FloatManager;->log(Ljava/lang/String;Ljava/lang/String;)V
 
-    :cond_3
+    :cond_6
     return-void
 .end method
 
@@ -1984,77 +2317,12 @@
 .end method
 
 .method public static setSMode(Ljava/lang/String;)V
-    .locals 3
+    .locals 2
 
     const-string v0, "setSMode"
 
     invoke-static {v0, p0}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    const-string v0, "pref_prevent_portrait_hdr_auto_key"
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;I)I
-
-    move-result v0
-
-    const/4 v1, 0x1
-
-    if-eq v0, v1, :cond_1
-
-    const-string v0, "PORTRAIT"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    const-string v1, "pref_camera_hdr_plus_key"
-
-    if-eqz v0, :cond_0
-
-    invoke-static {}, Lagc/Agc;->getSMode()I
-
-    move-result v0
-
-    const/4 v2, 0x2
-
-    if-eq v0, v2, :cond_1
-
-    invoke-static {v1}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
-
-    const-string v0, "auto"
-
-    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_0
-
-    :cond_0
-    sget-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
-
-    if-eqz v0, :cond_1
-
-    const-string v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    sget-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
-
-    invoke-static {v1, v0}, Lcom/Utils/Pref;->setMenuValue(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    sput-object v0, Lcom/Globals;->previousHdrPlus:Ljava/lang/String;
-
-    :cond_1
-    :goto_0
     invoke-static {p0}, Lagc/Agc;->setSMode(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/Utils/EventBus;->getShared()Lcom/Utils/EventBus;

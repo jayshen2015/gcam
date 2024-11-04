@@ -1551,20 +1551,11 @@
 
     move-result v3
 
-    invoke-static {}, Ltm;->isAndroid11()Z
-
-    move-result v17
-
-    if-eqz v17, :cond_4
-
-    const/4 v3, 0x0
-
-    :cond_4
     iget-object v6, v0, Lixc;->b:Lrbe;
 
     iget-object v7, v0, Lixc;->a:Lrbe;
 
-    if-nez v3, :cond_5
+    if-nez v3, :cond_4
 
     invoke-interface {v6}, Lrbe;->get()Ljava/lang/Object;
 
@@ -1588,7 +1579,7 @@
 
     goto :goto_3
 
-    :cond_5
+    :cond_4
     invoke-static {}, Lmul;->a()Lmuk;
 
     move-result-object v3
@@ -1605,15 +1596,20 @@
 
     check-cast v1, Lnah;
 
+    invoke-static {}, Ltm;->isAndroid11()Z
+
+    move-result v17
+
+    sget-object v8, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP:Landroid/hardware/camera2/CameraCharacteristics$Key;
+
+    if-nez v17, :cond_5
+
     sget-object v8, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP_MAXIMUM_RESOLUTION:Landroid/hardware/camera2/CameraCharacteristics$Key;
 
-    invoke-static {v8}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
-
+    :cond_5
     invoke-interface {v1, v8}, Lnah;->l(Landroid/hardware/camera2/CameraCharacteristics$Key;)Ljava/lang/Object;
 
     move-result-object v1
-
-    invoke-static {v1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
     check-cast v1, Landroid/hardware/camera2/params/StreamConfigurationMap;
 
@@ -1675,6 +1671,8 @@
 
     :goto_3
     return-object v1
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

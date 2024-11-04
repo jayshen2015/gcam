@@ -28,7 +28,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/util/AZ;
 
-    .line 60
+    .line 83
     iput-object p1, p0, Lnan/ren/util/AZ$2;->this$0:Lnan/ren/util/AZ;
 
     iput-object p2, p0, Lnan/ren/util/AZ$2;->val$color:Ljava/lang/String;
@@ -43,7 +43,7 @@
 .method public run()V
     .locals 2
 
-    .line 63
+    .line 86
     iget-object v0, p0, Lnan/ren/util/AZ$2;->this$0:Lnan/ren/util/AZ;
 
     iget-object v0, v0, Lnan/ren/util/AZ;->target:Landroid/view/View;
@@ -54,9 +54,9 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 64
+    .line 87
     invoke-static {}, Lnan/ren/util/PopDialog;->close()V
 
-    .line 65
+    .line 88
     return-void
 .end method

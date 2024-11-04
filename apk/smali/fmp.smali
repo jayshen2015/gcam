@@ -32,9 +32,7 @@
 
     invoke-direct {v0}, Lqaa;-><init>()V
 
-    const/4 v1, 0x0
-
-    sget-object v1, Lcom/google/android/apps/camera/legacy/lightcycle/ui/cY/FMQCWhxv;->acQoMcItpXp:Ljava/lang/String;
+    const-string v1, "camera.artemis"
 
     iput-object v1, v0, Lqaa;->a:Ljava/lang/Object;
 

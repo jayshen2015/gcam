@@ -6,7 +6,7 @@
             <item>
                 <shape>
                     <corners android:radius="10.0dip" />
-                    <solid android:color="@android:color/bright_foreground_dark" />
+                    <solid android:color="@android:color/system_accent2_100" />
                 </shape>
             </item>
         </layer-list>

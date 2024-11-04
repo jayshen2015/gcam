@@ -6,7 +6,7 @@
             <item android:top="8.0dip" android:bottom="8.0dip">
                 <shape>
                     <corners android:radius="28.0dip" />
-                    <solid android:color="@android:color/background_cache_hint_selector_material_light" />
+                    <solid android:color="@android:color/system_accent1_100" />
                     <size android:height="@dimen/settingslib_spinner_height" />
                 </shape>
             </item>

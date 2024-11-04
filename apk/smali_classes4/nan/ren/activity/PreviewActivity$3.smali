@@ -34,7 +34,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 217
+    .line 214
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$3;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$3;->val$iv:Landroid/widget/ImageView;
@@ -55,7 +55,7 @@
 .method public run()V
     .locals 3
 
-    .line 221
+    .line 218
     :try_start_0
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$3;->val$iv:Landroid/widget/ImageView;
 
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 222
+    .line 219
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$3;->val$rl:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x1
@@ -80,28 +80,28 @@
 
     check-cast v0, Landroid/widget/Button;
 
-    .line 223
+    .line 220
     .local v0, "btn":Landroid/widget/Button;
     const-string v1, "\u4fdd\u5b58"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 224
+    .line 221
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$3;->val$that:Lnan/ren/activity/PreviewActivity;
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 228
+    .line 225
     .end local v0    # "btn":Landroid/widget/Button;
     goto :goto_0
 
-    .line 225
+    .line 222
     :catch_0
     move-exception v0
 
-    .line 226
+    .line 223
     .local v0, "ex":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -127,14 +127,14 @@
 
     invoke-static {v1}, Lnan/ren/G;->log(Ljava/lang/Object;)V
 
-    .line 227
+    .line 224
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$3;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iget-object v2, p0, Lnan/ren/activity/PreviewActivity$3;->val$rl:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1, v2}, Lnan/ren/activity/PreviewActivity;->doErr(Landroid/widget/LinearLayout;)V
 
-    .line 229
+    .line 226
     .end local v0    # "ex":Ljava/lang/Exception;
     :goto_0
     return-void

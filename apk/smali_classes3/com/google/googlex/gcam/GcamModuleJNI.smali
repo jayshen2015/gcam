@@ -1383,6 +1383,9 @@
 .method public static final native ShotParams_allow_base_frame_reuse_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 .end method
 
+.method public static final native ShotParams_allow_sabre_get(JLcom/google/googlex/gcam/ShotParams;)Z
+.end method
+
 .method public static final native ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 .end method
 
@@ -1444,6 +1447,9 @@
 .end method
 
 .method public static final native ShotParams_little_cpu_freq_option_set(JLcom/google/googlex/gcam/ShotParams;F)V
+.end method
+
+.method public static final native ShotParams_merge_method_override_get(JLcom/google/googlex/gcam/ShotParams;)I
 .end method
 
 .method public static final native ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V

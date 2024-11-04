@@ -23,7 +23,7 @@
 
 # virtual methods
 .method public final accept(I[B)V
-    .locals 7
+    .locals 8
 
     sget-object v0, Lgjs;->a:Lpma;
 
@@ -308,10 +308,21 @@
 
     iget-object p1, p1, Lisy;->d:Ljava/lang/Object;
 
+    check-cast p1, Ljlr;
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_a
+
     const-string v1, "HDR+ pipeline completed"
+
+    invoke-static {v1}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
     invoke-interface {p1, v1}, Ljlr;->F(Ljava/lang/String;)V
 
+    :cond_a
     iget-object p1, v0, Lgjr;->a:Lgju;
 
     invoke-virtual {p1}, Lgju;->m()Lpcd;
@@ -322,7 +333,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_a
+    if-eqz p1, :cond_b
 
     iget-object p1, v0, Lgjr;->a:Lgju;
 
@@ -340,6 +351,6 @@
 
     invoke-interface {p1, v0, p2, v5}, Lgil;->c(Lgjs;Ljwy;Lplm;)V
 
-    :cond_a
+    :cond_b
     return-void
 .end method

@@ -186,6 +186,12 @@
 
     invoke-virtual {p1, p3}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 p2, 0x1f
+
+    if-lt p1, p2, :cond_1
+
     new-instance p1, Landroid/preference/LibraryPreference$NearDialog$4;
 
     invoke-direct {p1, v0, p0}, Landroid/preference/LibraryPreference$NearDialog$4;-><init>(Landroid/widget/EditText;Landroid/content/Context;)V
@@ -194,5 +200,6 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
+    :cond_1
     return-void
 .end method

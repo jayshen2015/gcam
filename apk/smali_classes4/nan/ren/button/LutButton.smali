@@ -234,6 +234,18 @@
     return-void
 .end method
 
+.method public performLongClick()Z
+    .locals 1
+
+    .line 79
+    invoke-virtual {p0}, Lnan/ren/button/LutButton;->showPreview()V
+
+    .line 80
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method showPreview()V
     .locals 3
 

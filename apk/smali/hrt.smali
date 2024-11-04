@@ -2183,11 +2183,11 @@
 
     move-object v4, v12
 
+    move-object v8, v6
+
     move-object v6, v14
 
     move-object v9, v7
-
-    move-object v8, v14
 
     move-object v10, v14
 

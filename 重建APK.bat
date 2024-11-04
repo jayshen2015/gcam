@@ -4,7 +4,7 @@ cd %~dp0
 set BASE=%~dp0
 set ROOT=%~dp0apk\
 set BP=%ROOT%build
-set apkname=AGC9.1.24_V7.2
+set apkname=AGC9.1_VOL08.0
 rem pkg指编译的包名，默认抖音 可以通过以下数字输入选择
 set pkg=dy
 java.exe -jar "apktool-cli.jar" if "sign/framework-res.apk"
@@ -84,6 +84,6 @@ del /F /Q  "%BP%\%apkname%.R.apk"
 java -jar  signapk.jar sign\%pkg%.x509.pem sign\%pkg%.pk8  "%BP%\%apkname%.RO.apk" "%BP%\%apkname%.%pkg%.apk"
 del /F /Q  "%BP%\%apkname%.RO.apk"
 echo -------------------[End Build %pkg%]--------------------
-scp %BP%\AGC9*.apk root@10.254.10.150:/tmp/sjs/
+scp %BP%\AGC9*.apk root@192.168.0.196:/tmp/sjs/
 
 EXIT /B 0

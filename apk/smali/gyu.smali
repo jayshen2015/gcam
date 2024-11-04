@@ -341,6 +341,8 @@
 
     invoke-interface {p1}, Lmqm;->f()V
 
+    invoke-static {p0}, Lcom/agc/pref/ConfigImport;->handleIntent(Landroid/app/Activity;)V
+
     return-void
 
     :catchall_0
@@ -384,6 +386,8 @@
     invoke-direct {p0}, Lgyu;->s()V
 
     invoke-super {p0, p1}, Lhhy;->onNewIntent(Landroid/content/Intent;)V
+
+    invoke-static {p0}, Lcom/agc/pref/ConfigImport;->handleIntent(Landroid/app/Activity;)V
 
     return-void
 .end method

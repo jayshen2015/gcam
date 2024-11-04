@@ -30,7 +30,7 @@
     .locals 0
     .param p1, "this$0"    # Lnan/ren/activity/PreviewActivity;
 
-    .line 358
+    .line 355
     iput-object p1, p0, Lnan/ren/activity/PreviewActivity$4;->this$0:Lnan/ren/activity/PreviewActivity;
 
     iput-object p2, p0, Lnan/ren/activity/PreviewActivity$4;->val$btn:Landroid/widget/Button;
@@ -47,7 +47,7 @@
 .method public run()V
     .locals 4
 
-    .line 361
+    .line 358
     sget-object v0, Lnan/ren/activity/PreviewActivity;->srcImagePath:Ljava/lang/String;
 
     iget-object v1, p0, Lnan/ren/activity/PreviewActivity$4;->val$btn:Landroid/widget/Button;
@@ -66,13 +66,13 @@
 
     invoke-static {v0, v1, v2, v3}, Lnan/ren/G;->saveImageByLUT(Ljava/lang/String;Ljava/lang/String;FZ)Ljava/lang/String;
 
-    .line 362
+    .line 359
     iget-object v0, p0, Lnan/ren/activity/PreviewActivity$4;->val$btn:Landroid/widget/Button;
 
     const-string v1, "\u5df2\u4fdd\u5b58"
 
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setText(Ljava/lang/CharSequence;)V
 
-    .line 363
+    .line 360
     return-void
 .end method

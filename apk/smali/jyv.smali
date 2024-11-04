@@ -88,10 +88,6 @@
 
     move-result v0
 
-    invoke-static {v0}, Lcom/agc/AdvancedSettings;->getTrackFocus(Z)Z
-
-    move-result v0
-
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0

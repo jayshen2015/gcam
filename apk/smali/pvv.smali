@@ -296,9 +296,7 @@
 
     new-instance v11, Lpvv;
 
-    const/4 v13, 0x0
-
-    sget-object v13, Lcom/google/android/material/button/yvc/ebAvwql;->dOhYoiHiHHlBR:Ljava/lang/String;
+    const-string v13, "HDR_ON"
 
     const/4 v14, 0x6
 
@@ -588,9 +586,7 @@
 
     new-instance v4, Lpvv;
 
-    const/4 v6, 0x0
-
-    sget-object v6, Landroidx/preference/internal/ZEHR/IRiqsOtIwWoeJC;->GCnXsUJHZDP:Ljava/lang/String;
+    const-string v6, "WHITE_BALANCE_SUNNY"
 
     const/16 v15, 0x1d
 
@@ -778,9 +774,7 @@
 
     move-object/from16 v45, v4
 
-    const/4 v4, 0x0
-
-    sget-object v4, Lcom/google/android/apps/camera/jni/gxp/sg/cyMBlsx;->fJNHuycrfQKfjYv:Ljava/lang/String;
+    const-string v4, "SELECTED"
 
     invoke-direct {v2, v4, v6, v15}, Lpvv;-><init>(Ljava/lang/String;II)V
 
@@ -794,9 +788,7 @@
 
     move-object/from16 v46, v2
 
-    const/4 v2, 0x0
-
-    sget-object v2, Lcom/google/android/libraries/social/licenses/DC/IdcfmGtHMWVaPJ;->ZxjwwZp:Ljava/lang/String;
+    const-string v2, "UNSELECTED"
 
     invoke-direct {v4, v2, v6, v15}, Lpvv;-><init>(Ljava/lang/String;II)V
 
@@ -1006,9 +998,7 @@
 
     move-object/from16 v61, v4
 
-    const/4 v4, 0x0
-
-    sget-object v4, Lcom/google/lullaby/modules/audio/IaPh/btFzjZGrfcZ;->VVsFhb:Ljava/lang/String;
+    const-string v4, "MIC_INPUT_EXT_WIRED"
 
     invoke-direct {v2, v4, v6, v15}, Lpvv;-><init>(Ljava/lang/String;II)V
 
@@ -1176,9 +1166,7 @@
 
     move-object/from16 v73, v4
 
-    const/4 v4, 0x0
-
-    sget-object v4, Lcom/google/android/material/button/yvc/ebAvwql;->qekt:Ljava/lang/String;
+    const-string v4, "ASPECT_RATIO_NINE_BY_SIXTEEN"
 
     invoke-direct {v2, v4, v6, v15}, Lpvv;-><init>(Ljava/lang/String;II)V
 

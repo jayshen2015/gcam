@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/ColorButton$Adapter$1;
 .super Ljava/lang/Object;
-.source "ColorButton.java"
 
 # interfaces
 .implements Landroid/text/TextWatcher;
@@ -12,21 +11,21 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1
     name = null
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/agc/widget/ColorButton$Adapter;
+.field public final synthetic this$0:Lcom/agc/widget/ColorButton$Adapter;
 
-.field final synthetic val$item:Lcom/agc/widget/ColorButton$Adapter$Item;
+.field public final synthetic val$item:Lcom/agc/widget/ColorButton$Adapter$Item;
 
-.field final synthetic val$text:Landroid/widget/EditText;
+.field public final synthetic val$text:Landroid/widget/EditText;
 
 
 # direct methods
-.method constructor <init>(Lcom/agc/widget/ColorButton$Adapter;Landroid/widget/EditText;Lcom/agc/widget/ColorButton$Adapter$Item;)V
+.method public constructor <init>(Lcom/agc/widget/ColorButton$Adapter;Landroid/widget/EditText;Lcom/agc/widget/ColorButton$Adapter$Item;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -60,51 +59,51 @@
 .end method
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
-    .locals 2
+    .locals 0
 
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance p2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "enable:"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lcom/agc/widget/ColorButton$Adapter$1;->val$text:Landroid/widget/EditText;
-
-    invoke-virtual {v1}, Landroid/widget/EditText;->isEnabled()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string v1, "xxxx-->onTextChanged"
-
-    invoke-static {v1, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    iget-object v0, p0, Lcom/agc/widget/ColorButton$Adapter$1;->val$item:Lcom/agc/widget/ColorButton$Adapter$Item;
+    invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p3
 
-    iput-object v1, v0, Lcom/agc/widget/ColorButton$Adapter$Item;->value:Ljava/lang/String;
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    const-string p3, "enable:"
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    iget-object p3, p0, Lcom/agc/widget/ColorButton$Adapter$1;->val$text:Landroid/widget/EditText;
+
+    invoke-virtual {p3}, Landroid/widget/EditText;->isEnabled()Z
+
+    move-result p3
+
+    invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string p3, "xxxx-->onTextChanged"
+
+    invoke-static {p3, p2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    iget-object p2, p0, Lcom/agc/widget/ColorButton$Adapter$1;->val$item:Lcom/agc/widget/ColorButton$Adapter$Item;
+
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    iput-object p1, p2, Lcom/agc/widget/ColorButton$Adapter$Item;->value:Ljava/lang/String;
 
     return-void
 .end method

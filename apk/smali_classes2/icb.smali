@@ -57,6 +57,12 @@
 
     sput-object v0, Licb;->a:Lpma;
 
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     const-wide/16 v0, 0x2
 
     invoke-static {v0, v1}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
@@ -75,6 +81,28 @@
 
     const-wide/16 v0, 0x1f4
 
+    goto :goto_0
+
+    :cond_0
+    const-wide/16 v0, 0x8
+
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
+
+    move-result-object v0
+
+    sput-object v0, Licb;->b:Lj$/time/Duration;
+
+    const-wide/16 v0, 0x4
+
+    invoke-static {v0, v1}, Lj$/time/Duration;->ofSeconds(J)Lj$/time/Duration;
+
+    move-result-object v0
+
+    sput-object v0, Licb;->c:Lj$/time/Duration;
+
+    const-wide/16 v0, 0x7d0
+
+    :goto_0
     invoke-static {v0, v1}, Lj$/time/Duration;->ofMillis(J)Lj$/time/Duration;
 
     move-result-object v0

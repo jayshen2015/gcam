@@ -105,6 +105,33 @@
     return-object v0
 .end method
 
+.method public static synthetic post$default(Lcom/Utils/EventBus;Ljava/lang/String;Ljava/lang/Object;ILjava/lang/Object;)V
+    .locals 0
+
+    and-int/lit8 p3, p3, 0x2
+
+    if-eqz p3, :cond_0
+
+    const/4 p2, 0x0
+
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lcom/Utils/EventBus;->post(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public static final postEvent(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 1
+    .annotation runtime Lkotlin/jvm/JvmStatic;
+    .end annotation
+
+    sget-object v0, Lcom/Utils/EventBus;->Companion:Lcom/Utils/EventBus$Companion;
+
+    invoke-virtual {v0, p0, p1}, Lcom/Utils/EventBus$Companion;->postEvent(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method private static final unregister$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
     .locals 1
 
@@ -153,10 +180,6 @@
     const-string v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "data"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/Utils/EventBus;->observers:Ljava/util/List;
 

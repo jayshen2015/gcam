@@ -230,6 +230,16 @@
     :pswitch_e
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
+    const/4 v3, 0x1
+
+    invoke-static {v3}, LAGC;->getNoiseVfMode(I)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
     invoke-static {v0, v3}, Lhse;->l(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Ligj;
 
     move-result-object v0
@@ -278,6 +288,8 @@
     move-result-object v0
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x0

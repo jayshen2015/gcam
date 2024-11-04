@@ -25,7 +25,7 @@
 .method constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 39
+    .line 45
     iput-object p1, p0, Lnan/ren/util/NUtil$1;->val$th:Ljava/lang/Throwable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,17 +36,40 @@
 
 # virtual methods
 .method public run()V
-    .locals 9
+    .locals 1
 
-    .line 44
+    .line 48
     :try_start_0
+    invoke-virtual {p0}, Lnan/ren/util/NUtil$1;->toFile()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v0
+
+    .line 49
+    :goto_0
+    return-void
+.end method
+
+.method toFile()V
+    .locals 9
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/io/IOException;
+        }
+    .end annotation
+
+    .line 51
     new-instance v0, Ljava/io/File;
 
     sget-object v1, Lnan/ren/G;->BASE_AGC_PATH:Ljava/lang/String;
 
     invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 45
+    .line 52
     .local v0, "file":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
@@ -54,16 +77,16 @@
 
     if-nez v1, :cond_0
 
-    .line 46
+    .line 53
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 48
+    .line 55
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 49
+    .line 56
     .local v1, "currentTimeMillis":J
     new-instance v3, Landroid/icu/text/SimpleDateFormat;
 
@@ -79,7 +102,7 @@
 
     move-result-object v3
 
-    .line 50
+    .line 57
     .local v3, "format":Ljava/lang/String;
     new-instance v4, Ljava/io/File;
 
@@ -139,7 +162,7 @@
 
     invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 51
+    .line 58
     .local v4, "file2":Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
@@ -147,14 +170,12 @@
 
     if-nez v5, :cond_1
 
-    .line 52
+    .line 59
     invoke-virtual {v4}, Ljava/io/File;->createNewFile()Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 55
+    .line 62
     :cond_1
-    :try_start_1
+    :try_start_0
     new-instance v5, Ljava/io/PrintWriter;
 
     new-instance v6, Ljava/io/BufferedWriter;
@@ -169,57 +190,45 @@
 
     invoke-direct {v5, v6}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
-    .line 56
+    .line 63
     .local v5, "printWriter":Ljava/io/PrintWriter;
     const-string v6, "Crash time: "
 
     invoke-virtual {v5, v6}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 57
+    .line 64
     invoke-virtual {v5, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 58
+    .line 65
     invoke-virtual {v5}, Ljava/io/PrintWriter;->println()V
 
-    .line 59
+    .line 66
     iget-object v6, p0, Lnan/ren/util/NUtil$1;->val$th:Ljava/lang/Throwable;
 
     invoke-virtual {v6, v5}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    .line 60
+    .line 67
     const-string v6, "---------------------------------end----------------------------------"
 
     invoke-virtual {v5, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 61
+    .line 68
     invoke-virtual {v5}, Ljava/io/PrintWriter;->println()V
 
-    .line 62
+    .line 69
     invoke-virtual {v5}, Ljava/io/PrintWriter;->close()V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 65
+    .line 72
     .end local v5    # "printWriter":Ljava/io/PrintWriter;
     goto :goto_0
 
-    .line 63
+    .line 70
     :catch_0
     move-exception v5
 
-    .line 68
-    .end local v0    # "file":Ljava/io/File;
-    .end local v1    # "currentTimeMillis":J
-    .end local v3    # "format":Ljava/lang/String;
-    .end local v4    # "file2":Ljava/io/File;
+    .line 73
     :goto_0
-    goto :goto_1
-
-    .line 66
-    :catch_1
-    move-exception v0
-
-    .line 70
-    :goto_1
     return-void
 .end method

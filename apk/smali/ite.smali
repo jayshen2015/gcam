@@ -575,8 +575,6 @@
 
     move-result-object v5
 
-    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     invoke-static {v5}, Lnak;->b(Ljava/lang/String;)Lnak;
 
     move-result-object v5
@@ -806,8 +804,6 @@
     invoke-virtual {v4, v3}, Ljkp;->c(Lndu;)Ljava/lang/String;
 
     move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     invoke-static {v4}, Lnak;->b(Ljava/lang/String;)Lnak;
 

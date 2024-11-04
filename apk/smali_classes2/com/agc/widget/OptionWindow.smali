@@ -131,8 +131,6 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    invoke-static {p0}, Lnan/ren/G;->popWinFilter(Lcom/agc/widget/OptionWindow;)V
-
     const-string v1, "agc_config_load_btn"
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
@@ -191,27 +189,29 @@
 
     invoke-virtual {v0}, Lcom/agc/widget/OptionWindow;->dismiss()V
 
+    const/4 v0, 0x0
+
+    sput-object v0, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
+
     :cond_0
     return-void
 .end method
 
-.method public static showUp(Landroid/view/View;Ljava/util/List;ILcom/agc/widget/OptionWindow$OnPopItemClickListener;)V
-    .locals 3
+.method public static showUp(Landroid/view/View;Ljava/util/List;ZILcom/agc/widget/OptionWindow$OnPopItemClickListener;)V
+    .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Landroid/view/View;",
             "Ljava/util/List<",
             "Lcom/agc/widget/OptionButton$OptionButtonItem;",
-            ">;I",
+            ">;ZI",
             "Lcom/agc/widget/OptionWindow$OnPopItemClickListener;",
             ")V"
         }
     .end annotation
 
-    sget-object v0, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
-
-    if-nez v0, :cond_0
+    invoke-static {}, Lcom/agc/widget/OptionWindow;->hide()V
 
     new-instance v0, Lcom/agc/widget/OptionWindow;
 
@@ -223,14 +223,17 @@
 
     sput-object v0, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
 
-    invoke-virtual {v0, p3}, Lcom/agc/widget/OptionWindow;->setOnPopItemClickListener(Lcom/agc/widget/OptionWindow$OnPopItemClickListener;)V
+    invoke-virtual {v0, p4}, Lcom/agc/widget/OptionWindow;->setOnPopItemClickListener(Lcom/agc/widget/OptionWindow$OnPopItemClickListener;)V
 
-    :cond_0
-    sget-object p3, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
+    sget-object p4, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
 
-    iput p2, p3, Lcom/agc/widget/OptionWindow;->selectedIndex:I
+    invoke-virtual {p4, p2}, Lcom/agc/widget/OptionWindow;->showButtons(Z)V
 
-    invoke-virtual {p3, p1, p2}, Lcom/agc/widget/OptionWindow;->setItems(Ljava/util/List;I)V
+    sget-object p2, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
+
+    iput p3, p2, Lcom/agc/widget/OptionWindow;->selectedIndex:I
+
+    invoke-virtual {p2, p1, p3}, Lcom/agc/widget/OptionWindow;->setItems(Ljava/util/List;I)V
 
     const/4 p1, 0x2
 
@@ -240,11 +243,29 @@
 
     const/4 p3, 0x1
 
-    aget v0, p2, p3
+    aget p4, p2, p3
 
-    const-string v1, "loc 1"
+    const-string v0, "loc 1"
 
-    invoke-static {v1, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
+    invoke-static {v0, p4}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
+
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    move-result-object p4
+
+    invoke-virtual {p4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    move-result-object p4
+
+    iget p4, p4, Landroid/util/DisplayMetrics;->heightPixels:I
+
+    div-int/2addr p4, p1
+
+    const-string v0, "loc 2"
+
+    invoke-static {v0, p4}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
+
+    aget p4, p2, p3
 
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
@@ -258,31 +279,13 @@
 
     div-int/2addr v0, p1
 
-    const-string v1, "loc 2"
-
-    invoke-static {v1, v0}, Lcom/agc/Log;->d(Ljava/lang/Object;I)I
-
-    aget v0, p2, p3
-
-    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    iget v1, v1, Landroid/util/DisplayMetrics;->heightPixels:I
-
-    div-int/2addr v1, p1
-
     const/4 p1, 0x0
 
-    if-le v0, v1, :cond_1
+    if-le p4, v0, :cond_0
 
-    sget-object v0, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
+    sget-object p4, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
 
-    aget v1, p2, p1
+    aget v0, p2, p1
 
     aget p2, p2, p3
 
@@ -296,9 +299,9 @@
 
     move-result-object p3
 
-    const/high16 v2, 0x42580000    # 54.0f
+    const/high16 v1, 0x42580000    # 54.0f
 
-    invoke-static {p3, v2}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {p3, v1}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
     move-result p3
 
@@ -306,10 +309,10 @@
 
     goto :goto_0
 
-    :cond_1
-    sget-object v0, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
+    :cond_0
+    sget-object p4, Lcom/agc/widget/OptionWindow;->sharedWindow:Lcom/agc/widget/OptionWindow;
 
-    aget v1, p2, p1
+    aget v0, p2, p1
 
     aget p2, p2, p3
 
@@ -323,16 +326,16 @@
 
     move-result-object p3
 
-    const/high16 v2, 0x41c00000    # 24.0f
+    const/high16 v1, 0x41c00000    # 24.0f
 
-    invoke-static {p3, v2}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
+    invoke-static {p3, v1}, Lcom/agc/util/AgcUtil;->dp2px(Landroid/content/Context;F)I
 
     move-result p3
 
     add-int/2addr p2, p3
 
     :goto_0
-    invoke-virtual {v0, p0, p1, v1, p2}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+    invoke-virtual {p4, p0, p1, v0, p2}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     return-void
 .end method
@@ -387,6 +390,58 @@
     .locals 0
 
     iput-object p1, p0, Lcom/agc/widget/OptionWindow;->mChangeListner:Lcom/agc/widget/OptionWindow$OnPopItemClickListener;
+
+    return-void
+.end method
+
+.method public showButtons(Z)V
+    .locals 4
+
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object v0
+
+    const-string v1, "agc_quick_settings_btn"
+
+    invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x8
+
+    if-eqz p1, :cond_0
+
+    move v3, v1
+
+    goto :goto_0
+
+    :cond_0
+    move v3, v2
+
+    :goto_0
+    invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
+
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+    move-result-object v0
+
+    const-string v3, "agc_config_load_btn"
+
+    invoke-virtual {v0, v3}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+    move-result-object v0
+
+    if-eqz p1, :cond_1
+
+    goto :goto_1
+
+    :cond_1
+    move v1, v2
+
+    :goto_1
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

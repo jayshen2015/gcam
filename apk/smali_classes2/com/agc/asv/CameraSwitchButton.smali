@@ -409,7 +409,7 @@
 .end method
 
 .method public onLongClick(Landroid/view/View;)Z
-    .locals 6
+    .locals 8
 
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -447,41 +447,41 @@
 
     const-string v0, "pref_switch_long_action_key"
 
-    const-string v2, "noise_model_screen"
+    const-string v3, "lib_group_default_key"
 
-    invoke-static {v0, v2}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/Utils/Pref;->getStringValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    const-string v3, ""
+    const-string v4, ""
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    const/4 v4, 0x0
+    const/4 v5, 0x0
 
-    if-nez v3, :cond_3
+    if-nez v4, :cond_5
 
-    const-string v3, "none"
+    const-string v4, "none"
 
-    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v4
 
-    if-nez v3, :cond_3
+    if-nez v4, :cond_5
 
-    const-string v3, "pref_screen_extra"
+    const-string v4, "pref_screen_extra"
 
-    invoke-virtual {p1, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p1, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const/4 v3, -0x1
+    const/4 v6, -0x1
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    move-result v5
+    move-result v7
 
-    sparse-switch v5, :sswitch_data_0
+    sparse-switch v7, :sswitch_data_0
 
     goto :goto_0
 
@@ -497,23 +497,12 @@
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x2
+    const/4 v1, 0x3
 
     goto :goto_1
 
     :sswitch_1
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2
-
-    goto :goto_0
-
-    :sswitch_2
-    const-string v1, "color_settings_screen"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -522,18 +511,43 @@
     goto :goto_0
 
     :cond_1
-    move v1, v4
+    const/4 v1, 0x2
+
+    goto :goto_1
+
+    :sswitch_2
+    const-string v3, "noise_model_screen"
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    goto :goto_0
+
+    :sswitch_3
+    const-string v1, "color_settings_screen"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    :cond_2
+    move v1, v5
 
     goto :goto_1
 
     :goto_0
-    move v1, v3
+    move v1, v6
 
-    :cond_2
+    :cond_3
     :goto_1
     packed-switch v1, :pswitch_data_0
-
-    const-string v0, "Settings"
 
     goto :goto_3
 
@@ -543,11 +557,51 @@
     goto :goto_2
 
     :pswitch_1
+    const-string v0, "lib_patch_profile_key"
+
+    invoke-static {v0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+
+    move-result v0
+
+    sget v1, Lcom/Utils/Pref;->DEFAUT_PATCH_COUNT:I
+
+    if-ge v0, v1, :cond_4
+
+    const-string v0, "lib_group_global_key"
+
+    invoke-virtual {p1, v4, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {p1, v2}, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :cond_4
+    sub-int/2addr v0, v1
+
+    invoke-static {v5, v0}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "pref_profile_id"
+
+    invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-static {}, Lcom/agc/widget/PatchButton;->getCurrentTitle()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_4
+
+    :pswitch_2
     const-string v0, "noise_model_title"
 
     goto :goto_2
 
-    :pswitch_2
+    :pswitch_3
     const-string v0, "color_settings_title"
 
     :goto_2
@@ -555,7 +609,12 @@
 
     move-result-object v0
 
+    goto :goto_4
+
     :goto_3
+    const-string v0, "Settings"
+
+    :goto_4
     const-string v1, "pref_screen_title"
 
     invoke-virtual {p1, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
@@ -566,20 +625,22 @@
 
     invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    :cond_3
-    return v4
+    :cond_5
+    return v5
 
     nop
 
     :sswitch_data_0
     .sparse-switch
-        -0x4173fcd4 -> :sswitch_2
-        -0xe5350b9 -> :sswitch_1
+        -0x4173fcd4 -> :sswitch_3
+        -0xe5350b9 -> :sswitch_2
+        0x314afe67 -> :sswitch_1
         0x7c0107cc -> :sswitch_0
     .end sparse-switch
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

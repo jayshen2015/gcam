@@ -152,6 +152,10 @@
 
     const/16 v18, 0x78
 
+    invoke-static {}, Lcom/agc/LensSettings;->getSlowMotion4x()I
+
+    move-result v18
+
     move-object v13, v5
 
     move/from16 v16, v18
@@ -167,6 +171,10 @@
     const/4 v9, 0x7
 
     const/16 v12, 0xf0
+
+    invoke-static {}, Lcom/agc/LensSettings;->getSlowMotion8x()I
+
+    move-result v12
 
     move-object v7, v13
 

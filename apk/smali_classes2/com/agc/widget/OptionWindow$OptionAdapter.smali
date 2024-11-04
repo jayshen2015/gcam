@@ -110,25 +110,23 @@
 
     iget-object v2, p1, Lcom/agc/widget/OptionButton$OptionButtonItem;->icon:Ljava/lang/String;
 
-#    iget-object v3, p0, Lcom/agc/asv/CommonAdapter;->mContext:Landroid/content/Context;
+    iget-object v3, p0, Lcom/agc/asv/CommonAdapter;->mContext:Landroid/content/Context;
 
-#    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-#    move-result-object v3
+    move-result-object v3
 
-#    const-string v4, "drawable"
+    const-string v4, "drawable"
 
-#    invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v1, v2, v4, v3}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
 
-#    move-result v1
+    move-result v1
 
-#    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    invoke-static {v0,v2}, Lnan/ren/G;->initIcon(Landroid/widget/ImageView;Ljava/lang/String;)V
+    const-string v0, "agc_option_tv"
 
-    const-string v3, "agc_option_tv"
-
-    invoke-virtual {p3, v3}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+    invoke-virtual {p3, v0}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
 
     move-result-object p3
 

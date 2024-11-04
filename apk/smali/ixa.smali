@@ -703,6 +703,10 @@
 
     :cond_f
     :goto_3
+    invoke-static {v14, v7, p0}, LAGC;->getEnumMap(ILjava/util/EnumMap;Lixa;)Ljava/util/EnumMap;
+
+    move-result-object v7
+
     return-object v7
 
     nop

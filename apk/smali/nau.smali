@@ -205,9 +205,13 @@
 .method public final P()I
     .locals 1
 
-    const/4 v0, 0x0
+    iget-object v0, p0, Lnau;->a:Lnah;
 
-    throw v0
+    invoke-interface {v0}, Lnah;->P()I
+
+    move-result v0
+
+    return v0
 .end method
 
 .method public final a()F

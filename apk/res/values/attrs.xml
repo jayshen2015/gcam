@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="aebMainButtonSizeDp" format="reference|dimension" />
-    <attr name="aebSubButtonSizeDp" format="reference|dimension" />
+    <attr name="aebAnimDurationMillis" format="reference|integer" />
+    <attr name="aebBlurBackground" format="boolean" />
     <attr name="accessibilityActionForActionButton" format="string" />
     <attr name="accessibilityActionForItemSelection" format="string" />
     <attr name="accessibilityActionForNextColumnButton" format="string" />
@@ -22,7 +22,7 @@
     <attr name="actionButtonStyle" format="reference" />
     <attr name="actionDropDownStyle" format="reference" />
     <attr name="actionLayout" format="reference" />
-    <attr name="aebButtonGapDp" format="reference|dimension" />
+    <attr name="aebBlurRadius" format="reference|float" />
     <attr name="actionMenuTextAppearance" format="reference" />
     <attr name="actionMenuTextColor" format="reference|color" />
     <attr name="actionModeBackground" format="reference" />
@@ -45,11 +45,11 @@
     <attr name="actionProviderClass" format="string" />
     <attr name="actionTextColorAlpha" format="float" />
     <attr name="actionViewClass" format="string" />
-    <attr name="aebStartAngleDegree" format="reference|integer" />
+    <attr name="aebButtonElevation" format="reference|dimension" />
     <attr name="activeIndicatorLabelPadding" format="dimension" />
-    <attr name="aebEndAngleDegree" format="reference|integer" />
+    <attr name="aebButtonGapDp" format="reference|dimension" />
     <attr name="activityChooserViewStyle" format="reference" />
-    <attr name="aebAnimDurationMillis" format="reference|integer" />
+    <attr name="aebEndAngleDegree" format="reference|integer" />
     <attr name="addElevationShadow" format="boolean" />
     <attr name="adjustable" format="boolean" />
     <attr name="alertDialogButtonGroupStyle" format="reference" />
@@ -70,8 +70,8 @@
         <flag name="SHIFT" value="0x00000001" />
         <flag name="SYM" value="0x00000004" />
     </attr>
-    <attr name="aebButtonElevation" format="reference|dimension" />
-    <attr name="aebMaskBackgroundColor" format="reference|color" />
+    <attr name="aebIsSelectionMode" format="boolean" />
+    <attr name="aebMainButtonRotateAnimDurationMillis" format="reference|integer" />
     <attr name="anchorAngleDegrees" format="float" />
     <attr name="anchorPosition">
         <enum name="center" value="1" />
@@ -85,24 +85,24 @@
         <enum name="closest" value="1" />
         <enum name="constraint" value="4" />
     </attr>
-    <attr name="aebIsSelectionMode" format="boolean" />
-    <attr name="aebMainButtonTextColor" format="reference|color" />
+    <attr name="aebMainButtonRotateDegree" format="reference|integer" />
+    <attr name="aebMainButtonSizeDp" format="reference|dimension" />
     <attr name="animateRelativeTo" format="reference" />
-    <attr name="aebSubButtonTextColor" format="reference|color" />
+    <attr name="aebMainButtonTextColor" format="reference|color" />
     <attr name="animationMode">
         <enum name="fade" value="1" />
         <enum name="slide" value="0" />
     </attr>
     <attr name="appBarLayoutStyle" format="reference" />
     <attr name="aebMainButtonTextSizeSp" format="reference|dimension" />
-    <attr name="aebSubButtonTextSizeSp" format="reference|dimension" />
+    <attr name="aebMaskBackgroundColor" format="reference|color" />
     <attr name="arrowHeadLength" format="dimension" />
     <attr name="arrowShaftLength" format="dimension" />
     <attr name="attributeName" format="string" />
     <attr name="autoAdjustToWithinGrandparentBounds" format="boolean" />
-    <attr name="aebRippleEffect" format="boolean" />
-    <attr name="autoCompleteTextViewStyle" format="reference" />
     <attr name="aebRippleColor" format="reference|color" />
+    <attr name="autoCompleteTextViewStyle" format="reference" />
+    <attr name="aebRippleEffect" format="boolean" />
     <attr name="autoSizeMaxTextSize" format="dimension" />
     <attr name="autoSizeMinTextSize" format="dimension" />
     <attr name="autoSizePresetSizes" format="reference" />
@@ -111,18 +111,18 @@
         <enum name="none" value="0" />
         <enum name="uniform" value="1" />
     </attr>
-    <attr name="aebMainButtonRotateDegree" format="reference|integer" />
-    <attr name="aebMainButtonRotateAnimDurationMillis" format="reference|integer" />
-    <attr name="aebBlurBackground" format="boolean" />
-    <attr name="aebBlurRadius" format="reference|float" />
-    <attr name="max" format="integer" />
-    <attr name="seekBarProgress" format="integer" />
-    <attr name="thumb" format="reference" />
-    <attr name="background" format="reference" />
-    <attr name="backgroundColor" format="color" />
-    <attr name="progressDrawable" format="reference" />
+    <attr name="aebStartAngleDegree" format="reference|integer" />
+    <attr name="aebSubButtonSizeDp" format="reference|dimension" />
+    <attr name="aebSubButtonTextColor" format="reference|color" />
+    <attr name="aebSubButtonTextSizeSp" format="reference|dimension" />
     <attr name="backgroundDrawable" format="reference" />
     <attr name="custom_color3" format="reference|color" />
+    <attr name="custom_size3" format="reference|dimension" />
+    <attr name="background" format="reference" />
+    <attr name="backgroundColor" format="color" />
+    <attr name="dividerWidth" format="dimension" />
+    <attr name="max" format="integer" />
+    <attr name="progressDrawable" format="reference" />
     <attr name="backgroundInsetBottom" format="dimension" />
     <attr name="backgroundInsetEnd" format="dimension" />
     <attr name="backgroundInsetStart" format="dimension" />
@@ -159,9 +159,11 @@
         <enum name="TOP_START" value="8388659" />
     </attr>
     <attr name="badgeHeight" format="dimension" />
-    <attr name="custom_size3" format="reference|dimension" />
+    <attr name="save_key" format="string" />
     <attr name="badgeShapeAppearance" format="reference" />
+    <attr name="seekBarProgress" format="integer" />
     <attr name="badgeStyle" format="reference" />
+    <attr name="thumb" format="reference" />
     <attr name="badgeTextAppearance" format="reference" />
     <attr name="badgeTextColor" format="color" />
     <attr name="badgeVerticalPadding" format="dimension" />

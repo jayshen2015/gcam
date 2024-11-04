@@ -59,6 +59,12 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
 
+    new-instance p1, Lcom/agc/asv/MultiplePopupWindow$1;
+
+    invoke-direct {p1, p0, v0}, Lcom/agc/asv/MultiplePopupWindow$1;-><init>(Lcom/agc/asv/MultiplePopupWindow;Lcom/agc/asv/CameraSwitchView;)V
+
+    invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
     return-void
 .end method
 

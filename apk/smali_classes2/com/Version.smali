@@ -3,11 +3,11 @@
 
 
 # static fields
-.field public static buildDate:Ljava/lang/String; = "2023-11-25 13:21"
+.field public static buildDate:Ljava/lang/String; = "2024-01-31 23:25"
 
-.field public static buildVersion:Ljava/lang/String; = "9ecda93b"
+.field public static buildVersion:Ljava/lang/String; = "3806b336"
 
-.field public static version:Ljava/lang/String; = "V6.0"
+.field public static version:Ljava/lang/String; = "V12.0"
 
 
 # direct methods

@@ -192,17 +192,13 @@
 .end method
 
 .method public static a(Landroid/app/Activity;)V
-    .locals 3
+    .locals 1
 
     sget-object v0, Losd;->a:[I
 
     invoke-static {p0, v0}, Losd;->b(Landroid/content/Context;[I)I
 
     move-result v0
-
-    const-string v1, "resourceId 111"
-
-    invoke-static {v1, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;I)I
 
     invoke-static {p0, v0}, Loqp;->j(Landroid/content/Context;I)V
 
@@ -215,12 +211,6 @@
     sget-object v0, Losd;->b:[I
 
     invoke-static {p0, v0}, Losd;->b(Landroid/content/Context;[I)I
-
-    move-result v1
-
-    const-string v2, "resourceId 222"
-
-    invoke-static {v2, v1}, Lcom/agc/Log;->e(Ljava/lang/Object;I)I
 
     invoke-static {p0, v0}, Losd;->b(Landroid/content/Context;[I)I
 

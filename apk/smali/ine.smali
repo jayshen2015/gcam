@@ -74,6 +74,12 @@
 .method public static c(Lnah;IZ)Ljava/util/List;
     .locals 2
 
+    invoke-static {}, Ltm;->isAndroid11()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
     if-eqz p2, :cond_0
 
     sget-object p2, Landroid/hardware/camera2/CameraCharacteristics;->SCALER_STREAM_CONFIGURATION_MAP_MAXIMUM_RESOLUTION:Landroid/hardware/camera2/CameraCharacteristics$Key;

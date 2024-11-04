@@ -59,7 +59,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 9
 
     iget v0, p0, Lmku;->c:I
 
@@ -181,14 +181,23 @@
     :pswitch_3
     iget-object v0, p0, Lmku;->a:Ljava/lang/Object;
 
+    check-cast v0, Lndu;
+
     iget-object v1, p0, Lmku;->b:Ljava/lang/Object;
 
     check-cast v1, Lmup;
 
     iget-object v1, v1, Lmup;->a:Lnie;
 
+    sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 p0, 0x1f
+
+    if-lt v8, p0, :cond_1
+
     invoke-virtual {v1, v0}, Lnie;->gO(Lndu;)V
 
+    :cond_1
     return-void
 
     :pswitch_4
@@ -305,7 +314,7 @@
 
     iget-object v1, p0, Lmku;->b:Ljava/lang/Object;
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
     new-instance v2, Lmqc;
 
@@ -317,7 +326,7 @@
 
     throw v2
 
-    :cond_1
+    :cond_2
     new-instance v1, Lmqc;
 
     check-cast v0, Ljava/lang/Throwable;
@@ -346,7 +355,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_2
+    if-eqz v1, :cond_3
 
     iget-object v1, p0, Lmku;->b:Ljava/lang/Object;
 
@@ -368,7 +377,7 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     return-void
 
     :pswitch_c
@@ -398,11 +407,11 @@
     :try_end_4
     .catch Ljava/lang/IllegalStateException; {:try_start_4 .. :try_end_4} :catch_3
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     goto :goto_3
 
-    :cond_3
+    :cond_4
     return-void
 
     :catch_3
@@ -464,7 +473,7 @@
     move-result v3
 
     :goto_4
-    if-ge v1, v3, :cond_4
+    if-ge v1, v3, :cond_5
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -484,7 +493,7 @@
 
     goto :goto_4
 
-    :cond_4
+    :cond_5
     return-void
 
     :pswitch_f
@@ -549,7 +558,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_5
+    if-eqz v1, :cond_6
 
     iget-object v1, p0, Lmku;->b:Ljava/lang/Object;
 
@@ -567,7 +576,7 @@
 
     goto :goto_5
 
-    :cond_5
+    :cond_6
     return-void
 
     :pswitch_data_0

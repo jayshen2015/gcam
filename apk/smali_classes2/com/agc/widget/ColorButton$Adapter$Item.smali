@@ -1,6 +1,5 @@
 .class Lcom/agc/widget/ColorButton$Adapter$Item;
 .super Ljava/lang/Object;
-.source "ColorButton.java"
 
 
 # annotations
@@ -9,19 +8,19 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x9
     name = "Item"
 .end annotation
 
 
 # instance fields
-.field defaultValue:Ljava/lang/String;
+.field public defaultValue:Ljava/lang/String;
 
-.field key:Ljava/lang/String;
+.field public key:Ljava/lang/String;
 
-.field title:Ljava/lang/String;
+.field public title:Ljava/lang/String;
 
-.field value:Ljava/lang/String;
+.field public value:Ljava/lang/String;
 
 
 # direct methods

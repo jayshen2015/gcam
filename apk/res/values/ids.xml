@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="id" name="proc_indecator" />
-    <item type="id" name="summary" />
-    <item type="id" name="agc_view" />
-    <item type="id" name="telegram_icon" />
-    <item type="id" name="telegram_btn" />
-    <item type="id" name="telegram_photography_btn" />
+    <item type="id" name="agc_agc_ruler" />
+    <item type="id" name="agc_cancel" />
+    <item type="id" name="agc_color_checked" />
+    <item type="id" name="agc_color_reset" />
+    <item type="id" name="agc_csb" />
+    <item type="id" name="agc_fw_btn_clear" />
     <item type="id" name="accessibility_action_clickable_span" />
     <item type="id" name="accessibility_custom_action_0" />
     <item type="id" name="accessibility_custom_action_1" />
@@ -39,47 +39,88 @@
     <item type="id" name="accessibility_custom_action_7" />
     <item type="id" name="accessibility_custom_action_8" />
     <item type="id" name="accessibility_custom_action_9" />
-    <item type="id" name="gcam_tools_btn" />
-    <item type="id" name="options_menu_standalone_load_configs" />
+    <item type="id" name="agc_fw_item_text" />
+    <item type="id" name="agc_fw_list_view" />
+    <item type="id" name="agc_iv_refresh" />
+    <item type="id" name="agc_iv_reset" />
     <item type="id" name="action_bar" />
     <item type="id" name="action_bar_activity_content" />
     <item type="id" name="action_bar_container" />
     <item type="id" name="action_bar_root" />
+    <item type="id" name="agc_iv_selected" />
     <item type="id" name="action_bar_subtitle" />
     <item type="id" name="action_bar_title" />
     <item type="id" name="action_button" />
+    <item type="id" name="agc_iv_thumb" />
     <item type="id" name="action_context_bar" />
+    <item type="id" name="agc_list_view" />
+    <item type="id" name="agc_lut_pager_layout" />
+    <item type="id" name="agc_lut_selector" />
+    <item type="id" name="agc_process_bar" />
     <item type="id" name="action_long_shot_end" />
     <item type="id" name="action_long_shot_start" />
+    <item type="id" name="agc_root" />
+    <item type="id" name="agc_save" />
+    <item type="id" name="agc_tips" />
+    <item type="id" name="agc_title_text" />
     <item type="id" name="action_mode_bar" />
     <item type="id" name="action_mode_bar_stub" />
     <item type="id" name="action_mode_close_button" />
+    <item type="id" name="agc_tv_process" />
+    <item type="id" name="agc_tv_thumb" />
+    <item type="id" name="agc_view" />
+    <item type="id" name="agc_view_pager" />
+    <item type="id" name="banner" />
+    <item type="id" name="btc" />
     <item type="id" name="activity_root_view" />
+    <item type="id" name="btc_copy" />
+    <item type="id" name="cb_model" />
+    <item type="id" name="cb_time" />
+    <item type="id" name="circle_view" />
     <item type="id" name="alertTitle" />
+    <item type="id" name="color_layout" />
+    <item type="id" name="color_mix_layout" />
+    <item type="id" name="color_mix_ll_overried" />
     <item type="id" name="androidx_compose_ui_view_composition_context" />
+    <item type="id" name="color_mix_root" />
+    <item type="id" name="color_mix_tv_done" />
+    <item type="id" name="color_root" />
+    <item type="id" name="color_slider_bar" />
     <item type="id" name="animated_zoom_icon" />
     <item type="id" name="animated_zoom_icon_reeded_edge" />
     <item type="id" name="animating_item" />
+    <item type="id" name="cure_grid_view" />
     <item type="id" name="app_bar" />
     <item type="id" name="appendix" />
     <item type="id" name="apply_button" />
+    <item type="id" name="donate_btn" />
     <item type="id" name="ark_controls" />
     <item type="id" name="ark_values" />
     <item type="id" name="arrow_down" />
     <item type="id" name="arrow_up" />
+    <item type="id" name="et_library_address" />
+    <item type="id" name="et_library_extract_value" />
+    <item type="id" name="et_library_title" />
     <item type="id" name="auto_value_label" />
     <item type="id" name="autobahn_controls" />
     <item type="id" name="autobahn_panel" />
+    <item type="id" name="et_library_value" />
+    <item type="id" name="et_watermark" />
+    <item type="id" name="eth" />
+    <item type="id" name="eth_copy" />
     <item type="id" name="autonightsight_toggle_ui_stub" />
     <item type="id" name="autotimer_indicator_view" />
     <item type="id" name="autotimer_tutorial_text_body" />
     <item type="id" name="autotimer_tutorial_text_container" />
     <item type="id" name="autotimer_tutorial_text_title" />
+    <item type="id" name="gcam_tools_btn" />
+    <item type="id" name="input_label" />
     <item type="id" name="beta_label" />
     <item type="id" name="blur_controls" />
     <item type="id" name="blur_controls_slider" />
     <item type="id" name="boba_pearl_drag_edu_animation_view" />
     <item type="id" name="body" />
+    <item type="id" name="input_text" />
     <item type="id" name="bottom_bar" />
     <item type="id" name="bottom_barrier" />
     <item type="id" name="bottom_guideline" />
@@ -93,12 +134,17 @@
     <item type="id" name="bottomsheet_container" />
     <item type="id" name="bottomsheet_handle_bar" />
     <item type="id" name="bottomsheet_handle_bar_container" />
+    <item type="id" name="item_art" />
+    <item type="id" name="item_hasselblad" />
+    <item type="id" name="item_leica" />
     <item type="id" name="breadcrumbs_ui" />
     <item type="id" name="brightness_controls" />
     <item type="id" name="brightness_controls_slider" />
+    <item type="id" name="item_time" />
     <item type="id" name="buttonPanel" />
     <item type="id" name="button_bg_background" />
     <item type="id" name="button_bg_forground" />
+    <item type="id" name="iv_back" />
     <item type="id" name="camera_app_root" />
     <item type="id" name="camera_app_root_overlay" />
     <item type="id" name="camera_frame_bottom_layout_stub" />
@@ -108,13 +154,16 @@
     <item type="id" name="camera_mode_chip" />
     <item type="id" name="camera_remote_control_layout_stub" />
     <item type="id" name="camera_switch_button" />
+    <item type="id" name="iv_confirm" />
     <item type="id" name="cancel_button" />
     <item type="id" name="cancel_button_stub" />
     <item type="id" name="caption_after_effect" />
     <item type="id" name="caption_before_effect" />
     <item type="id" name="capture_animation_overlay" />
     <item type="id" name="capture_frame" />
+    <item type="id" name="iv_guide" />
     <item type="id" name="capture_overlay_layout" />
+    <item type="id" name="iv_info" />
     <item type="id" name="case_battery_container" />
     <item type="id" name="case_battery_icon" />
     <item type="id" name="catcher_ui_layout" />
@@ -124,20 +173,31 @@
     <item type="id" name="center_right_placeholder" />
     <item type="id" name="center_tick_text" />
     <item type="id" name="chameleon_ui_stub" />
+    <item type="id" name="iv_more" />
+    <item type="id" name="listView" />
+    <item type="id" name="ll_content" />
+    <item type="id" name="llt_title" />
+    <item type="id" name="lut_header_list" />
     <item type="id" name="cinematic_bottom_sheet_cinematic_caption" />
     <item type="id" name="cinematic_bottom_sheet_cinematic_video" />
     <item type="id" name="cinematic_bottom_sheet_description" />
     <item type="id" name="cinematic_bottom_sheet_normal_caption" />
     <item type="id" name="cinematic_bottom_sheet_normal_video" />
     <item type="id" name="cinematic_pan_bottom_sheet_description" />
+    <item type="id" name="options_menu_standalone_load_configs" />
+    <item type="id" name="proc_indecator" />
     <item type="id" name="cinematic_pan_edu_image" />
     <item type="id" name="cinematic_pan_image_container" />
+    <item type="id" name="rb_spring01" />
+    <item type="id" name="rb_spring02" />
     <item type="id" name="close_button" />
     <item type="id" name="coach_hud" />
     <item type="id" name="collapsible_layout" />
     <item type="id" name="collapsing_toolbar" />
     <item type="id" name="compose_view_saveable_id_tag" />
     <item type="id" name="confirm_button" />
+    <item type="id" name="rb_spring03" />
+    <item type="id" name="rb_spring_black" />
     <item type="id" name="container" />
     <item type="id" name="content" />
     <item type="id" name="contentPanel" />
@@ -145,30 +205,59 @@
     <item type="id" name="content_level_selector" />
     <item type="id" name="content_parent" />
     <item type="id" name="content_view" />
+    <item type="id" name="rb_spring_white" />
     <item type="id" name="coordinator" />
+    <item type="id" name="rg_spring" />
+    <item type="id" name="rl_custom" />
     <item type="id" name="countdown_slider_frame" />
     <item type="id" name="countdown_slider_view" />
     <item type="id" name="creative_button" />
     <item type="id" name="creative_button_stub" />
+    <item type="id" name="rl_model" />
+    <item type="id" name="rl_spring" />
     <item type="id" name="current_mode_info_chip" />
     <item type="id" name="customPanel" />
     <item type="id" name="cutout_bar" />
     <item type="id" name="cuttlefish_bone_slider" />
+    <item type="id" name="rl_time" />
+    <item type="id" name="rv_list" />
     <item type="id" name="cvv_control" />
     <item type="id" name="cvv_progressbar" />
     <item type="id" name="cvv_videoview" />
+    <item type="id" name="statusbarutil_fake_status_bar_view" />
     <item type="id" name="debug_viz_view" />
+    <item type="id" name="statusbarutil_translucent_view" />
     <item type="id" name="decor_content_parent" />
+    <item type="id" name="summary" />
+    <item type="id" name="sw_enable" />
     <item type="id" name="description" />
     <item type="id" name="design_bottom_sheet" />
     <item type="id" name="design_menu_item_action_area" />
     <item type="id" name="design_menu_item_action_area_stub" />
     <item type="id" name="design_menu_item_text" />
+    <item type="id" name="telegram_btn" />
     <item type="id" name="device_battery" />
+    <item type="id" name="telegram_icon" />
+    <item type="id" name="telegram_photography_btn" />
+    <item type="id" name="text1" />
+    <item type="id" name="toggleButton" />
     <item type="id" name="disabled_controls" />
     <item type="id" name="disabled_text" />
+    <item type="id" name="toggleButton2" />
+    <item type="id" name="toggleButton3" />
+    <item type="id" name="tv_art" />
+    <item type="id" name="tv_cure_pre" />
+    <item type="id" name="tv_custom" />
+    <item type="id" name="tv_gamma" />
+    <item type="id" name="tv_hasselblad" />
+    <item type="id" name="tv_leica" />
+    <item type="id" name="tv_tap" />
+    <item type="id" name="tv_thumb_hint" />
+    <item type="id" name="tv_time" />
     <item type="id" name="dummy_placeholder" />
+    <item type="id" name="tv_title" />
     <item type="id" name="edit_query" />
+    <item type="id" name="tv_tone" />
     <item type="id" name="edu_image_container" />
     <item type="id" name="edu_toast_icon" />
     <item type="id" name="edu_toast_icon_space" />
@@ -176,6 +265,7 @@
     <item type="id" name="elapsed_timer_view" />
     <item type="id" name="end_barrier" />
     <item type="id" name="end_guideline" />
+    <item type="id" name="tv_value" />
     <item type="id" name="evcomp" />
     <item type="id" name="evcomp_brightness_compose_view" />
     <item type="id" name="evcomp_brightness_slider" />
@@ -184,6 +274,7 @@
     <item type="id" name="evcomp_shadow_slider" />
     <item type="id" name="example_images_scroll_view" />
     <item type="id" name="example_images_view" />
+    <item type="id" name="tv_value_hint" />
     <item type="id" name="expand_button" />
     <item type="id" name="expand_button_layout" />
     <item type="id" name="expand_icon" />
@@ -193,9 +284,12 @@
     <item type="id" name="eyes_focus_indicator_rect" />
     <item type="id" name="face_view" />
     <item type="id" name="face_view_ui_stub" />
+    <item type="id" name="txt_date" />
     <item type="id" name="filmstrip_transition_layout" />
     <item type="id" name="first_run_contents" />
     <item type="id" name="flash_overlay" />
+    <item type="id" name="txt_size" />
+    <item type="id" name="view_blue" />
     <item type="id" name="focus_controls" />
     <item type="id" name="focus_controls_slider" />
     <item type="id" name="focus_distance_text_line" />
@@ -210,14 +304,21 @@
     <item type="id" name="frame" />
     <item type="id" name="frame_layout_for_notification_chip" />
     <item type="id" name="front_lens_indicator_overlay" />
+    <item type="id" name="view_cyan" />
     <item type="id" name="fullscreen_selfie_flash" />
+    <item type="id" name="view_green" />
+    <item type="id" name="view_orange" />
     <item type="id" name="gif_sxs" />
     <item type="id" name="gleaming_view" />
     <item type="id" name="glide_custom_view_target_tag" />
+    <item type="id" name="view_pink" />
     <item type="id" name="got_it_button" />
     <item type="id" name="gradient_bar" />
     <item type="id" name="grid_lines" />
     <item type="id" name="group_divider" />
+    <item type="id" name="view_purple" />
+    <item type="id" name="view_red" />
+    <item type="id" name="view_yellow" />
     <item type="id" name="hdr_bottom_sheet_hdr_caption" />
     <item type="id" name="hdr_bottom_sheet_hdr_video" />
     <item type="id" name="hdr_bottom_sheet_lower_description" />
@@ -721,55 +822,4 @@
     <item type="id" name="zoom_toggle_wide" />
     <item type="id" name="zoom_ui" />
     <item type="id" name="zoom_ui_seekbar" />
-    <item type="id" name="agc_title_text" />
-    <item type="id" name="agc_tips" />
-    <item type="id" name="agc_root" />
-    <item type="id" name="circle_view" />
-    <item type="id" name="agc_iv_thumb" />
-    <item type="id" name="agc_tv_thumb" />
-    <item type="id" name="text1" />
-    <item type="id" name="txt_size" />
-    <item type="id" name="txt_date" />
-    <item type="id" name="tv_title" />
-    <item type="id" name="sw_enable" />
-    <item type="id" name="color_mix_layout" />
-    <item type="id" name="tv_thumb_hint" />
-    <item type="id" name="tv_value_hint" />
-    <item type="id" name="tv_value" />
-    <item type="id" name="agc_csb" />
-    <item type="id" name="ll_content" />
-    <item type="id" name="agc_list_view" />
-    <item type="id" name="agc_agc_ruler" />
-    <item type="id" name="agc_cancel" />
-    <item type="id" name="agc_save" />
-    <item type="id" name="banner" />
-    <item type="id" name="toggleButton" />
-    <item type="id" name="toggleButton2" />
-    <item type="id" name="toggleButton3" />
-    <item type="id" name="agc_fw_btn_clear" />
-    <item type="id" name="agc_fw_list_view" />
-    <item type="id" name="agc_fw_item_text" />
-    <item type="id" name="input_label" />
-    <item type="id" name="input_text" />
-    <item type="id" name="color_mix_root" />
-    <item type="id" name="color_mix_ll_overried" />
-    <item type="id" name="agc_color_checked" />
-    <item type="id" name="agc_color_reset" />
-    <item type="id" name="color_mix_tv_done" />
-    <item type="id" name="color_root" />
-    <item type="id" name="color_layout" />
-    <item type="id" name="view_red" />
-    <item type="id" name="view_green" />
-    <item type="id" name="view_blue" />
-    <item type="id" name="view_yellow" />
-    <item type="id" name="view_cyan" />
-    <item type="id" name="view_orange" />
-    <item type="id" name="view_purple" />
-    <item type="id" name="view_pink" />
-    <item type="id" name="color_slider_bar" />
-    <item type="id" name="et_library_title" />
-    <item type="id" name="et_library_address" />
-    <item type="id" name="et_library_value" />
-    <item type="id" name="et_library_extract_value" />
-    <item type="id" name="rv_list" />
 </resources>

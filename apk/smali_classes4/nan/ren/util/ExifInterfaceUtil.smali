@@ -63,13 +63,13 @@
     .param p0, "filePath"    # Ljava/lang/String;
     .param p1, "exif"    # Landroid/media/ExifInterface;
 
-    .line 213
+    .line 201
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
 
     invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 214
+    .line 202
     .local v0, "exnew":Landroid/media/ExifInterface;
     sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
 
@@ -90,13 +90,13 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 215
+    .line 203
     .local v2, "f":Ljava/lang/String;
     invoke-virtual {p1, v2}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 216
+    .line 204
     .local v3, "tmpV":Ljava/lang/String;
     if-eqz v3, :cond_0
 
@@ -110,30 +110,30 @@
 
     if-nez v4, :cond_0
 
-    .line 217
+    .line 205
     invoke-virtual {v0, v2, v3}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 219
+    .line 207
     .end local v2    # "f":Ljava/lang/String;
     .end local v3    # "tmpV":Ljava/lang/String;
     :cond_0
     goto :goto_0
 
-    .line 220
+    .line 208
     :cond_1
     invoke-static {v0}, Lnan/ren/util/ExifInterfaceUtil;->saveExifInterface(Landroid/media/ExifInterface;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 223
+    .line 211
     .end local v0    # "exnew":Landroid/media/ExifInterface;
     goto :goto_1
 
-    .line 221
+    .line 209
     :catch_0
     move-exception v0
 
-    .line 224
+    .line 212
     :goto_1
     return-void
 .end method
@@ -144,13 +144,13 @@
     .param p1, "exifInterface"    # Landroid/media/ExifInterface;
     .param p2, "str2"    # Ljava/lang/String;
 
-    .line 193
+    .line 181
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
 
     invoke-direct {v0, p0}, Landroid/media/ExifInterface;-><init>(Ljava/lang/String;)V
 
-    .line 194
+    .line 182
     .local v0, "exifInterface2":Landroid/media/ExifInterface;
     sget-object v1, Lnan/ren/util/ExifInterfaceUtil;->ExifInterface_Field_List:Ljava/util/List;
 
@@ -171,13 +171,13 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 195
+    .line 183
     .local v2, "str3":Ljava/lang/String;
     invoke-virtual {p1, v2}, Landroid/media/ExifInterface;->getAttribute(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 196
+    .line 184
     .local v3, "attribute":Ljava/lang/String;
     if-eqz v3, :cond_0
 
@@ -191,35 +191,35 @@
 
     if-nez v4, :cond_0
 
-    .line 197
+    .line 185
     invoke-virtual {v0, v2, v3}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 199
+    .line 187
     .end local v2    # "str3":Ljava/lang/String;
     .end local v3    # "attribute":Ljava/lang/String;
     :cond_0
     goto :goto_0
 
-    .line 200
+    .line 188
     :cond_1
     const-string v1, "ImageDescription"
 
     invoke-virtual {v0, v1, p2}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 201
+    .line 189
     invoke-static {v0}, Lnan/ren/util/ExifInterfaceUtil;->saveExifInterface(Landroid/media/ExifInterface;)V
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 203
+    .line 191
     .end local v0    # "exifInterface2":Landroid/media/ExifInterface;
     goto :goto_1
 
-    .line 202
-    :catch_0
+    .line 190
+    :catchall_0
     move-exception v0
 
-    .line 204
+    .line 192
     :goto_1
     return-void
 .end method
@@ -229,7 +229,7 @@
     .param p0, "filePath"    # Ljava/lang/String;
     .param p1, "srcfile"    # Ljava/lang/String;
 
-    .line 208
+    .line 196
     :try_start_0
     new-instance v0, Landroid/media/ExifInterface;
 
@@ -241,14 +241,14 @@
 
     goto :goto_0
 
-    .line 209
+    .line 197
     :catch_0
     move-exception v0
 
     :goto_0
     nop
 
-    .line 210
+    .line 198
     return-void
 .end method
 
@@ -302,7 +302,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 175
+    .line 174
     :cond_0
     const-string v0, "ro.vendor.oplus.market.name"
 
@@ -316,23 +316,8 @@
 
     invoke-virtual {p0, v1, v0}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 179
+    .line 176
     :cond_1
-    invoke-static {}, Lnan/ren/util/NUtil;->getProfileTitle()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 180
-    .local v0, "pztitle":Ljava/lang/String;
-    if-eqz v0, :cond_2
-
-    .line 183
-    const-string v1, "UserComment"
-
-    invoke-virtual {p0, v1, v0}, Landroid/media/ExifInterface;->setAttribute(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 188
-    :cond_2
     :try_start_0
     invoke-virtual {p0}, Landroid/media/ExifInterface;->saveAttributes()V
     :try_end_0
@@ -341,9 +326,9 @@
     goto :goto_0
 
     :catch_0
-    move-exception v1
+    move-exception v0
 
-    .line 189
+    .line 177
     :goto_0
     return-void
 .end method

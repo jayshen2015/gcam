@@ -377,6 +377,12 @@
 
     invoke-static {v3}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
     iget-object v3, v0, Lgjg;->m:Lisy;
 
     iget-object v3, v3, Lisy;->d:Ljava/lang/Object;
@@ -405,9 +411,10 @@
 
     invoke-interface {v3, v4}, Ljlr;->F(Ljava/lang/String;)V
 
+    :cond_0
     iget-boolean v3, v2, Lgiq;->d:Z
 
-    if-eqz v3, :cond_0
+    if-eqz v3, :cond_1
 
     new-instance v3, Lcom/google/googlex/gcam/ShotMetadata;
 
@@ -425,7 +432,7 @@
 
     move-result-object v0
 
-    :cond_0
+    :cond_1
     iget-object v3, v0, Lgjg;->m:Lisy;
 
     iget-object v3, v3, Lisy;->d:Ljava/lang/Object;
@@ -454,13 +461,13 @@
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_2
 
     iget-object v4, v0, Lgjg;->d:Lcom/google/googlex/gcam/ShotMetadata;
 
     invoke-virtual {v4, v3}, Lcom/google/googlex/gcam/ShotMetadata;->k(Ljava/lang/String;)V
 
-    :cond_1
+    :cond_2
     iget-object v3, v0, Lgjg;->d:Lcom/google/googlex/gcam/ShotMetadata;
 
     iget-object v4, v1, Lgis;->d:Lfll;
@@ -473,7 +480,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     iget-object v4, v1, Lgis;->e:Lmqm;
 
@@ -497,7 +504,7 @@
 
     move-result v4
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
     sget-object v4, Lgis;->b:Lpgw;
 
@@ -509,11 +516,11 @@
 
     check-cast v5, Lmsq;
 
-    if-nez v5, :cond_2
+    if-nez v5, :cond_3
 
     goto :goto_0
 
-    :cond_2
+    :cond_3
     sget-object v6, Lgis;->c:Lphm;
 
     invoke-virtual {v6, v5}, Lphm;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -522,14 +529,14 @@
 
     check-cast v5, Lmsq;
 
-    if-nez v5, :cond_3
+    if-nez v5, :cond_4
 
     :goto_0
     sget-object v5, Lqcq;->a:Lqcq;
 
     goto :goto_1
 
-    :cond_3
+    :cond_4
     iget-object v4, v4, Lpkf;->c:Lpkf;
 
     sget-object v6, Lqcq;->a:Lqcq;
@@ -542,30 +549,30 @@
 
     check-cast v5, Lqcq;
 
-    :cond_4
+    :cond_5
     :goto_1
     invoke-direct {p0, v0}, Lgis;->b(Lgjg;)Z
 
     move-result v4
 
-    if-eqz v4, :cond_5
+    if-eqz v4, :cond_6
 
     invoke-static {v3}, Lnxt;->l(Lcom/google/googlex/gcam/ShotMetadata;)V
 
-    :cond_5
+    :cond_6
     iget-object v3, v0, Lgjg;->b:Lnbs;
 
     iget-wide v6, v0, Lgjg;->f:J
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_7
 
     sget-object v4, Lqcq;->b:Lqcq;
 
-    if-eq v5, v4, :cond_6
+    if-eq v5, v4, :cond_7
 
     sget-object v4, Lqcq;->a:Lqcq;
 
-    if-eq v5, v4, :cond_6
+    if-eq v5, v4, :cond_7
 
     invoke-virtual {v3}, Lnbs;->c()I
 
@@ -609,14 +616,14 @@
 
     invoke-direct {v3, v4, v6, v7}, Lnbs;-><init>(Lcom/google/googlex/gcam/YuvWriteView;J)V
 
-    :cond_6
+    :cond_7
     iget-object v4, v0, Lgjg;->a:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    if-eqz v4, :cond_7
+    if-eqz v4, :cond_8
 
     sget-object v6, Lqcq;->b:Lqcq;
 
-    if-eq v5, v6, :cond_7
+    if-eq v5, v6, :cond_8
 
     invoke-virtual {v4}, Lcom/google/googlex/gcam/InterleavedImageU8;->c()I
 
@@ -658,7 +665,7 @@
 
     move-object v4, v7
 
-    :cond_7
+    :cond_8
     new-instance v5, Lgir;
 
     invoke-direct {v5, v3, v4}, Lgir;-><init>(Lnbs;Lcom/google/googlex/gcam/InterleavedImageU8;)V
@@ -690,7 +697,7 @@
     :try_start_0
     iget-object v6, v5, Lgir;->b:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    if-eqz v6, :cond_8
+    if-eqz v6, :cond_9
 
     invoke-virtual {v6}, Lcom/google/googlex/gcam/InterleavedImageU8;->e()Lcom/google/googlex/gcam/InterleavedReadViewU8;
 
@@ -719,10 +726,10 @@
 
     goto :goto_3
 
-    :cond_8
+    :cond_9
     iget-object v6, v5, Lgir;->a:Lnbs;
 
-    if-eqz v6, :cond_14
+    if-eqz v6, :cond_15
 
     iget-object v6, v6, Lnbs;->c:Lcom/google/googlex/gcam/YuvReadView;
 
@@ -792,7 +799,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_5
 
-    if-eqz v10, :cond_9
+    if-eqz v10, :cond_a
 
     :try_start_2
     sget v3, Lcom/google/android/libraries/camera/exif/ExifInterface;->TAG_SOFTWARE:I
@@ -837,7 +844,7 @@
     :try_start_3
     throw v0
 
-    :cond_9
+    :cond_a
     :goto_4
     iget-object v3, v0, Lgjg;->m:Lisy;
 
@@ -899,7 +906,7 @@
 
     iget v9, v9, Lidg;->c:I
 
-    if-ltz v9, :cond_b
+    if-ltz v9, :cond_c
 
     sget v10, Lcom/google/android/libraries/camera/exif/ExifInterface;->aR:I
 
@@ -907,7 +914,7 @@
 
     move-result-object v10
 
-    if-nez v10, :cond_a
+    if-nez v10, :cond_b
 
     sget v10, Lcom/google/android/libraries/camera/exif/ExifInterface;->aR:I
 
@@ -935,7 +942,7 @@
 
     invoke-virtual {v4, v8}, Lcom/google/android/libraries/camera/exif/ExifInterface;->y(Lmsv;)V
 
-    :cond_a
+    :cond_b
     sget v8, Lcom/google/android/libraries/camera/exif/ExifInterface;->bh:I
 
     const-string v10, "M"
@@ -971,7 +978,7 @@
 
     goto :goto_5
 
-    :cond_b
+    :cond_c
     move-object v9, v6
 
     move-object/from16 p1, v7
@@ -991,7 +998,7 @@
 
     array-length v6, v3
 
-    if-lez v6, :cond_c
+    if-lez v6, :cond_d
 
     sget v6, Lcom/google/android/libraries/camera/exif/ExifInterface;->f:I
 
@@ -1005,7 +1012,7 @@
 
     invoke-virtual {v4, v3}, Lcom/google/android/libraries/camera/exif/ExifInterface;->y(Lmsv;)V
 
-    :cond_c
+    :cond_d
     iget-object v3, v1, Lgis;->d:Lfll;
 
     sget-object v6, Lflr;->bI:Lflm;
@@ -1014,13 +1021,13 @@
 
     move-result v3
 
-    if-nez v3, :cond_d
+    if-nez v3, :cond_e
 
     invoke-direct {p0, v0}, Lgis;->b(Lgjg;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_d
+    if-eqz v3, :cond_e
 
     sget v3, Lcom/google/android/libraries/camera/exif/ExifInterface;->j:I
 
@@ -1060,7 +1067,7 @@
 
     invoke-virtual {v4, v3}, Lcom/google/android/libraries/camera/exif/ExifInterface;->y(Lmsv;)V
 
-    :cond_d
+    :cond_e
     invoke-virtual {v11}, Lmql;->close()V
 
     iget-object v3, v1, Lgis;->g:Lltz;
@@ -1071,7 +1078,7 @@
 
     iget-object v3, v5, Lgir;->a:Lnbs;
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_f
 
     invoke-virtual {v3}, Lnbs;->c()I
 
@@ -1079,20 +1086,20 @@
 
     goto :goto_6
 
-    :cond_e
+    :cond_f
     iget-object v3, v5, Lgir;->b:Lcom/google/googlex/gcam/InterleavedImageU8;
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_10
 
     invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedImageU8;->c()I
 
     invoke-virtual {v3}, Lcom/google/googlex/gcam/InterleavedImageU8;->b()I
 
-    :cond_f
+    :cond_10
     :goto_6
     iget-boolean v3, v2, Lgiq;->d:Z
 
-    if-eqz v3, :cond_12
+    if-eqz v3, :cond_13
 
     iget-object v3, v0, Lisy;->d:Ljava/lang/Object;
 
@@ -1110,16 +1117,16 @@
 
     iget-object v5, v2, Lgiq;->b:Ljava/lang/String;
 
-    if-eqz v5, :cond_10
+    if-eqz v5, :cond_11
 
     iget-object v6, v3, Ljlt;->a:Lneh;
 
     invoke-interface {v6, v5}, Lneh;->h(Ljava/lang/String;)V
 
-    :cond_10
+    :cond_11
     iget-object v5, v2, Lgiq;->c:Lgdn;
 
-    if-eqz v5, :cond_11
+    if-eqz v5, :cond_12
 
     iget-object v6, v1, Lgis;->f:Lgdu;
 
@@ -1127,19 +1134,19 @@
 
     invoke-virtual {v6, v7, v5}, Lgdu;->c(Lneh;Lgdn;)V
 
-    :cond_11
+    :cond_12
     iget-object v5, v3, Ljlt;->a:Lneh;
 
     invoke-static {v9, v4, v5}, Lnie;->X([BLcom/google/android/libraries/camera/exif/ExifInterface;Lneh;)J
 
     invoke-virtual {v3}, Ljlt;->b()V
 
-    :cond_12
+    :cond_13
     iget-boolean v2, v2, Lgiq;->d:Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_3
 
-    if-eqz v2, :cond_13
+    if-eqz v2, :cond_14
 
     :try_start_5
     invoke-virtual {v11}, Lmql;->close()V
@@ -1154,7 +1161,7 @@
     :goto_7
     return-void
 
-    :cond_13
+    :cond_14
     :try_start_6
     new-instance v2, Ljyj;
 
@@ -1236,7 +1243,7 @@
     :goto_b
     throw v2
 
-    :cond_14
+    :cond_15
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "Only YUV and RGB are supported for JPEG compression."

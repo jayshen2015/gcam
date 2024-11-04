@@ -14,6 +14,10 @@
 
 
 # static fields
+.field public static final activity_about_watermark:I
+
+.field public static final activity_custom_watermark:I
+
 .field public static final agc_activity_default_error:I
 
 .field public static final agc_asv_pop_list_item:I
@@ -23,6 +27,8 @@
 .field public static final agc_chooser_dialog:I
 
 .field public static final agc_config_load_dialog:I
+
+.field public static final agc_cure_dialog:I
 
 .field public static final agc_dialog_color_mix:I
 
@@ -50,7 +56,17 @@
 
 .field public static final agc_layout_color_mix:I
 
+.field public static final agc_layout_watermark_item:I
+
 .field public static final agc_library_preference_dialog:I
+
+.field public static final agc_lut_header_text:I
+
+.field public static final agc_lut_item_layout:I
+
+.field public static final agc_lut_pager_layout:I
+
+.field public static final agc_lut_selecotr_layout:I
 
 .field public static final agc_mutiple_window:I
 
@@ -59,6 +75,8 @@
 .field public static final agc_ruler_window:I
 
 .field public static final agc_seekbar_dialog:I
+
+.field public static final agc_watermark_dialog:I
 
 .field public static final agc_wb_pop_window:I
 
@@ -298,6 +316,78 @@
     move-result v0
 
     sput v0, Lcom/agc/Res$layout;->agc_first_run_education_view_layout:I
+
+    const-string v0, "agc_activity_custom_watermark"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->activity_custom_watermark:I
+
+    const-string v0, "agc_activity_about_watermark"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->activity_about_watermark:I
+
+    const-string v0, "agc_layout_watermark_item"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_layout_watermark_item:I
+
+    const-string v0, "agc_watermark_dialog"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_watermark_dialog:I
+
+    const-string v0, "agc_cure_dialog"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_cure_dialog:I
+
+    const-string v0, "agc_lut_selector_layout"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_lut_selecotr_layout:I
+
+    const-string v0, "agc_lut_header_text"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_lut_header_text:I
+
+    const-string v0, "agc_lut_item_layout"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_lut_item_layout:I
+
+    const-string v0, "agc_lut_pager_layout"
+
+    invoke-static {v0}, Lcom/agc/Res;->getLayoutID(Ljava/lang/String;)I
+
+    move-result v0
+
+    sput v0, Lcom/agc/Res$layout;->agc_lut_pager_layout:I
 
     return-void
 .end method

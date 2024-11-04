@@ -3894,6 +3894,10 @@
 .method public final P(Landroid/content/Context;ILandroid/content/res/Configuration;Z)Landroid/content/res/Configuration;
     .locals 0
 
+    invoke-static {p2}, Lcom/agc/AdvancedSettings;->getColorTheme(I)I
+
+    move-result p2
+
     packed-switch p2, :pswitch_data_0
 
     if-eqz p4, :cond_0

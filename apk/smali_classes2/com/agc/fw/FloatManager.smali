@@ -788,12 +788,6 @@
 .method public showFloat(Landroid/app/Activity;)V
     .locals 2
 
-    invoke-direct {p0, p1}, Lcom/agc/fw/FloatManager;->isDebuggable(Landroid/content/Context;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
     invoke-direct {p0}, Lcom/agc/fw/FloatManager;->getOverlayState()I
 
     move-result v0

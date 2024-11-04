@@ -83,6 +83,67 @@
     return-object p0
 .end method
 
+.method public static CustomWBValue(I)I
+    .locals 2
+
+    const/16 v0, 0x8
+
+    const/4 v1, 0x5
+
+    packed-switch p0, :pswitch_data_0
+
+    :pswitch_0
+    const/4 p0, 0x0
+
+    return p0
+
+    :pswitch_1
+    return v0
+
+    :pswitch_2
+    const/4 p0, 0x6
+
+    return p0
+
+    :pswitch_3
+    const/4 p0, 0x7
+
+    return p0
+
+    :pswitch_4
+    return v1
+
+    :pswitch_5
+    const/4 p0, 0x4
+
+    return p0
+
+    :pswitch_6
+    const/4 p0, 0x3
+
+    return p0
+
+    :pswitch_7
+    const/4 p0, 0x2
+
+    return p0
+
+    :pswitch_data_0
+    .packed-switch -0x5
+        :pswitch_7
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_1
+    .end packed-switch
+.end method
+
 .method public static FIX_SCALER_CROP_REGION(Landroid/graphics/Rect;)Landroid/graphics/Rect;
     .locals 3
 
@@ -161,6 +222,54 @@
 
     :cond_1
     :goto_0
+    return-object p0
+.end method
+
+.method public static GetAwbSliderValue(Livz;)Lphz;
+    .locals 2
+
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AWB_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    iget-object p0, p0, Livz;->b:Lphh;
+
+    invoke-virtual {p0}, Lphh;->toArray()[Ljava/lang/Object;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    aget-object p0, p0, v1
+
+    check-cast p0, Ljava/lang/Float;
+
+    invoke-virtual {p0}, Ljava/lang/Float;->floatValue()F
+
+    move-result p0
+
+    const/high16 v1, 0x41200000    # 10.0f
+
+    mul-float/2addr p0, v1
+
+    float-to-int p0, p0
+
+    div-int/lit8 p0, p0, 0x2
+
+    invoke-static {p0}, LAGC;->CustomWBValue(I)I
+
+    move-result p0
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-static {v0, p0}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lphz;->H(Ljava/lang/Object;)Lphz;
+
+    move-result-object p0
+
     return-object p0
 .end method
 
@@ -287,6 +396,102 @@
 
     :goto_0
     return-void
+.end method
+
+.method public static REQUEST_HYBRID_AE_ENABLE(Z)Lphz;
+    .locals 4
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    if-nez p0, :cond_0
+
+    sget-object p0, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {p0, v0}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object p0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v1}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lphz;->I(Ljava/lang/Object;Ljava/lang/Object;)Lphz;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_0
+    sget-object p0, Llkv;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    if-nez p0, :cond_1
+
+    sget-object p0, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {p0, v0}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object p0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v1}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object v0
+
+    sget-object v2, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v2, v1}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object v1
+
+    invoke-static {p0, v0, v1}, Lphz;->J(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lphz;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_1
+    sget-object p0, Landroid/hardware/camera2/CaptureRequest;->FLASH_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {p0, v0}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object p0
+
+    sget-object v0, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v0, v1}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object v0
+
+    sget-object v2, Llkv;->a:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v2, v1}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object v2
+
+    sget-object v3, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    invoke-static {v3, v1}, Lnie;->ax(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)Lmuc;
+
+    move-result-object v1
+
+    invoke-static {p0, v0, v2, v1}, Lphz;->K(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lphz;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method private static convertGcamSensorId(I)Lqdj;
@@ -475,17 +680,23 @@
 
     invoke-virtual {v1}, Lcom/agc/Camera;->isOisSupported()Z
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_1
+    if-eqz v1, :cond_1
 
-    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-static {}, Lagc/Agc;->isSonyDevice()Z
+
+    move-result v1
+
+    if-nez v1, :cond_1
+
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->STATISTICS_OIS_DATA_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    invoke-virtual {v0, p1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     :cond_1
     const-string p0, "pref_antibanding_key"
@@ -496,13 +707,13 @@
 
     if-eqz p0, :cond_2
 
-    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_ANTIBANDING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->CONTROL_AE_ANTIBANDING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    invoke-virtual {v0, p1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     :cond_2
     const-string p0, "pref_hot_pixel_key"
@@ -513,13 +724,13 @@
 
     if-lez p0, :cond_3
 
-    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->HOT_PIXEL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->HOT_PIXEL_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    invoke-virtual {v0, p1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     :cond_3
     invoke-static {}, Lcom/agc/AdvancedSettings;->getShading()I
@@ -528,15 +739,91 @@
 
     if-ltz p0, :cond_4
 
-    sget-object p1, Landroid/hardware/camera2/CaptureRequest;->SHADING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->SHADING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
 
-    invoke-virtual {v0, p1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     :cond_4
+    sget-object p0, LDeveloperOptions;->ccam:Lfln;
+
+    invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_ABERRATION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sub-int/2addr p0, p1
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_5
+    sget-object p0, LDeveloperOptions;->discm:Lfln;
+
+    invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result p0
+
+    if-eqz p0, :cond_6
+
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->DISTORTION_CORRECTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sub-int/2addr p0, p1
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_6
+    sget-object p0, LDeveloperOptions;->coloco:Lfln;
+
+    invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result p0
+
+    if-eqz p0, :cond_7
+
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->COLOR_CORRECTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sub-int/2addr p0, p1
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_7
+    sget-object p0, LDeveloperOptions;->tonmod:Lfln;
+
+    invoke-static {p0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result p0
+
+    if-eqz p0, :cond_8
+
+    sget-object v1, Landroid/hardware/camera2/CaptureRequest;->TONEMAP_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+
+    sub-int/2addr p0, p1
+
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    invoke-virtual {v0, v1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+
+    :cond_8
     sget-object p0, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     const-string p1, "samsung"
@@ -545,21 +832,19 @@
 
     move-result p0
 
-    if-eqz p0, :cond_5
+    if-eqz p0, :cond_9
 
-    const-string p0, "pref_livehdr_key"
+    sget-object p0, Lcom/CameraAPI2Keys;->CONTROL_METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
-    invoke-static {p0}, Lcom/Utils/Pref;->MenuValue(Ljava/lang/String;)I
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getMeteringMode()I
 
-    move-result p0
+    move-result p1
 
-    sget-object p1, Lcom/CameraAPI2Keys;->CONTROL_METERING_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object p1
 
-    move-result-object p0
-
-    invoke-virtual {v0, p1, p0}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    invoke-virtual {v0, p0, p1}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
     sget-object p0, Lcom/CameraAPI2Keys;->CONTROL_LIVE_HDR_LEVEL:Landroid/hardware/camera2/CaptureRequest$Key;
 
@@ -573,30 +858,32 @@
 
     move-result p1
 
-    :goto_0
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
-    goto :goto_1
+    invoke-virtual {v0, p0, p1}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
 
-    :cond_5
+    goto :goto_0
+
+    :cond_9
     invoke-static {}, Lagc/Agc;->isXiaomi13Ultra()Z
 
     move-result p0
 
-    if-eqz p0, :cond_6
+    if-eqz p0, :cond_a
 
-    sget-object p0, Lcom/CameraAPI2Keys;->XIAOMI_LENS_APERTURE:Landroid/hardware/camera2/CaptureRequest$Key;
+    const-string p0, "persist.vendor.camera.manualApertureFnumber"
 
     invoke-static {}, Lcom/agc/AdvancedSettings;->getAperture()F
 
     move-result p1
 
-    goto :goto_0
+    invoke-static {p1}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
-    :goto_1
-    invoke-virtual {v0, p0, p1}, Lmzr;->b(Landroid/hardware/camera2/CaptureRequest$Key;Ljava/lang/Object;)V
+    move-result-object p1
+
+    invoke-static {p0, p1}, Lcom/SystemPropertiesUtil;->setPropertyStringShell(Ljava/lang/String;Ljava/lang/String;)Z
     :try_end_0
     .catch Landroid/hardware/camera2/CameraAccessException; {:try_start_0 .. :try_end_0} :catch_4
     .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_3
@@ -604,33 +891,34 @@
     .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/UnsupportedOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_6
+    :cond_a
+    :goto_0
     return-object v0
 
     :catch_0
     move-exception p0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_1
     move-exception p0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_2
     move-exception p0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_3
     move-exception p0
 
-    goto :goto_2
+    goto :goto_1
 
     :catch_4
     move-exception p0
 
-    :goto_2
+    :goto_1
     new-instance p1, Lmsk;
 
     invoke-direct {p1, p0}, Lmsk;-><init>(Ljava/lang/Throwable;)V
@@ -709,9 +997,14 @@
 
     packed-switch v0, :pswitch_data_0
 
-    goto :goto_0
-
     :pswitch_0
+    new-array v2, v1, [F
+
+    fill-array-data v2, :array_0
+
+    goto :goto_1
+
+    :pswitch_1
     new-array v2, v1, [F
 
     const-string p0, "black_level_0_key"
@@ -752,50 +1045,42 @@
 
     aput p0, v2, p1
 
-    goto :goto_2
-
-    :pswitch_1
-    new-array v2, v1, [F
-
-    fill-array-data v2, :array_0
-
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_2
     new-array v2, v1, [F
 
     fill-array-data v2, :array_1
 
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_3
     new-array v2, v1, [F
 
     fill-array-data v2, :array_2
 
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_4
     new-array v2, v1, [F
 
     fill-array-data v2, :array_3
 
-    goto :goto_2
+    goto :goto_1
 
-    :goto_0
     :pswitch_5
     new-array v2, v1, [F
 
     fill-array-data v2, :array_4
 
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_6
     new-array v2, v1, [F
 
     fill-array-data v2, :array_5
 
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_7
     sget-object p0, Landroid/hardware/camera2/CaptureResult;->SENSOR_DYNAMIC_BLACK_LEVEL:Landroid/hardware/camera2/CaptureResult$Key;
@@ -808,7 +1093,7 @@
 
     check-cast v2, [F
 
-    goto :goto_2
+    goto :goto_1
 
     :pswitch_8
     sget-object p1, Landroid/hardware/camera2/CameraCharacteristics;->SENSOR_BLACK_LEVEL_PATTERN:Landroid/hardware/camera2/CameraCharacteristics$Key;
@@ -821,7 +1106,7 @@
 
     if-eqz p0, :cond_0
 
-    :goto_1
+    :goto_0
     if-ge v3, v1, :cond_0
 
     rem-int/lit8 p1, v3, 0x2
@@ -838,28 +1123,34 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1
+    goto :goto_0
 
     :cond_0
-    :goto_2
+    :goto_1
     return-object v2
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_8
         :pswitch_7
         :pswitch_6
+        :pswitch_0
         :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
-        :pswitch_0
     .end packed-switch
 
     :array_0
+    .array-data 4
+        0x42800000    # 64.0f
+        0x42800000    # 64.0f
+        0x42800000    # 64.0f
+        0x42800000    # 64.0f
+    .end array-data
+
+    :array_1
     .array-data 4
         0x42800000    # 64.0f
         0x42806666    # 64.2f
@@ -867,7 +1158,7 @@
         0x42800000    # 64.0f
     .end array-data
 
-    :array_1
+    :array_2
     .array-data 4
         0x427f70a4    # 63.86f
         0x427fb852    # 63.93f
@@ -875,28 +1166,20 @@
         0x428047ae    # 64.14f
     .end array-data
 
-    :array_2
-    .array-data 4
-        0x43800000    # 256.0f
-        0x43800000    # 256.0f
-        0x43800000    # 256.0f
-        0x43800000    # 256.0f
-    .end array-data
-
     :array_3
     .array-data 4
-        0x42c80000    # 100.0f
-        0x42c80000    # 100.0f
-        0x42c80000    # 100.0f
-        0x42c80000    # 100.0f
+        0x43800000    # 256.0f
+        0x43800000    # 256.0f
+        0x43800000    # 256.0f
+        0x43800000    # 256.0f
     .end array-data
 
     :array_4
     .array-data 4
-        0x42800000    # 64.0f
-        0x42800000    # 64.0f
-        0x42800000    # 64.0f
-        0x42800000    # 64.0f
+        0x42c80000    # 100.0f
+        0x42c80000    # 100.0f
+        0x42c80000    # 100.0f
+        0x42c80000    # 100.0f
     .end array-data
 
     :array_5
@@ -912,6 +1195,12 @@
     .locals 0
 
     return-void
+.end method
+
+.method public static getCamcorderLevelFix(I)I
+    .locals 0
+
+    return p0
 .end method
 
 .method public static getCameraId(Ljava/lang/String;)Ljava/lang/String;
@@ -968,64 +1257,207 @@
     return-object p0
 .end method
 
+.method public static getEdgeMode(I)I
+    .locals 1
+
+    sget-object v0, LDeveloperOptions;->dddE:Lfln;
+
+    invoke-static {v0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    move p0, v0
+
+    :cond_0
+    return p0
+.end method
+
 .method public static getEnumMap(ILjava/util/EnumMap;Lixa;)Ljava/util/EnumMap;
-    .locals 2
+    .locals 5
 
-    invoke-static {}, Lagc/Agc;->isSDM()Z
+    iget-object v0, p2, Lixa;->l:Lrbe;
 
-    move-result p2
+    check-cast v0, Ligk;
 
-    if-eqz p2, :cond_1
+    invoke-virtual {v0}, Ligk;->a()Liev;
 
-    sget-object p2, LAGC;->gcaConfig:Lfnc;
+    move-result-object v0
 
-    sget-object v0, Lflr;->bt:Lflm;
+    invoke-virtual {v0}, Liev;->P()I
 
-    const/4 v1, 0x1
-
-    invoke-virtual {p2, v0, v1}, Lfnc;->u(Lflm;Z)V
-
-    sget-object p2, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v0, Lfly;->i:Lflm;
+    move-result v0
 
     const/4 v1, 0x0
 
-    invoke-virtual {p2, v0, v1}, Lfnc;->u(Lflm;Z)V
+    const/4 v2, 0x1
 
-    sget-object p2, LAGC;->gcaConfig:Lfnc;
+    const/4 v3, 0x4
 
-    sget-object v0, Lfly;->j:Lflm;
+    if-ne v0, v3, :cond_0
 
-    invoke-virtual {p2, v0, v1}, Lfnc;->u(Lflm;Z)V
-
-    sget-object p2, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v0, Lflu;->ak:Lflm;
-
-    invoke-virtual {p2, v0, v1}, Lfnc;->u(Lflm;Z)V
-
-    sget-object p2, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v0, Lflu;->al:Lflm;
-
-    invoke-virtual {p2, v0, v1}, Lfnc;->u(Lflm;Z)V
-
-    const/16 p2, 0xc
-
-    if-eq p0, p2, :cond_0
-
-    sget-object p0, Lixg;->m:Lixg;
+    move v0, v2
 
     goto :goto_0
 
     :cond_0
-    sget-object p0, Lixg;->r:Lixg;
+    move v0, v1
 
     :goto_0
-    invoke-virtual {p1, p0}, Ljava/util/EnumMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v3, "getEnumMap Hardware isLevel3"
+
+    invoke-static {v3, v0}, Lcom/agc/Log;->e(Ljava/lang/Object;Z)I
+
+    invoke-static {}, Lagc/Agc;->isPixel()Z
+
+    move-result v3
+
+    if-nez v3, :cond_5
+
+    invoke-virtual {p1}, Ljava/util/EnumMap;->clear()V
+
+    sget-object v3, Lixg;->r:Lixg;
+
+    iget-object v4, p2, Lixa;->i:Lrbe;
+
+    invoke-interface {v4}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v3, v4}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v3, p2, Lixa;->k:Lrbe;
+
+    invoke-interface {v3}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Ljava/util/Map;
+
+    invoke-virtual {p1, v3}, Ljava/util/EnumMap;->putAll(Ljava/util/Map;)V
+
+    if-eqz v0, :cond_1
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v1, Lfly;->i:Lflm;
+
+    invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v1, Lfly;->j:Lflm;
+
+    invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
+
+    goto :goto_1
 
     :cond_1
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v3, Lfly;->i:Lflm;
+
+    invoke-virtual {v0, v3, v1}, Lfnc;->u(Lflm;Z)V
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v3, Lfly;->j:Lflm;
+
+    invoke-virtual {v0, v3, v1}, Lfnc;->u(Lflm;Z)V
+
+    :goto_1
+    invoke-static {}, Lcom/agc/LensSettings;->isSupportLEVEL3()Z
+
+    move-result v0
+
+    const/16 v1, 0xc
+
+    if-nez v0, :cond_2
+
+    sget-object v0, Lixg;->l:Lixg;
+
+    iget-object v3, p2, Lixa;->b:Lrbe;
+
+    invoke-interface {v3}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v0, v3}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v3, Lflr;->bt:Lflm;
+
+    invoke-virtual {v0, v3, v2}, Lfnc;->u(Lflm;Z)V
+
+    if-ne p0, v1, :cond_5
+
+    sget-object p0, Lixg;->m:Lixg;
+
+    iget-object p2, p2, Lixa;->h:Lrbe;
+
+    invoke-interface {p2}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p0, p2}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {}, Lagc/Agc;->isSDM()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_5
+
+    sget-object p0, Lixg;->r:Lixg;
+
+    invoke-virtual {p1, p0}, Ljava/util/EnumMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_2
+
+    :cond_2
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v2, Lflr;->bt:Lflm;
+
+    invoke-virtual {v0, v2}, Lfnc;->l(Lflm;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    sget-object v0, Lixg;->l:Lixg;
+
+    iget-object v2, p2, Lixa;->b:Lrbe;
+
+    invoke-interface {v2}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-virtual {p1, v0, v2}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_3
+    invoke-static {}, Lcom/agc/AdvancedSettings;->getTrackFocus()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    if-ne p0, v1, :cond_5
+
+    :cond_4
+    sget-object p0, Lixg;->m:Lixg;
+
+    iget-object p2, p2, Lixa;->h:Lrbe;
+
+    invoke-interface {p2}, Lrbe;->get()Ljava/lang/Object;
+
+    move-result-object p2
+
+    invoke-virtual {p1, p0, p2}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
+
+    :cond_5
+    :goto_2
     invoke-virtual {p1}, Ljava/util/EnumMap;->keySet()Ljava/util/Set;
 
     move-result-object p0
@@ -1313,6 +1745,40 @@
     return-object p0
 .end method
 
+.method public static getNoiseMode(I)I
+    .locals 1
+
+    sget-object v0, LDeveloperOptions;->dddN:Lfln;
+
+    invoke-static {v0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    move p0, v0
+
+    :cond_0
+    return p0
+.end method
+
+.method public static getNoiseVfMode(I)I
+    .locals 1
+
+    sget-object v0, LDeveloperOptions;->dddNF:Lfln;
+
+    invoke-static {v0}, LAGC;->GetDevSettingsIntValue(Lfln;)I
+
+    move-result v0
+
+    if-ltz v0, :cond_0
+
+    move p0, v0
+
+    :cond_0
+    return p0
+.end method
+
 .method public static getSensorInfoExposureTimeRange(Landroid/util/Range;)Landroid/util/Range;
     .locals 2
 
@@ -1397,18 +1863,145 @@
     return-object p0
 .end method
 
-.method public static mergeSetting(Lcom/google/googlex/gcam/ShotParams;)V
-    .locals 7
+.method public static im(F)Ljava/lang/Integer;
+    .locals 3
 
-    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+    const/4 v0, 0x0
 
-    move-result v0
+    cmpl-float v0, p0, v0
 
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
-    return-void
+    const/4 v2, 0x1
+
+    if-lez v0, :cond_0
+
+    move v0, v2
+
+    goto :goto_0
 
     :cond_0
+    if-nez v0, :cond_1
+
+    move v0, v1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v0, -0x1
+
+    :goto_0
+    if-eqz v0, :cond_9
+
+    if-gtz v0, :cond_5
+
+    if-gez v0, :cond_5
+
+    const/high16 v0, -0x41800000    # -0.25f
+
+    cmpl-float v0, p0, v0
+
+    if-ltz v0, :cond_2
+
+    const/4 p0, 0x3
+
+    :goto_1
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_2
+    const/high16 v0, -0x41000000    # -0.5f
+
+    cmpl-float v0, p0, v0
+
+    if-ltz v0, :cond_3
+
+    const/4 p0, 0x4
+
+    goto :goto_1
+
+    :cond_3
+    const/high16 v0, -0x40c00000    # -0.75f
+
+    cmpl-float v0, p0, v0
+
+    if-ltz v0, :cond_4
+
+    const/4 p0, 0x2
+
+    goto :goto_1
+
+    :cond_4
+    const/high16 v0, -0x40800000    # -1.0f
+
+    cmpl-float p0, p0, v0
+
+    if-ltz p0, :cond_9
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_5
+    const/high16 v0, 0x3e800000    # 0.25f
+
+    cmpg-float v0, p0, v0
+
+    if-gtz v0, :cond_6
+
+    const/4 p0, 0x5
+
+    goto :goto_1
+
+    :cond_6
+    const/high16 v0, 0x3f000000    # 0.5f
+
+    cmpg-float v0, p0, v0
+
+    if-gtz v0, :cond_7
+
+    const/4 p0, 0x7
+
+    goto :goto_1
+
+    :cond_7
+    const/high16 v0, 0x3f400000    # 0.75f
+
+    cmpg-float v0, p0, v0
+
+    if-gtz v0, :cond_8
+
+    const/4 p0, 0x6
+
+    goto :goto_1
+
+    :cond_8
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    cmpg-float p0, p0, v0
+
+    if-gtz p0, :cond_9
+
+    const/16 p0, 0x8
+
+    goto :goto_1
+
+    :cond_9
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static mergeSetting(Lcom/google/googlex/gcam/ShotParams;)V
+    .locals 6
+
     const-string v0, "pref_merge_key"
 
     invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefIntValue(Ljava/lang/String;)I
@@ -1419,160 +2012,252 @@
 
     sub-int/2addr v0, v1
 
-    sput v0, Lcom/agc/LogData$Device;->merge:I
+    const/16 v2, 0x25
 
-    invoke-static {}, Lcom/agc/LogData$Device;->log()V
+    const/4 v3, -0x1
 
-    const-string v2, "lib_hardmerge_key"
+    if-ne v0, v3, :cond_0
 
-    invoke-static {v2}, Lcom/Utils/Pref;->getAuxPrefStringValue(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/String;->isEmpty()Z
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
     move-result v3
 
-    const/4 v4, 0x0
+    if-nez v3, :cond_0
 
-    if-nez v3, :cond_2
+    sget v3, LAGC;->rawFormat:I
 
-    const-string v3, "Off"
+    if-ne v3, v2, :cond_0
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move v0, v1
 
-    move-result v3
+    :cond_0
+    const/4 v3, 0x0
 
-    if-eqz v3, :cond_1
+    if-eqz v0, :cond_3
+
+    if-eq v0, v1, :cond_2
+
+    const/4 v2, 0x3
+
+    if-eq v0, v2, :cond_1
 
     goto :goto_0
 
     :cond_1
-    move v3, v4
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    goto :goto_0
+
+    :cond_2
+    sget v4, LAGC;->rawFormat:I
+
+    if-ne v4, v2, :cond_4
+
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    goto :goto_0
+
+    :cond_3
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+
+    :cond_4
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    :goto_0
+    if-lez v0, :cond_6
+
+    if-ne v0, v1, :cond_5
+
+    sget v2, LAGC;->rawFormat:I
+
+    const/16 v4, 0x20
+
+    if-ne v2, v4, :cond_5
+
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
 
     goto :goto_1
 
-    :cond_2
-    :goto_0
-    move v3, v1
+    :cond_5
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
+    invoke-static {v4, v5, p0, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+
+    :cond_6
     :goto_1
-    if-nez v3, :cond_3
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    move-result v0
 
-    move-result-object v2
+    if-nez v0, :cond_c
 
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    sput v2, Lcom/agc/LogData$Device;->merge:I
-
-    invoke-static {}, Lcom/agc/LogData$Device;->log()V
-
-    :cond_3
     invoke-static {}, Lagc/Agc;->getSMode()I
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_4
+    if-nez v0, :cond_7
 
-    sget-object v2, LAGC;->gcaConfig:Lfnc;
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v3, Lflu;->T:Lflm;
+    sget-object v2, Lflu;->T:Lflm;
 
     :goto_2
-    invoke-virtual {v2, v3}, Lfnc;->l(Lflm;)Z
+    invoke-virtual {v0, v2}, Lfnc;->l(Lflm;)Z
 
-    move-result v2
+    move-result v0
 
     goto :goto_3
 
-    :cond_4
-    const/4 v3, 0x2
+    :cond_7
+    const/4 v2, 0x2
 
-    if-ne v2, v3, :cond_5
+    if-ne v0, v2, :cond_8
 
-    sget-object v2, LAGC;->gcaConfig:Lfnc;
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v3, Lfmh;->C:Lflm;
-
-    goto :goto_2
-
-    :cond_5
-    const/4 v3, 0x4
-
-    if-ne v2, v3, :cond_6
-
-    sget-object v2, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v3, Lflu;->S:Lflm;
+    sget-object v2, Lfmh;->C:Lflm;
 
     goto :goto_2
 
-    :cond_6
-    move v2, v4
+    :cond_8
+    const/4 v2, 0x4
+
+    if-ne v0, v2, :cond_9
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v2, Lflu;->S:Lflm;
+
+    goto :goto_2
+
+    :cond_9
+    move v0, v3
 
     :goto_3
-    sget v3, LAGC;->rawFormat:I
+    const-string v2, "pref_shasta_key"
 
-    const/16 v5, 0x25
+    invoke-static {v2}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;)F
 
-    if-ne v3, v5, :cond_7
+    move-result v2
 
-    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+    const/high16 v4, -0x40800000    # -1.0f
 
-    invoke-static {v5, v6, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    cmpl-float v4, v2, v4
+
+    if-nez v4, :cond_a
+
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v3}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
     goto :goto_4
 
-    :cond_7
-    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+    :cond_a
+    const/4 v3, 0x0
 
-    invoke-static {v5, v6, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    cmpl-float v3, v2, v3
 
+    if-nez v3, :cond_b
+
+    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v2, v3, p0, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    goto :goto_4
+
+    :cond_b
+    iget-wide v4, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v4, v5, p0, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+
+    if-lez v3, :cond_c
+
+    sget v0, LAGC;->sensorGreenSplit:F
+
+    mul-float/2addr v0, v2
+
+    sput v0, LAGC;->sensorGreenSplit:F
+
+    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v2, v3, p0, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_factor_set(JLcom/google/googlex/gcam/ShotParams;F)V
+
+    :cond_c
     :goto_4
-    if-ltz v0, :cond_8
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
 
-    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+    sget-object v2, Lflu;->shastaForce:Lflm;
 
-    invoke-static {v5, v6, p0, v0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
+    invoke-virtual {v0, v2}, Lfnc;->l(Lflm;)Z
 
-    if-ne v0, v1, :cond_8
+    move-result v0
 
-    sget v3, LAGC;->rawFormat:I
+    if-eqz v0, :cond_d
 
-    const/16 v5, 0x20
+    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    if-ne v3, v5, :cond_8
+    invoke-static {v2, v3, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V
 
-    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v5, v6, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_set(JLcom/google/googlex/gcam/ShotParams;I)V
-
-    :cond_8
-    const/4 v3, 0x3
-
-    if-ne v0, v3, :cond_9
-
-    iget-wide v5, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v5, v6, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    iget-wide v3, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v3, v4, p0, v1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    goto :goto_5
-
-    :cond_9
+    :cond_d
     iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
 
-    invoke-static {v0, v1, p0, v4}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_set(JLcom/google/googlex/gcam/ShotParams;Z)V
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_merge_method_override_get(JLcom/google/googlex/gcam/ShotParams;)I
 
-    :goto_5
-    invoke-static {p0, v2}, LAGC;->setShasta(Lcom/google/googlex/gcam/ShotParams;Z)V
+    move-result v0
+
+    sput v0, Lcom/agc/LogData$Device;->mergeMethod:I
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_sabre_get(JLcom/google/googlex/gcam/ShotParams;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/agc/LogData$Device;->allowSabre:Z
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_allow_spatial_rgb_get(JLcom/google/googlex/gcam/ShotParams;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/agc/LogData$Device;->allowSpatialRgb:Z
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_get(JLcom/google/googlex/gcam/ShotParams;)Z
+
+    move-result v0
+
+    sput-boolean v0, Lcom/agc/LogData$Device;->shastaEnabled:Z
+
+    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
+
+    invoke-static {v0, v1, p0}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_get(JLcom/google/googlex/gcam/ShotParams;)Z
+
+    move-result p0
+
+    sput-boolean p0, Lcom/agc/LogData$Device;->shastaForced:Z
+
+    invoke-static {}, Lcom/agc/LogData$Device;->log()V
 
     return-void
 .end method
@@ -1593,6 +2278,8 @@
 
 .method public static setDeveloperSettings()V
     .locals 4
+
+    invoke-static {}, LDeveloperOptions;->gcaConfigCustomRegister()V
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
@@ -1652,12 +2339,6 @@
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v1, Lfmv;->a:Lflm;
-
-    invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Lfnc;
-
     sget-object v1, Lfma;->e:Lflm;
 
     invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
@@ -1690,6 +2371,12 @@
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
+    sget-object v1, Lfmv;->a:Lflm;
+
+    invoke-virtual {v0, v1, v3}, Lfnc;->u(Lflm;Z)V
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
     sget-object v1, Lfkv;->a:Lflm;
 
     invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
@@ -1697,6 +2384,12 @@
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
     sget-object v1, Lflh;->a:Lflm;
+
+    invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v1, Lflu;->aM:Lflm;
 
     invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
 
@@ -1752,13 +2445,13 @@
 
     sget-object v1, Lflr;->q:Lfln;
 
-    const/4 v2, -0x1
+    const/4 v3, -0x1
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v1, v2}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
@@ -1766,17 +2459,17 @@
 
     invoke-static {v1}, LAGC;->GetDevSettingsIntValue(Lfln;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
+    invoke-static {v3}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v1, v2}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
@@ -1784,17 +2477,17 @@
 
     invoke-static {v1}, LAGC;->GetDevSettingsIntValue(Lfln;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
+    invoke-static {v3}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v1, v2}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
@@ -1802,17 +2495,17 @@
 
     invoke-static {v1}, LAGC;->GetDevSettingsIntValue(Lfln;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
+    invoke-static {v3}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v1, v2}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
@@ -1820,17 +2513,23 @@
 
     invoke-static {v1}, LAGC;->GetDevSettingsIntValue(Lfln;)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
+    invoke-static {v3}, Lcom/agc/LensSettings;->getZslFrameCount(I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v0, v1, v2}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
+    invoke-virtual {v0, v1, v3}, Lfnc;->q(Lfln;Ljava/lang/Integer;)V
+
+    sget-object v0, LAGC;->gcaConfig:Lfnc;
+
+    sget-object v1, Lflu;->shastaForce:Lflm;
+
+    invoke-virtual {v0, v1, v2}, Lfnc;->u(Lflm;Z)V
 
     invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
 
@@ -1991,12 +2690,6 @@
 
     sget-object v1, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v2, Lflk;->g:Lflm;
-
-    invoke-virtual {v1, v2, v3}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v1, LAGC;->gcaConfig:Lfnc;
-
     sget-object v2, Lflr;->cf:Lflm;
 
     invoke-virtual {v1, v2, v3}, Lfnc;->u(Lflm;Z)V
@@ -2034,12 +2727,6 @@
     sget-object v1, LAGC;->gcaConfig:Lfnc;
 
     sget-object v2, Lflu;->aD:Lflm;
-
-    invoke-virtual {v1, v2, v3}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v1, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lflu;->aM:Lflm;
 
     invoke-virtual {v1, v2, v3}, Lfnc;->u(Lflm;Z)V
 
@@ -2141,42 +2828,6 @@
 
     sget-object v1, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v2, Lflz;->v:Lflm;
-
-    const-string v5, "camera.mts_fast_hdr"
-
-    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
-
-    move-result v5
-
-    invoke-virtual {v1, v2, v5}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v1, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lflz;->p:Lflm;
-
-    const-string v5, "camera.mts_4k"
-
-    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
-
-    move-result v5
-
-    invoke-virtual {v1, v2, v5}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v1, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lfkx;->u:Lflm;
-
-    const-string v5, "camcorder.codec_video"
-
-    invoke-static {v5}, Lagc/Agc;->devSetting(Ljava/lang/String;)Z
-
-    move-result v5
-
-    invoke-virtual {v1, v2, v5}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v1, LAGC;->gcaConfig:Lfnc;
-
     sget-object v2, Lflu;->aA:Lflm;
 
     invoke-virtual {v0}, Lcom/agc/Camera;->isRaw10Supported()Z
@@ -2184,12 +2835,6 @@
     move-result v0
 
     invoke-virtual {v1, v2, v0}, Lfnc;->u(Lflm;Z)V
-
-    sget-object v0, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v1, Lfmb;->i:Lflm;
-
-    invoke-virtual {v0, v1, v3}, Lfnc;->u(Lflm;Z)V
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
@@ -2401,7 +3046,7 @@
 
     sget-object v0, LAGC;->gcaConfig:Lfnc;
 
-    sget-object v1, Lfly;->d:Lflm;
+    sget-object v1, Lfly;->i:Lflm;
 
     invoke-virtual {v0, v1, v4}, Lfnc;->u(Lflm;Z)V
 
@@ -2574,57 +3219,5 @@
 
     iput-boolean v0, p0, Lcom/Parameters;->hasGainMap:Z
 
-    return-void
-.end method
-
-.method public static setShasta(Lcom/google/googlex/gcam/ShotParams;Z)V
-    .locals 4
-
-    const-string v0, "pref_shasta_key"
-
-    invoke-static {v0}, Lcom/Utils/Pref;->getAuxPrefFloatValue(Ljava/lang/String;)F
-
-    move-result v0
-
-    const/4 v1, 0x0
-
-    cmpl-float v1, v0, v1
-
-    if-ltz v1, :cond_1
-
-    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v2, v3, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_enabled_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    sget-object p1, LAGC;->gcaConfig:Lfnc;
-
-    sget-object v2, Lflu;->shastaForce:Lflm;
-
-    invoke-virtual {p1, v2}, Lfnc;->l(Lflm;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    iget-wide v2, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    const/4 p1, 0x1
-
-    invoke-static {v2, v3, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_force_set(JLcom/google/googlex/gcam/ShotParams;Z)V
-
-    :cond_0
-    if-lez v1, :cond_1
-
-    sget p1, LAGC;->sensorGreenSplit:F
-
-    mul-float/2addr p1, v0
-
-    sput p1, LAGC;->sensorGreenSplit:F
-
-    iget-wide v0, p0, Lcom/google/googlex/gcam/ShotParams;->a:J
-
-    invoke-static {v0, v1, p0, p1}, Lcom/google/googlex/gcam/GcamModuleJNI;->ShotParams_shasta_factor_set(JLcom/google/googlex/gcam/ShotParams;F)V
-
-    :cond_1
     return-void
 .end method

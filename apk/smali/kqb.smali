@@ -237,7 +237,9 @@
 
     iget-object p1, p1, Lkpz;->s:Lkrf;
 
-    invoke-virtual {p1}, Lkrf;->j()V
+    const-string p1, "swipe_down"
+
+    invoke-static {p1, p1}, Lcom/Utils/EventBus;->postEvent(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_3
 

@@ -42,5 +42,7 @@
 
     invoke-static {p1, p2}, Lcom/Utils/Pref;->access$500(Landroid/content/SharedPreferences;Ljava/lang/String;)V
 
+    invoke-static {p1, p2}, Lcom/Utils/Pref;->access$600(Landroid/content/SharedPreferences;Ljava/lang/String;)V
+
     return-void
 .end method

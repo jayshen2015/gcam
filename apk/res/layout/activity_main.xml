@@ -37,12 +37,11 @@
             <com.google.android.apps.camera.ui.modeswitcher.MoreModesGrid android:layout_gravity="bottom|center" android:id="@id/more_modes_grid" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/more_modes_margin" android:columnCount="3" android:layoutDirection="ltr" />
             <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:paddingTop="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
                 <nan.ren.button.AwbButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-                <!--com.agc.widget.WatermarkButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" /-->
-				<nan.ren.button.LibButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-				<nan.ren.button.AJButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-				<nan.ren.button.WMButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-				<nan.ren.button.LutButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
-                <com.agc.widget.PatchButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+		<nan.ren.button.LibButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+		<nan.ren.button.AJButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+		<nan.ren.button.WMButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+		<nan.ren.button.LutButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
+		<nan.ren.button.CfgButton android:layout_width="48.0dip" android:layout_height="48.0dip" android:scaleType="center" />
             </LinearLayout>
         </FrameLayout>
         <ViewStub android:id="@id/camera_intent_layout_stub" android:layout="@layout/intent" android:layout_width="fill_parent" android:layout_height="fill_parent" custom:gca_box="unrotatingPreview" />

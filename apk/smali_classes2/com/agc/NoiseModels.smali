@@ -9,7 +9,7 @@
 
 .field private static noiseModelFile:Ljava/lang/String; = ""
 
-.field public static noiseModelID:I = -0x1
+.field public static noiseModelID:I = -0x3
 
 .field private static tuneCoeff:F
 
@@ -73,8 +73,8 @@
         value = {
             "([",
             "Landroid/util/Pair<",
-            "Ljava/lang/Float;",
-            "Ljava/lang/Float;",
+            "Ljava/lang/Double;",
+            "Ljava/lang/Double;",
             ">;)V"
         }
     .end annotation

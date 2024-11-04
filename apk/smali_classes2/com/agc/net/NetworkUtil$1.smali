@@ -163,6 +163,16 @@
 
     invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const-string v1, "pref_config_filename_key"
+
+    invoke-static {v1}, Lcom/Utils/Pref;->getAuxPrefStringValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "xml_filename"
+
+    invoke-virtual {v0, v2, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     iget-object v1, p0, Lcom/agc/net/NetworkUtil$1;->val$content:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/agc/net/NetworkUtil;->access$000(Ljava/lang/String;)Ljava/lang/String;

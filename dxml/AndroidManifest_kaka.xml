@@ -123,7 +123,6 @@
         <uses-native-library android:name="libcdsprpc.so" android:required="false"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
         <meta-data android:name="com.android.support.v8.renderscript.EnableAsyncTeardown" android:value="true"/>
-        <meta-data android:name="com.google.android.apps.camera.filmstrip.GlideConfiguration" android:value="GlideModule"/>
         <receiver android:exported="true" android:name="com.google.android.apps.camera.camerafatalerror.BootCompleteReceiver">
             <intent-filter android:priority="999">
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
@@ -136,6 +135,22 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter android:icon="@drawable/agc_xml" android:label="AGC Config" android:priority="1">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="content"/>
+                <data android:host="*"/>
+                <data android:mimeType="*/*"/>
+                <data android:pathPattern=".*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\..*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\.agc"/>
+                <data android:pathPattern=".*\\..*\\..*\\..*\\..*\\..*\\..*\\..*\\.agc"/>
             </intent-filter>
             <meta-data android:name="android.app.shortcuts" android:resource="@xml/shortcuts"/>
         </activity-alias>
@@ -371,9 +386,22 @@
         </service>
         <meta-data android:name="com.android.stamp.source" android:value="https://play.google.com/store"/>
         <meta-data android:name="com.android.stamp.type" android:value="STAMP_TYPE_DISTRIBUTION_APK"/>
-    
-	    <activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>        
-		<activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>
-		<activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
+        
+	<activity android:exported="false" android:name="com.agc.widget.dialog.watermark.AboutWatermarkActivity" android:theme="@style/ToolBarAppTheme"/>
+        <activity android:exported="false" android:name="com.agc.widget.dialog.watermark.CustomWatermarkActivity" android:theme="@style/ToolBarAppTheme"/>
+	<activity android:exported="true" android:name="nan.ren.activity.PreviewActivity"></activity>        
+	<activity android:exported="true" android:name="nan.ren.activity.WmActivity"></activity>          
+	<activity android:exported="true" android:name="nan.ren.activity.Wm2Activity"></activity> 
+	<activity android:exported="true" android:name="nan.ren.activity.ConfigActivity"></activity>
+    <activity android:exported="true" android:name="nan.ren.activity.View3DActivity"></activity>
+	<activity android:exported="true" android:name="nan.ren.activity.PatchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />                
+				<category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="nanren" android:host="patch" />
+                <data android:scheme="nanren" android:host="web" />
+            </intent-filter>
+        </activity>
 	</application>
 </manifest>

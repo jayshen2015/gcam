@@ -71,22 +71,22 @@
 .method public static native configPreferencePath(Ljava/lang/String;)V
 .end method
 
+.method public static native curveList(Ljava/lang/String;)Ljava/lang/String;
+.end method
+
 .method public static native devSetting(Ljava/lang/String;)Z
 .end method
 
 .method public static native downloadFilePath(Ljava/lang/String;)V
 .end method
 
-.method public static native drawTimeWaterMark(Ljava/lang/String;)V
+.method public static native drawTimeWaterMark(Ljava/lang/String;Ljava/lang/String;)V
 .end method
 
-.method public static native drawWatermark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public static native drawWatermark(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
-.method public static native drawWatermarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
-.end method
-
-.method public static native drawWatermarkV2Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+.method public static native drawWatermarkV1Bitmap(Lagc/Bitmap;Ljava/lang/String;Z)Lagc/Bitmap;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -94,10 +94,69 @@
     .end annotation
 .end method
 
-.method public static native drawWatermarkV3(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.method public static native drawWatermarkV2(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end method
 
-.method public static native drawWatermarkV3Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+.method public static native drawWatermarkV2Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV3(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+.end method
+
+.method public static native drawWatermarkV3Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV4Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV5Bitmap(Lagc/Bitmap;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV6Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV7Bitmap(Lagc/Bitmap;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV8Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
+.end method
+
+.method public static native drawWatermarkV9Bitmap(Lagc/Bitmap;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Lagc/Bitmap;
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/lang/Exception;
@@ -210,7 +269,18 @@
 .method public static native getStreamConfig(I)I
 .end method
 
+.method public static native getUpdateNoiseModelPref(ILjava/lang/String;)D
+.end method
+
 .method public static native getViewfinderFormat()I
+.end method
+
+.method public static native histogram(Lagc/Bitmap;)Ljava/lang/String;
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Ljava/lang/Exception;
+        }
+    .end annotation
 .end method
 
 .method public static native imageProcessing(Ljava/lang/String;)V
@@ -247,6 +317,9 @@
 .end method
 
 .method public static native isOppoDevice()Z
+.end method
+
+.method public static native isPixel()Z
 .end method
 
 .method public static native isRealmeDevice()Z
@@ -381,6 +454,9 @@
 .method public static native patch(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 .end method
 
+.method public static native patchDefaultValue(Ljava/lang/String;)Ljava/lang/String;
+.end method
+
 .method public static native patchLensProfile(II)V
 .end method
 
@@ -388,6 +464,9 @@
 .end method
 
 .method public static native patchProfile(I)V
+.end method
+
+.method public static native patchRestore(Ljava/lang/String;)V
 .end method
 
 .method public static native patchValueCorrect(Ljava/lang/String;F)F
@@ -442,4 +521,7 @@
     .locals 0
 
     return-void
+.end method
+
+.method public static native updateNoiseModelPref(Ljava/lang/String;)V
 .end method

@@ -249,7 +249,7 @@
     goto :goto_2
 
     :cond_2
-    const/4 v0, 0x4
+    const/16 v0, 0x8
 
     :goto_2
     invoke-virtual {p0, v0}, Landroid/widget/ImageButton;->setVisibility(I)V

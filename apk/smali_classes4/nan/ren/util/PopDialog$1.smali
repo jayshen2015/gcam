@@ -25,7 +25,7 @@
 .method constructor <init>(Lnan/ren/util/PopDialog;)V
     .locals 0
 
-    .line 62
+    .line 76
     iput-object p1, p0, Lnan/ren/util/PopDialog$1;->val$dialog:Lnan/ren/util/PopDialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,12 +39,12 @@
     .locals 1
     .param p1, "view"    # Landroid/view/View;
 
-    .line 65
+    .line 79
     iget-object v0, p0, Lnan/ren/util/PopDialog$1;->val$dialog:Lnan/ren/util/PopDialog;
 
     invoke-virtual {v0}, Lnan/ren/util/PopDialog;->dismiss()V
 
-    .line 66
+    .line 80
     const/4 v0, 0x0
 
     return v0

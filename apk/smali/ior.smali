@@ -666,9 +666,7 @@
 
     new-instance v2, Lior;
 
-    const/4 v6, 0x0
-
-    sget-object v6, Lcom/google/vr/vrcore/library/api/vpC/CyBRXShhgffA;->ZHGMtBWWnVEAw:Ljava/lang/String;
+    const-string v6, "ASTRO_OFF"
 
     move-object/from16 v45, v4
 
@@ -956,9 +954,7 @@
 
     new-instance v2, Lior;
 
-    const/4 v6, 0x0
-
-    sget-object v6, Lcom/google/android/clockwork/common/wearable/wearmaterial/util/aD/cAJKfDoLjpqWV;->HrPtCm:Ljava/lang/String;
+    const-string v6, "UNSELECTED"
 
     move-object/from16 v69, v4
 

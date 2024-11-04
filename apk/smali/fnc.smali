@@ -2553,7 +2553,7 @@
 
 # virtual methods
 .method public final a(Lfln;)Lj$/util/Optional;
-    .locals 8
+    .locals 9
 
     iget-object v0, p0, Lfnc;->c:Lfna;
 
@@ -2567,13 +2567,17 @@
 
     if-eqz v2, :cond_0
 
+    const-string v8, "Dev Settings Int:"
+
+    invoke-static {v8, v1}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
+
     const/4 v2, 0x0
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-static {v0}, Ljava/lang/Integer;->decode(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -2834,7 +2838,7 @@
 .end method
 
 .method public final h(Lflm;)Lj$/util/Optional;
-    .locals 6
+    .locals 9
 
     iget-object v0, p0, Lfnc;->c:Lfna;
 
@@ -2848,13 +2852,13 @@
 
     if-eqz v2, :cond_0
 
-    const/4 v2, 0x0
+    const-string v8, "Dev Settings Float:"
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8, v1}, Lcom/agc/Log;->e(Ljava/lang/Object;Ljava/lang/Object;)I
 
-    move-result-object v0
+    const/4 v2, 0x1
 
-    invoke-static {v0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
 
     move-result v0
 
@@ -3032,13 +3036,13 @@
 
     if-eqz v4, :cond_0
 
-    const/4 v2, 0x0
+    const-wide/high16 v2, -0x8000000000000000L
 
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
 
-    move-result-object v0
+    move-result-wide v0
 
-    invoke-static {v0}, Ljava/lang/Long;->decode(Ljava/lang/String;)Ljava/lang/Long;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 

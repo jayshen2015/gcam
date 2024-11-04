@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final a(IJLcom/google/googlex/gcam/ShotMetadata;Lqdb;)V
-    .locals 6
+    .locals 8
 
     iget v0, p0, Lgjq;->b:I
 
@@ -51,7 +51,7 @@
 
     iget v0, p5, Lgjs;->s:I
 
-    if-ne v0, v3, :cond_e
+    if-ne v0, v3, :cond_f
 
     const/4 v0, 0x1
 
@@ -64,10 +64,21 @@
 
     iget-object p2, p2, Lisy;->d:Ljava/lang/Object;
 
+    check-cast p2, Ljlr;
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_0
+
     const-string p3, "Got HDR+ image"
+
+    invoke-static {p3}, Lcom/agc/Log;->e(Ljava/lang/Object;)I
 
     invoke-interface {p2, p3}, Ljlr;->F(Ljava/lang/String;)V
 
+    :cond_0
     iget-object p2, p1, Lgjs;->q:Lkax;
 
     invoke-static {p2}, Lgjs;->f(Lkax;)Lqco;
@@ -80,13 +91,13 @@
 
     iget p2, p1, Lgjs;->s:I
 
-    if-ne p2, v3, :cond_0
+    if-ne p2, v3, :cond_1
 
     const/4 p2, 0x1
 
     goto :goto_0
 
-    :cond_0
+    :cond_1
     const/4 p2, 0x0
 
     :goto_0
@@ -94,60 +105,60 @@
 
     sget-object p2, Lqdb;->d:Lqdb;
 
-    if-eq p5, p2, :cond_2
+    if-eq p5, p2, :cond_3
 
     sget-object p2, Lqdb;->f:Lqdb;
 
-    if-ne p5, p2, :cond_1
+    if-ne p5, p2, :cond_2
 
     const/4 p2, 0x1
 
     goto :goto_1
 
-    :cond_1
+    :cond_2
     const/4 p2, 0x0
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     const/4 p2, 0x1
 
     :goto_1
     sget-object p3, Lqdb;->b:Lqdb;
 
-    if-eq p5, p3, :cond_4
+    if-eq p5, p3, :cond_5
 
     sget-object p3, Lqdb;->c:Lqdb;
 
-    if-ne p5, p3, :cond_3
+    if-ne p5, p3, :cond_4
 
     const/4 p3, 0x1
-
-    goto :goto_2
-
-    :cond_3
-    const/4 p3, 0x0
 
     goto :goto_2
 
     :cond_4
+    const/4 p3, 0x0
+
+    goto :goto_2
+
+    :cond_5
     const/4 p3, 0x1
 
     :goto_2
-    if-nez p2, :cond_6
+    if-nez p2, :cond_7
 
-    if-eqz p3, :cond_5
+    if-eqz p3, :cond_6
 
     const/4 p5, 0x1
 
     goto :goto_3
 
-    :cond_5
+    :cond_6
     const/4 p5, 0x0
 
     goto :goto_3
 
-    :cond_6
+    :cond_7
     const/4 p5, 0x1
 
     :goto_3
@@ -155,7 +166,7 @@
 
     invoke-static {p5, v0}, Lpao;->d(ZLjava/lang/Object;)V
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_a
 
     iget-object p5, p1, Lgjs;->l:Lgju;
 
@@ -167,7 +178,7 @@
 
     move-result p5
 
-    if-nez p5, :cond_8
+    if-nez p5, :cond_9
 
     iget-object p5, p1, Lgjs;->l:Lgju;
 
@@ -179,16 +190,16 @@
 
     move-result p5
 
-    if-eqz p5, :cond_7
+    if-eqz p5, :cond_8
 
     const/4 v2, 0x1
 
     goto :goto_4
 
-    :cond_7
+    :cond_8
     goto :goto_4
 
-    :cond_8
+    :cond_9
     const/4 v2, 0x1
 
     :goto_4
@@ -196,8 +207,8 @@
 
     invoke-static {v2, p5}, Lpao;->o(ZLjava/lang/Object;)V
 
-    :cond_9
-    if-eqz p3, :cond_a
+    :cond_a
+    if-eqz p3, :cond_b
 
     iget-object p5, p1, Lgjs;->l:Lgju;
 
@@ -213,8 +224,8 @@
 
     invoke-static {p5, v0}, Lpao;->o(ZLjava/lang/Object;)V
 
-    :cond_a
-    if-eqz p2, :cond_c
+    :cond_b
+    if-eqz p2, :cond_d
 
     iget-object p2, p1, Lgjs;->l:Lgju;
 
@@ -226,7 +237,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_b
+    if-eqz p2, :cond_c
 
     iget-object p2, p1, Lgjs;->i:Lcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;
 
@@ -254,7 +265,7 @@
 
     return-void
 
-    :cond_b
+    :cond_c
     iget-object p2, p1, Lgjs;->l:Lgju;
 
     invoke-virtual {p2}, Lgju;->l()Lpcd;
@@ -265,7 +276,7 @@
 
     move-result p2
 
-    if-eqz p2, :cond_d
+    if-eqz p2, :cond_e
 
     iget-object p2, p1, Lgjs;->i:Lcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;
 
@@ -291,8 +302,8 @@
 
     return-void
 
-    :cond_c
-    if-eqz p3, :cond_d
+    :cond_d
+    if-eqz p3, :cond_e
 
     iget-object p2, p1, Lgjs;->l:Lgju;
 
@@ -316,10 +327,10 @@
 
     return-void
 
-    :cond_d
+    :cond_e
     return-void
 
-    :cond_e
+    :cond_f
     const/4 v0, 0x0
 
     :goto_5
@@ -329,13 +340,13 @@
 
     move-result v0
 
-    if-eq p1, v0, :cond_f
+    if-eq p1, v0, :cond_10
 
     const/4 p1, 0x1
 
     goto :goto_6
 
-    :cond_f
+    :cond_10
     const/4 p1, 0x0
 
     :goto_6
@@ -347,13 +358,13 @@
 
     cmp-long p1, p2, v4
 
-    if-eqz p1, :cond_10
+    if-eqz p1, :cond_11
 
     const/4 p1, 0x1
 
     goto :goto_7
 
-    :cond_10
+    :cond_11
     const/4 p1, 0x0
 
     :goto_7
@@ -369,7 +380,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_12
+    if-eqz p1, :cond_13
 
     iget-object p1, p5, Lgjs;->g:Lcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;
 
@@ -377,17 +388,17 @@
 
     iget-object p2, p1, Lqdr;->a:Landroid/graphics/Bitmap;
 
-    if-eqz p2, :cond_11
+    if-eqz p2, :cond_12
 
     iget-object p2, p1, Lqdr;->b:Lqcx;
 
-    if-nez p2, :cond_11
+    if-nez p2, :cond_12
 
     const/4 v2, 0x1
 
     goto :goto_8
 
-    :cond_11
+    :cond_12
     :goto_8
     invoke-static {v2, v1}, Lpao;->o(ZLjava/lang/Object;)V
 
@@ -409,7 +420,7 @@
 
     return-void
 
-    :cond_12
+    :cond_13
     iget-object p1, p5, Lgjs;->l:Lgju;
 
     invoke-virtual {p1}, Lgju;->f()Lpcd;
@@ -420,7 +431,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_13
+    if-eqz p1, :cond_14
 
     iget-object p1, p5, Lgjs;->g:Lcom/google/googlex/gcam/clientallocator/InterleavedU8ClientAllocator;
 
@@ -446,7 +457,7 @@
 
     return-void
 
-    :cond_13
+    :cond_14
     iget-object p1, p5, Lgjs;->l:Lgju;
 
     invoke-virtual {p1}, Lgju;->h()Lpcd;
@@ -457,7 +468,7 @@
 
     move-result p1
 
-    if-eqz p1, :cond_14
+    if-eqz p1, :cond_15
 
     iget-object p1, p5, Lgjs;->l:Lgju;
 
@@ -479,10 +490,8 @@
 
     invoke-interface {p1, p5, p2, p4}, Lgim;->a(Lgjs;Lcom/google/googlex/gcam/YuvImage;Lcom/google/googlex/gcam/ShotMetadata;)V
 
-    :cond_14
+    :cond_15
     return-void
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

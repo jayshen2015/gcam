@@ -120,10 +120,6 @@
     const/4 v1, 0x0
 
     :goto_1
-    invoke-static {v1}, Lcom/agc/AdvancedSettings;->getAutoNs(Z)Z
-
-    move-result v1
-
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1

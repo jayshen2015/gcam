@@ -382,6 +382,10 @@
 
     sget-object v0, Landroid/hardware/camera2/CaptureRequest;->NOISE_REDUCTION_MODE:Landroid/hardware/camera2/CaptureRequest$Key;
 
+    invoke-static {v1}, LAGC;->getNoiseMode(I)I
+
+    move-result v1
+
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1

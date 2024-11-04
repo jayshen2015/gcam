@@ -964,6 +964,8 @@
 
     sput-object v1, Ljni;->aw:Ljnv;
 
+    const v2, 0x1
+
     invoke-static {v2}, Ljhp;->w(I)I
 
     move-result v1

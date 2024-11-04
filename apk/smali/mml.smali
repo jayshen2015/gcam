@@ -345,12 +345,23 @@
 .method public final d(Lmmx;Lmme;Lmmg;F)Lmmm;
     .locals 10
 
+    const-string v0, "Video mml.d()"
+
+    invoke-static {v0, p4}, Lcom/agc/Log;->e(Ljava/lang/Object;F)I
+
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
     invoke-virtual {p0, p1, p2, p3}, Lmml;->e(Lmmx;Lmme;Lmmg;)Z
 
     move-result v1
 
     invoke-static {v1}, Lpao;->c(Z)V
 
+    :cond_0
     invoke-virtual {p2}, Lmme;->g()Z
 
     move-result v1
@@ -361,9 +372,9 @@
 
     iget v5, p1, Lmmx;->l:I
 
-    if-eqz v1, :cond_1
+    if-eqz v1, :cond_2
 
-    if-ge v2, v5, :cond_0
+    if-ge v2, v5, :cond_1
 
     int-to-float v1, v4
 
@@ -381,23 +392,23 @@
 
     goto :goto_1
 
-    :cond_0
+    :cond_1
     goto :goto_0
 
-    :cond_1
+    :cond_2
     invoke-virtual {p2}, Lmme;->h()Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_4
 
     const/16 v1, 0x1e
 
-    if-gt v2, v1, :cond_2
+    if-gt v2, v1, :cond_3
 
     const/16 v1, 0x3c
 
-    if-ne v5, v1, :cond_2
+    if-ne v5, v1, :cond_3
 
     int-to-double v1, v4
 
@@ -413,7 +424,7 @@
 
     goto :goto_1
 
-    :cond_2
+    :cond_3
     :goto_0
     move v2, v4
 
@@ -483,7 +494,7 @@
 
     return-object v0
 
-    :cond_3
+    :cond_4
     iget v0, p2, Lmme;->k:I
 
     iget v1, p2, Lmme;->l:I
@@ -513,6 +524,8 @@
     invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v2
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x1

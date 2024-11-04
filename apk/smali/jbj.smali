@@ -27,7 +27,7 @@
 
 # virtual methods
 .method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+    .locals 11
 
     iget v0, p0, Ljbj;->b:I
 
@@ -415,6 +415,15 @@
 
     move-result-object v0
 
+    invoke-static {}, Lagc/Agc;->isGoogleDevice()Z
+
+    move-result v10
+
+    if-nez v10, :cond_7
+
+    const/4 v3, 0x0
+
+    :cond_7
     invoke-virtual {v0, v3}, Ljxw;->e(Z)V
 
     invoke-virtual {v0, p1}, Ljxw;->f(Z)V
@@ -428,7 +437,7 @@
     :pswitch_a
     check-cast p1, Ljyn;
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_8
 
     iget-object v0, p0, Ljbj;->a:Ljava/lang/Object;
 
@@ -442,7 +451,7 @@
 
     invoke-virtual {v0, p1, v1}, Lkgd;->k(Landroid/graphics/Bitmap;I)V
 
-    :cond_7
+    :cond_8
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
@@ -504,7 +513,7 @@
     move-result v2
 
     :goto_5
-    if-ge v3, v2, :cond_9
+    if-ge v3, v2, :cond_a
 
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -526,7 +535,7 @@
 
     move-result v5
 
-    if-eqz v5, :cond_8
+    if-eqz v5, :cond_9
 
     iget-object v4, v4, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
@@ -544,12 +553,12 @@
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    :cond_8
+    :cond_9
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_5
 
-    :cond_9
+    :cond_a
     return-object v1
 
     :pswitch_d
@@ -559,7 +568,7 @@
 
     move-result v0
 
-    if-ne v0, v2, :cond_a
+    if-ne v0, v2, :cond_b
 
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -569,14 +578,14 @@
 
     goto :goto_6
 
-    :cond_a
+    :cond_b
     iget-object v0, p0, Ljbj;->a:Ljava/lang/Object;
 
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-ne v4, v1, :cond_b
+    if-ne v4, v1, :cond_c
 
     check-cast v0, Ljua;
 
@@ -608,12 +617,12 @@
 
     goto :goto_6
 
-    :cond_b
+    :cond_c
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-le v4, v1, :cond_c
+    if-le v4, v1, :cond_d
 
     check-cast v0, Ljua;
 
@@ -653,7 +662,7 @@
 
     goto :goto_6
 
-    :cond_c
+    :cond_d
     const-string p1, ""
 
     :goto_6
@@ -750,9 +759,9 @@
 
     iget-object v1, p0, Ljbj;->a:Ljava/lang/Object;
 
-    if-eqz v0, :cond_e
+    if-eqz v0, :cond_f
 
-    if-eqz p1, :cond_d
+    if-eqz p1, :cond_e
 
     check-cast v1, Lhty;
 
@@ -766,14 +775,14 @@
 
     goto :goto_8
 
-    :cond_d
+    :cond_e
     goto :goto_7
 
-    :cond_e
+    :cond_f
     move v3, p1
 
     :goto_7
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_10
 
     check-cast v1, Lhty;
 
@@ -787,8 +796,8 @@
 
     goto :goto_8
 
-    :cond_f
-    if-eqz v3, :cond_10
+    :cond_10
+    if-eqz v3, :cond_11
 
     check-cast v1, Lhty;
 
@@ -802,7 +811,7 @@
 
     goto :goto_8
 
-    :cond_10
+    :cond_11
     check-cast v1, Lhty;
 
     iget-object p1, v1, Lhty;->f:Lj$/util/Optional;
@@ -832,8 +841,6 @@
     move-result-object p1
 
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

@@ -2630,6 +2630,8 @@
 
     move-result-object p1
 
+    if-eqz p1, :cond_0
+
     invoke-virtual {p1}, Lcom/agc/Camera;->isRaw10Supported()Z
 
     move-result p1
